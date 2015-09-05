@@ -1,0 +1,19 @@
+"CDYFeedback.cant.send.email.alert.dismiss.button" = "OK";
+"CDYFeedback.cant.send.email.message" = "Can't send email from this device. Please check your settings.";
+"CDYFeedback.cant.send.email.title" = "Can't send email";
+"CDYFeedback.email.not.sent.error.dismiss.button" = "OK";
+"CDYFeedback.email.not.sent.error.message" = "Email could not be sent. Please try again later.";
+"CDYFeedback.email.not.sent.error.title" = "Email not sent";
+"CDYFeedback.email.subject" = "Numbrn feedback";
+
+"CDYSocial.cant.share.alert.dismiss.button" = "OK";
+"CDYSocial.cant.share.alert.message" = "Could not connect to service. Please check that you have entered your details under Settings and sharing is allowed under Settings -> Privacy.";
+"CDYSocial.cant.share.alert.title" = "Can't share";
+
+"game.win.share.social.message" = "I just completed game of Numbrn! You should also check it out!";
+
+"manu.option.send.message" = "Message to developer";
+
+"menu.option.rate" = "Rate on AppStore";
+"menu.option.restart" = "Restart game";
+"menu.option.resume" = "Resume game";
