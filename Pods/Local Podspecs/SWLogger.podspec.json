@@ -1,0 +1,19 @@
+{
+  "name": "SWLogger",
+  "version": "0.1.0",
+  "license": "Apache 2",
+  "summary": "Logging in Swift",
+  "homepage": "https://github.com/coodly/swlogger",
+  "authors": {
+    "Jaanus Siim": "jaanus@coodly.com"
+  },
+  "source": {
+    "git": "git@github.com:coodly/swlogger.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Source/*.swift",
+  "requires_arc": true
+}

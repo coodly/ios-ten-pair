@@ -18,6 +18,7 @@ import Foundation
 import UIKit
 import SpriteKit
 import Crashlytics
+import SWLogger
 
 let TenPairGameStart = [1, 2, 3, 4, 5, 6, 7, 8, 9,
                         1, 1, 1, 2, 1, 3, 1, 4, 1,
@@ -62,6 +63,7 @@ class TenPairPlayScreen: GameScreen {
         })
 
         topMenuBar.menuButton!.action = SKAction.runBlock({ () -> Void in
+            Log.info("Menu button pressed")
             let menuScreen = TenPairMenuScreen()
             menuScreen.restartGameAction = SKAction.runBlock({ () -> Void in
                 self.restartGame(menuScreen)

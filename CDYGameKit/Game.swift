@@ -98,12 +98,11 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
         let nodes = nodesAtPoint(point)
         
         let screens = screensInArray(nodes)
-        let topScreen = screens.last
-        if topScreen == nil {
+        guard let topScreen = screens.last else {
             return
         }
         
-        let screenNodes = topScreen!.nodesAtPoint(point)
+        let screenNodes = topScreen.nodesAtPoint(point)
         
         let button = findButtonInArray(screenNodes)
         if let tapAction = button?.action {
@@ -113,7 +112,7 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
             
             runAction(tapAction)
         } else {
-            topScreen!.handleTapAt(point)
+            topScreen.handleTapAt(point)
         }
     }
     
