@@ -7,57 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15E35E1EF869891ED4A4D72AB9D7BF57 /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1E28CD9605055125B97C5C858B9C6D /* ConsoleOutput.swift */; };
-		1B2C98E7DCDC7F5D6EF63FC600274E0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA602326E8C7105B3EDD0C3B375F424A /* Foundation.framework */; };
+		0EE79AF27E0F880B0B63D5EBBAAB9337 /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE6C69B1D5CDC88825F3E81F9691DA8 /* ConsoleOutput.swift */; };
+		17C08FD86F976E89509BB64C6233DC26 /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7706520A95B540BA6461F4CC9C4FD6 /* LogOutput.swift */; };
+		1B2C98E7DCDC7F5D6EF63FC600274E0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A2950685D93F4CF0934B242CAD4397 /* Foundation.framework */; };
+		1B8BFD66E8673BE7E58C680E508074F4 /* SWLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 698A9EA6F4C6696490DD64F05E2A0C0F /* SWLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27DDBEDD76F302DE5C8DBA30FE7C6B8D /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		28C49F0616B19276D76D460537037A11 /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E8760E625A1EFB2D0504EC79469DAD /* FileOutput.swift */; };
-		2DBEC0531C8F24678B2D359B90F0C6A7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE603AA8CE0A35DB1F6221709485D0 /* Logger.swift */; };
-		34573F77F7A8971CD36D1FA8FDA0D7A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA602326E8C7105B3EDD0C3B375F424A /* Foundation.framework */; };
-		69A68007B9A811295DD2E8BD50929C0C /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B3FCECF9D508F1992C9B49C0E48E4 /* LogOutput.swift */; };
-		6E8FF685CCE615A56C0666C0FFA4BC7B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11827237CFDA94F240A75C25EDE05B5 /* Log.swift */; };
-		7CE8DE97E47CBDA2A7572492332877CD /* SWLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA08FD2EC11CC4AAFE2047B62AB4AD82 /* SWLogger-dummy.m */; };
-		7F3DD0975249B9745C172FF225D2143A /* SWLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA189E9DF9E771838E57F7EF5D170B52 /* SWLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BE1190DBA3E32D0D5E6A55548B87104 /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B48488CB514F4D8C288775CE38B1ED /* FileOutput.swift */; };
+		382A67C1CDBE1D5515A9F417C9A86997 /* SWLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E2519A7848617B5B20B9B22878BCE /* SWLogger-dummy.m */; };
+		5B35049C5142F70717FFB60C6272EF91 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527747D8646D094A860B819B9CA8BAB1 /* Log.swift */; };
+		78285270C47EDB373B8F5289832D064A /* ShakeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749A6AF533BF917832CDE259617DDBB /* ShakeWindow.swift */; };
 		9344C65EC54DBE32EC2D99F8FE4844FF /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
-		BA31DF3EF34C0B7CC2F0A116C5A27708 /* ShakeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E779F190DE4E62FD53C76CBB31A3167 /* ShakeWindow.swift */; };
+		99A66A4ADDF0C7FA64E7EB314DF01435 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A2950685D93F4CF0934B242CAD4397 /* Foundation.framework */; };
+		C80F1B28ADD6A1DD46458E990B171F14 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42326FF437D3C0252B76CECC000E62C4 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D3AB099408BDFB72FAD855E1646D68F6 /* PBXContainerItemProxy */ = {
+		923506924B15B6A6D42BDAABD7B0DBB3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D179DE49D68CE5B893CB078AA2D7D947;
+			remoteGlobalIDString = 927F9F505ED3532AEA2B871FFB6B007B;
 			remoteInfo = SWLogger;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A716D45AA8C6BB2B07B92BE7A0BE73E /* SWLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-prefix.pch"; sourceTree = "<group>"; };
+		1C7706520A95B540BA6461F4CC9C4FD6 /* LogOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogOutput.swift; path = Source/LogOutput.swift; sourceTree = "<group>"; };
+		220A023B06F5DA536EF19F8A0F0A86A8 /* SWLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWLogger.xcconfig; sourceTree = "<group>"; };
+		22E4DA98C2ABBA285619C9D2AAD9687E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		2F0B3FCECF9D508F1992C9B49C0E48E4 /* LogOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogOutput.swift; path = Source/LogOutput.swift; sourceTree = "<group>"; };
+		2E7E2519A7848617B5B20B9B22878BCE /* SWLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWLogger-dummy.m"; sourceTree = "<group>"; };
 		2F241CCA55B284D17540C918D730A9A6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		3E779F190DE4E62FD53C76CBB31A3167 /* ShakeWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShakeWindow.swift; path = Source/ShakeWindow.swift; sourceTree = "<group>"; };
-		45E8760E625A1EFB2D0504EC79469DAD /* FileOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileOutput.swift; path = Source/FileOutput.swift; sourceTree = "<group>"; };
-		5ADE603AA8CE0A35DB1F6221709485D0 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
+		42326FF437D3C0252B76CECC000E62C4 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
+		4749A6AF533BF917832CDE259617DDBB /* ShakeWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShakeWindow.swift; path = Source/ShakeWindow.swift; sourceTree = "<group>"; };
+		527747D8646D094A860B819B9CA8BAB1 /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Source/Log.swift; sourceTree = "<group>"; };
 		67F53AEEB7265985FA6153CB0A6F6E23 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		698A9EA6F4C6696490DD64F05E2A0C0F /* SWLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-umbrella.h"; sourceTree = "<group>"; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
-		7B8E4C588A399C943FA00B99460535B6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CFCB74D95BBAAC06F3F9A29FD95A5D3 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
 		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		91A2950685D93F4CF0934B242CAD4397 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		93B48488CB514F4D8C288775CE38B1ED /* FileOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileOutput.swift; path = Source/FileOutput.swift; sourceTree = "<group>"; };
+		9BB337DAF6C572053F1B1C0329AE9F1D /* SWLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SWLogger.modulemap; sourceTree = "<group>"; };
 		AA57211B412AE7C1D1C6BA639A5A066D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B11827237CFDA94F240A75C25EDE05B5 /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Source/Log.swift; sourceTree = "<group>"; };
-		BA08FD2EC11CC4AAFE2047B62AB4AD82 /* SWLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWLogger-dummy.m"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C119B35B0A5D8D94694DF11101585D1E /* SWLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWLogger.xcconfig; sourceTree = "<group>"; };
+		BCE6C69B1D5CDC88825F3E81F9691DA8 /* ConsoleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleOutput.swift; path = Source/ConsoleOutput.swift; sourceTree = "<group>"; };
+		CA60AF94196074E304D57C91F6442C43 /* SWLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-prefix.pch"; sourceTree = "<group>"; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DA189E9DF9E771838E57F7EF5D170B52 /* SWLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-umbrella.h"; sourceTree = "<group>"; };
-		E770A5DC87C156B49411C92851A77A5D /* SWLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SWLogger.modulemap; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA602326E8C7105B3EDD0C3B375F424A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		EB0F4B162D2A6DE33B2938AB74728248 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC1E28CD9605055125B97C5C858B9C6D /* ConsoleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleOutput.swift; path = Source/ConsoleOutput.swift; sourceTree = "<group>"; };
+		ECB8E6A547F19C52E192DE4FB11FED17 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9F2D91F3C336C5AF2E39B2CF1CC2F97 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,35 +71,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A386659903C55657E780B46D0940148D /* Frameworks */ = {
+		8A462D79DB7418C9A355FAB19063548A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34573F77F7A8971CD36D1FA8FDA0D7A2 /* Foundation.framework in Frameworks */,
+				99A66A4ADDF0C7FA64E7EB314DF01435 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1094BB4AB976895745B190EE1042A8F7 /* Pods */ = {
+		26FEEB2C3AFD0955F63E7FF19EE2619F /* Crashlytics */ = {
 			isa = PBXGroup;
 			children = (
-				24149F003FE52281FD7C8C90C1E42115 /* SWLogger */,
+				E8209369815C695ED4DA14F658B21103 /* Frameworks */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		3DB360B4D9BE029688F9444AC4B354CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26FEEB2C3AFD0955F63E7FF19EE2619F /* Crashlytics */,
+				89D5F6DAF10E9043B82554249F5821B6 /* Fabric */,
+				4B69F459A5982690F0BF0345990E0A0C /* SWLogger */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		24149F003FE52281FD7C8C90C1E42115 /* SWLogger */ = {
+		4B69F459A5982690F0BF0345990E0A0C /* SWLogger */ = {
 			isa = PBXGroup;
 			children = (
-				FC1E28CD9605055125B97C5C858B9C6D /* ConsoleOutput.swift */,
-				45E8760E625A1EFB2D0504EC79469DAD /* FileOutput.swift */,
-				B11827237CFDA94F240A75C25EDE05B5 /* Log.swift */,
-				5ADE603AA8CE0A35DB1F6221709485D0 /* Logger.swift */,
-				2F0B3FCECF9D508F1992C9B49C0E48E4 /* LogOutput.swift */,
-				3E779F190DE4E62FD53C76CBB31A3167 /* ShakeWindow.swift */,
-				818659736CADA226118AEF9A06ED2DC1 /* Support Files */,
+				BCE6C69B1D5CDC88825F3E81F9691DA8 /* ConsoleOutput.swift */,
+				93B48488CB514F4D8C288775CE38B1ED /* FileOutput.swift */,
+				527747D8646D094A860B819B9CA8BAB1 /* Log.swift */,
+				42326FF437D3C0252B76CECC000E62C4 /* Logger.swift */,
+				1C7706520A95B540BA6461F4CC9C4FD6 /* LogOutput.swift */,
+				4749A6AF533BF917832CDE259617DDBB /* ShakeWindow.swift */,
+				AD7B8CB984C70B4D2692264589F897FE /* Support Files */,
 			);
 			path = SWLogger;
 			sourceTree = "<group>";
@@ -105,7 +117,7 @@
 		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				EA602326E8C7105B3EDD0C3B375F424A /* Foundation.framework */,
+				91A2950685D93F4CF0934B242CAD4397 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -114,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				AA57211B412AE7C1D1C6BA639A5A066D /* Pods.framework */,
-				EB0F4B162D2A6DE33B2938AB74728248 /* SWLogger.framework */,
+				7CFCB74D95BBAAC06F3F9A29FD95A5D3 /* SWLogger.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,21 +154,37 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				1094BB4AB976895745B190EE1042A8F7 /* Pods */,
+				3DB360B4D9BE029688F9444AC4B354CE /* Pods */,
 				5903BB9F323B47DACD5633CF8409541A /* Products */,
 				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		818659736CADA226118AEF9A06ED2DC1 /* Support Files */ = {
+		89D5F6DAF10E9043B82554249F5821B6 /* Fabric */ = {
 			isa = PBXGroup;
 			children = (
-				7B8E4C588A399C943FA00B99460535B6 /* Info.plist */,
-				E770A5DC87C156B49411C92851A77A5D /* SWLogger.modulemap */,
-				C119B35B0A5D8D94694DF11101585D1E /* SWLogger.xcconfig */,
-				BA08FD2EC11CC4AAFE2047B62AB4AD82 /* SWLogger-dummy.m */,
-				2A716D45AA8C6BB2B07B92BE7A0BE73E /* SWLogger-prefix.pch */,
-				DA189E9DF9E771838E57F7EF5D170B52 /* SWLogger-umbrella.h */,
+				EDC7C003AA76E29391584EB121ED3DC4 /* Base */,
+			);
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		A8B4090D2D2F1D370D947A1EEF5A7D4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9F2D91F3C336C5AF2E39B2CF1CC2F97 /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD7B8CB984C70B4D2692264589F897FE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				ECB8E6A547F19C52E192DE4FB11FED17 /* Info.plist */,
+				9BB337DAF6C572053F1B1C0329AE9F1D /* SWLogger.modulemap */,
+				220A023B06F5DA536EF19F8A0F0A86A8 /* SWLogger.xcconfig */,
+				2E7E2519A7848617B5B20B9B22878BCE /* SWLogger-dummy.m */,
+				CA60AF94196074E304D57C91F6442C43 /* SWLogger-prefix.pch */,
+				698A9EA6F4C6696490DD64F05E2A0C0F /* SWLogger-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SWLogger";
@@ -178,6 +206,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E8209369815C695ED4DA14F658B21103 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22E4DA98C2ABBA285619C9D2AAD9687E /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDC7C003AA76E29391584EB121ED3DC4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A8B4090D2D2F1D370D947A1EEF5A7D4E /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -189,11 +233,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE6EEEC6D5AE6E9854932B525E26DEEE /* Headers */ = {
+		AA5579DEB5A3469E659676967FBC15AB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F3DD0975249B9745C172FF225D2143A /* SWLogger-umbrella.h in Headers */,
+				1B8BFD66E8673BE7E58C680E508074F4 /* SWLogger-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,20 +255,20 @@
 			buildRules = (
 			);
 			dependencies = (
-				5BB2748532B4382CF01D6740F0CE4A07 /* PBXTargetDependency */,
+				4D5CBB42F9ED55057EBA72C5BEE69F72 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
 			productReference = AA57211B412AE7C1D1C6BA639A5A066D /* Pods.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D179DE49D68CE5B893CB078AA2D7D947 /* SWLogger */ = {
+		927F9F505ED3532AEA2B871FFB6B007B /* SWLogger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2B8B31F176C08CA6169B02BFFAF3430 /* Build configuration list for PBXNativeTarget "SWLogger" */;
+			buildConfigurationList = DDBA6D1A878A9FC48A733090469D47E3 /* Build configuration list for PBXNativeTarget "SWLogger" */;
 			buildPhases = (
-				3D159C5CB66D69549A1DE1A574B16247 /* Sources */,
-				A386659903C55657E780B46D0940148D /* Frameworks */,
-				AE6EEEC6D5AE6E9854932B525E26DEEE /* Headers */,
+				C1501CD94851A26E102B1AD30A062801 /* Sources */,
+				8A462D79DB7418C9A355FAB19063548A /* Frameworks */,
+				AA5579DEB5A3469E659676967FBC15AB /* Headers */,
 			);
 			buildRules = (
 			);
@@ -232,7 +276,7 @@
 			);
 			name = SWLogger;
 			productName = SWLogger;
-			productReference = EB0F4B162D2A6DE33B2938AB74728248 /* SWLogger.framework */;
+			productReference = 7CFCB74D95BBAAC06F3F9A29FD95A5D3 /* SWLogger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -257,26 +301,12 @@
 			projectRoot = "";
 			targets = (
 				7D410B21F8E69F39E1349AFD422CA9D1 /* Pods */,
-				D179DE49D68CE5B893CB078AA2D7D947 /* SWLogger */,
+				927F9F505ED3532AEA2B871FFB6B007B /* SWLogger */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3D159C5CB66D69549A1DE1A574B16247 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				15E35E1EF869891ED4A4D72AB9D7BF57 /* ConsoleOutput.swift in Sources */,
-				28C49F0616B19276D76D460537037A11 /* FileOutput.swift in Sources */,
-				6E8FF685CCE615A56C0666C0FFA4BC7B /* Log.swift in Sources */,
-				2DBEC0531C8F24678B2D359B90F0C6A7 /* Logger.swift in Sources */,
-				69A68007B9A811295DD2E8BD50929C0C /* LogOutput.swift in Sources */,
-				BA31DF3EF34C0B7CC2F0A116C5A27708 /* ShakeWindow.swift in Sources */,
-				7CE8DE97E47CBDA2A7572492332877CD /* SWLogger-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		579788C6A164408A9D44A715816E492D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,18 +315,87 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C1501CD94851A26E102B1AD30A062801 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EE79AF27E0F880B0B63D5EBBAAB9337 /* ConsoleOutput.swift in Sources */,
+				2BE1190DBA3E32D0D5E6A55548B87104 /* FileOutput.swift in Sources */,
+				5B35049C5142F70717FFB60C6272EF91 /* Log.swift in Sources */,
+				C80F1B28ADD6A1DD46458E990B171F14 /* Logger.swift in Sources */,
+				17C08FD86F976E89509BB64C6233DC26 /* LogOutput.swift in Sources */,
+				78285270C47EDB373B8F5289832D064A /* ShakeWindow.swift in Sources */,
+				382A67C1CDBE1D5515A9F417C9A86997 /* SWLogger-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5BB2748532B4382CF01D6740F0CE4A07 /* PBXTargetDependency */ = {
+		4D5CBB42F9ED55057EBA72C5BEE69F72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SWLogger;
-			target = D179DE49D68CE5B893CB078AA2D7D947 /* SWLogger */;
-			targetProxy = D3AB099408BDFB72FAD855E1646D68F6 /* PBXContainerItemProxy */;
+			target = 927F9F505ED3532AEA2B871FFB6B007B /* SWLogger */;
+			targetProxy = 923506924B15B6A6D42BDAABD7B0DBB3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		6DA5194539023052DE5A2C074E33E212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 220A023B06F5DA536EF19F8A0F0A86A8 /* SWLogger.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SWLogger/SWLogger-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SWLogger/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SWLogger/SWLogger.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SWLogger;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7A03B8F54AA2161880748E1789AD4249 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 220A023B06F5DA536EF19F8A0F0A86A8 /* SWLogger.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SWLogger/SWLogger-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SWLogger/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SWLogger/SWLogger.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SWLogger;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		89589F6ADC04016AB0A93BF3A3FB2FC3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F241CCA55B284D17540C918D730A9A6 /* Pods.release.xcconfig */;
@@ -365,33 +464,6 @@
 			};
 			name = Debug;
 		};
-		C403ED948787E3D4FE31D06B8793F11B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C119B35B0A5D8D94694DF11101585D1E /* SWLogger.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SWLogger/SWLogger-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SWLogger/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SWLogger/SWLogger.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SWLogger;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		E322341805EF3F67E453880458BF629B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 67F53AEEB7265985FA6153CB0A6F6E23 /* Pods.debug.xcconfig */;
@@ -456,34 +528,6 @@
 			};
 			name = Release;
 		};
-		FF3AEFCEA30DF6E0908AB980D486371B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C119B35B0A5D8D94694DF11101585D1E /* SWLogger.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SWLogger/SWLogger-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SWLogger/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SWLogger/SWLogger.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SWLogger;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -505,11 +549,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2B8B31F176C08CA6169B02BFFAF3430 /* Build configuration list for PBXNativeTarget "SWLogger" */ = {
+		DDBA6D1A878A9FC48A733090469D47E3 /* Build configuration list for PBXNativeTarget "SWLogger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FF3AEFCEA30DF6E0908AB980D486371B /* Debug */,
-				C403ED948787E3D4FE31D06B8793F11B /* Release */,
+				6DA5194539023052DE5A2C074E33E212 /* Debug */,
+				7A03B8F54AA2161880748E1789AD4249 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

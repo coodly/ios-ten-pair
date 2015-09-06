@@ -28,8 +28,6 @@
 		EAB219991B9C6B8800ED9CF9 /* TenPairPlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198A1B9C6B8800ED9CF9 /* TenPairPlayScreen.swift */; settings = {ASSET_TAGS = (); }; };
 		EAB2199A1B9C6B8800ED9CF9 /* TenPairTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198B1B9C6B8800ED9CF9 /* TenPairTheme.swift */; settings = {ASSET_TAGS = (); }; };
 		EAB2199B1B9C6B8800ED9CF9 /* TenPairWinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198C1B9C6B8800ED9CF9 /* TenPairWinScreen.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB2199F1B9C6BD500ED9CF9 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB2199D1B9C6BD500ED9CF9 /* Crashlytics.framework */; settings = {ASSET_TAGS = (); }; };
-		EAB219A01B9C6BD500ED9CF9 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB2199E1B9C6BD500ED9CF9 /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
 		EAB219AC1B9C6BE400ED9CF9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A21B9C6BE400ED9CF9 /* Game.swift */; settings = {ASSET_TAGS = (); }; };
 		EAB219AD1B9C6BE400ED9CF9 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A31B9C6BE400ED9CF9 /* GameButton.swift */; settings = {ASSET_TAGS = (); }; };
 		EAB219AE1B9C6BE400ED9CF9 /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A41B9C6BE400ED9CF9 /* GameLoadingView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -81,8 +79,6 @@
 		EAB2198A1B9C6B8800ED9CF9 /* TenPairPlayScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairPlayScreen.swift; sourceTree = "<group>"; };
 		EAB2198B1B9C6B8800ED9CF9 /* TenPairTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairTheme.swift; sourceTree = "<group>"; };
 		EAB2198C1B9C6B8800ED9CF9 /* TenPairWinScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairWinScreen.swift; sourceTree = "<group>"; };
-		EAB2199D1B9C6BD500ED9CF9 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		EAB2199E1B9C6BD500ED9CF9 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		EAB219A21B9C6BE400ED9CF9 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		EAB219A31B9C6BE400ED9CF9 /* GameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		EAB219A41B9C6BE400ED9CF9 /* GameLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLoadingView.swift; sourceTree = "<group>"; };
@@ -101,9 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAB2199F1B9C6BD500ED9CF9 /* Crashlytics.framework in Frameworks */,
 				B75623E63E2B22566ED37AE7 /* Pods.framework in Frameworks */,
-				EAB219A01B9C6BD500ED9CF9 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,8 +123,6 @@
 		5DEF9830C744551042FCEF5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EAB2199D1B9C6BD500ED9CF9 /* Crashlytics.framework */,
-				EAB2199E1B9C6BD500ED9CF9 /* Fabric.framework */,
 				858FDDE58A3DC23BE208A6C7 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -240,6 +232,7 @@
 				EA02FA8C1B9C6AA400B93D23 /* Resources */,
 				C76316B4A2511265512C0CEF /* Embed Pods Frameworks */,
 				993E339CA08602C23E16DA43 /* Copy Pods Resources */,
+				EAB219B91B9C6FD800ED9CF9 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -371,6 +364,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EAB219B91B9C6FD800ED9CF9 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" 1498b1e841189deded0a8957a47057c88a75503b 84939d122fb533ac07e3e9b3d0fb8601e68f89a868e9f5889891d1a6684b0d72";
 		};
 /* End PBXShellScriptBuildPhase section */
 
