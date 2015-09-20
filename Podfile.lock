@@ -3,25 +3,13 @@ PODS:
   - Fabric (1.4.1):
     - Fabric/Base (= 1.4.1)
   - Fabric/Base (1.4.1)
-  - SWLogger (0.1.0)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
-  - SWLogger (from `git@github.com:coodly/swlogger.git`)
-
-EXTERNAL SOURCES:
-  SWLogger:
-    :git: git@github.com:coodly/swlogger.git
-
-CHECKOUT OPTIONS:
-  SWLogger:
-    :commit: bb3c6a5085e02b469dd4a634b3e8e2f336e37ed5
-    :git: git@github.com:coodly/swlogger.git
 
 SPEC CHECKSUMS:
   Crashlytics: a29e4f820aa401482b26043dc5d78adf08ac7573
   Fabric: 4f718eeca4c02c7d6f6f4e5f0e5f87c63aa38458
-  SWLogger: 5af8abc168ea8840d71877c5b6fa2000ea326e08
 
-COCOAPODS: 0.39.0.beta.4
+COCOAPODS: 0.38.2

@@ -63,8 +63,8 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
         scene = gameScene
         skView.allowsTransparency = false
         skView.shouldCullNonVisibleNodes = false
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+        //skView.showsFPS = true
+        //skView.showsNodeCount = true
         skView.presentScene(scene)
 
         gameScene.startGame()
