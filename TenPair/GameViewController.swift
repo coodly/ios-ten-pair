@@ -74,6 +74,14 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
         loadAd()
     }
     
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            return UIInterfaceOrientationMask.All
+        } else {
+            return UIInterfaceOrientationMask.Portrait
+        }
+    }
+    
     func loadAd() {
         if let banner = self.banner {
             return
