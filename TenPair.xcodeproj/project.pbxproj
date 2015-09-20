@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B75623E63E2B22566ED37AE7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858FDDE58A3DC23BE208A6C7 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		EA01D8CD1BAF32E1007014FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA01D8C91BAF32E1007014FC /* InfoPlist.strings */; settings = {ASSET_TAGS = (); }; };
+		EA01D8CE1BAF32E1007014FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA01D8CB1BAF32E1007014FC /* Localizable.strings */; settings = {ASSET_TAGS = (); }; };
 		EA02FA921B9C6AA400B93D23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02FA911B9C6AA400B93D23 /* AppDelegate.swift */; };
 		EA02FA981B9C6AA400B93D23 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02FA971B9C6AA400B93D23 /* GameViewController.swift */; };
 		EA02FA9B1B9C6AA400B93D23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA02FA991B9C6AA400B93D23 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		858FDDE58A3DC23BE208A6C7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04B108A5C7D43A56B0FDA69 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D2270F1A59C314A700C94A85 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EA01D8CA1BAF32E1007014FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		EA01D8CC1BAF32E1007014FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		EA02FA8E1B9C6AA400B93D23 /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA02FA911B9C6AA400B93D23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA02FA971B9C6AA400B93D23 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EA01D8C71BAF32C0007014FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA01D8C81BAF32E1007014FC /* en.lproj */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA01D8C81BAF32E1007014FC /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				EA01D8C91BAF32E1007014FC /* InfoPlist.strings */,
+				EA01D8CB1BAF32E1007014FC /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
 		EA02FA851B9C6AA400B93D23 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +173,7 @@
 		EA02FA901B9C6AA400B93D23 /* TenPair */ = {
 			isa = PBXGroup;
 			children = (
+				EA01D8C71BAF32C0007014FC /* Supporting Files */,
 				EAB2199C1B9C6BA200ED9CF9 /* Controllers */,
 				EAB2197D1B9C6B8800ED9CF9 /* Game */,
 				EA02FA911B9C6AA400B93D23 /* AppDelegate.swift */,
@@ -304,7 +326,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA01D8CE1BAF32E1007014FC /* Localizable.strings in Resources */,
 				EAB2197C1B9C6B3600ED9CF9 /* Images.xcassets in Resources */,
+				EA01D8CD1BAF32E1007014FC /* InfoPlist.strings in Resources */,
 				EAB219B81B9C6C6300ED9CF9 /* LaunchScreen.xib in Resources */,
 				EA02FA9B1B9C6AA400B93D23 /* Main.storyboard in Resources */,
 			);
@@ -435,6 +459,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EA01D8C91BAF32E1007014FC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA01D8CA1BAF32E1007014FC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA01D8CB1BAF32E1007014FC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA01D8CC1BAF32E1007014FC /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EA02FA991B9C6AA400B93D23 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -490,7 +530,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -529,7 +569,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

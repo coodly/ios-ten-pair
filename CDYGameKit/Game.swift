@@ -104,10 +104,10 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
         
         let screenNodes = topScreen.nodesAtPoint(point)
         
-        let button = findButtonInArray(screenNodes)
-        if let tapAction = button?.action {
-            if button!.touchDisables {
-                button!.userInteractionEnabled = false
+        
+        if let button = findButtonInArray(screenNodes), let tapAction = button.action {
+            if button.touchDisables {
+                button.userInteractionEnabled = false
             }
             
             runAction(tapAction)
@@ -116,19 +116,19 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
         }
     }
     
-    func screensInArray(nodes: Array<AnyObject>) -> Array<GameScreen> {
+    func screensInArray(nodes: [SKNode]) -> [GameScreen] {
         var result: [GameScreen] = []
         for node in nodes {
             if node.isKindOfClass(GameScreen) {
                 result.append(node as! GameScreen)
             }
         }
-        
+
         return result
     }
     
     func findButtonInArray(nodes: Array<AnyObject>) -> GameButton? {
-        for node in Array(nodes.reverse()) {
+        for node in nodes.reverse() {
             if node is GameButton {
                 return node as? GameButton
             }
