@@ -41,7 +41,7 @@ class TenPairMenuScreen: GameMenuScreen {
             self.runAction(self.restartGameAction!)
         })))
         addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: ""), action:SKAction.runBlock({ () -> Void in
-            let success = UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
+            _ = UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
         })))
         addMenuItem(menuItemWithTitle(NSLocalizedString("manu.option.send.message", comment: ""), action:SKAction.runBlock({ () -> Void in
             self.game!.sendEmail("contact@coodly.com", subject: "TenPair feedback")
@@ -62,7 +62,7 @@ class TenPairMenuScreen: GameMenuScreen {
         item.setTitle(title)
         item.color = TenPairTheme.currentTheme.menuOptionBackgroundColor!
         item.action = action
-        item.zPosition = 1
+        item.zPosition = 3
         
         return item
     }

@@ -42,6 +42,7 @@ class TenPairMenuBar: GameView {
         menuButton.position = CGPointMake(10, 0)
         menuButton.color = TenPairTheme.currentTheme.tintColor!
         menuButton.colorBlendFactor = 1
+        menuButton.zPosition = 1
         addChild(menuButton)
 
         let reloadButton = GameButton(imageNamed: "reload")
@@ -52,6 +53,7 @@ class TenPairMenuBar: GameView {
         reloadButton.position = CGPointMake(size.width - reloadButton.size.width - 10, 0)
         reloadButton.color = TenPairTheme.currentTheme.tintColor!
         reloadButton.colorBlendFactor = 1
+        reloadButton.zPosition = 1
         addChild(reloadButton)
         
         let fieldStatus = TenPairFieldStatus()

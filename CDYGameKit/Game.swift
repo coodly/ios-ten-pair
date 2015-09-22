@@ -98,14 +98,14 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
         let nodes = nodesAtPoint(point)
         
         let screens = screensInArray(nodes)
-        guard let topScreen = screens.last else {
+        guard let topScreen = screens.first else {
             return
         }
         
         let screenNodes = topScreen.nodesAtPoint(point)
+        let sorted = screenNodes.sort({$0.zPosition > $1.zPosition})
         
-        
-        if let button = findButtonInArray(screenNodes), let tapAction = button.action {
+        if let button = findButtonInArray(sorted), let tapAction = button.action {
             if button.touchDisables {
                 button.userInteractionEnabled = false
             }
@@ -123,12 +123,12 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
                 result.append(node as! GameScreen)
             }
         }
-
-        return result
+        
+        return result.sort({$0.zPosition > $1.zPosition})
     }
     
-    func findButtonInArray(nodes: Array<AnyObject>) -> GameButton? {
-        for node in nodes.reverse() {
+    func findButtonInArray(nodes: Array<AnyObject>) -> GameButton? {        
+        for node in nodes {
             if node is GameButton {
                 return node as? GameButton
             }
@@ -172,7 +172,7 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
     }
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        if let err = error {
+        if let _ = error {
             presentEmailSendErrorAlert(controller)
             return
         }

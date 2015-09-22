@@ -54,6 +54,7 @@ class TenPairPlayScreen: GameScreen {
         
         field.gameWonAction = SKAction.runBlock({ () -> Void in
             let winScreen = TenPairWinScreen()
+            winScreen.zPosition = 2
             winScreen.restartGameAction = SKAction.runBlock({ () -> Void in
                 self.restartGame(winScreen)
             })
@@ -62,6 +63,7 @@ class TenPairPlayScreen: GameScreen {
 
         topMenuBar.menuButton!.action = SKAction.runBlock({ () -> Void in
             let menuScreen = TenPairMenuScreen()
+            menuScreen.zPosition = 2
             menuScreen.restartGameAction = SKAction.runBlock({ () -> Void in
                 self.restartGame(menuScreen)
             })
