@@ -7,40 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B75623E63E2B22566ED37AE7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858FDDE58A3DC23BE208A6C7 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		EA01D8CD1BAF32E1007014FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA01D8C91BAF32E1007014FC /* InfoPlist.strings */; settings = {ASSET_TAGS = (); }; };
-		EA01D8CE1BAF32E1007014FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA01D8CB1BAF32E1007014FC /* Localizable.strings */; settings = {ASSET_TAGS = (); }; };
+		B75623E63E2B22566ED37AE7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858FDDE58A3DC23BE208A6C7 /* Pods.framework */; };
+		EA01D8CD1BAF32E1007014FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA01D8C91BAF32E1007014FC /* InfoPlist.strings */; };
+		EA01D8CE1BAF32E1007014FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA01D8CB1BAF32E1007014FC /* Localizable.strings */; };
 		EA02FA921B9C6AA400B93D23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02FA911B9C6AA400B93D23 /* AppDelegate.swift */; };
 		EA02FA981B9C6AA400B93D23 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02FA971B9C6AA400B93D23 /* GameViewController.swift */; };
 		EA02FA9B1B9C6AA400B93D23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA02FA991B9C6AA400B93D23 /* Main.storyboard */; };
 		EA02FAAB1B9C6AA400B93D23 /* TenPairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02FAAA1B9C6AA400B93D23 /* TenPairTests.swift */; };
-		EAB2197C1B9C6B3600ED9CF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB2197B1B9C6B3600ED9CF9 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
-		EAB2198D1B9C6B8800ED9CF9 /* TenPairDefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2197E1B9C6B8800ED9CF9 /* TenPairDefaultTheme.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB2198E1B9C6B8800ED9CF9 /* TenPairEmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2197F1B9C6B8800ED9CF9 /* TenPairEmptyLinesSearch.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB2198F1B9C6B8800ED9CF9 /* TenPairFieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219801B9C6B8800ED9CF9 /* TenPairFieldBackground.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219901B9C6B8800ED9CF9 /* TenPairFieldStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219811B9C6B8800ED9CF9 /* TenPairFieldStatus.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219911B9C6B8800ED9CF9 /* TenPairGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219821B9C6B8800ED9CF9 /* TenPairGame.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219921B9C6B8800ED9CF9 /* TenPairLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219831B9C6B8800ED9CF9 /* TenPairLoadingScreen.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219931B9C6B8800ED9CF9 /* TenPairMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219841B9C6B8800ED9CF9 /* TenPairMenuBar.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219941B9C6B8800ED9CF9 /* TenPairMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219851B9C6B8800ED9CF9 /* TenPairMenuButton.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219951B9C6B8800ED9CF9 /* TenPairMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219861B9C6B8800ED9CF9 /* TenPairMenuScreen.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219961B9C6B8800ED9CF9 /* TenPairNumberPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219871B9C6B8800ED9CF9 /* TenPairNumberPathFinder.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219971B9C6B8800ED9CF9 /* TenPairNumbersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219881B9C6B8800ED9CF9 /* TenPairNumbersField.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219981B9C6B8800ED9CF9 /* TenPairNumberTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219891B9C6B8800ED9CF9 /* TenPairNumberTile.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219991B9C6B8800ED9CF9 /* TenPairPlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198A1B9C6B8800ED9CF9 /* TenPairPlayScreen.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB2199A1B9C6B8800ED9CF9 /* TenPairTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198B1B9C6B8800ED9CF9 /* TenPairTheme.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB2199B1B9C6B8800ED9CF9 /* TenPairWinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198C1B9C6B8800ED9CF9 /* TenPairWinScreen.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219AC1B9C6BE400ED9CF9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A21B9C6BE400ED9CF9 /* Game.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219AD1B9C6BE400ED9CF9 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A31B9C6BE400ED9CF9 /* GameButton.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219AE1B9C6BE400ED9CF9 /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A41B9C6BE400ED9CF9 /* GameLoadingView.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219AF1B9C6BE400ED9CF9 /* GameMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A51B9C6BE400ED9CF9 /* GameMenuButton.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219B01B9C6BE400ED9CF9 /* GameMenuPresentationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A61B9C6BE400ED9CF9 /* GameMenuPresentationContainer.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219B11B9C6BE400ED9CF9 /* GameMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A71B9C6BE400ED9CF9 /* GameMenuScreen.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219B21B9C6BE400ED9CF9 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A81B9C6BE400ED9CF9 /* GameScreen.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219B31B9C6BE400ED9CF9 /* GameScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A91B9C6BE400ED9CF9 /* GameScrollView.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219B41B9C6BE400ED9CF9 /* GameScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219AA1B9C6BE400ED9CF9 /* GameScrollViewContained.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219B51B9C6BE400ED9CF9 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219AB1B9C6BE400ED9CF9 /* GameView.swift */; settings = {ASSET_TAGS = (); }; };
-		EAB219B81B9C6C6300ED9CF9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB219B61B9C6C6300ED9CF9 /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
+		EAB2197C1B9C6B3600ED9CF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB2197B1B9C6B3600ED9CF9 /* Images.xcassets */; };
+		EAB2198D1B9C6B8800ED9CF9 /* TenPairDefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2197E1B9C6B8800ED9CF9 /* TenPairDefaultTheme.swift */; };
+		EAB2198E1B9C6B8800ED9CF9 /* TenPairEmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2197F1B9C6B8800ED9CF9 /* TenPairEmptyLinesSearch.swift */; };
+		EAB2198F1B9C6B8800ED9CF9 /* TenPairFieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219801B9C6B8800ED9CF9 /* TenPairFieldBackground.swift */; };
+		EAB219901B9C6B8800ED9CF9 /* TenPairFieldStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219811B9C6B8800ED9CF9 /* TenPairFieldStatus.swift */; };
+		EAB219911B9C6B8800ED9CF9 /* TenPairGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219821B9C6B8800ED9CF9 /* TenPairGame.swift */; };
+		EAB219921B9C6B8800ED9CF9 /* TenPairLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219831B9C6B8800ED9CF9 /* TenPairLoadingScreen.swift */; };
+		EAB219931B9C6B8800ED9CF9 /* TenPairMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219841B9C6B8800ED9CF9 /* TenPairMenuBar.swift */; };
+		EAB219941B9C6B8800ED9CF9 /* TenPairMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219851B9C6B8800ED9CF9 /* TenPairMenuButton.swift */; };
+		EAB219951B9C6B8800ED9CF9 /* TenPairMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219861B9C6B8800ED9CF9 /* TenPairMenuScreen.swift */; };
+		EAB219961B9C6B8800ED9CF9 /* TenPairNumberPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219871B9C6B8800ED9CF9 /* TenPairNumberPathFinder.swift */; };
+		EAB219971B9C6B8800ED9CF9 /* TenPairNumbersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219881B9C6B8800ED9CF9 /* TenPairNumbersField.swift */; };
+		EAB219981B9C6B8800ED9CF9 /* TenPairNumberTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219891B9C6B8800ED9CF9 /* TenPairNumberTile.swift */; };
+		EAB219991B9C6B8800ED9CF9 /* TenPairPlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198A1B9C6B8800ED9CF9 /* TenPairPlayScreen.swift */; };
+		EAB2199A1B9C6B8800ED9CF9 /* TenPairTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198B1B9C6B8800ED9CF9 /* TenPairTheme.swift */; };
+		EAB2199B1B9C6B8800ED9CF9 /* TenPairWinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198C1B9C6B8800ED9CF9 /* TenPairWinScreen.swift */; };
+		EAB219AC1B9C6BE400ED9CF9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A21B9C6BE400ED9CF9 /* Game.swift */; };
+		EAB219AD1B9C6BE400ED9CF9 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A31B9C6BE400ED9CF9 /* GameButton.swift */; };
+		EAB219AE1B9C6BE400ED9CF9 /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A41B9C6BE400ED9CF9 /* GameLoadingView.swift */; };
+		EAB219AF1B9C6BE400ED9CF9 /* GameMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A51B9C6BE400ED9CF9 /* GameMenuButton.swift */; };
+		EAB219B01B9C6BE400ED9CF9 /* GameMenuPresentationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A61B9C6BE400ED9CF9 /* GameMenuPresentationContainer.swift */; };
+		EAB219B11B9C6BE400ED9CF9 /* GameMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A71B9C6BE400ED9CF9 /* GameMenuScreen.swift */; };
+		EAB219B21B9C6BE400ED9CF9 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A81B9C6BE400ED9CF9 /* GameScreen.swift */; };
+		EAB219B31B9C6BE400ED9CF9 /* GameScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A91B9C6BE400ED9CF9 /* GameScrollView.swift */; };
+		EAB219B41B9C6BE400ED9CF9 /* GameScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219AA1B9C6BE400ED9CF9 /* GameScrollViewContained.swift */; };
+		EAB219B51B9C6BE400ED9CF9 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219AB1B9C6BE400ED9CF9 /* GameView.swift */; };
+		EAB219B81B9C6C6300ED9CF9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB219B61B9C6C6300ED9CF9 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -401,7 +401,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" 1498b1e841189deded0a8957a47057c88a75503b 84939d122fb533ac07e3e9b3d0fb8601e68f89a868e9f5889891d1a6684b0d72";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1498b1e841189deded0a8957a47057c88a75503b 84939d122fb533ac07e3e9b3d0fb8601e68f89a868e9f5889891d1a6684b0d72";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -592,7 +592,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "519a6299-33be-497d-9ca4-a03b9349290a";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -611,7 +611,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "519a6299-33be-497d-9ca4-a03b9349290a";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
