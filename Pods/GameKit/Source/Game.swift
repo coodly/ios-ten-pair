@@ -20,17 +20,17 @@ import GLKit
 import MessageUI
 import UIKit
 
-extension SKNode {
-    func radians(degrees:Double) -> Double {
+public extension SKNode {
+    public func radians(degrees:Double) -> Double {
         return (degrees * M_PI) / 180.0
     }
 }
 
-class Game: SKScene, MFMailComposeViewControllerDelegate {
+public class Game: SKScene, MFMailComposeViewControllerDelegate {
     var tapRecognizer: UITapGestureRecognizer?
-    var controller: UIViewController?
+    public var controller: UIViewController?
     
-    func presentLoadingView(loadingScreen: GameLoadingView) {
+    public func presentLoadingView(loadingScreen: GameLoadingView) {
         presentModalView(loadingScreen)
     }
 
@@ -42,11 +42,11 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
         modalView.positionContent()
     }
     
-    func presentModalScreen(screen: GameScreen) {
+    public func presentModalScreen(screen: GameScreen) {
         showScreen(screen)
     }
     
-    func showScreen(screen: GameScreen) {
+    public func showScreen(screen: GameScreen) {
         addChild(screen)
         screen.game = self
         screen.size = size
@@ -55,7 +55,7 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
         screen.positionContent()
     }
     
-    override func update(currentTime: NSTimeInterval) {
+    public override func update(currentTime: NSTimeInterval) {
         for node in self.children {
             if !node.isKindOfClass(GameView) {
                 continue
@@ -66,7 +66,7 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
         }
     }
     
-    override func didChangeSize(oldSize: CGSize) {
+    public override func didChangeSize(oldSize: CGSize) {
         positionContent(oldSize)
     }
     
@@ -82,13 +82,13 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
         }
     }
     
-    override func didMoveToView(view: SKView) {
+    public override func didMoveToView(view: SKView) {
         let recognizer = UITapGestureRecognizer(target: self, action: Selector("tapped:"))
         tapRecognizer = recognizer
         view.addGestureRecognizer(recognizer)
     }
     
-    override func willMoveFromView(view: SKView) {
+    public override func willMoveFromView(view: SKView) {
         view.removeGestureRecognizer(tapRecognizer!)
     }
     
@@ -137,12 +137,12 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
         return nil
     }
     
-    func dismissScreen(screen: GameScreen) {
+    public func dismissScreen(screen: GameScreen) {
         screen.unloadContent()
         screen.removeFromParent()
     }
     
-    func sendEmail(email: String, subject: String = "") {
+    public func sendEmail(email: String, subject: String = "") {
         if !MFMailComposeViewController.canSendMail() {
             presentEmailConfigurationAlert()
             return
@@ -171,7 +171,7 @@ class Game: SKScene, MFMailComposeViewControllerDelegate {
         onController.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    public func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         if let _ = error {
             presentEmailSendErrorAlert(controller)
             return

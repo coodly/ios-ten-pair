@@ -17,6 +17,7 @@
 import Foundation
 import UIKit
 import SpriteKit
+import GameKit
 
 class TenPairLoadingScreen : GameLoadingView {
     var spinner: SKShapeNode?

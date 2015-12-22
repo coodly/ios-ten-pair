@@ -15,36 +15,7 @@
 */
 
 import Foundation
-import SpriteKit
 
-class GameView: SKSpriteNode {
+public class GameMenuButton: GameButton {
     
-    func loadContent() {
-        
-    }
-    
-    func unloadContent() {
-        
-    }
-    
-    func positionContent() {
-        for node in self.children {
-            if !node.isKindOfClass(GameView) {
-                continue
-            }
-            
-            let view = node as! GameView
-            view.positionContent()
-        }
-    }
-    
-    func update(time: NSTimeInterval) {
-    
-    }
-    
-    func addGameView(view: GameView) {
-        addChild(view)
-        view.anchorPoint = CGPointMake(0, 0)
-        view.loadContent()
-    }
 }

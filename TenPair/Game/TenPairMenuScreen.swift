@@ -17,6 +17,7 @@
 import Foundation
 import UIKit
 import SpriteKit
+import GameKit
 
 let AppStoreID = 837173458
 

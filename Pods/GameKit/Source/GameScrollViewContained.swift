@@ -15,9 +15,16 @@
 */
 
 import Foundation
-import SpriteKit
+import UIKit
 
-class GameButton : SKSpriteNode {
-    var action: SKAction?
-    var touchDisables = false
+public class GameScrollViewContained : GameView {
+    public var scrollView: GameScrollView?
+    
+    public func scrolledVisibleTo(visibleFrame: CGRect) {
+        
+    }
+    
+    public func presentationInsets() -> UIEdgeInsets {
+        return UIEdgeInsetsZero
+    }
 }

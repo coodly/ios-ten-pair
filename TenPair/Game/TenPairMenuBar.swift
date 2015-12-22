@@ -16,6 +16,7 @@
 
 import Foundation
 import SpriteKit
+import GameKit
 
 class TenPairMenuBar: GameView {
     var menuButton: GameButton?

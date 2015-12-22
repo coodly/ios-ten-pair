@@ -16,6 +16,6 @@
 
 import Foundation
 
-class GameMenuButton: GameButton {
-    
+public class GameLoadingView: GameScreen {
+
 }

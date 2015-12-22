@@ -1,0 +1,19 @@
+{
+  "name": "GameKit",
+  "version": "0.1.0",
+  "license": "Apache 2",
+  "summary": "Game kit on top of SpiteKit",
+  "homepage": "https://github.com/coodly/GameKit",
+  "authors": {
+    "Jaanus Siim": "jaanus@coodly.com"
+  },
+  "source": {
+    "git": "git@github.com:coodly/GameKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Source/*.swift",
+  "requires_arc": true
+}

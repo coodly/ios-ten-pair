@@ -18,13 +18,13 @@ import Foundation
 import SpriteKit
 import UIKit
 
-class GameScrollView: GameView, UIScrollViewDelegate {
+public class GameScrollView: GameView, UIScrollViewDelegate {
     var scrollView = UIScrollView(frame: CGRectZero)
     var presented: GameScrollViewContained?
-    var contentInset = UIEdgeInsetsZero
+    public var contentInset = UIEdgeInsetsZero
     var yCenterContent = false
     
-    override func loadContent() {
+    override public func loadContent() {
         name = "GameScrollView"
         scrollView.frame = scene!.view!.bounds
         scrollView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
@@ -34,7 +34,7 @@ class GameScrollView: GameView, UIScrollViewDelegate {
         scrollView.delegate = self
     }
     
-    func present(content: GameScrollViewContained) {
+    public func present(content: GameScrollViewContained) {
         addGameView(content)
 
         presented = content
@@ -44,13 +44,13 @@ class GameScrollView: GameView, UIScrollViewDelegate {
         positionPresentedNode()
     }
     
-    override func positionContent() {
+    override public func positionContent() {
         positionPresentedNode()
         
         super.positionContent()
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    public func scrollViewDidScroll(scrollView: UIScrollView) {
         positionPresentedNode()
     }
     
@@ -80,7 +80,7 @@ class GameScrollView: GameView, UIScrollViewDelegate {
         presented!.runAction(sequence)
     }
     
-    func contentSizeChanged() {
+    public func contentSizeChanged() {
         scrollView.contentSize = presented!.size
         
         var insets = contentInset
@@ -102,7 +102,7 @@ class GameScrollView: GameView, UIScrollViewDelegate {
         positionPresentedNode()
     }
     
-    func translatePointToContent(point: CGPoint) -> CGPoint {
+    public func translatePointToContent(point: CGPoint) -> CGPoint {
         return presented!.convertPoint(point, fromNode: parent!)
     }
 }

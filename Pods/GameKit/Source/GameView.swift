@@ -16,18 +16,35 @@
 
 import Foundation
 import SpriteKit
-import GameKit
 
-class TenPairMenuButton: GameMenuButton {
-    var titleFontSize:  CGFloat = 20
+public class GameView: SKSpriteNode {
     
-    func setTitle(title: String) {
-        name = "TenPairMenuButton"
-        let label = SKLabelNode(fontNamed: "Copperplate-Bold")
-        label.text = title
-        label.fontSize = titleFontSize
-        label.fontColor = TenPairTheme.currentTheme.menuTitleColor!
-        label.position = CGPointMake(size.width / 2, (size.height - label.frame.size.height) / 2)
-        addChild(label)
+    public func loadContent() {
+        
+    }
+    
+    func unloadContent() {
+        
+    }
+    
+    public func positionContent() {
+        for node in self.children {
+            if !node.isKindOfClass(GameView) {
+                continue
+            }
+            
+            let view = node as! GameView
+            view.positionContent()
+        }
+    }
+    
+    public func update(time: NSTimeInterval) {
+    
+    }
+    
+    public func addGameView(view: GameView) {
+        addChild(view)
+        view.anchorPoint = CGPointMake(0, 0)
+        view.loadContent()
     }
 }

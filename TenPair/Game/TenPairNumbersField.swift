@@ -17,6 +17,7 @@
 import Foundation
 import SpriteKit
 import UIKit
+import GameKit
 
 let TenPairColumns: Int = 9
 let TenPairRowHideTime: NSTimeInterval = 0.3

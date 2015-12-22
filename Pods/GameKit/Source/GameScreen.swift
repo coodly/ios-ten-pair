@@ -17,14 +17,10 @@
 import Foundation
 import UIKit
 
-class GameScrollViewContained : GameView {
-    var scrollView: GameScrollView?
+public class GameScreen: GameView {
+    public var game: Game?
     
-    func scrolledVisibleTo(visibleFrame: CGRect) {
-        
-    }
-    
-    func presentationInsets() -> UIEdgeInsets {
-        return UIEdgeInsetsZero
+    public func handleTapAt(point: CGPoint) {
+        print("handleTapAt:\(point)")
     }
 }

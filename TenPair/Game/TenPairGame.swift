@@ -16,6 +16,7 @@
 
 import Foundation
 import UIKit
+import GameKit
 
 class TenPairGame : Game {
     let playScreen = TenPairPlayScreen()

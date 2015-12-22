@@ -15,12 +15,9 @@
 */
 
 import Foundation
-import UIKit
+import SpriteKit
 
-class GameScreen: GameView {
-    var game: Game?
-    
-    func handleTapAt(point: CGPoint) {
-        print("handleTapAt:\(point)")
-    }
+public class GameButton : SKSpriteNode {
+    public var action: SKAction?
+    public var touchDisables = false
 }

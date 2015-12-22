@@ -30,16 +30,6 @@
 		EAB219991B9C6B8800ED9CF9 /* TenPairPlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198A1B9C6B8800ED9CF9 /* TenPairPlayScreen.swift */; };
 		EAB2199A1B9C6B8800ED9CF9 /* TenPairTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198B1B9C6B8800ED9CF9 /* TenPairTheme.swift */; };
 		EAB2199B1B9C6B8800ED9CF9 /* TenPairWinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198C1B9C6B8800ED9CF9 /* TenPairWinScreen.swift */; };
-		EAB219AC1B9C6BE400ED9CF9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A21B9C6BE400ED9CF9 /* Game.swift */; };
-		EAB219AD1B9C6BE400ED9CF9 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A31B9C6BE400ED9CF9 /* GameButton.swift */; };
-		EAB219AE1B9C6BE400ED9CF9 /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A41B9C6BE400ED9CF9 /* GameLoadingView.swift */; };
-		EAB219AF1B9C6BE400ED9CF9 /* GameMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A51B9C6BE400ED9CF9 /* GameMenuButton.swift */; };
-		EAB219B01B9C6BE400ED9CF9 /* GameMenuPresentationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A61B9C6BE400ED9CF9 /* GameMenuPresentationContainer.swift */; };
-		EAB219B11B9C6BE400ED9CF9 /* GameMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A71B9C6BE400ED9CF9 /* GameMenuScreen.swift */; };
-		EAB219B21B9C6BE400ED9CF9 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A81B9C6BE400ED9CF9 /* GameScreen.swift */; };
-		EAB219B31B9C6BE400ED9CF9 /* GameScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219A91B9C6BE400ED9CF9 /* GameScrollView.swift */; };
-		EAB219B41B9C6BE400ED9CF9 /* GameScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219AA1B9C6BE400ED9CF9 /* GameScrollViewContained.swift */; };
-		EAB219B51B9C6BE400ED9CF9 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219AB1B9C6BE400ED9CF9 /* GameView.swift */; };
 		EAB219B81B9C6C6300ED9CF9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB219B61B9C6C6300ED9CF9 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
@@ -83,16 +73,6 @@
 		EAB2198A1B9C6B8800ED9CF9 /* TenPairPlayScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairPlayScreen.swift; sourceTree = "<group>"; };
 		EAB2198B1B9C6B8800ED9CF9 /* TenPairTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairTheme.swift; sourceTree = "<group>"; };
 		EAB2198C1B9C6B8800ED9CF9 /* TenPairWinScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairWinScreen.swift; sourceTree = "<group>"; };
-		EAB219A21B9C6BE400ED9CF9 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		EAB219A31B9C6BE400ED9CF9 /* GameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
-		EAB219A41B9C6BE400ED9CF9 /* GameLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLoadingView.swift; sourceTree = "<group>"; };
-		EAB219A51B9C6BE400ED9CF9 /* GameMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuButton.swift; sourceTree = "<group>"; };
-		EAB219A61B9C6BE400ED9CF9 /* GameMenuPresentationContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuPresentationContainer.swift; sourceTree = "<group>"; };
-		EAB219A71B9C6BE400ED9CF9 /* GameMenuScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuScreen.swift; sourceTree = "<group>"; };
-		EAB219A81B9C6BE400ED9CF9 /* GameScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
-		EAB219A91B9C6BE400ED9CF9 /* GameScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScrollView.swift; sourceTree = "<group>"; };
-		EAB219AA1B9C6BE400ED9CF9 /* GameScrollViewContained.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScrollViewContained.swift; sourceTree = "<group>"; };
-		EAB219AB1B9C6BE400ED9CF9 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		EAB219B71B9C6C6300ED9CF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,7 +132,6 @@
 		EA02FA851B9C6AA400B93D23 = {
 			isa = PBXGroup;
 			children = (
-				EAB219A11B9C6BE400ED9CF9 /* CDYGameKit */,
 				EA02FA901B9C6AA400B93D23 /* TenPair */,
 				EA02FAA91B9C6AA400B93D23 /* TenPairTests */,
 				EA02FA8F1B9C6AA400B93D23 /* Products */,
@@ -222,23 +201,6 @@
 				EA02FA971B9C6AA400B93D23 /* GameViewController.swift */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		EAB219A11B9C6BE400ED9CF9 /* CDYGameKit */ = {
-			isa = PBXGroup;
-			children = (
-				EAB219A21B9C6BE400ED9CF9 /* Game.swift */,
-				EAB219A31B9C6BE400ED9CF9 /* GameButton.swift */,
-				EAB219A41B9C6BE400ED9CF9 /* GameLoadingView.swift */,
-				EAB219A51B9C6BE400ED9CF9 /* GameMenuButton.swift */,
-				EAB219A61B9C6BE400ED9CF9 /* GameMenuPresentationContainer.swift */,
-				EAB219A71B9C6BE400ED9CF9 /* GameMenuScreen.swift */,
-				EAB219A81B9C6BE400ED9CF9 /* GameScreen.swift */,
-				EAB219A91B9C6BE400ED9CF9 /* GameScrollView.swift */,
-				EAB219AA1B9C6BE400ED9CF9 /* GameScrollViewContained.swift */,
-				EAB219AB1B9C6BE400ED9CF9 /* GameView.swift */,
-			);
-			path = CDYGameKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,32 +373,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB219901B9C6B8800ED9CF9 /* TenPairFieldStatus.swift in Sources */,
-				EAB219B31B9C6BE400ED9CF9 /* GameScrollView.swift in Sources */,
-				EAB219AC1B9C6BE400ED9CF9 /* Game.swift in Sources */,
-				EAB219B41B9C6BE400ED9CF9 /* GameScrollViewContained.swift in Sources */,
 				EAB219911B9C6B8800ED9CF9 /* TenPairGame.swift in Sources */,
-				EAB219AE1B9C6BE400ED9CF9 /* GameLoadingView.swift in Sources */,
 				EAB219981B9C6B8800ED9CF9 /* TenPairNumberTile.swift in Sources */,
 				EAB2199A1B9C6B8800ED9CF9 /* TenPairTheme.swift in Sources */,
 				EAB219941B9C6B8800ED9CF9 /* TenPairMenuButton.swift in Sources */,
 				EAB2199B1B9C6B8800ED9CF9 /* TenPairWinScreen.swift in Sources */,
 				EA02FA981B9C6AA400B93D23 /* GameViewController.swift in Sources */,
-				EAB219B11B9C6BE400ED9CF9 /* GameMenuScreen.swift in Sources */,
 				EAB219971B9C6B8800ED9CF9 /* TenPairNumbersField.swift in Sources */,
-				EAB219B51B9C6BE400ED9CF9 /* GameView.swift in Sources */,
 				EA02FA921B9C6AA400B93D23 /* AppDelegate.swift in Sources */,
 				EAB2198D1B9C6B8800ED9CF9 /* TenPairDefaultTheme.swift in Sources */,
-				EAB219B21B9C6BE400ED9CF9 /* GameScreen.swift in Sources */,
 				EAB2198E1B9C6B8800ED9CF9 /* TenPairEmptyLinesSearch.swift in Sources */,
-				EAB219AD1B9C6BE400ED9CF9 /* GameButton.swift in Sources */,
 				EAB219951B9C6B8800ED9CF9 /* TenPairMenuScreen.swift in Sources */,
 				EAB219921B9C6B8800ED9CF9 /* TenPairLoadingScreen.swift in Sources */,
 				EAB219961B9C6B8800ED9CF9 /* TenPairNumberPathFinder.swift in Sources */,
 				EAB2198F1B9C6B8800ED9CF9 /* TenPairFieldBackground.swift in Sources */,
-				EAB219B01B9C6BE400ED9CF9 /* GameMenuPresentationContainer.swift in Sources */,
 				EAB219931B9C6B8800ED9CF9 /* TenPairMenuBar.swift in Sources */,
 				EAB219991B9C6B8800ED9CF9 /* TenPairPlayScreen.swift in Sources */,
-				EAB219AF1B9C6BE400ED9CF9 /* GameMenuButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
