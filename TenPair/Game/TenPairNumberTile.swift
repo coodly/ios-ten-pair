@@ -90,7 +90,6 @@ class TenPairNumberTile: SKSpriteNode {
         
         let rect = string.boundingRectWithSize(CGSizeMake(1000, 1000), options: NSStringDrawingOptions.TruncatesLastVisibleLine, context: nil)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
-        let context = UIGraphicsGetCurrentContext()
         string.drawInRect(rect)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()

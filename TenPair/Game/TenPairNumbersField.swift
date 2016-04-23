@@ -378,7 +378,6 @@ class TenPairNumbersField: GameScrollViewContained {
         let column = CGFloat(index % TenPairColumns)
         let row = CGFloat(index / TenPairColumns)
         let position = CGPointMake(column * tileSize.width, size.height - tileSize.height - row * tileSize.height)
-        let probe = CGPointMake(position.x + tileSize.width / 2, position.y + tileSize.height / 2)
         var tile: TenPairNumberTile
         let number = presentedNumbers[index]
 
@@ -450,7 +449,7 @@ class TenPairNumbersField: GameScrollViewContained {
     
     func restartGame() {
         lastHandledVisible = CGRectZero
-        for (key, value) in tilesInUse {
+        for (_, value) in tilesInUse {
             let tile = value as TenPairNumberTile
             tile.runAction(TenPairHideTileAction)
             reusableTiles.append(tile)

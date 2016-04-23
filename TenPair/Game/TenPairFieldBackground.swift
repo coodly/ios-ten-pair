@@ -30,7 +30,7 @@ class TenPairFieldBackground: SKShapeNode {
     
     private func updateVerticalLines(totalSize: CGSize, tileSize: CGSize) {
         if verticalLines.count == 0 {
-            for index in 0...8 {
+            for _ in 0...8 {
                 let line = createLine()
                 
                 verticalLines.append(line)
