@@ -48,7 +48,7 @@ class TenPairEmptyLinesSearch {
             return false
         }
         
-        for var check = 0; check < NumbersFieldWidth; check++ {
+        for check in 0..<NumbersFieldWidth {
             let checked = field[check + index]
             if checked != 0 {
                 return false
