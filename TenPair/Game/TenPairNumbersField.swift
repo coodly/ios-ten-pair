@@ -26,7 +26,7 @@ let TenPairUnhideTileAction = SKAction.unhide()
 let TenPairRemoveTileAction = SKAction.removeFromParent()
 
 class TenPairNumbersField: GameScrollViewContained {
-    var presentedNumbers: [Int] = []
+    var presentedNumbers = [Int]()
     var tileSize = CGSizeZero
     var selectedTile: TenPairNumberTile?
     var selectedIndex: Int = -1
@@ -191,7 +191,7 @@ class TenPairNumbersField: GameScrollViewContained {
             let removeStart = line * TenPairColumns
             let removeEnd = removeStart + TenPairColumns
             presentedNumbers.removeRange(Range(start: removeStart, end: removeEnd))
-            for var index = removeStart; index < removeEnd; index++ {
+            for index in removeStart..<removeEnd {
                 if let tile = tilesInUse.removeValueForKey(index) {
                     tile.runAction(TenPairRemoveTileAction)
                 }
@@ -216,8 +216,8 @@ class TenPairNumbersField: GameScrollViewContained {
     func reindexTilesStaringFrom(reindexStart: Int) {
         var indexes = Array(tilesInUse.keys)
         indexes.sortInPlace()
-        let maxIndex = indexes.last
-        for var index = reindexStart; index <= maxIndex; index++ {
+        let maxIndex = indexes.last!
+        for index in reindexStart...maxIndex {
             if let tile = tilesInUse.removeValueForKey(index) {
                 tilesInUse[index - TenPairColumns] = tile
             }
@@ -361,7 +361,7 @@ class TenPairNumbersField: GameScrollViewContained {
         let topY = size.height - (visible.origin.y + visible.size.height)
         let topLine = lineForY(topY)
         let startIndex = topLine * TenPairColumns
-        for var index = startIndex; index < presentedNumbers.count; index++ {
+        for index in startIndex..<presentedNumbers.count {
             let tileFrame = probeTileForIndex(index, animated:animated)
             let tileTop = tileFrame.origin.y + tileFrame.size.height
             if tileTop < visible.origin.y {
