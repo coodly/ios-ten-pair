@@ -190,8 +190,9 @@ class TenPairNumbersField: GameScrollViewContained {
         for line in lines {
             let removeStart = line * TenPairColumns
             let removeEnd = removeStart + TenPairColumns
-            presentedNumbers.removeRange(Range(start: removeStart, end: removeEnd))
-            for index in removeStart..<removeEnd {
+            let removed = removeStart..<removeEnd
+            presentedNumbers.removeRange(removed)
+            for index in removed {
                 if let tile = tilesInUse.removeValueForKey(index) {
                     tile.runAction(TenPairRemoveTileAction)
                 }
