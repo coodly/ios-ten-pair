@@ -34,30 +34,21 @@ class TenPairNumberPathFinder {
             return true
         }
         
-        if onSameHorisontalLine(first, secondIndex: second) {
-            for var index = first + 1; index < second; index++ {
-                let checked = inField[index]
-                if checked != 0 {
-                    return false
-                }
-            }
-            
-            return true
-        }
-        
         if onSameVerticalLine(first, secondIndex: second) {
-            for var index = first + columns; index < second; index += columns {
+            var index = first + columns
+            while index < second {
                 let checked = inField[index]
                 
                 if checked != 0 {
                     return false
                 }
+                
+                index += columns
             }
-            
             return true
         }
-        
-        for var index = first + 1; index < second; index++ {
+
+        for index in (first + 1)..<second {
             let check = inField[index]
             
             if check != 0 {
@@ -72,11 +63,5 @@ class TenPairNumberPathFinder {
         let firstMod = firstIndex % columns
         let secondMod = secondIndex % columns
         return firstMod == secondMod
-    }
-
-    class func onSameHorisontalLine(firstIndex: Int, secondIndex: Int) -> Bool {
-        let lineOne = firstIndex / columns
-        let lineTwo = secondIndex / columns
-        return lineOne == lineTwo
     }
 }
