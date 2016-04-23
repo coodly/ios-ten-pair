@@ -16,16 +16,14 @@
 
 import UIKit
 import SpriteKit
-import iAd
 
 let TenPairSaveDataKey = "NumbersGameSaveDataKey"
 
-class GameViewController: UIViewController, ADBannerViewDelegate {
+class GameViewController: UIViewController {
     @IBOutlet var gameView: SKView!
     @IBOutlet var adContainerView: UIView!
     @IBOutlet var adContainerHeightConstraint: NSLayoutConstraint!
     
-    var banner: ADBannerView?
     var scene : TenPairGame?
 
     override func viewDidLoad() {
@@ -36,11 +34,6 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
 
     override func shouldAutorotate() -> Bool {
         return true
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
     }
 
     override func prefersStatusBarHidden() -> Bool {
@@ -70,43 +63,12 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
         gameScene.startGame()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        loadAd()
-    }
-    
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             return UIInterfaceOrientationMask.All
         } else {
             return UIInterfaceOrientationMask.Portrait
         }
-    }
-    
-    func loadAd() {
-        if let banner = self.banner {
-            return
-        }
-        
-        let adBanner = ADBannerView(adType: ADAdType.Banner)
-        self.banner = adBanner
-        adBanner.delegate = self
-        adBanner.autoresizingMask = [UIViewAutoresizing.FlexibleLeftMargin, UIViewAutoresizing.FlexibleTopMargin, UIViewAutoresizing.FlexibleRightMargin, UIViewAutoresizing.FlexibleBottomMargin]
-        adContainerView.addSubview(adBanner)
-    }
-    
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        banner.center = CGPointMake(CGRectGetWidth(adContainerView.frame) / 2, CGRectGetHeight(adContainerView.frame) / 2)
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.adContainerHeightConstraint.constant = CGRectGetHeight(banner.frame)
-            self.view.layoutIfNeeded()
-        })
-    }
-    
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.adContainerHeightConstraint.constant = 0
-            self.view.layoutIfNeeded()
-        })
     }
     
     func saveField() {
