@@ -218,6 +218,11 @@ class TenPairNumbersField: GameScrollViewContained {
         var indexes = Array(tilesInUse.keys)
         indexes.sortInPlace()
         let maxIndex = indexes.last!
+        
+        if maxIndex < reindexStart {
+            return
+        }
+        
         for index in reindexStart...maxIndex {
             if let tile = tilesInUse.removeValueForKey(index) {
                 tilesInUse[index - TenPairColumns] = tile
