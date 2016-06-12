@@ -23,7 +23,7 @@ class TenPairNumberTile: SKSpriteNode {
     var backgroundNode: SKSpriteNode?
     
     struct Cache {
-        static var imagesCache = Dictionary<Int, SKTexture>()
+        static var imagesCache = [String: SKTexture]()
     }
     
     func defaultPresentaton() {
@@ -70,12 +70,13 @@ class TenPairNumberTile: SKSpriteNode {
     }
     
     func spriteForNumber(number: Int) -> SKSpriteNode {
+        let imageKey = "\(size.width)-\(number)"
         var numberImage: SKTexture
-        if let image = Cache.imagesCache[number] {
+        if let image = Cache.imagesCache[imageKey] {
             numberImage = image
         } else {
             numberImage = renderImageWithNumber(number, fontSize:size.height * 0.75)
-            Cache.imagesCache[number] = numberImage
+            Cache.imagesCache[imageKey] = numberImage
         }
                 
         let sprite = SKSpriteNode(texture: numberImage)
