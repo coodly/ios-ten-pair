@@ -176,7 +176,7 @@ class TenPairNumbersField: GameScrollViewContained {
             self.selectedIndex = -1
             self.presentedNumbers[atIndexOne] = 0
             self.presentedNumbers[atIndexTwo] = 0
-            let lines = TenPairEmptyLinesSearch.emptyLinesWithCheckPoints([atIndexOne, atIndexTwo], field: self.presentedNumbers)
+            let lines = TenPairEmptyLinesSearch.emptyRangesWithCheckPoints([atIndexOne, atIndexTwo], field: self.presentedNumbers)
             if lines.count > 0 {
                 self.executeRemovingLines(lines)
             } else {
@@ -194,14 +194,9 @@ class TenPairNumbersField: GameScrollViewContained {
         two.backgroundNode!.runAction(secondSequence)
     }
     
-    func executeRemovingLines(lins: [Int]) {
-        var lines = lins
-        lines.sortInPlace()
-        lines = Array(lines.reverse())
-        for line in lines {
-            let removeStart = line * NumberOfColumns
-            let removeEnd = removeStart + NumberOfColumns
-            let removed = removeStart..<removeEnd
+    func executeRemovingLines(lins: [Range<Int>]) {
+        let lines = lins.sort({ $0.startIndex > $1.startIndex })
+        for removed in lines {
             presentedNumbers.removeRange(removed)
             for index in removed {
                 if let tile = tilesInUse.removeValueForKey(index) {
@@ -209,7 +204,7 @@ class TenPairNumbersField: GameScrollViewContained {
                 }
             }
             
-            reindexTilesStaringFrom(removeEnd)
+            reindexTilesStaringFrom(removed.endIndex)
         }
         
         fieldStatus!.addToLines(-lines.count)
@@ -378,6 +373,11 @@ class TenPairNumbersField: GameScrollViewContained {
         let topY = size.height - (visible.origin.y + visible.size.height)
         let topLine = lineForY(topY)
         let startIndex = topLine * NumberOfColumns
+        
+        guard presentedNumbers.count > startIndex else {
+            return
+        }
+        
         for index in startIndex..<presentedNumbers.count {
             let tileFrame = probeTileForIndex(index, animated:animated)
             let tileTop = tileFrame.origin.y + tileFrame.size.height
