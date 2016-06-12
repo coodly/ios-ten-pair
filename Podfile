@@ -14,8 +14,10 @@ def remote_coodly
 end
 
 def pods
-    pod 'Fabric'
-    pod 'Crashlytics'
+    pod 'Fabric', '1.6.7'
+    pod 'Crashlytics', '3.7.1'
+    pod 'Firebase/Core', '3.2.1'
+    pod 'Firebase/AdMob', '3.2.1'
 
     remote_coodly
     #local_coodly

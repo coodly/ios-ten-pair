@@ -17,6 +17,7 @@
 import UIKit
 import SpriteKit
 import SWLogger
+import GoogleMobileAds
 
 let TenPairSaveDataKey = "NumbersGameSaveDataKey"
 
@@ -24,6 +25,7 @@ class GameViewController: UIViewController {
     @IBOutlet var gameView: SKView!
     @IBOutlet var adContainerView: UIView!
     @IBOutlet var adContainerHeightConstraint: NSLayoutConstraint!
+    private var bannerView: GADBannerView!
     
     var scene : TenPairGame?
 
@@ -31,6 +33,13 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         adContainerHeightConstraint.constant = 0
+        
+        bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        bannerView.adUnitID = AdMobAdUnit
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        bannerView.autoresizingMask = [.FlexibleTopMargin, .FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleBottomMargin]
+        adContainerView.addSubview(bannerView)
     }
 
     override func shouldAutorotate() -> Bool {
@@ -80,4 +89,34 @@ class GameViewController: UIViewController {
         defaults.setObject(numbers, forKey: TenPairSaveDataKey)
         defaults.synchronize()
     }
+}
+
+extension GameViewController: GADBannerViewDelegate {
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID, "466da0f45d3a5e55de0e1b150016b580"]
+        bannerView.loadRequest(request)
+    }
+    
+    func adViewDidReceiveAd(bannerView: GADBannerView!) {
+        Log.debug("adViewDidReceiveAd: \(bannerView.frame)")
+        bannerView.center = CGPointMake(view.frame.width / 2, bannerView.frame.height / 2)
+        UIView.animateWithDuration(0.3) {
+            self.adContainerHeightConstraint.constant = bannerView.frame.height
+        }
+    }
+    
+    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+        Log.error("didFailToReceiveAdWithError: \(error)")
+        if adContainerHeightConstraint.constant == 0 {
+            return
+        }
+        
+        UIView.animateWithDuration(0.3) {
+            self.adContainerHeightConstraint.constant = 0
+        }
+    }
+    
 }

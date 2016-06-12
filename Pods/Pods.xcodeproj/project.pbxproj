@@ -7,34 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07BD7856DD64AD663238492EBCBA2317 /* GameKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 031BBA31E350220CF6BDCA23EE36D150 /* GameKit-dummy.m */; };
-		0BB6279FE42009FC6B9A53E4E6B3F147 /* SWLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 296A6FEEF14E9361973B7EBDD9E118B2 /* SWLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		126687B3FC4FF0D77A1259874224C1DA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E039CEB0A41C3556F01566C163AB7 /* GameView.swift */; };
+		07BD7856DD64AD663238492EBCBA2317 /* GameKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4894721CB4AFFAF2F8945C6471AB046 /* GameKit-dummy.m */; };
+		0BB6279FE42009FC6B9A53E4E6B3F147 /* SWLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F46F3FF1392CCDF9674A1869BD8BCFA /* SWLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		126687B3FC4FF0D77A1259874224C1DA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D2227226733C569E276F6A1BC807F8 /* GameView.swift */; };
 		127E5CB50CB344D2DE15F9255B1B3D6E /* Pods-TenPairTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DAA5EDA8A5AC04D058CBCC568C137311 /* Pods-TenPairTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AD58DB488E7BD076A038AC5A564B845 /* Pods-TenPair-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB74BF330C44923591EF1385EDB1603E /* Pods-TenPair-dummy.m */; };
-		1EF21432BFB6D2F777A4819B2C3BDF85 /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60E7DA5B52839B76261F5D1DC7C0AF /* ConsoleOutput.swift */; };
-		29930A0235C1CE936FD7436F3D90F839 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85953EA0BFE47A3BD175C21CE8D3CC3E /* GameScreen.swift */; };
-		2EB90CAD18DF4E1ADF3FCB2384BA1D01 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B49118712E77A3B92E734B395130A6 /* Logger.swift */; };
+		1EF21432BFB6D2F777A4819B2C3BDF85 /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088118BE86F06777E9C1DA0E16E2049E /* ConsoleOutput.swift */; };
+		29930A0235C1CE936FD7436F3D90F839 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4EC15A53883FFF7F0E889C04BD3A3 /* GameScreen.swift */; };
+		2EB90CAD18DF4E1ADF3FCB2384BA1D01 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1D3D2CC30D5B27B813A608ED8E4CB3 /* Logger.swift */; };
 		319D737DD5AFB6FF4BAD5B22E3B77CE3 /* Pods-TenPairTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72354D52EC2355BEB8753A1ABDCE93D2 /* Pods-TenPairTests-dummy.m */; };
-		42BE9F4321F210319E76EDF2D75FD3FD /* ShakeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FCA2EA6B7FE67FDEAEEE4613DA8B08 /* ShakeWindow.swift */; };
-		452683F805F383C0E090977DFFC07455 /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28EF4B8E58EBAD433E3C9A917A1EB3 /* FileOutput.swift */; };
-		4DDB77AC79A66D846AFFB4A344CC43E9 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF9631118CEAED00E23C9992764CF1 /* GameButton.swift */; };
-		6F6DBE8DFAD9C3699260039466887E7B /* GameMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F8CCB1EC4E4BF51AF0239F71132A3 /* GameMenuScreen.swift */; };
-		74DE2AEF712DBFE0F6101A2229DFB346 /* GameMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6911BD26128EE32E85F2F86AE34B35 /* GameMenuButton.swift */; };
-		877D2D83BDE90A08475042877E58B8B9 /* GameScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB897106AB8CA4CB8CF59679719C71 /* GameScrollView.swift */; };
-		98DA1115FE851BDBA3996F55861D64A2 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A8E0E83BFA1686DA9225E50E1BE603 /* Log.swift */; };
+		42BE9F4321F210319E76EDF2D75FD3FD /* ShakeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB27D86E657F982EDD9FB0A52B5E7F /* ShakeWindow.swift */; };
+		452683F805F383C0E090977DFFC07455 /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9946D2A387D9E4C71E12CC7B897691 /* FileOutput.swift */; };
+		4DDB77AC79A66D846AFFB4A344CC43E9 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822265B29DC836DF4C18DE5FE627BD86 /* GameButton.swift */; };
+		6F6DBE8DFAD9C3699260039466887E7B /* GameMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25729D484467A7D883403E39018DCC9D /* GameMenuScreen.swift */; };
+		74DE2AEF712DBFE0F6101A2229DFB346 /* GameMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157646369925188D10497BCB7F60004 /* GameMenuButton.swift */; };
+		877D2D83BDE90A08475042877E58B8B9 /* GameScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C42DC329664454CF6408DDE0E21C8 /* GameScrollView.swift */; };
+		98DA1115FE851BDBA3996F55861D64A2 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC76DDDBC5ABF6135BE0AE69ACF2ABE /* Log.swift */; };
 		9DD8AFB60AA764EFAC1F3E7AD02250F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		B5DCA0E9CEC79881445931661DB6A431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		B9EE4A65F9CBA05EB8B7BA5529445793 /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CAC3C2B4719E3CD66EF941C7FF24FF /* LogOutput.swift */; };
+		B9EE4A65F9CBA05EB8B7BA5529445793 /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921E799F38190A2D1C37C4D56273169 /* LogOutput.swift */; };
 		CD36CB7A9C4CDBE7C32AAA8112C0857A /* Pods-TenPair-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 600945F2396D212AD524A0094E212B6E /* Pods-TenPair-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF8DF8698A53158C41E10965FCEB2E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		D03D5B3A6A99D28DF1BFAD7594568598 /* GameMenuPresentationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD2F26B9B2302E85D6D07E2C4A51A45 /* GameMenuPresentationContainer.swift */; };
-		E5DDE5C8DE7F0DD7039E022FEF38CB63 /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E153D602ECF2AEF911BFEDD2FFB3 /* GameLoadingView.swift */; };
+		D03D5B3A6A99D28DF1BFAD7594568598 /* GameMenuPresentationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD377A64D6DB2F8622FA86665AF9F1B /* GameMenuPresentationContainer.swift */; };
+		E5DDE5C8DE7F0DD7039E022FEF38CB63 /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C1D26A46EF3EEB9B319559441D032 /* GameLoadingView.swift */; };
 		EB50D5EF294FEF0F9B17F192140E57B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		F191AB56352D1887984A14E5CDC761D7 /* SWLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 71777BEE24D0352677E5E648EBAB15CB /* SWLogger-dummy.m */; };
-		F7459ACB4F6531A7060BDD140E20DAF7 /* GameKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F939F8D8B7D6163CCF2270C1970ACBE /* GameKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F93FAF5945EFA922ECE116B5BCE96678 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED873B388C67D8E1773104FE1CD07AC /* Game.swift */; };
-		FFA34695483AA8253B08EF0665264F43 /* GameScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E844AEFACC2AE6FBB04BEA8F62C93F /* GameScrollViewContained.swift */; };
+		F191AB56352D1887984A14E5CDC761D7 /* SWLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A573F4C36E6AC091A923FA849C63C6BA /* SWLogger-dummy.m */; };
+		F7459ACB4F6531A7060BDD140E20DAF7 /* GameKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4658FB75BEB157551746EACC688287 /* GameKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F93FAF5945EFA922ECE116B5BCE96678 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55C27A2D8AD1D7C6B7A91CC8B49C8 /* Game.swift */; };
+		FFA34695483AA8253B08EF0665264F43 /* GameScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68257CD5DF331107D12BC4CE15C649 /* GameScrollViewContained.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,68 +69,76 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		031BBA31E350220CF6BDCA23EE36D150 /* GameKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GameKit-dummy.m"; sourceTree = "<group>"; };
-		049F8CCB1EC4E4BF51AF0239F71132A3 /* GameMenuScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuScreen.swift; path = Source/GameMenuScreen.swift; sourceTree = "<group>"; };
+		05A4EC15A53883FFF7F0E889C04BD3A3 /* GameScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScreen.swift; path = Source/GameScreen.swift; sourceTree = "<group>"; };
+		07A9DB2C7389B78169EE1DF4008B9538 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		088118BE86F06777E9C1DA0E16E2049E /* ConsoleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleOutput.swift; path = Source/ConsoleOutput.swift; sourceTree = "<group>"; };
 		0967418BCAD7732B980514FB95164D30 /* Pods-TenPair-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPair-frameworks.sh"; sourceTree = "<group>"; };
-		0D6911BD26128EE32E85F2F86AE34B35 /* GameMenuButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuButton.swift; path = Source/GameMenuButton.swift; sourceTree = "<group>"; };
-		0F939F8D8B7D6163CCF2270C1970ACBE /* GameKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-umbrella.h"; sourceTree = "<group>"; };
-		11B0D8E98CDF94CD56856F95B6178FAA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11B1CBBAA605F504775C697FE7CC7913 /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
-		1227D453E64EEA846CD9395546E8F3AD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		0B1D3D2CC30D5B27B813A608ED8E4CB3 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
+		0F0356618574004D045B307E0347D5D5 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		0F46F3FF1392CCDF9674A1869BD8BCFA /* SWLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-umbrella.h"; sourceTree = "<group>"; };
 		165D5E8637D9823BA1407F21A74381F6 /* Pods-TenPair.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TenPair.modulemap"; sourceTree = "<group>"; };
+		1B7AECE6E33F44DF70C9C5C87074EA10 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
+		208C42DC329664454CF6408DDE0E21C8 /* GameScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollView.swift; path = Source/GameScrollView.swift; sourceTree = "<group>"; };
 		226A6964106D863224E15FF4AC9104C5 /* Pods_TenPairTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPairTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		228204CA7677CA30337AF4E47EE178D6 /* Pods_TenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		296A6FEEF14E9361973B7EBDD9E118B2 /* SWLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-umbrella.h"; sourceTree = "<group>"; };
+		23C789AFA4B8EDB85D04D11CB7FD3C05 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
+		25729D484467A7D883403E39018DCC9D /* GameMenuScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuScreen.swift; path = Source/GameMenuScreen.swift; sourceTree = "<group>"; };
 		3656C3FC725DE4E7105DDDFBDD70D716 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		369FF642D79042A92D32DD09F4F2B69F /* Pods-TenPair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPair.debug.xcconfig"; sourceTree = "<group>"; };
 		37598DE9350CC0F13047EA3E44F8F4D1 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E63031FF821004C04243113BEC4540D /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
 		42897027F3D1AF09ABEABD46D2725988 /* Pods-TenPairTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPairTests-frameworks.sh"; sourceTree = "<group>"; };
-		44AB897106AB8CA4CB8CF59679719C71 /* GameScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollView.swift; path = Source/GameScrollView.swift; sourceTree = "<group>"; };
-		4ED873B388C67D8E1773104FE1CD07AC /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Source/Game.swift; sourceTree = "<group>"; };
-		5529EE45A2F5F8A712F8642229641D63 /* SWLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SWLogger.modulemap; sourceTree = "<group>"; };
-		58F34F69584CB6D7BB90F7F88F33B4AA /* SWLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-prefix.pch"; sourceTree = "<group>"; };
-		59B6E153D602ECF2AEF911BFEDD2FFB3 /* GameLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameLoadingView.swift; path = Source/GameLoadingView.swift; sourceTree = "<group>"; };
-		5D1B328C2C1B6173C41EF9D58031038F /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
+		4A00B8B8CB37086BA1910053E20EAB47 /* SWLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-prefix.pch"; sourceTree = "<group>"; };
+		4B73334AA73027A4AD83C1B436E580CF /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
+		50D55C27A2D8AD1D7C6B7A91CC8B49C8 /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Source/Game.swift; sourceTree = "<group>"; };
+		51E96F2D27F599DFD373D5400465A242 /* GameKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GameKit.xcconfig; sourceTree = "<group>"; };
+		53324F22BF9DC80719C9FFD881FF40B9 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
 		600945F2396D212AD524A0094E212B6E /* Pods-TenPair-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TenPair-umbrella.h"; sourceTree = "<group>"; };
 		605E1E42C811DFA39596F53B667F6382 /* Pods-TenPairTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPairTests-resources.sh"; sourceTree = "<group>"; };
-		6B5E039CEB0A41C3556F01566C163AB7 /* GameView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameView.swift; path = Source/GameView.swift; sourceTree = "<group>"; };
-		6EEF240A996FD03108015CE9E52A7B39 /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
+		6157646369925188D10497BCB7F60004 /* GameMenuButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuButton.swift; path = Source/GameMenuButton.swift; sourceTree = "<group>"; };
+		61A7077D66BD927FA7C3E66DB5D7D55D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		61BD0F15E9B5904C353B9965F200711F /* GameKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GameKit.modulemap; sourceTree = "<group>"; };
+		631A9CA045BE130B6ACEF13B6CAC52A3 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
+		6C80208DC3BBF645EB14422022E504E5 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		6EEB2B382C2CF68AC909EECEC6CE7D27 /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
 		6F34C13C4532321B317BDC7AACC6473E /* Pods-TenPairTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPairTests.release.xcconfig"; sourceTree = "<group>"; };
 		6FEC636356AF7ED1487F7F0428C3441E /* Pods-TenPair-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TenPair-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7147FCFB4838E9A22864C2B6A0C9AE95 /* SWLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWLogger.xcconfig; sourceTree = "<group>"; };
-		71702B8062833DEB41487F97D21A3227 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
-		71777BEE24D0352677E5E648EBAB15CB /* SWLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWLogger-dummy.m"; sourceTree = "<group>"; };
-		71FCA2EA6B7FE67FDEAEEE4613DA8B08 /* ShakeWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShakeWindow.swift; path = Source/ShakeWindow.swift; sourceTree = "<group>"; };
 		72354D52EC2355BEB8753A1ABDCE93D2 /* Pods-TenPairTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TenPairTests-dummy.m"; sourceTree = "<group>"; };
+		764F2AEA8B136B3A803137BFA7CEE86D /* GameKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-prefix.pch"; sourceTree = "<group>"; };
 		76E1D449FA1D923390E7A927755BEECC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		85953EA0BFE47A3BD175C21CE8D3CC3E /* GameScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScreen.swift; path = Source/GameScreen.swift; sourceTree = "<group>"; };
-		87CAC3C2B4719E3CD66EF941C7FF24FF /* LogOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogOutput.swift; path = Source/LogOutput.swift; sourceTree = "<group>"; };
+		77D43012E2B518AB1F6C097A3E47D3BD /* SWLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWLogger.xcconfig; sourceTree = "<group>"; };
+		7CC76DDDBC5ABF6135BE0AE69ACF2ABE /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Source/Log.swift; sourceTree = "<group>"; };
+		822265B29DC836DF4C18DE5FE627BD86 /* GameButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameButton.swift; path = Source/GameButton.swift; sourceTree = "<group>"; };
+		8352D3B44B42873824FC628A9A4167AF /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
 		88B7D9152AD58D93645B9F6C4425ABC9 /* Pods-TenPairTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TenPairTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		88E844AEFACC2AE6FBB04BEA8F62C93F /* GameScrollViewContained.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollViewContained.swift; path = Source/GameScrollViewContained.swift; sourceTree = "<group>"; };
+		8A68257CD5DF331107D12BC4CE15C649 /* GameScrollViewContained.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollViewContained.swift; path = Source/GameScrollViewContained.swift; sourceTree = "<group>"; };
 		8C0D31060223142D794919968780FD7B /* Pods-TenPairTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TenPairTests.modulemap"; sourceTree = "<group>"; };
-		8DFF9631118CEAED00E23C9992764CF1 /* GameButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameButton.swift; path = Source/GameButton.swift; sourceTree = "<group>"; };
+		8D9946D2A387D9E4C71E12CC7B897691 /* FileOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileOutput.swift; path = Source/FileOutput.swift; sourceTree = "<group>"; };
 		8FB5E03509B354A8575611155827D979 /* Pods-TenPairTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPairTests.debug.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9844A6F81C8930D800ECE89E51DEF926 /* GameKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GameKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5A8E0E83BFA1686DA9225E50E1BE603 /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Source/Log.swift; sourceTree = "<group>"; };
-		AB28EF4B8E58EBAD433E3C9A917A1EB3 /* FileOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileOutput.swift; path = Source/FileOutput.swift; sourceTree = "<group>"; };
+		9A18CA5B93047139F83402A9CF1F2423 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1BB27D86E657F982EDD9FB0A52B5E7F /* ShakeWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShakeWindow.swift; path = Source/ShakeWindow.swift; sourceTree = "<group>"; };
+		A573F4C36E6AC091A923FA849C63C6BA /* SWLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWLogger-dummy.m"; sourceTree = "<group>"; };
+		A644393916A86F0F1202B8D4DBA365FD /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
 		ABD34339C493B48F31026EF65EF9DAE9 /* Pods-TenPair-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TenPair-acknowledgements.plist"; sourceTree = "<group>"; };
-		ACD2F26B9B2302E85D6D07E2C4A51A45 /* GameMenuPresentationContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuPresentationContainer.swift; path = Source/GameMenuPresentationContainer.swift; sourceTree = "<group>"; };
-		AF06783474BA54BBDE7FC8A76D5FFA6B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3CB41CDAF5587969C42CEEC8ECE6E17 /* Pods-TenPairTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TenPairTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		B8866A4FA2E1FA17CEEF66CA0DD1B566 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
+		B76ABCB5381074E179531FD0F2EEBDFE /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		BC66D45FCB429113151C86EE644B9C92 /* Pods-TenPair-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPair-resources.sh"; sourceTree = "<group>"; };
-		C1B49118712E77A3B92E734B395130A6 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
-		C3024573459440044B9BF0B137D6338F /* GameKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-prefix.pch"; sourceTree = "<group>"; };
-		CDAA68F5900DDB8CFA58A4CBBE438F78 /* GameKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GameKit.xcconfig; sourceTree = "<group>"; };
+		C00E64A31A555EC0AC7CBCC9273DE30A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		C3E9E2B723CC6C8598F0020885C615F8 /* SWLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SWLogger.modulemap; sourceTree = "<group>"; };
+		C921E799F38190A2D1C37C4D56273169 /* LogOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogOutput.swift; path = Source/LogOutput.swift; sourceTree = "<group>"; };
+		CCCA7D38118B96EEB25A284B047ADD92 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		DA5E41ACC12AFB02110CAA0253ADE50E /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
+		CFD377A64D6DB2F8622FA86665AF9F1B /* GameMenuPresentationContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuPresentationContainer.swift; path = Source/GameMenuPresentationContainer.swift; sourceTree = "<group>"; };
+		D4894721CB4AFFAF2F8945C6471AB046 /* GameKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GameKit-dummy.m"; sourceTree = "<group>"; };
+		D7D2227226733C569E276F6A1BC807F8 /* GameView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameView.swift; path = Source/GameView.swift; sourceTree = "<group>"; };
+		D86C1D26A46EF3EEB9B319559441D032 /* GameLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameLoadingView.swift; path = Source/GameLoadingView.swift; sourceTree = "<group>"; };
 		DAA5EDA8A5AC04D058CBCC568C137311 /* Pods-TenPairTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TenPairTests-umbrella.h"; sourceTree = "<group>"; };
-		EE60E7DA5B52839B76261F5D1DC7C0AF /* ConsoleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleOutput.swift; path = Source/ConsoleOutput.swift; sourceTree = "<group>"; };
-		FA367264174C17F497AA2937A6ABB3E0 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
-		FB31A7256408DB2D5909B352C995F020 /* GameKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GameKit.modulemap; sourceTree = "<group>"; };
+		DB4658FB75BEB157551746EACC688287 /* GameKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-umbrella.h"; sourceTree = "<group>"; };
+		E24CAEA656A7519437596D9C730C13FD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB70E2459C8B1E8F9C2AE37528F8644E /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
 		FB74BF330C44923591EF1385EDB1603E /* Pods-TenPair-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TenPair-dummy.m"; sourceTree = "<group>"; };
-		FB98DE987BD91CC9865F3B2952A630E3 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
 		FC3C4F7FF0AC7221673FE914B7CFEC0D /* Pods-TenPair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPair.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,15 +196,20 @@
 			path = "Target Support Files/Pods-TenPair";
 			sourceTree = "<group>";
 		};
-		0A94303A02E6800FB08BA2304EA42AC9 /* Pods */ = {
+		0D2810E00A3022434BF412DA6F352C81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8876647C01BBDD1B21779222EE821832 /* Crashlytics */,
-				F44BE581A07D554482A731799B1E999A /* Fabric */,
-				9C1DE91AFCB42F3435A0B25B287F507E /* GameKit */,
-				BBD0570BEA6AC24E430A302AF47B168A /* SWLogger */,
+				FB70E2459C8B1E8F9C2AE37528F8644E /* GoogleSymbolUtilities.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18D8502189F7C1C71DB8347C02E8D7B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F0356618574004D045B307E0347D5D5 /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2427BAE4595F0FBD196077DBF6F9D063 /* Products */ = {
@@ -210,12 +223,56 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3AE0CED3BF5844B167949A2EF028C516 /* Frameworks */ = {
+		2AD6C160A46E64CBAF0BE880CB99BC14 /* GoogleUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				1227D453E64EEA846CD9395546E8F3AD /* Crashlytics.framework */,
+				F77CE80CF03809823211FD2072D26491 /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		2C2372E485FAC319DAFCEBA8B2BD59F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61A7077D66BD927FA7C3E66DB5D7D55D /* Fabric.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33077EB00F8E91729251A89A65B01F2F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				61BD0F15E9B5904C353B9965F200711F /* GameKit.modulemap */,
+				51E96F2D27F599DFD373D5400465A242 /* GameKit.xcconfig */,
+				D4894721CB4AFFAF2F8945C6471AB046 /* GameKit-dummy.m */,
+				764F2AEA8B136B3A803137BFA7CEE86D /* GameKit-prefix.pch */,
+				DB4658FB75BEB157551746EACC688287 /* GameKit-umbrella.h */,
+				E24CAEA656A7519437596D9C730C13FD /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GameKit";
+			sourceTree = "<group>";
+		};
+		351E46679020B0A856DC733523324897 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B76ABCB5381074E179531FD0F2EEBDFE /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BE40CABDC724C46EA7A20432159CA84 /* SWLogger */ = {
+			isa = PBXGroup;
+			children = (
+				088118BE86F06777E9C1DA0E16E2049E /* ConsoleOutput.swift */,
+				8D9946D2A387D9E4C71E12CC7B897691 /* FileOutput.swift */,
+				7CC76DDDBC5ABF6135BE0AE69ACF2ABE /* Log.swift */,
+				0B1D3D2CC30D5B27B813A608ED8E4CB3 /* Logger.swift */,
+				C921E799F38190A2D1C37C4D56273169 /* LogOutput.swift */,
+				A1BB27D86E657F982EDD9FB0A52B5E7F /* ShakeWindow.swift */,
+				CB28B281F0C559071D83EDEB09690B64 /* Support Files */,
+			);
+			path = SWLogger;
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -226,18 +283,43 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7CE0E4EE27F4C55FD242D2D2CDE212C5 /* Support Files */ = {
+		4BB597896B65305F4DD647EF5B2E5EDC /* GoogleInterchangeUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				FB31A7256408DB2D5909B352C995F020 /* GameKit.modulemap */,
-				CDAA68F5900DDB8CFA58A4CBBE438F78 /* GameKit.xcconfig */,
-				031BBA31E350220CF6BDCA23EE36D150 /* GameKit-dummy.m */,
-				C3024573459440044B9BF0B137D6338F /* GameKit-prefix.pch */,
-				0F939F8D8B7D6163CCF2270C1970ACBE /* GameKit-umbrella.h */,
-				11B0D8E98CDF94CD56856F95B6178FAA /* Info.plist */,
+				18D8502189F7C1C71DB8347C02E8D7B8 /* Frameworks */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GameKit";
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		55B9F06EDF8C977F9755E1FF6C0B07A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C00E64A31A555EC0AC7CBCC9273DE30A /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		585637F1B5E17D404120A84D9AB106A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8352D3B44B42873824FC628A9A4167AF /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6EE960F86777F63C3317306A4B5D237D /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				3E63031FF821004C04243113BEC4540D /* ANSCompatibility.h */,
+				23C789AFA4B8EDB85D04D11CB7FD3C05 /* Answers.h */,
+				631A9CA045BE130B6ACEF13B6CAC52A3 /* CLSAttributes.h */,
+				CCCA7D38118B96EEB25A284B047ADD92 /* CLSLogging.h */,
+				6EEB2B382C2CF68AC909EECEC6CE7D27 /* CLSReport.h */,
+				4B73334AA73027A4AD83C1B436E580CF /* CLSStackFrame.h */,
+				A644393916A86F0F1202B8D4DBA365FD /* Crashlytics.h */,
+				55B9F06EDF8C977F9755E1FF6C0B07A0 /* Frameworks */,
+			);
+			path = Crashlytics;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -245,25 +327,26 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				0A94303A02E6800FB08BA2304EA42AC9 /* Pods */,
+				E2FAFC53BF798B48362FAA01F31285F3 /* Pods */,
 				2427BAE4595F0FBD196077DBF6F9D063 /* Products */,
 				8AE3CD815436C4D1F68C7A1291771DB9 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8876647C01BBDD1B21779222EE821832 /* Crashlytics */ = {
+		839933474EDA7858247308AAE0D27E4C /* Fabric */ = {
 			isa = PBXGroup;
 			children = (
-				B8866A4FA2E1FA17CEEF66CA0DD1B566 /* ANSCompatibility.h */,
-				FB98DE987BD91CC9865F3B2952A630E3 /* Answers.h */,
-				5D1B328C2C1B6173C41EF9D58031038F /* CLSAttributes.h */,
-				FA367264174C17F497AA2937A6ABB3E0 /* CLSLogging.h */,
-				11B1CBBAA605F504775C697FE7CC7913 /* CLSReport.h */,
-				DA5E41ACC12AFB02110CAA0253ADE50E /* CLSStackFrame.h */,
-				6EEF240A996FD03108015CE9E52A7B39 /* Crashlytics.h */,
-				3AE0CED3BF5844B167949A2EF028C516 /* Frameworks */,
+				2C2372E485FAC319DAFCEBA8B2BD59F1 /* Frameworks */,
 			);
-			path = Crashlytics;
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		85498A2EC90993A1BBF91C155486BDBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07A9DB2C7389B78169EE1DF4008B9538 /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8AE3CD815436C4D1F68C7A1291771DB9 /* Targets Support Files */ = {
@@ -275,22 +358,12 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		9C1DE91AFCB42F3435A0B25B287F507E /* GameKit */ = {
+		9D75B3084009CDD2AC984B982A5786C4 /* GoogleSymbolUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				4ED873B388C67D8E1773104FE1CD07AC /* Game.swift */,
-				8DFF9631118CEAED00E23C9992764CF1 /* GameButton.swift */,
-				59B6E153D602ECF2AEF911BFEDD2FFB3 /* GameLoadingView.swift */,
-				0D6911BD26128EE32E85F2F86AE34B35 /* GameMenuButton.swift */,
-				ACD2F26B9B2302E85D6D07E2C4A51A45 /* GameMenuPresentationContainer.swift */,
-				049F8CCB1EC4E4BF51AF0239F71132A3 /* GameMenuScreen.swift */,
-				85953EA0BFE47A3BD175C21CE8D3CC3E /* GameScreen.swift */,
-				44AB897106AB8CA4CB8CF59679719C71 /* GameScrollView.swift */,
-				88E844AEFACC2AE6FBB04BEA8F62C93F /* GameScrollViewContained.swift */,
-				6B5E039CEB0A41C3556F01566C163AB7 /* GameView.swift */,
-				7CE0E4EE27F4C55FD242D2D2CDE212C5 /* Support Files */,
+				0D2810E00A3022434BF412DA6F352C81 /* Frameworks */,
 			);
-			path = GameKit;
+			path = GoogleSymbolUtilities;
 			sourceTree = "<group>";
 		};
 		9EFCA6A637A335D5C1B9CDD9782B3B7B /* Pods-TenPairTests */ = {
@@ -311,32 +384,28 @@
 			path = "Target Support Files/Pods-TenPairTests";
 			sourceTree = "<group>";
 		};
-		B60977B7D503ACB4BC9598D0A3067FED /* Support Files */ = {
+		A33749644E5BB0A8995532C122EA5AB1 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				AF06783474BA54BBDE7FC8A76D5FFA6B /* Info.plist */,
-				5529EE45A2F5F8A712F8642229641D63 /* SWLogger.modulemap */,
-				7147FCFB4838E9A22864C2B6A0C9AE95 /* SWLogger.xcconfig */,
-				71777BEE24D0352677E5E648EBAB15CB /* SWLogger-dummy.m */,
-				58F34F69584CB6D7BB90F7F88F33B4AA /* SWLogger-prefix.pch */,
-				296A6FEEF14E9361973B7EBDD9E118B2 /* SWLogger-umbrella.h */,
+				B54400D92B79D98E7A3F99991B8524DC /* Analytics */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SWLogger";
+			path = Firebase;
 			sourceTree = "<group>";
 		};
-		BBD0570BEA6AC24E430A302AF47B168A /* SWLogger */ = {
+		AEA80ED883726E62AC97BBBBDD4A9390 /* Google-Mobile-Ads-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				EE60E7DA5B52839B76261F5D1DC7C0AF /* ConsoleOutput.swift */,
-				AB28EF4B8E58EBAD433E3C9A917A1EB3 /* FileOutput.swift */,
-				A5A8E0E83BFA1686DA9225E50E1BE603 /* Log.swift */,
-				C1B49118712E77A3B92E734B395130A6 /* Logger.swift */,
-				87CAC3C2B4719E3CD66EF941C7FF24FF /* LogOutput.swift */,
-				71FCA2EA6B7FE67FDEAEEE4613DA8B08 /* ShakeWindow.swift */,
-				B60977B7D503ACB4BC9598D0A3067FED /* Support Files */,
+				585637F1B5E17D404120A84D9AB106A0 /* Frameworks */,
 			);
-			path = SWLogger;
+			path = "Google-Mobile-Ads-SDK";
+			sourceTree = "<group>";
+		};
+		B54400D92B79D98E7A3F99991B8524DC /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				1B7AECE6E33F44DF70C9C5C87074EA10 /* Firebase.h */,
+			);
+			name = Analytics;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -347,20 +416,79 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D3D34A82158882B49489488634307CCF /* Frameworks */ = {
+		CB28B281F0C559071D83EDEB09690B64 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				71702B8062833DEB41487F97D21A3227 /* Fabric.framework */,
+				9A18CA5B93047139F83402A9CF1F2423 /* Info.plist */,
+				C3E9E2B723CC6C8598F0020885C615F8 /* SWLogger.modulemap */,
+				77D43012E2B518AB1F6C097A3E47D3BD /* SWLogger.xcconfig */,
+				A573F4C36E6AC091A923FA849C63C6BA /* SWLogger-dummy.m */,
+				4A00B8B8CB37086BA1910053E20EAB47 /* SWLogger-prefix.pch */,
+				0F46F3FF1392CCDF9674A1869BD8BCFA /* SWLogger-umbrella.h */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/SWLogger";
 			sourceTree = "<group>";
 		};
-		F44BE581A07D554482A731799B1E999A /* Fabric */ = {
+		D5013EF5BE08C13B2C230B21C3FF1779 /* FirebaseAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				D3D34A82158882B49489488634307CCF /* Frameworks */,
+				85498A2EC90993A1BBF91C155486BDBF /* Frameworks */,
 			);
-			path = Fabric;
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		E2FAFC53BF798B48362FAA01F31285F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EE960F86777F63C3317306A4B5D237D /* Crashlytics */,
+				839933474EDA7858247308AAE0D27E4C /* Fabric */,
+				A33749644E5BB0A8995532C122EA5AB1 /* Firebase */,
+				D5013EF5BE08C13B2C230B21C3FF1779 /* FirebaseAnalytics */,
+				F15985485B2DA09EB45393AA507ECB44 /* FirebaseInstanceID */,
+				E87F808E09FDE597E52A2670C179BC1A /* GameKit */,
+				AEA80ED883726E62AC97BBBBDD4A9390 /* Google-Mobile-Ads-SDK */,
+				4BB597896B65305F4DD647EF5B2E5EDC /* GoogleInterchangeUtilities */,
+				9D75B3084009CDD2AC984B982A5786C4 /* GoogleSymbolUtilities */,
+				2AD6C160A46E64CBAF0BE880CB99BC14 /* GoogleUtilities */,
+				3BE40CABDC724C46EA7A20432159CA84 /* SWLogger */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E87F808E09FDE597E52A2670C179BC1A /* GameKit */ = {
+			isa = PBXGroup;
+			children = (
+				50D55C27A2D8AD1D7C6B7A91CC8B49C8 /* Game.swift */,
+				822265B29DC836DF4C18DE5FE627BD86 /* GameButton.swift */,
+				D86C1D26A46EF3EEB9B319559441D032 /* GameLoadingView.swift */,
+				6157646369925188D10497BCB7F60004 /* GameMenuButton.swift */,
+				CFD377A64D6DB2F8622FA86665AF9F1B /* GameMenuPresentationContainer.swift */,
+				25729D484467A7D883403E39018DCC9D /* GameMenuScreen.swift */,
+				05A4EC15A53883FFF7F0E889C04BD3A3 /* GameScreen.swift */,
+				208C42DC329664454CF6408DDE0E21C8 /* GameScrollView.swift */,
+				8A68257CD5DF331107D12BC4CE15C649 /* GameScrollViewContained.swift */,
+				D7D2227226733C569E276F6A1BC807F8 /* GameView.swift */,
+				33077EB00F8E91729251A89A65B01F2F /* Support Files */,
+			);
+			path = GameKit;
+			sourceTree = "<group>";
+		};
+		F15985485B2DA09EB45393AA507ECB44 /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				53324F22BF9DC80719C9FFD881FF40B9 /* FIRInstanceID.h */,
+				351E46679020B0A856DC733523324897 /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		F77CE80CF03809823211FD2072D26491 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C80208DC3BBF645EB14422022E504E5 /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,7 +711,7 @@
 /* Begin XCBuildConfiguration section */
 		28AE6367B02E1F44E210882B2E5618A7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDAA68F5900DDB8CFA58A4CBBE438F78 /* GameKit.xcconfig */;
+			baseConfigurationReference = 51E96F2D27F599DFD373D5400465A242 /* GameKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -755,7 +883,7 @@
 		};
 		6CAF97B4B041CBAF70AF3520D816D32E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDAA68F5900DDB8CFA58A4CBBE438F78 /* GameKit.xcconfig */;
+			baseConfigurationReference = 51E96F2D27F599DFD373D5400465A242 /* GameKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -818,7 +946,7 @@
 		};
 		9ECC0FF0EF20395EEE0247C8CD5CEA8C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7147FCFB4838E9A22864C2B6A0C9AE95 /* SWLogger.xcconfig */;
+			baseConfigurationReference = 77D43012E2B518AB1F6C097A3E47D3BD /* SWLogger.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -885,7 +1013,7 @@
 		};
 		F2C9A2E5B227E49BF22297543DB37C4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7147FCFB4838E9A22864C2B6A0C9AE95 /* SWLogger.xcconfig */;
+			baseConfigurationReference = 77D43012E2B518AB1F6C097A3E47D3BD /* SWLogger.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
