@@ -43,6 +43,7 @@ class TenPairPlayScreen: GameScreen {
         numbersField = field
         field.presentedNumbers = startField
         field.anchorPoint = CGPointZero
+        field.presentationWidth = size.width
         scrollView.present(field)
         
         let topMenuBar = TenPairMenuBar()
@@ -79,6 +80,8 @@ class TenPairPlayScreen: GameScreen {
     override func positionContent() {
         topMenuBar!.position = CGPointMake(0, size.height - topMenuBar!.size.height)
         topMenuBar!.size.width = size.width
+        
+        numbersField!.presentationWidth = size.width
         
         scrollView!.size = size
         

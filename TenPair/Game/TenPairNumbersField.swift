@@ -24,10 +24,16 @@ let TenPairRowHideTime: NSTimeInterval = 0.3
 let TenPairHideTileAction = SKAction.hide()
 let TenPairUnhideTileAction = SKAction.unhide()
 let TenPairRemoveTileAction = SKAction.removeFromParent()
+private let SidesSpacing: CGFloat = 10 * 2
+private let MaxTileWidth: CGFloat = 50
 
 class TenPairNumbersField: GameScrollViewContained {
     var presentedNumbers = [Int]()
-    var tileSize = CGSizeZero
+    var tileSize = CGSizeZero {
+        didSet {
+            background.tileSize = tileSize
+        }
+    }
     var selectedTile: TenPairNumberTile?
     var selectedIndex: Int = -1
     var fieldStatus: TenPairFieldStatus?
@@ -36,22 +42,26 @@ class TenPairNumbersField: GameScrollViewContained {
     var reusableTiles = [TenPairNumberTile]()
     var gameWonAction: SKAction?
     let background = TenPairFieldBackground()
+    var presentationWidth: CGFloat = 0 {
+        didSet {
+            guard oldValue != presentationWidth else {
+                return
+            }
+            
+            let tileWidth = (presentationWidth - SidesSpacing) / CGFloat(integerLiteral: TenPairColumns)
+            let rounded = min(round(tileWidth), MaxTileWidth)
+            tileSize = CGSizeMake(rounded, rounded)
+            
+            self.lastHandledVisible = CGRectZero
+            self.notifySizeChanged()
+        }
+    }
     
     override func loadContent() {
         name = "TenPairNumbersField"
         
         userInteractionEnabled = true
         
-        var tileEdge = 10
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            tileEdge = 35
-        } else {
-            tileEdge = 50   
-        }
-        
-        tileSize = CGSizeMake(CGFloat(tileEdge), CGFloat(tileEdge))
-
-        background.tileSize = tileSize
         background.fillColor = TenPairTheme.currentTheme.consumedTileColor!
         addChild(background)
 
