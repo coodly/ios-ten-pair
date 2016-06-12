@@ -96,7 +96,7 @@ extension GameViewController: GADBannerViewDelegate {
         super.viewDidAppear(animated)
         
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID, "466da0f45d3a5e55de0e1b150016b580"]
+        request.testDevices = [kGADSimulatorID, "466da0f45d3a5e55de0e1b150016b580", "ff31957cce821a3df57613ad34e6293e"]
         bannerView.loadRequest(request)
     }
     
