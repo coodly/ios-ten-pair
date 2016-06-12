@@ -32,6 +32,7 @@ class TenPairNumbersField: GameScrollViewContained {
     var tileSize = CGSizeZero {
         didSet {
             background.tileSize = tileSize
+            background.lastHandledTopLine = -1
         }
     }
     var selectedTile: TenPairNumberTile?
@@ -51,6 +52,12 @@ class TenPairNumbersField: GameScrollViewContained {
             let tileWidth = (presentationWidth - SidesSpacing) / CGFloat(integerLiteral: TenPairColumns)
             let rounded = min(round(tileWidth), MaxTileWidth)
             tileSize = CGSizeMake(rounded, rounded)
+            
+            reusableTiles.removeAll()
+            for (_, tile) in tilesInUse {
+                tile.removeFromParent()
+            }
+            tilesInUse.removeAll()
             
             self.lastHandledVisible = CGRectZero
             self.notifySizeChanged()
@@ -78,6 +85,7 @@ class TenPairNumbersField: GameScrollViewContained {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.presentedNumbers += filtered
                 self.lastHandledVisible = CGRectZero
+                self.background.lastHandledTopLine = -1
                 self.notifySizeChanged()
                 self.updateStatusLines()
                 self.fieldStatus!.updateTiles(filtered.count * 2)
