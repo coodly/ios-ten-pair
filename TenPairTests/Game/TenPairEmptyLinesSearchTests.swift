@@ -16,6 +16,7 @@
 
 import Foundation
 import XCTest
+@testable import TenPair
 
 class TenPairEmptyLinesSearchTests: XCTestCase {
     func testNoEmptyLines() {

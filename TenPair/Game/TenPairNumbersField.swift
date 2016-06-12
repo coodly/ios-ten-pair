@@ -96,9 +96,7 @@ class TenPairNumbersField: GameScrollViewContained {
         }
         
         let nodes = nodesAtPoint(location)
-        let tile = tileInArray(nodes)
-        
-        if tile == nil {
+        guard let tile = tileInArray(nodes) else {
             return
         }
         
@@ -124,7 +122,7 @@ class TenPairNumbersField: GameScrollViewContained {
         let indexOne = selectedIndex
         let indexTwo = tileIndex
         
-        if !TenPairNumberPathFinder.hasClearPath([indexOne, indexTwo], inField: presentedNumbers) {
+        guard TenPairNumberPathFinder.hasClearPath([indexOne, indexTwo], inField: presentedNumbers) else {
             executeFailureAnimationWithTiles(selectedTile, two: tile)
             return
         }
@@ -132,7 +130,7 @@ class TenPairNumbersField: GameScrollViewContained {
         let valueOne = presentedNumbers[indexOne]
         let valueTwo = presentedNumbers[indexTwo]
         
-        if valueOne != valueTwo && valueOne + valueTwo != 10 {
+        guard valueOne == valueTwo || valueOne + valueTwo == 10 else {
             executeFailureAnimationWithTiles(selectedTile, two: tile)
             return
         }
@@ -142,12 +140,11 @@ class TenPairNumbersField: GameScrollViewContained {
     
     func tileInArray(nodes: [AnyObject]) -> TenPairNumberTile! {
         for node in Array(nodes.reverse()) {
-            if node is TenPairNumberTile {
-                let tile = node as! TenPairNumberTile
-                if !tile.hidden {
-                    return tile
-                }
+            guard let tile = node as? TenPairNumberTile where !tile.hidden else {
+                continue
             }
+            
+            return tile
         }
         
         return nil
@@ -173,7 +170,7 @@ class TenPairNumbersField: GameScrollViewContained {
             consumedOne.backgroundNode!.runAction(firstSequence)
         }
 
-        let zeroTwoAndCompleteActio = SKAction.runBlock { () -> Void in
+        let zeroTwoAndCompleteAction = SKAction.runBlock() {
             two.number = 0
             self.selectedTile = nil
             self.selectedIndex = -1
@@ -190,7 +187,7 @@ class TenPairNumbersField: GameScrollViewContained {
         }
 
         var secondActions = Array(consumeActions)
-        secondActions.append(zeroTwoAndCompleteActio)
+        secondActions.append(zeroTwoAndCompleteAction)
         
         let secondSequence = SKAction.sequence(secondActions)
         

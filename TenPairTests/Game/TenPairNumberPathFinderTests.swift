@@ -16,6 +16,7 @@
 
 import Foundation
 import XCTest
+@testable import TenPair
 
 class TenPairNumberPathFinderTests: XCTestCase {
     func testSideBySide() {
@@ -80,18 +81,6 @@ class TenPairNumberPathFinderTests: XCTestCase {
     }
     
 
-    func testOnSameHorisontalLine() {
-        XCTAssert(TenPairNumberPathFinder.onSameHorisontalLine(0, secondIndex: 8), "Failed")
-
-        XCTAssert(TenPairNumberPathFinder.onSameHorisontalLine(3, secondIndex: 7), "Failed")
-
-        XCTAssert(TenPairNumberPathFinder.onSameHorisontalLine(6, secondIndex: 8), "Failed")
-
-        XCTAssert(!TenPairNumberPathFinder.onSameHorisontalLine(0, secondIndex: 9), "Failed")
-
-        XCTAssert(!TenPairNumberPathFinder.onSameHorisontalLine(0, secondIndex: 27), "Failed")
-    }
-    
     func testOnSameVerticalLine() {
         XCTAssert(TenPairNumberPathFinder.onSameVerticalLine(0, secondIndex: 9), "Failed")
 
