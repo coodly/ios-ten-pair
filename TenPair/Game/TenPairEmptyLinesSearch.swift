@@ -16,8 +16,6 @@
 
 import Foundation
 
-let NumbersFieldWidth: Int = 9
-
 class TenPairEmptyLinesSearch {
     class func emptyLinesWithCheckPoints(checks: [Int], field: [Int]) -> [Int] {
         let checkOne = checks[0]
@@ -27,28 +25,28 @@ class TenPairEmptyLinesSearch {
         
         let startOfRowOne = firstInRowForIndex(checkOne)
         if hasEmptyRowStartingAtIndex(startOfRowOne, field: field) {
-            result.append(startOfRowOne / NumbersFieldWidth)
+            result.append(startOfRowOne / NumberOfColumns)
         }
         
         let startOfRowTwo = firstInRowForIndex(checkTwo)
         if startOfRowTwo != startOfRowOne && hasEmptyRowStartingAtIndex(startOfRowTwo, field: field) {
-            result.append(startOfRowTwo / NumbersFieldWidth)
+            result.append(startOfRowTwo / NumberOfColumns)
         }
         
         return result
     }
     
     class func firstInRowForIndex(index: Int) -> Int {
-        return index - index % NumbersFieldWidth
+        return index - index % NumberOfColumns
     }
     
     class func hasEmptyRowStartingAtIndex(index: Int, field: [Int]) -> Bool {
-        let rowEndIndex = index + NumbersFieldWidth
+        let rowEndIndex = index + NumberOfColumns
         if rowEndIndex > field.count {
             return false
         }
         
-        for check in 0..<NumbersFieldWidth {
+        for check in 0..<NumberOfColumns {
             let checked = field[check + index]
             if checked != 0 {
                 return false
