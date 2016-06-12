@@ -28,12 +28,11 @@ public class GameView: SKSpriteNode {
     }
     
     public func positionContent() {
-        for node in self.children {
-            if !node.isKindOfClass(GameView) {
+        for node in children {
+            guard let view = node as? GameView else {
                 continue
             }
-            
-            let view = node as! GameView
+
             view.positionContent()
         }
     }

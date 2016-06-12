@@ -16,6 +16,7 @@
 
 import UIKit
 import SpriteKit
+import SWLogger
 
 let TenPairSaveDataKey = "NumbersGameSaveDataKey"
 
@@ -41,6 +42,8 @@ class GameViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         if scene != nil {
             return
         }
@@ -56,8 +59,8 @@ class GameViewController: UIViewController {
         scene = gameScene
         skView.allowsTransparency = false
         skView.shouldCullNonVisibleNodes = false
-        //skView.showsFPS = true
-        //skView.showsNodeCount = true
+        skView.showsFPS = true
+        skView.showsNodeCount = true
         skView.presentScene(scene)
 
         gameScene.startGame()

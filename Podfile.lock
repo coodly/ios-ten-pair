@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   GameKit:
-    :commit: 7412ac9af6569e77a5c2e969d2c30df00e0c21f6
+    :commit: db8d0db05ddbb08f8cfd2fb49d7cc96ef71f2d81
     :git: git@github.com:coodly/GameKit.git
   SWLogger:
     :commit: 779d812c91f5fa99157e2aec5a4a19cfdc214449
@@ -31,6 +31,6 @@ SPEC CHECKSUMS:
   GameKit: ddf76177b7f08ffe92c4e81b2b8c6f5ba94345ca
   SWLogger: 32758d2926ab91ad26a52ccaf67a7b62c83772d4
 
-PODFILE CHECKSUM: 9bbae82bf7d3d832024909c96735837fb12f955d
+PODFILE CHECKSUM: 57035e9f5c6c88b5ab21ba36ea59a31cb7378c1b
 
 COCOAPODS: 1.0.1

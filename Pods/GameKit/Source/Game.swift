@@ -71,12 +71,11 @@ public class Game: SKScene, MFMailComposeViewControllerDelegate {
     }
     
     func positionContent(oldSize: CGSize) {
-        for node in self.children {
-            if !node.isKindOfClass(GameView) {
+        for node in children {
+            guard let view = node as? GameView else {
                 continue
             }
-            
-            let view = node as! GameView
+
             view.size = self.size
             view.positionContent()
         }
@@ -129,8 +128,8 @@ public class Game: SKScene, MFMailComposeViewControllerDelegate {
     
     func findButtonInArray(nodes: Array<AnyObject>) -> GameButton? {        
         for node in nodes {
-            if node is GameButton {
-                return node as? GameButton
+            if let button = node as? GameButton {
+                return button
             }
         }
         

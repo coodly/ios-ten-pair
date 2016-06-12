@@ -18,6 +18,7 @@ def pods
     pod 'Crashlytics'
 
     remote_coodly
+    #local_coodly
 end
 
 target 'TenPair' do

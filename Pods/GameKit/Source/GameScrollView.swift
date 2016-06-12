@@ -60,7 +60,7 @@ public class GameScrollView: GameView, UIScrollViewDelegate {
         
         let moveAction = SKAction.moveTo(nextPosition, duration: 0)
         
-        let notifyAction = SKAction.runBlock { () -> Void in
+        let notifyAction = SKAction.runBlock() {
             let bottomPoint = self.translatePointToContent(CGPointMake(0, 0))
             let topPoint = self.translatePointToContent(CGPointMake(0, self.size.height))
             

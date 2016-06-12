@@ -53,27 +53,27 @@ class TenPairPlayScreen: GameScreen {
         field.fieldStatus = topMenuBar.fieldStatus
         field.updateFieldStatus()
         
-        field.gameWonAction = SKAction.runBlock({ () -> Void in
+        field.gameWonAction = SKAction.runBlock() {
             let winScreen = TenPairWinScreen()
             winScreen.zPosition = 2
-            winScreen.restartGameAction = SKAction.runBlock({ () -> Void in
+            winScreen.restartGameAction = SKAction.runBlock() {
                 self.restartGame(winScreen)
-            })
+            }
             self.game!.presentModalScreen(winScreen)
-        })
+        }
 
-        topMenuBar.menuButton!.action = SKAction.runBlock({ () -> Void in
+        topMenuBar.menuButton!.action = SKAction.runBlock() {
             let menuScreen = TenPairMenuScreen()
             menuScreen.zPosition = 2
-            menuScreen.restartGameAction = SKAction.runBlock({ () -> Void in
+            menuScreen.restartGameAction = SKAction.runBlock() {
                 self.restartGame(menuScreen)
-            })
+            }
             self.game!.presentModalScreen(menuScreen)
-        })
+        }
         
-        topMenuBar.reloadButton!.action = SKAction.runBlock({ () -> Void in
+        topMenuBar.reloadButton!.action = SKAction.runBlock() {
             self.reloadNumbers()
-        })
+        }
     }
     
     override func positionContent() {
@@ -106,7 +106,7 @@ class TenPairPlayScreen: GameScreen {
     func restartGame(menuScreen: TenPairMenuScreen) {
         var loading: TenPairLoadingScreen?
 
-        let restart = SKAction.runBlock { () -> Void in
+        let restart = SKAction.runBlock() {
             self.numbersField!.presentedNumbers = TenPairGameStart
             self.numbersField!.restartGame()
             self.game!.dismissScreen(loading!)
@@ -117,7 +117,7 @@ class TenPairPlayScreen: GameScreen {
     
     func executeGameAction(action: SKAction) -> TenPairLoadingScreen {
         let loading = TenPairLoadingScreen()
-        let show = SKAction.runBlock { () -> Void in
+        let show = SKAction.runBlock() {
             self.game!.presentLoadingView(loading)
         }
         let delay = SKAction.waitForDuration(1)
