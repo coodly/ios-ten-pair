@@ -1,26 +1,36 @@
 PODS:
-  - Crashlytics (3.7.0):
+  - Crashlytics (3.7.1):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
   - GameKit (0.1.0)
+  - SWLogger (0.1.0)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
   - GameKit (from `git@github.com:coodly/GameKit.git`)
+  - SWLogger (from `git@github.com:coodly/swlogger.git`)
 
 EXTERNAL SOURCES:
   GameKit:
     :git: git@github.com:coodly/GameKit.git
+  SWLogger:
+    :git: git@github.com:coodly/swlogger.git
 
 CHECKOUT OPTIONS:
   GameKit:
     :commit: 7412ac9af6569e77a5c2e969d2c30df00e0c21f6
     :git: git@github.com:coodly/GameKit.git
+  SWLogger:
+    :commit: 779d812c91f5fa99157e2aec5a4a19cfdc214449
+    :git: git@github.com:coodly/swlogger.git
 
 SPEC CHECKSUMS:
-  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Crashlytics: 3cdd4c9655be68032a0cf0379e0fb5ef6af22cad
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   GameKit: ddf76177b7f08ffe92c4e81b2b8c6f5ba94345ca
+  SWLogger: 32758d2926ab91ad26a52ccaf67a7b62c83772d4
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 9bbae82bf7d3d832024909c96735837fb12f955d
+
+COCOAPODS: 1.0.1
