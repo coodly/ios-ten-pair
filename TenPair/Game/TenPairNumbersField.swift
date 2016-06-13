@@ -52,7 +52,12 @@ class TenPairNumbersField: GameScrollViewContained {
             let tileWidth = (presentationWidth - SidesSpacing) / CGFloat(integerLiteral: NumberOfColumns)
             let maxWidth = UIDevice.currentDevice().userInterfaceIdiom == .Phone ? MaxPhoneTileWidth : MaxPadTileWidth
             let rounded = min(round(tileWidth), maxWidth)
-            tileSize = CGSizeMake(rounded, rounded)
+            let nextSize = CGSizeMake(rounded, rounded)
+            if CGSizeEqualToSize(nextSize, tileSize) {
+                return
+            }
+            
+            tileSize = nextSize
             
             reusableTiles.removeAll()
             for (_, tile) in tilesInUse {
