@@ -19,8 +19,6 @@ import SpriteKit
 import SWLogger
 import GoogleMobileAds
 
-let TenPairSaveDataKey = "NumbersGameSaveDataKey"
-
 class GameViewController: UIViewController {
     @IBOutlet var gameView: SKView!
     @IBOutlet var adContainerView: UIView!

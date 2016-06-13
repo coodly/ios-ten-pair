@@ -18,6 +18,7 @@ import Foundation
 import SpriteKit
 import UIKit
 import GameKit
+import SWLogger
 
 private let TenPairRowHideTime: NSTimeInterval = 0.3
 private let TenPairHideTileAction = SKAction.hide()
@@ -526,5 +527,34 @@ class TenPairNumbersField: GameScrollViewContained {
         }
         
         return false
+    }
+}
+
+extension TenPairNumbersField: MatchFinder {
+    func searchForMatch(completion: (CGFloat) -> ()) {
+        Log.debug("Search match")
+        inBackground() {
+            let index = self.openMatchIndex(self.presentedNumbers)
+            onMainThread() {
+                Log.debug("Match index: \(index)")
+                if let value = index {
+                    self.selectedTile?.markUnselected()
+                    
+                    self.selectedIndex = value
+                    if let tile = self.tilesInUse[value] {
+                        Log.debug("Proposed on screen")
+                        tile.markSelected()
+                        self.selectedTile = tile
+                        completion(-1)
+                    } else {
+                        let row = CGFloat(value / NumberOfColumns)
+                        let proposedOffset = row * self.tileSize.height
+                        completion(proposedOffset)
+                    }
+                } else {
+                    completion(-1)
+                }
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ import Foundation
 import UIKit
 import SpriteKit
 import GameKit
+import SWLogger
 
 private let ActionButtonsTrayHeight: CGFloat = 50
 
@@ -84,6 +85,29 @@ class TenPairPlayScreen: GameScreen {
         actionButtons!.size = CGSizeMake(200, ActionButtonsTrayHeight)
         actionButtons!.color = UIColor.redColor()
         addGameView(actionButtons!)
+        
+        actionButtons!.hintButton.action = SKAction.runBlock() {
+            var loading: TenPairLoadingScreen?
+            
+            let reload = SKAction.runBlock() {
+                self.numbersField?.searchForMatch() {
+                    offset in
+                    
+                    Log.debug("Search complete: \(offset)")
+                    
+                    if offset < 0 {
+                        // show no match message
+                    } else {
+                        let scrollTo = offset - self.scrollView!.size.height / 2                        
+                        self.scrollView!.setContentOffset(CGPointMake(0, scrollTo), animated: true)
+                    }
+                    
+                    self.game!.dismissScreen(loading!)
+                }
+            }
+            
+            loading = self.executeGameAction(reload)
+        }
     }
     
     override func positionContent() {
@@ -107,7 +131,7 @@ class TenPairPlayScreen: GameScreen {
     func reloadNumbers() {
         var loading: TenPairLoadingScreen?
         
-        let reload = SKAction.runBlock { () -> Void in
+        let reload = SKAction.runBlock() {
             self.numbersField!.reloadNumbers(SKAction.runBlock({ () -> Void in
                 self.topMenuBar!.reloadButton!.userInteractionEnabled = true
                 self.game!.dismissScreen(loading!)

@@ -105,4 +105,10 @@ public class GameScrollView: GameView, UIScrollViewDelegate {
     public func translatePointToContent(point: CGPoint) -> CGPoint {
         return presented!.convertPoint(point, fromNode: parent!)
     }
+    
+    public func setContentOffset(contentOffset: CGPoint, animated: Bool) {
+        var saneYOffset = max(contentOffset.y, 0)
+        saneYOffset = min(saneYOffset, scrollView.contentSize.height - scrollView.bounds.height)
+        scrollView.setContentOffset(CGPointMake(0, saneYOffset), animated: animated)
+    }
 }

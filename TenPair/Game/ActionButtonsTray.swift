@@ -18,6 +18,8 @@ import Foundation
 import GameKit
 
 class ActionButtonsTray: SlideOutButtonsTray {
+    private(set) var hintButton: GameButton!
+    
     override func loadContent() {
         super.loadContent()
         
@@ -28,7 +30,8 @@ class ActionButtonsTray: SlideOutButtonsTray {
 
         appendButton(buttonWithImage("info"))
         appendButton(buttonWithImage("undo"))
-        appendButton(buttonWithImage("hint"))
+        hintButton = buttonWithImage("hint")
+        appendButton(hintButton)
     }
     
     private func buttonWithImage(named: String) -> GameButton {
