@@ -24,7 +24,8 @@ private let TenPairHideTileAction = SKAction.hide()
 private let TenPairUnhideTileAction = SKAction.unhide()
 private let TenPairRemoveTileAction = SKAction.removeFromParent()
 private let SidesSpacing: CGFloat = 10 * 2
-private let MaxTileWidth: CGFloat = 50
+private let MaxPadTileWidth: CGFloat = 50
+private let MaxPhoneTileWidth: CGFloat = 35
 
 class TenPairNumbersField: GameScrollViewContained {
     var presentedNumbers = [Int]()
@@ -49,7 +50,8 @@ class TenPairNumbersField: GameScrollViewContained {
             }
             
             let tileWidth = (presentationWidth - SidesSpacing) / CGFloat(integerLiteral: NumberOfColumns)
-            let rounded = min(round(tileWidth), MaxTileWidth)
+            let maxWidth = UIDevice.currentDevice().userInterfaceIdiom == .Phone ? MaxPhoneTileWidth : MaxPadTileWidth
+            let rounded = min(round(tileWidth), maxWidth)
             tileSize = CGSizeMake(rounded, rounded)
             
             reusableTiles.removeAll()
