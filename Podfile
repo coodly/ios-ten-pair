@@ -28,5 +28,5 @@ target 'TenPair' do
 end
 
 target 'TenPairTests' do
-    pods
+
 end
