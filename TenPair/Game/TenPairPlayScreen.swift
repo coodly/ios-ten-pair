@@ -19,6 +19,8 @@ import UIKit
 import SpriteKit
 import GameKit
 
+private let ActionButtonsTrayHeight: CGFloat = 50
+
 let TenPairGameStart = [1, 2, 3, 4, 5, 6, 7, 8, 9,
                         1, 1, 1, 2, 1, 3, 1, 4, 1,
                         5, 1, 6, 1, 7, 1, 8, 1, 9]
@@ -28,6 +30,7 @@ class TenPairPlayScreen: GameScreen {
     var scrollView: GameScrollView?
     var numbersField: TenPairNumbersField?
     var startField = TenPairGameStart
+    private var actionButtons: ActionButtonsTray?
     
     override func loadContent() {
         name = "TenPairPlayScreen"
@@ -36,7 +39,7 @@ class TenPairPlayScreen: GameScreen {
         let scrollView = GameScrollView()
         self.scrollView = scrollView
         scrollView.size = size
-        scrollView.contentInset = UIEdgeInsetsMake(60, 0, 10, 0)
+        scrollView.contentInset = UIEdgeInsetsMake(60, 0, 10 + ActionButtonsTrayHeight + 10, 0)
         addGameView(scrollView)
         
         let field = TenPairNumbersField()
@@ -75,6 +78,12 @@ class TenPairPlayScreen: GameScreen {
         topMenuBar.reloadButton!.action = SKAction.runBlock() {
             self.reloadNumbers()
         }
+        
+        actionButtons = ActionButtonsTray()
+        actionButtons!.anchorPoint = CGPointZero
+        actionButtons!.size = CGSizeMake(200, ActionButtonsTrayHeight)
+        actionButtons!.color = UIColor.redColor()
+        addGameView(actionButtons!)
     }
     
     override func positionContent() {
@@ -84,6 +93,8 @@ class TenPairPlayScreen: GameScreen {
         numbersField!.presentationWidth = size.width
         
         scrollView!.size = size
+        
+        actionButtons!.position = CGPointMake(0, 10)
         
         super.positionContent()
     }

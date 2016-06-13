@@ -21,8 +21,8 @@ import MessageUI
 import UIKit
 
 public extension SKNode {
-    public func radians(degrees:Double) -> Double {
-        return (degrees * M_PI) / 180.0
+    public func radians(degrees: CGFloat) -> CGFloat {
+        return (degrees * CGFloat(M_PI)) / 180.0
     }
 }
 
