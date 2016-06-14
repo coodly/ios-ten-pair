@@ -343,6 +343,10 @@ class TenPairNumbersField: GameScrollViewContained {
             }
         }
         
+        if toCheck.height > visibleFrame.height {
+            toCheck = visibleFrame
+        }
+        
         let topY = size.height - (visibleFrame.origin.y + visibleFrame.height)
         let topLine = lineForY(topY)
         background.updateWithTopLine(topLine, totalSize:size)
@@ -367,7 +371,7 @@ class TenPairNumbersField: GameScrollViewContained {
         }
         
         for index in toRemove {
-            if  index == selectedIndex {
+            if index == selectedIndex {
                 selectedTile = nil
             }
             
