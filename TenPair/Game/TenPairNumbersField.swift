@@ -534,8 +534,14 @@ class TenPairNumbersField: GameScrollViewContained {
     }
 }
 
+enum SearchResult {
+    case FoundOnScreen
+    case FoundOffScreen(CGFloat)
+    case NotFound
+}
+
 extension TenPairNumbersField: MatchFinder {
-    func searchForMatch(completion: (CGFloat) -> ()) {
+    func searchForMatch(completion: (SearchResult) -> ()) {
         Log.debug("Search match")
         inBackground() {
             let index = self.openMatchIndex(self.presentedNumbers)
@@ -549,14 +555,14 @@ extension TenPairNumbersField: MatchFinder {
                         Log.debug("Proposed on screen")
                         tile.markSelected()
                         self.selectedTile = tile
-                        completion(-1)
+                        completion(.FoundOnScreen)
                     } else {
                         let row = CGFloat(value / NumberOfColumns)
                         let proposedOffset = row * self.tileSize.height
-                        completion(proposedOffset)
+                        completion(.FoundOffScreen(proposedOffset))
                     }
                 } else {
-                    completion(-1)
+                    completion(.NotFound)
                 }
             }
         }

@@ -90,14 +90,18 @@ class TenPairPlayScreen: GameScreen {
             
             let reload = SKAction.runBlock() {
                 self.numbersField?.searchForMatch() {
-                    offset in
+                    result in
                     
-                    Log.debug("Search complete: \(offset)")
-                    
-                    if offset < 0 {
-                        // show no match message
-                    } else {
-                        let scrollTo = offset - self.scrollView!.size.height / 2                        
+                    Log.debug("Search complete: \(result)")
+                    switch result {
+                    case .FoundOnScreen:
+                        //no op
+                        break
+                    case .NotFound:
+                        let popup = PopupMessageScreen()
+                        //self.game?.presentModalScreen(popup)
+                    case .FoundOffScreen(let offset):
+                        let scrollTo = offset - self.scrollView!.size.height / 2
                         self.scrollView!.setContentOffset(CGPointMake(0, scrollTo), animated: true)
                     }
                     
