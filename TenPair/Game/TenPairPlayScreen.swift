@@ -31,7 +31,7 @@ class TenPairPlayScreen: GameScreen {
     var scrollView: GameScrollView?
     var numbersField: TenPairNumbersField?
     var startField = TenPairGameStart
-    private var actionButtons: ActionButtonsTray?
+    private var actionButtons: HintButtonTray?
     
     override func loadContent() {
         name = "TenPairPlayScreen"
@@ -80,10 +80,9 @@ class TenPairPlayScreen: GameScreen {
             self.reloadNumbers()
         }
         
-        actionButtons = ActionButtonsTray()
+        actionButtons = HintButtonTray()
         actionButtons!.anchorPoint = CGPointZero
-        actionButtons!.size = CGSizeMake(200, ActionButtonsTrayHeight)
-        actionButtons!.color = UIColor.redColor()
+        actionButtons!.size = CGSizeMake(ActionButtonsTrayHeight, ActionButtonsTrayHeight)
         addGameView(actionButtons!)
         
         actionButtons!.hintButton.action = SKAction.runBlock() {
