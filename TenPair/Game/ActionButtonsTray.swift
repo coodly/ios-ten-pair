@@ -37,7 +37,6 @@ class ActionButtonsTray: SlideOutButtonsTray {
     private func buttonWithImage(named: String) -> GameButton {
         let result = GameButton(imageNamed: named)
         result.size = CGSizeMake(44, 44)
-        result.zPosition = 1
         
         return result
     }

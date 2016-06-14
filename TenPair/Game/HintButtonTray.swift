@@ -39,7 +39,6 @@ class HintButtonTray: GameView {
         
         hintButton = GameButton(imageNamed: "hint")
         hintButton.size = CGSizeMake(44, 44)
-        hintButton.zPosition = 1
         
         addChild(hintButton)
         

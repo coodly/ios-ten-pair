@@ -60,7 +60,6 @@ class TenPairPlayScreen: GameScreen {
         
         field.gameWonAction = SKAction.runBlock() {
             let winScreen = TenPairWinScreen()
-            winScreen.zPosition = 2
             winScreen.restartGameAction = SKAction.runBlock() {
                 self.restartGame(winScreen)
             }
@@ -69,7 +68,6 @@ class TenPairPlayScreen: GameScreen {
 
         topMenuBar.menuButton!.action = SKAction.runBlock() {
             let menuScreen = TenPairMenuScreen()
-            menuScreen.zPosition = 2
             menuScreen.restartGameAction = SKAction.runBlock() {
                 self.restartGame(menuScreen)
             }
@@ -99,7 +97,7 @@ class TenPairPlayScreen: GameScreen {
                         break
                     case .NotFound:
                         let popup = PopupMessageScreen()
-                        //self.game?.presentModalScreen(popup)
+                        self.game?.presentModalScreen(popup)
                     case .FoundOffScreen(let offset):
                         let scrollTo = offset - self.scrollView!.size.height / 2
                         self.scrollView!.setContentOffset(CGPointMake(0, scrollTo), animated: true)

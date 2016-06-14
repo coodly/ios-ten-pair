@@ -477,6 +477,8 @@ class TenPairNumbersField: GameScrollViewContained {
     }
     
     func restartGame() {
+        selectedTile = nil
+        selectedIndex = -1
         lastHandledVisible = CGRectZero
         for (_, value) in tilesInUse {
             let tile = value as TenPairNumberTile

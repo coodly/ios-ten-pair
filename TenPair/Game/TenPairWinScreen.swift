@@ -27,7 +27,6 @@ class TenPairWinScreen: TenPairMenuScreen {
         emitter = fireworks
         fireworks.particleBirthRate = size.width / 10
         fireworks.targetNode = scene
-        fireworks.zPosition = 0
         addChild(fireworks)
         super.loadContent()
         positionContent()

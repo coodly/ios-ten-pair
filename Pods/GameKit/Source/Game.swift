@@ -29,12 +29,14 @@ public extension SKNode {
 public class Game: SKScene, MFMailComposeViewControllerDelegate {
     var tapRecognizer: UITapGestureRecognizer?
     public var controller: UIViewController?
+    private var screens = [GameView]()
     
     public func presentLoadingView(loadingScreen: GameLoadingView) {
         presentModalView(loadingScreen)
     }
 
     func presentModalView(modalView: GameView) {
+        tagPresentedScreen(modalView)
         addChild(modalView)
         modalView.size = size
         modalView.anchorPoint = CGPointMake(0, 0)
@@ -47,12 +49,20 @@ public class Game: SKScene, MFMailComposeViewControllerDelegate {
     }
     
     public func showScreen(screen: GameScreen) {
+        tagPresentedScreen(screen)
         addChild(screen)
         screen.game = self
         screen.size = size
         screen.anchorPoint = CGPointMake(0, 0)
         screen.loadContent()
         screen.positionContent()
+    }
+    
+    private func tagPresentedScreen(screen: GameView) {
+        let usedZPos = screens.last?.zPosition ?? 0
+        let zPos = usedZPos + 1
+        screen.zPosition = zPos
+        screens.append(screen)
     }
     
     public override func update(currentTime: NSTimeInterval) {
@@ -116,18 +126,20 @@ public class Game: SKScene, MFMailComposeViewControllerDelegate {
     }
     
     func screensInArray(nodes: [SKNode]) -> [GameScreen] {
-        var result: [GameScreen] = []
+        var result = [GameScreen]()
         for node in nodes {
-            if node.isKindOfClass(GameScreen) {
-                result.append(node as! GameScreen)
+            guard let screen = node as? GameScreen else {
+                continue
             }
+
+            result.append(screen)
         }
         
         return result.sort({$0.zPosition > $1.zPosition})
     }
     
-    func findButtonInArray(nodes: Array<AnyObject>) -> GameButton? {        
-        for node in nodes {
+    func findButtonInArray(nodes: [AnyObject]) -> GameButton? {
+        for node in nodes.reverse() {
             if let button = node as? GameButton {
                 return button
             }
@@ -139,6 +151,10 @@ public class Game: SKScene, MFMailComposeViewControllerDelegate {
     public func dismissScreen(screen: GameScreen) {
         screen.unloadContent()
         screen.removeFromParent()
+        
+        if let index = screens.indexOf({ $0 == screen }) {
+            screens.removeAtIndex(index)
+        }
     }
     
     public func sendEmail(email: String, subject: String = "") {

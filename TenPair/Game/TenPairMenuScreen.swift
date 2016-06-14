@@ -63,7 +63,6 @@ class TenPairMenuScreen: GameMenuScreen {
         item.setTitle(title)
         item.color = TenPairTheme.currentTheme.menuOptionBackgroundColor!
         item.action = action
-        item.zPosition = 3
         
         return item
     }
