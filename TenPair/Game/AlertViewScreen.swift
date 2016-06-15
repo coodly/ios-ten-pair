@@ -20,7 +20,9 @@ import SpriteKit
 
 class AlertViewScreen: GameScreen {
     private var background: GameButton!
-    private var box: AlertBox!
+    private lazy var box: AlertBox = {
+        return AlertBox()
+    }()
     var message: String!
     
     override func loadContent() {
@@ -36,7 +38,6 @@ class AlertViewScreen: GameScreen {
         }
         addChild(background)
         
-        box = AlertBox()
         box.size = CGSizeMake(300, 200)
         box.message = message
         addGameView(box)
@@ -48,12 +49,18 @@ class AlertViewScreen: GameScreen {
         background.size = size
         box.position = CGPointMake((size.width - box.size.width) / 2, (size.height - box.size.height) / 2)
     }
+    
+    func addAction(iconName: String, closure: () -> ()) {
+        box.addAction(iconName, closure: closure)
+    }
 }
 
 private class AlertBox: GameView {
     private var background: SKShapeNode!
     private var message: String!
     private var text: SKSpriteNode!
+    private var buttons = [GameButton]()
+    private var separator: SKShapeNode!
     
     private override func loadContent() {
         super.loadContent()
@@ -67,11 +74,40 @@ private class AlertBox: GameView {
         text.color = TenPairTheme.currentTheme.defaultNumberTileColor!
         text.anchorPoint = CGPointZero
         addChild(text)
+        
+        for button in buttons {
+            addGameView(button)
+        }
+        
+        let path = CGPathCreateMutable()
+        CGPathMoveToPoint(path, nil, 0, 0)
+        CGPathAddLineToPoint(path, nil, size.width, 0)
+        separator = SKShapeNode(path: path)
+        separator.strokeColor = TenPairTheme.currentTheme.defaultNumberTileColor!
+        addChild(separator)
     }
     
     private override func positionContent() {
-        super.positionContent()
-        
         text.position = CGPointMake((size.width - text.size.width) / 2, size.height - text.size.height - 10)
+        let buttonWidth = size.width / CGFloat(buttons.count)
+        
+        var buttonXOffset = CGFloat(0)
+        for button in buttons {
+            button.position = CGPointMake(buttonXOffset, 0)
+            button.size = CGSizeMake(buttonWidth, 44)
+            buttonXOffset += buttonWidth
+        }
+        
+        separator.position = CGPointMake(0, 44)
+        
+        super.positionContent()
+    }
+    
+    private func addAction(iconName: String, closure: () -> ()) {
+        let button = GameButton.buttonWithImage(iconName, action: closure)
+        button.anchorPoint = CGPointZero
+        button.image?.color = TenPairTheme.currentTheme.defaultNumberTileColor!
+        button.image?.colorBlendFactor = 1
+        buttons.append(button)
     }
 }

@@ -40,7 +40,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   GameKit:
-    :commit: 16e9005c88b9629930730e1227a961ea068639e4
+    :commit: 4d6c1fa2bccd190887f0dc4cf73abf856898c38f
     :git: git@github.com:coodly/GameKit.git
   SWLogger:
     :commit: 779d812c91f5fa99157e2aec5a4a19cfdc214449

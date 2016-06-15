@@ -17,7 +17,35 @@
 import Foundation
 import SpriteKit
 
-public class GameButton : SKSpriteNode {
+public class GameButton : GameView {
     public var action: SKAction?
     public var touchDisables = false
+    public var image: SKSpriteNode?
+    
+    public class func buttonWithImage(imageName: String, action: () -> ()) -> GameButton {
+        let button = GameButton()
+        let image = SKSpriteNode(imageNamed: imageName)
+        button.image = image
+        button.action = SKAction.runBlock(action)
+        button.addChild(image)
+        return button
+    }
+    
+    public override func positionContent() {
+        super.positionContent()
+ 
+        guard let image = image else {
+            return
+        }
+        
+        image.size = fitSizeToHeight(image.size, height: size.height)
+        image.position = CGPointMake(size.width / 2, size.height / 2)
+    }
+}
+
+private extension GameButton {
+    func fitSizeToHeight(size: CGSize, height: CGFloat) -> CGSize {
+        let ratio = height / size.height
+        return CGSizeMake(size.width * ratio, height)
+    }
 }

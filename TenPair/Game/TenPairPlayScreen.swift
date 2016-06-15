@@ -98,6 +98,10 @@ class TenPairPlayScreen: GameScreen {
                     case .NotFound:
                         let popup = AlertViewScreen()
                         popup.message = NSLocalizedString("game.hints.no.more.moves.message", comment: "")
+                        popup.addAction("reload") {
+                            self.game?.dismissScreen(popup)
+                            self.reloadNumbers()
+                        }
                         self.game?.presentModalScreen(popup)
                     case .FoundOffScreen(let offset):
                         let scrollTo = offset - self.scrollView!.size.height / 2
