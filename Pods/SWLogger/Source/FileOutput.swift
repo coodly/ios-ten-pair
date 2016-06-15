@@ -39,9 +39,14 @@ public class FileOutput: LogOutput {
 
         let dir = NSFileManager.defaultManager().URLsForDirectory(saveInDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).last as NSURL!
         let time = dateFormatter.stringFromDate(NSDate())
-        let logsFolder = dir.URLByAppendingPathComponent("Logs")
+        #if swift(>=2.3)
+            let logsFolder = dir.URLByAppendingPathComponent("Logs")!
+            let fileURL = logsFolder.URLByAppendingPathComponent("\(time).txt")!
+        #else
+            let logsFolder = dir.URLByAppendingPathComponent("Logs")
+            let fileURL = logsFolder.URLByAppendingPathComponent("\(time).txt")
+        #endif        
         createFolder(logsFolder)
-        let fileURL = logsFolder.URLByAppendingPathComponent("\(time).txt")
         
         makeSureFileExists(fileURL)
         

@@ -35,7 +35,11 @@ public extension SKSpriteNode {
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
         string.drawInRect(rect)
         
-        let image = UIGraphicsGetImageFromCurrentImageContext()
+        #if swift(>=2.3)
+            let image = UIGraphicsGetImageFromCurrentImageContext()!
+        #else
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+        #endif
         UIGraphicsEndImageContext()
         
         let result = SKSpriteNode(texture: SKTexture(image: image))

@@ -93,7 +93,11 @@ class TenPairNumberTile: SKSpriteNode {
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
         string.drawInRect(rect)
         
-        let image = UIGraphicsGetImageFromCurrentImageContext()
+        #if swift(>=2.3)
+            let image = UIGraphicsGetImageFromCurrentImageContext()!
+        #else
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+        #endif
         UIGraphicsEndImageContext()
         
         return SKTexture(image: image)
