@@ -41,6 +41,9 @@ class TenPairMenuScreen: GameMenuScreen {
             self.game!.dismissScreen(self)
             self.game!.runAction(self.restartGameAction!)
         })
+        addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.full.version.purchased", comment: "")) {
+            
+        })
         addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
             _ = UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
         })

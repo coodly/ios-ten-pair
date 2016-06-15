@@ -18,12 +18,15 @@ import UIKit
 import SpriteKit
 import SWLogger
 import GoogleMobileAds
+import LaughingAdventure
+import StoreKit
 
 class GameViewController: UIViewController {
     @IBOutlet var gameView: SKView!
     @IBOutlet var adContainerView: UIView!
     @IBOutlet var adContainerHeightConstraint: NSLayoutConstraint!
     private var bannerView: GADBannerView!
+    private var products: [SKProduct]?
     
     var scene : TenPairGame?
 
@@ -89,10 +92,32 @@ class GameViewController: UIViewController {
     }
 }
 
+extension GameViewController: ProductsHandler {
+    func refreshProducts() {
+        if let _ = products {
+            return
+        }
+        
+        retrieveProducts([FullVersionIdentifier]) {
+            products, invalid in
+            
+            Log.debug("products: \(products)")
+            Log.debug("Invalid: \(invalid)")
+            
+            self.products = products
+        }
+    }
+}
+
 extension GameViewController: GADBannerViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        loadAds()
+        refreshProducts()
+    }
+    
+    func loadAds() {
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID, "466da0f45d3a5e55de0e1b150016b580", "ff31957cce821a3df57613ad34e6293e"]
         bannerView.loadRequest(request)

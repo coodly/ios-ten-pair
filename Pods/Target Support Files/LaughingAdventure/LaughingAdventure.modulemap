@@ -1,0 +1,6 @@
+framework module LaughingAdventure {
+  umbrella header "LaughingAdventure-umbrella.h"
+
+  export *
+  module * { export * }
+}
