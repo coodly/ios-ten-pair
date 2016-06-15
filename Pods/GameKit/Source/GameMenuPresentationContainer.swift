@@ -26,7 +26,7 @@ class GameMenuPresentationContainer: GameScrollViewContained {
         item.anchorPoint = CGPointZero
         maxWidth = max(item.size.width, maxWidth)
         items.append(item)
-        addChild(item)
+        addGameView(item)
     }
     
     override func positionContent() {

@@ -43,7 +43,7 @@ public class GameView: SKSpriteNode {
     
     public func addGameView(view: GameView) {
         addChild(view)
-        view.anchorPoint = CGPointMake(0, 0)
+        view.anchorPoint = CGPointZero
         view.loadContent()
     }
 }

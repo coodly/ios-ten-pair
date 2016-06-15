@@ -47,4 +47,8 @@ public class GameMenuScreen: GameScreen {
     override func unloadContent() {
         scrollView.scrollView.removeFromSuperview()
     }
+    
+    public func allItems() -> [GameMenuButton] {
+        return container.items
+    }
 }

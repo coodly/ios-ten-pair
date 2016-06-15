@@ -39,7 +39,7 @@ class TenPairMenuScreen: GameMenuScreen {
         }
         addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.restart", comment: "")) {
             self.game!.dismissScreen(self)
-            self.runAction(self.restartGameAction!)
+            self.game!.runAction(self.restartGameAction!)
         })
         addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
             _ = UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
@@ -51,19 +51,26 @@ class TenPairMenuScreen: GameMenuScreen {
     
     func menuItemWithTitle(title: String, closure: () -> ()) -> TenPairMenuButton {
         let item = TenPairMenuButton()
-        item.color = SKColor.redColor()
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            item.size = CGSizeMake(250, 44)
-            item.titleFontSize = 20
-        } else {
-            item.size = CGSizeMake(400, 66)
-            item.titleFontSize = 30
-        }
-        
         item.setTitle(title)
         item.color = TenPairTheme.currentTheme.menuOptionBackgroundColor!
         item.action = SKAction.runBlock(closure)
         
         return item
+    }
+    
+    override func positionContent() {
+        let buttons = allItems()
+        let buttonWidth = min(size.width - 80, 400)
+        let buttonHeight = round(buttonWidth / 6)
+        for button in buttons {
+            guard let menuButton = button as? TenPairMenuButton else {
+                continue
+            }
+            
+            menuButton.size = CGSizeMake(buttonWidth, buttonHeight)
+            menuButton.titleFontSize = round(buttonHeight / 2)
+        }
+        
+        super.positionContent()
     }
 }

@@ -19,15 +19,30 @@ import SpriteKit
 import GameKit
 
 class TenPairMenuButton: GameMenuButton {
-    var titleFontSize:  CGFloat = 20
+    private var titleLabel: SKLabelNode?
+    var titleFontSize: CGFloat = 20 {
+        didSet {
+            titleLabel?.fontSize = titleFontSize
+        }
+    }
     
     func setTitle(title: String) {
-        name = "TenPairMenuButton"
+        name = title
         let label = SKLabelNode(fontNamed: "Copperplate-Bold")
         label.text = title
         label.fontSize = titleFontSize
         label.fontColor = TenPairTheme.currentTheme.menuTitleColor!
         label.position = CGPointMake(size.width / 2, (size.height - label.frame.size.height) / 2)
         addChild(label)
+        
+        titleLabel = label
+    }
+    
+    override func positionContent() {
+        guard let label = titleLabel else {
+            return
+        }
+        
+        label.position = CGPointMake(size.width / 2, (size.height - label.frame.size.height) / 2)
     }
 }
