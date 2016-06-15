@@ -10,6 +10,7 @@
 "CDYSocial.cant.share.alert.message" = "Could not connect to service. Please check that you have entered your details under Settings and sharing is allowed under Settings -> Privacy.";
 "CDYSocial.cant.share.alert.title" = "Can't share";
 
+"game.hints.no.more.moves.message" = "No more moves available";
 "game.win.share.social.message" = "I just completed game of Numbrn! You should also check it out!";
 
 "manu.option.send.message" = "Message to developer";

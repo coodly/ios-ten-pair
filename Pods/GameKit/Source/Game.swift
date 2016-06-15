@@ -20,6 +20,10 @@ import GLKit
 import MessageUI
 import UIKit
 
+private extension Selector {
+    static let tapped = #selector(Game.tapped(_:))
+}
+
 public extension SKNode {
     public func radians(degrees: CGFloat) -> CGFloat {
         return (degrees * CGFloat(M_PI)) / 180.0
@@ -92,7 +96,7 @@ public class Game: SKScene, MFMailComposeViewControllerDelegate {
     }
     
     public override func didMoveToView(view: SKView) {
-        let recognizer = UITapGestureRecognizer(target: self, action: Selector("tapped:"))
+        let recognizer = UITapGestureRecognizer(target: self, action: .tapped)
         tapRecognizer = recognizer
         view.addGestureRecognizer(recognizer)
     }

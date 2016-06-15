@@ -96,7 +96,8 @@ class TenPairPlayScreen: GameScreen {
                         //no op
                         break
                     case .NotFound:
-                        let popup = PopupMessageScreen()
+                        let popup = AlertViewScreen()
+                        popup.message = NSLocalizedString("game.hints.no.more.moves.message", comment: "")
                         self.game?.presentModalScreen(popup)
                     case .FoundOffScreen(let offset):
                         let scrollTo = offset - self.scrollView!.size.height / 2
