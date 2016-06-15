@@ -34,7 +34,10 @@ public class GameMenuScreen: GameScreen {
     }
     
     public override func positionContent() {
+        container.size = size
         scrollView.size = size
+        
+        super.positionContent()
     }
     
     public func addMenuItem(item: GameMenuButton) {

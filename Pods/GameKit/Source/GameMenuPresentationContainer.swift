@@ -27,10 +27,11 @@ class GameMenuPresentationContainer: GameScrollViewContained {
         maxWidth = max(item.size.width, maxWidth)
         items.append(item)
         addChild(item)
-        positionItems()
     }
     
-    private func positionItems() {
+    override func positionContent() {
+        super.positionContent()
+
         var yOffset: CGFloat = 0
         for button in Array(items.reverse()) {
             let positionX = (maxWidth - button.size.width) / 2

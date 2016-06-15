@@ -33,23 +33,23 @@ class TenPairMenuScreen: GameMenuScreen {
         color = TenPairTheme.currentTheme.backgroundColor!.colorWithAlphaComponent(0.95)
         
         if showResumeOption {
-            addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.resume", comment: ""), action:SKAction.runBlock({ () -> Void in
+            addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.resume", comment: "")) {
                 self.game!.dismissScreen(self)
-            })))
+            })
         }
-        addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.restart", comment: ""), action:SKAction.runBlock({ () -> Void in
+        addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.restart", comment: "")) {
             self.game!.dismissScreen(self)
             self.runAction(self.restartGameAction!)
-        })))
-        addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: ""), action:SKAction.runBlock({ () -> Void in
+        })
+        addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
             _ = UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
-        })))
-        addMenuItem(menuItemWithTitle(NSLocalizedString("manu.option.send.message", comment: ""), action:SKAction.runBlock({ () -> Void in
+        })
+        addMenuItem(menuItemWithTitle(NSLocalizedString("manu.option.send.message", comment: "")) {
             self.game!.sendEmail("contact@coodly.com", subject: "TenPair feedback")
-        })))
+        })
     }
     
-    func menuItemWithTitle(title: String, action: SKAction) -> TenPairMenuButton {
+    func menuItemWithTitle(title: String, closure: () -> ()) -> TenPairMenuButton {
         let item = TenPairMenuButton()
         item.color = SKColor.redColor()
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
@@ -62,7 +62,7 @@ class TenPairMenuScreen: GameMenuScreen {
         
         item.setTitle(title)
         item.color = TenPairTheme.currentTheme.menuOptionBackgroundColor!
-        item.action = action
+        item.action = SKAction.runBlock(closure)
         
         return item
     }
