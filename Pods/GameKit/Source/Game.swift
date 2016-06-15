@@ -139,7 +139,14 @@ public class Game: SKScene, MFMailComposeViewControllerDelegate {
     }
     
     func findButtonInArray(nodes: [AnyObject]) -> GameButton? {
-        for node in nodes.reverse() {
+        let usedNodes: [AnyObject]
+        if #available(iOS 9, *) {
+            usedNodes = nodes
+        } else {
+            usedNodes = nodes.reverse()
+        }
+        
+        for node in usedNodes {
             if let button = node as? GameButton {
                 return button
             }
