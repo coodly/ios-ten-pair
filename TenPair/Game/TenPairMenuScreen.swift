@@ -45,7 +45,7 @@ class TenPairMenuScreen: GameMenuScreen {
             self.game!.runAction(self.restartGameAction!)
         })
         addMenuItem(menuItemWithTitle(fullVersionMenuItemTitle()) {
-            
+            self.tappedFullVersionButton()
         })
         addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
             _ = UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
@@ -81,10 +81,30 @@ class TenPairMenuScreen: GameMenuScreen {
     }
     
     private func fullVersionMenuItemTitle() -> String {
+        if  fullVersionUnlocked() {
+            return NSLocalizedString("menu.option.full.version.purchased", comment: "")
+        }
+        
         if let product = fullVersionProduct {
             return String.localizedStringWithFormat(NSLocalizedString("menu.option.full.version.price.base", comment: ""), product.formattedPrice())            
         }
-        
-        return NSLocalizedString("menu.option.full.version.purchased", comment: "")
+
+        return String.localizedStringWithFormat(NSLocalizedString("menu.option.full.version.price.base", comment: ""), "-")
+    }
+    
+    private func tappedFullVersionButton() {
+        if fullVersionUnlocked() {
+            let alert = AlertViewScreen()
+            alert.message = NSLocalizedString("menu.full.version.thanks.message", comment: "")
+            alert.addAction("close") {
+                self.game?.dismissScreen(alert)
+            }
+            
+            self.game?.presentModalScreen(alert)
+        }
+    }
+    
+    private func fullVersionUnlocked() -> Bool {
+        return true
     }
 }
