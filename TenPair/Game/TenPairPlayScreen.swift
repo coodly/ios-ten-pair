@@ -19,6 +19,7 @@ import UIKit
 import SpriteKit
 import GameKit
 import SWLogger
+import StoreKit
 
 private let ActionButtonsTrayHeight: CGFloat = 50
 
@@ -32,6 +33,7 @@ class TenPairPlayScreen: GameScreen {
     var numbersField: TenPairNumbersField?
     var startField = TenPairGameStart
     private var actionButtons: HintButtonTray?
+    var fullVersionProduct: SKProduct?
     
     override func loadContent() {
         name = "TenPairPlayScreen"
@@ -68,6 +70,7 @@ class TenPairPlayScreen: GameScreen {
 
         topMenuBar.menuButton!.action = SKAction.runBlock() {
             let menuScreen = TenPairMenuScreen()
+            menuScreen.fullVersionProduct = self.fullVersionProduct
             menuScreen.restartGameAction = SKAction.runBlock() {
                 self.restartGame(menuScreen)
             }

@@ -18,12 +18,15 @@ import Foundation
 import UIKit
 import SpriteKit
 import GameKit
+import StoreKit
+import LaughingAdventure
 
 let AppStoreID = 837173458
 
 class TenPairMenuScreen: GameMenuScreen {
     var restartGameAction: SKAction?
     var showResumeOption = true
+    var fullVersionProduct: SKProduct?
     
     override func loadContent() {
         super.loadContent()
@@ -41,7 +44,7 @@ class TenPairMenuScreen: GameMenuScreen {
             self.game!.dismissScreen(self)
             self.game!.runAction(self.restartGameAction!)
         })
-        addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.full.version.purchased", comment: "")) {
+        addMenuItem(menuItemWithTitle(fullVersionMenuItemTitle()) {
             
         })
         addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
@@ -75,5 +78,13 @@ class TenPairMenuScreen: GameMenuScreen {
         }
         
         super.positionContent()
+    }
+    
+    private func fullVersionMenuItemTitle() -> String {
+        if let product = fullVersionProduct {
+            return String.localizedStringWithFormat(NSLocalizedString("menu.option.full.version.price.base", comment: ""), product.formattedPrice())            
+        }
+        
+        return NSLocalizedString("menu.option.full.version.purchased", comment: "")
     }
 }

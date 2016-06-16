@@ -51,6 +51,13 @@ class GameViewController: UIViewController {
         return true
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        loadAds()
+        refreshProducts()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -105,18 +112,14 @@ extension GameViewController: ProductsHandler {
             Log.debug("Invalid: \(invalid)")
             
             self.products = products
+            
+            let fullVersion = products.filter({ $0.productIdentifier == FullVersionIdentifier }).first
+            self.scene?.playScreen.fullVersionProduct = fullVersion
         }
     }
 }
 
 extension GameViewController: GADBannerViewDelegate {
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        loadAds()
-        refreshProducts()
-    }
-    
     func loadAds() {
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID, "466da0f45d3a5e55de0e1b150016b580", "ff31957cce821a3df57613ad34e6293e"]
