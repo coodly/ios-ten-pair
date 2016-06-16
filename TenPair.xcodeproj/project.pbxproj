@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		841FDAF79BF56DB585AFA529 /* Pods_TenPairTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F580462683097342ADC13243 /* Pods_TenPairTests.framework */; };
+		A700A29E1D12D6C8000339F5 /* PurchaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A700A29D1D12D6C8000339F5 /* PurchaseScreen.swift */; };
 		A739EB9F1D1127AF00E68787 /* AlertViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A739EB9E1D1127AF00E68787 /* AlertViewScreen.swift */; };
 		A73A97611D0D8FE400CF1B3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A97601D0D8FE400CF1B3B /* Constants.swift */; };
 		A73A97651D0D973C00CF1B3B /* TenPairEmptyLinesSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A97631D0D973C00CF1B3B /* TenPairEmptyLinesSearchTests.swift */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		858FDDE58A3DC23BE208A6C7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8E7688E7CDE00FCBA4B81D /* Pods_TenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A700A29D1D12D6C8000339F5 /* PurchaseScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseScreen.swift; sourceTree = "<group>"; };
 		A739EB9E1D1127AF00E68787 /* AlertViewScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewScreen.swift; sourceTree = "<group>"; };
 		A73A97601D0D8FE400CF1B3B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A73A97631D0D973C00CF1B3B /* TenPairEmptyLinesSearchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairEmptyLinesSearchTests.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				A739EB9E1D1127AF00E68787 /* AlertViewScreen.swift */,
 				A76C053F1D0FD2390091D64B /* HintButtonTray.swift */,
 				A76C05391D0EF44F0091D64B /* MatchFinder.swift */,
+				A700A29D1D12D6C8000339F5 /* PurchaseScreen.swift */,
 				EAB2197E1B9C6B8800ED9CF9 /* TenPairDefaultTheme.swift */,
 				EAB2197F1B9C6B8800ED9CF9 /* TenPairEmptyLinesSearch.swift */,
 				EAB219801B9C6B8800ED9CF9 /* TenPairFieldBackground.swift */,
@@ -499,6 +502,7 @@
 			files = (
 				EAB219901B9C6B8800ED9CF9 /* TenPairFieldStatus.swift in Sources */,
 				A73A976E1D0DBED200CF1B3B /* Secrets.swift in Sources */,
+				A700A29E1D12D6C8000339F5 /* PurchaseScreen.swift in Sources */,
 				A76C05401D0FD2390091D64B /* HintButtonTray.swift in Sources */,
 				EAB219911B9C6B8800ED9CF9 /* TenPairGame.swift in Sources */,
 				A76C05351D0EDEC90091D64B /* ActionButtonsTray.swift in Sources */,
@@ -716,6 +720,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.TenPairTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TenPair.app/TenPair";
 			};
 			name = Debug;
@@ -729,6 +734,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.TenPairTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TenPair.app/TenPair";
 			};
 			name = Release;

@@ -45,4 +45,13 @@ class TenPairMenuButton: GameMenuButton {
         
         label.position = CGPointMake(size.width / 2, (size.height - label.frame.size.height) / 2)
     }
+    
+    class func menuItemWithTitle(title: String, closure: () -> ()) -> TenPairMenuButton {
+        let item = TenPairMenuButton()
+        item.setTitle(title)
+        item.color = TenPairTheme.currentTheme.menuOptionBackgroundColor!
+        item.action = SKAction.runBlock(closure)
+        
+        return item
+    }
 }

@@ -21,3 +21,8 @@
 "menu.option.rate" = "Rate on AppStore";
 "menu.option.restart" = "Restart game";
 "menu.option.resume" = "Resume game";
+
+"purchase.screen.back.button" = "Back";
+"purchase.screen.purchase.button" = "Purchase for %@";
+"purchase.screen.restore.button" = "Restore purchase";
+"purchase.screen.sales.letter" = "This app was created by Jaanus Siim, an independent developer based in Estonia. Its development is supported directly by its customers.\n\nIf you have found some joy from this app, please consider purchasing full version to remove ads and unlock future features.\n\nThis really helps me continue to enhance and develop the app.\n\nThank you for your support!";

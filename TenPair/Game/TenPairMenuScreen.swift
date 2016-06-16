@@ -36,34 +36,25 @@ class TenPairMenuScreen: GameMenuScreen {
         color = TenPairTheme.currentTheme.backgroundColor!.colorWithAlphaComponent(0.95)
         
         if showResumeOption {
-            addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.resume", comment: "")) {
+            addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.resume", comment: "")) {
                 self.game!.dismissScreen(self)
             })
         }
-        addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.restart", comment: "")) {
+        addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.restart", comment: "")) {
             self.game!.dismissScreen(self)
             self.game!.runAction(self.restartGameAction!)
         })
-        addMenuItem(menuItemWithTitle(fullVersionMenuItemTitle()) {
+        addMenuItem(TenPairMenuButton.menuItemWithTitle(fullVersionMenuItemTitle()) {
             self.tappedFullVersionButton()
         })
-        addMenuItem(menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
+        addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
             _ = UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
         })
-        addMenuItem(menuItemWithTitle(NSLocalizedString("manu.option.send.message", comment: "")) {
+        addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("manu.option.send.message", comment: "")) {
             self.game!.sendEmail("contact@coodly.com", subject: "TenPair feedback")
         })
     }
-    
-    func menuItemWithTitle(title: String, closure: () -> ()) -> TenPairMenuButton {
-        let item = TenPairMenuButton()
-        item.setTitle(title)
-        item.color = TenPairTheme.currentTheme.menuOptionBackgroundColor!
-        item.action = SKAction.runBlock(closure)
         
-        return item
-    }
-    
     override func positionContent() {
         let buttons = allItems()
         let buttonWidth = min(size.width - 80, 400)
@@ -101,10 +92,18 @@ class TenPairMenuScreen: GameMenuScreen {
             }
             
             self.game?.presentModalScreen(alert)
+            return
+        }
+        
+        if let purchase = fullVersionProduct {
+            let purchaseScreen = PurchaseScreen()
+            purchaseScreen.product = purchase
+            game?.presentModalScreen(purchaseScreen)
+            return
         }
     }
     
     private func fullVersionUnlocked() -> Bool {
-        return true
+        return false
     }
 }
