@@ -19,7 +19,7 @@ import SpriteKit
 import UIKit
 
 public class GameScrollView: GameView, UIScrollViewDelegate {
-    var scrollView = UIScrollView(frame: CGRectZero)
+    public var scrollView = UIScrollView(frame: CGRectZero)
     var presented: GameScrollViewContained?
     public var contentInset = UIEdgeInsetsZero
     var yCenterContent = false

@@ -27,6 +27,7 @@ class TenPairMenuScreen: GameMenuScreen {
     var restartGameAction: SKAction?
     var showResumeOption = true
     var fullVersionProduct: SKProduct?
+    var purchaser: Purchaser!
     
     override func loadContent() {
         super.loadContent()
@@ -98,6 +99,7 @@ class TenPairMenuScreen: GameMenuScreen {
         if let purchase = fullVersionProduct {
             let purchaseScreen = PurchaseScreen()
             purchaseScreen.product = purchase
+            purchaseScreen.purchaser = purchaser
             game?.presentModalScreen(purchaseScreen)
             return
         }

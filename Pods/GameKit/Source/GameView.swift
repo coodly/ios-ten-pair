@@ -23,7 +23,7 @@ public class GameView: SKSpriteNode {
         
     }
     
-    func unloadContent() {
+    public func unloadContent() {
         
     }
     

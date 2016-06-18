@@ -22,6 +22,8 @@ import LaughingAdventure
 class PurchaseScreen: GameScreen {
     private var scrollView: GameScrollView!
     var product: SKProduct!
+    var purchaser: Purchaser!
+    private var loadingScreen = TenPairLoadingScreen()
     
     override func loadContent() {
         super.loadContent()
@@ -36,7 +38,8 @@ class PurchaseScreen: GameScreen {
         
         let purchaseTitle = String.localizedStringWithFormat(NSLocalizedString("purchase.screen.purchase.button", comment: ""), product.formattedPrice())
         let purchase = TenPairMenuButton.menuItemWithTitle(purchaseTitle) {
-            
+            self.game?.presentModalScreen(self.loadingScreen)
+            self.purchaser.purchase(self.product)
         }
         purchase.size = CGSizeMake(width, 40)
         
@@ -60,12 +63,29 @@ class PurchaseScreen: GameScreen {
         scrollView.present(content)
         
         addGameView(scrollView)
+        
+        purchaser.activeMonitor = self
+    }
+    
+    override func unloadContent() {
+        scrollView.scrollView.removeFromSuperview()
+        purchaser.activeMonitor = nil
     }
     
     override func positionContent() {
         scrollView.size = size
         
         super.positionContent()
+    }
+}
+
+extension PurchaseScreen: PurchaseMonitor {
+    func purchase(result: PurchaseResult, forProduct identifier: String) {
+        game?.dismissScreen(loadingScreen)
+        
+        guard identifier == FullVersionIdentifier else {
+            return
+        }
     }
 }
 

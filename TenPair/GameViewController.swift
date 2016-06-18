@@ -27,6 +27,7 @@ class GameViewController: UIViewController {
     @IBOutlet var adContainerHeightConstraint: NSLayoutConstraint!
     private var bannerView: GADBannerView!
     private var products: [SKProduct]?
+    private var purchaser: Purchaser!
     
     var scene : TenPairGame?
 
@@ -41,6 +42,10 @@ class GameViewController: UIViewController {
         bannerView.delegate = self
         bannerView.autoresizingMask = [.FlexibleTopMargin, .FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleBottomMargin]
         adContainerView.addSubview(bannerView)
+        
+        purchaser = Purchaser()
+        purchaser.passiveMonitor = self
+        purchaser.startMonitoring()
     }
 
     override func shouldAutorotate() -> Bool {
@@ -56,6 +61,8 @@ class GameViewController: UIViewController {
         
         loadAds()
         refreshProducts()
+        
+        scene?.playScreen.purchaser = purchaser
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -96,6 +103,12 @@ class GameViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(numbers, forKey: TenPairSaveDataKey)
         defaults.synchronize()
+    }
+}
+
+extension GameViewController: PurchaseMonitor {
+    func purchase(result: PurchaseResult, forProduct identifier: String) {
+        Log.debug("Purchase: \(result) - \(identifier)")
     }
 }
 
