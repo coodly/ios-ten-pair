@@ -19,7 +19,7 @@ import GameKit
 import StoreKit
 import LaughingAdventure
 
-class PurchaseScreen: GameScreen {
+class PurchaseScreen: GameScreen, FullVersionHandler {
     private var scrollView: GameScrollView!
     var product: SKProduct!
     var purchaser: Purchaser!
@@ -102,6 +102,8 @@ extension PurchaseScreen: PurchaseMonitor {
             return
         }
         
+        self.markFullVersionUnlocked()
+
         if result == .Restored {
             let alert = AlertViewScreen()
             alert.message = NSLocalizedString("purchase.screen.restored.message", comment: "")
@@ -113,6 +115,7 @@ extension PurchaseScreen: PurchaseMonitor {
             return
         }
 
+        // .Success
         self.game?.dismissScreen(self)
     }
 }

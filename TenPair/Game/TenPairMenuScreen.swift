@@ -23,14 +23,21 @@ import LaughingAdventure
 
 let AppStoreID = 837173458
 
-class TenPairMenuScreen: GameMenuScreen {
+private extension Selector {
+    static let checkFullVersion = #selector(TenPairMenuScreen.checkFullVersion)
+}
+
+class TenPairMenuScreen: GameMenuScreen, FullVersionHandler {
     var restartGameAction: SKAction?
     var showResumeOption = true
     var fullVersionProduct: SKProduct?
     var purchaser: Purchaser!
+    private var purchaseButton: TenPairMenuButton!
     
     override func loadContent() {
         super.loadContent()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: .checkFullVersion, name: CheckAppFullVersionNotification, object: nil)
         
         name = "TenPairMenuScreen"
         
@@ -45,9 +52,10 @@ class TenPairMenuScreen: GameMenuScreen {
             self.game!.dismissScreen(self)
             self.game!.runAction(self.restartGameAction!)
         })
-        addMenuItem(TenPairMenuButton.menuItemWithTitle(fullVersionMenuItemTitle()) {
+        purchaseButton = TenPairMenuButton.menuItemWithTitle(fullVersionMenuItemTitle()) {
             self.tappedFullVersionButton()
-        })
+        }
+        addMenuItem(purchaseButton)
         addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
             _ = UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
         })
@@ -105,7 +113,7 @@ class TenPairMenuScreen: GameMenuScreen {
         }
     }
     
-    private func fullVersionUnlocked() -> Bool {
-        return false
+    @objc private func checkFullVersion() {
+        purchaseButton.setTitle(fullVersionMenuItemTitle())
     }
 }

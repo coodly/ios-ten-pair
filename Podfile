@@ -20,6 +20,7 @@ def pods
     pod 'Crashlytics', '3.7.1'
     pod 'Firebase/Core', '3.2.1'
     pod 'Firebase/AdMob', '3.2.1'
+    pod 'Locksmith', '2.0.8'
 
     remote_coodly
     #local_coodly

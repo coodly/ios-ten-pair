@@ -27,6 +27,10 @@ class TenPairMenuButton: GameMenuButton {
     }
     
     func setTitle(title: String) {
+        if let existing = titleLabel {
+            existing.removeFromParent()
+        }
+        
         name = title
         let label = SKLabelNode(fontNamed: "Copperplate-Bold")
         label.text = title
@@ -36,6 +40,8 @@ class TenPairMenuButton: GameMenuButton {
         addChild(label)
         
         titleLabel = label
+        
+        positionContent()
     }
     
     override func positionContent() {

@@ -16,3 +16,4 @@
 
 
 let AdMobAdUnit = "<your unit here>"
+let FullVersionKey = "<random strings>"

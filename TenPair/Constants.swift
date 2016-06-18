@@ -11,6 +11,7 @@ import Foundation
 let NumberOfColumns = 9
 let TenPairSaveDataKey = "NumbersGameSaveDataKey"
 let FullVersionIdentifier = "com.coodly.numbrn.full.version"
+let CheckAppFullVersionNotification = "CheckAppFullVersionNotification"
 
 func onMainThread(closure: () -> ()) {
     onQueue(dispatch_get_main_queue(), closure: closure)
