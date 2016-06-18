@@ -23,7 +23,16 @@
       "source_files": "Source/*/*.swift"
     },
     {
+      "name": "Logging",
+      "source_files": "Source/Log"
+    },
+    {
       "name": "Purchase",
+      "dependencies": {
+        "LaughingAdventure/Logging": [
+
+        ]
+      },
       "source_files": "Source/Purchase",
       "frameworks": "StoreKit"
     }

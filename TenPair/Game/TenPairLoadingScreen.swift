@@ -24,6 +24,10 @@ class TenPairLoadingScreen : GameLoadingView {
     var lastUpdateTime: NSTimeInterval = 0
     
     override func loadContent() {
+        if let _ = self.spinner {
+            return
+        }
+        
         color = TenPairTheme.currentTheme.backgroundColor!.colorWithAlphaComponent(0.8)
         let path = UIBezierPath()
         path.addArcWithCenter(CGPointMake(0, 0), radius: 50, startAngle: CGFloat(radians(0)), endAngle: CGFloat(radians(310)), clockwise: true)

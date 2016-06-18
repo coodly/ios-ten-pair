@@ -86,6 +86,24 @@ extension PurchaseScreen: PurchaseMonitor {
         guard identifier == FullVersionIdentifier else {
             return
         }
+        
+        if result == .Cancelled {
+            return
+        }
+        
+        if result == .Failure {
+            let alert = AlertViewScreen()
+            alert.message = NSLocalizedString("purchase.screen.failure.message", comment: "")
+            alert.addAction("close") {
+                self.game?.dismissScreen(alert)
+            }
+            self.game?.presentModalScreen(alert)
+            return
+        }
+        
+        if result == .Success {
+            self.game?.dismissScreen(self)
+        }
     }
 }
 

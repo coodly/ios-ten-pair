@@ -24,6 +24,7 @@ public protocol ProductsHandler {
 
 public extension ProductsHandler {
     func retrieveProducts(identifiers: [String], completion: ProductsResponse) {
+        Logging.log("Retrieve products: \(identifiers)")
         let request = SKProductsRequest(productIdentifiers: Set(identifiers))
         Store.sharedInstance.perform(request, completion: completion)
     }
@@ -40,6 +41,7 @@ private class Store: NSObject, SKProductsRequestDelegate {
     }
     
     public func productsRequest(request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
+        Logging.log("Retrieved: \(response.products.count). Invalid \(response.invalidProductIdentifiers)")
         guard let completion = requests.removeValueForKey(request) else {
             return
         }

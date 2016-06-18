@@ -34,10 +34,12 @@ public class Purchaser: NSObject {
     public weak var activeMonitor: PurchaseMonitor?
     
     public func startMonitoring() {
+        Logging.log("Start monitoring")
         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
     }
     
     public func purchase(product: SKProduct) {
+        Logging.log("Purchase:\(product.productIdentifier)")
         let payment = SKPayment(product: product)
         SKPaymentQueue.defaultQueue().addPayment(payment)
     }
@@ -64,14 +66,17 @@ extension Purchaser: SKPaymentTransactionObserver {
             
             let notifyMonitor = monitor()
             let productIdentifier = transaction.payment.productIdentifier
+            Logging.log("identifier: \(productIdentifier)")
             
             switch transaction.transactionState {
             // Transaction is being added to the server queue.
-            case .Purchasing: break
+            case .Purchasing: Logging.log("Purchasing")
             case .Purchased: // Transaction is in queue, user has been charged.  Client should complete the transaction.
+                Logging.log("Purchased")
                 notifyMonitor?.purchase(.Success, forProduct: productIdentifier)
                 finishTransaction = true
             case .Failed: // Transaction was cancelled or failed before being added to the server queue.
+                Logging.log("Failed: \(transaction.error)")
                 finishTransaction = true
                 if let error = transaction.error where error.code == SKErrorCode.PaymentCancelled.rawValue {
                     notifyMonitor?.purchase(.Cancelled, forProduct: productIdentifier)
@@ -79,9 +84,11 @@ extension Purchaser: SKPaymentTransactionObserver {
                     notifyMonitor?.purchase(.Failure, forProduct: productIdentifier)
                 }
             case .Restored: // Transaction was restored from user's purchase history.  Client should complete the transaction.
+                Logging.log("Restored")
                 finishTransaction = true
                 notifyMonitor?.purchase(.Restored, forProduct: productIdentifier)
             case .Deferred: // The transaction is in the queue, but its final status is pending external action.
+                Logging.log("Deferred")
                 notifyMonitor?.purchase(.Cancelled, forProduct: productIdentifier)
             }
         }

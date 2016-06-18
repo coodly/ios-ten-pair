@@ -18,10 +18,12 @@ import UIKit
 import Fabric
 import Crashlytics
 import SWLogger
+import LaughingAdventure
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    private let laughingDelegate = LaughingDelegate()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])
@@ -29,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Log.addOutput(ConsoleOutput())
         Log.addOutput(FileOutput())
         Log.logLevel = Log.Level.DEBUG
+        
+        Logging.sharedInstance.delegate = laughingDelegate
         
         return true
     }
@@ -49,5 +53,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+}
+
+private class LaughingDelegate: LaughingAdventure.LoggingDelegate {
+    private func log<T>(object: T, file: String, function: String, line: Int) {
+        let message = "L - \(object)"
+        Log.debug(message, file: file, function: function, line: line)
     }
 }
