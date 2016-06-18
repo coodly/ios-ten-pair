@@ -21,11 +21,15 @@ import GoogleMobileAds
 import LaughingAdventure
 import StoreKit
 
-class GameViewController: UIViewController {
+private extension Selector {
+    static let checkFullVersion = #selector(GameViewController.checkFullVersion)
+}
+
+class GameViewController: UIViewController, FullVersionHandler {
     @IBOutlet var gameView: SKView!
     @IBOutlet var adContainerView: UIView!
     @IBOutlet var adContainerHeightConstraint: NSLayoutConstraint!
-    private var bannerView: GADBannerView!
+    private var bannerView: GADBannerView?
     private var products: [SKProduct]?
     private var purchaser: Purchaser!
     
@@ -34,14 +38,16 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: .checkFullVersion, name: CheckAppFullVersionNotification, object: nil)
+        
         adContainerHeightConstraint.constant = 0
         
         bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-        bannerView.adUnitID = AdMobAdUnit
-        bannerView.rootViewController = self
-        bannerView.delegate = self
-        bannerView.autoresizingMask = [.FlexibleTopMargin, .FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleBottomMargin]
-        adContainerView.addSubview(bannerView)
+        bannerView!.adUnitID = AdMobAdUnit
+        bannerView!.rootViewController = self
+        bannerView!.delegate = self
+        bannerView!.autoresizingMask = [.FlexibleTopMargin, .FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleBottomMargin]
+        adContainerView.addSubview(bannerView!)
         
         purchaser = Purchaser()
         purchaser.passiveMonitor = self
@@ -104,6 +110,30 @@ class GameViewController: UIViewController {
         defaults.setObject(numbers, forKey: TenPairSaveDataKey)
         defaults.synchronize()
     }
+    
+    @objc private func checkFullVersion() {
+        guard fullVersionUnlocked() else {
+            return
+        }
+        
+        guard let banner = bannerView else {
+            return
+        }
+        
+        bannerView = nil
+        
+        let animation = {
+            self.adContainerHeightConstraint.constant = 0
+        }
+        
+        let completion: (Bool) -> () = {
+            completed in
+            
+            banner.removeFromSuperview()
+        }
+        
+        UIView.animateWithDuration(0.3, animations: animation, completion: completion)
+    }
 }
 
 extension GameViewController: PurchaseMonitor {
@@ -134,9 +164,18 @@ extension GameViewController: ProductsHandler {
 
 extension GameViewController: GADBannerViewDelegate {
     func loadAds() {
+        if fullVersionUnlocked() {
+            Log.debug("Have full version. No ads")
+            return
+        }
+        
+        guard let banner = bannerView else {
+            return
+        }
+        
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID, "466da0f45d3a5e55de0e1b150016b580", "ff31957cce821a3df57613ad34e6293e"]
-        bannerView.loadRequest(request)
+        banner.loadRequest(request)
     }
     
     func adViewDidReceiveAd(bannerView: GADBannerView!) {

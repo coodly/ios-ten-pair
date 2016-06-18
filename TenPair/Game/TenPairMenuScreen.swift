@@ -63,6 +63,12 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler {
             self.game!.sendEmail("contact@coodly.com", subject: "TenPair feedback")
         })
     }
+    
+    override func unloadContent() {
+        super.unloadContent()
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
         
     override func positionContent() {
         let buttons = allItems()
