@@ -44,6 +44,11 @@ public class Purchaser: NSObject {
         SKPaymentQueue.defaultQueue().addPayment(payment)
     }
     
+    public func restore() {
+        Logging.log("restore purchases")
+        SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
+    }
+    
     func monitor() -> PurchaseMonitor? {
         if let active = activeMonitor {
             return active
@@ -92,5 +97,13 @@ extension Purchaser: SKPaymentTransactionObserver {
                 notifyMonitor?.purchase(.Cancelled, forProduct: productIdentifier)
             }
         }
+    }
+    
+    public func paymentQueueRestoreCompletedTransactionsFinished(queue: SKPaymentQueue) {
+        Logging.log("Restore completed")
+    }
+    
+    public func paymentQueue(queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: NSError) {
+        Logging.log("Restore failed with error: \(error)")
     }
 }

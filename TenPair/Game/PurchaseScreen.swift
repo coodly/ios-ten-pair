@@ -44,7 +44,8 @@ class PurchaseScreen: GameScreen {
         purchase.size = CGSizeMake(width, 40)
         
         let restoreButton = TenPairMenuButton.menuItemWithTitle(NSLocalizedString("purchase.screen.restore.button", comment: "")) {
-            
+            self.game?.presentModalScreen(self.loadingScreen)
+            self.purchaser.restore()
         }
         restoreButton.size = CGSizeMake(width, 40)
         
@@ -101,9 +102,18 @@ extension PurchaseScreen: PurchaseMonitor {
             return
         }
         
-        if result == .Success {
-            self.game?.dismissScreen(self)
+        if result == .Restored {
+            let alert = AlertViewScreen()
+            alert.message = NSLocalizedString("purchase.screen.restored.message", comment: "")
+            alert.addAction("close") {
+                self.game?.dismissScreen(alert)
+                self.game?.dismissScreen(self)
+            }
+            self.game?.presentModalScreen(alert)
+            return
         }
+
+        self.game?.dismissScreen(self)
     }
 }
 

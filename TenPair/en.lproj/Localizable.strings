@@ -26,4 +26,5 @@
 "purchase.screen.failure.message" = "Purchase failed. Please try again later.";
 "purchase.screen.purchase.button" = "Purchase for %@";
 "purchase.screen.restore.button" = "Restore purchase";
+"purchase.screen.restored.message" = "Your full version of TenPair has been restored!";
 "purchase.screen.sales.letter" = "This app was created by Jaanus Siim, an independent developer based in Estonia. Its development is supported directly by its customers.\n\nIf you have found some joy from this app, please consider purchasing full version to remove ads and unlock future features.\n\nThis really helps me continue to enhance and develop the app.\n\nThank you for your support!";

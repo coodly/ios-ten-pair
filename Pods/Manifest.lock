@@ -49,7 +49,7 @@ CHECKOUT OPTIONS:
     :commit: 03dc895c1071ea9fb91e65dcedc37429846834ef
     :git: git@github.com:coodly/GameKit.git
   LaughingAdventure:
-    :commit: cf08687c4aa51514b549eeaf94b2d16be912031a
+    :commit: b08a848662391e81ffd2c8739cfadd55984c91a6
     :git: https://github.com/coodly/laughing-adventure.git
   SWLogger:
     :commit: 3df8f57c4b9755177b201fb9bdf427975ea021b9
