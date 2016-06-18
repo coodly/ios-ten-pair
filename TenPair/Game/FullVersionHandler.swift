@@ -48,4 +48,12 @@ extension FullVersionHandler {
             Log.error("Mark full version error: \(error)")
         }
     }
+    
+    func removeFullVersion() {
+        do {
+            try Locksmith.deleteDataForUserAccount(FullVersionKey)
+        } catch let error as NSError {
+            Log.error("Remove IAP error \(error)")
+        }
+    }
 }

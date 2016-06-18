@@ -21,7 +21,7 @@ import SWLogger
 import LaughingAdventure
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, FullVersionHandler {
     var window: UIWindow?
     private let laughingDelegate = LaughingDelegate()
 
@@ -31,6 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Log.addOutput(ConsoleOutput())
         Log.addOutput(FileOutput())
         Log.logLevel = Log.Level.DEBUG
+        
+        if wipeIAP() {
+            Log.debug("Wipe IAP")
+            removeFullVersion()
+        }
         
         Logging.sharedInstance.delegate = laughingDelegate
         
@@ -53,6 +58,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+}
+
+private extension AppDelegate {
+    func wipeIAP() -> Bool {
+        let env = NSProcessInfo.processInfo().environment
+        if let envValue = env["WIPE"] where envValue == "1" {
+            return true
+        }
+        
+        return false
     }
 }
 
