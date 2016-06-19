@@ -28,16 +28,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FullVersionHandler {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])
 
-        Log.addOutput(ConsoleOutput())
-        Log.addOutput(FileOutput())
-        Log.logLevel = Log.Level.DEBUG
-        
-        if wipeIAP() {
-            Log.debug("Wipe IAP")
-            removeFullVersion()
+        if !ReleaseBuild {
+            Log.addOutput(ConsoleOutput())
+            Log.addOutput(FileOutput())
+            Log.logLevel = Log.Level.DEBUG
+            
+            if wipeIAP() {
+                Log.debug("Wipe IAP")
+                removeFullVersion()
+            }
+            
+            Logging.sharedInstance.delegate = laughingDelegate            
         }
-        
-        Logging.sharedInstance.delegate = laughingDelegate
         
         return true
     }

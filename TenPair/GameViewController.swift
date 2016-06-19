@@ -90,8 +90,10 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
         scene = gameScene
         skView.allowsTransparency = false
         skView.shouldCullNonVisibleNodes = false
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+        if !ReleaseBuild {
+            skView.showsFPS = true
+            skView.showsNodeCount = true
+        }
         skView.presentScene(scene)
 
         gameScene.playScreen.interstitial = self
