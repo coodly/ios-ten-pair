@@ -19,7 +19,7 @@ import UIKit
 import GoogleMobileAds
 import SWLogger
 
-protocol InterstitialPresenter: class {
+protocol InterstitialPresenter: class, FullVersionHandler {
     var interstitial: GADInterstitial? { get set }
     func loadInterstitial()
     func presentInterstitial()
@@ -37,6 +37,10 @@ extension InterstitialPresenter where Self: UIViewController {
     }
     
     func presentInterstitial() {
+        if fullVersionUnlocked() {
+            return
+        }
+        
         guard let presented = interstitial else {
             Log.debug("No interstitial")
             return
