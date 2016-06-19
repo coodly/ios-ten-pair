@@ -110,13 +110,21 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler {
             return
         }
         
-        if let purchase = fullVersionProduct {
-            let purchaseScreen = PurchaseScreen()
-            purchaseScreen.product = purchase
-            purchaseScreen.purchaser = purchaser
-            game?.presentModalScreen(purchaseScreen)
+        guard let purchase = fullVersionProduct else {
+            let alert = AlertViewScreen()
+            alert.message = NSLocalizedString("menu.full.version.no.price.message", comment: "")
+            alert.addAction("close") {
+                self.game?.dismissScreen(alert)
+            }
+            
+            self.game?.presentModalScreen(alert)
             return
         }
+        
+        let purchaseScreen = PurchaseScreen()
+        purchaseScreen.product = purchase
+        purchaseScreen.purchaser = purchaser
+        game?.presentModalScreen(purchaseScreen)
     }
     
     @objc private func checkFullVersion() {

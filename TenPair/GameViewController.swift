@@ -139,6 +139,16 @@ class GameViewController: UIViewController, FullVersionHandler {
 extension GameViewController: PurchaseMonitor {
     func purchase(result: PurchaseResult, forProduct identifier: String) {
         Log.debug("Purchase: \(result) - \(identifier)")
+        
+        guard identifier == FullVersionIdentifier else {
+            return
+        }
+        
+        guard result == .Restored || result == .Success else {
+            return
+        }
+        
+        markFullVersionUnlocked()
     }
 }
 
