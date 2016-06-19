@@ -18,12 +18,17 @@ import SpriteKit
 import GameKit
 import StoreKit
 import LaughingAdventure
+import SWLogger
 
 class PurchaseScreen: GameScreen, FullVersionHandler {
     private var scrollView: GameScrollView!
     var product: SKProduct!
     var purchaser: Purchaser!
     private var loadingScreen = TenPairLoadingScreen()
+    
+    deinit {
+        Log.debug("")
+    }
     
     override func loadContent() {
         super.loadContent()
@@ -38,19 +43,26 @@ class PurchaseScreen: GameScreen, FullVersionHandler {
         
         let purchaseTitle = String.localizedStringWithFormat(NSLocalizedString("purchase.screen.purchase.button", comment: ""), product.formattedPrice())
         let purchase = TenPairMenuButton.menuItemWithTitle(purchaseTitle) {
+            [unowned self] in
+            
             self.game?.presentModalScreen(self.loadingScreen)
             self.purchaser.purchase(self.product)
         }
         purchase.size = CGSizeMake(width, 40)
         
         let restoreButton = TenPairMenuButton.menuItemWithTitle(NSLocalizedString("purchase.screen.restore.button", comment: "")) {
+            [unowned self] in
+            
+            
             self.game?.presentModalScreen(self.loadingScreen)
             self.purchaser.restore()
         }
         restoreButton.size = CGSizeMake(width, 40)
         
         let backButton = TenPairMenuButton.menuItemWithTitle(NSLocalizedString("purchase.screen.back.button", comment: "")) {
-            self.game?.dismissScreen(self)
+            [unowned self] in
+            
+            self.dismiss()
         }
         backButton.size = CGSizeMake(width, 40)
 
@@ -96,7 +108,7 @@ extension PurchaseScreen: PurchaseMonitor {
             let alert = AlertViewScreen()
             alert.message = NSLocalizedString("purchase.screen.failure.message", comment: "")
             alert.addAction("close") {
-                self.game?.dismissScreen(alert)
+
             }
             self.game?.presentModalScreen(alert)
             return
@@ -108,6 +120,8 @@ extension PurchaseScreen: PurchaseMonitor {
             let alert = AlertViewScreen()
             alert.message = NSLocalizedString("purchase.screen.restored.message", comment: "")
             alert.addAction("close") {
+                [unowned self] in
+                
                 self.game?.dismissScreen(self)
             }
             self.game?.presentModalScreen(alert)
@@ -115,7 +129,7 @@ extension PurchaseScreen: PurchaseMonitor {
         }
 
         // .Success
-        self.game?.dismissScreen(self)
+        dismiss()
     }
 }
 
