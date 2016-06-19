@@ -22,6 +22,7 @@
 		A76C05401D0FD2390091D64B /* HintButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C053F1D0FD2390091D64B /* HintButtonTray.swift */; };
 		A7A775231D15AA7E00FB9976 /* FullVersionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A775221D15AA7E00FB9976 /* FullVersionHandler.swift */; };
 		A7B082A51D168512006E0FEC /* InterstitialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B082A41D168512006E0FEC /* InterstitialPresenter.swift */; };
+		A7B082A71D168EE0006E0FEC /* InterstitialCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B082A61D168EE0006E0FEC /* InterstitialCounter.swift */; };
 		BA29C74345D8AF284AEF358D /* Pods_TenPair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8E7688E7CDE00FCBA4B81D /* Pods_TenPair.framework */; };
 		EA01D8CD1BAF32E1007014FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA01D8C91BAF32E1007014FC /* InfoPlist.strings */; };
 		EA01D8CE1BAF32E1007014FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA01D8CB1BAF32E1007014FC /* Localizable.strings */; };
@@ -76,6 +77,7 @@
 		A76C053F1D0FD2390091D64B /* HintButtonTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintButtonTray.swift; sourceTree = "<group>"; };
 		A7A775221D15AA7E00FB9976 /* FullVersionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullVersionHandler.swift; sourceTree = "<group>"; };
 		A7B082A41D168512006E0FEC /* InterstitialPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialPresenter.swift; sourceTree = "<group>"; };
+		A7B082A61D168EE0006E0FEC /* InterstitialCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialCounter.swift; sourceTree = "<group>"; };
 		BDA980DD7CA0FCA2402F32C5 /* Pods-TenPair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenPair.release.xcconfig"; path = "Pods/Target Support Files/Pods-TenPair/Pods-TenPair.release.xcconfig"; sourceTree = "<group>"; };
 		C59489CCA14E8527D2C93F22 /* Pods-TenPair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenPair.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TenPair/Pods-TenPair.debug.xcconfig"; sourceTree = "<group>"; };
 		E8C734AAAB07E4E5623D7EBD /* Pods-TenPairTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenPairTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TenPairTests/Pods-TenPairTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				EA02FA971B9C6AA400B93D23 /* GameViewController.swift */,
+				A7B082A61D168EE0006E0FEC /* InterstitialCounter.swift */,
 				A7B082A41D168512006E0FEC /* InterstitialPresenter.swift */,
 			);
 			name = Controllers;
@@ -519,6 +522,7 @@
 				EA02FA981B9C6AA400B93D23 /* GameViewController.swift in Sources */,
 				EAB219971B9C6B8800ED9CF9 /* TenPairNumbersField.swift in Sources */,
 				A739EB9F1D1127AF00E68787 /* AlertViewScreen.swift in Sources */,
+				A7B082A71D168EE0006E0FEC /* InterstitialCounter.swift in Sources */,
 				A7A775231D15AA7E00FB9976 /* FullVersionHandler.swift in Sources */,
 				EA02FA921B9C6AA400B93D23 /* AppDelegate.swift in Sources */,
 				EAB2198D1B9C6B8800ED9CF9 /* TenPairDefaultTheme.swift in Sources */,
