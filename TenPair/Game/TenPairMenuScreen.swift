@@ -20,6 +20,7 @@ import SpriteKit
 import GameKit
 import StoreKit
 import LaughingAdventure
+import SWLogger
 
 let AppStoreID = 837173458
 
@@ -34,6 +35,10 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler {
     var purchaser: Purchaser!
     private var purchaseButton: TenPairMenuButton!
     
+    deinit {
+        Log.debug("")
+    }
+    
     override func loadContent() {
         super.loadContent()
         
@@ -45,14 +50,20 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler {
         
         if showResumeOption {
             addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.resume", comment: "")) {
-                self.game!.dismissScreen(self)
+                [unowned self] in
+                
+                self.dismiss()
             })
         }
         addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.restart", comment: "")) {
-            self.game!.dismissScreen(self)
+            [unowned self] in
+            
             self.game!.runAction(self.restartGameAction!)
+            self.dismiss()
         })
         purchaseButton = TenPairMenuButton.menuItemWithTitle(fullVersionMenuItemTitle()) {
+            [unowned self] in
+
             self.tappedFullVersionButton()
         }
         addMenuItem(purchaseButton)
@@ -60,6 +71,8 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler {
             _ = UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
         })
         addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("manu.option.send.message", comment: "")) {
+            [unowned self] in
+
             self.game!.sendEmail("contact@coodly.com", subject: "TenPair feedback")
         })
     }
@@ -103,10 +116,10 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler {
             let alert = AlertViewScreen()
             alert.message = NSLocalizedString("menu.full.version.thanks.message", comment: "")
             alert.addAction("close") {
-                self.game?.dismissScreen(alert)
+
             }
             
-            self.game?.presentModalScreen(alert)
+            game?.presentModalScreen(alert)
             return
         }
         
@@ -114,10 +127,10 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler {
             let alert = AlertViewScreen()
             alert.message = NSLocalizedString("menu.full.version.no.price.message", comment: "")
             alert.addAction("close") {
-                self.game?.dismissScreen(alert)
+
             }
             
-            self.game?.presentModalScreen(alert)
+            game?.presentModalScreen(alert)
             return
         }
         

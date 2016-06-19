@@ -17,6 +17,7 @@
 import Foundation
 import GameKit
 import SpriteKit
+import SWLogger
 
 class AlertViewScreen: GameScreen {
     private var background: GameButton!
@@ -24,6 +25,17 @@ class AlertViewScreen: GameScreen {
         return AlertBox()
     }()
     var message: String!
+    private lazy var dismissAction: SKAction = {
+        return SKAction.runBlock() {
+            [unowned self] in
+            
+            self.dismiss()
+        }
+    }()
+    
+    deinit {
+        Log.debug("")
+    }
     
     override func loadContent() {
         super.loadContent()
@@ -33,9 +45,7 @@ class AlertViewScreen: GameScreen {
         background = GameButton()
         background.anchorPoint = CGPointZero
         background.color = TenPairTheme.currentTheme.backgroundColor!.colorWithAlphaComponent(0.95)
-        background.action = SKAction.runBlock() {
-            self.game?.dismissScreen(self)
-        }
+        background.action = dismissAction
         addChild(background)
         
         box.size = CGSizeMake(300, 200)
@@ -51,7 +61,10 @@ class AlertViewScreen: GameScreen {
     }
     
     func addAction(iconName: String, closure: () -> ()) {
-        box.addAction(iconName, closure: closure)
+        let closureAction = SKAction.runBlock(closure)
+        let combinedAction = SKAction.sequence([closureAction, dismissAction])
+        
+        box.addAction(iconName, action: combinedAction)
     }
 }
 
@@ -103,8 +116,8 @@ private class AlertBox: GameView {
         super.positionContent()
     }
     
-    private func addAction(iconName: String, closure: () -> ()) {
-        let button = GameButton.buttonWithImage(iconName, action: closure)
+    private func addAction(iconName: String, action: SKAction) {
+        let button = GameButton.buttonWithImage(iconName, action: action)
         button.anchorPoint = CGPointZero
         button.image?.color = TenPairTheme.currentTheme.defaultNumberTileColor!
         button.image?.colorBlendFactor = 1

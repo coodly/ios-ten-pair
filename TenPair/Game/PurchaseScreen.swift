@@ -108,7 +108,6 @@ extension PurchaseScreen: PurchaseMonitor {
             let alert = AlertViewScreen()
             alert.message = NSLocalizedString("purchase.screen.restored.message", comment: "")
             alert.addAction("close") {
-                self.game?.dismissScreen(alert)
                 self.game?.dismissScreen(self)
             }
             self.game?.presentModalScreen(alert)

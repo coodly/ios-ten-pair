@@ -22,11 +22,15 @@ public class GameButton : GameView {
     public var touchDisables = false
     public var image: SKSpriteNode?
     
-    public class func buttonWithImage(imageName: String, action: () -> ()) -> GameButton {
+    public class func buttonWithImage(imageName: String, closure: () -> ()) -> GameButton {
+        return GameButton.buttonWithImage(imageName, action: SKAction.runBlock(closure))
+    }
+
+    public class func buttonWithImage(imageName: String, action: SKAction) -> GameButton {
         let button = GameButton()
         let image = SKSpriteNode(imageNamed: imageName)
         button.image = image
-        button.action = SKAction.runBlock(action)
+        button.action = action
         button.addChild(image)
         return button
     }

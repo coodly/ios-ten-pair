@@ -23,4 +23,8 @@ public class GameScreen: GameView {
     public func handleTapAt(point: CGPoint) {
         print("handleTapAt:\(point)")
     }
+    
+    public func dismiss() {
+        game?.dismissScreen(self)
+    }
 }

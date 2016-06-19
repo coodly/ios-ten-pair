@@ -66,6 +66,8 @@ class TenPairPlayScreen: GameScreen {
         field.gameWonAction = SKAction.runBlock() {
             let winScreen = TenPairWinScreen()
             winScreen.restartGameAction = SKAction.runBlock() {
+                [unowned winScreen] in
+                
                 self.restartGame(winScreen)
             }
             self.game!.presentModalScreen(winScreen)
@@ -76,6 +78,8 @@ class TenPairPlayScreen: GameScreen {
             menuScreen.fullVersionProduct = self.fullVersionProduct
             menuScreen.purchaser = self.purchaser
             menuScreen.restartGameAction = SKAction.runBlock() {
+                [unowned menuScreen] in
+                
                 self.restartGame(menuScreen)
             }
             self.game!.presentModalScreen(menuScreen)
@@ -101,16 +105,18 @@ class TenPairPlayScreen: GameScreen {
                 self.numbersField?.searchForMatch() {
                     result in
                     
+                    var showInterstitial = true
+                    
                     Log.debug("Search complete: \(result)")
                     switch result {
                     case .FoundOnScreen:
                         //no op
                         break
                     case .NotFound:
+                        showInterstitial = false
                         let popup = AlertViewScreen()
                         popup.message = NSLocalizedString("game.hints.no.more.moves.message", comment: "")
                         popup.addAction("reload") {
-                            self.game?.dismissScreen(popup)
                             self.reloadNumbers()
                         }
                         self.game?.presentModalScreen(popup)
@@ -121,7 +127,9 @@ class TenPairPlayScreen: GameScreen {
                     
                     self.game!.dismissScreen(loading!)
                     
-                    self.interstitial.presentInterstitial()
+                    if showInterstitial {
+                        self.interstitial.presentInterstitial()
+                    }
                 }
             }
             
