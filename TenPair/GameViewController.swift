@@ -25,13 +25,14 @@ private extension Selector {
     static let checkFullVersion = #selector(GameViewController.checkFullVersion)
 }
 
-class GameViewController: UIViewController, FullVersionHandler {
+class GameViewController: UIViewController, FullVersionHandler, InterstitialPresenter {
     @IBOutlet var gameView: SKView!
     @IBOutlet var adContainerView: UIView!
     @IBOutlet var adContainerHeightConstraint: NSLayoutConstraint!
     private var bannerView: GADBannerView?
     private var products: [SKProduct]?
     private var purchaser: Purchaser!
+    var interstitial: GADInterstitial?
     
     var scene : TenPairGame?
 
@@ -93,6 +94,8 @@ class GameViewController: UIViewController, FullVersionHandler {
         skView.showsNodeCount = true
         skView.presentScene(scene)
 
+        gameScene.playScreen.interstitial = self
+        
         gameScene.startGame()
     }
     
@@ -178,6 +181,8 @@ extension GameViewController: GADBannerViewDelegate {
             Log.debug("Have full version. No ads")
             return
         }
+        
+        loadInterstitial()
         
         guard let banner = bannerView else {
             return

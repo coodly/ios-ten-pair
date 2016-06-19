@@ -36,6 +36,7 @@ class TenPairPlayScreen: GameScreen {
     private var actionButtons: HintButtonTray?
     var fullVersionProduct: SKProduct?
     var purchaser: Purchaser!
+    weak var interstitial: InterstitialPresenter!
     
     override func loadContent() {
         name = "TenPairPlayScreen"
@@ -81,7 +82,11 @@ class TenPairPlayScreen: GameScreen {
         }
         
         topMenuBar.reloadButton!.action = SKAction.runBlock() {
-            self.reloadNumbers()
+            self.reloadNumbers() {
+                onMainThread() {
+                    self.interstitial.presentInterstitial()
+                }
+            }
         }
         
         actionButtons = HintButtonTray()
@@ -115,6 +120,8 @@ class TenPairPlayScreen: GameScreen {
                     }
                     
                     self.game!.dismissScreen(loading!)
+                    
+                    self.interstitial.presentInterstitial()
                 }
             }
             
@@ -140,13 +147,15 @@ class TenPairPlayScreen: GameScreen {
         numbersField!.tappedAt(locationInField)
     }
     
-    func reloadNumbers() {
+    func reloadNumbers(completion: (() -> ())? = nil) {
         var loading: TenPairLoadingScreen?
         
         let reload = SKAction.runBlock() {
             self.numbersField!.reloadNumbers(SKAction.runBlock({ () -> Void in
                 self.topMenuBar!.reloadButton!.userInteractionEnabled = true
                 self.game!.dismissScreen(loading!)
+                
+                completion?()
             }))
         }
         
