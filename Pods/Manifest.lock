@@ -1,7 +1,4 @@
 PODS:
-  - Crashlytics (3.7.1):
-    - Fabric (~> 1.6.3)
-  - Fabric (1.6.7)
   - Firebase/AdMob (3.2.1):
     - Firebase/Analytics (= 3.2.1)
     - Google-Mobile-Ads-SDK (= 7.8.1)
@@ -29,8 +26,6 @@ PODS:
   - SWLogger (0.1.0)
 
 DEPENDENCIES:
-  - Crashlytics (= 3.7.1)
-  - Fabric (= 1.6.7)
   - Firebase/AdMob (= 3.2.1)
   - Firebase/Core (= 3.2.1)
   - GameKit (from `git@github.com:coodly/GameKit.git`, tag `0.1.0`)
@@ -61,8 +56,6 @@ CHECKOUT OPTIONS:
     :tag: 0.1.1
 
 SPEC CHECKSUMS:
-  Crashlytics: 3cdd4c9655be68032a0cf0379e0fb5ef6af22cad
-  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   Firebase: 6c80ac28d59d06bfd9152a7b6ea17625ca93183d
   FirebaseAnalytics: 6f75b04e6bfb8e0b6e9ef298e04c24eea3b13863
   FirebaseInstanceID: d014d574053a2fe84478f12f7bae96979e7051bb
@@ -75,6 +68,6 @@ SPEC CHECKSUMS:
   Locksmith: a8ed41ac4c06506ea8cb199d8ec8a8d3d108eb2a
   SWLogger: 32758d2926ab91ad26a52ccaf67a7b62c83772d4
 
-PODFILE CHECKSUM: 55d813ac7521040ff0dceb5851de3002f570dd29
+PODFILE CHECKSUM: ac8dc1ad0a44561b787a1ab5ce074fb58ad3f42a
 
 COCOAPODS: 1.0.1

@@ -7,56 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0883302E0C259D14A29151517738F95D /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE472E90AEA90D4A9AB1F332672B71 /* Logging.swift */; };
-		0C81DBC0C6C744574EA88910E130FB5F /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856C842FFD7E291D92E1F738C126F5E /* GameLoadingView.swift */; };
-		10113E207516DDCAC19E3B2FED7E12C4 /* LocksmithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2347A57622C63130CA1930401C590 /* LocksmithError.swift */; };
-		13EB929F72B356FC41F08CCF85D5D0C1 /* Locksmith-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 124746A775719DBC3CD034809D64C37F /* Locksmith-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0883302E0C259D14A29151517738F95D /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331BF662A2819D4BCDE4E971FE391DFD /* Logging.swift */; };
+		0C81DBC0C6C744574EA88910E130FB5F /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564FB1234064249C30E38976CD167CC /* GameLoadingView.swift */; };
+		10113E207516DDCAC19E3B2FED7E12C4 /* LocksmithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034304E1F0EF7FB47F773D649B916EF /* LocksmithError.swift */; };
+		13EB929F72B356FC41F08CCF85D5D0C1 /* Locksmith-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 79EEFF4180E52C89F2190FC181F598B8 /* Locksmith-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1484B525BD3B1A7D80F6C14B67CE201D /* Pods-TenPair-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB74BF330C44923591EF1385EDB1603E /* Pods-TenPair-dummy.m */; };
-		1495BCB330D338CEF2E39D10082B941C /* LocksmithAccessibleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0C91D8A5C841CEB4828DD2753C2AB /* LocksmithAccessibleOption.swift */; };
-		18744362910C3B42A990B8FBA6C4373A /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492356017B15732115296DA5FAC8979 /* GameButton.swift */; };
-		1D1BD9D14A6C99BAE7BEB4F6321459C7 /* Purchaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9087B2E17CA1F14EE7A684D7AF67FABB /* Purchaser.swift */; };
+		1495BCB330D338CEF2E39D10082B941C /* LocksmithAccessibleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1E7A4BDF4B6348F303788D6338DD66 /* LocksmithAccessibleOption.swift */; };
+		18744362910C3B42A990B8FBA6C4373A /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58281851613B23229C4B91B2FE3F6C8B /* GameButton.swift */; };
+		1D1BD9D14A6C99BAE7BEB4F6321459C7 /* Purchaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F8ED8FD797DF2CF280AE5F592C4E70 /* Purchaser.swift */; };
 		1D289D03369E7C05652B06DBA8CC3860 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */; };
-		26A57F0D33F0D86F30B0A3A57B39A95E /* GameMenuPresentationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E61AEF51724FC04F443D27F12A4AB01 /* GameMenuPresentationContainer.swift */; };
-		280F77009069F74DB52002F315DA6612 /* SlideOutButtonsTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58DEAB211FA3AC1595EC28E5FE40B86 /* SlideOutButtonsTray.swift */; };
-		2946A56936CF9EB54F4DA7122101DC29 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D70A85FA13B429D7C1ACCE4D0047DEA /* Log.swift */; };
+		26A57F0D33F0D86F30B0A3A57B39A95E /* GameMenuPresentationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48E2C94F418F6688562CDF9190DFAD /* GameMenuPresentationContainer.swift */; };
+		280F77009069F74DB52002F315DA6612 /* SlideOutButtonsTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1A3E2F92CD4A340650567053D20DD /* SlideOutButtonsTray.swift */; };
+		2946A56936CF9EB54F4DA7122101DC29 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A745AAFE9D5DF426B82DB9F442D40AD /* Log.swift */; };
 		2C1B95F2CD78510B959BA65C3EA4C6EB /* Pods-TenPairTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DAA5EDA8A5AC04D058CBCC568C137311 /* Pods-TenPairTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		387D13ED26CF4B83FBDF30EF2F929746 /* GameMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD79A637C4C94293B573EEC8DBDDCD /* GameMenuScreen.swift */; };
-		3B629068F4BE1D7821957056F25E33C1 /* Locksmith-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B82E4D3550C9C33C7A8F103B6691B4 /* Locksmith-dummy.m */; };
+		387D13ED26CF4B83FBDF30EF2F929746 /* GameMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F451C447C4683C8BF3332E180BE71 /* GameMenuScreen.swift */; };
+		3B629068F4BE1D7821957056F25E33C1 /* Locksmith-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5651610A364D30DAF9414BF670A85CD /* Locksmith-dummy.m */; };
 		3DFF977725C6DD20A8C67D35585FB9CD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6FF0A5B7324DDB0C1C622B5ED3A881 /* StoreKit.framework */; };
 		42890EFA1A9960C220BFA8647831E467 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F650BC58D1FFD860C6C254037432C651 /* Security.framework */; };
-		42EE7EE517211C5B2131175254883203 /* ProductsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BBFBB53FE3B2850083D3F01316440 /* ProductsHandler.swift */; };
-		46485D36E37F397B7F56EE76B3382C85 /* Dictionary_Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89647001E8D3362CCF9E071B136E2DA1 /* Dictionary_Initializers.swift */; };
+		42EE7EE517211C5B2131175254883203 /* ProductsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5D261A315F68FADDE173E4ED0778BC /* ProductsHandler.swift */; };
+		46485D36E37F397B7F56EE76B3382C85 /* Dictionary_Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B35D1E57BE33F5D06D790E0E692CF4 /* Dictionary_Initializers.swift */; };
 		4BAF3FA01FB020436826AF50A9605025 /* Pods-TenPairTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72354D52EC2355BEB8753A1ABDCE93D2 /* Pods-TenPairTests-dummy.m */; };
-		52B86BDDCD925C9BB1D08050163B1F4F /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA213FBA0D25A8C6AC5FFC8CBAE8B7 /* GameView.swift */; };
-		56B9F70926F2A707B69DEC0D17A00784 /* GameMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642D2460AA31DC237C052C1A2E38D899 /* GameMenuButton.swift */; };
-		5C9BDDBB790ACE3711E8AD09A13E0FB2 /* LocksmithSecurityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625062831F560F5BD8FB04EA1C21DB56 /* LocksmithSecurityClass.swift */; };
-		612A5931CEEFDFA056FE645BDD784469 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7AD8E9FCACB1A282D3EDB151D9590D /* Locksmith.swift */; };
-		6C2BADD0B760EF55A1B68077852FE59D /* LaughingAdventure-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E782B0D2F3ACAD3353280A0AF7108FD3 /* LaughingAdventure-dummy.m */; };
-		6DE0D13B8ED8A4F36BA916FDCEBBF5B1 /* SWLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEDE7C178C0CAA688500DC65AD33C77 /* SWLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		73501466801DE5C7A1D81EFD566F3B6B /* GameKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B719F0329DAA79CECE88DC983DC71522 /* GameKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8102FB4A334173B8A8696FEA2A707870 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DFEF01F18D424B5E8B8B0F9A6E501 /* Game.swift */; };
-		876C2366318283EC47AD1BC3B1704B2F /* GameScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E45E520CEBD43E7677AB5EE0091989 /* GameScrollView.swift */; };
+		52B86BDDCD925C9BB1D08050163B1F4F /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE068E475A5C2C08E4FE2F6275D1E4A /* GameView.swift */; };
+		56B9F70926F2A707B69DEC0D17A00784 /* GameMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC937713D1105BAB207B266A7E1A51F /* GameMenuButton.swift */; };
+		5C9BDDBB790ACE3711E8AD09A13E0FB2 /* LocksmithSecurityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5DAEF606FA86C0D9BC61D3002585DD /* LocksmithSecurityClass.swift */; };
+		612A5931CEEFDFA056FE645BDD784469 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD469031C20815857C91F843F62C026E /* Locksmith.swift */; };
+		6C2BADD0B760EF55A1B68077852FE59D /* LaughingAdventure-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C3678331B801918B66F3437657C393 /* LaughingAdventure-dummy.m */; };
+		6DE0D13B8ED8A4F36BA916FDCEBBF5B1 /* SWLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 95739BC1F08AD4F9D658885656A6A89F /* SWLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73501466801DE5C7A1D81EFD566F3B6B /* GameKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 889F47761B222244911D32D6B5BFEB8F /* GameKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8102FB4A334173B8A8696FEA2A707870 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD74A761FADF66807217F44892306D50 /* Game.swift */; };
+		876C2366318283EC47AD1BC3B1704B2F /* GameScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F9D61BB4632B1B6AB23F66911DF3D /* GameScrollView.swift */; };
 		9561184A4735527D0E4631CC1E509A07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */; };
-		9775E07C3FB36C45C222D05BAF80B61D /* SWLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B800AD9415F0A0DCDFBC42191307AD0 /* SWLogger-dummy.m */; };
-		A353761310661CA1B98CD4610AD87D16 /* LaughingAdventure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 057FA37D39DEEFA16E2DC31E9D8E9DE9 /* LaughingAdventure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA0B9C265F96CA310C674C330D4C5592 /* Locksmith.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CFE4612B3041438C527D56E2319E927 /* Locksmith.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9775E07C3FB36C45C222D05BAF80B61D /* SWLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7553CE543D9D3FAB4908F9C0A9B4799 /* SWLogger-dummy.m */; };
+		A353761310661CA1B98CD4610AD87D16 /* LaughingAdventure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B82E0DF4831B4E0E7C7DF8662011C452 /* LaughingAdventure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA0B9C265F96CA310C674C330D4C5592 /* Locksmith.h in Headers */ = {isa = PBXBuildFile; fileRef = ABBB9372AF8A2D2E972AF8ED5EFD8086 /* Locksmith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE7562841EDFD25C5FD96E4CB6BA8AA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */; };
-		B41F156C9B778185A08A59DEFD760DAB /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BBE56471898FF3DDEFB395ED4097BA /* FileOutput.swift */; };
-		B7CAC0FB4E35BA5A6D91F8C6CD5EEBB0 /* SKProduct+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589AB9AA5A79FC91CB36523815D8D33 /* SKProduct+Extensions.swift */; };
+		B41F156C9B778185A08A59DEFD760DAB /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0EC0E7BCC33030FD82C4F88637A0B /* FileOutput.swift */; };
+		B7CAC0FB4E35BA5A6D91F8C6CD5EEBB0 /* SKProduct+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF2D81655E0BE395A7B282A1A90F319 /* SKProduct+Extensions.swift */; };
 		C6928639F204AC9BA62F458C5FD791B3 /* Pods-TenPair-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 600945F2396D212AD524A0094E212B6E /* Pods-TenPair-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CB178F18D4BE84B4736BED4ECF0D28BA /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F224F7E4F103D052C57A888A250880C /* LogOutput.swift */; };
-		CC2443BEF39BB4254C340BAA445BCBD5 /* LocksmithInternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E3FD83DE360724318D96400A0266F2 /* LocksmithInternetAuthenticationType.swift */; };
-		CD1024BC09C99010C5A5145B845B7096 /* GameKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55375E9BB5B23E8252329517D576834E /* GameKit-dummy.m */; };
-		CF14EE552583CA93ADD1AEABF360D35A /* GameScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C75483457B4E6D224ABC8634CE1B0 /* GameScrollViewContained.swift */; };
-		D234B23ACC5F69B9BE581EC70C15F8DE /* LocksmithInternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7855C30AD47DE4D942A556E834AF7A28 /* LocksmithInternetProtocol.swift */; };
-		D6661D5829301BED008EFE6C6E1043F9 /* SKSpriteNode+MultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0CDEE4624DA04EDEDEAE7C81BB752 /* SKSpriteNode+MultiLineLabel.swift */; };
+		CB178F18D4BE84B4736BED4ECF0D28BA /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031405AB19B95A8AEE081EF4390B6AD /* LogOutput.swift */; };
+		CC2443BEF39BB4254C340BAA445BCBD5 /* LocksmithInternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D573ED9F8ABC563959CB0EB84FC9651C /* LocksmithInternetAuthenticationType.swift */; };
+		CD1024BC09C99010C5A5145B845B7096 /* GameKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFAFA862A1AF3DABBBB44348CD272DC /* GameKit-dummy.m */; };
+		CF14EE552583CA93ADD1AEABF360D35A /* GameScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2C18263F7C050A74DC2181AAD5049 /* GameScrollViewContained.swift */; };
+		D234B23ACC5F69B9BE581EC70C15F8DE /* LocksmithInternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E16FEC5E779F20EFD6BCAC6942CC5 /* LocksmithInternetProtocol.swift */; };
+		D6661D5829301BED008EFE6C6E1043F9 /* SKSpriteNode+MultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF128473D9E76B216936F692EBAF7A /* SKSpriteNode+MultiLineLabel.swift */; };
 		DE8104281634164D64FFEEF32B2ED49F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */; };
-		ED67BFEE1C0077DD5F1B9984F303B35A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC46C54E8E33B6A350C95BF35594F0E1 /* Logger.swift */; };
-		F04623C6850418ED96F4D27D73B863C0 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE5C3ABE766E0571D0DA9A973415A4 /* GameScreen.swift */; };
+		ED67BFEE1C0077DD5F1B9984F303B35A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17D2B7DD0E6B168363595866E980BD2 /* Logger.swift */; };
+		F04623C6850418ED96F4D27D73B863C0 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62761DE1FCB4F08381FFA5FBE5EF333 /* GameScreen.swift */; };
 		F1094711E473675E41DFF448BC2AEB08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */; };
-		F387212C5A4831EBB06E9C2957E03ADE /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE376A3C2208686496F01BB4B945566E /* ConsoleOutput.swift */; };
+		F387212C5A4831EBB06E9C2957E03ADE /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3936162A897101362A6D2BDA44C69A /* ConsoleOutput.swift */; };
 		F79F5F12E451CF824F6C83BAC03A84ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */; };
-		FE281967194947D5E8C57BAC047AF614 /* ShakeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2AF2328F9103A51F606C107A1F143 /* ShakeWindow.swift */; };
+		FE281967194947D5E8C57BAC047AF614 /* ShakeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48DF3C3611627E13EE47C8FED7AB34D /* ShakeWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,107 +91,98 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03C1E97C3A0245EDB2948FB35F42E324 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03DA93C090BAC28AE12A93B3E3AD4EF4 /* Pods_TenPairTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPairTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		057FA37D39DEEFA16E2DC31E9D8E9DE9 /* LaughingAdventure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-umbrella.h"; sourceTree = "<group>"; };
-		07BD39F8028987CB85974D02DDCF1D5B /* LaughingAdventure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LaughingAdventure.modulemap; sourceTree = "<group>"; };
 		0967418BCAD7732B980514FB95164D30 /* Pods-TenPair-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPair-frameworks.sh"; sourceTree = "<group>"; };
-		0F1545885FFF870F4B5B2AD6C82EA5F5 /* Locksmith-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-prefix.pch"; sourceTree = "<group>"; };
-		124746A775719DBC3CD034809D64C37F /* Locksmith-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-umbrella.h"; sourceTree = "<group>"; };
-		14BBE56471898FF3DDEFB395ED4097BA /* FileOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileOutput.swift; path = Source/FileOutput.swift; sourceTree = "<group>"; };
+		0AE6B7076D3AA6AE9257ABEB476FCEF2 /* SWLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SWLogger.modulemap; sourceTree = "<group>"; };
+		0B52465FF6A4DF481A1474BB41DB5DD2 /* LaughingAdventure.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LaughingAdventure.xcconfig; sourceTree = "<group>"; };
+		0D1E7A4BDF4B6348F303788D6338DD66 /* LocksmithAccessibleOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithAccessibleOption.swift; path = Source/LocksmithAccessibleOption.swift; sourceTree = "<group>"; };
 		165D5E8637D9823BA1407F21A74381F6 /* Pods-TenPair.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TenPair.modulemap"; sourceTree = "<group>"; };
-		1D3D1754F759F74AF5B6CE6C1A5289C4 /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
-		1D70A85FA13B429D7C1ACCE4D0047DEA /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Source/Log.swift; sourceTree = "<group>"; };
-		1E2FED0A4F1B64B969782E1CFC0EE84A /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
-		1E61AEF51724FC04F443D27F12A4AB01 /* GameMenuPresentationContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuPresentationContainer.swift; path = Source/GameMenuPresentationContainer.swift; sourceTree = "<group>"; };
-		1FB2347A57622C63130CA1930401C590 /* LocksmithError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithError.swift; path = Source/LocksmithError.swift; sourceTree = "<group>"; };
-		200C3D76CA3BDD1BB5D7BA0726333237 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
-		20B82E4D3550C9C33C7A8F103B6691B4 /* Locksmith-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Locksmith-dummy.m"; sourceTree = "<group>"; };
-		2856C842FFD7E291D92E1F738C126F5E /* GameLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameLoadingView.swift; path = Source/GameLoadingView.swift; sourceTree = "<group>"; };
-		322BBFBB53FE3B2850083D3F01316440 /* ProductsHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductsHandler.swift; path = Source/Purchase/ProductsHandler.swift; sourceTree = "<group>"; };
-		3492356017B15732115296DA5FAC8979 /* GameButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameButton.swift; path = Source/GameButton.swift; sourceTree = "<group>"; };
+		19220DD4752E4EF2D995BA743E4855D2 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		1AF2D81655E0BE395A7B282A1A90F319 /* SKProduct+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKProduct+Extensions.swift"; path = "Source/Purchase/SKProduct+Extensions.swift"; sourceTree = "<group>"; };
+		1CE068E475A5C2C08E4FE2F6275D1E4A /* GameView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameView.swift; path = Source/GameView.swift; sourceTree = "<group>"; };
+		1DCF128473D9E76B216936F692EBAF7A /* SKSpriteNode+MultiLineLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKSpriteNode+MultiLineLabel.swift"; path = "Source/SKSpriteNode+MultiLineLabel.swift"; sourceTree = "<group>"; };
+		1FD0EC0E7BCC33030FD82C4F88637A0B /* FileOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileOutput.swift; path = Source/FileOutput.swift; sourceTree = "<group>"; };
+		1FEFC30B7D6A4B2630AEEE817B2D9072 /* SWLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-prefix.pch"; sourceTree = "<group>"; };
+		22788BC46D2CD8B354CB72F24286AF6B /* GameKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-prefix.pch"; sourceTree = "<group>"; };
+		22C3678331B801918B66F3437657C393 /* LaughingAdventure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LaughingAdventure-dummy.m"; sourceTree = "<group>"; };
+		23881ED7A4D1AF9FFDBE777B8DAD6EA1 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		239F451C447C4683C8BF3332E180BE71 /* GameMenuScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuScreen.swift; path = Source/GameMenuScreen.swift; sourceTree = "<group>"; };
+		325F9D61BB4632B1B6AB23F66911DF3D /* GameScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollView.swift; path = Source/GameScrollView.swift; sourceTree = "<group>"; };
+		331BF662A2819D4BCDE4E971FE391DFD /* Logging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = Source/Log/Logging.swift; sourceTree = "<group>"; };
 		3656C3FC725DE4E7105DDDFBDD70D716 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		369FF642D79042A92D32DD09F4F2B69F /* Pods-TenPair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPair.debug.xcconfig"; sourceTree = "<group>"; };
-		36EA213FBA0D25A8C6AC5FFC8CBAE8B7 /* GameView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameView.swift; path = Source/GameView.swift; sourceTree = "<group>"; };
-		3AF0C91D8A5C841CEB4828DD2753C2AB /* LocksmithAccessibleOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithAccessibleOption.swift; path = Source/LocksmithAccessibleOption.swift; sourceTree = "<group>"; };
 		42897027F3D1AF09ABEABD46D2725988 /* Pods-TenPairTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPairTests-frameworks.sh"; sourceTree = "<group>"; };
-		47F4726936C484A40FF9C934AA442504 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
-		486ACD632875761F93AD47584C61E6E4 /* SWLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SWLogger.modulemap; sourceTree = "<group>"; };
-		494B28AB75077B100598C2ABF0D7D538 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		4B1986AEBDC1B3C0B420727CEF64EA85 /* LaughingAdventure-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-prefix.pch"; sourceTree = "<group>"; };
-		4CFE4612B3041438C527D56E2319E927 /* Locksmith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Locksmith.h; path = Source/Locksmith.h; sourceTree = "<group>"; };
-		4FCD79A637C4C94293B573EEC8DBDDCD /* GameMenuScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuScreen.swift; path = Source/GameMenuScreen.swift; sourceTree = "<group>"; };
-		53014E220575C362D08D30DA451DD126 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		55375E9BB5B23E8252329517D576834E /* GameKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GameKit-dummy.m"; sourceTree = "<group>"; };
-		5A92067F3B4FCD3E57B6A0FCFCAA70B7 /* GameKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GameKit.xcconfig; sourceTree = "<group>"; };
+		496B14940F40B60CF416238B36E706D0 /* GameKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GameKit.modulemap; sourceTree = "<group>"; };
+		51D4ABD15BE812F05BCC925CF067A3E6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58281851613B23229C4B91B2FE3F6C8B /* GameButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameButton.swift; path = Source/GameButton.swift; sourceTree = "<group>"; };
 		5A9790E4D38754EFE0755C4F15C09334 /* LaughingAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaughingAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BCE5C3ABE766E0571D0DA9A973415A4 /* GameScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScreen.swift; path = Source/GameScreen.swift; sourceTree = "<group>"; };
-		5C5A3FD1D4C4DB4BDAAFAD2B03868091 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
-		5D9E43D582ED9EFECEA28A9A4236E924 /* SWLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWLogger.xcconfig; sourceTree = "<group>"; };
 		600945F2396D212AD524A0094E212B6E /* Pods-TenPair-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TenPair-umbrella.h"; sourceTree = "<group>"; };
 		605E1E42C811DFA39596F53B667F6382 /* Pods-TenPairTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPairTests-resources.sh"; sourceTree = "<group>"; };
-		61AD47BD2998B015728268B9C5F3A5ED /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
-		625062831F560F5BD8FB04EA1C21DB56 /* LocksmithSecurityClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithSecurityClass.swift; path = Source/LocksmithSecurityClass.swift; sourceTree = "<group>"; };
-		633C75483457B4E6D224ABC8634CE1B0 /* GameScrollViewContained.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollViewContained.swift; path = Source/GameScrollViewContained.swift; sourceTree = "<group>"; };
-		642D2460AA31DC237C052C1A2E38D899 /* GameMenuButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuButton.swift; path = Source/GameMenuButton.swift; sourceTree = "<group>"; };
-		649DFEF01F18D424B5E8B8B0F9A6E501 /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Source/Game.swift; sourceTree = "<group>"; };
-		6B800AD9415F0A0DCDFBC42191307AD0 /* SWLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWLogger-dummy.m"; sourceTree = "<group>"; };
-		6E0CA4FC8AD246F9D9E678E06548E57C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69C80449D504FB62E45A7C5486F9F65B /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		6A745AAFE9D5DF426B82DB9F442D40AD /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Source/Log.swift; sourceTree = "<group>"; };
+		6EFAFA862A1AF3DABBBB44348CD272DC /* GameKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GameKit-dummy.m"; sourceTree = "<group>"; };
 		6F34C13C4532321B317BDC7AACC6473E /* Pods-TenPairTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPairTests.release.xcconfig"; sourceTree = "<group>"; };
-		6F7AD8E9FCACB1A282D3EDB151D9590D /* Locksmith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locksmith.swift; path = Source/Locksmith.swift; sourceTree = "<group>"; };
 		6FEC636356AF7ED1487F7F0428C3441E /* Pods-TenPair-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TenPair-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7062884C3B241356D579C1659FAD3ADB /* GameKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GameKit.modulemap; sourceTree = "<group>"; };
 		72354D52EC2355BEB8753A1ABDCE93D2 /* Pods-TenPairTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TenPairTests-dummy.m"; sourceTree = "<group>"; };
 		76E1D449FA1D923390E7A927755BEECC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7855C30AD47DE4D942A556E834AF7A28 /* LocksmithInternetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetProtocol.swift; path = Source/LocksmithInternetProtocol.swift; sourceTree = "<group>"; };
-		78C2B16B58BB8ECCDAEEDF61F7A7D55F /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
-		78C4337C22D319EE4F3660C9B9184882 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		78FB63D6D0E443B94EA14231264D8175 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77E97B198AC1BBFA116CDC24B657CC25 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
+		79EEFF4180E52C89F2190FC181F598B8 /* Locksmith-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-umbrella.h"; sourceTree = "<group>"; };
+		889F47761B222244911D32D6B5BFEB8F /* GameKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-umbrella.h"; sourceTree = "<group>"; };
 		88B7D9152AD58D93645B9F6C4425ABC9 /* Pods-TenPairTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TenPairTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		89647001E8D3362CCF9E071B136E2DA1 /* Dictionary_Initializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dictionary_Initializers.swift; path = Source/Dictionary_Initializers.swift; sourceTree = "<group>"; };
 		8C0D31060223142D794919968780FD7B /* Pods-TenPairTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TenPairTests.modulemap"; sourceTree = "<group>"; };
-		8F6E4337DBE20AF28BA139EE500784C5 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		8DC937713D1105BAB207B266A7E1A51F /* GameMenuButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuButton.swift; path = Source/GameMenuButton.swift; sourceTree = "<group>"; };
 		8FB5E03509B354A8575611155827D979 /* Pods-TenPairTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPairTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9087B2E17CA1F14EE7A684D7AF67FABB /* Purchaser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Purchaser.swift; path = Source/Purchase/Purchaser.swift; sourceTree = "<group>"; };
-		93349FD6FBFF17D8EAD26223BF94B477 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9034304E1F0EF7FB47F773D649B916EF /* LocksmithError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithError.swift; path = Source/LocksmithError.swift; sourceTree = "<group>"; };
+		92356C49F03C5572E775EF30E9DFAD6E /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
 		939968FB01E65C8D7A5F1177CB474988 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95739BC1F08AD4F9D658885656A6A89F /* SWLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-umbrella.h"; sourceTree = "<group>"; };
 		9D6FF0A5B7324DDB0C1C622B5ED3A881 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
-		9F224F7E4F103D052C57A888A250880C /* LogOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogOutput.swift; path = Source/LogOutput.swift; sourceTree = "<group>"; };
-		9FE0974398AEA37B7F01D7F0075775A3 /* SWLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-prefix.pch"; sourceTree = "<group>"; };
-		A589AB9AA5A79FC91CB36523815D8D33 /* SKProduct+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKProduct+Extensions.swift"; path = "Source/Purchase/SKProduct+Extensions.swift"; sourceTree = "<group>"; };
+		A031405AB19B95A8AEE081EF4390B6AD /* LogOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogOutput.swift; path = Source/LogOutput.swift; sourceTree = "<group>"; };
+		A5B7D844C08B2A95E9A8AE43105B06B0 /* Locksmith-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-prefix.pch"; sourceTree = "<group>"; };
+		A8F8ED8FD797DF2CF280AE5F592C4E70 /* Purchaser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Purchaser.swift; path = Source/Purchase/Purchaser.swift; sourceTree = "<group>"; };
+		AA56E6383121D51191B63941137F108B /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		ABBB9372AF8A2D2E972AF8ED5EFD8086 /* Locksmith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Locksmith.h; path = Source/Locksmith.h; sourceTree = "<group>"; };
 		ABD34339C493B48F31026EF65EF9DAE9 /* Pods-TenPair-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TenPair-acknowledgements.plist"; sourceTree = "<group>"; };
-		AEEDE7C178C0CAA688500DC65AD33C77 /* SWLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-umbrella.h"; sourceTree = "<group>"; };
-		B0A9F55E1B456C40EE27D1BDD9D5DD0F /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
-		B332A9E180B2BCB46A4FDDD6598CEF97 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD3936162A897101362A6D2BDA44C69A /* ConsoleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleOutput.swift; path = Source/ConsoleOutput.swift; sourceTree = "<group>"; };
+		AD48E2C94F418F6688562CDF9190DFAD /* GameMenuPresentationContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuPresentationContainer.swift; path = Source/GameMenuPresentationContainer.swift; sourceTree = "<group>"; };
+		AE6B1957181D83DC6D59AC80ED8B53A6 /* LaughingAdventure-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-prefix.pch"; sourceTree = "<group>"; };
+		AF5D261A315F68FADDE173E4ED0778BC /* ProductsHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductsHandler.swift; path = Source/Purchase/ProductsHandler.swift; sourceTree = "<group>"; };
+		B17D2B7DD0E6B168363595866E980BD2 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
+		B1E135C0917338DB547581A65486D214 /* SWLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWLogger.xcconfig; sourceTree = "<group>"; };
+		B2B35D1E57BE33F5D06D790E0E692CF4 /* Dictionary_Initializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dictionary_Initializers.swift; path = Source/Dictionary_Initializers.swift; sourceTree = "<group>"; };
 		B3CB41CDAF5587969C42CEEC8ECE6E17 /* Pods-TenPairTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TenPairTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		B4974D5B6FEC8AFA543DED90DAEF4F41 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
-		B4E3FD83DE360724318D96400A0266F2 /* LocksmithInternetAuthenticationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetAuthenticationType.swift; path = Source/LocksmithInternetAuthenticationType.swift; sourceTree = "<group>"; };
-		B58DEAB211FA3AC1595EC28E5FE40B86 /* SlideOutButtonsTray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SlideOutButtonsTray.swift; path = Source/SlideOutButtonsTray.swift; sourceTree = "<group>"; };
-		B5AE472E90AEA90D4A9AB1F332672B71 /* Logging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = Source/Log/Logging.swift; sourceTree = "<group>"; };
-		B719F0329DAA79CECE88DC983DC71522 /* GameKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-umbrella.h"; sourceTree = "<group>"; };
+		B7553CE543D9D3FAB4908F9C0A9B4799 /* SWLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWLogger-dummy.m"; sourceTree = "<group>"; };
+		B82E0DF4831B4E0E7C7DF8662011C452 /* LaughingAdventure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-umbrella.h"; sourceTree = "<group>"; };
+		BA8F9DAB6A5C325405B7642DD9518C53 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC66D45FCB429113151C86EE644B9C92 /* Pods-TenPair-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPair-resources.sh"; sourceTree = "<group>"; };
-		BED26E58DCD7A3E9E9D9505E1C70BAA4 /* Locksmith.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Locksmith.xcconfig; sourceTree = "<group>"; };
-		C8891A474C1F63212818043AE89EFAE5 /* GameKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-prefix.pch"; sourceTree = "<group>"; };
-		CC151614CC34FA408A8FEA02E4A2DD1C /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
-		D0FB378FBFE8C46E24C205F46DD29B51 /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
-		D42E0DD0636767EBF97212147E46F8D8 /* Locksmith.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Locksmith.modulemap; sourceTree = "<group>"; };
-		D781D7FDD2F4DFE56219F6AA37B8C10B /* LaughingAdventure.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LaughingAdventure.xcconfig; sourceTree = "<group>"; };
-		D8CB73567184239EC965132DFCAD8024 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
+		BD74A761FADF66807217F44892306D50 /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Source/Game.swift; sourceTree = "<group>"; };
+		C42E16FEC5E779F20EFD6BCAC6942CC5 /* LocksmithInternetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetProtocol.swift; path = Source/LocksmithInternetProtocol.swift; sourceTree = "<group>"; };
+		C48DF3C3611627E13EE47C8FED7AB34D /* ShakeWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShakeWindow.swift; path = Source/ShakeWindow.swift; sourceTree = "<group>"; };
+		C564FB1234064249C30E38976CD167CC /* GameLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameLoadingView.swift; path = Source/GameLoadingView.swift; sourceTree = "<group>"; };
+		CBBC843968075CA26C428419E5AF246C /* Locksmith.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Locksmith.modulemap; sourceTree = "<group>"; };
+		CD469031C20815857C91F843F62C026E /* Locksmith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locksmith.swift; path = Source/Locksmith.swift; sourceTree = "<group>"; };
+		D1B2C18263F7C050A74DC2181AAD5049 /* GameScrollViewContained.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollViewContained.swift; path = Source/GameScrollViewContained.swift; sourceTree = "<group>"; };
+		D1CDB04501273E9E358B00FFAF6F8787 /* Locksmith.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Locksmith.xcconfig; sourceTree = "<group>"; };
+		D573ED9F8ABC563959CB0EB84FC9651C /* LocksmithInternetAuthenticationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetAuthenticationType.swift; path = Source/LocksmithInternetAuthenticationType.swift; sourceTree = "<group>"; };
+		D7BFD38AA015102B02C42CA03D3C3280 /* LaughingAdventure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LaughingAdventure.modulemap; sourceTree = "<group>"; };
 		DAA5EDA8A5AC04D058CBCC568C137311 /* Pods-TenPairTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TenPairTests-umbrella.h"; sourceTree = "<group>"; };
 		DB5F2F49822C1CA19FC84DFA03FE3CE8 /* Pods_TenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC46C54E8E33B6A350C95BF35594F0E1 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
-		DE376A3C2208686496F01BB4B945566E /* ConsoleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleOutput.swift; path = Source/ConsoleOutput.swift; sourceTree = "<group>"; };
+		DBC1A3E2F92CD4A340650567053D20DD /* SlideOutButtonsTray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SlideOutButtonsTray.swift; path = Source/SlideOutButtonsTray.swift; sourceTree = "<group>"; };
+		DC5DAEF606FA86C0D9BC61D3002585DD /* LocksmithSecurityClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithSecurityClass.swift; path = Source/LocksmithSecurityClass.swift; sourceTree = "<group>"; };
+		DDB45FF66BDB6B74D54E0DFD80E09402 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0298E97049060633688FEFCE5631AC2 /* GameKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GameKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2D0CDEE4624DA04EDEDEAE7C81BB752 /* SKSpriteNode+MultiLineLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKSpriteNode+MultiLineLabel.swift"; path = "Source/SKSpriteNode+MultiLineLabel.swift"; sourceTree = "<group>"; };
+		E4993134F64DCD53FBE3E9DEE9C7C222 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
+		E5651610A364D30DAF9414BF670A85CD /* Locksmith-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Locksmith-dummy.m"; sourceTree = "<group>"; };
 		E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E5E45E520CEBD43E7677AB5EE0091989 /* GameScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollView.swift; path = Source/GameScrollView.swift; sourceTree = "<group>"; };
-		E782B0D2F3ACAD3353280A0AF7108FD3 /* LaughingAdventure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LaughingAdventure-dummy.m"; sourceTree = "<group>"; };
+		E62761DE1FCB4F08381FFA5FBE5EF333 /* GameScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScreen.swift; path = Source/GameScreen.swift; sourceTree = "<group>"; };
 		E9987FE743CE6E4D9A162FA74F44F092 /* Locksmith.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Locksmith.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3F2AF2328F9103A51F606C107A1F143 /* ShakeWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShakeWindow.swift; path = Source/ShakeWindow.swift; sourceTree = "<group>"; };
+		E9E0B42D0952AAB81E2BD5EFCF94FA32 /* GameKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GameKit.xcconfig; sourceTree = "<group>"; };
+		EC1A07B04C39F25A2F83F96A377B7375 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
 		F650BC58D1FFD860C6C254037432C651 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		FB74BF330C44923591EF1385EDB1603E /* Pods-TenPair-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TenPair-dummy.m"; sourceTree = "<group>"; };
 		FC3C4F7FF0AC7221673FE914B7CFEC0D /* Pods-TenPair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPair.release.xcconfig"; sourceTree = "<group>"; };
-		FD7C24A06C5C7A16D64437240CAB64BB /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +239,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012941D8E56CEE8521F3B6A9293158FB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDB45FF66BDB6B74D54E0DFD80E09402 /* Info.plist */,
+				CBBC843968075CA26C428419E5AF246C /* Locksmith.modulemap */,
+				D1CDB04501273E9E358B00FFAF6F8787 /* Locksmith.xcconfig */,
+				E5651610A364D30DAF9414BF670A85CD /* Locksmith-dummy.m */,
+				A5B7D844C08B2A95E9A8AE43105B06B0 /* Locksmith-prefix.pch */,
+				79EEFF4180E52C89F2190FC181F598B8 /* Locksmith-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Locksmith";
+			sourceTree = "<group>";
+		};
+		016D46A1FC749CD72F18064BDAA857BA /* Google-Mobile-Ads-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				4F103F2D15A9000A214663DCC987074E /* Frameworks */,
+			);
+			path = "Google-Mobile-Ads-SDK";
+			sourceTree = "<group>";
+		};
 		09C82B1DE91A2B2544C4685D71D5C465 /* Pods-TenPair */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,126 +287,93 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		215C99D3867EAA67746AE26F3487D2F5 /* Google-Mobile-Ads-SDK */ = {
+		13CF507595283DE66519455651460598 /* GoogleSymbolUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				33C08E3E187AAF13756DF812F4A0A6DD /* Frameworks */,
+				926E0ED396E83AFF01C88A7AF278CFC9 /* Frameworks */,
 			);
-			path = "Google-Mobile-Ads-SDK";
+			path = GoogleSymbolUtilities;
 			sourceTree = "<group>";
 		};
-		23782BB6342E545E894813FF2C86B238 /* GoogleInterchangeUtilities */ = {
+		16BBE36166F4FF7275F980F982300276 /* FirebaseAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				3DFF7B4B42AC91DE089026769E9FABC8 /* Frameworks */,
-			);
-			path = GoogleInterchangeUtilities;
-			sourceTree = "<group>";
-		};
-		2858ADE172CE73D581EB0AE91A1A180D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				61AD47BD2998B015728268B9C5F3A5ED /* Crashlytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		33C08E3E187AAF13756DF812F4A0A6DD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				47F4726936C484A40FF9C934AA442504 /* GoogleMobileAds.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3B1117C178660749D564843D3C88F8FB /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				D8CB73567184239EC965132DFCAD8024 /* Firebase.h */,
-			);
-			name = Analytics;
-			sourceTree = "<group>";
-		};
-		3DFF7B4B42AC91DE089026769E9FABC8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				78C4337C22D319EE4F3660C9B9184882 /* GoogleInterchangeUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		494859771439ABC4640F24AB6121B7C7 /* SWLogger */ = {
-			isa = PBXGroup;
-			children = (
-				DE376A3C2208686496F01BB4B945566E /* ConsoleOutput.swift */,
-				14BBE56471898FF3DDEFB395ED4097BA /* FileOutput.swift */,
-				1D70A85FA13B429D7C1ACCE4D0047DEA /* Log.swift */,
-				DC46C54E8E33B6A350C95BF35594F0E1 /* Logger.swift */,
-				9F224F7E4F103D052C57A888A250880C /* LogOutput.swift */,
-				F3F2AF2328F9103A51F606C107A1F143 /* ShakeWindow.swift */,
-				52792466B67A667C8316B8DA290B9B94 /* Support Files */,
-			);
-			path = SWLogger;
-			sourceTree = "<group>";
-		};
-		52792466B67A667C8316B8DA290B9B94 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B332A9E180B2BCB46A4FDDD6598CEF97 /* Info.plist */,
-				486ACD632875761F93AD47584C61E6E4 /* SWLogger.modulemap */,
-				5D9E43D582ED9EFECEA28A9A4236E924 /* SWLogger.xcconfig */,
-				6B800AD9415F0A0DCDFBC42191307AD0 /* SWLogger-dummy.m */,
-				9FE0974398AEA37B7F01D7F0075775A3 /* SWLogger-prefix.pch */,
-				AEEDE7C178C0CAA688500DC65AD33C77 /* SWLogger-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SWLogger";
-			sourceTree = "<group>";
-		};
-		5601319A64CD4391A83B5E0FEF5FBB87 /* FirebaseAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				D74A93DE8C54CD99A771A621EA0EE0FF /* Frameworks */,
+				B60FC3D92710CD7D5ADE003D523D28E5 /* Frameworks */,
 			);
 			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
-		5AB8686E81EB8876F7869CB80443B4BB /* GameKit */ = {
+		18E75160FA019E91E0DA85E2F5E20D38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				649DFEF01F18D424B5E8B8B0F9A6E501 /* Game.swift */,
-				3492356017B15732115296DA5FAC8979 /* GameButton.swift */,
-				2856C842FFD7E291D92E1F738C126F5E /* GameLoadingView.swift */,
-				642D2460AA31DC237C052C1A2E38D899 /* GameMenuButton.swift */,
-				1E61AEF51724FC04F443D27F12A4AB01 /* GameMenuPresentationContainer.swift */,
-				4FCD79A637C4C94293B573EEC8DBDDCD /* GameMenuScreen.swift */,
-				5BCE5C3ABE766E0571D0DA9A973415A4 /* GameScreen.swift */,
-				E5E45E520CEBD43E7677AB5EE0091989 /* GameScrollView.swift */,
-				633C75483457B4E6D224ABC8634CE1B0 /* GameScrollViewContained.swift */,
-				36EA213FBA0D25A8C6AC5FFC8CBAE8B7 /* GameView.swift */,
-				E2D0CDEE4624DA04EDEDEAE7C81BB752 /* SKSpriteNode+MultiLineLabel.swift */,
-				B58DEAB211FA3AC1595EC28E5FE40B86 /* SlideOutButtonsTray.swift */,
-				F8C8D59533A643EE1E7634CFE885D7B0 /* Support Files */,
+				23881ED7A4D1AF9FFDBE777B8DAD6EA1 /* GoogleInterchangeUtilities.framework */,
 			);
-			path = GameKit;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6CBD4156231F44F08F64571B41E581C4 /* Logging */ = {
+		31609ADB3D0FB9E0BE1118C820E95F00 /* GoogleUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				B5AE472E90AEA90D4A9AB1F332672B71 /* Logging.swift */,
+				C7B5E8FA7FF4BCA41E28632040F018FC /* Frameworks */,
 			);
-			name = Logging;
+			path = GoogleUtilities;
 			sourceTree = "<group>";
 		};
-		718346A9AAD4BBC7A8CF5009B85C8349 /* LaughingAdventure */ = {
+		4074A9935C64ACF2BF8EF2C1A4887C72 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6CBD4156231F44F08F64571B41E581C4 /* Logging */,
-				AA4A51D6343A77D63DA429F0DE6149BE /* Purchase */,
-				B4FDBE357D5C71BA86B0FCA341EFA7E5 /* Support Files */,
+				C806568899D65C04AE1959E802645CB0 /* Firebase */,
+				16BBE36166F4FF7275F980F982300276 /* FirebaseAnalytics */,
+				5C95D3BD2078B0D5562A3F46987E0441 /* FirebaseInstanceID */,
+				EA45B82CC76331F116927B8C3FE80CF4 /* GameKit */,
+				016D46A1FC749CD72F18064BDAA857BA /* Google-Mobile-Ads-SDK */,
+				96FFE31AE856A151495825D6777E09CB /* GoogleInterchangeUtilities */,
+				13CF507595283DE66519455651460598 /* GoogleSymbolUtilities */,
+				31609ADB3D0FB9E0BE1118C820E95F00 /* GoogleUtilities */,
+				DD5CA570021E2578A65675B8C144CBE1 /* LaughingAdventure */,
+				9A21124F0EC7D18174086D87D27807F0 /* Locksmith */,
+				8E72BBC392CE4A38923B3DA12216E0CE /* SWLogger */,
 			);
-			path = LaughingAdventure;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4F103F2D15A9000A214663DCC987074E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA56E6383121D51191B63941137F108B /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		59DE89168FFF29EC80C4975972D0416E /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				E4993134F64DCD53FBE3E9DEE9C7C222 /* Firebase.h */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		5C95D3BD2078B0D5562A3F46987E0441 /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				77E97B198AC1BBFA116CDC24B657CC25 /* FIRInstanceID.h */,
+				83FD9F9A5C13BBBC33FAF6E228EFC87D /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		6C5F53C52D2F8C2C653660D0E53DD2DC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				03C1E97C3A0245EDB2948FB35F42E324 /* Info.plist */,
+				D7BFD38AA015102B02C42CA03D3C3280 /* LaughingAdventure.modulemap */,
+				0B52465FF6A4DF481A1474BB41DB5DD2 /* LaughingAdventure.xcconfig */,
+				22C3678331B801918B66F3437657C393 /* LaughingAdventure-dummy.m */,
+				AE6B1957181D83DC6D59AC80ED8B53A6 /* LaughingAdventure-prefix.pch */,
+				B82E0DF4831B4E0E7C7DF8662011C452 /* LaughingAdventure-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LaughingAdventure";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -401,25 +381,18 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				AE17A9D38BA08085A32CDF61BC06EAAE /* Pods */,
+				4074A9935C64ACF2BF8EF2C1A4887C72 /* Pods */,
 				9A5CC8A614B5E6333B4CF6D1627999D9 /* Products */,
 				8AE3CD815436C4D1F68C7A1291771DB9 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8A2F16EADA110F3F0CEEA185D2CCB69A /* Crashlytics */ = {
+		83FD9F9A5C13BBBC33FAF6E228EFC87D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				78C2B16B58BB8ECCDAEEDF61F7A7D55F /* ANSCompatibility.h */,
-				B4974D5B6FEC8AFA543DED90DAEF4F41 /* Answers.h */,
-				CC151614CC34FA408A8FEA02E4A2DD1C /* CLSAttributes.h */,
-				200C3D76CA3BDD1BB5D7BA0726333237 /* CLSLogging.h */,
-				D0FB378FBFE8C46E24C205F46DD29B51 /* CLSReport.h */,
-				1D3D1754F759F74AF5B6CE6C1A5289C4 /* CLSStackFrame.h */,
-				B0A9F55E1B456C40EE27D1BDD9D5DD0F /* Crashlytics.h */,
-				2858ADE172CE73D581EB0AE91A1A180D /* Frameworks */,
+				19220DD4752E4EF2D995BA743E4855D2 /* FirebaseInstanceID.framework */,
 			);
-			path = Crashlytics;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8AE3CD815436C4D1F68C7A1291771DB9 /* Targets Support Files */ = {
@@ -429,6 +402,74 @@
 				9EFCA6A637A335D5C1B9CDD9782B3B7B /* Pods-TenPairTests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8E72BBC392CE4A38923B3DA12216E0CE /* SWLogger */ = {
+			isa = PBXGroup;
+			children = (
+				AD3936162A897101362A6D2BDA44C69A /* ConsoleOutput.swift */,
+				1FD0EC0E7BCC33030FD82C4F88637A0B /* FileOutput.swift */,
+				6A745AAFE9D5DF426B82DB9F442D40AD /* Log.swift */,
+				B17D2B7DD0E6B168363595866E980BD2 /* Logger.swift */,
+				A031405AB19B95A8AEE081EF4390B6AD /* LogOutput.swift */,
+				C48DF3C3611627E13EE47C8FED7AB34D /* ShakeWindow.swift */,
+				927961335B860A5F8C3A7A7883025A13 /* Support Files */,
+			);
+			path = SWLogger;
+			sourceTree = "<group>";
+		};
+		926E0ED396E83AFF01C88A7AF278CFC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A07B04C39F25A2F83F96A377B7375 /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		927961335B860A5F8C3A7A7883025A13 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BA8F9DAB6A5C325405B7642DD9518C53 /* Info.plist */,
+				0AE6B7076D3AA6AE9257ABEB476FCEF2 /* SWLogger.modulemap */,
+				B1E135C0917338DB547581A65486D214 /* SWLogger.xcconfig */,
+				B7553CE543D9D3FAB4908F9C0A9B4799 /* SWLogger-dummy.m */,
+				1FEFC30B7D6A4B2630AEEE817B2D9072 /* SWLogger-prefix.pch */,
+				95739BC1F08AD4F9D658885656A6A89F /* SWLogger-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SWLogger";
+			sourceTree = "<group>";
+		};
+		96FFE31AE856A151495825D6777E09CB /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				18E75160FA019E91E0DA85E2F5E20D38 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		971E8CC0A513F197DED606E241460BAB /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				331BF662A2819D4BCDE4E971FE391DFD /* Logging.swift */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
+		9A21124F0EC7D18174086D87D27807F0 /* Locksmith */ = {
+			isa = PBXGroup;
+			children = (
+				B2B35D1E57BE33F5D06D790E0E692CF4 /* Dictionary_Initializers.swift */,
+				ABBB9372AF8A2D2E972AF8ED5EFD8086 /* Locksmith.h */,
+				CD469031C20815857C91F843F62C026E /* Locksmith.swift */,
+				0D1E7A4BDF4B6348F303788D6338DD66 /* LocksmithAccessibleOption.swift */,
+				9034304E1F0EF7FB47F773D649B916EF /* LocksmithError.swift */,
+				D573ED9F8ABC563959CB0EB84FC9651C /* LocksmithInternetAuthenticationType.swift */,
+				C42E16FEC5E779F20EFD6BCAC6942CC5 /* LocksmithInternetProtocol.swift */,
+				DC5DAEF606FA86C0D9BC61D3002585DD /* LocksmithSecurityClass.swift */,
+				012941D8E56CEE8521F3B6A9293158FB /* Support Files */,
+			);
+			path = Locksmith;
 			sourceTree = "<group>";
 		};
 		9A5CC8A614B5E6333B4CF6D1627999D9 /* Products */ = {
@@ -442,14 +483,6 @@
 				939968FB01E65C8D7A5F1177CB474988 /* SWLogger.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		9D7D16A56D129DA4DEF30949610D3D69 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FD7C24A06C5C7A16D64437240CAB64BB /* Fabric.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9EFCA6A637A335D5C1B9CDD9782B3B7B /* Pods-TenPairTests */ = {
@@ -470,6 +503,20 @@
 			path = "Target Support Files/Pods-TenPairTests";
 			sourceTree = "<group>";
 		};
+		A0121AC5611917C283A7E2EA52868613 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				496B14940F40B60CF416238B36E706D0 /* GameKit.modulemap */,
+				E9E0B42D0952AAB81E2BD5EFCF94FA32 /* GameKit.xcconfig */,
+				6EFAFA862A1AF3DABBBB44348CD272DC /* GameKit-dummy.m */,
+				22788BC46D2CD8B354CB72F24286AF6B /* GameKit-prefix.pch */,
+				889F47761B222244911D32D6B5BFEB8F /* GameKit-umbrella.h */,
+				51D4ABD15BE812F05BCC925CF067A3E6 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GameKit";
+			sourceTree = "<group>";
+		};
 		A08B416D3A67963FE3CEA67DDAD969B2 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,165 +527,68 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		A78CD8B7C44325605572BD3FBD1954C0 /* Fabric */ = {
+		B60FC3D92710CD7D5ADE003D523D28E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9D7D16A56D129DA4DEF30949610D3D69 /* Frameworks */,
+				69C80449D504FB62E45A7C5486F9F65B /* FirebaseAnalytics.framework */,
 			);
-			path = Fabric;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AA4A51D6343A77D63DA429F0DE6149BE /* Purchase */ = {
+		C05ACF147B33324232A124C7C03A8365 /* Purchase */ = {
 			isa = PBXGroup;
 			children = (
-				322BBFBB53FE3B2850083D3F01316440 /* ProductsHandler.swift */,
-				9087B2E17CA1F14EE7A684D7AF67FABB /* Purchaser.swift */,
-				A589AB9AA5A79FC91CB36523815D8D33 /* SKProduct+Extensions.swift */,
+				AF5D261A315F68FADDE173E4ED0778BC /* ProductsHandler.swift */,
+				A8F8ED8FD797DF2CF280AE5F592C4E70 /* Purchaser.swift */,
+				1AF2D81655E0BE395A7B282A1A90F319 /* SKProduct+Extensions.swift */,
 			);
 			name = Purchase;
 			sourceTree = "<group>";
 		};
-		AE17A9D38BA08085A32CDF61BC06EAAE /* Pods */ = {
+		C7B5E8FA7FF4BCA41E28632040F018FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8A2F16EADA110F3F0CEEA185D2CCB69A /* Crashlytics */,
-				A78CD8B7C44325605572BD3FBD1954C0 /* Fabric */,
-				DA0DB504676271FDC82F9344D1EBD307 /* Firebase */,
-				5601319A64CD4391A83B5E0FEF5FBB87 /* FirebaseAnalytics */,
-				DA9B86603E30A094A174A4120CFA121C /* FirebaseInstanceID */,
-				5AB8686E81EB8876F7869CB80443B4BB /* GameKit */,
-				215C99D3867EAA67746AE26F3487D2F5 /* Google-Mobile-Ads-SDK */,
-				23782BB6342E545E894813FF2C86B238 /* GoogleInterchangeUtilities */,
-				FA9E64A4CC209B82C0D6F0FBF867E349 /* GoogleSymbolUtilities */,
-				F45278D0C88B1C36867B40A33C3A0ED3 /* GoogleUtilities */,
-				718346A9AAD4BBC7A8CF5009B85C8349 /* LaughingAdventure */,
-				B737AC6AC46AC54D5E08CE47508161B7 /* Locksmith */,
-				494859771439ABC4640F24AB6121B7C7 /* SWLogger */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		B4FDBE357D5C71BA86B0FCA341EFA7E5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6E0CA4FC8AD246F9D9E678E06548E57C /* Info.plist */,
-				07BD39F8028987CB85974D02DDCF1D5B /* LaughingAdventure.modulemap */,
-				D781D7FDD2F4DFE56219F6AA37B8C10B /* LaughingAdventure.xcconfig */,
-				E782B0D2F3ACAD3353280A0AF7108FD3 /* LaughingAdventure-dummy.m */,
-				4B1986AEBDC1B3C0B420727CEF64EA85 /* LaughingAdventure-prefix.pch */,
-				057FA37D39DEEFA16E2DC31E9D8E9DE9 /* LaughingAdventure-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/LaughingAdventure";
-			sourceTree = "<group>";
-		};
-		B737AC6AC46AC54D5E08CE47508161B7 /* Locksmith */ = {
-			isa = PBXGroup;
-			children = (
-				89647001E8D3362CCF9E071B136E2DA1 /* Dictionary_Initializers.swift */,
-				4CFE4612B3041438C527D56E2319E927 /* Locksmith.h */,
-				6F7AD8E9FCACB1A282D3EDB151D9590D /* Locksmith.swift */,
-				3AF0C91D8A5C841CEB4828DD2753C2AB /* LocksmithAccessibleOption.swift */,
-				1FB2347A57622C63130CA1930401C590 /* LocksmithError.swift */,
-				B4E3FD83DE360724318D96400A0266F2 /* LocksmithInternetAuthenticationType.swift */,
-				7855C30AD47DE4D942A556E834AF7A28 /* LocksmithInternetProtocol.swift */,
-				625062831F560F5BD8FB04EA1C21DB56 /* LocksmithSecurityClass.swift */,
-				FAE75EF66932CD3380AC0782C3473743 /* Support Files */,
-			);
-			path = Locksmith;
-			sourceTree = "<group>";
-		};
-		D1B5157A9C35BFB81058147B8BBA5727 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				494B28AB75077B100598C2ABF0D7D538 /* GoogleSymbolUtilities.framework */,
+				92356C49F03C5572E775EF30E9DFAD6E /* GoogleUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D74A93DE8C54CD99A771A621EA0EE0FF /* Frameworks */ = {
+		C806568899D65C04AE1959E802645CB0 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				8F6E4337DBE20AF28BA139EE500784C5 /* FirebaseAnalytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DA0DB504676271FDC82F9344D1EBD307 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				3B1117C178660749D564843D3C88F8FB /* Analytics */,
+				59DE89168FFF29EC80C4975972D0416E /* Analytics */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		DA9B86603E30A094A174A4120CFA121C /* FirebaseInstanceID */ = {
+		DD5CA570021E2578A65675B8C144CBE1 /* LaughingAdventure */ = {
 			isa = PBXGroup;
 			children = (
-				5C5A3FD1D4C4DB4BDAAFAD2B03868091 /* FIRInstanceID.h */,
-				E2DBC07587CE42A90DC579380ED25C6B /* Frameworks */,
+				971E8CC0A513F197DED606E241460BAB /* Logging */,
+				C05ACF147B33324232A124C7C03A8365 /* Purchase */,
+				6C5F53C52D2F8C2C653660D0E53DD2DC /* Support Files */,
 			);
-			path = FirebaseInstanceID;
+			path = LaughingAdventure;
 			sourceTree = "<group>";
 		};
-		E2DBC07587CE42A90DC579380ED25C6B /* Frameworks */ = {
+		EA45B82CC76331F116927B8C3FE80CF4 /* GameKit */ = {
 			isa = PBXGroup;
 			children = (
-				53014E220575C362D08D30DA451DD126 /* FirebaseInstanceID.framework */,
+				BD74A761FADF66807217F44892306D50 /* Game.swift */,
+				58281851613B23229C4B91B2FE3F6C8B /* GameButton.swift */,
+				C564FB1234064249C30E38976CD167CC /* GameLoadingView.swift */,
+				8DC937713D1105BAB207B266A7E1A51F /* GameMenuButton.swift */,
+				AD48E2C94F418F6688562CDF9190DFAD /* GameMenuPresentationContainer.swift */,
+				239F451C447C4683C8BF3332E180BE71 /* GameMenuScreen.swift */,
+				E62761DE1FCB4F08381FFA5FBE5EF333 /* GameScreen.swift */,
+				325F9D61BB4632B1B6AB23F66911DF3D /* GameScrollView.swift */,
+				D1B2C18263F7C050A74DC2181AAD5049 /* GameScrollViewContained.swift */,
+				1CE068E475A5C2C08E4FE2F6275D1E4A /* GameView.swift */,
+				1DCF128473D9E76B216936F692EBAF7A /* SKSpriteNode+MultiLineLabel.swift */,
+				DBC1A3E2F92CD4A340650567053D20DD /* SlideOutButtonsTray.swift */,
+				A0121AC5611917C283A7E2EA52868613 /* Support Files */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F45278D0C88B1C36867B40A33C3A0ED3 /* GoogleUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				F95938E4C212F8B5AFE858739DE84754 /* Frameworks */,
-			);
-			path = GoogleUtilities;
-			sourceTree = "<group>";
-		};
-		F8C8D59533A643EE1E7634CFE885D7B0 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7062884C3B241356D579C1659FAD3ADB /* GameKit.modulemap */,
-				5A92067F3B4FCD3E57B6A0FCFCAA70B7 /* GameKit.xcconfig */,
-				55375E9BB5B23E8252329517D576834E /* GameKit-dummy.m */,
-				C8891A474C1F63212818043AE89EFAE5 /* GameKit-prefix.pch */,
-				B719F0329DAA79CECE88DC983DC71522 /* GameKit-umbrella.h */,
-				78FB63D6D0E443B94EA14231264D8175 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/GameKit";
-			sourceTree = "<group>";
-		};
-		F95938E4C212F8B5AFE858739DE84754 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1E2FED0A4F1B64B969782E1CFC0EE84A /* GoogleUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FA9E64A4CC209B82C0D6F0FBF867E349 /* GoogleSymbolUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				D1B5157A9C35BFB81058147B8BBA5727 /* Frameworks */,
-			);
-			path = GoogleSymbolUtilities;
-			sourceTree = "<group>";
-		};
-		FAE75EF66932CD3380AC0782C3473743 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				93349FD6FBFF17D8EAD26223BF94B477 /* Info.plist */,
-				D42E0DD0636767EBF97212147E46F8D8 /* Locksmith.modulemap */,
-				BED26E58DCD7A3E9E9D9505E1C70BAA4 /* Locksmith.xcconfig */,
-				20B82E4D3550C9C33C7A8F103B6691B4 /* Locksmith-dummy.m */,
-				0F1545885FFF870F4B5B2AD6C82EA5F5 /* Locksmith-prefix.pch */,
-				124746A775719DBC3CD034809D64C37F /* Locksmith-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Locksmith";
+			path = GameKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1009,7 +959,7 @@
 		};
 		3898D6E0711B3D8167FD8A872DA244C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D781D7FDD2F4DFE56219F6AA37B8C10B /* LaughingAdventure.xcconfig */;
+			baseConfigurationReference = 0B52465FF6A4DF481A1474BB41DB5DD2 /* LaughingAdventure.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1038,7 +988,7 @@
 		};
 		40C17723801CCE892F1E81320D0F68CF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D9E43D582ED9EFECEA28A9A4236E924 /* SWLogger.xcconfig */;
+			baseConfigurationReference = B1E135C0917338DB547581A65486D214 /* SWLogger.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1067,7 +1017,7 @@
 		};
 		4799CFBC99D2EDFFDAFD3DEF3186789C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BED26E58DCD7A3E9E9D9505E1C70BAA4 /* Locksmith.xcconfig */;
+			baseConfigurationReference = D1CDB04501273E9E358B00FFAF6F8787 /* Locksmith.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1178,7 +1128,7 @@
 		};
 		AEB9E39F62E35D4A55DD1E2DC996919B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A92067F3B4FCD3E57B6A0FCFCAA70B7 /* GameKit.xcconfig */;
+			baseConfigurationReference = E9E0B42D0952AAB81E2BD5EFCF94FA32 /* GameKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1207,7 +1157,7 @@
 		};
 		B93CA8CC522611189AFEFCD88C949598 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D9E43D582ED9EFECEA28A9A4236E924 /* SWLogger.xcconfig */;
+			baseConfigurationReference = B1E135C0917338DB547581A65486D214 /* SWLogger.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1237,7 +1187,7 @@
 		};
 		DBA888CC199D653E1E5E69F6F16EE207 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BED26E58DCD7A3E9E9D9505E1C70BAA4 /* Locksmith.xcconfig */;
+			baseConfigurationReference = D1CDB04501273E9E358B00FFAF6F8787 /* Locksmith.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1267,7 +1217,7 @@
 		};
 		DE75DE04D1FD11C8FCEDCCA7D4420C5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D781D7FDD2F4DFE56219F6AA37B8C10B /* LaughingAdventure.xcconfig */;
+			baseConfigurationReference = 0B52465FF6A4DF481A1474BB41DB5DD2 /* LaughingAdventure.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1331,7 +1281,7 @@
 		};
 		F5310BAAA025FF46B695BA702D5CC79E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A92067F3B4FCD3E57B6A0FCFCAA70B7 /* GameKit.xcconfig */;
+			baseConfigurationReference = E9E0B42D0952AAB81E2BD5EFCF94FA32 /* GameKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;

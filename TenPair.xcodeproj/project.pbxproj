@@ -28,6 +28,8 @@
 		A7E59AE11D16F6ED0065E5EC /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7E59AE01D16F6ED0065E5EC /* GameScene.sks */; };
 		A7E59AE31D16F6ED0065E5EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7E59AE21D16F6ED0065E5EC /* Assets.xcassets */; };
 		A7E59AE61D16F6ED0065E5EC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E59AE41D16F6ED0065E5EC /* MainMenu.xib */; };
+		A7EA2DF11D17022A0025D809 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EA2DEF1D17022A0025D809 /* Crashlytics.framework */; };
+		A7EA2DF21D17022A0025D809 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EA2DF01D17022A0025D809 /* Fabric.framework */; };
 		BA29C74345D8AF284AEF358D /* Pods_TenPair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8E7688E7CDE00FCBA4B81D /* Pods_TenPair.framework */; };
 		EA01D8CD1BAF32E1007014FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA01D8C91BAF32E1007014FC /* InfoPlist.strings */; };
 		EA01D8CE1BAF32E1007014FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA01D8CB1BAF32E1007014FC /* Localizable.strings */; };
@@ -90,6 +92,8 @@
 		A7E59AE21D16F6ED0065E5EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7E59AE51D16F6ED0065E5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A7E59AE71D16F6ED0065E5EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7EA2DEF1D17022A0025D809 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		A7EA2DF01D17022A0025D809 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		BDA980DD7CA0FCA2402F32C5 /* Pods-TenPair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenPair.release.xcconfig"; path = "Pods/Target Support Files/Pods-TenPair/Pods-TenPair.release.xcconfig"; sourceTree = "<group>"; };
 		C59489CCA14E8527D2C93F22 /* Pods-TenPair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenPair.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TenPair/Pods-TenPair.debug.xcconfig"; sourceTree = "<group>"; };
 		E8C734AAAB07E4E5623D7EBD /* Pods-TenPairTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenPairTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TenPairTests/Pods-TenPairTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,7 +140,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7EA2DF11D17022A0025D809 /* Crashlytics.framework in Frameworks */,
 				BA29C74345D8AF284AEF358D /* Pods_TenPair.framework in Frameworks */,
+				A7EA2DF21D17022A0025D809 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +213,8 @@
 		EA01D8C71BAF32C0007014FC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A7EA2DEF1D17022A0025D809 /* Crashlytics.framework */,
+				A7EA2DF01D17022A0025D809 /* Fabric.framework */,
 				EA01D8C81BAF32E1007014FC /* en.lproj */,
 				A73A976B1D0DBED200CF1B3B /* Secrets.sample.swift */,
 				A73A976C1D0DBED200CF1B3B /* Secrets.swift */,
@@ -566,7 +574,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1498b1e841189deded0a8957a47057c88a75503b 84939d122fb533ac07e3e9b3d0fb8601e68f89a868e9f5889891d1a6684b0d72";
+			shellScript = "\"./iOSFrameworks/Fabric.framework/run\" 1498b1e841189deded0a8957a47057c88a75503b 84939d122fb533ac07e3e9b3d0fb8601e68f89a868e9f5889891d1a6684b0d72";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -808,6 +816,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/TenPair",
+					"$(PROJECT_DIR)/iOSFrameworks",
 				);
 				INFOPLIST_FILE = TenPair/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -829,6 +839,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/TenPair",
+					"$(PROJECT_DIR)/iOSFrameworks",
 				);
 				INFOPLIST_FILE = TenPair/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
