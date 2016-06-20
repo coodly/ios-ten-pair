@@ -9,6 +9,8 @@
 
 import Cocoa
 import SpriteKit
+import Fabric
+import Crashlytics
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -17,6 +19,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var skView: SKView!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": true])
+        Fabric.with([Crashlytics.self])
+
         /* Pick a size for the scene */
         if let scene = GameScene(fileNamed:"GameScene") {
             /* Set the scale mode to scale to fit the window */
