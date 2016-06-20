@@ -33,11 +33,7 @@ class HintButtonTray: GameView {
         CGPathCloseSubpath(path)
         border = SKShapeNode(path: path)
         border.fillColor = TenPairTheme.currentTheme.defaultNumberTileColor!
-        #if os(iOS)
-            border.strokeColor = UIColor.whiteColor()
-        #else
-            border.strokeColor = NSColor.whiteColor()
-        #endif
+        border.strokeColor = SKColor.whiteColor()
         border.glowWidth = 1
         addChild(border)
         

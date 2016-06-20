@@ -24,11 +24,10 @@ public extension SKSpriteNode {
         
         #if os(iOS)
             let labelFont = UIFont(name: font, size: fontSize)!
-            let color = UIColor.whiteColor()
         #else
             let labelFont = NSFont(name: font, size: fontSize)!
-            let color = NSColor.whiteColor()
         #endif
+        let color = SKColor.whiteColor()
         
         let string = NSMutableAttributedString(string: message)
         let attributes = [

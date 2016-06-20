@@ -89,11 +89,11 @@ class TenPairNumberTile: SKSpriteNode {
         
         #if os(iOS)
             let font = UIFont(name: "ChalkboardSE-Bold", size: fontSize)!
-            let color = UIColor.whiteColor()
         #else
             let font = NSFont(name: "ChalkboardSE-Bold", size: fontSize)!
-            let color = NSColor.whiteColor()
         #endif
+
+        let color = SKColor.whiteColor()
         
         string.addAttribute(NSFontAttributeName, value: font, range: NSMakeRange(0, 1))
         string.addAttribute(NSForegroundColorAttributeName, value: color, range: NSMakeRange(0, 1))
