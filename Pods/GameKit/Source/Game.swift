@@ -17,11 +17,9 @@
 import Foundation
 import SpriteKit
 import GLKit
+#if os(iOS)
 import UIKit
-
-private extension Selector {
-    static let tapped = #selector(Game.tapped(_:))
-}
+#endif
 
 public extension SKNode {
     public func radians(degrees: CGFloat) -> CGFloat {
@@ -30,7 +28,10 @@ public extension SKNode {
 }
 
 public class Game: SKScene {
+    #if os(iOS)
     var tapRecognizer: UITapGestureRecognizer?
+    #endif
+    
     private var screens = [GameView]()
     
     public func presentLoadingView(loadingScreen: GameLoadingView) {
@@ -93,19 +94,7 @@ public class Game: SKScene {
         }
     }
     
-    public override func didMoveToView(view: SKView) {
-        let recognizer = UITapGestureRecognizer(target: self, action: .tapped)
-        tapRecognizer = recognizer
-        view.addGestureRecognizer(recognizer)
-    }
-    
-    public override func willMoveFromView(view: SKView) {
-        view.removeGestureRecognizer(tapRecognizer!)
-    }
-    
-    func tapped(recognizer: UITapGestureRecognizer) {
-        let pointInView = recognizer.locationInView(self.view)
-        let point = convertPointFromView(pointInView)
+    func handleTap(at point: CGPoint) {
         let nodes = nodesAtPoint(point)
         
         let screens = screensInArray(nodes)
@@ -166,3 +155,27 @@ public class Game: SKScene {
         }
     }    
 }
+
+#if os(iOS)
+private extension Selector {
+    static let tapped = #selector(Game.tapped(_:))
+}
+    
+extension Game {
+    public override func didMoveToView(view: SKView) {
+        let recognizer = UITapGestureRecognizer(target: self, action: .tapped)
+        tapRecognizer = recognizer
+        view.addGestureRecognizer(recognizer)
+    }
+    
+    public override func willMoveFromView(view: SKView) {
+        view.removeGestureRecognizer(tapRecognizer!)
+    }
+    
+    func tapped(recognizer: UITapGestureRecognizer) {
+        let pointInView = recognizer.locationInView(self.view)
+        let point = convertPointFromView(pointInView)
+        handleTap(at: point)
+    }
+}
+#endif
