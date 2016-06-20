@@ -15,7 +15,6 @@
 */
 
 import Foundation
-import UIKit
 import SpriteKit
 import GameKit
 
@@ -29,12 +28,11 @@ class TenPairLoadingScreen : GameLoadingView {
         }
         
         color = TenPairTheme.currentTheme.backgroundColor!.colorWithAlphaComponent(0.8)
-        let path = UIBezierPath()
-        path.addArcWithCenter(CGPointMake(0, 0), radius: 50, startAngle: CGFloat(radians(0)), endAngle: CGFloat(radians(310)), clockwise: true)
-        path.lineCapStyle = CGLineCap.Round
+        let path = CGPathCreateMutable()
+        CGPathAddArc(path, nil, 0, 0, 50, radians(0), radians(310), true)
         let spinner = SKShapeNode()
         self.spinner = spinner
-        spinner.path = path.CGPath
+        spinner.path = path 
         spinner.strokeColor = TenPairTheme.currentTheme.tintColor!
         spinner.lineWidth = 10
         addChild(spinner)

@@ -1,6 +1,5 @@
 use_frameworks!
 
-
 def local_coodly
     pod 'SWLogger', :path => '../swift-logger'
     pod 'GameKit', :path => '../swift-game-kit'

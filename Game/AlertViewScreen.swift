@@ -80,7 +80,7 @@ private class AlertBox: GameView {
         
         background = SKShapeNode(rect: CGRectMake(0, 0, size.width, size.height), cornerRadius: 10)
         background.strokeColor = TenPairTheme.currentTheme.defaultNumberTileColor!
-        background.fillColor = UIColor.whiteColor()
+        background.fillColor = SKColor.whiteColor()
         addChild(background)
         
         text = SKSpriteNode.multiLineLabel(message, font: "Copperplate-Bold", fontSize: 32, maxWidth: size.width - 20)
