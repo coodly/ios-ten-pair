@@ -22,28 +22,57 @@ public extension SKSpriteNode {
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = .Center
         
+        #if os(iOS)
+            let labelFont = UIFont(name: font, size: fontSize)!
+            let color = UIColor.whiteColor()
+        #else
+            let labelFont = NSFont(name: font, size: fontSize)!
+            let color = NSColor.whiteColor()
+        #endif
+        
         let string = NSMutableAttributedString(string: message)
         let attributes = [
-            NSFontAttributeName: UIFont(name: font, size: fontSize)!,
-            NSForegroundColorAttributeName: UIColor.whiteColor(),
+            NSFontAttributeName: labelFont,
+            NSForegroundColorAttributeName: color,
             NSParagraphStyleAttributeName: paragraph
         ]
         
         string.setAttributes(attributes, range: NSMakeRange(0, message.characters.count))
         
         let rect = string.boundingRectWithSize(CGSizeMake(maxWidth, 1000), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
-        string.drawInRect(rect)
-        
-        #if swift(>=2.3)
-            let image = UIGraphicsGetImageFromCurrentImageContext()!
-        #else
-            let image = UIGraphicsGetImageFromCurrentImageContext()
-        #endif
-        UIGraphicsEndImageContext()
+        let image = string.render(inBox: rect, attributes: attributes)
         
         let result = SKSpriteNode(texture: SKTexture(image: image))
         result.colorBlendFactor = 1
         return result
     }
 }
+
+#if os(iOS)
+    import UIKit
+    
+    private extension NSAttributedString {
+        func render(inBox box: CGRect, attributes: [String: AnyObject]) -> UIImage {
+            UIGraphicsBeginImageContextWithOptions(box.size, false, UIScreen.mainScreen().scale)
+            drawInRect(box)
+            
+            #if swift(>=2.3)
+                let image = UIGraphicsGetImageFromCurrentImageContext()!
+            #else
+                let image = UIGraphicsGetImageFromCurrentImageContext()
+            #endif
+            UIGraphicsEndImageContext()
+            
+            return image
+        }
+    }
+#else
+    private extension NSAttributedString {
+        func render(inBox box: CGRect, attributes: [String: AnyObject]) -> NSImage {
+            let image = NSImage(size: box.size)
+            // TODO jaanus: fill in from
+            // http://stackoverflow.com/questions/12223739/ios-to-mac-graphiccontext-explanation-conversion
+            return image
+        }
+    }
+#endif

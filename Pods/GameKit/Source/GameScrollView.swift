@@ -16,22 +16,22 @@
 
 import Foundation
 import SpriteKit
-import UIKit
 
-public class GameScrollView: GameView, UIScrollViewDelegate {
+public class GameScrollView: GameView {
+    #if os(iOS)
     public var scrollView = UIScrollView(frame: CGRectZero)
-    var presented: GameScrollViewContained?
     public var contentInset = UIEdgeInsetsZero
+    #else
+    public var scrollView = NSScrollView(frame: CGRectZero)
+    public var contentInset = NSEdgeInsetsZero
+    private var dummy: NSView?
+    #endif
+    var presented: GameScrollViewContained?
     var yCenterContent = false
     
     override public func loadContent() {
         name = "GameScrollView"
-        scrollView.frame = scene!.view!.bounds
-        scrollView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
-        scrollView.contentInset = contentInset
-        scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(contentInset.top, 0, contentInset.bottom, 0)
-        scene!.view!.addSubview(scrollView)
-        scrollView.delegate = self
+        positionScrollView()
     }
     
     public func present(content: GameScrollViewContained) {
@@ -39,7 +39,7 @@ public class GameScrollView: GameView, UIScrollViewDelegate {
 
         presented = content
         presented!.scrollView = self
-        scrollView.contentSize = content.size
+        adjustContentSize()
         
         positionPresentedNode()
     }
@@ -50,12 +50,8 @@ public class GameScrollView: GameView, UIScrollViewDelegate {
         super.positionContent()
     }
     
-    public func scrollViewDidScroll(scrollView: UIScrollView) {
-        positionPresentedNode()
-    }
-    
     func positionPresentedNode() {
-        let offset = scrollView.contentOffset.y
+        let offset = contentOffsetY()
         let nextPosition = CGPointMake((size.width - presented!.size.width) / 2, -presented!.size.height + size.height + offset)
         
         let moveAction = SKAction.moveTo(nextPosition, duration: 0)
@@ -81,7 +77,7 @@ public class GameScrollView: GameView, UIScrollViewDelegate {
     }
     
     public func contentSizeChanged() {
-        scrollView.contentSize = presented!.size
+        adjustContentSize()
         
         var insets = contentInset
         let presentationInset = presented!.presentationInsets()
@@ -97,7 +93,11 @@ public class GameScrollView: GameView, UIScrollViewDelegate {
             insets.bottom = yOffset
         }
         
-        scrollView.contentInset = insets
+        #if os(iOS)
+            scrollView.contentInset = insets
+        #else
+            scrollView.contentInsets = insets
+        #endif
         
         positionPresentedNode()
     }
@@ -109,6 +109,67 @@ public class GameScrollView: GameView, UIScrollViewDelegate {
     public func setContentOffset(contentOffset: CGPoint, animated: Bool) {
         var saneYOffset = max(contentOffset.y, 0)
         saneYOffset = min(saneYOffset, scrollView.contentSize.height - scrollView.bounds.height)
-        scrollView.setContentOffset(CGPointMake(0, saneYOffset), animated: animated)
+        scroll(CGPointMake(0, saneYOffset), animated: animated)
     }
 }
+
+#if os(iOS)
+    import UIKit
+    
+    extension GameScrollView: UIScrollViewDelegate {
+        public func scrollViewDidScroll(scrollView: UIScrollView) {
+            positionPresentedNode()
+        }
+        
+        func positionScrollView() {
+            scrollView.frame = scene!.view!.bounds
+            scrollView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+            scrollView.contentInset = contentInset
+            scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(contentInset.top, 0, contentInset.bottom, 0)
+            scene!.view!.addSubview(scrollView)
+            scrollView.delegate = self
+        }
+        
+        func contentOffsetY() -> CGFloat {
+            return scrollView.contentOffset.y
+        }
+        
+        func contentSize() -> CGSize {
+            return presented!.size
+        }
+        
+        func adjustContentSize() {
+            scrollView.contentSize = contentSize()
+        }
+        
+        func scroll(to: CGPoint, animated: Bool) {
+            scrollView.setContentOffset(to, animated: animated)
+        }
+    }
+#else
+    extension GameScrollView {
+        func positionScrollView() {
+            
+        }
+        
+        func contentOffsetY() -> CGFloat {
+            return 0
+        }
+        
+        func contentSize() -> NSSize {
+            return presented!.size
+        }
+
+        func adjustContentSize() {
+            dummy?.removeFromSuperview()
+            
+            let size = contentSize()
+            dummy = NSView(frame: CGRectMake(0, 0, size.width, size.height))
+            scrollView.documentView = dummy!
+        }
+        
+        func scroll(to: CGPoint, animated: Bool) {
+            scrollView.documentView!.scrollPoint(to)
+        }
+    }
+#endif

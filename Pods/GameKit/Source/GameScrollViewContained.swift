@@ -15,7 +15,9 @@
 */
 
 import Foundation
-import UIKit
+#if os(iOS)
+    import UIKit
+#endif
 
 public class GameScrollViewContained : GameView {
     public var scrollView: GameScrollView?
@@ -23,8 +25,14 @@ public class GameScrollViewContained : GameView {
     public func scrolledVisibleTo(visibleFrame: CGRect) {
         
     }
-    
+
+    #if os(iOS)
     public func presentationInsets() -> UIEdgeInsets {
         return UIEdgeInsetsZero
     }
+    #else
+    public func presentationInsets() -> NSEdgeInsets {
+        return NSEdgeInsetsZero
+    }
+    #endif
 }
