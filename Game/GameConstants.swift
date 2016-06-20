@@ -36,4 +36,4 @@ enum Platform {
     case Mac
 }
 
-let ReleaseBuild = true
+let ReleaseBuild = false

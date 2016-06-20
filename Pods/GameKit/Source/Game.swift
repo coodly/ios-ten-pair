@@ -178,4 +178,13 @@ extension Game {
         handleTap(at: point)
     }
 }
+#else
+    extension Game {
+        override public func mouseDown(theEvent: NSEvent) {
+            /* Called when a mouse click occurs */
+            
+            let location = theEvent.locationInNode(self)
+            handleTap(at: location)
+        }
+    }
 #endif

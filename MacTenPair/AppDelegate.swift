@@ -14,7 +14,7 @@ import Crashlytics
 import SWLogger
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, InterstitialPresenter {
     
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var skView: SKView!
@@ -24,9 +24,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": true])
         Fabric.with([Crashlytics.self])
         
-        Log.addOutput(ConsoleOutput())
-        Log.addOutput(FileOutput())
-        Log.logLevel = Log.Level.DEBUG
+        if !ReleaseBuild {
+            Log.addOutput(ConsoleOutput())
+            Log.addOutput(FileOutput())
+            Log.logLevel = Log.Level.DEBUG
+        }
         
         Log.debug("App launch")
         
@@ -45,9 +47,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         skView.presentScene(scene)
         
         gameScene.startGame()
+        
+        gameScene.playScreen.interstitial = self
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
         return true
+    }
+    
+    func applicationWillHide(notification: NSNotification) {
+        Log.debug("")
+    }
+    
+    func applicationDidResignActive(notification: NSNotification) {
+        Log.debug("")
+        saveField()
+    }
+    
+    func applicationWillTerminate(notification: NSNotification) {
+        Log.debug("")
+        saveField()
+    }
+    
+    private func saveField() {
+        let numbers = scene!.playScreen.playFieldNumbers()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(numbers, forKey: TenPairSaveDataKey)
+        defaults.synchronize()
     }
 }

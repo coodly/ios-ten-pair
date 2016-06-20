@@ -22,7 +22,15 @@ public class GameScrollView: GameView {
     public var scrollView = UIScrollView(frame: CGRectZero)
     public var contentInset = UIEdgeInsetsZero
     #else
-    public var scrollView = NSScrollView(frame: CGRectZero)
+    public lazy var scrollView: NSScrollView = {
+        let view = NSScrollView(frame: CGRectZero)
+        view.drawsBackground = false
+        view.hasVerticalScroller = true
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: .scrolled, name: NSScrollViewDidLiveScrollNotification, object: nil)
+        
+        return view
+    }()
     public var contentInset = NSEdgeInsetsZero
     private var dummy: NSView?
     #endif
@@ -53,6 +61,7 @@ public class GameScrollView: GameView {
     func positionPresentedNode() {
         let offset = contentOffsetY()
         let nextPosition = CGPointMake((size.width - presented!.size.width) / 2, -presented!.size.height + size.height + offset)
+        print("next >> \(nextPosition)")
         
         let moveAction = SKAction.moveTo(nextPosition, duration: 0)
         
@@ -147,13 +156,22 @@ public class GameScrollView: GameView {
         }
     }
 #else
+    private extension Selector {
+        static let scrolled = #selector(GameScrollView.didScroll(_:))
+    }
+    
     extension GameScrollView {
         func positionScrollView() {
+            scrollView.frame.size = size
+            scrollView.contentInsets = contentInset
+            scrollView.scrollerInsets = NSEdgeInsetsMake(contentInset.top, 0, contentInset.bottom, 0)
             
+            scene!.view!.addSubview(scrollView)
         }
         
         func contentOffsetY() -> CGFloat {
-            return 0
+            print(">>>>>> \(scrollView.contentView.visibleRect)")
+            return scrollView.contentView.visibleRect.origin.y
         }
         
         func contentSize() -> NSSize {
@@ -164,12 +182,28 @@ public class GameScrollView: GameView {
             dummy?.removeFromSuperview()
             
             let size = contentSize()
-            dummy = NSView(frame: CGRectMake(0, 0, size.width, size.height))
+            dummy = Flipper(frame: CGRectMake(0, 0, self.size.width, size.height))
+            dummy!.wantsLayer = true
+            dummy!.layer!.backgroundColor = SKColor.redColor().colorWithAlphaComponent(0.2).CGColor
             scrollView.documentView = dummy!
         }
         
         func scroll(to: CGPoint, animated: Bool) {
             scrollView.documentView!.scrollPoint(to)
+        }
+        
+        @objc private func didScroll(notification: NSNotification) {
+            guard let object = notification.object as? NSScrollView where scrollView === object else {
+                return
+            }
+            
+            positionPresentedNode()
+        }
+    }
+    
+    private class Flipper: NSView {
+        override var flipped: Bool {
+            return true
         }
     }
 #endif
