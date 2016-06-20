@@ -33,7 +33,7 @@ class PurchaseScreen: GameScreen, FullVersionHandler {
     override func loadContent() {
         super.loadContent()
         
-        color = UIColor.whiteColor()
+        color = SKColor.whiteColor()
         
         scrollView = GameScrollView()
         
@@ -146,9 +146,15 @@ private class Content: GameScrollViewContained {
         addChild(item)
     }
     
+    #if os(iOS)
     private override func presentationInsets() -> UIEdgeInsets {
         return UIEdgeInsetsMake(20, 0, 0, 0)
     }
+    #else
+    private override func presentationInsets() -> NSEdgeInsets {
+        return NSEdgeInsetsMake(20, 0, 0, 0)
+    }
+    #endif
     
     override func positionContent() {
         super.positionContent()

@@ -45,7 +45,11 @@ class TenPairPlayScreen: GameScreen {
         let scrollView = GameScrollView()
         self.scrollView = scrollView
         scrollView.size = size
-        scrollView.contentInset = UIEdgeInsetsMake(60, 0, 10 + ActionButtonsTrayHeight + 10, 0)
+        #if os(iOS)
+            scrollView.contentInset = UIEdgeInsetsMake(60, 0, 10 + ActionButtonsTrayHeight + 10, 0)
+        #else
+            scrollView.contentInset = NSEdgeInsetsMake(60, 0, 10 + ActionButtonsTrayHeight + 10, 0)
+        #endif
         addGameView(scrollView)
         
         let field = TenPairNumbersField()

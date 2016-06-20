@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		841FDAF79BF56DB585AFA529 /* Pods_TenPairTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F580462683097342ADC13243 /* Pods_TenPairTests.framework */; };
 		9FBFE182016DE5A93280545B /* Pods_MacTenPair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039959ED9B3505A0C180E31E /* Pods_MacTenPair.framework */; };
-		A700A29E1D12D6C8000339F5 /* PurchaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A700A29D1D12D6C8000339F5 /* PurchaseScreen.swift */; };
 		A73752A11D17BB2500A35FCD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A737529F1D17BB2500A35FCD /* Crashlytics.framework */; };
 		A73752A21D17BB2500A35FCD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73752A01D17BB2500A35FCD /* Fabric.framework */; };
 		A73A97611D0D8FE400CF1B3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A97601D0D8FE400CF1B3B /* Constants.swift */; };
@@ -52,6 +51,14 @@
 		A756824F1D182C96006FCA07 /* TenPairLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756824D1D182C96006FCA07 /* TenPairLoadingScreen.swift */; };
 		A75682511D182E43006FCA07 /* AlertViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682501D182E43006FCA07 /* AlertViewScreen.swift */; };
 		A75682521D182E43006FCA07 /* AlertViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682501D182E43006FCA07 /* AlertViewScreen.swift */; };
+		A75682541D182F38006FCA07 /* TenPairWinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682531D182F38006FCA07 /* TenPairWinScreen.swift */; };
+		A75682551D182F38006FCA07 /* TenPairWinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682531D182F38006FCA07 /* TenPairWinScreen.swift */; };
+		A75682561D182FD2006FCA07 /* FullVersionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A775221D15AA7E00FB9976 /* FullVersionHandler.swift */; };
+		A75682571D182FEC006FCA07 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A97601D0D8FE400CF1B3B /* Constants.swift */; };
+		A75682581D1830AC006FCA07 /* InterstitialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B082A41D168512006E0FEC /* InterstitialPresenter.swift */; };
+		A75682591D1830BE006FCA07 /* InterstitialCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B082A61D168EE0006E0FEC /* InterstitialCounter.swift */; };
+		A756825B1D1830E4006FCA07 /* PurchaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756825A1D1830E4006FCA07 /* PurchaseScreen.swift */; };
+		A756825C1D1830E4006FCA07 /* PurchaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756825A1D1830E4006FCA07 /* PurchaseScreen.swift */; };
 		A76347431D17C1B4001A3A95 /* TenPairGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76347421D17C1B4001A3A95 /* TenPairGame.swift */; };
 		A76C05351D0EDEC90091D64B /* ActionButtonsTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C05341D0EDEC90091D64B /* ActionButtonsTray.swift */; };
 		A76C05381D0EF3FF0091D64B /* SavedGame.plist in Resources */ = {isa = PBXBuildFile; fileRef = A76C05371D0EF3FF0091D64B /* SavedGame.plist */; };
@@ -74,7 +81,6 @@
 		EA02FA9B1B9C6AA400B93D23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA02FA991B9C6AA400B93D23 /* Main.storyboard */; };
 		EA02FAAB1B9C6AA400B93D23 /* TenPairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02FAAA1B9C6AA400B93D23 /* TenPairTests.swift */; };
 		EAB2197C1B9C6B3600ED9CF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB2197B1B9C6B3600ED9CF9 /* Images.xcassets */; };
-		EAB2199B1B9C6B8800ED9CF9 /* TenPairWinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198C1B9C6B8800ED9CF9 /* TenPairWinScreen.swift */; };
 		EAB219B81B9C6C6300ED9CF9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB219B61B9C6C6300ED9CF9 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +99,6 @@
 		12C99812277A1C201C4154B7 /* Pods-MacTenPair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacTenPair.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacTenPair/Pods-MacTenPair.release.xcconfig"; sourceTree = "<group>"; };
 		858FDDE58A3DC23BE208A6C7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8E7688E7CDE00FCBA4B81D /* Pods_TenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A700A29D1D12D6C8000339F5 /* PurchaseScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseScreen.swift; sourceTree = "<group>"; };
 		A737529F1D17BB2500A35FCD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = macOSFrameworks/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		A73752A01D17BB2500A35FCD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = macOSFrameworks/Fabric.framework; sourceTree = SOURCE_ROOT; };
 		A73A97601D0D8FE400CF1B3B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -119,6 +124,8 @@
 		A756824A1D182C7C006FCA07 /* TenPairNumberPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairNumberPathFinder.swift; sourceTree = "<group>"; };
 		A756824D1D182C96006FCA07 /* TenPairLoadingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairLoadingScreen.swift; sourceTree = "<group>"; };
 		A75682501D182E43006FCA07 /* AlertViewScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewScreen.swift; sourceTree = "<group>"; };
+		A75682531D182F38006FCA07 /* TenPairWinScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairWinScreen.swift; sourceTree = "<group>"; };
+		A756825A1D1830E4006FCA07 /* PurchaseScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseScreen.swift; sourceTree = "<group>"; };
 		A76347421D17C1B4001A3A95 /* TenPairGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairGame.swift; sourceTree = "<group>"; };
 		A76C05341D0EDEC90091D64B /* ActionButtonsTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonsTray.swift; sourceTree = "<group>"; };
 		A76C05371D0EF3FF0091D64B /* SavedGame.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = SavedGame.plist; sourceTree = "<group>"; };
@@ -150,7 +157,6 @@
 		EA02FAAA1B9C6AA400B93D23 /* TenPairTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenPairTests.swift; sourceTree = "<group>"; };
 		EA02FAAC1B9C6AA400B93D23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAB2197B1B9C6B3600ED9CF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EAB2198C1B9C6B8800ED9CF9 /* TenPairWinScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairWinScreen.swift; sourceTree = "<group>"; };
 		EAB219B71B9C6C6300ED9CF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F580462683097342ADC13243 /* Pods_TenPairTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPairTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA853EE66F1FB52E4CBD0A75 /* Pods-TenPairTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenPairTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TenPairTests/Pods-TenPairTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +245,7 @@
 				A75682291D181D73006FCA07 /* GameConstants.swift */,
 				A756822C1D181E1A006FCA07 /* HintButtonTray.swift */,
 				A75682211D181606006FCA07 /* MatchFinder.swift */,
+				A756825A1D1830E4006FCA07 /* PurchaseScreen.swift */,
 				A75682151D18138D006FCA07 /* TenPairDefaultTheme.swift */,
 				A75682471D182C61006FCA07 /* TenPairEmptyLinesSearch.swift */,
 				A75682241D18162B006FCA07 /* TenPairFieldBackground.swift */,
@@ -253,6 +260,7 @@
 				A756821B1D1813D0006FCA07 /* TenPairNumberTile.swift */,
 				A75682051D181187006FCA07 /* TenPairPlayScreen.swift */,
 				A75682121D18135F006FCA07 /* TenPairTheme.swift */,
+				A75682531D182F38006FCA07 /* TenPairWinScreen.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -354,8 +362,6 @@
 			isa = PBXGroup;
 			children = (
 				A76C05341D0EDEC90091D64B /* ActionButtonsTray.swift */,
-				A700A29D1D12D6C8000339F5 /* PurchaseScreen.swift */,
-				EAB2198C1B9C6B8800ED9CF9 /* TenPairWinScreen.swift */,
 				A7A775221D15AA7E00FB9976 /* FullVersionHandler.swift */,
 			);
 			path = Game;
@@ -700,14 +706,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A756822E1D181E1A006FCA07 /* HintButtonTray.swift in Sources */,
+				A75682591D1830BE006FCA07 /* InterstitialCounter.swift in Sources */,
 				A756821D1D1813D0006FCA07 /* TenPairNumberTile.swift in Sources */,
+				A75682581D1830AC006FCA07 /* InterstitialPresenter.swift in Sources */,
+				A75682551D182F38006FCA07 /* TenPairWinScreen.swift in Sources */,
 				A75682141D18136B006FCA07 /* TenPairTheme.swift in Sources */,
+				A75682561D182FD2006FCA07 /* FullVersionHandler.swift in Sources */,
 				A75682311D181E9C006FCA07 /* TenPairMenuScreen.swift in Sources */,
+				A75682571D182FEC006FCA07 /* Constants.swift in Sources */,
 				A75682261D181631006FCA07 /* TenPairFieldBackground.swift in Sources */,
 				A756824F1D182C96006FCA07 /* TenPairLoadingScreen.swift in Sources */,
 				A75682101D18134E006FCA07 /* TenPairMenuBar.swift in Sources */,
 				A75682521D182E43006FCA07 /* AlertViewScreen.swift in Sources */,
 				A75682461D182C3D006FCA07 /* TenPairMenuButton.swift in Sources */,
+				A756825C1D1830E4006FCA07 /* PurchaseScreen.swift in Sources */,
 				A756820E1D18134E006FCA07 /* TenPairFieldStatus.swift in Sources */,
 				A756821A1D1813A8006FCA07 /* TenPairNumbersField.swift in Sources */,
 				A756824C1D182C7C006FCA07 /* TenPairNumberPathFinder.swift in Sources */,
@@ -728,19 +740,19 @@
 			files = (
 				A76347431D17C1B4001A3A95 /* TenPairGame.swift in Sources */,
 				A73A976E1D0DBED200CF1B3B /* Secrets.swift in Sources */,
-				A700A29E1D12D6C8000339F5 /* PurchaseScreen.swift in Sources */,
+				A75682541D182F38006FCA07 /* TenPairWinScreen.swift in Sources */,
 				A76C05351D0EDEC90091D64B /* ActionButtonsTray.swift in Sources */,
 				A75682221D181606006FCA07 /* MatchFinder.swift in Sources */,
 				A75682161D18138D006FCA07 /* TenPairDefaultTheme.swift in Sources */,
 				A75682131D18135F006FCA07 /* TenPairTheme.swift in Sources */,
 				A75682481D182C61006FCA07 /* TenPairEmptyLinesSearch.swift in Sources */,
-				EAB2199B1B9C6B8800ED9CF9 /* TenPairWinScreen.swift in Sources */,
 				A756821C1D1813D0006FCA07 /* TenPairNumberTile.swift in Sources */,
 				A756822D1D181E1A006FCA07 /* HintButtonTray.swift in Sources */,
 				EA02FA981B9C6AA400B93D23 /* GameViewController.swift in Sources */,
 				A75682191D1813A8006FCA07 /* TenPairNumbersField.swift in Sources */,
 				A75682301D181E9C006FCA07 /* TenPairMenuScreen.swift in Sources */,
 				A7B082A71D168EE0006E0FEC /* InterstitialCounter.swift in Sources */,
+				A756825B1D1830E4006FCA07 /* PurchaseScreen.swift in Sources */,
 				A75682511D182E43006FCA07 /* AlertViewScreen.swift in Sources */,
 				A7A775231D15AA7E00FB9976 /* FullVersionHandler.swift in Sources */,
 				A756824B1D182C7C006FCA07 /* TenPairNumberPathFinder.swift in Sources */,

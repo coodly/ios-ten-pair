@@ -15,15 +15,19 @@
  */
 
 import Foundation
-import UIKit
-import GoogleMobileAds
-import SWLogger
 
 protocol InterstitialPresenter: class, FullVersionHandler, InterstitialCounter {
+    #if os(iOS)
     var interstitial: GADInterstitial? { get set }
+    #endif
     func loadInterstitial()
     func presentInterstitial()
 }
+
+#if os(iOS)
+import UIKit
+import GoogleMobileAds
+import SWLogger
 
 extension InterstitialPresenter where Self: UIViewController {
     func loadInterstitial() {
@@ -59,3 +63,14 @@ extension InterstitialPresenter where Self: UIViewController {
         presented.presentFromRootViewController(self)
     }
 }
+#else
+    extension InterstitialPresenter {
+        func loadInterstitial() {
+            
+        }
+        
+        func presentInterstitial() {
+            
+        }
+    }
+#endif

@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-import Locksmith
-import SWLogger
-
 private let HasFullVersionKey = "HasFullVersionKey"
 
 protocol FullVersionHandler {
     func fullVersionUnlocked() -> Bool
     func markFullVersionUnlocked()
 }
+
+#if os(iOS)
+import Locksmith
+import SWLogger
 
 extension FullVersionHandler {
     func fullVersionUnlocked() -> Bool {
@@ -57,3 +58,14 @@ extension FullVersionHandler {
         }
     }
 }
+#else
+    extension FullVersionHandler {
+        func fullVersionUnlocked() -> Bool {
+            return true
+        }
+        
+        func markFullVersionUnlocked() {
+            
+        }
+    }
+#endif
