@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var skView: SKView!
+    private var scene: TenPairGame!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": true])
@@ -28,20 +29,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Log.logLevel = Log.Level.DEBUG
         
         Log.debug("App launch")
-
-        /* Pick a size for the scene */
-        if let scene = GameScene(fileNamed:"GameScene") {
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            self.skView!.presentScene(scene)
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            self.skView!.ignoresSiblingOrder = true
-            
-            self.skView!.showsFPS = true
-            self.skView!.showsNodeCount = true
+        
+        let gameScene = TenPairGame(size: skView.bounds.size)
+        if let save = NSUserDefaults.standardUserDefaults().objectForKey(TenPairSaveDataKey) as? [Int] {
+            gameScene.startField = save
         }
+        gameScene.scaleMode = SKSceneScaleMode.ResizeFill
+        scene = gameScene
+        skView.allowsTransparency = false
+        skView.shouldCullNonVisibleNodes = false
+        if !ReleaseBuild {
+            skView.showsFPS = true
+            skView.showsNodeCount = true
+        }
+        skView.presentScene(scene)
+        
+        gameScene.startGame()
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {

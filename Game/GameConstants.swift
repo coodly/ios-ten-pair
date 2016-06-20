@@ -35,3 +35,5 @@ enum Platform {
     case Pad
     case Mac
 }
+
+let ReleaseBuild = true

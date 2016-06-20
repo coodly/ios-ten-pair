@@ -14,5 +14,3 @@ let CheckAppFullVersionNotification = "CheckAppFullVersionNotification"
 let FeedbackEmail = "contact@coodly.com"
 let FeedbackTitle = "TenPair feedback"
 
-
-let ReleaseBuild = true
