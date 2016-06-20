@@ -29,3 +29,9 @@ func inBackground(closure: () -> ()) {
 private func onQueue(queue: dispatch_queue_t, closure: () -> ()) {
     dispatch_async(queue, closure)
 }
+
+enum Platform {
+    case Phone
+    case Pad
+    case Mac
+}

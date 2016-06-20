@@ -96,6 +96,7 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
         }
         skView.presentScene(scene)
 
+        gameScene.playScreen.runningOn = UIDevice.currentDevice().userInterfaceIdiom == .Phone ? Platform.Phone : Platform.Pad
         gameScene.playScreen.interstitial = self
         
         gameScene.startGame()

@@ -37,6 +37,7 @@ class TenPairPlayScreen: GameScreen {
     var purchaser: Purchaser!
     weak var interstitial: InterstitialPresenter!
     var sendFeedbackHandler: (() -> ())?
+    var runningOn = Platform.Phone
     
     override func loadContent() {
         name = "TenPairPlayScreen"
@@ -54,6 +55,7 @@ class TenPairPlayScreen: GameScreen {
         
         let field = TenPairNumbersField()
         numbersField = field
+        field.runningOn = runningOn
         field.presentedNumbers = startField
         field.anchorPoint = CGPointZero
         field.presentationWidth = size.width

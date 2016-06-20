@@ -28,6 +28,7 @@ private let MaxPadTileWidth: CGFloat = 50
 private let MaxPhoneTileWidth: CGFloat = 35
 
 class TenPairNumbersField: GameScrollViewContained {
+    var runningOn = Platform.Mac
     var presentedNumbers = [Int]()
     var tileSize = CGSizeZero {
         didSet {
@@ -50,7 +51,7 @@ class TenPairNumbersField: GameScrollViewContained {
             }
             
             let tileWidth = (presentationWidth - SidesSpacing) / CGFloat(integerLiteral: NumberOfColumns)
-            let maxWidth = UIDevice.currentDevice().userInterfaceIdiom == .Phone ? MaxPhoneTileWidth : MaxPadTileWidth
+            let maxWidth = runningOn == .Phone ? MaxPhoneTileWidth : MaxPadTileWidth
             let rounded = min(round(tileWidth), maxWidth)
             let nextSize = CGSizeMake(rounded, rounded)
             if CGSizeEqualToSize(nextSize, tileSize) {
