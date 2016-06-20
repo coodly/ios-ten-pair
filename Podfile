@@ -8,9 +8,9 @@ def local_coodly
 end
 
 def remote_coodly
-    pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', :tag => '0.1.1'
-    pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git', :tag => '0.1.0'
-    pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.2.0'
+    pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
+    pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git'
+    pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
 end
 
 def pods
@@ -33,6 +33,21 @@ target 'TenPairTests' do
 
 end
 
+def local_coodly_mac
+    pod 'SWLogger', :path => '../swift-logger'
+end
+
+def remote_coodly_mac
+    pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
+end
+
+def mac_pods
+    remote_coodly_mac
+    #local_coodly_mac
+end
+
 target 'MacTenPair' do
     platform :osx, '10.11'
+    
+    mac_pods
 end

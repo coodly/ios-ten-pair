@@ -11,6 +11,7 @@ import Cocoa
 import SpriteKit
 import Fabric
 import Crashlytics
+import SWLogger
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -21,6 +22,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": true])
         Fabric.with([Crashlytics.self])
+        
+        Log.addOutput(ConsoleOutput())
+        Log.addOutput(FileOutput())
+        Log.logLevel = Log.Level.DEBUG
+        
+        Log.debug("App launch")
 
         /* Pick a size for the scene */
         if let scene = GameScene(fileNamed:"GameScene") {

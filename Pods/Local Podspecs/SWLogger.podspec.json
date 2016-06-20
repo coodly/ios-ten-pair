@@ -13,10 +13,16 @@
   },
   "platforms": {
     "ios": "8.0",
-    "tvos": "9.0"
+    "tvos": "9.0",
+    "osx": "10.11"
   },
   "source_files": "Source/*.swift",
   "tvos": {
+    "exclude_files": [
+      "Source/ShakeWindow.swift"
+    ]
+  },
+  "osx": {
     "exclude_files": [
       "Source/ShakeWindow.swift"
     ]
