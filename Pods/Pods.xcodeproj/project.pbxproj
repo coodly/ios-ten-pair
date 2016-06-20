@@ -11,22 +11,23 @@
 		0C81DBC0C6C744574EA88910E130FB5F /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564FB1234064249C30E38976CD167CC /* GameLoadingView.swift */; };
 		10113E207516DDCAC19E3B2FED7E12C4 /* LocksmithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034304E1F0EF7FB47F773D649B916EF /* LocksmithError.swift */; };
 		13EB929F72B356FC41F08CCF85D5D0C1 /* Locksmith-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 79EEFF4180E52C89F2190FC181F598B8 /* Locksmith-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1484B525BD3B1A7D80F6C14B67CE201D /* Pods-TenPair-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB74BF330C44923591EF1385EDB1603E /* Pods-TenPair-dummy.m */; };
+		1484B525BD3B1A7D80F6C14B67CE201D /* Pods-TenPair-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C3B3C206BCDD38551389ACBBE94517 /* Pods-TenPair-dummy.m */; };
 		1495BCB330D338CEF2E39D10082B941C /* LocksmithAccessibleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1E7A4BDF4B6348F303788D6338DD66 /* LocksmithAccessibleOption.swift */; };
 		18744362910C3B42A990B8FBA6C4373A /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58281851613B23229C4B91B2FE3F6C8B /* GameButton.swift */; };
+		1C3D46C947B116BED13A33B88CDC2059 /* Pods-MacTenPair-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4296E4B4AD68379897AAF1C8E994D58 /* Pods-MacTenPair-dummy.m */; };
 		1D1BD9D14A6C99BAE7BEB4F6321459C7 /* Purchaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F8ED8FD797DF2CF280AE5F592C4E70 /* Purchaser.swift */; };
-		1D289D03369E7C05652B06DBA8CC3860 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */; };
+		1D289D03369E7C05652B06DBA8CC3860 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03509678996E4C363DE0E847135DF88 /* Foundation.framework */; };
 		26A57F0D33F0D86F30B0A3A57B39A95E /* GameMenuPresentationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48E2C94F418F6688562CDF9190DFAD /* GameMenuPresentationContainer.swift */; };
 		280F77009069F74DB52002F315DA6612 /* SlideOutButtonsTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1A3E2F92CD4A340650567053D20DD /* SlideOutButtonsTray.swift */; };
 		2946A56936CF9EB54F4DA7122101DC29 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A745AAFE9D5DF426B82DB9F442D40AD /* Log.swift */; };
-		2C1B95F2CD78510B959BA65C3EA4C6EB /* Pods-TenPairTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DAA5EDA8A5AC04D058CBCC568C137311 /* Pods-TenPairTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C1B95F2CD78510B959BA65C3EA4C6EB /* Pods-TenPairTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A12E1E91C792A446D202AB1D93BB1A64 /* Pods-TenPairTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		387D13ED26CF4B83FBDF30EF2F929746 /* GameMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F451C447C4683C8BF3332E180BE71 /* GameMenuScreen.swift */; };
 		3B629068F4BE1D7821957056F25E33C1 /* Locksmith-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5651610A364D30DAF9414BF670A85CD /* Locksmith-dummy.m */; };
-		3DFF977725C6DD20A8C67D35585FB9CD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6FF0A5B7324DDB0C1C622B5ED3A881 /* StoreKit.framework */; };
-		42890EFA1A9960C220BFA8647831E467 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F650BC58D1FFD860C6C254037432C651 /* Security.framework */; };
+		3DFF977725C6DD20A8C67D35585FB9CD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DE611E9C7BDEEF4E71C0D0014A443A /* StoreKit.framework */; };
+		42890EFA1A9960C220BFA8647831E467 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4489274B305B68103BA240C242F7ED /* Security.framework */; };
 		42EE7EE517211C5B2131175254883203 /* ProductsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5D261A315F68FADDE173E4ED0778BC /* ProductsHandler.swift */; };
 		46485D36E37F397B7F56EE76B3382C85 /* Dictionary_Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B35D1E57BE33F5D06D790E0E692CF4 /* Dictionary_Initializers.swift */; };
-		4BAF3FA01FB020436826AF50A9605025 /* Pods-TenPairTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72354D52EC2355BEB8753A1ABDCE93D2 /* Pods-TenPairTests-dummy.m */; };
+		4BAF3FA01FB020436826AF50A9605025 /* Pods-TenPairTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E9685D12241976B3E6AE47CE9D51F /* Pods-TenPairTests-dummy.m */; };
 		52B86BDDCD925C9BB1D08050163B1F4F /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE068E475A5C2C08E4FE2F6275D1E4A /* GameView.swift */; };
 		56B9F70926F2A707B69DEC0D17A00784 /* GameMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC937713D1105BAB207B266A7E1A51F /* GameMenuButton.swift */; };
 		5C9BDDBB790ACE3711E8AD09A13E0FB2 /* LocksmithSecurityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5DAEF606FA86C0D9BC61D3002585DD /* LocksmithSecurityClass.swift */; };
@@ -36,26 +37,28 @@
 		73501466801DE5C7A1D81EFD566F3B6B /* GameKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 889F47761B222244911D32D6B5BFEB8F /* GameKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8102FB4A334173B8A8696FEA2A707870 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD74A761FADF66807217F44892306D50 /* Game.swift */; };
 		876C2366318283EC47AD1BC3B1704B2F /* GameScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F9D61BB4632B1B6AB23F66911DF3D /* GameScrollView.swift */; };
-		9561184A4735527D0E4631CC1E509A07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */; };
+		9561184A4735527D0E4631CC1E509A07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03509678996E4C363DE0E847135DF88 /* Foundation.framework */; };
 		9775E07C3FB36C45C222D05BAF80B61D /* SWLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7553CE543D9D3FAB4908F9C0A9B4799 /* SWLogger-dummy.m */; };
 		A353761310661CA1B98CD4610AD87D16 /* LaughingAdventure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B82E0DF4831B4E0E7C7DF8662011C452 /* LaughingAdventure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA0B9C265F96CA310C674C330D4C5592 /* Locksmith.h in Headers */ = {isa = PBXBuildFile; fileRef = ABBB9372AF8A2D2E972AF8ED5EFD8086 /* Locksmith.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE7562841EDFD25C5FD96E4CB6BA8AA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */; };
+		AE7562841EDFD25C5FD96E4CB6BA8AA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03509678996E4C363DE0E847135DF88 /* Foundation.framework */; };
 		B41F156C9B778185A08A59DEFD760DAB /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0EC0E7BCC33030FD82C4F88637A0B /* FileOutput.swift */; };
 		B7CAC0FB4E35BA5A6D91F8C6CD5EEBB0 /* SKProduct+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF2D81655E0BE395A7B282A1A90F319 /* SKProduct+Extensions.swift */; };
-		C6928639F204AC9BA62F458C5FD791B3 /* Pods-TenPair-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 600945F2396D212AD524A0094E212B6E /* Pods-TenPair-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B96FDBEFD030E546EA0D6C2C05FF5DA6 /* Pods-MacTenPair-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E10B9CBF702975B4EA1F4984DD248A62 /* Pods-MacTenPair-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6928639F204AC9BA62F458C5FD791B3 /* Pods-TenPair-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DC88AD898B246ED6709C4F4323C8F395 /* Pods-TenPair-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB178F18D4BE84B4736BED4ECF0D28BA /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031405AB19B95A8AEE081EF4390B6AD /* LogOutput.swift */; };
 		CC2443BEF39BB4254C340BAA445BCBD5 /* LocksmithInternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D573ED9F8ABC563959CB0EB84FC9651C /* LocksmithInternetAuthenticationType.swift */; };
 		CD1024BC09C99010C5A5145B845B7096 /* GameKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFAFA862A1AF3DABBBB44348CD272DC /* GameKit-dummy.m */; };
 		CF14EE552583CA93ADD1AEABF360D35A /* GameScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2C18263F7C050A74DC2181AAD5049 /* GameScrollViewContained.swift */; };
 		D234B23ACC5F69B9BE581EC70C15F8DE /* LocksmithInternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E16FEC5E779F20EFD6BCAC6942CC5 /* LocksmithInternetProtocol.swift */; };
 		D6661D5829301BED008EFE6C6E1043F9 /* SKSpriteNode+MultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF128473D9E76B216936F692EBAF7A /* SKSpriteNode+MultiLineLabel.swift */; };
-		DE8104281634164D64FFEEF32B2ED49F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */; };
+		DE8104281634164D64FFEEF32B2ED49F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03509678996E4C363DE0E847135DF88 /* Foundation.framework */; };
+		DEF308C3BDEDE3BE51C72299512F083E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BCC4549FDB22BF4330105ADFFC2D10 /* Cocoa.framework */; };
 		ED67BFEE1C0077DD5F1B9984F303B35A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17D2B7DD0E6B168363595866E980BD2 /* Logger.swift */; };
 		F04623C6850418ED96F4D27D73B863C0 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62761DE1FCB4F08381FFA5FBE5EF333 /* GameScreen.swift */; };
-		F1094711E473675E41DFF448BC2AEB08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */; };
+		F1094711E473675E41DFF448BC2AEB08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03509678996E4C363DE0E847135DF88 /* Foundation.framework */; };
 		F387212C5A4831EBB06E9C2957E03ADE /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3936162A897101362A6D2BDA44C69A /* ConsoleOutput.swift */; };
-		F79F5F12E451CF824F6C83BAC03A84ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */; };
+		F79F5F12E451CF824F6C83BAC03A84ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03509678996E4C363DE0E847135DF88 /* Foundation.framework */; };
 		FE281967194947D5E8C57BAC047AF614 /* ShakeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48DF3C3611627E13EE47C8FED7AB34D /* ShakeWindow.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,12 +95,13 @@
 
 /* Begin PBXFileReference section */
 		03C1E97C3A0245EDB2948FB35F42E324 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03DA93C090BAC28AE12A93B3E3AD4EF4 /* Pods_TenPairTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPairTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0967418BCAD7732B980514FB95164D30 /* Pods-TenPair-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPair-frameworks.sh"; sourceTree = "<group>"; };
 		0AE6B7076D3AA6AE9257ABEB476FCEF2 /* SWLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SWLogger.modulemap; sourceTree = "<group>"; };
 		0B52465FF6A4DF481A1474BB41DB5DD2 /* LaughingAdventure.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LaughingAdventure.xcconfig; sourceTree = "<group>"; };
 		0D1E7A4BDF4B6348F303788D6338DD66 /* LocksmithAccessibleOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithAccessibleOption.swift; path = Source/LocksmithAccessibleOption.swift; sourceTree = "<group>"; };
-		165D5E8637D9823BA1407F21A74381F6 /* Pods-TenPair.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TenPair.modulemap"; sourceTree = "<group>"; };
+		0F2A2EDC14CABF1BF40F85387799BA04 /* Pods-TenPairTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TenPairTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		109389826F1873CCD767B011F46E3FEE /* Pods-TenPair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPair.release.xcconfig"; sourceTree = "<group>"; };
+		114682A3136FA6CEA960665426A03C44 /* Pods-TenPair-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPair-resources.sh"; sourceTree = "<group>"; };
+		187D53F94BD9EE74D2BFFAD37D2A57AF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19220DD4752E4EF2D995BA743E4855D2 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		1AF2D81655E0BE395A7B282A1A90F319 /* SKProduct+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKProduct+Extensions.swift"; path = "Source/Purchase/SKProduct+Extensions.swift"; sourceTree = "<group>"; };
 		1CE068E475A5C2C08E4FE2F6275D1E4A /* GameView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameView.swift; path = Source/GameView.swift; sourceTree = "<group>"; };
@@ -105,84 +109,95 @@
 		1FD0EC0E7BCC33030FD82C4F88637A0B /* FileOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileOutput.swift; path = Source/FileOutput.swift; sourceTree = "<group>"; };
 		1FEFC30B7D6A4B2630AEEE817B2D9072 /* SWLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-prefix.pch"; sourceTree = "<group>"; };
 		22788BC46D2CD8B354CB72F24286AF6B /* GameKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-prefix.pch"; sourceTree = "<group>"; };
+		2295EFD1EF7B6367EF1420BEF912072D /* Pods_TenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C3678331B801918B66F3437657C393 /* LaughingAdventure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LaughingAdventure-dummy.m"; sourceTree = "<group>"; };
 		23881ED7A4D1AF9FFDBE777B8DAD6EA1 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		23984DC934EFA451539E3DC29C8C05D3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		239F451C447C4683C8BF3332E180BE71 /* GameMenuScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuScreen.swift; path = Source/GameMenuScreen.swift; sourceTree = "<group>"; };
+		257BEA3111194893395814385065DB49 /* Pods-MacTenPair-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MacTenPair-acknowledgements.plist"; sourceTree = "<group>"; };
+		28AF2996EB4B812BFBF50F8D8C89E4BD /* Pods-MacTenPair-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MacTenPair-frameworks.sh"; sourceTree = "<group>"; };
+		2A8D3135AB1D943CCA469485DEA2E1FB /* Pods-TenPairTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TenPairTests.modulemap"; sourceTree = "<group>"; };
 		325F9D61BB4632B1B6AB23F66911DF3D /* GameScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollView.swift; path = Source/GameScrollView.swift; sourceTree = "<group>"; };
 		331BF662A2819D4BCDE4E971FE391DFD /* Logging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = Source/Log/Logging.swift; sourceTree = "<group>"; };
-		3656C3FC725DE4E7105DDDFBDD70D716 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		369FF642D79042A92D32DD09F4F2B69F /* Pods-TenPair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPair.debug.xcconfig"; sourceTree = "<group>"; };
-		42897027F3D1AF09ABEABD46D2725988 /* Pods-TenPairTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPairTests-frameworks.sh"; sourceTree = "<group>"; };
+		34C284223F3203A4DB0E9D3CACECDB4D /* Pods-TenPair-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TenPair-acknowledgements.markdown"; sourceTree = "<group>"; };
+		409B323F4B5F1F2560FAC769C7DCFB3B /* Pods-MacTenPair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MacTenPair.release.xcconfig"; sourceTree = "<group>"; };
+		40B3AFA63EFFA7C5DA3904CCF6BF3396 /* Pods-TenPairTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPairTests.debug.xcconfig"; sourceTree = "<group>"; };
+		420A430E0392283C5C10E935E2D41809 /* Pods-TenPairTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPairTests.release.xcconfig"; sourceTree = "<group>"; };
 		496B14940F40B60CF416238B36E706D0 /* GameKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GameKit.modulemap; sourceTree = "<group>"; };
+		4E2981718F2927892373A75DF02E2236 /* Locksmith.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Locksmith.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D4ABD15BE812F05BCC925CF067A3E6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58281851613B23229C4B91B2FE3F6C8B /* GameButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameButton.swift; path = Source/GameButton.swift; sourceTree = "<group>"; };
-		5A9790E4D38754EFE0755C4F15C09334 /* LaughingAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaughingAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		600945F2396D212AD524A0094E212B6E /* Pods-TenPair-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TenPair-umbrella.h"; sourceTree = "<group>"; };
-		605E1E42C811DFA39596F53B667F6382 /* Pods-TenPairTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPairTests-resources.sh"; sourceTree = "<group>"; };
+		59F7B7433AB3B82B839122D685F5E526 /* GameKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GameKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62DE611E9C7BDEEF4E71C0D0014A443A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		69C80449D504FB62E45A7C5486F9F65B /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		69D847845FB4528F16ED88AA3C86B6A9 /* Pods_MacTenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MacTenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6FC00A06A6FC05A6D1F77F72EA7D73 /* Pods_TenPairTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPairTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A745AAFE9D5DF426B82DB9F442D40AD /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Source/Log.swift; sourceTree = "<group>"; };
+		6B0E9685D12241976B3E6AE47CE9D51F /* Pods-TenPairTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TenPairTests-dummy.m"; sourceTree = "<group>"; };
+		6E3560C2A2475037D3B7B52DFADE5FE1 /* Pods-MacTenPair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MacTenPair.debug.xcconfig"; sourceTree = "<group>"; };
 		6EFAFA862A1AF3DABBBB44348CD272DC /* GameKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GameKit-dummy.m"; sourceTree = "<group>"; };
-		6F34C13C4532321B317BDC7AACC6473E /* Pods-TenPairTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPairTests.release.xcconfig"; sourceTree = "<group>"; };
-		6FEC636356AF7ED1487F7F0428C3441E /* Pods-TenPair-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TenPair-acknowledgements.markdown"; sourceTree = "<group>"; };
-		72354D52EC2355BEB8753A1ABDCE93D2 /* Pods-TenPairTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TenPairTests-dummy.m"; sourceTree = "<group>"; };
-		76E1D449FA1D923390E7A927755BEECC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F2C79757C7A625AE3EA9C580EC5A8A9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77E97B198AC1BBFA116CDC24B657CC25 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
 		79EEFF4180E52C89F2190FC181F598B8 /* Locksmith-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-umbrella.h"; sourceTree = "<group>"; };
+		813ADD8C3E4DBB982DA9F7F111C24CD9 /* Pods-MacTenPair-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MacTenPair-acknowledgements.markdown"; sourceTree = "<group>"; };
 		889F47761B222244911D32D6B5BFEB8F /* GameKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-umbrella.h"; sourceTree = "<group>"; };
-		88B7D9152AD58D93645B9F6C4425ABC9 /* Pods-TenPairTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TenPairTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8C0D31060223142D794919968780FD7B /* Pods-TenPairTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TenPairTests.modulemap"; sourceTree = "<group>"; };
+		8C7757134149D17AF4AC14F4FB13BB62 /* Pods-MacTenPair.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MacTenPair.modulemap"; sourceTree = "<group>"; };
 		8DC937713D1105BAB207B266A7E1A51F /* GameMenuButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuButton.swift; path = Source/GameMenuButton.swift; sourceTree = "<group>"; };
-		8FB5E03509B354A8575611155827D979 /* Pods-TenPairTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPairTests.debug.xcconfig"; sourceTree = "<group>"; };
+		90047143DE9C46DF8D6599A8437CE3B2 /* Pods-TenPairTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPairTests-resources.sh"; sourceTree = "<group>"; };
 		9034304E1F0EF7FB47F773D649B916EF /* LocksmithError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithError.swift; path = Source/LocksmithError.swift; sourceTree = "<group>"; };
 		92356C49F03C5572E775EF30E9DFAD6E /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
-		939968FB01E65C8D7A5F1177CB474988 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9441621B8454096423E67EBC29B4B79F /* Pods-TenPair.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TenPair.modulemap"; sourceTree = "<group>"; };
 		95739BC1F08AD4F9D658885656A6A89F /* SWLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-umbrella.h"; sourceTree = "<group>"; };
-		9D6FF0A5B7324DDB0C1C622B5ED3A881 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		95C3B3C206BCDD38551389ACBBE94517 /* Pods-TenPair-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TenPair-dummy.m"; sourceTree = "<group>"; };
 		A031405AB19B95A8AEE081EF4390B6AD /* LogOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogOutput.swift; path = Source/LogOutput.swift; sourceTree = "<group>"; };
+		A03DA2598FD9A0B1ED89F93CAE7C5E41 /* Pods-TenPair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPair.debug.xcconfig"; sourceTree = "<group>"; };
+		A12E1E91C792A446D202AB1D93BB1A64 /* Pods-TenPairTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TenPairTests-umbrella.h"; sourceTree = "<group>"; };
+		A55EEB28CCD9849C3D3395D1C4775D9F /* Pods-TenPairTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPairTests-frameworks.sh"; sourceTree = "<group>"; };
 		A5B7D844C08B2A95E9A8AE43105B06B0 /* Locksmith-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-prefix.pch"; sourceTree = "<group>"; };
+		A7135317D00F9CB2CA535B98E5B0AFD0 /* Pods-MacTenPair-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MacTenPair-resources.sh"; sourceTree = "<group>"; };
 		A8F8ED8FD797DF2CF280AE5F592C4E70 /* Purchaser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Purchaser.swift; path = Source/Purchase/Purchaser.swift; sourceTree = "<group>"; };
 		AA56E6383121D51191B63941137F108B /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		AA84EB4958C431AED10ECA5D1280F352 /* Pods-TenPair-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPair-frameworks.sh"; sourceTree = "<group>"; };
 		ABBB9372AF8A2D2E972AF8ED5EFD8086 /* Locksmith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Locksmith.h; path = Source/Locksmith.h; sourceTree = "<group>"; };
-		ABD34339C493B48F31026EF65EF9DAE9 /* Pods-TenPair-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TenPair-acknowledgements.plist"; sourceTree = "<group>"; };
 		AD3936162A897101362A6D2BDA44C69A /* ConsoleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleOutput.swift; path = Source/ConsoleOutput.swift; sourceTree = "<group>"; };
 		AD48E2C94F418F6688562CDF9190DFAD /* GameMenuPresentationContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuPresentationContainer.swift; path = Source/GameMenuPresentationContainer.swift; sourceTree = "<group>"; };
 		AE6B1957181D83DC6D59AC80ED8B53A6 /* LaughingAdventure-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-prefix.pch"; sourceTree = "<group>"; };
 		AF5D261A315F68FADDE173E4ED0778BC /* ProductsHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductsHandler.swift; path = Source/Purchase/ProductsHandler.swift; sourceTree = "<group>"; };
+		B03509678996E4C363DE0E847135DF88 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B17D2B7DD0E6B168363595866E980BD2 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
 		B1E135C0917338DB547581A65486D214 /* SWLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWLogger.xcconfig; sourceTree = "<group>"; };
 		B2B35D1E57BE33F5D06D790E0E692CF4 /* Dictionary_Initializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dictionary_Initializers.swift; path = Source/Dictionary_Initializers.swift; sourceTree = "<group>"; };
-		B3CB41CDAF5587969C42CEEC8ECE6E17 /* Pods-TenPairTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TenPairTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B36C63F5617D9410EBEF308AB16E5D7A /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4296E4B4AD68379897AAF1C8E994D58 /* Pods-MacTenPair-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MacTenPair-dummy.m"; sourceTree = "<group>"; };
 		B7553CE543D9D3FAB4908F9C0A9B4799 /* SWLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWLogger-dummy.m"; sourceTree = "<group>"; };
 		B82E0DF4831B4E0E7C7DF8662011C452 /* LaughingAdventure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-umbrella.h"; sourceTree = "<group>"; };
 		BA8F9DAB6A5C325405B7642DD9518C53 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC66D45FCB429113151C86EE644B9C92 /* Pods-TenPair-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPair-resources.sh"; sourceTree = "<group>"; };
 		BD74A761FADF66807217F44892306D50 /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Source/Game.swift; sourceTree = "<group>"; };
 		C42E16FEC5E779F20EFD6BCAC6942CC5 /* LocksmithInternetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetProtocol.swift; path = Source/LocksmithInternetProtocol.swift; sourceTree = "<group>"; };
 		C48DF3C3611627E13EE47C8FED7AB34D /* ShakeWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShakeWindow.swift; path = Source/ShakeWindow.swift; sourceTree = "<group>"; };
 		C564FB1234064249C30E38976CD167CC /* GameLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameLoadingView.swift; path = Source/GameLoadingView.swift; sourceTree = "<group>"; };
+		C6E8E583E40F53C07BD5ED26B20012AA /* LaughingAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaughingAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBBC843968075CA26C428419E5AF246C /* Locksmith.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Locksmith.modulemap; sourceTree = "<group>"; };
 		CD469031C20815857C91F843F62C026E /* Locksmith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locksmith.swift; path = Source/Locksmith.swift; sourceTree = "<group>"; };
 		D1B2C18263F7C050A74DC2181AAD5049 /* GameScrollViewContained.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollViewContained.swift; path = Source/GameScrollViewContained.swift; sourceTree = "<group>"; };
 		D1CDB04501273E9E358B00FFAF6F8787 /* Locksmith.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Locksmith.xcconfig; sourceTree = "<group>"; };
 		D573ED9F8ABC563959CB0EB84FC9651C /* LocksmithInternetAuthenticationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetAuthenticationType.swift; path = Source/LocksmithInternetAuthenticationType.swift; sourceTree = "<group>"; };
 		D7BFD38AA015102B02C42CA03D3C3280 /* LaughingAdventure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LaughingAdventure.modulemap; sourceTree = "<group>"; };
-		DAA5EDA8A5AC04D058CBCC568C137311 /* Pods-TenPairTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TenPairTests-umbrella.h"; sourceTree = "<group>"; };
-		DB5F2F49822C1CA19FC84DFA03FE3CE8 /* Pods_TenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB0177659195A9D116FB484F39F1E9D5 /* Pods-TenPair-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TenPair-acknowledgements.plist"; sourceTree = "<group>"; };
 		DBC1A3E2F92CD4A340650567053D20DD /* SlideOutButtonsTray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SlideOutButtonsTray.swift; path = Source/SlideOutButtonsTray.swift; sourceTree = "<group>"; };
 		DC5DAEF606FA86C0D9BC61D3002585DD /* LocksmithSecurityClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithSecurityClass.swift; path = Source/LocksmithSecurityClass.swift; sourceTree = "<group>"; };
+		DC88AD898B246ED6709C4F4323C8F395 /* Pods-TenPair-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TenPair-umbrella.h"; sourceTree = "<group>"; };
+		DD4489274B305B68103BA240C242F7ED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		DDB45FF66BDB6B74D54E0DFD80E09402 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0298E97049060633688FEFCE5631AC2 /* GameKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GameKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E10B9CBF702975B4EA1F4984DD248A62 /* Pods-MacTenPair-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MacTenPair-umbrella.h"; sourceTree = "<group>"; };
 		E4993134F64DCD53FBE3E9DEE9C7C222 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
 		E5651610A364D30DAF9414BF670A85CD /* Locksmith-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Locksmith-dummy.m"; sourceTree = "<group>"; };
-		E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E62761DE1FCB4F08381FFA5FBE5EF333 /* GameScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScreen.swift; path = Source/GameScreen.swift; sourceTree = "<group>"; };
-		E9987FE743CE6E4D9A162FA74F44F092 /* Locksmith.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Locksmith.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7452217A6923CE15E791C44F9080AC4 /* Pods-TenPairTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TenPairTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		E9E0B42D0952AAB81E2BD5EFCF94FA32 /* GameKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GameKit.xcconfig; sourceTree = "<group>"; };
 		EC1A07B04C39F25A2F83F96A377B7375 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		F650BC58D1FFD860C6C254037432C651 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		FB74BF330C44923591EF1385EDB1603E /* Pods-TenPair-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TenPair-dummy.m"; sourceTree = "<group>"; };
-		FC3C4F7FF0AC7221673FE914B7CFEC0D /* Pods-TenPair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPair.release.xcconfig"; sourceTree = "<group>"; };
+		F8BCC4549FDB22BF4330105ADFFC2D10 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +207,14 @@
 			files = (
 				1D289D03369E7C05652B06DBA8CC3860 /* Foundation.framework in Frameworks */,
 				42890EFA1A9960C220BFA8647831E467 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E17C5B118ECA99AF7E061D5B40EAB40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEF308C3BDEDE3BE51C72299512F083E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,32 +284,6 @@
 			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
 		};
-		09C82B1DE91A2B2544C4685D71D5C465 /* Pods-TenPair */ = {
-			isa = PBXGroup;
-			children = (
-				3656C3FC725DE4E7105DDDFBDD70D716 /* Info.plist */,
-				165D5E8637D9823BA1407F21A74381F6 /* Pods-TenPair.modulemap */,
-				6FEC636356AF7ED1487F7F0428C3441E /* Pods-TenPair-acknowledgements.markdown */,
-				ABD34339C493B48F31026EF65EF9DAE9 /* Pods-TenPair-acknowledgements.plist */,
-				FB74BF330C44923591EF1385EDB1603E /* Pods-TenPair-dummy.m */,
-				0967418BCAD7732B980514FB95164D30 /* Pods-TenPair-frameworks.sh */,
-				BC66D45FCB429113151C86EE644B9C92 /* Pods-TenPair-resources.sh */,
-				600945F2396D212AD524A0094E212B6E /* Pods-TenPair-umbrella.h */,
-				369FF642D79042A92D32DD09F4F2B69F /* Pods-TenPair.debug.xcconfig */,
-				FC3C4F7FF0AC7221673FE914B7CFEC0D /* Pods-TenPair.release.xcconfig */,
-			);
-			name = "Pods-TenPair";
-			path = "Target Support Files/Pods-TenPair";
-			sourceTree = "<group>";
-		};
-		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A08B416D3A67963FE3CEA67DDAD969B2 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		13CF507595283DE66519455651460598 /* GoogleSymbolUtilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +342,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		51999024D7C302EBDFE2D6F234C4525B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D109BD660EA79024794F6C5555A928B3 /* Pods-MacTenPair */,
+				840F576FED9E3BE286F19372AB770C0A /* Pods-TenPair */,
+				768144821A4EE15F094C2E758D1DD039 /* Pods-TenPairTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		59DE89168FFF29EC80C4975972D0416E /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,14 +383,32 @@
 			path = "../Target Support Files/LaughingAdventure";
 			sourceTree = "<group>";
 		};
+		768144821A4EE15F094C2E758D1DD039 /* Pods-TenPairTests */ = {
+			isa = PBXGroup;
+			children = (
+				6F2C79757C7A625AE3EA9C580EC5A8A9 /* Info.plist */,
+				2A8D3135AB1D943CCA469485DEA2E1FB /* Pods-TenPairTests.modulemap */,
+				0F2A2EDC14CABF1BF40F85387799BA04 /* Pods-TenPairTests-acknowledgements.markdown */,
+				E7452217A6923CE15E791C44F9080AC4 /* Pods-TenPairTests-acknowledgements.plist */,
+				6B0E9685D12241976B3E6AE47CE9D51F /* Pods-TenPairTests-dummy.m */,
+				A55EEB28CCD9849C3D3395D1C4775D9F /* Pods-TenPairTests-frameworks.sh */,
+				90047143DE9C46DF8D6599A8437CE3B2 /* Pods-TenPairTests-resources.sh */,
+				A12E1E91C792A446D202AB1D93BB1A64 /* Pods-TenPairTests-umbrella.h */,
+				40B3AFA63EFFA7C5DA3904CCF6BF3396 /* Pods-TenPairTests.debug.xcconfig */,
+				420A430E0392283C5C10E935E2D41809 /* Pods-TenPairTests.release.xcconfig */,
+			);
+			name = "Pods-TenPairTests";
+			path = "Target Support Files/Pods-TenPairTests";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				EC63602364F007BD029F7FE0355037AC /* Frameworks */,
 				4074A9935C64ACF2BF8EF2C1A4887C72 /* Pods */,
-				9A5CC8A614B5E6333B4CF6D1627999D9 /* Products */,
-				8AE3CD815436C4D1F68C7A1291771DB9 /* Targets Support Files */,
+				8BD2338A5A25E38B0776FFE8451E7819 /* Products */,
+				51999024D7C302EBDFE2D6F234C4525B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -395,13 +420,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8AE3CD815436C4D1F68C7A1291771DB9 /* Targets Support Files */ = {
+		840F576FED9E3BE286F19372AB770C0A /* Pods-TenPair */ = {
 			isa = PBXGroup;
 			children = (
-				09C82B1DE91A2B2544C4685D71D5C465 /* Pods-TenPair */,
-				9EFCA6A637A335D5C1B9CDD9782B3B7B /* Pods-TenPairTests */,
+				187D53F94BD9EE74D2BFFAD37D2A57AF /* Info.plist */,
+				9441621B8454096423E67EBC29B4B79F /* Pods-TenPair.modulemap */,
+				34C284223F3203A4DB0E9D3CACECDB4D /* Pods-TenPair-acknowledgements.markdown */,
+				DB0177659195A9D116FB484F39F1E9D5 /* Pods-TenPair-acknowledgements.plist */,
+				95C3B3C206BCDD38551389ACBBE94517 /* Pods-TenPair-dummy.m */,
+				AA84EB4958C431AED10ECA5D1280F352 /* Pods-TenPair-frameworks.sh */,
+				114682A3136FA6CEA960665426A03C44 /* Pods-TenPair-resources.sh */,
+				DC88AD898B246ED6709C4F4323C8F395 /* Pods-TenPair-umbrella.h */,
+				A03DA2598FD9A0B1ED89F93CAE7C5E41 /* Pods-TenPair.debug.xcconfig */,
+				109389826F1873CCD767B011F46E3FEE /* Pods-TenPair.release.xcconfig */,
 			);
-			name = "Targets Support Files";
+			name = "Pods-TenPair";
+			path = "Target Support Files/Pods-TenPair";
+			sourceTree = "<group>";
+		};
+		8BD2338A5A25E38B0776FFE8451E7819 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59F7B7433AB3B82B839122D685F5E526 /* GameKit.framework */,
+				C6E8E583E40F53C07BD5ED26B20012AA /* LaughingAdventure.framework */,
+				4E2981718F2927892373A75DF02E2236 /* Locksmith.framework */,
+				69D847845FB4528F16ED88AA3C86B6A9 /* Pods_MacTenPair.framework */,
+				2295EFD1EF7B6367EF1420BEF912072D /* Pods_TenPair.framework */,
+				6A6FC00A06A6FC05A6D1F77F72EA7D73 /* Pods_TenPairTests.framework */,
+				B36C63F5617D9410EBEF308AB16E5D7A /* SWLogger.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		8E72BBC392CE4A38923B3DA12216E0CE /* SWLogger */ = {
@@ -472,37 +520,6 @@
 			path = Locksmith;
 			sourceTree = "<group>";
 		};
-		9A5CC8A614B5E6333B4CF6D1627999D9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E0298E97049060633688FEFCE5631AC2 /* GameKit.framework */,
-				5A9790E4D38754EFE0755C4F15C09334 /* LaughingAdventure.framework */,
-				E9987FE743CE6E4D9A162FA74F44F092 /* Locksmith.framework */,
-				DB5F2F49822C1CA19FC84DFA03FE3CE8 /* Pods_TenPair.framework */,
-				03DA93C090BAC28AE12A93B3E3AD4EF4 /* Pods_TenPairTests.framework */,
-				939968FB01E65C8D7A5F1177CB474988 /* SWLogger.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9EFCA6A637A335D5C1B9CDD9782B3B7B /* Pods-TenPairTests */ = {
-			isa = PBXGroup;
-			children = (
-				76E1D449FA1D923390E7A927755BEECC /* Info.plist */,
-				8C0D31060223142D794919968780FD7B /* Pods-TenPairTests.modulemap */,
-				88B7D9152AD58D93645B9F6C4425ABC9 /* Pods-TenPairTests-acknowledgements.markdown */,
-				B3CB41CDAF5587969C42CEEC8ECE6E17 /* Pods-TenPairTests-acknowledgements.plist */,
-				72354D52EC2355BEB8753A1ABDCE93D2 /* Pods-TenPairTests-dummy.m */,
-				42897027F3D1AF09ABEABD46D2725988 /* Pods-TenPairTests-frameworks.sh */,
-				605E1E42C811DFA39596F53B667F6382 /* Pods-TenPairTests-resources.sh */,
-				DAA5EDA8A5AC04D058CBCC568C137311 /* Pods-TenPairTests-umbrella.h */,
-				8FB5E03509B354A8575611155827D979 /* Pods-TenPairTests.debug.xcconfig */,
-				6F34C13C4532321B317BDC7AACC6473E /* Pods-TenPairTests.release.xcconfig */,
-			);
-			name = "Pods-TenPairTests";
-			path = "Target Support Files/Pods-TenPairTests";
-			sourceTree = "<group>";
-		};
 		A0121AC5611917C283A7E2EA52868613 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,14 +534,22 @@
 			path = "../Target Support Files/GameKit";
 			sourceTree = "<group>";
 		};
-		A08B416D3A67963FE3CEA67DDAD969B2 /* iOS */ = {
+		A39E8CF4317EC48962E1DFBE4C351720 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				E5B1289FDA4D296D41483CA851D98EF6 /* Foundation.framework */,
-				F650BC58D1FFD860C6C254037432C651 /* Security.framework */,
-				9D6FF0A5B7324DDB0C1C622B5ED3A881 /* StoreKit.framework */,
+				B03509678996E4C363DE0E847135DF88 /* Foundation.framework */,
+				DD4489274B305B68103BA240C242F7ED /* Security.framework */,
+				62DE611E9C7BDEEF4E71C0D0014A443A /* StoreKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		B145D2E1F8C047BAABDC957F0BA87512 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				F8BCC4549FDB22BF4330105ADFFC2D10 /* Cocoa.framework */,
+			);
+			name = "OS X";
 			sourceTree = "<group>";
 		};
 		B60FC3D92710CD7D5ADE003D523D28E5 /* Frameworks */ = {
@@ -561,6 +586,24 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
+		D109BD660EA79024794F6C5555A928B3 /* Pods-MacTenPair */ = {
+			isa = PBXGroup;
+			children = (
+				23984DC934EFA451539E3DC29C8C05D3 /* Info.plist */,
+				8C7757134149D17AF4AC14F4FB13BB62 /* Pods-MacTenPair.modulemap */,
+				813ADD8C3E4DBB982DA9F7F111C24CD9 /* Pods-MacTenPair-acknowledgements.markdown */,
+				257BEA3111194893395814385065DB49 /* Pods-MacTenPair-acknowledgements.plist */,
+				B4296E4B4AD68379897AAF1C8E994D58 /* Pods-MacTenPair-dummy.m */,
+				28AF2996EB4B812BFBF50F8D8C89E4BD /* Pods-MacTenPair-frameworks.sh */,
+				A7135317D00F9CB2CA535B98E5B0AFD0 /* Pods-MacTenPair-resources.sh */,
+				E10B9CBF702975B4EA1F4984DD248A62 /* Pods-MacTenPair-umbrella.h */,
+				6E3560C2A2475037D3B7B52DFADE5FE1 /* Pods-MacTenPair.debug.xcconfig */,
+				409B323F4B5F1F2560FAC769C7DCFB3B /* Pods-MacTenPair.release.xcconfig */,
+			);
+			name = "Pods-MacTenPair";
+			path = "Target Support Files/Pods-MacTenPair";
+			sourceTree = "<group>";
+		};
 		DD5CA570021E2578A65675B8C144CBE1 /* LaughingAdventure */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +632,15 @@
 				A0121AC5611917C283A7E2EA52868613 /* Support Files */,
 			);
 			path = GameKit;
+			sourceTree = "<group>";
+		};
+		EC63602364F007BD029F7FE0355037AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A39E8CF4317EC48962E1DFBE4C351720 /* iOS */,
+				B145D2E1F8C047BAABDC957F0BA87512 /* OS X */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,6 +678,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		91BD8EB84F3977A512CEF1EC3390E550 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B96FDBEFD030E546EA0D6C2C05FF5DA6 /* Pods-MacTenPair-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F2051F2188C590373BF93A58D213D270 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -660,7 +720,24 @@
 			);
 			name = "Pods-TenPairTests";
 			productName = "Pods-TenPairTests";
-			productReference = 03DA93C090BAC28AE12A93B3E3AD4EF4 /* Pods_TenPairTests.framework */;
+			productReference = 6A6FC00A06A6FC05A6D1F77F72EA7D73 /* Pods_TenPairTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		30E4A49267AA6FF7E5A56606E3A34353 /* Pods-MacTenPair */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84B87F9B2AC07312017C5DBF214B6E21 /* Build configuration list for PBXNativeTarget "Pods-MacTenPair" */;
+			buildPhases = (
+				B12482275761D6D0FE6D97A0DF851ADC /* Sources */,
+				2E17C5B118ECA99AF7E061D5B40EAB40 /* Frameworks */,
+				91BD8EB84F3977A512CEF1EC3390E550 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MacTenPair";
+			productName = "Pods-MacTenPair";
+			productReference = 69D847845FB4528F16ED88AA3C86B6A9 /* Pods_MacTenPair.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		3A03D1071B6B0DD9EB6D75F3F6A3CFAC /* GameKit */ = {
@@ -677,7 +754,7 @@
 			);
 			name = GameKit;
 			productName = GameKit;
-			productReference = E0298E97049060633688FEFCE5631AC2 /* GameKit.framework */;
+			productReference = 59F7B7433AB3B82B839122D685F5E526 /* GameKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		706FE3119C7995D4593D77159B571E4B /* SWLogger */ = {
@@ -694,7 +771,7 @@
 			);
 			name = SWLogger;
 			productName = SWLogger;
-			productReference = 939968FB01E65C8D7A5F1177CB474988 /* SWLogger.framework */;
+			productReference = B36C63F5617D9410EBEF308AB16E5D7A /* SWLogger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		92943306EC8070DF9CD02ECD505D2CD5 /* Locksmith */ = {
@@ -711,7 +788,7 @@
 			);
 			name = Locksmith;
 			productName = Locksmith;
-			productReference = E9987FE743CE6E4D9A162FA74F44F092 /* Locksmith.framework */;
+			productReference = 4E2981718F2927892373A75DF02E2236 /* Locksmith.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		98240282FA8643938B496616B96C58F9 /* Pods-TenPair */ = {
@@ -732,7 +809,7 @@
 			);
 			name = "Pods-TenPair";
 			productName = "Pods-TenPair";
-			productReference = DB5F2F49822C1CA19FC84DFA03FE3CE8 /* Pods_TenPair.framework */;
+			productReference = 2295EFD1EF7B6367EF1420BEF912072D /* Pods_TenPair.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FDA6338076742EECB8CDDC00DD98BB0F /* LaughingAdventure */ = {
@@ -749,7 +826,7 @@
 			);
 			name = LaughingAdventure;
 			productName = LaughingAdventure;
-			productReference = 5A9790E4D38754EFE0755C4F15C09334 /* LaughingAdventure.framework */;
+			productReference = C6E8E583E40F53C07BD5ED26B20012AA /* LaughingAdventure.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -769,13 +846,14 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 9A5CC8A614B5E6333B4CF6D1627999D9 /* Products */;
+			productRefGroup = 8BD2338A5A25E38B0776FFE8451E7819 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				3A03D1071B6B0DD9EB6D75F3F6A3CFAC /* GameKit */,
 				FDA6338076742EECB8CDDC00DD98BB0F /* LaughingAdventure */,
 				92943306EC8070DF9CD02ECD505D2CD5 /* Locksmith */,
+				30E4A49267AA6FF7E5A56606E3A34353 /* Pods-MacTenPair */,
 				98240282FA8643938B496616B96C58F9 /* Pods-TenPair */,
 				11CA075FA9E59197BA30646ED9320FC9 /* Pods-TenPairTests */,
 				706FE3119C7995D4593D77159B571E4B /* SWLogger */,
@@ -839,6 +917,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B12482275761D6D0FE6D97A0DF851ADC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C3D46C947B116BED13A33B88CDC2059 /* Pods-MacTenPair-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B929DEA57CDD53F65C00726A8C3E6076 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -893,7 +979,7 @@
 /* Begin XCBuildConfiguration section */
 		17AB7DBF45E08B3E8A605937017A4C9C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC3C4F7FF0AC7221673FE914B7CFEC0D /* Pods-TenPair.release.xcconfig */;
+			baseConfigurationReference = 109389826F1873CCD767B011F46E3FEE /* Pods-TenPair.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -926,7 +1012,7 @@
 		};
 		24E81F95744F26C89F9158465D8FBE74 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FB5E03509B354A8575611155827D979 /* Pods-TenPairTests.debug.xcconfig */;
+			baseConfigurationReference = 40B3AFA63EFFA7C5DA3904CCF6BF3396 /* Pods-TenPairTests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1044,7 +1130,47 @@
 			};
 			name = Release;
 		};
-		47BEF9D903506B003EA5C2B249729489 /* Debug */ = {
+		62EF35A18AF3411EDFC4A1FA9FD61EDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 2.3;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6734ABFE9C8BEBABC93D28AD0A04DE49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1080,47 +1206,45 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 2.3;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
+		899962C18251013A20FB7CE5958808AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 409B323F4B5F1F2560FAC769C7DCFB3B /* Pods-MacTenPair.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MacTenPair/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-MacTenPair/Pods-MacTenPair.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MacTenPair;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1152,6 +1276,40 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		AF6F86B4F65395279C0D6B4A07107D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E3560C2A2475037D3B7B52DFADE5FE1 /* Pods-MacTenPair.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MacTenPair/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-MacTenPair/Pods-MacTenPair.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MacTenPair;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		B93CA8CC522611189AFEFCD88C949598 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1245,7 +1403,7 @@
 		};
 		E3B6132FB552E45FFFAE42B522F4F914 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 369FF642D79042A92D32DD09F4F2B69F /* Pods-TenPair.debug.xcconfig */;
+			baseConfigurationReference = A03DA2598FD9A0B1ED89F93CAE7C5E41 /* Pods-TenPair.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1309,7 +1467,7 @@
 		};
 		F9C9C1F8D6FDE7C342B68BE7AFA044E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F34C13C4532321B317BDC7AACC6473E /* Pods-TenPairTests.release.xcconfig */;
+			baseConfigurationReference = 420A430E0392283C5C10E935E2D41809 /* Pods-TenPairTests.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1346,8 +1504,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				47BEF9D903506B003EA5C2B249729489 /* Debug */,
-				AAF678CED40D3499169D10F63CA0719E /* Release */,
+				6734ABFE9C8BEBABC93D28AD0A04DE49 /* Debug */,
+				62EF35A18AF3411EDFC4A1FA9FD61EDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1366,6 +1524,15 @@
 			buildConfigurations = (
 				24E81F95744F26C89F9158465D8FBE74 /* Debug */,
 				F9C9C1F8D6FDE7C342B68BE7AFA044E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84B87F9B2AC07312017C5DBF214B6E21 /* Build configuration list for PBXNativeTarget "Pods-MacTenPair" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF6F86B4F65395279C0D6B4A07107D02 /* Debug */,
+				899962C18251013A20FB7CE5958808AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

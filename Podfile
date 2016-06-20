@@ -1,5 +1,3 @@
-platform :ios, '8.0'
-
 use_frameworks!
 
 
@@ -25,9 +23,16 @@ def pods
 end
 
 target 'TenPair' do
+    platform :ios, '8.0'
+
     pods
 end
 
 target 'TenPairTests' do
+    platform :ios, '8.0'
 
+end
+
+target 'MacTenPair' do
+    platform :osx, '10.11'
 end
