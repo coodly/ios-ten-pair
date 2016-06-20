@@ -27,7 +27,7 @@ private extension Selector {
     static let checkFullVersion = #selector(TenPairMenuScreen.checkFullVersion)
 }
 
-class TenPairMenuScreen: GameMenuScreen, FullVersionHandler {
+class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
     var restartGameAction: SKAction?
     var showResumeOption = true
     var fullVersionProduct: SKProduct?
@@ -68,7 +68,9 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler {
         }
         addMenuItem(purchaseButton)
         addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
-            _ = UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
+            [unowned self] in
+            
+            self.openInStore()
         })
         if let feedbackClosure = sendFeedbackHandler {
             addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("manu.option.send.message", comment: ""), closure: feedbackClosure))
