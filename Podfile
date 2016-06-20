@@ -5,19 +5,21 @@ def local_coodly
     pod 'SWLogger', :path => '../swift-logger'
     pod 'GameKit', :path => '../swift-game-kit'
     pod 'LaughingAdventure/Purchase', :path => '../swift-laughing-adventure'
+    pod 'LaughingAdventure/Feedback', :path => '../swift-laughing-adventure'
 end
 
 def remote_coodly
     pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
-    pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git'
+    pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git', :branch => 'macos'
     pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
+    pod 'LaughingAdventure/Feedback', :git => 'https://github.com/coodly/laughing-adventure.git'
 end
 
 def pods
     pod 'Firebase/Core', '3.2.1'
     pod 'Firebase/AdMob', '3.2.1'
     pod 'Locksmith', '2.0.8'
-
+    
     remote_coodly
     #local_coodly
 end
@@ -35,10 +37,12 @@ end
 
 def local_coodly_mac
     pod 'SWLogger', :path => '../swift-logger'
+    pod 'GameKit', :path => '../swift-game-kit'
 end
 
 def remote_coodly_mac
     pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
+    pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git', :branch => 'macos'
 end
 
 def mac_pods

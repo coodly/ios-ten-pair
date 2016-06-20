@@ -17,7 +17,6 @@
 import Foundation
 import SpriteKit
 import GLKit
-import MessageUI
 import UIKit
 
 private extension Selector {
@@ -30,9 +29,8 @@ public extension SKNode {
     }
 }
 
-public class Game: SKScene, MFMailComposeViewControllerDelegate {
+public class Game: SKScene {
     var tapRecognizer: UITapGestureRecognizer?
-    public var controller: UIViewController?
     private var screens = [GameView]()
     
     public func presentLoadingView(loadingScreen: GameLoadingView) {
@@ -166,43 +164,5 @@ public class Game: SKScene, MFMailComposeViewControllerDelegate {
         if let index = screens.indexOf({ $0 == screen }) {
             screens.removeAtIndex(index)
         }
-    }
-    
-    public func sendEmail(email: String, subject: String = "") {
-        if !MFMailComposeViewController.canSendMail() {
-            presentEmailConfigurationAlert()
-            return
-        }
-        
-        let mailController = MFMailComposeViewController()
-        mailController.mailComposeDelegate = self
-        mailController.setToRecipients([email])
-        mailController.setSubject(subject)
-        let appVersion = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString")! as! String
-        mailController.setMessageBody("\n\n\n| App version: \(appVersion) |", isHTML: false)
-        controller!.presentViewController(mailController, animated: true, completion: nil)
-    }
-    
-    func presentEmailConfigurationAlert() {
-        let alert = UIAlertController(title: NSLocalizedString("CDYFeedback.cant.send.email.title", comment: ""), message: NSLocalizedString("CDYFeedback.cant.send.email.message", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("CDYFeedback.cant.send.email.alert.dismiss.button", comment: ""), style: UIAlertActionStyle.Default, handler: nil))
-        if let presentOn = controller {
-           presentOn.presentViewController(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func presentEmailSendErrorAlert(onController: UIViewController) {
-        let alert = UIAlertController(title: NSLocalizedString("CDYFeedback.email.not.sent.error.title", comment: ""), message: NSLocalizedString("CDYFeedback.email.not.sent.error.message", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("CDYFeedback.email.not.sent.error.dismiss.button", comment: ""), style: UIAlertActionStyle.Default, handler: nil))
-        onController.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    public func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        if let _ = error {
-            presentEmailSendErrorAlert(controller)
-            return
-        }
-
-        controller.dismissViewControllerAnimated(true, completion: nil)
-    }
+    }    
 }

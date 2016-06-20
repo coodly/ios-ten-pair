@@ -20,12 +20,13 @@ import SWLogger
 import GoogleMobileAds
 import LaughingAdventure
 import StoreKit
+import MessageUI
 
 private extension Selector {
     static let checkFullVersion = #selector(GameViewController.checkFullVersion)
 }
 
-class GameViewController: UIViewController, FullVersionHandler, InterstitialPresenter {
+class GameViewController: UIViewController, FullVersionHandler, InterstitialPresenter, FeedbackEmailSender {
     @IBOutlet var gameView: SKView!
     @IBOutlet var adContainerView: UIView!
     @IBOutlet var adContainerHeightConstraint: NSLayoutConstraint!
@@ -86,7 +87,6 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
             gameScene.startField = save
         }
         gameScene.scaleMode = SKSceneScaleMode.ResizeFill
-        gameScene.controller = self
         scene = gameScene
         skView.allowsTransparency = false
         skView.shouldCullNonVisibleNodes = false
@@ -99,6 +99,12 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
         gameScene.playScreen.interstitial = self
         
         gameScene.startGame()
+        
+        gameScene.playScreen.sendFeedbackHandler = {
+            [unowned self] in
+            
+            self.sendFeedback(FeedbackEmail, subject: FeedbackTitle, mailDelegate: self)
+        }
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
@@ -138,6 +144,17 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
         }
         
         UIView.animateWithDuration(0.3, animations: animation, completion: completion)
+    }
+}
+
+extension GameViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        if let _ = error {
+            presentEmailSendErrorAlert()
+            return
+        }
+        
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

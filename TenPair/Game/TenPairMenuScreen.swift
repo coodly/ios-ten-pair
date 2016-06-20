@@ -34,6 +34,7 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler {
     var fullVersionProduct: SKProduct?
     var purchaser: Purchaser!
     private var purchaseButton: TenPairMenuButton!
+    var sendFeedbackHandler: (() -> ())?
     
     deinit {
         Log.debug("")
@@ -70,11 +71,9 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler {
         addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
             _ = UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
         })
-        addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("manu.option.send.message", comment: "")) {
-            [unowned self] in
-
-            self.game!.sendEmail("contact@coodly.com", subject: "TenPair feedback")
-        })
+        if let feedbackClosure = sendFeedbackHandler {
+            addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("manu.option.send.message", comment: ""), closure: feedbackClosure))
+        }
     }
     
     override func unloadContent() {

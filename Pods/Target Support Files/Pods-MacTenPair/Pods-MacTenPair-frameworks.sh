@@ -84,8 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/GameKit-OSX/GameKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SWLogger-OSX/SWLogger.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/GameKit-OSX/GameKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SWLogger-OSX/SWLogger.framework"
 fi

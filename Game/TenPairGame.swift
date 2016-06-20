@@ -15,7 +15,6 @@
 */
 
 import Foundation
-import UIKit
 import GameKit
 
 class TenPairGame : Game {

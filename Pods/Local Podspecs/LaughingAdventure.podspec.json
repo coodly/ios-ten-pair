@@ -35,6 +35,10 @@
       },
       "source_files": "Source/Purchase",
       "frameworks": "StoreKit"
+    },
+    {
+      "name": "Feedback",
+      "source_files": "Source/Feedback"
     }
   ]
 }

@@ -84,13 +84,13 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/GameKit/GameKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GameKit-iOS/GameKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LaughingAdventure/LaughingAdventure.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Locksmith/Locksmith.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SWLogger-iOS/SWLogger.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/GameKit/GameKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GameKit-iOS/GameKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LaughingAdventure/LaughingAdventure.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Locksmith/Locksmith.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SWLogger-iOS/SWLogger.framework"

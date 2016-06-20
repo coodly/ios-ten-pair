@@ -37,6 +37,7 @@ class TenPairPlayScreen: GameScreen {
     var fullVersionProduct: SKProduct?
     var purchaser: Purchaser!
     weak var interstitial: InterstitialPresenter!
+    var sendFeedbackHandler: (() -> ())?
     
     override func loadContent() {
         name = "TenPairPlayScreen"
@@ -77,6 +78,7 @@ class TenPairPlayScreen: GameScreen {
             let menuScreen = TenPairMenuScreen()
             menuScreen.fullVersionProduct = self.fullVersionProduct
             menuScreen.purchaser = self.purchaser
+            menuScreen.sendFeedbackHandler = self.sendFeedbackHandler
             menuScreen.restartGameAction = SKAction.runBlock() {
                 [unowned menuScreen] in
                 
