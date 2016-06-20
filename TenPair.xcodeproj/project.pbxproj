@@ -18,13 +18,35 @@
 		A73A97661D0D973C00CF1B3B /* TenPairNumberPathFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A97641D0D973C00CF1B3B /* TenPairNumberPathFinderTests.swift */; };
 		A73A97681D0D9F8B00CF1B3B /* TenPairNumberPathFinderEmptyRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A97671D0D9F8B00CF1B3B /* TenPairNumberPathFinderEmptyRangeTests.swift */; };
 		A73A976E1D0DBED200CF1B3B /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A976C1D0DBED200CF1B3B /* Secrets.swift */; };
+		A75682061D181187006FCA07 /* TenPairPlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682051D181187006FCA07 /* TenPairPlayScreen.swift */; };
+		A75682091D181325006FCA07 /* TenPairMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682081D181325006FCA07 /* TenPairMenuBar.swift */; };
+		A756820C1D181343006FCA07 /* TenPairFieldStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756820B1D181343006FCA07 /* TenPairFieldStatus.swift */; };
+		A756820E1D18134E006FCA07 /* TenPairFieldStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756820B1D181343006FCA07 /* TenPairFieldStatus.swift */; };
+		A756820F1D18134E006FCA07 /* TenPairGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76347421D17C1B4001A3A95 /* TenPairGame.swift */; };
+		A75682101D18134E006FCA07 /* TenPairMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682081D181325006FCA07 /* TenPairMenuBar.swift */; };
+		A75682111D18134E006FCA07 /* TenPairPlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682051D181187006FCA07 /* TenPairPlayScreen.swift */; };
+		A75682131D18135F006FCA07 /* TenPairTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682121D18135F006FCA07 /* TenPairTheme.swift */; };
+		A75682141D18136B006FCA07 /* TenPairTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682121D18135F006FCA07 /* TenPairTheme.swift */; };
+		A75682161D18138D006FCA07 /* TenPairDefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682151D18138D006FCA07 /* TenPairDefaultTheme.swift */; };
+		A75682171D18138D006FCA07 /* TenPairDefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682151D18138D006FCA07 /* TenPairDefaultTheme.swift */; };
+		A75682191D1813A8006FCA07 /* TenPairNumbersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682181D1813A8006FCA07 /* TenPairNumbersField.swift */; };
+		A756821A1D1813A8006FCA07 /* TenPairNumbersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682181D1813A8006FCA07 /* TenPairNumbersField.swift */; };
+		A756821C1D1813D0006FCA07 /* TenPairNumberTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756821B1D1813D0006FCA07 /* TenPairNumberTile.swift */; };
+		A756821D1D1813D0006FCA07 /* TenPairNumberTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756821B1D1813D0006FCA07 /* TenPairNumberTile.swift */; };
+		A75682221D181606006FCA07 /* MatchFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682211D181606006FCA07 /* MatchFinder.swift */; };
+		A75682231D18160C006FCA07 /* MatchFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682211D181606006FCA07 /* MatchFinder.swift */; };
+		A75682251D18162B006FCA07 /* TenPairFieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682241D18162B006FCA07 /* TenPairFieldBackground.swift */; };
+		A75682261D181631006FCA07 /* TenPairFieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682241D18162B006FCA07 /* TenPairFieldBackground.swift */; };
+		A756822A1D181D73006FCA07 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682291D181D73006FCA07 /* GameConstants.swift */; };
+		A756822B1D181D73006FCA07 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75682291D181D73006FCA07 /* GameConstants.swift */; };
+		A756822D1D181E1A006FCA07 /* HintButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756822C1D181E1A006FCA07 /* HintButtonTray.swift */; };
+		A756822E1D181E1A006FCA07 /* HintButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756822C1D181E1A006FCA07 /* HintButtonTray.swift */; };
+		A75682301D181E9C006FCA07 /* TenPairMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756822F1D181E9C006FCA07 /* TenPairMenuScreen.swift */; };
+		A75682311D181E9C006FCA07 /* TenPairMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756822F1D181E9C006FCA07 /* TenPairMenuScreen.swift */; };
 		A76347431D17C1B4001A3A95 /* TenPairGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76347421D17C1B4001A3A95 /* TenPairGame.swift */; };
-		A76347441D17C1C0001A3A95 /* TenPairGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76347421D17C1B4001A3A95 /* TenPairGame.swift */; };
 		A76C05351D0EDEC90091D64B /* ActionButtonsTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C05341D0EDEC90091D64B /* ActionButtonsTray.swift */; };
 		A76C05381D0EF3FF0091D64B /* SavedGame.plist in Resources */ = {isa = PBXBuildFile; fileRef = A76C05371D0EF3FF0091D64B /* SavedGame.plist */; };
-		A76C053A1D0EF44F0091D64B /* MatchFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C05391D0EF44F0091D64B /* MatchFinder.swift */; };
 		A76C053C1D0EF4B80091D64B /* MatchFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C053B1D0EF4B80091D64B /* MatchFinderTests.swift */; };
-		A76C05401D0FD2390091D64B /* HintButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C053F1D0FD2390091D64B /* HintButtonTray.swift */; };
 		A7A775231D15AA7E00FB9976 /* FullVersionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A775221D15AA7E00FB9976 /* FullVersionHandler.swift */; };
 		A7B082A51D168512006E0FEC /* InterstitialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B082A41D168512006E0FEC /* InterstitialPresenter.swift */; };
 		A7B082A71D168EE0006E0FEC /* InterstitialCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B082A61D168EE0006E0FEC /* InterstitialCounter.swift */; };
@@ -43,19 +65,10 @@
 		EA02FA9B1B9C6AA400B93D23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA02FA991B9C6AA400B93D23 /* Main.storyboard */; };
 		EA02FAAB1B9C6AA400B93D23 /* TenPairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02FAAA1B9C6AA400B93D23 /* TenPairTests.swift */; };
 		EAB2197C1B9C6B3600ED9CF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB2197B1B9C6B3600ED9CF9 /* Images.xcassets */; };
-		EAB2198D1B9C6B8800ED9CF9 /* TenPairDefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2197E1B9C6B8800ED9CF9 /* TenPairDefaultTheme.swift */; };
 		EAB2198E1B9C6B8800ED9CF9 /* TenPairEmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2197F1B9C6B8800ED9CF9 /* TenPairEmptyLinesSearch.swift */; };
-		EAB2198F1B9C6B8800ED9CF9 /* TenPairFieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219801B9C6B8800ED9CF9 /* TenPairFieldBackground.swift */; };
-		EAB219901B9C6B8800ED9CF9 /* TenPairFieldStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219811B9C6B8800ED9CF9 /* TenPairFieldStatus.swift */; };
 		EAB219921B9C6B8800ED9CF9 /* TenPairLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219831B9C6B8800ED9CF9 /* TenPairLoadingScreen.swift */; };
-		EAB219931B9C6B8800ED9CF9 /* TenPairMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219841B9C6B8800ED9CF9 /* TenPairMenuBar.swift */; };
 		EAB219941B9C6B8800ED9CF9 /* TenPairMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219851B9C6B8800ED9CF9 /* TenPairMenuButton.swift */; };
-		EAB219951B9C6B8800ED9CF9 /* TenPairMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219861B9C6B8800ED9CF9 /* TenPairMenuScreen.swift */; };
 		EAB219961B9C6B8800ED9CF9 /* TenPairNumberPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219871B9C6B8800ED9CF9 /* TenPairNumberPathFinder.swift */; };
-		EAB219971B9C6B8800ED9CF9 /* TenPairNumbersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219881B9C6B8800ED9CF9 /* TenPairNumbersField.swift */; };
-		EAB219981B9C6B8800ED9CF9 /* TenPairNumberTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB219891B9C6B8800ED9CF9 /* TenPairNumberTile.swift */; };
-		EAB219991B9C6B8800ED9CF9 /* TenPairPlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198A1B9C6B8800ED9CF9 /* TenPairPlayScreen.swift */; };
-		EAB2199A1B9C6B8800ED9CF9 /* TenPairTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198B1B9C6B8800ED9CF9 /* TenPairTheme.swift */; };
 		EAB2199B1B9C6B8800ED9CF9 /* TenPairWinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2198C1B9C6B8800ED9CF9 /* TenPairWinScreen.swift */; };
 		EAB219B81B9C6C6300ED9CF9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB219B61B9C6C6300ED9CF9 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
@@ -85,12 +98,22 @@
 		A73A97671D0D9F8B00CF1B3B /* TenPairNumberPathFinderEmptyRangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairNumberPathFinderEmptyRangeTests.swift; sourceTree = "<group>"; };
 		A73A976B1D0DBED200CF1B3B /* Secrets.sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.sample.swift; sourceTree = "<group>"; };
 		A73A976C1D0DBED200CF1B3B /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		A75682051D181187006FCA07 /* TenPairPlayScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairPlayScreen.swift; sourceTree = "<group>"; };
+		A75682081D181325006FCA07 /* TenPairMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairMenuBar.swift; sourceTree = "<group>"; };
+		A756820B1D181343006FCA07 /* TenPairFieldStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairFieldStatus.swift; sourceTree = "<group>"; };
+		A75682121D18135F006FCA07 /* TenPairTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairTheme.swift; sourceTree = "<group>"; };
+		A75682151D18138D006FCA07 /* TenPairDefaultTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairDefaultTheme.swift; sourceTree = "<group>"; };
+		A75682181D1813A8006FCA07 /* TenPairNumbersField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairNumbersField.swift; sourceTree = "<group>"; };
+		A756821B1D1813D0006FCA07 /* TenPairNumberTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairNumberTile.swift; sourceTree = "<group>"; };
+		A75682211D181606006FCA07 /* MatchFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinder.swift; sourceTree = "<group>"; };
+		A75682241D18162B006FCA07 /* TenPairFieldBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairFieldBackground.swift; sourceTree = "<group>"; };
+		A75682291D181D73006FCA07 /* GameConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
+		A756822C1D181E1A006FCA07 /* HintButtonTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintButtonTray.swift; sourceTree = "<group>"; };
+		A756822F1D181E9C006FCA07 /* TenPairMenuScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairMenuScreen.swift; sourceTree = "<group>"; };
 		A76347421D17C1B4001A3A95 /* TenPairGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairGame.swift; sourceTree = "<group>"; };
 		A76C05341D0EDEC90091D64B /* ActionButtonsTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonsTray.swift; sourceTree = "<group>"; };
 		A76C05371D0EF3FF0091D64B /* SavedGame.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = SavedGame.plist; sourceTree = "<group>"; };
-		A76C05391D0EF44F0091D64B /* MatchFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinder.swift; sourceTree = "<group>"; };
 		A76C053B1D0EF4B80091D64B /* MatchFinderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinderTests.swift; sourceTree = "<group>"; };
-		A76C053F1D0FD2390091D64B /* HintButtonTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintButtonTray.swift; sourceTree = "<group>"; };
 		A7A775221D15AA7E00FB9976 /* FullVersionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullVersionHandler.swift; sourceTree = "<group>"; };
 		A7B082A41D168512006E0FEC /* InterstitialPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialPresenter.swift; sourceTree = "<group>"; };
 		A7B082A61D168EE0006E0FEC /* InterstitialCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialCounter.swift; sourceTree = "<group>"; };
@@ -118,19 +141,10 @@
 		EA02FAAA1B9C6AA400B93D23 /* TenPairTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenPairTests.swift; sourceTree = "<group>"; };
 		EA02FAAC1B9C6AA400B93D23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAB2197B1B9C6B3600ED9CF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EAB2197E1B9C6B8800ED9CF9 /* TenPairDefaultTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairDefaultTheme.swift; sourceTree = "<group>"; };
 		EAB2197F1B9C6B8800ED9CF9 /* TenPairEmptyLinesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairEmptyLinesSearch.swift; sourceTree = "<group>"; };
-		EAB219801B9C6B8800ED9CF9 /* TenPairFieldBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairFieldBackground.swift; sourceTree = "<group>"; };
-		EAB219811B9C6B8800ED9CF9 /* TenPairFieldStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairFieldStatus.swift; sourceTree = "<group>"; };
 		EAB219831B9C6B8800ED9CF9 /* TenPairLoadingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairLoadingScreen.swift; sourceTree = "<group>"; };
-		EAB219841B9C6B8800ED9CF9 /* TenPairMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairMenuBar.swift; sourceTree = "<group>"; };
 		EAB219851B9C6B8800ED9CF9 /* TenPairMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairMenuButton.swift; sourceTree = "<group>"; };
-		EAB219861B9C6B8800ED9CF9 /* TenPairMenuScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairMenuScreen.swift; sourceTree = "<group>"; };
 		EAB219871B9C6B8800ED9CF9 /* TenPairNumberPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairNumberPathFinder.swift; sourceTree = "<group>"; };
-		EAB219881B9C6B8800ED9CF9 /* TenPairNumbersField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairNumbersField.swift; sourceTree = "<group>"; };
-		EAB219891B9C6B8800ED9CF9 /* TenPairNumberTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairNumberTile.swift; sourceTree = "<group>"; };
-		EAB2198A1B9C6B8800ED9CF9 /* TenPairPlayScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairPlayScreen.swift; sourceTree = "<group>"; };
-		EAB2198B1B9C6B8800ED9CF9 /* TenPairTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairTheme.swift; sourceTree = "<group>"; };
 		EAB2198C1B9C6B8800ED9CF9 /* TenPairWinScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPairWinScreen.swift; sourceTree = "<group>"; };
 		EAB219B71B9C6C6300ED9CF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F580462683097342ADC13243 /* Pods_TenPairTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPairTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,7 +230,19 @@
 		A76347411D17C195001A3A95 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				A75682291D181D73006FCA07 /* GameConstants.swift */,
+				A756822C1D181E1A006FCA07 /* HintButtonTray.swift */,
+				A75682211D181606006FCA07 /* MatchFinder.swift */,
+				A75682151D18138D006FCA07 /* TenPairDefaultTheme.swift */,
+				A75682241D18162B006FCA07 /* TenPairFieldBackground.swift */,
+				A756820B1D181343006FCA07 /* TenPairFieldStatus.swift */,
 				A76347421D17C1B4001A3A95 /* TenPairGame.swift */,
+				A75682081D181325006FCA07 /* TenPairMenuBar.swift */,
+				A756822F1D181E9C006FCA07 /* TenPairMenuScreen.swift */,
+				A75682181D1813A8006FCA07 /* TenPairNumbersField.swift */,
+				A756821B1D1813D0006FCA07 /* TenPairNumberTile.swift */,
+				A75682051D181187006FCA07 /* TenPairPlayScreen.swift */,
+				A75682121D18135F006FCA07 /* TenPairTheme.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -319,22 +345,11 @@
 			children = (
 				A76C05341D0EDEC90091D64B /* ActionButtonsTray.swift */,
 				A739EB9E1D1127AF00E68787 /* AlertViewScreen.swift */,
-				A76C053F1D0FD2390091D64B /* HintButtonTray.swift */,
-				A76C05391D0EF44F0091D64B /* MatchFinder.swift */,
 				A700A29D1D12D6C8000339F5 /* PurchaseScreen.swift */,
-				EAB2197E1B9C6B8800ED9CF9 /* TenPairDefaultTheme.swift */,
 				EAB2197F1B9C6B8800ED9CF9 /* TenPairEmptyLinesSearch.swift */,
-				EAB219801B9C6B8800ED9CF9 /* TenPairFieldBackground.swift */,
-				EAB219811B9C6B8800ED9CF9 /* TenPairFieldStatus.swift */,
 				EAB219831B9C6B8800ED9CF9 /* TenPairLoadingScreen.swift */,
-				EAB219841B9C6B8800ED9CF9 /* TenPairMenuBar.swift */,
 				EAB219851B9C6B8800ED9CF9 /* TenPairMenuButton.swift */,
-				EAB219861B9C6B8800ED9CF9 /* TenPairMenuScreen.swift */,
 				EAB219871B9C6B8800ED9CF9 /* TenPairNumberPathFinder.swift */,
-				EAB219881B9C6B8800ED9CF9 /* TenPairNumbersField.swift */,
-				EAB219891B9C6B8800ED9CF9 /* TenPairNumberTile.swift */,
-				EAB2198A1B9C6B8800ED9CF9 /* TenPairPlayScreen.swift */,
-				EAB2198B1B9C6B8800ED9CF9 /* TenPairTheme.swift */,
 				EAB2198C1B9C6B8800ED9CF9 /* TenPairWinScreen.swift */,
 				A7A775221D15AA7E00FB9976 /* FullVersionHandler.swift */,
 			);
@@ -679,9 +694,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A756822E1D181E1A006FCA07 /* HintButtonTray.swift in Sources */,
+				A756821D1D1813D0006FCA07 /* TenPairNumberTile.swift in Sources */,
+				A75682141D18136B006FCA07 /* TenPairTheme.swift in Sources */,
+				A75682311D181E9C006FCA07 /* TenPairMenuScreen.swift in Sources */,
+				A75682261D181631006FCA07 /* TenPairFieldBackground.swift in Sources */,
+				A75682101D18134E006FCA07 /* TenPairMenuBar.swift in Sources */,
+				A756820E1D18134E006FCA07 /* TenPairFieldStatus.swift in Sources */,
+				A756821A1D1813A8006FCA07 /* TenPairNumbersField.swift in Sources */,
+				A756820F1D18134E006FCA07 /* TenPairGame.swift in Sources */,
+				A756822B1D181D73006FCA07 /* GameConstants.swift in Sources */,
 				A7E59ADF1D16F6ED0065E5EC /* GameScene.swift in Sources */,
+				A75682231D18160C006FCA07 /* MatchFinder.swift in Sources */,
 				A7E59ADD1D16F6ED0065E5EC /* AppDelegate.swift in Sources */,
-				A76347441D17C1C0001A3A95 /* TenPairGame.swift in Sources */,
+				A75682111D18134E006FCA07 /* TenPairPlayScreen.swift in Sources */,
+				A75682171D18138D006FCA07 /* TenPairDefaultTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,33 +716,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAB219901B9C6B8800ED9CF9 /* TenPairFieldStatus.swift in Sources */,
 				A76347431D17C1B4001A3A95 /* TenPairGame.swift in Sources */,
 				A73A976E1D0DBED200CF1B3B /* Secrets.swift in Sources */,
 				A700A29E1D12D6C8000339F5 /* PurchaseScreen.swift in Sources */,
-				A76C05401D0FD2390091D64B /* HintButtonTray.swift in Sources */,
 				A76C05351D0EDEC90091D64B /* ActionButtonsTray.swift in Sources */,
-				EAB219981B9C6B8800ED9CF9 /* TenPairNumberTile.swift in Sources */,
-				EAB2199A1B9C6B8800ED9CF9 /* TenPairTheme.swift in Sources */,
+				A75682221D181606006FCA07 /* MatchFinder.swift in Sources */,
+				A75682161D18138D006FCA07 /* TenPairDefaultTheme.swift in Sources */,
+				A75682131D18135F006FCA07 /* TenPairTheme.swift in Sources */,
 				EAB219941B9C6B8800ED9CF9 /* TenPairMenuButton.swift in Sources */,
 				EAB2199B1B9C6B8800ED9CF9 /* TenPairWinScreen.swift in Sources */,
+				A756821C1D1813D0006FCA07 /* TenPairNumberTile.swift in Sources */,
+				A756822D1D181E1A006FCA07 /* HintButtonTray.swift in Sources */,
 				EA02FA981B9C6AA400B93D23 /* GameViewController.swift in Sources */,
-				EAB219971B9C6B8800ED9CF9 /* TenPairNumbersField.swift in Sources */,
 				A739EB9F1D1127AF00E68787 /* AlertViewScreen.swift in Sources */,
+				A75682191D1813A8006FCA07 /* TenPairNumbersField.swift in Sources */,
+				A75682301D181E9C006FCA07 /* TenPairMenuScreen.swift in Sources */,
 				A7B082A71D168EE0006E0FEC /* InterstitialCounter.swift in Sources */,
 				A7A775231D15AA7E00FB9976 /* FullVersionHandler.swift in Sources */,
+				A75682061D181187006FCA07 /* TenPairPlayScreen.swift in Sources */,
+				A75682091D181325006FCA07 /* TenPairMenuBar.swift in Sources */,
 				EA02FA921B9C6AA400B93D23 /* AppDelegate.swift in Sources */,
-				EAB2198D1B9C6B8800ED9CF9 /* TenPairDefaultTheme.swift in Sources */,
+				A756820C1D181343006FCA07 /* TenPairFieldStatus.swift in Sources */,
 				EAB2198E1B9C6B8800ED9CF9 /* TenPairEmptyLinesSearch.swift in Sources */,
-				EAB219951B9C6B8800ED9CF9 /* TenPairMenuScreen.swift in Sources */,
 				A7B082A51D168512006E0FEC /* InterstitialPresenter.swift in Sources */,
+				A75682251D18162B006FCA07 /* TenPairFieldBackground.swift in Sources */,
 				EAB219921B9C6B8800ED9CF9 /* TenPairLoadingScreen.swift in Sources */,
+				A756822A1D181D73006FCA07 /* GameConstants.swift in Sources */,
 				EAB219961B9C6B8800ED9CF9 /* TenPairNumberPathFinder.swift in Sources */,
-				EAB2198F1B9C6B8800ED9CF9 /* TenPairFieldBackground.swift in Sources */,
-				EAB219931B9C6B8800ED9CF9 /* TenPairMenuBar.swift in Sources */,
-				EAB219991B9C6B8800ED9CF9 /* TenPairPlayScreen.swift in Sources */,
 				A73A97611D0D8FE400CF1B3B /* Constants.swift in Sources */,
-				A76C053A1D0EF44F0091D64B /* MatchFinder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,6 @@
 
 import Foundation
 import SpriteKit
-import UIKit
 import GameKit
 import SWLogger
 
@@ -498,9 +497,15 @@ class TenPairNumbersField: GameScrollViewContained {
         return size.height - fieldHeight()
     }
     
+    #if os(iOS)
     override func presentationInsets() -> UIEdgeInsets {
         return UIEdgeInsetsMake(0, 0, -bottomOffset(), 0)
     }
+    #else
+    override func presentationInsets() -> NSEdgeInsets {
+        return NSEdgeInsetsMake(0, 0, -bottomOffset(), 0)
+    }
+    #endif
     
     func dumpRange(start: Int, end: Int) {
         for index in start...end {

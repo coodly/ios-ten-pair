@@ -46,10 +46,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   GameKit:
-    :commit: 2568b2ac3bc57386d48209bf3dac6af81c25c766
+    :commit: 064ebba70d46679e12bafe5711c3704b6090e8cc
     :git: git@github.com:coodly/GameKit.git
   LaughingAdventure:
-    :commit: 10340a8de519c5441ca4b16164a022b431ea7ff2
+    :commit: e4706afc03706dc68bfe8409e58ee54a42c744fe
     :git: https://github.com/coodly/laughing-adventure.git
   SWLogger:
     :commit: eab978d87ba4e514dc0b81e2531c319769c83f87
@@ -64,10 +64,10 @@ SPEC CHECKSUMS:
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
-  LaughingAdventure: 07fefb64c2538357a53490f2a2b29aa9c7266ac0
+  LaughingAdventure: 972132814b3d206be9bfce09b0eb3d1f5c688bcf
   Locksmith: a8ed41ac4c06506ea8cb199d8ec8a8d3d108eb2a
   SWLogger: 47186983d73f82ac74b4965f750a942b190b613d
 
-PODFILE CHECKSUM: 6d80edaeda6cb031074501cf752c7af8ea8c0427
+PODFILE CHECKSUM: 501ed5e45c80ecb035992b1f8e790d5b5f280404
 
 COCOAPODS: 1.0.1

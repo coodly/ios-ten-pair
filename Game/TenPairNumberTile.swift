@@ -86,20 +86,21 @@ class TenPairNumberTile: SKSpriteNode {
     
     func renderImageWithNumber(number: Int, fontSize: CGFloat) -> SKTexture {
         let string = NSMutableAttributedString(string: "\(number)")
-        string.addAttribute(NSFontAttributeName, value: UIFont(name: "ChalkboardSE-Bold", size: fontSize)!, range: NSMakeRange(0, 1))
-        string.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor(), range: NSMakeRange(0, 1))
+        
+        #if os(iOS)
+            let font = UIFont(name: "ChalkboardSE-Bold", size: fontSize)!
+            let color = UIColor.whiteColor()
+        #else
+            let font = NSFont(name: "ChalkboardSE-Bold", size: fontSize)!
+            let color = NSColor.whiteColor()
+        #endif
+        
+        string.addAttribute(NSFontAttributeName, value: font, range: NSMakeRange(0, 1))
+        string.addAttribute(NSForegroundColorAttributeName, value: color, range: NSMakeRange(0, 1))
         
         let rect = string.boundingRectWithSize(CGSizeMake(1000, 1000), options: NSStringDrawingOptions.TruncatesLastVisibleLine, context: nil)
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
-        string.drawInRect(rect)
         
-        #if swift(>=2.3)
-            let image = UIGraphicsGetImageFromCurrentImageContext()!
-        #else
-            let image = UIGraphicsGetImageFromCurrentImageContext()
-        #endif
-        UIGraphicsEndImageContext()
-        
+        let image = string.renderIn(rect)
         return SKTexture(image: image)
     }
 }

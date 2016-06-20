@@ -15,7 +15,6 @@
 */
 
 import Foundation
-import UIKit
 import SpriteKit
 import GameKit
 import SWLogger

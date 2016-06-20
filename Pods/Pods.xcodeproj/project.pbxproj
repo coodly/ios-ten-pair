@@ -7,253 +7,295 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0551A042FAEC7B842567E2FE45E8C203 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13977A903A1FB1E54812D89CB21010E7 /* Game.swift */; };
-		0A57419F24F46129B092DF4B98646715 /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA41A08BA3B9725408A955D18804B7E /* GameLoadingView.swift */; };
-		10113E207516DDCAC19E3B2FED7E12C4 /* LocksmithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9FEE5C77DFF2BA27B8355E10DCC388 /* LocksmithError.swift */; };
-		13EB929F72B356FC41F08CCF85D5D0C1 /* Locksmith-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF32B26030B954743F3F70DBB3E4BD3 /* Locksmith-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1495BCB330D338CEF2E39D10082B941C /* LocksmithAccessibleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE973E41246A66D5DFC3C706C3AFFA6 /* LocksmithAccessibleOption.swift */; };
-		1CC841D4621AAA124F826CCE5F77E28A /* Purchaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976A5E60927059AFB16D1125B790E0E5 /* Purchaser.swift */; };
-		1D289D03369E7C05652B06DBA8CC3860 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03509678996E4C363DE0E847135DF88 /* Foundation.framework */; };
-		224F447F60E0B7AE02283CC45D9E851A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03509678996E4C363DE0E847135DF88 /* Foundation.framework */; };
-		23A9B9C84FF6F94FF689D532A1DD027B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE11E830B649CFF8610FD780349752 /* Logger.swift */; };
+		0141474F86507675827067B17F4204EA /* GameScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A9A61376E06E31594A7EEE4227184 /* GameScrollViewContained.swift */; };
+		01ADCE129A2505C35C935C7CDF480A97 /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08566FF85F58E6713B08172D3C2700E1 /* GameLoadingView.swift */; };
+		04251F0DF3B0AA1DCA60DD068CE4A985 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B134550C137B4C3E89F05C42F07E86 /* GameView.swift */; };
+		080B05E9B0E5B7ADEF72C9B0787B9520 /* SKProduct+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F42A44BF72313CD2B2F7E20ADE06466 /* SKProduct+Extensions.swift */; };
+		092F3C960E7297FA43FDBC76A98D56BC /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0FB1AE3ECCF689B09E4362BB4EC3D6 /* NSAttributedString+Extensions.swift */; };
+		0AABE45B8A98D31BBE3EC1D7B0645FE6 /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F89FDF4FEE2F95B8BEA4C1314A4984D /* ConsoleOutput.swift */; };
+		0BBFBB41068065EFB091FAB65A906847 /* Pods-MacTenPair-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4296E4B4AD68379897AAF1C8E994D58 /* Pods-MacTenPair-dummy.m */; };
+		0C8DE20E1ACD191C602949A851FF99F7 /* FeedbackEmailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D869830A6627CA815019081198BAF12C /* FeedbackEmailSender.swift */; };
+		10113E207516DDCAC19E3B2FED7E12C4 /* LocksmithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7557A95A649AAB233A81D8E4E188302 /* LocksmithError.swift */; };
+		13EB929F72B356FC41F08CCF85D5D0C1 /* Locksmith-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FB2093268328825656B562C30D5DA24B /* Locksmith-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1495BCB330D338CEF2E39D10082B941C /* LocksmithAccessibleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB11240618EA9DD4C764AD717E1AC97 /* LocksmithAccessibleOption.swift */; };
+		163A42C443FD72492855793DB332E697 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6973936D059D8540777CC4AA607A12C4 /* Foundation.framework */; };
+		190C123AAFE824056BB560BE5205CE85 /* GameMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E898FC0B8EDB690CAA3F992C3BC86E90 /* GameMenuButton.swift */; };
+		1B0BB074DAA1D0333331F00A2023DA7E /* Pods-MacTenPair-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E10B9CBF702975B4EA1F4984DD248A62 /* Pods-MacTenPair-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D289D03369E7C05652B06DBA8CC3860 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6973936D059D8540777CC4AA607A12C4 /* Foundation.framework */; };
+		1E91626D0CE4501188184884134694DD /* GameKit-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F84B526E68092167AA76B28F09822C5A /* GameKit-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		219E5BCED2167457355ED7632F50DB6A /* SWLogger-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0887C12D04D7BF794DC9C01FCF481791 /* SWLogger-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		271504A6A945733B676501DC475DE674 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B8B38D5B20EA9F94551FC033F5B18 /* Cocoa.framework */; };
 		2C1B95F2CD78510B959BA65C3EA4C6EB /* Pods-TenPairTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A12E1E91C792A446D202AB1D93BB1A64 /* Pods-TenPairTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		301642FDBD977B0E7B9050209FC3D1C0 /* SWLogger-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0120A681AD5BCD00FC7EFAD2FAA42765 /* SWLogger-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305C200153335644CF54EC9643FC6F2A /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA41A08BA3B9725408A955D18804B7E /* GameLoadingView.swift */; };
-		3094DA2E9CB1718785B853BFB65E81AD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BCC4549FDB22BF4330105ADFFC2D10 /* Cocoa.framework */; };
-		3123D84C879E782EC44A476C77192384 /* GameKit-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E736CD0EED36360EBF0306FAAF281E1 /* GameKit-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34244E747B43A2F5CC966849715C470D /* GameKit-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 223F2DFB0956AB4F76E11B3865BF3EE3 /* GameKit-OSX-dummy.m */; };
-		391460C61CC9C45727C2CDBDCE362AA3 /* GameScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8647CED9C6DB798E01FFC21411CEB283 /* GameScrollView.swift */; };
-		3B2344975C2A4D8D53BE9BF7239BB372 /* SlideOutButtonsTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AFDDFD4FC58B2341892574EB4998A9 /* SlideOutButtonsTray.swift */; };
-		3B41214FFE4BBF2E32A60B9C10F5206F /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB8B91131EE3BBE4254DE49390A669 /* LogOutput.swift */; };
-		3B629068F4BE1D7821957056F25E33C1 /* Locksmith-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D51C63A317E53CFAFF87BFEDAAB08B /* Locksmith-dummy.m */; };
-		42890EFA1A9960C220BFA8647831E467 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4489274B305B68103BA240C242F7ED /* Security.framework */; };
-		456CBCD3D8AC834ACBD704DDFCDBF41C /* SWLogger-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220DCED9DDCD7A5DAEA55390D55DA08 /* SWLogger-iOS-dummy.m */; };
-		46485D36E37F397B7F56EE76B3382C85 /* Dictionary_Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8FB0A767204AE5BAB0EF8AF3055729 /* Dictionary_Initializers.swift */; };
-		48B18922FE0A227B722D7EE60BFA9DBB /* ProductsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162B9332F5FAF925517CF714149C384C /* ProductsHandler.swift */; };
-		48F8660D42218C90A76DB691FA88303C /* GameMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81B14A6C8CDF5C404427A41575EF34 /* GameMenuButton.swift */; };
+		322D398F0F130E103B63061A9D1C213C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6973936D059D8540777CC4AA607A12C4 /* Foundation.framework */; };
+		3606EA63E1B786AD07DD93D406A0C995 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0FB1AE3ECCF689B09E4362BB4EC3D6 /* NSAttributedString+Extensions.swift */; };
+		396B56719C28B2C11C54D34DBD36CFFE /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B134550C137B4C3E89F05C42F07E86 /* GameView.swift */; };
+		3B629068F4BE1D7821957056F25E33C1 /* Locksmith-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D19E962D5475F823ED56043BF0AD90FA /* Locksmith-dummy.m */; };
+		40AACC5806EB7F514F5030F88005204D /* SKSpriteNode+MultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3E73212794CC35D67BADEBEC00701 /* SKSpriteNode+MultiLineLabel.swift */; };
+		42890EFA1A9960C220BFA8647831E467 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522040494B0F0CEAB99F4E24270643DB /* Security.framework */; };
+		46485D36E37F397B7F56EE76B3382C85 /* Dictionary_Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35F8EF11A401A555D944968BC9E821 /* Dictionary_Initializers.swift */; };
+		4AB58A7B5AFEBD027F67B9E23D026EFE /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8068048AFBAD04ADFA70320B409C3 /* GameButton.swift */; };
 		4BAF3FA01FB020436826AF50A9605025 /* Pods-TenPairTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E9685D12241976B3E6AE47CE9D51F /* Pods-TenPairTests-dummy.m */; };
-		5043607D58C1308AD5D66DCDC4D39024 /* GameScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4A662EF4FEFD9D81CD28CFB6F1E44 /* GameScrollViewContained.swift */; };
-		5C9BDDBB790ACE3711E8AD09A13E0FB2 /* LocksmithSecurityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57FF59011B5166182ACD87788CDECAB /* LocksmithSecurityClass.swift */; };
-		5EF8C221CE4A4A1A60E1F67C7A76B270 /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52391F5409C88316964CA49E7691919 /* ConsoleOutput.swift */; };
-		612A5931CEEFDFA056FE645BDD784469 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E1672182E4F3103F2188D15892A682 /* Locksmith.swift */; };
-		6546DF4133C07E483CF9C877B766B1DB /* Pods-TenPair-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DC88AD898B246ED6709C4F4323C8F395 /* Pods-TenPair-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C0D0369471D7C8ECE43452B48089CC8 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B87586D020BA1A9AFDEB32699A3751 /* GameView.swift */; };
-		7174272E171E85FEC33F0C9A067FD29A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BCC4549FDB22BF4330105ADFFC2D10 /* Cocoa.framework */; };
-		72245DB2FF26143BD07A3B6BD38120FB /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6977B818B1B47347112AB45CF4DC7D45 /* GameScreen.swift */; };
-		78FAB69FE8E0C37257679EA8E99FCA2D /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB67F4937A9C873615CD071C72723AA /* GameButton.swift */; };
-		7A270D5698FB4D2FF8D7CFA9AC09AF9C /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB8B91131EE3BBE4254DE49390A669 /* LogOutput.swift */; };
-		8058278B6890A99876832C7483EBEE2D /* SKSpriteNode+MultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0569E3AB6A7240FAE3F2AD9C199C7B /* SKSpriteNode+MultiLineLabel.swift */; };
-		82CA5940C3EE99D0984AEC26AEB932F1 /* Pods-MacTenPair-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E10B9CBF702975B4EA1F4984DD248A62 /* Pods-MacTenPair-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8685CB0B3439126AEE1AE6CECBB6B998 /* FeedbackEmailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA0BA75548035D358D61458C0F0CCD /* FeedbackEmailSender.swift */; };
-		87E12D37FC5333935CB8F700974D16D3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935FED79C0CAC546729F44412B5389C /* Log.swift */; };
-		88BCB55AB5BBCD31A9C3C7A2C0A0066F /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B87586D020BA1A9AFDEB32699A3751 /* GameView.swift */; };
-		8A29BDBE8888B0FFF7D211279DD27E11 /* GameMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC8AC0A4F250DE7C833EFF937E987F /* GameMenuScreen.swift */; };
-		8FA8587DE6942BA412E313DAE700E582 /* SWLogger-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B020744E63AA7FE7AA159DCFCDBBB86B /* SWLogger-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		942E8FAB148987DF7FAED1032E2CEB54 /* Pods-MacTenPair-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4296E4B4AD68379897AAF1C8E994D58 /* Pods-MacTenPair-dummy.m */; };
-		9561184A4735527D0E4631CC1E509A07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03509678996E4C363DE0E847135DF88 /* Foundation.framework */; };
-		9885685D442C6469C7C073295FA920FA /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52391F5409C88316964CA49E7691919 /* ConsoleOutput.swift */; };
-		9AFB3A139BD219A105BA7B8389672E49 /* GameMenuPresentationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A321CE1BE2DA0865790C3397EE3B /* GameMenuPresentationContainer.swift */; };
-		A741B7212DECC1A0E7B8EA0FB8D0AA93 /* ShakeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EBFA9403E4DDAAF299D7272C77CC40 /* ShakeWindow.swift */; };
-		AA0B9C265F96CA310C674C330D4C5592 /* Locksmith.h in Headers */ = {isa = PBXBuildFile; fileRef = 475BAC64E667D55D7AC9BF20D5A40837 /* Locksmith.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA7A369776CD5333E7E5A00D1014C479 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13977A903A1FB1E54812D89CB21010E7 /* Game.swift */; };
-		AD763FCA9DE6B765EE7867F1A0D90040 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DE611E9C7BDEEF4E71C0D0014A443A /* StoreKit.framework */; };
-		AF28806811F8BF428F02C53D4CCE743F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03509678996E4C363DE0E847135DF88 /* Foundation.framework */; };
-		B303FE00CBAFB92E2FE11C22C32EB1F4 /* LaughingAdventure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59CD4ECC2BAA4DA001C766C82D3BCA6B /* LaughingAdventure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B648A6D67807AADF1C40122E0EA4135D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03509678996E4C363DE0E847135DF88 /* Foundation.framework */; };
-		BA11DCC191DEF71E8CF102BFCAC373E0 /* GameMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A81B14A6C8CDF5C404427A41575EF34 /* GameMenuButton.swift */; };
-		BA45CEB01570F4716DD4D9D0F634F6C3 /* GameMenuPresentationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A321CE1BE2DA0865790C3397EE3B /* GameMenuPresentationContainer.swift */; };
-		CC2443BEF39BB4254C340BAA445BCBD5 /* LocksmithInternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EB62410093B321EE0C40D2FB8E0985 /* LocksmithInternetAuthenticationType.swift */; };
-		CC7BE9714F82F80DC897A57E5A3806D4 /* SKProduct+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BB6792735B8D77A799395596150D1B /* SKProduct+Extensions.swift */; };
-		D06FC5114DF52F14E8B2D3BE3DCBF4E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE11E830B649CFF8610FD780349752 /* Logger.swift */; };
-		D234B23ACC5F69B9BE581EC70C15F8DE /* LocksmithInternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C159A2A34248D416F0C00FE7EEF32802 /* LocksmithInternetProtocol.swift */; };
-		DA3156E7A0D1DD585F809C95D3E561A8 /* GameMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC8AC0A4F250DE7C833EFF937E987F /* GameMenuScreen.swift */; };
-		DA7D1D6D76C15265500FC6D680DA5275 /* GameScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8647CED9C6DB798E01FFC21411CEB283 /* GameScrollView.swift */; };
-		DE58CA4BB3A83C326C6DBFA5FBCD9F05 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935FED79C0CAC546729F44412B5389C /* Log.swift */; };
-		DEB1BAA2CE3C8C977A0EDA95CB73039E /* Pods-TenPair-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C3B3C206BCDD38551389ACBBE94517 /* Pods-TenPair-dummy.m */; };
-		DEBA60B35469CCA757C5D4F504CD238E /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6977B818B1B47347112AB45CF4DC7D45 /* GameScreen.swift */; };
-		DF78859AC5F7A1FF96BD9A350E612F46 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB67F4937A9C873615CD071C72723AA /* GameButton.swift */; };
-		E0A63A64B5308C6001A9B8060155134B /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A568944FB200DD71A3BB45866D429 /* FileOutput.swift */; };
-		E221571FD7A1251793A019F3F0601557 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F97F42878233CBC0202E0F46F80C1C /* Logging.swift */; };
-		E6A18D4D5BAB182D6B5B28CBFAE617D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03509678996E4C363DE0E847135DF88 /* Foundation.framework */; };
-		E828B95CB4657FECF3E361A74BDF4A2C /* GameKit-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC10DD6F8071164CC2A8D82254ED5BA9 /* GameKit-iOS-dummy.m */; };
-		E965B1287E71AA1F9D6B630D67E9DAA7 /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A568944FB200DD71A3BB45866D429 /* FileOutput.swift */; };
-		EA3989118F88958917CAD89FB190BE3E /* SKSpriteNode+MultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0569E3AB6A7240FAE3F2AD9C199C7B /* SKSpriteNode+MultiLineLabel.swift */; };
-		ECB5E7EC462A4941F148AA195097B6E1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BCC4549FDB22BF4330105ADFFC2D10 /* Cocoa.framework */; };
-		ECCBA42448DDE9137CC0C6080E49A3CB /* SlideOutButtonsTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AFDDFD4FC58B2341892574EB4998A9 /* SlideOutButtonsTray.swift */; };
-		ED5C85392A11781EF0AD121A40CE26E8 /* LaughingAdventure-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21060CF0567B5F12C2249D51094ACCEC /* LaughingAdventure-dummy.m */; };
-		F13B8A01F5C13A27406A60627C9CD86E /* SWLogger-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C97004AE6C3ED9D9D0EDB2D8A29A20 /* SWLogger-OSX-dummy.m */; };
-		F20A5346DA25F6FD8E50AD9CAE43BA98 /* GameScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4A662EF4FEFD9D81CD28CFB6F1E44 /* GameScrollViewContained.swift */; };
-		FA2A4E896340FA525D7F0D393F3C40CB /* GameKit-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E724E15DBEC33C2CDC891F528F17C5E /* GameKit-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		512B2E10B3B9B0C0BA4F4FA0EAB361B3 /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E8603DA6B2EDDD487BA135CC615019 /* LogOutput.swift */; };
+		578421D410885A767433980179CF289C /* Purchaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E4FDD5BFB0D6C04D20E9659D429C72 /* Purchaser.swift */; };
+		5B1AAE520804E39BF6EFD33AAE5D0662 /* SKSpriteNode+MultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3E73212794CC35D67BADEBEC00701 /* SKSpriteNode+MultiLineLabel.swift */; };
+		5B507866F3284F5E64978C04E2FB0BCE /* GameScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D97E93805A4B8BAD9D214CB6FAF1D /* GameScrollView.swift */; };
+		5C9BDDBB790ACE3711E8AD09A13E0FB2 /* LocksmithSecurityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA75E2155C88C7A805948BB78E434C66 /* LocksmithSecurityClass.swift */; };
+		5D3AF23115BEC7BB5F6EBD6815FC084D /* LaughingAdventure-Logging-Purchase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 49AE458968C18758FFF93D64ED71368C /* LaughingAdventure-Logging-Purchase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		612A5931CEEFDFA056FE645BDD784469 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7179C53C1B75F600D4DCA03E5BDD85F /* Locksmith.swift */; };
+		61EC5A005FBD765AD254E73A2C9708FE /* ShakeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34B024DDFACF636A7131C078B481E09 /* ShakeWindow.swift */; };
+		64C8FE34B97FC95D057F901F7D3E9A25 /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F89FDF4FEE2F95B8BEA4C1314A4984D /* ConsoleOutput.swift */; };
+		65894AFF816C9B5D39A064279F4D6103 /* GameKit-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B1BE70E0392B9CAD60D4463B1A200B95 /* GameKit-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6996625B0F2B8DFA14AC154BBC4F2D33 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC197DC052490FCD612D450394BDDA84 /* Logger.swift */; };
+		6AE1EFE75F81A3B85FF27BA2C9100CD4 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29504AD433346EC5E82854A46F7D707 /* GameScreen.swift */; };
+		6E3BEEE1B16C85809EEB31A545EABD19 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE7D908894F56185BFE2BA91A725134 /* Log.swift */; };
+		70529C8B9F4280864A58548354F78698 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8068048AFBAD04ADFA70320B409C3 /* GameButton.swift */; };
+		734D8014FC05435EF086DB56DA3186E5 /* GameKit-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A1F86993F02C17DB5CC2327452BCD /* GameKit-iOS-dummy.m */; };
+		7388AEBF2972EF7476E03BE9E02AA38B /* GameMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4717E8C593B16C2FCCC0989D9B0DC2 /* GameMenuScreen.swift */; };
+		74F608989E3CD78B4640F4B37662F716 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A9A5794D68A117895C3F1961869630 /* Logging.swift */; };
+		7BD3BAFDC5AA93FE73597E30460185F3 /* GameMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4717E8C593B16C2FCCC0989D9B0DC2 /* GameMenuScreen.swift */; };
+		7D50F90824A356EA091ED8B2BD6BB05C /* SlideOutButtonsTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E36B61FB8410D6A4469E27F6CD76C3 /* SlideOutButtonsTray.swift */; };
+		7E9C61E8597FCD04160B9FB0AAA30EB2 /* LaughingAdventure-Feedback-Logging-Purchase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A44287FE2EA78F74321F2C643FF55B0 /* LaughingAdventure-Feedback-Logging-Purchase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80AC3EF0C228CCCF8B6223057A2757B1 /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE25D2556B2EDF0890CB00C7BD7A9E2 /* FileOutput.swift */; };
+		87AD0F353A2162A94070AA3514D5E3F9 /* ProductsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA80D76603B9943BBAC4A877F3E5891 /* ProductsHandler.swift */; };
+		89EED1DFA9F40DB3BAA2A286537069E8 /* GameMenuPresentationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A73E46337BD921B9B1B070884A112D /* GameMenuPresentationContainer.swift */; };
+		8F9A78F719398BBE4CB363E0AE3E62A7 /* SWLogger-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B445FDC0839797F94EAC6A20290D88B /* SWLogger-iOS-dummy.m */; };
+		90E08DAB06A6D33031440907A6F8B5B3 /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E8603DA6B2EDDD487BA135CC615019 /* LogOutput.swift */; };
+		939282C04F37F4F7DAB6CA6E2D8C9583 /* GameMenuPresentationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A73E46337BD921B9B1B070884A112D /* GameMenuPresentationContainer.swift */; };
+		93C0051260F5D1629171E9B3BCAA0EF7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B777D5B3A0621E002BC21EE8497E5063 /* Game.swift */; };
+		9561184A4735527D0E4631CC1E509A07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6973936D059D8540777CC4AA607A12C4 /* Foundation.framework */; };
+		960CAD647F0A61F2A8D7AD4349789190 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B777D5B3A0621E002BC21EE8497E5063 /* Game.swift */; };
+		99E46F029B37DA5E8D2606637A09B625 /* GameMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E898FC0B8EDB690CAA3F992C3BC86E90 /* GameMenuButton.swift */; };
+		9D031E4445BA0DCC93E5370815F4727B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B8B38D5B20EA9F94551FC033F5B18 /* Cocoa.framework */; };
+		A025ED3FC1C102C1D2E6AD765AF45C09 /* SKProduct+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F42A44BF72313CD2B2F7E20ADE06466 /* SKProduct+Extensions.swift */; };
+		A11D003406720098BCC938FE14558855 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29504AD433346EC5E82854A46F7D707 /* GameScreen.swift */; };
+		A50D0EE8989F415D9D3CFC17D2E0B613 /* GameScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A9A61376E06E31594A7EEE4227184 /* GameScrollViewContained.swift */; };
+		A9F1014FD9FE821820F9AF471ADC6052 /* GameLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08566FF85F58E6713B08172D3C2700E1 /* GameLoadingView.swift */; };
+		AA0B9C265F96CA310C674C330D4C5592 /* Locksmith.h in Headers */ = {isa = PBXBuildFile; fileRef = 814DD7DFE6BA11EB219341A86CD53B48 /* Locksmith.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD51BA00411BA3CF0AB41DBC07987792 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A575B037762EFF25762CD41D9378CA47 /* StoreKit.framework */; };
+		B33A43D5AB8F73C1BF662008350736D5 /* LaughingAdventure-Logging-Purchase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 970A7A06FF36883A2E90342F6803B8D5 /* LaughingAdventure-Logging-Purchase-dummy.m */; };
+		B48C62ACB429C5745C02118D6E66BE45 /* GameScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D97E93805A4B8BAD9D214CB6FAF1D /* GameScrollView.swift */; };
+		BC5259129A21F0698DC7FA55A99B716E /* GameKit-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DE563BB5FE135458B1711A17D46DC1 /* GameKit-OSX-dummy.m */; };
+		BF95E89A867D08EC3DFBC6385B4F6D55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6973936D059D8540777CC4AA607A12C4 /* Foundation.framework */; };
+		C0374E347E0FE71EF210A5DC20482BB3 /* SWLogger-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 192C42D65EDB74A8C4040926E979DE24 /* SWLogger-OSX-dummy.m */; };
+		C323EB0F16DE968D48871EE6E9AF7C38 /* SWLogger-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E00079174340417C935BC1E505AB94F6 /* SWLogger-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C82094B83253B28EE603A0D16C188E81 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A9A5794D68A117895C3F1961869630 /* Logging.swift */; };
+		C9AE8747F6B7B8D2EDA1C0AD7B282863 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC197DC052490FCD612D450394BDDA84 /* Logger.swift */; };
+		CC2443BEF39BB4254C340BAA445BCBD5 /* LocksmithInternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1D66DCC7EC582CD19BB98C99CBA79 /* LocksmithInternetAuthenticationType.swift */; };
+		CC97C5F88B727256D689E7063ECF6AC2 /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE25D2556B2EDF0890CB00C7BD7A9E2 /* FileOutput.swift */; };
+		D234B23ACC5F69B9BE581EC70C15F8DE /* LocksmithInternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70797DA45A0BA58DDFC01C49598103A5 /* LocksmithInternetProtocol.swift */; };
+		D542B533AD8AD142129D1C1B61FB9826 /* Pods-TenPair-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DC88AD898B246ED6709C4F4323C8F395 /* Pods-TenPair-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7607E06A5DDDCFBFB4751CF19E3BF00 /* LaughingAdventure-Feedback-Logging-Purchase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8E62B32E5C42432DF187C854234105 /* LaughingAdventure-Feedback-Logging-Purchase-dummy.m */; };
+		D8A8E64EC0045DA54FE7B97C5F4AF489 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6973936D059D8540777CC4AA607A12C4 /* Foundation.framework */; };
+		DA6A4CA4BBACB50D3DD3C73E33031899 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53630C2157650EFBEB030B95480387DD /* StoreKit.framework */; };
+		E657E11D85EC81118A287FA85D0C3A20 /* Purchaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E4FDD5BFB0D6C04D20E9659D429C72 /* Purchaser.swift */; };
+		EA879A3A8A49325F3AF03C389F49963F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B8B38D5B20EA9F94551FC033F5B18 /* Cocoa.framework */; };
+		EC14C81C0014FF9F62D22912C2585C92 /* ProductsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA80D76603B9943BBAC4A877F3E5891 /* ProductsHandler.swift */; };
+		ECB6FE0EEDC60DA07C354813D6E00A0E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B8B38D5B20EA9F94551FC033F5B18 /* Cocoa.framework */; };
+		ED031AC066142694DF8F7C07D6225689 /* Pods-TenPair-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C3B3C206BCDD38551389ACBBE94517 /* Pods-TenPair-dummy.m */; };
+		EE89490B92CBA17906FD79C388BE02F0 /* SlideOutButtonsTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E36B61FB8410D6A4469E27F6CD76C3 /* SlideOutButtonsTray.swift */; };
+		FFF9B500295D24E8F2FADDC970D77467 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE7D908894F56185BFE2BA91A725134 /* Log.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4265DF46A75EFFF55D4F645FF5B47C7E /* PBXContainerItemProxy */ = {
+		10E959582C02FFC20497E1CE2190CA1E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E038ED8128B77FB2F9CE4BEDA6535EF0;
-			remoteInfo = LaughingAdventure;
+			remoteGlobalIDString = 970F183253B70A77111C468D36EB6CB3;
+			remoteInfo = "LaughingAdventure-Feedback-Logging-Purchase";
 		};
-		5E5BD857662BAFD640CB091D94E9FB56 /* PBXContainerItemProxy */ = {
+		46007850C6EC97E8A1B22E0DA9B977A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 016AC58FCE2F43543EC02494C1B72F7B;
+			remoteGlobalIDString = D4DB262B3512F64810BB5C5D336D4E73;
 			remoteInfo = "GameKit-iOS";
 		};
-		893B7594F21EDBC9A6AA6DEA47587862 /* PBXContainerItemProxy */ = {
+		5457843E7CD623D7772F4144677CC649 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D9A06BBC1B8298E1C6321EFCB74C5E3;
+			remoteInfo = "GameKit-OSX";
+		};
+		6F21F13D186D3AC515C64D6C283D4A7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32C76B994D3B14CA80494A33E04DD361;
+			remoteInfo = "LaughingAdventure-Logging-Purchase";
+		};
+		8092B1EFD60FE18E9B4AA6181CD99A63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20C114BC2F695DA3784614A7216DB3F8;
+			remoteInfo = "SWLogger-iOS";
+		};
+		D74EE9F7AF55D774FE91296B51728507 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7813089A7101283F3540A2195B33B56;
+			remoteInfo = "SWLogger-OSX";
+		};
+		EC386BFB61770E097E5DDDA7972083F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 92943306EC8070DF9CD02ECD505D2CD5;
 			remoteInfo = Locksmith;
 		};
-		D3D1B06AA0D9276E5CF08D851CCE0AE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CCAEAB1614A5D5E6C8C569588C044D88;
-			remoteInfo = "SWLogger-iOS";
-		};
-		EFA71C11EFBE3DA49064C1207EDEF4A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 570FDFC594E156D97DA44B4E0758333E;
-			remoteInfo = "SWLogger-OSX";
-		};
-		F965367B0F1B13B781FCD5D7BD4A4895 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EFBEE1D58F7EF6E79F9F2536105CB6C9;
-			remoteInfo = "GameKit-OSX";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0120A681AD5BCD00FC7EFAD2FAA42765 /* SWLogger-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-OSX-umbrella.h"; sourceTree = "<group>"; };
-		04E51AC12D44E1DA95206A5A7E1AE575 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
-		0904AA2C409B009367C10BF32A7799C3 /* SWLogger-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "SWLogger-iOS.modulemap"; path = "../SWLogger-iOS/SWLogger-iOS.modulemap"; sourceTree = "<group>"; };
-		0AF32B26030B954743F3F70DBB3E4BD3 /* Locksmith-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-umbrella.h"; sourceTree = "<group>"; };
+		004D97E93805A4B8BAD9D214CB6FAF1D /* GameScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollView.swift; path = Source/GameScrollView.swift; sourceTree = "<group>"; };
+		0769244035534C9B04F65B000F1E1951 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		08566FF85F58E6713B08172D3C2700E1 /* GameLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameLoadingView.swift; path = Source/GameLoadingView.swift; sourceTree = "<group>"; };
+		0887C12D04D7BF794DC9C01FCF481791 /* SWLogger-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-OSX-umbrella.h"; sourceTree = "<group>"; };
+		0A0C6EF28F390E906189A6176AC1B3DE /* LaughingAdventure-Logging-Purchase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LaughingAdventure-Logging-Purchase-prefix.pch"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase-prefix.pch"; sourceTree = "<group>"; };
 		0F2A2EDC14CABF1BF40F85387799BA04 /* Pods-TenPairTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TenPairTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0F89FDF4FEE2F95B8BEA4C1314A4984D /* ConsoleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleOutput.swift; path = Source/ConsoleOutput.swift; sourceTree = "<group>"; };
 		109389826F1873CCD767B011F46E3FEE /* Pods-TenPair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPair.release.xcconfig"; sourceTree = "<group>"; };
 		114682A3136FA6CEA960665426A03C44 /* Pods-TenPair-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPair-resources.sh"; sourceTree = "<group>"; };
-		11EB62410093B321EE0C40D2FB8E0985 /* LocksmithInternetAuthenticationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetAuthenticationType.swift; path = Source/LocksmithInternetAuthenticationType.swift; sourceTree = "<group>"; };
-		12AD338DEA97DDB65F44E7516A7396F0 /* SWLogger-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SWLogger-iOS-prefix.pch"; path = "../SWLogger-iOS/SWLogger-iOS-prefix.pch"; sourceTree = "<group>"; };
-		13977A903A1FB1E54812D89CB21010E7 /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Source/Game.swift; sourceTree = "<group>"; };
-		162B9332F5FAF925517CF714149C384C /* ProductsHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductsHandler.swift; path = Source/Purchase/ProductsHandler.swift; sourceTree = "<group>"; };
+		1348997D8EE10A47AF0923F8BEFA67BA /* SWLogger-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "SWLogger-OSX.modulemap"; sourceTree = "<group>"; };
 		187D53F94BD9EE74D2BFFAD37D2A57AF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19D5D14F58B009B856A4C29BDABC449C /* Locksmith-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-prefix.pch"; sourceTree = "<group>"; };
-		19EBFA9403E4DDAAF299D7272C77CC40 /* ShakeWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShakeWindow.swift; path = Source/ShakeWindow.swift; sourceTree = "<group>"; };
-		1EA41A08BA3B9725408A955D18804B7E /* GameLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameLoadingView.swift; path = Source/GameLoadingView.swift; sourceTree = "<group>"; };
-		21060CF0567B5F12C2249D51094ACCEC /* LaughingAdventure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LaughingAdventure-dummy.m"; sourceTree = "<group>"; };
-		223F2DFB0956AB4F76E11B3865BF3EE3 /* GameKit-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GameKit-OSX-dummy.m"; sourceTree = "<group>"; };
+		192C42D65EDB74A8C4040926E979DE24 /* SWLogger-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWLogger-OSX-dummy.m"; sourceTree = "<group>"; };
+		1A35F8EF11A401A555D944968BC9E821 /* Dictionary_Initializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dictionary_Initializers.swift; path = Source/Dictionary_Initializers.swift; sourceTree = "<group>"; };
+		1D40A76E4DB22592E3EA9F08B1184EA9 /* LaughingAdventure-Logging-Purchase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "LaughingAdventure-Logging-Purchase.modulemap"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase.modulemap"; sourceTree = "<group>"; };
+		1D4717E8C593B16C2FCCC0989D9B0DC2 /* GameMenuScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuScreen.swift; path = Source/GameMenuScreen.swift; sourceTree = "<group>"; };
+		1E6F27A7B014BB627EEA78A28A26894D /* Pods_MacTenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MacTenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F6C9A5F8C98B5C9C6FEA59F8F7B130D /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23984DC934EFA451539E3DC29C8C05D3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		23AACCD143AA2A32F91D7FB0B4F7DC7D /* GameKit-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "GameKit-OSX.xcconfig"; sourceTree = "<group>"; };
-		23BB6792735B8D77A799395596150D1B /* SKProduct+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKProduct+Extensions.swift"; path = "Source/Purchase/SKProduct+Extensions.swift"; sourceTree = "<group>"; };
-		23F9337C212C2602B1281D966C700290 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		245E0C86417BD36D98B0075FE61AC8B8 /* SWLogger-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SWLogger-OSX.xcconfig"; sourceTree = "<group>"; };
 		257BEA3111194893395814385065DB49 /* Pods-MacTenPair-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MacTenPair-acknowledgements.plist"; sourceTree = "<group>"; };
-		26D4A662EF4FEFD9D81CD28CFB6F1E44 /* GameScrollViewContained.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollViewContained.swift; path = Source/GameScrollViewContained.swift; sourceTree = "<group>"; };
+		25F899FCDF8039F0BE8455DD3CEBD7F8 /* GameKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GameKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		278AB4E8054CA05CACF5F9FCDECA5722 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../SWLogger-iOS/Info.plist"; sourceTree = "<group>"; };
 		28AF2996EB4B812BFBF50F8D8C89E4BD /* Pods-MacTenPair-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MacTenPair-frameworks.sh"; sourceTree = "<group>"; };
 		2A8D3135AB1D943CCA469485DEA2E1FB /* Pods-TenPairTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TenPairTests.modulemap"; sourceTree = "<group>"; };
-		2A8FB0A767204AE5BAB0EF8AF3055729 /* Dictionary_Initializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dictionary_Initializers.swift; path = Source/Dictionary_Initializers.swift; sourceTree = "<group>"; };
-		2CDB8B91131EE3BBE4254DE49390A669 /* LogOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogOutput.swift; path = Source/LogOutput.swift; sourceTree = "<group>"; };
-		2DAA0BA75548035D358D61458C0F0CCD /* FeedbackEmailSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeedbackEmailSender.swift; path = Source/Feedback/FeedbackEmailSender.swift; sourceTree = "<group>"; };
-		33B87586D020BA1A9AFDEB32699A3751 /* GameView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameView.swift; path = Source/GameView.swift; sourceTree = "<group>"; };
+		2BF162C76B2D78B2B2C05E705FDA62B6 /* GameKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GameKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C284223F3203A4DB0E9D3CACECDB4D /* Pods-TenPair-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TenPair-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3DD32193D8ABEC8ADCB1D27B52DEFEC5 /* Pods_TenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FC26E051E3E51034FD053F56E6EFB3D /* Locksmith.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Locksmith.modulemap; sourceTree = "<group>"; };
+		38DC082FD02A0C148064CC9CA0B04792 /* GameKit-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "GameKit-OSX.modulemap"; sourceTree = "<group>"; };
+		38E8603DA6B2EDDD487BA135CC615019 /* LogOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogOutput.swift; path = Source/LogOutput.swift; sourceTree = "<group>"; };
+		3DE7D908894F56185BFE2BA91A725134 /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Source/Log.swift; sourceTree = "<group>"; };
+		3F42A44BF72313CD2B2F7E20ADE06466 /* SKProduct+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKProduct+Extensions.swift"; path = "Source/Purchase/SKProduct+Extensions.swift"; sourceTree = "<group>"; };
 		409B323F4B5F1F2560FAC769C7DCFB3B /* Pods-MacTenPair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MacTenPair.release.xcconfig"; sourceTree = "<group>"; };
 		40B3AFA63EFFA7C5DA3904CCF6BF3396 /* Pods-TenPairTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPairTests.debug.xcconfig"; sourceTree = "<group>"; };
 		420A430E0392283C5C10E935E2D41809 /* Pods-TenPairTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPairTests.release.xcconfig"; sourceTree = "<group>"; };
-		475BAC64E667D55D7AC9BF20D5A40837 /* Locksmith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Locksmith.h; path = Source/Locksmith.h; sourceTree = "<group>"; };
-		4935FED79C0CAC546729F44412B5389C /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Source/Log.swift; sourceTree = "<group>"; };
-		49F97F42878233CBC0202E0F46F80C1C /* Logging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = Source/Log/Logging.swift; sourceTree = "<group>"; };
-		4E641D08EB6CF0DF9C440DAA2007F27A /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		51AFDDFD4FC58B2341892574EB4998A9 /* SlideOutButtonsTray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SlideOutButtonsTray.swift; path = Source/SlideOutButtonsTray.swift; sourceTree = "<group>"; };
-		540FCF31A2E70C7214EA3365064689C3 /* Pods_TenPairTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPairTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		580BABBF0BD57C2DBD44128B8CDCAB3C /* Locksmith.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Locksmith.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		59CD4ECC2BAA4DA001C766C82D3BCA6B /* LaughingAdventure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-umbrella.h"; sourceTree = "<group>"; };
-		5A81B14A6C8CDF5C404427A41575EF34 /* GameMenuButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuButton.swift; path = Source/GameMenuButton.swift; sourceTree = "<group>"; };
-		5C1E47B55193760374DA7F2FF2F01CE9 /* SWLogger-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-OSX-prefix.pch"; sourceTree = "<group>"; };
-		5E05338B83EE1E16D0ACCF1D9EAA3497 /* Locksmith.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Locksmith.xcconfig; sourceTree = "<group>"; };
-		5E736CD0EED36360EBF0306FAAF281E1 /* GameKit-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-OSX-umbrella.h"; sourceTree = "<group>"; };
-		5EB67F4937A9C873615CD071C72723AA /* GameButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameButton.swift; path = Source/GameButton.swift; sourceTree = "<group>"; };
-		62DE611E9C7BDEEF4E71C0D0014A443A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
-		6977B818B1B47347112AB45CF4DC7D45 /* GameScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScreen.swift; path = Source/GameScreen.swift; sourceTree = "<group>"; };
-		6AC7CA4C43D25B59C6BD400654F699F6 /* LaughingAdventure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LaughingAdventure.modulemap; sourceTree = "<group>"; };
+		44D3A39E5E6855D43284B1FB26D74D0F /* LaughingAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaughingAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45191928BDC73488BCB7E2E4B76832EF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		458D54DA6BDBC7DBF49669582A3A5306 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		49AE458968C18758FFF93D64ED71368C /* LaughingAdventure-Logging-Purchase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LaughingAdventure-Logging-Purchase-umbrella.h"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase-umbrella.h"; sourceTree = "<group>"; };
+		4FFE1EE4B2FD75502146A132AB99382E /* LaughingAdventure-Feedback-Logging-Purchase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "LaughingAdventure-Feedback-Logging-Purchase.xcconfig"; sourceTree = "<group>"; };
+		522040494B0F0CEAB99F4E24270643DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		53630C2157650EFBEB030B95480387DD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		54E8068048AFBAD04ADFA70320B409C3 /* GameButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameButton.swift; path = Source/GameButton.swift; sourceTree = "<group>"; };
+		55B134550C137B4C3E89F05C42F07E86 /* GameView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameView.swift; path = Source/GameView.swift; sourceTree = "<group>"; };
+		56B1D66DCC7EC582CD19BB98C99CBA79 /* LocksmithInternetAuthenticationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetAuthenticationType.swift; path = Source/LocksmithInternetAuthenticationType.swift; sourceTree = "<group>"; };
+		5A44287FE2EA78F74321F2C643FF55B0 /* LaughingAdventure-Feedback-Logging-Purchase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-Feedback-Logging-Purchase-umbrella.h"; sourceTree = "<group>"; };
+		5A6FE69606D3CF3D72983EBB17DF28FA /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
+		5F5CC9469E48D9465EC418E2FEE58624 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
+		5FC3E73212794CC35D67BADEBEC00701 /* SKSpriteNode+MultiLineLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKSpriteNode+MultiLineLabel.swift"; path = "Source/SKSpriteNode+MultiLineLabel.swift"; sourceTree = "<group>"; };
+		640F5BFDAF0A6D788B39028B7A40BD16 /* SWLogger-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-OSX-prefix.pch"; sourceTree = "<group>"; };
+		6973936D059D8540777CC4AA607A12C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6AEF7424C7F532B2158ACE0A785D3F65 /* Locksmith.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Locksmith.xcconfig; sourceTree = "<group>"; };
 		6B0E9685D12241976B3E6AE47CE9D51F /* Pods-TenPairTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TenPairTests-dummy.m"; sourceTree = "<group>"; };
+		6B445FDC0839797F94EAC6A20290D88B /* SWLogger-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SWLogger-iOS-dummy.m"; path = "../SWLogger-iOS/SWLogger-iOS-dummy.m"; sourceTree = "<group>"; };
+		6E3476D5CBB0108A171CB65364B9767C /* SWLogger-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SWLogger-iOS.xcconfig"; path = "../SWLogger-iOS/SWLogger-iOS.xcconfig"; sourceTree = "<group>"; };
 		6E3560C2A2475037D3B7B52DFADE5FE1 /* Pods-MacTenPair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MacTenPair.debug.xcconfig"; sourceTree = "<group>"; };
 		6F2C79757C7A625AE3EA9C580EC5A8A9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7160E0C8CA4BFB5D60BADBB54B903880 /* GameKit-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GameKit-iOS-prefix.pch"; path = "../GameKit-iOS/GameKit-iOS-prefix.pch"; sourceTree = "<group>"; };
-		763A568944FB200DD71A3BB45866D429 /* FileOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileOutput.swift; path = Source/FileOutput.swift; sourceTree = "<group>"; };
-		7930C49C9F903E7A20FCE30995005342 /* SWLogger-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "SWLogger-OSX.modulemap"; sourceTree = "<group>"; };
-		7C9FEE5C77DFF2BA27B8355E10DCC388 /* LocksmithError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithError.swift; path = Source/LocksmithError.swift; sourceTree = "<group>"; };
-		7D01381A1A814B98014E766DCF5575E5 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
-		7DB195B0213908ED81422536A0DB7A13 /* LaughingAdventure-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-prefix.pch"; sourceTree = "<group>"; };
-		7DD18E39F801A1F6B34B1A4CDC6CB57B /* LaughingAdventure.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LaughingAdventure.xcconfig; sourceTree = "<group>"; };
-		7E724E15DBEC33C2CDC891F528F17C5E /* GameKit-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GameKit-iOS-umbrella.h"; path = "../GameKit-iOS/GameKit-iOS-umbrella.h"; sourceTree = "<group>"; };
+		6FF1C95C6FB08F0FF397353283841D6F /* GameKit-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GameKit-iOS-prefix.pch"; path = "../GameKit-iOS/GameKit-iOS-prefix.pch"; sourceTree = "<group>"; };
+		70797DA45A0BA58DDFC01C49598103A5 /* LocksmithInternetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetProtocol.swift; path = Source/LocksmithInternetProtocol.swift; sourceTree = "<group>"; };
+		71DE563BB5FE135458B1711A17D46DC1 /* GameKit-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GameKit-OSX-dummy.m"; sourceTree = "<group>"; };
+		748B5FD43AE356B1A7DAB90ECC08D3B8 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		7A7AE8E22D067690D055797C0DE34418 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DC9F5AD7A6858305CABA88395E3A8C4 /* LaughingAdventure-Feedback-Logging-Purchase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-Feedback-Logging-Purchase-prefix.pch"; sourceTree = "<group>"; };
+		7F53CB48F5A6316FCBDFF1D6E5933542 /* GameKit-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "GameKit-iOS.xcconfig"; path = "../GameKit-iOS/GameKit-iOS.xcconfig"; sourceTree = "<group>"; };
+		80A9A5794D68A117895C3F1961869630 /* Logging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = Source/Log/Logging.swift; sourceTree = "<group>"; };
 		813ADD8C3E4DBB982DA9F7F111C24CD9 /* Pods-MacTenPair-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MacTenPair-acknowledgements.markdown"; sourceTree = "<group>"; };
-		845890F7B0A687925E58081D5A4803B7 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		84B8DB6746A0BB4E28954DCAF15DCA9B /* GameKit-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "GameKit-OSX.modulemap"; sourceTree = "<group>"; };
-		8647CED9C6DB798E01FFC21411CEB283 /* GameScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollView.swift; path = Source/GameScrollView.swift; sourceTree = "<group>"; };
-		86E1672182E4F3103F2188D15892A682 /* Locksmith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locksmith.swift; path = Source/Locksmith.swift; sourceTree = "<group>"; };
-		899598C91BF77E40ACC0559CB37229DD /* LaughingAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaughingAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		89D51C63A317E53CFAFF87BFEDAAB08B /* Locksmith-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Locksmith-dummy.m"; sourceTree = "<group>"; };
+		814DD7DFE6BA11EB219341A86CD53B48 /* Locksmith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Locksmith.h; path = Source/Locksmith.h; sourceTree = "<group>"; };
+		834A1F86993F02C17DB5CC2327452BCD /* GameKit-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GameKit-iOS-dummy.m"; path = "../GameKit-iOS/GameKit-iOS-dummy.m"; sourceTree = "<group>"; };
+		85F485C173D7EF3E2041E057190F1682 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8738013B5144EE7C9B7411940C576CA8 /* LaughingAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaughingAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7757134149D17AF4AC14F4FB13BB62 /* Pods-MacTenPair.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MacTenPair.modulemap"; sourceTree = "<group>"; };
+		8FD5D887C8567ECF3B024C26E04B7797 /* GameKit-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "GameKit-iOS.modulemap"; path = "../GameKit-iOS/GameKit-iOS.modulemap"; sourceTree = "<group>"; };
 		90047143DE9C46DF8D6599A8437CE3B2 /* Pods-TenPairTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPairTests-resources.sh"; sourceTree = "<group>"; };
-		9220DCED9DDCD7A5DAEA55390D55DA08 /* SWLogger-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SWLogger-iOS-dummy.m"; path = "../SWLogger-iOS/SWLogger-iOS-dummy.m"; sourceTree = "<group>"; };
-		93A335088DD5C409A898FB5ACD4B3F08 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92D845F4907FF41C932E5C2E962F338A /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9441621B8454096423E67EBC29B4B79F /* Pods-TenPair.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TenPair.modulemap"; sourceTree = "<group>"; };
+		954B8B38D5B20EA9F94551FC033F5B18 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		95C3B3C206BCDD38551389ACBBE94517 /* Pods-TenPair-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TenPair-dummy.m"; sourceTree = "<group>"; };
-		976A5E60927059AFB16D1125B790E0E5 /* Purchaser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Purchaser.swift; path = Source/Purchase/Purchaser.swift; sourceTree = "<group>"; };
-		9CB94ECC71B0678744F54A8CA4F23AE9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../GameKit-iOS/Info.plist"; sourceTree = "<group>"; };
+		970A7A06FF36883A2E90342F6803B8D5 /* LaughingAdventure-Logging-Purchase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "LaughingAdventure-Logging-Purchase-dummy.m"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase-dummy.m"; sourceTree = "<group>"; };
+		97606965B9EBFAF4AC2D7BE8D558670C /* Locksmith.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Locksmith.modulemap; sourceTree = "<group>"; };
+		9DAFF347E73DABC8FA2335428C62FD73 /* GameKit-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "GameKit-OSX.xcconfig"; sourceTree = "<group>"; };
+		9FD1EB9D37AF643BB408B113498A2A68 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../LaughingAdventure-Logging-Purchase/Info.plist"; sourceTree = "<group>"; };
 		A03DA2598FD9A0B1ED89F93CAE7C5E41 /* Pods-TenPair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TenPair.debug.xcconfig"; sourceTree = "<group>"; };
+		A0AB75DD72408686C08E20E16CB29842 /* Pods_TenPairTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPairTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12E1E91C792A446D202AB1D93BB1A64 /* Pods-TenPairTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TenPairTests-umbrella.h"; sourceTree = "<group>"; };
 		A55EEB28CCD9849C3D3395D1C4775D9F /* Pods-TenPairTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPairTests-frameworks.sh"; sourceTree = "<group>"; };
+		A575B037762EFF25762CD41D9378CA47 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		A7135317D00F9CB2CA535B98E5B0AFD0 /* Pods-MacTenPair-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MacTenPair-resources.sh"; sourceTree = "<group>"; };
-		AA0569E3AB6A7240FAE3F2AD9C199C7B /* SKSpriteNode+MultiLineLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKSpriteNode+MultiLineLabel.swift"; path = "Source/SKSpriteNode+MultiLineLabel.swift"; sourceTree = "<group>"; };
+		A7557A95A649AAB233A81D8E4E188302 /* LocksmithError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithError.swift; path = Source/LocksmithError.swift; sourceTree = "<group>"; };
+		A77EF2AEBFEEA04984CFC49D45B8ADDB /* SWLogger-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "SWLogger-iOS.modulemap"; path = "../SWLogger-iOS/SWLogger-iOS.modulemap"; sourceTree = "<group>"; };
 		AA84EB4958C431AED10ECA5D1280F352 /* Pods-TenPair-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TenPair-frameworks.sh"; sourceTree = "<group>"; };
-		AB78A321CE1BE2DA0865790C3397EE3B /* GameMenuPresentationContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuPresentationContainer.swift; path = Source/GameMenuPresentationContainer.swift; sourceTree = "<group>"; };
-		AED4998D7C587C5BF4D77BEA4D836CEA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF153B6A008EECF3DE9E1F9C5F5DD4D1 /* GameKit-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "GameKit-iOS.modulemap"; path = "../GameKit-iOS/GameKit-iOS.modulemap"; sourceTree = "<group>"; };
-		B020744E63AA7FE7AA159DCFCDBBB86B /* SWLogger-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SWLogger-iOS-umbrella.h"; path = "../SWLogger-iOS/SWLogger-iOS-umbrella.h"; sourceTree = "<group>"; };
-		B03509678996E4C363DE0E847135DF88 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		B1BE70E0392B9CAD60D4463B1A200B95 /* GameKit-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-OSX-umbrella.h"; sourceTree = "<group>"; };
 		B4296E4B4AD68379897AAF1C8E994D58 /* Pods-MacTenPair-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MacTenPair-dummy.m"; sourceTree = "<group>"; };
-		B5FFAC002B7EAA5DAC3CF62FED139A80 /* GameKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GameKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7ECA4315535D9F23184960C9A29F5BB /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		BCD7E966AA63127F107FC463DC16FC47 /* SWLogger-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SWLogger-iOS.xcconfig"; path = "../SWLogger-iOS/SWLogger-iOS.xcconfig"; sourceTree = "<group>"; };
-		C159A2A34248D416F0C00FE7EEF32802 /* LocksmithInternetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetProtocol.swift; path = Source/LocksmithInternetProtocol.swift; sourceTree = "<group>"; };
-		C3C97004AE6C3ED9D9D0EDB2D8A29A20 /* SWLogger-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWLogger-OSX-dummy.m"; sourceTree = "<group>"; };
-		CB0171BDAAEAA52EA23B8FA40C5EAD28 /* Pods_MacTenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MacTenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCFC7917151C72CF13135B2AAFAEF813 /* GameKit-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-OSX-prefix.pch"; sourceTree = "<group>"; };
-		CE9D223D53882011D9730060EF6881DB /* GameKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GameKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D17D637F7721D82DF7F62705BB42AC91 /* GameKit-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "GameKit-iOS.xcconfig"; path = "../GameKit-iOS/GameKit-iOS.xcconfig"; sourceTree = "<group>"; };
-		D1C4F92E5054388953FD3645CFCFD21A /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
-		D5DC8AC0A4F250DE7C833EFF937E987F /* GameMenuScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuScreen.swift; path = Source/GameMenuScreen.swift; sourceTree = "<group>"; };
-		D9B862C1D426F87705608506922DD17E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5A73E46337BD921B9B1B070884A112D /* GameMenuPresentationContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuPresentationContainer.swift; path = Source/GameMenuPresentationContainer.swift; sourceTree = "<group>"; };
+		B777D5B3A0621E002BC21EE8497E5063 /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Source/Game.swift; sourceTree = "<group>"; };
+		C1320BB1015B799CFC6147B5C82009B3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C29504AD433346EC5E82854A46F7D707 /* GameScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScreen.swift; path = Source/GameScreen.swift; sourceTree = "<group>"; };
+		C6FB4AB61969D0577B8326C53FB6F243 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7179C53C1B75F600D4DCA03E5BDD85F /* Locksmith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locksmith.swift; path = Source/Locksmith.swift; sourceTree = "<group>"; };
+		C8F2463B53E2675C30A6CD2C667CD5B8 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		C95A9A61376E06E31594A7EEE4227184 /* GameScrollViewContained.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameScrollViewContained.swift; path = Source/GameScrollViewContained.swift; sourceTree = "<group>"; };
+		CF4A7A8A62ED5F9006E092192FD7CCC6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../GameKit-iOS/Info.plist"; sourceTree = "<group>"; };
+		D19E962D5475F823ED56043BF0AD90FA /* Locksmith-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Locksmith-dummy.m"; sourceTree = "<group>"; };
+		D34B024DDFACF636A7131C078B481E09 /* ShakeWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShakeWindow.swift; path = Source/ShakeWindow.swift; sourceTree = "<group>"; };
+		D61C471648426A8E18023A01005ECCFD /* Pods_TenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D869830A6627CA815019081198BAF12C /* FeedbackEmailSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeedbackEmailSender.swift; path = Source/Feedback/FeedbackEmailSender.swift; sourceTree = "<group>"; };
+		D8932A52E67E0509517708CA6DF2B6AC /* GameKit-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-OSX-prefix.pch"; sourceTree = "<group>"; };
+		D9E36B61FB8410D6A4469E27F6CD76C3 /* SlideOutButtonsTray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SlideOutButtonsTray.swift; path = Source/SlideOutButtonsTray.swift; sourceTree = "<group>"; };
 		DB0177659195A9D116FB484F39F1E9D5 /* Pods-TenPair-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TenPair-acknowledgements.plist"; sourceTree = "<group>"; };
-		DC10DD6F8071164CC2A8D82254ED5BA9 /* GameKit-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GameKit-iOS-dummy.m"; path = "../GameKit-iOS/GameKit-iOS-dummy.m"; sourceTree = "<group>"; };
+		DBE25D2556B2EDF0890CB00C7BD7A9E2 /* FileOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileOutput.swift; path = Source/FileOutput.swift; sourceTree = "<group>"; };
+		DBFEAF769D2C679EFB4E9B2827D98C1C /* SWLogger-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SWLogger-iOS-prefix.pch"; path = "../SWLogger-iOS/SWLogger-iOS-prefix.pch"; sourceTree = "<group>"; };
 		DC88AD898B246ED6709C4F4323C8F395 /* Pods-TenPair-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TenPair-umbrella.h"; sourceTree = "<group>"; };
-		DD4489274B305B68103BA240C242F7ED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		DF0FB1AE3ECCF689B09E4362BB4EC3D6 /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Extensions.swift"; path = "Source/NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
+		DF8E62B32E5C42432DF187C854234105 /* LaughingAdventure-Feedback-Logging-Purchase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LaughingAdventure-Feedback-Logging-Purchase-dummy.m"; sourceTree = "<group>"; };
+		DFA80D76603B9943BBAC4A877F3E5891 /* ProductsHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductsHandler.swift; path = Source/Purchase/ProductsHandler.swift; sourceTree = "<group>"; };
+		E00079174340417C935BC1E505AB94F6 /* SWLogger-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SWLogger-iOS-umbrella.h"; path = "../SWLogger-iOS/SWLogger-iOS-umbrella.h"; sourceTree = "<group>"; };
 		E10B9CBF702975B4EA1F4984DD248A62 /* Pods-MacTenPair-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MacTenPair-umbrella.h"; sourceTree = "<group>"; };
-		E52391F5409C88316964CA49E7691919 /* ConsoleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleOutput.swift; path = Source/ConsoleOutput.swift; sourceTree = "<group>"; };
+		E4DB249B5A01CC84D59AD1F2E2ED68F6 /* SWLogger-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SWLogger-OSX.xcconfig"; sourceTree = "<group>"; };
+		E54749CC24E32A45BF00CEB918550B85 /* Locksmith.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Locksmith.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6E4FDD5BFB0D6C04D20E9659D429C72 /* Purchaser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Purchaser.swift; path = Source/Purchase/Purchaser.swift; sourceTree = "<group>"; };
 		E7452217A6923CE15E791C44F9080AC4 /* Pods-TenPairTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TenPairTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		E812494D07B11051505A8A7D73B377FF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8214BA38A4B6AD9AC6FC1AFDF8116FA /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
-		EDFE11E830B649CFF8610FD780349752 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
-		F57FF59011B5166182ACD87788CDECAB /* LocksmithSecurityClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithSecurityClass.swift; path = Source/LocksmithSecurityClass.swift; sourceTree = "<group>"; };
-		F8BCC4549FDB22BF4330105ADFFC2D10 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		F902D08407F5695A95A1D4143E096B49 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../SWLogger-iOS/Info.plist"; sourceTree = "<group>"; };
-		F9240A90E8C5F8A2902B11E5BB88B3D1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9DC552D08BE01943FF7391C507CAC59 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		FFE973E41246A66D5DFC3C706C3AFFA6 /* LocksmithAccessibleOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithAccessibleOption.swift; path = Source/LocksmithAccessibleOption.swift; sourceTree = "<group>"; };
+		E898FC0B8EDB690CAA3F992C3BC86E90 /* GameMenuButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameMenuButton.swift; path = Source/GameMenuButton.swift; sourceTree = "<group>"; };
+		EA75E2155C88C7A805948BB78E434C66 /* LocksmithSecurityClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithSecurityClass.swift; path = Source/LocksmithSecurityClass.swift; sourceTree = "<group>"; };
+		EBD5A6CBB887D4DC406035B3D78C51B9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		EBE0D5FDFD532447DA64613C0411A8EF /* LaughingAdventure-Logging-Purchase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "LaughingAdventure-Logging-Purchase.xcconfig"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase.xcconfig"; sourceTree = "<group>"; };
+		EC197DC052490FCD612D450394BDDA84 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
+		EC9013B301F93DA1FD3A1C2DBDE5BCC9 /* Locksmith-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-prefix.pch"; sourceTree = "<group>"; };
+		EDF4D926783A15B75FCBC2A1A1DD3B71 /* LaughingAdventure-Feedback-Logging-Purchase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "LaughingAdventure-Feedback-Logging-Purchase.modulemap"; sourceTree = "<group>"; };
+		F84B526E68092167AA76B28F09822C5A /* GameKit-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GameKit-iOS-umbrella.h"; path = "../GameKit-iOS/GameKit-iOS-umbrella.h"; sourceTree = "<group>"; };
+		FB2093268328825656B562C30D5DA24B /* Locksmith-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-umbrella.h"; sourceTree = "<group>"; };
+		FCB11240618EA9DD4C764AD717E1AC97 /* LocksmithAccessibleOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithAccessibleOption.swift; path = Source/LocksmithAccessibleOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		27D935B1E0792AEF7DE4F7584768C7FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				322D398F0F130E103B63061A9D1C213C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2816D161A400DA56262DCC0892618BDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECB6FE0EEDC60DA07C354813D6E00A0E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2ACE4A3CD5D6902FA016D99BF2164404 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,43 +305,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C35208772E04E85E8E7E6D25A814921 /* Frameworks */ = {
+		48AB71E771BA1AD6F4332C2E637819F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECB5E7EC462A4941F148AA195097B6E1 /* Cocoa.framework in Frameworks */,
+				EA879A3A8A49325F3AF03C389F49963F /* Cocoa.framework in Frameworks */,
+				AD51BA00411BA3CF0AB41DBC07987792 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		49D2E8B1A66E23AE5906C7829290B815 /* Frameworks */ = {
+		769F886B6F4193162D3FF15176D4B575 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3094DA2E9CB1718785B853BFB65E81AD /* Cocoa.framework in Frameworks */,
+				271504A6A945733B676501DC475DE674 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A23C0A8B5FA9FC0DC39BF34F3FC9FB0 /* Frameworks */ = {
+		7C92CA32DB9A78A8CE68D28907DB64E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224F447F60E0B7AE02283CC45D9E851A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5562B54B3EFB8084A5D4C7DD6A240468 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B648A6D67807AADF1C40122E0EA4135D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84CBC39D808FBFABD782E1CF9529793F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E6A18D4D5BAB182D6B5B28CBFAE617D3 /* Foundation.framework in Frameworks */,
+				9D031E4445BA0DCC93E5370815F4727B /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,132 +338,155 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B08AE3AFFCE4C6E39BC87722CE5E76FD /* Frameworks */ = {
+		B93DDFD6348138B45C6C8A83D09ED9B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7174272E171E85FEC33F0C9A067FD29A /* Cocoa.framework in Frameworks */,
+				163A42C443FD72492855793DB332E697 /* Foundation.framework in Frameworks */,
+				DA6A4CA4BBACB50D3DD3C73E33031899 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E96FF6FC84231658DB4A05740941EFFB /* Frameworks */ = {
+		BCD35318898BBE3EA86D4E4F51D6D9AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF28806811F8BF428F02C53D4CCE743F /* Foundation.framework in Frameworks */,
-				AD763FCA9DE6B765EE7867F1A0D90040 /* StoreKit.framework in Frameworks */,
+				D8A8E64EC0045DA54FE7B97C5F4AF489 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D65D06FCDEEFAD0C6AFD3F30E81E9F8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF95E89A867D08EC3DFBC6385B4F6D55 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20CBF850583967A371CBD5FA71D54CC7 /* Locksmith */ = {
+		0BD9EF11CB621CD56E5D3811B07F7D88 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
-				2A8FB0A767204AE5BAB0EF8AF3055729 /* Dictionary_Initializers.swift */,
-				475BAC64E667D55D7AC9BF20D5A40837 /* Locksmith.h */,
-				86E1672182E4F3103F2188D15892A682 /* Locksmith.swift */,
-				FFE973E41246A66D5DFC3C706C3AFFA6 /* LocksmithAccessibleOption.swift */,
-				7C9FEE5C77DFF2BA27B8355E10DCC388 /* LocksmithError.swift */,
-				11EB62410093B321EE0C40D2FB8E0985 /* LocksmithInternetAuthenticationType.swift */,
-				C159A2A34248D416F0C00FE7EEF32802 /* LocksmithInternetProtocol.swift */,
-				F57FF59011B5166182ACD87788CDECAB /* LocksmithSecurityClass.swift */,
-				5F3E085B105F83913E35948373127A0E /* Support Files */,
+				80A9A5794D68A117895C3F1961869630 /* Logging.swift */,
 			);
-			path = Locksmith;
+			name = Logging;
 			sourceTree = "<group>";
 		};
-		21650CF5F24C6CE2B64A553FF1F8DFC5 /* Support Files */ = {
+		0D6FBE8DD82B194CAF9D344F9D1A1033 /* Google-Mobile-Ads-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				F902D08407F5695A95A1D4143E096B49 /* Info.plist */,
-				E812494D07B11051505A8A7D73B377FF /* Info.plist */,
-				0904AA2C409B009367C10BF32A7799C3 /* SWLogger-iOS.modulemap */,
-				BCD7E966AA63127F107FC463DC16FC47 /* SWLogger-iOS.xcconfig */,
-				9220DCED9DDCD7A5DAEA55390D55DA08 /* SWLogger-iOS-dummy.m */,
-				12AD338DEA97DDB65F44E7516A7396F0 /* SWLogger-iOS-prefix.pch */,
-				B020744E63AA7FE7AA159DCFCDBBB86B /* SWLogger-iOS-umbrella.h */,
-				7930C49C9F903E7A20FCE30995005342 /* SWLogger-OSX.modulemap */,
-				245E0C86417BD36D98B0075FE61AC8B8 /* SWLogger-OSX.xcconfig */,
-				C3C97004AE6C3ED9D9D0EDB2D8A29A20 /* SWLogger-OSX-dummy.m */,
-				5C1E47B55193760374DA7F2FF2F01CE9 /* SWLogger-OSX-prefix.pch */,
-				0120A681AD5BCD00FC7EFAD2FAA42765 /* SWLogger-OSX-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SWLogger-OSX";
-			sourceTree = "<group>";
-		};
-		22ED8C9F686933B02F5CDA7A3F9C5429 /* GameKit */ = {
-			isa = PBXGroup;
-			children = (
-				13977A903A1FB1E54812D89CB21010E7 /* Game.swift */,
-				5EB67F4937A9C873615CD071C72723AA /* GameButton.swift */,
-				1EA41A08BA3B9725408A955D18804B7E /* GameLoadingView.swift */,
-				5A81B14A6C8CDF5C404427A41575EF34 /* GameMenuButton.swift */,
-				AB78A321CE1BE2DA0865790C3397EE3B /* GameMenuPresentationContainer.swift */,
-				D5DC8AC0A4F250DE7C833EFF937E987F /* GameMenuScreen.swift */,
-				6977B818B1B47347112AB45CF4DC7D45 /* GameScreen.swift */,
-				8647CED9C6DB798E01FFC21411CEB283 /* GameScrollView.swift */,
-				26D4A662EF4FEFD9D81CD28CFB6F1E44 /* GameScrollViewContained.swift */,
-				33B87586D020BA1A9AFDEB32699A3751 /* GameView.swift */,
-				AA0569E3AB6A7240FAE3F2AD9C199C7B /* SKSpriteNode+MultiLineLabel.swift */,
-				51AFDDFD4FC58B2341892574EB4998A9 /* SlideOutButtonsTray.swift */,
-				4314D002514173660594A970377BA7C7 /* Support Files */,
-			);
-			path = GameKit;
-			sourceTree = "<group>";
-		};
-		2694A4DECCD9B8A359700DCE9D7049BA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4E641D08EB6CF0DF9C440DAA2007F27A /* GoogleSymbolUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3115A616EDE3D6299B9CAE920BDF0130 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E8214BA38A4B6AD9AC6FC1AFDF8116FA /* GoogleUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		31E59DAEF8F70C4ABEBBA4C3EE6E9140 /* GoogleUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				3115A616EDE3D6299B9CAE920BDF0130 /* Frameworks */,
-			);
-			path = GoogleUtilities;
-			sourceTree = "<group>";
-		};
-		332CC3F9C472A031C17F46F9F2A3AF04 /* Google-Mobile-Ads-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				6C5787B840D46697506204D857C8380D /* Frameworks */,
+				A56B6A2230237762D192B39CBA07E3D6 /* Frameworks */,
 			);
 			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
 		};
-		4314D002514173660594A970377BA7C7 /* Support Files */ = {
+		1321211596D8B03B398655CD53C75502 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AF153B6A008EECF3DE9E1F9C5F5DD4D1 /* GameKit-iOS.modulemap */,
-				D17D637F7721D82DF7F62705BB42AC91 /* GameKit-iOS.xcconfig */,
-				DC10DD6F8071164CC2A8D82254ED5BA9 /* GameKit-iOS-dummy.m */,
-				7160E0C8CA4BFB5D60BADBB54B903880 /* GameKit-iOS-prefix.pch */,
-				7E724E15DBEC33C2CDC891F528F17C5E /* GameKit-iOS-umbrella.h */,
-				84B8DB6746A0BB4E28954DCAF15DCA9B /* GameKit-OSX.modulemap */,
-				23AACCD143AA2A32F91D7FB0B4F7DC7D /* GameKit-OSX.xcconfig */,
-				223F2DFB0956AB4F76E11B3865BF3EE3 /* GameKit-OSX-dummy.m */,
-				CCFC7917151C72CF13135B2AAFAEF813 /* GameKit-OSX-prefix.pch */,
-				5E736CD0EED36360EBF0306FAAF281E1 /* GameKit-OSX-umbrella.h */,
-				D9B862C1D426F87705608506922DD17E /* Info.plist */,
-				9CB94ECC71B0678744F54A8CA4F23AE9 /* Info.plist */,
+				0769244035534C9B04F65B000F1E1951 /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		181834369FAC16F43FD3BCD89CA2C529 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				954B8B38D5B20EA9F94551FC033F5B18 /* Cocoa.framework */,
+				A575B037762EFF25762CD41D9378CA47 /* StoreKit.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		1CD9613471E652988A4CD84E87FFD0B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92D845F4907FF41C932E5C2E962F338A /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		20507C2D4A8A5F9AA418A2BDF28E8755 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BF162C76B2D78B2B2C05E705FDA62B6 /* GameKit.framework */,
+				25F899FCDF8039F0BE8455DD3CEBD7F8 /* GameKit.framework */,
+				44D3A39E5E6855D43284B1FB26D74D0F /* LaughingAdventure.framework */,
+				8738013B5144EE7C9B7411940C576CA8 /* LaughingAdventure.framework */,
+				E54749CC24E32A45BF00CEB918550B85 /* Locksmith.framework */,
+				1E6F27A7B014BB627EEA78A28A26894D /* Pods_MacTenPair.framework */,
+				D61C471648426A8E18023A01005ECCFD /* Pods_TenPair.framework */,
+				A0AB75DD72408686C08E20E16CB29842 /* Pods_TenPairTests.framework */,
+				C6FB4AB61969D0577B8326C53FB6F243 /* SWLogger.framework */,
+				1F6C9A5F8C98B5C9C6FEA59F8F7B130D /* SWLogger.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		23097D450B0BA65B96002A6AA8BCB817 /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				1321211596D8B03B398655CD53C75502 /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		349C85B5EDF734354D865F5279789B75 /* Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				DFA80D76603B9943BBAC4A877F3E5891 /* ProductsHandler.swift */,
+				E6E4FDD5BFB0D6C04D20E9659D429C72 /* Purchaser.swift */,
+				3F42A44BF72313CD2B2F7E20ADE06466 /* SKProduct+Extensions.swift */,
+			);
+			name = Purchase;
+			sourceTree = "<group>";
+		};
+		3AFB8A399E49EC9415201F1F0705042B /* LaughingAdventure */ = {
+			isa = PBXGroup;
+			children = (
+				F6537FBA7DBE9A5A441FB795BEE91F45 /* Feedback */,
+				0BD9EF11CB621CD56E5D3811B07F7D88 /* Logging */,
+				349C85B5EDF734354D865F5279789B75 /* Purchase */,
+				933B1E23785BA05F5B940ABDBE168BCC /* Support Files */,
+			);
+			path = LaughingAdventure;
+			sourceTree = "<group>";
+		};
+		3E3D9F11EA43822D6D526077F73772B3 /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				6FC7A03339517B33ECE77BD4F4644F1D /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		4D0DF4B297225377AA0D1941A385F897 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8FD5D887C8567ECF3B024C26E04B7797 /* GameKit-iOS.modulemap */,
+				7F53CB48F5A6316FCBDFF1D6E5933542 /* GameKit-iOS.xcconfig */,
+				834A1F86993F02C17DB5CC2327452BCD /* GameKit-iOS-dummy.m */,
+				6FF1C95C6FB08F0FF397353283841D6F /* GameKit-iOS-prefix.pch */,
+				F84B526E68092167AA76B28F09822C5A /* GameKit-iOS-umbrella.h */,
+				38DC082FD02A0C148064CC9CA0B04792 /* GameKit-OSX.modulemap */,
+				9DAFF347E73DABC8FA2335428C62FD73 /* GameKit-OSX.xcconfig */,
+				71DE563BB5FE135458B1711A17D46DC1 /* GameKit-OSX-dummy.m */,
+				D8932A52E67E0509517708CA6DF2B6AC /* GameKit-OSX-prefix.pch */,
+				B1BE70E0392B9CAD60D4463B1A200B95 /* GameKit-OSX-umbrella.h */,
+				7A7AE8E22D067690D055797C0DE34418 /* Info.plist */,
+				CF4A7A8A62ED5F9006E092192FD7CCC6 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/GameKit-OSX";
+			sourceTree = "<group>";
+		};
+		5159EE18CDD5748C934BB59E7EFFDE65 /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				D4258D48192801232C301D16588FEEB2 /* Frameworks */,
+			);
+			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
 		51999024D7C302EBDFE2D6F234C4525B /* Targets Support Files */ = {
@@ -449,69 +499,21 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		5CADC1EC7D070E4C20969D8BDA00FAE2 /* FirebaseInstanceID */ = {
+		5244D75B52AB5B15903216FB9A98FB91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D1C4F92E5054388953FD3645CFCFD21A /* FIRInstanceID.h */,
-				B728C3EA48A10963BAF2518EB62A00AF /* Frameworks */,
-			);
-			path = FirebaseInstanceID;
-			sourceTree = "<group>";
-		};
-		5F3E085B105F83913E35948373127A0E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				AED4998D7C587C5BF4D77BEA4D836CEA /* Info.plist */,
-				3FC26E051E3E51034FD053F56E6EFB3D /* Locksmith.modulemap */,
-				5E05338B83EE1E16D0ACCF1D9EAA3497 /* Locksmith.xcconfig */,
-				89D51C63A317E53CFAFF87BFEDAAB08B /* Locksmith-dummy.m */,
-				19D5D14F58B009B856A4C29BDABC449C /* Locksmith-prefix.pch */,
-				0AF32B26030B954743F3F70DBB3E4BD3 /* Locksmith-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Locksmith";
-			sourceTree = "<group>";
-		};
-		5FCEED7AE73CE1B51B48D309863A8128 /* Purchase */ = {
-			isa = PBXGroup;
-			children = (
-				162B9332F5FAF925517CF714149C384C /* ProductsHandler.swift */,
-				976A5E60927059AFB16D1125B790E0E5 /* Purchaser.swift */,
-				23BB6792735B8D77A799395596150D1B /* SKProduct+Extensions.swift */,
-			);
-			name = Purchase;
-			sourceTree = "<group>";
-		};
-		65EB28E06554A86A0A327C48ABDB00E9 /* Feedback */ = {
-			isa = PBXGroup;
-			children = (
-				2DAA0BA75548035D358D61458C0F0CCD /* FeedbackEmailSender.swift */,
-			);
-			name = Feedback;
-			sourceTree = "<group>";
-		};
-		6C5787B840D46697506204D857C8380D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				04E51AC12D44E1DA95206A5A7E1AE575 /* GoogleMobileAds.framework */,
+				C279E9219A2E859D4934D780D83EE338 /* iOS */,
+				181834369FAC16F43FD3BCD89CA2C529 /* OS X */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		714572828E6DD05E76ABC1BA31A9919E /* Products */ = {
+		6FC7A03339517B33ECE77BD4F4644F1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CE9D223D53882011D9730060EF6881DB /* GameKit.framework */,
-				B5FFAC002B7EAA5DAC3CF62FED139A80 /* GameKit.framework */,
-				899598C91BF77E40ACC0559CB37229DD /* LaughingAdventure.framework */,
-				580BABBF0BD57C2DBD44128B8CDCAB3C /* Locksmith.framework */,
-				CB0171BDAAEAA52EA23B8FA40C5EAD28 /* Pods_MacTenPair.framework */,
-				3DD32193D8ABEC8ADCB1D27B52DEFEC5 /* Pods_TenPair.framework */,
-				540FCF31A2E70C7214EA3365064689C3 /* Pods_TenPairTests.framework */,
-				93A335088DD5C409A898FB5ACD4B3F08 /* SWLogger.framework */,
-				845890F7B0A687925E58081D5A4803B7 /* SWLogger.framework */,
+				C8F2463B53E2675C30A6CD2C667CD5B8 /* GoogleInterchangeUtilities.framework */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		768144821A4EE15F094C2E758D1DD039 /* Pods-TenPairTests */ = {
@@ -532,23 +534,41 @@
 			path = "Target Support Files/Pods-TenPairTests";
 			sourceTree = "<group>";
 		};
+		79AAD2E589C19753706AD4EDC3AB1C86 /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				1CD9613471E652988A4CD84E87FFD0B3 /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				EC63602364F007BD029F7FE0355037AC /* Frameworks */,
-				B34CE4FF6158C0B985C7D1860FBA8E2F /* Pods */,
-				714572828E6DD05E76ABC1BA31A9919E /* Products */,
+				5244D75B52AB5B15903216FB9A98FB91 /* Frameworks */,
+				8370F5DA823464DBCFFBD58CF8F3FDF0 /* Pods */,
+				20507C2D4A8A5F9AA418A2BDF28E8755 /* Products */,
 				51999024D7C302EBDFE2D6F234C4525B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		82CDD46C0DA1B5D8A4E089B78CA5A178 /* Logging */ = {
+		8370F5DA823464DBCFFBD58CF8F3FDF0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				49F97F42878233CBC0202E0F46F80C1C /* Logging.swift */,
+				D3CD325D6429D5DAB468F99A1AC4D9F9 /* Firebase */,
+				5159EE18CDD5748C934BB59E7EFFDE65 /* FirebaseAnalytics */,
+				9DE58404BAAF75F50D3C938A1B7A2C90 /* FirebaseInstanceID */,
+				C708EF8238E6E663258A4CC328EC2B8C /* GameKit */,
+				0D6FBE8DD82B194CAF9D344F9D1A1033 /* Google-Mobile-Ads-SDK */,
+				3E3D9F11EA43822D6D526077F73772B3 /* GoogleInterchangeUtilities */,
+				23097D450B0BA65B96002A6AA8BCB817 /* GoogleSymbolUtilities */,
+				79AAD2E589C19753706AD4EDC3AB1C86 /* GoogleUtilities */,
+				3AFB8A399E49EC9415201F1F0705042B /* LaughingAdventure */,
+				B0DF0E47E10FD35C7D34825A566BAFC0 /* Locksmith */,
+				FF0304B12A03D517517E3D315878E5F7 /* SWLogger */,
 			);
-			name = Logging;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		840F576FED9E3BE286F19372AB770C0A /* Pods-TenPair */ = {
@@ -569,105 +589,138 @@
 			path = "Target Support Files/Pods-TenPair";
 			sourceTree = "<group>";
 		};
-		958125624ED6BC55055FDD655C537029 /* GoogleSymbolUtilities */ = {
+		89225281ACB3503B1DD3B75088C414C4 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				2694A4DECCD9B8A359700DCE9D7049BA /* Frameworks */,
-			);
-			path = GoogleSymbolUtilities;
-			sourceTree = "<group>";
-		};
-		A39E8CF4317EC48962E1DFBE4C351720 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				B03509678996E4C363DE0E847135DF88 /* Foundation.framework */,
-				DD4489274B305B68103BA240C242F7ED /* Security.framework */,
-				62DE611E9C7BDEEF4E71C0D0014A443A /* StoreKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		AE0D1C5E62D13807C52826F2F6CE8AD0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B7ECA4315535D9F23184960C9A29F5BB /* GoogleInterchangeUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AFA7376AFE62F093FFA00785E2577D66 /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				7D01381A1A814B98014E766DCF5575E5 /* Firebase.h */,
+				5A6FE69606D3CF3D72983EBB17DF28FA /* Firebase.h */,
 			);
 			name = Analytics;
 			sourceTree = "<group>";
 		};
-		B145D2E1F8C047BAABDC957F0BA87512 /* OS X */ = {
+		933B1E23785BA05F5B940ABDBE168BCC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F8BCC4549FDB22BF4330105ADFFC2D10 /* Cocoa.framework */,
+				9FD1EB9D37AF643BB408B113498A2A68 /* Info.plist */,
+				45191928BDC73488BCB7E2E4B76832EF /* Info.plist */,
+				EDF4D926783A15B75FCBC2A1A1DD3B71 /* LaughingAdventure-Feedback-Logging-Purchase.modulemap */,
+				4FFE1EE4B2FD75502146A132AB99382E /* LaughingAdventure-Feedback-Logging-Purchase.xcconfig */,
+				DF8E62B32E5C42432DF187C854234105 /* LaughingAdventure-Feedback-Logging-Purchase-dummy.m */,
+				7DC9F5AD7A6858305CABA88395E3A8C4 /* LaughingAdventure-Feedback-Logging-Purchase-prefix.pch */,
+				5A44287FE2EA78F74321F2C643FF55B0 /* LaughingAdventure-Feedback-Logging-Purchase-umbrella.h */,
+				1D40A76E4DB22592E3EA9F08B1184EA9 /* LaughingAdventure-Logging-Purchase.modulemap */,
+				EBE0D5FDFD532447DA64613C0411A8EF /* LaughingAdventure-Logging-Purchase.xcconfig */,
+				970A7A06FF36883A2E90342F6803B8D5 /* LaughingAdventure-Logging-Purchase-dummy.m */,
+				0A0C6EF28F390E906189A6176AC1B3DE /* LaughingAdventure-Logging-Purchase-prefix.pch */,
+				49AE458968C18758FFF93D64ED71368C /* LaughingAdventure-Logging-Purchase-umbrella.h */,
 			);
-			name = "OS X";
+			name = "Support Files";
+			path = "../Target Support Files/LaughingAdventure-Feedback-Logging-Purchase";
 			sourceTree = "<group>";
 		};
-		B1A2FD94965A2FB9C016D7270F384408 /* SWLogger */ = {
+		94046ED02F570D88F395D53F0F822E5A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E52391F5409C88316964CA49E7691919 /* ConsoleOutput.swift */,
-				763A568944FB200DD71A3BB45866D429 /* FileOutput.swift */,
-				4935FED79C0CAC546729F44412B5389C /* Log.swift */,
-				EDFE11E830B649CFF8610FD780349752 /* Logger.swift */,
-				2CDB8B91131EE3BBE4254DE49390A669 /* LogOutput.swift */,
-				19EBFA9403E4DDAAF299D7272C77CC40 /* ShakeWindow.swift */,
-				21650CF5F24C6CE2B64A553FF1F8DFC5 /* Support Files */,
+				C1320BB1015B799CFC6147B5C82009B3 /* Info.plist */,
+				97606965B9EBFAF4AC2D7BE8D558670C /* Locksmith.modulemap */,
+				6AEF7424C7F532B2158ACE0A785D3F65 /* Locksmith.xcconfig */,
+				D19E962D5475F823ED56043BF0AD90FA /* Locksmith-dummy.m */,
+				EC9013B301F93DA1FD3A1C2DBDE5BCC9 /* Locksmith-prefix.pch */,
+				FB2093268328825656B562C30D5DA24B /* Locksmith-umbrella.h */,
 			);
-			path = SWLogger;
+			name = "Support Files";
+			path = "../Target Support Files/Locksmith";
 			sourceTree = "<group>";
 		};
-		B34CE4FF6158C0B985C7D1860FBA8E2F /* Pods */ = {
+		9A2CDEF4E900991C3313EEA239F330D8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D24496D863CDDB604B46272512FD404D /* Firebase */,
-				F90ADF3431ECD1E942132F41955EE92E /* FirebaseAnalytics */,
-				5CADC1EC7D070E4C20969D8BDA00FAE2 /* FirebaseInstanceID */,
-				22ED8C9F686933B02F5CDA7A3F9C5429 /* GameKit */,
-				332CC3F9C472A031C17F46F9F2A3AF04 /* Google-Mobile-Ads-SDK */,
-				DA4E0FB81D3D161A708C9DAFA470DAF7 /* GoogleInterchangeUtilities */,
-				958125624ED6BC55055FDD655C537029 /* GoogleSymbolUtilities */,
-				31E59DAEF8F70C4ABEBBA4C3EE6E9140 /* GoogleUtilities */,
-				C3414F82F49A32C44FECAFAF2DFAAE6B /* LaughingAdventure */,
-				20CBF850583967A371CBD5FA71D54CC7 /* Locksmith */,
-				B1A2FD94965A2FB9C016D7270F384408 /* SWLogger */,
+				278AB4E8054CA05CACF5F9FCDECA5722 /* Info.plist */,
+				85F485C173D7EF3E2041E057190F1682 /* Info.plist */,
+				A77EF2AEBFEEA04984CFC49D45B8ADDB /* SWLogger-iOS.modulemap */,
+				6E3476D5CBB0108A171CB65364B9767C /* SWLogger-iOS.xcconfig */,
+				6B445FDC0839797F94EAC6A20290D88B /* SWLogger-iOS-dummy.m */,
+				DBFEAF769D2C679EFB4E9B2827D98C1C /* SWLogger-iOS-prefix.pch */,
+				E00079174340417C935BC1E505AB94F6 /* SWLogger-iOS-umbrella.h */,
+				1348997D8EE10A47AF0923F8BEFA67BA /* SWLogger-OSX.modulemap */,
+				E4DB249B5A01CC84D59AD1F2E2ED68F6 /* SWLogger-OSX.xcconfig */,
+				192C42D65EDB74A8C4040926E979DE24 /* SWLogger-OSX-dummy.m */,
+				640F5BFDAF0A6D788B39028B7A40BD16 /* SWLogger-OSX-prefix.pch */,
+				0887C12D04D7BF794DC9C01FCF481791 /* SWLogger-OSX-umbrella.h */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/SWLogger-OSX";
 			sourceTree = "<group>";
 		};
-		B728C3EA48A10963BAF2518EB62A00AF /* Frameworks */ = {
+		9DE58404BAAF75F50D3C938A1B7A2C90 /* FirebaseInstanceID */ = {
 			isa = PBXGroup;
 			children = (
-				23F9337C212C2602B1281D966C700290 /* FirebaseInstanceID.framework */,
+				5F5CC9469E48D9465EC418E2FEE58624 /* FIRInstanceID.h */,
+				A7952CAAECAA37A5C907A4A0D2A51302 /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		A56B6A2230237762D192B39CBA07E3D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBD5A6CBB887D4DC406035B3D78C51B9 /* GoogleMobileAds.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C3414F82F49A32C44FECAFAF2DFAAE6B /* LaughingAdventure */ = {
+		A7952CAAECAA37A5C907A4A0D2A51302 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				65EB28E06554A86A0A327C48ABDB00E9 /* Feedback */,
-				82CDD46C0DA1B5D8A4E089B78CA5A178 /* Logging */,
-				5FCEED7AE73CE1B51B48D309863A8128 /* Purchase */,
-				D2559E3CFD3CA329AC6A22342050D7B8 /* Support Files */,
-			);
-			path = LaughingAdventure;
-			sourceTree = "<group>";
-		};
-		CCD6076E965A48971A04CEA0D79DDD2A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F9DC552D08BE01943FF7391C507CAC59 /* FirebaseAnalytics.framework */,
+				748B5FD43AE356B1A7DAB90ECC08D3B8 /* FirebaseInstanceID.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0DF0E47E10FD35C7D34825A566BAFC0 /* Locksmith */ = {
+			isa = PBXGroup;
+			children = (
+				1A35F8EF11A401A555D944968BC9E821 /* Dictionary_Initializers.swift */,
+				814DD7DFE6BA11EB219341A86CD53B48 /* Locksmith.h */,
+				C7179C53C1B75F600D4DCA03E5BDD85F /* Locksmith.swift */,
+				FCB11240618EA9DD4C764AD717E1AC97 /* LocksmithAccessibleOption.swift */,
+				A7557A95A649AAB233A81D8E4E188302 /* LocksmithError.swift */,
+				56B1D66DCC7EC582CD19BB98C99CBA79 /* LocksmithInternetAuthenticationType.swift */,
+				70797DA45A0BA58DDFC01C49598103A5 /* LocksmithInternetProtocol.swift */,
+				EA75E2155C88C7A805948BB78E434C66 /* LocksmithSecurityClass.swift */,
+				94046ED02F570D88F395D53F0F822E5A /* Support Files */,
+			);
+			path = Locksmith;
+			sourceTree = "<group>";
+		};
+		C279E9219A2E859D4934D780D83EE338 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6973936D059D8540777CC4AA607A12C4 /* Foundation.framework */,
+				522040494B0F0CEAB99F4E24270643DB /* Security.framework */,
+				53630C2157650EFBEB030B95480387DD /* StoreKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C708EF8238E6E663258A4CC328EC2B8C /* GameKit */ = {
+			isa = PBXGroup;
+			children = (
+				B777D5B3A0621E002BC21EE8497E5063 /* Game.swift */,
+				54E8068048AFBAD04ADFA70320B409C3 /* GameButton.swift */,
+				08566FF85F58E6713B08172D3C2700E1 /* GameLoadingView.swift */,
+				E898FC0B8EDB690CAA3F992C3BC86E90 /* GameMenuButton.swift */,
+				B5A73E46337BD921B9B1B070884A112D /* GameMenuPresentationContainer.swift */,
+				1D4717E8C593B16C2FCCC0989D9B0DC2 /* GameMenuScreen.swift */,
+				C29504AD433346EC5E82854A46F7D707 /* GameScreen.swift */,
+				004D97E93805A4B8BAD9D214CB6FAF1D /* GameScrollView.swift */,
+				C95A9A61376E06E31594A7EEE4227184 /* GameScrollViewContained.swift */,
+				55B134550C137B4C3E89F05C42F07E86 /* GameView.swift */,
+				DF0FB1AE3ECCF689B09E4362BB4EC3D6 /* NSAttributedString+Extensions.swift */,
+				5FC3E73212794CC35D67BADEBEC00701 /* SKSpriteNode+MultiLineLabel.swift */,
+				D9E36B61FB8410D6A4469E27F6CD76C3 /* SlideOutButtonsTray.swift */,
+				4D0DF4B297225377AA0D1941A385F897 /* Support Files */,
+			);
+			path = GameKit;
 			sourceTree = "<group>";
 		};
 		D109BD660EA79024794F6C5555A928B3 /* Pods-MacTenPair */ = {
@@ -688,69 +741,76 @@
 			path = "Target Support Files/Pods-MacTenPair";
 			sourceTree = "<group>";
 		};
-		D24496D863CDDB604B46272512FD404D /* Firebase */ = {
+		D3CD325D6429D5DAB468F99A1AC4D9F9 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				AFA7376AFE62F093FFA00785E2577D66 /* Analytics */,
+				89225281ACB3503B1DD3B75088C414C4 /* Analytics */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		D2559E3CFD3CA329AC6A22342050D7B8 /* Support Files */ = {
+		D4258D48192801232C301D16588FEEB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F9240A90E8C5F8A2902B11E5BB88B3D1 /* Info.plist */,
-				6AC7CA4C43D25B59C6BD400654F699F6 /* LaughingAdventure.modulemap */,
-				7DD18E39F801A1F6B34B1A4CDC6CB57B /* LaughingAdventure.xcconfig */,
-				21060CF0567B5F12C2249D51094ACCEC /* LaughingAdventure-dummy.m */,
-				7DB195B0213908ED81422536A0DB7A13 /* LaughingAdventure-prefix.pch */,
-				59CD4ECC2BAA4DA001C766C82D3BCA6B /* LaughingAdventure-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/LaughingAdventure";
-			sourceTree = "<group>";
-		};
-		DA4E0FB81D3D161A708C9DAFA470DAF7 /* GoogleInterchangeUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				AE0D1C5E62D13807C52826F2F6CE8AD0 /* Frameworks */,
-			);
-			path = GoogleInterchangeUtilities;
-			sourceTree = "<group>";
-		};
-		EC63602364F007BD029F7FE0355037AC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A39E8CF4317EC48962E1DFBE4C351720 /* iOS */,
-				B145D2E1F8C047BAABDC957F0BA87512 /* OS X */,
+				458D54DA6BDBC7DBF49669582A3A5306 /* FirebaseAnalytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F90ADF3431ECD1E942132F41955EE92E /* FirebaseAnalytics */ = {
+		F6537FBA7DBE9A5A441FB795BEE91F45 /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
-				CCD6076E965A48971A04CEA0D79DDD2A /* Frameworks */,
+				D869830A6627CA815019081198BAF12C /* FeedbackEmailSender.swift */,
 			);
-			path = FirebaseAnalytics;
+			name = Feedback;
+			sourceTree = "<group>";
+		};
+		FF0304B12A03D517517E3D315878E5F7 /* SWLogger */ = {
+			isa = PBXGroup;
+			children = (
+				0F89FDF4FEE2F95B8BEA4C1314A4984D /* ConsoleOutput.swift */,
+				DBE25D2556B2EDF0890CB00C7BD7A9E2 /* FileOutput.swift */,
+				3DE7D908894F56185BFE2BA91A725134 /* Log.swift */,
+				EC197DC052490FCD612D450394BDDA84 /* Logger.swift */,
+				38E8603DA6B2EDDD487BA135CC615019 /* LogOutput.swift */,
+				D34B024DDFACF636A7131C078B481E09 /* ShakeWindow.swift */,
+				9A2CDEF4E900991C3313EEA239F330D8 /* Support Files */,
+			);
+			path = SWLogger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1AC4B40FF507F21F8FA48ED9A3B78A54 /* Headers */ = {
+		0CA7FC42893026012C3CA2D84BFCC4F9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				301642FDBD977B0E7B9050209FC3D1C0 /* SWLogger-OSX-umbrella.h in Headers */,
+				D542B533AD8AD142129D1C1B61FB9826 /* Pods-TenPair-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1E41ECD14DD2B263889B3762CA83F2CD /* Headers */ = {
+		1B9FA808A3CFF1950225C883CFB187DC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3123D84C879E782EC44A476C77192384 /* GameKit-OSX-umbrella.h in Headers */,
+				1E91626D0CE4501188184884134694DD /* GameKit-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25715A774865E7648B09A92FB33D26EB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9C61E8597FCD04160B9FB0AAA30EB2 /* LaughingAdventure-Feedback-Logging-Purchase-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2705A71C9BCD03F3C2E97D89093C516E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65894AFF816C9B5D39A064279F4D6103 /* GameKit-OSX-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,43 +822,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		57236989B8A2F9A970FE407024111809 /* Headers */ = {
+		5E39C99608276E1304177351887AC4CE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA2A4E896340FA525D7F0D393F3C40CB /* GameKit-iOS-umbrella.h in Headers */,
+				C323EB0F16DE968D48871EE6E9AF7C38 /* SWLogger-iOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5ACD57F1B61624D1B89EBB91FB9B23B5 /* Headers */ = {
+		B87534A8CD29093A304F75A3CE397783 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6546DF4133C07E483CF9C877B766B1DB /* Pods-TenPair-umbrella.h in Headers */,
+				219E5BCED2167457355ED7632F50DB6A /* SWLogger-OSX-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61A67EDF5A3E939AC23B63FE08EB2D82 /* Headers */ = {
+		C65C3DD1427B157A17C94BEB8130801F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B303FE00CBAFB92E2FE11C22C32EB1F4 /* LaughingAdventure-umbrella.h in Headers */,
+				5D3AF23115BEC7BB5F6EBD6815FC084D /* LaughingAdventure-Logging-Purchase-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AACE0A8719B7A4E0E8AD132917E5B5F9 /* Headers */ = {
+		D9C19711322563E7FC13B2BFBF6BB34A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82CA5940C3EE99D0984AEC26AEB932F1 /* Pods-MacTenPair-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0E1072EEF812CC15980018EEE43014E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8FA8587DE6942BA412E313DAE700E582 /* SWLogger-iOS-umbrella.h in Headers */,
+				1B0BB074DAA1D0333331F00A2023DA7E /* Pods-MacTenPair-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,21 +866,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		016AC58FCE2F43543EC02494C1B72F7B /* GameKit-iOS */ = {
+		0C16F0ACD7A5F80D97700414C8CD85A7 /* Pods-TenPair */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19E856981C400DC905E85ACA4447003C /* Build configuration list for PBXNativeTarget "GameKit-iOS" */;
+			buildConfigurationList = 7EF4B7648AF62E785EF8BE54B624063C /* Build configuration list for PBXNativeTarget "Pods-TenPair" */;
 			buildPhases = (
-				7E3566AC044BFB6DEA91F82C3AF4C486 /* Sources */,
-				5562B54B3EFB8084A5D4C7DD6A240468 /* Frameworks */,
-				57236989B8A2F9A970FE407024111809 /* Headers */,
+				F63ADB8B8CCF4D4B3EB9A4C1702087AC /* Sources */,
+				D65D06FCDEEFAD0C6AFD3F30E81E9F8D /* Frameworks */,
+				0CA7FC42893026012C3CA2D84BFCC4F9 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				106EE1E043743CBFACAC8B8D331F3A80 /* PBXTargetDependency */,
+				089A4C17DCAC12E4ACA2D160BEAB5B1A /* PBXTargetDependency */,
+				E5A959C0A9E22A7906B2A3C7805A999E /* PBXTargetDependency */,
+				8B30E16E828D1060A76C59CEA761ED07 /* PBXTargetDependency */,
 			);
-			name = "GameKit-iOS";
-			productName = "GameKit-iOS";
-			productReference = B5FFAC002B7EAA5DAC3CF62FED139A80 /* GameKit.framework */;
+			name = "Pods-TenPair";
+			productName = "Pods-TenPair";
+			productReference = D61C471648426A8E18023A01005ECCFD /* Pods_TenPair.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		11CA075FA9E59197BA30646ED9320FC9 /* Pods-TenPairTests */ = {
@@ -845,24 +901,78 @@
 			);
 			name = "Pods-TenPairTests";
 			productName = "Pods-TenPairTests";
-			productReference = 540FCF31A2E70C7214EA3365064689C3 /* Pods_TenPairTests.framework */;
+			productReference = A0AB75DD72408686C08E20E16CB29842 /* Pods_TenPairTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		570FDFC594E156D97DA44B4E0758333E /* SWLogger-OSX */ = {
+		1D9A06BBC1B8298E1C6321EFCB74C5E3 /* GameKit-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6E4FD7D96B2CE8DD426BC1903319E74 /* Build configuration list for PBXNativeTarget "SWLogger-OSX" */;
+			buildConfigurationList = 25FD24D90CB6BA215C6A3D4AB1FD5E4C /* Build configuration list for PBXNativeTarget "GameKit-OSX" */;
 			buildPhases = (
-				9D5D80F8518561ED371008666E006670 /* Sources */,
-				49D2E8B1A66E23AE5906C7829290B815 /* Frameworks */,
-				1AC4B40FF507F21F8FA48ED9A3B78A54 /* Headers */,
+				6948B19F31C20EB299983133E31E5FC0 /* Sources */,
+				769F886B6F4193162D3FF15176D4B575 /* Frameworks */,
+				2705A71C9BCD03F3C2E97D89093C516E /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "SWLogger-OSX";
-			productName = "SWLogger-OSX";
-			productReference = 845890F7B0A687925E58081D5A4803B7 /* SWLogger.framework */;
+			name = "GameKit-OSX";
+			productName = "GameKit-OSX";
+			productReference = 2BF162C76B2D78B2B2C05E705FDA62B6 /* GameKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		20C114BC2F695DA3784614A7216DB3F8 /* SWLogger-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB5467D35E4B1F02FD52B48E036A707D /* Build configuration list for PBXNativeTarget "SWLogger-iOS" */;
+			buildPhases = (
+				A369C61902533FB8B723A7333E8E2050 /* Sources */,
+				27D935B1E0792AEF7DE4F7584768C7FA /* Frameworks */,
+				5E39C99608276E1304177351887AC4CE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SWLogger-iOS";
+			productName = "SWLogger-iOS";
+			productReference = C6FB4AB61969D0577B8326C53FB6F243 /* SWLogger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		324BF198EB83B11783A0E73C4C76B98C /* Pods-MacTenPair */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5232A9744556A36FD3D49040906ABC8 /* Build configuration list for PBXNativeTarget "Pods-MacTenPair" */;
+			buildPhases = (
+				62C19056CD3B27F9B9733E908FBBB5F2 /* Sources */,
+				2816D161A400DA56262DCC0892618BDA /* Frameworks */,
+				D9C19711322563E7FC13B2BFBF6BB34A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				928E04EEAC19ECC6CA27E82B14C6F5D3 /* PBXTargetDependency */,
+				232F0E5AF4C0C3FA1396EA9D7BED36E6 /* PBXTargetDependency */,
+				67DC8FBE30D4E37C3DAA67BACD17655F /* PBXTargetDependency */,
+			);
+			name = "Pods-MacTenPair";
+			productName = "Pods-MacTenPair";
+			productReference = 1E6F27A7B014BB627EEA78A28A26894D /* Pods_MacTenPair.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		32C76B994D3B14CA80494A33E04DD361 /* LaughingAdventure-Logging-Purchase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF3457E5C3A1EA5BC661450FA3AF8CC2 /* Build configuration list for PBXNativeTarget "LaughingAdventure-Logging-Purchase" */;
+			buildPhases = (
+				868EB21F92D4D466CDCB3C5F1EFA7D1A /* Sources */,
+				48AB71E771BA1AD6F4332C2E637819F1 /* Frameworks */,
+				C65C3DD1427B157A17C94BEB8130801F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LaughingAdventure-Logging-Purchase";
+			productName = "LaughingAdventure-Logging-Purchase";
+			productReference = 44D3A39E5E6855D43284B1FB26D74D0F /* LaughingAdventure.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		92943306EC8070DF9CD02ECD505D2CD5 /* Locksmith */ = {
@@ -879,98 +989,58 @@
 			);
 			name = Locksmith;
 			productName = Locksmith;
-			productReference = 580BABBF0BD57C2DBD44128B8CDCAB3C /* Locksmith.framework */;
+			productReference = E54749CC24E32A45BF00CEB918550B85 /* Locksmith.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B17A74DC812F9CB3248B9A76E0780294 /* Pods-MacTenPair */ = {
+		970F183253B70A77111C468D36EB6CB3 /* LaughingAdventure-Feedback-Logging-Purchase */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58457BEB4BA935052F8D1FAE9854350B /* Build configuration list for PBXNativeTarget "Pods-MacTenPair" */;
+			buildConfigurationList = 3536553BDF7FA0B84D95C3F495A4C3A5 /* Build configuration list for PBXNativeTarget "LaughingAdventure-Feedback-Logging-Purchase" */;
 			buildPhases = (
-				C7F0095C1663CE51BACD72B9AB582581 /* Sources */,
-				3C35208772E04E85E8E7E6D25A814921 /* Frameworks */,
-				AACE0A8719B7A4E0E8AD132917E5B5F9 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6ADB00F8BF8E50CC3C120D0034A10CAB /* PBXTargetDependency */,
-				CC7F6D1E8E1214432BE7EDDBF9D6FCC6 /* PBXTargetDependency */,
-			);
-			name = "Pods-MacTenPair";
-			productName = "Pods-MacTenPair";
-			productReference = CB0171BDAAEAA52EA23B8FA40C5EAD28 /* Pods_MacTenPair.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		CCAEAB1614A5D5E6C8C569588C044D88 /* SWLogger-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9677BA54471EAACE14662AC65D3A1368 /* Build configuration list for PBXNativeTarget "SWLogger-iOS" */;
-			buildPhases = (
-				E9C81FD042C2C01BB08092370703EFA6 /* Sources */,
-				84CBC39D808FBFABD782E1CF9529793F /* Frameworks */,
-				B0E1072EEF812CC15980018EEE43014E /* Headers */,
+				F486866CF423B975D70E28DD740F4966 /* Sources */,
+				B93DDFD6348138B45C6C8A83D09ED9B3 /* Frameworks */,
+				25715A774865E7648B09A92FB33D26EB /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "SWLogger-iOS";
-			productName = "SWLogger-iOS";
-			productReference = 93A335088DD5C409A898FB5ACD4B3F08 /* SWLogger.framework */;
+			name = "LaughingAdventure-Feedback-Logging-Purchase";
+			productName = "LaughingAdventure-Feedback-Logging-Purchase";
+			productReference = 8738013B5144EE7C9B7411940C576CA8 /* LaughingAdventure.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D02B344700EF59D5729D343E35B81B7C /* Pods-TenPair */ = {
+		D4DB262B3512F64810BB5C5D336D4E73 /* GameKit-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF86E807ED4CBBE4AC438B52FE266BE1 /* Build configuration list for PBXNativeTarget "Pods-TenPair" */;
+			buildConfigurationList = EC111810E4C56A00C7FC97FD57425AEC /* Build configuration list for PBXNativeTarget "GameKit-iOS" */;
 			buildPhases = (
-				62792C8CB03C7F2B3B0212F88603EFDC /* Sources */,
-				4A23C0A8B5FA9FC0DC39BF34F3FC9FB0 /* Frameworks */,
-				5ACD57F1B61624D1B89EBB91FB9B23B5 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				625C6186AAEC5B46403E980D0B869977 /* PBXTargetDependency */,
-				B2F695937C194E6F21165DDFAFB97354 /* PBXTargetDependency */,
-				FDFE89A679D8CDFAA2AA4C5C668334C4 /* PBXTargetDependency */,
-				6577FB977905A185A46A3F5255014837 /* PBXTargetDependency */,
-			);
-			name = "Pods-TenPair";
-			productName = "Pods-TenPair";
-			productReference = 3DD32193D8ABEC8ADCB1D27B52DEFEC5 /* Pods_TenPair.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E038ED8128B77FB2F9CE4BEDA6535EF0 /* LaughingAdventure */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5D54765BC5149F9B3BB1D0CF398AC0F8 /* Build configuration list for PBXNativeTarget "LaughingAdventure" */;
-			buildPhases = (
-				43D9FC56DF91C32EE0B5D196146B585A /* Sources */,
-				E96FF6FC84231658DB4A05740941EFFB /* Frameworks */,
-				61A67EDF5A3E939AC23B63FE08EB2D82 /* Headers */,
+				A31BA0619EC38CB26CB0ACF88E272118 /* Sources */,
+				BCD35318898BBE3EA86D4E4F51D6D9AA /* Frameworks */,
+				1B9FA808A3CFF1950225C883CFB187DC /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LaughingAdventure;
-			productName = LaughingAdventure;
-			productReference = 899598C91BF77E40ACC0559CB37229DD /* LaughingAdventure.framework */;
+			name = "GameKit-iOS";
+			productName = "GameKit-iOS";
+			productReference = 25F899FCDF8039F0BE8455DD3CEBD7F8 /* GameKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		EFBEE1D58F7EF6E79F9F2536105CB6C9 /* GameKit-OSX */ = {
+		E7813089A7101283F3540A2195B33B56 /* SWLogger-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDB86021E5365500001438613506B208 /* Build configuration list for PBXNativeTarget "GameKit-OSX" */;
+			buildConfigurationList = 3103D2EE20BCF6385419DEF0904A65B3 /* Build configuration list for PBXNativeTarget "SWLogger-OSX" */;
 			buildPhases = (
-				B9B5B09730C136486F0E3B7FBE354B93 /* Sources */,
-				B08AE3AFFCE4C6E39BC87722CE5E76FD /* Frameworks */,
-				1E41ECD14DD2B263889B3762CA83F2CD /* Headers */,
+				63000865646E2A19F302FA5F7C6EB637 /* Sources */,
+				7C92CA32DB9A78A8CE68D28907DB64E0 /* Frameworks */,
+				B87534A8CD29093A304F75A3CE397783 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "GameKit-OSX";
-			productName = "GameKit-OSX";
-			productReference = CE9D223D53882011D9730060EF6881DB /* GameKit.framework */;
+			name = "SWLogger-OSX";
+			productName = "SWLogger-OSX";
+			productReference = 1F6C9A5F8C98B5C9C6FEA59F8F7B130D /* SWLogger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -990,75 +1060,76 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 714572828E6DD05E76ABC1BA31A9919E /* Products */;
+			productRefGroup = 20507C2D4A8A5F9AA418A2BDF28E8755 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				016AC58FCE2F43543EC02494C1B72F7B /* GameKit-iOS */,
-				EFBEE1D58F7EF6E79F9F2536105CB6C9 /* GameKit-OSX */,
-				E038ED8128B77FB2F9CE4BEDA6535EF0 /* LaughingAdventure */,
+				D4DB262B3512F64810BB5C5D336D4E73 /* GameKit-iOS */,
+				1D9A06BBC1B8298E1C6321EFCB74C5E3 /* GameKit-OSX */,
+				970F183253B70A77111C468D36EB6CB3 /* LaughingAdventure-Feedback-Logging-Purchase */,
+				32C76B994D3B14CA80494A33E04DD361 /* LaughingAdventure-Logging-Purchase */,
 				92943306EC8070DF9CD02ECD505D2CD5 /* Locksmith */,
-				B17A74DC812F9CB3248B9A76E0780294 /* Pods-MacTenPair */,
-				D02B344700EF59D5729D343E35B81B7C /* Pods-TenPair */,
+				324BF198EB83B11783A0E73C4C76B98C /* Pods-MacTenPair */,
+				0C16F0ACD7A5F80D97700414C8CD85A7 /* Pods-TenPair */,
 				11CA075FA9E59197BA30646ED9320FC9 /* Pods-TenPairTests */,
-				CCAEAB1614A5D5E6C8C569588C044D88 /* SWLogger-iOS */,
-				570FDFC594E156D97DA44B4E0758333E /* SWLogger-OSX */,
+				20C114BC2F695DA3784614A7216DB3F8 /* SWLogger-iOS */,
+				E7813089A7101283F3540A2195B33B56 /* SWLogger-OSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		43D9FC56DF91C32EE0B5D196146B585A /* Sources */ = {
+		62C19056CD3B27F9B9733E908FBBB5F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8685CB0B3439126AEE1AE6CECBB6B998 /* FeedbackEmailSender.swift in Sources */,
-				ED5C85392A11781EF0AD121A40CE26E8 /* LaughingAdventure-dummy.m in Sources */,
-				E221571FD7A1251793A019F3F0601557 /* Logging.swift in Sources */,
-				48B18922FE0A227B722D7EE60BFA9DBB /* ProductsHandler.swift in Sources */,
-				1CC841D4621AAA124F826CCE5F77E28A /* Purchaser.swift in Sources */,
-				CC7BE9714F82F80DC897A57E5A3806D4 /* SKProduct+Extensions.swift in Sources */,
+				0BBFBB41068065EFB091FAB65A906847 /* Pods-MacTenPair-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		62792C8CB03C7F2B3B0212F88603EFDC /* Sources */ = {
+		63000865646E2A19F302FA5F7C6EB637 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEB1BAA2CE3C8C977A0EDA95CB73039E /* Pods-TenPair-dummy.m in Sources */,
+				64C8FE34B97FC95D057F901F7D3E9A25 /* ConsoleOutput.swift in Sources */,
+				CC97C5F88B727256D689E7063ECF6AC2 /* FileOutput.swift in Sources */,
+				FFF9B500295D24E8F2FADDC970D77467 /* Log.swift in Sources */,
+				6996625B0F2B8DFA14AC154BBC4F2D33 /* Logger.swift in Sources */,
+				512B2E10B3B9B0C0BA4F4FA0EAB361B3 /* LogOutput.swift in Sources */,
+				C0374E347E0FE71EF210A5DC20482BB3 /* SWLogger-OSX-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E3566AC044BFB6DEA91F82C3AF4C486 /* Sources */ = {
+		6948B19F31C20EB299983133E31E5FC0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA7A369776CD5333E7E5A00D1014C479 /* Game.swift in Sources */,
-				78FAB69FE8E0C37257679EA8E99FCA2D /* GameButton.swift in Sources */,
-				E828B95CB4657FECF3E361A74BDF4A2C /* GameKit-iOS-dummy.m in Sources */,
-				305C200153335644CF54EC9643FC6F2A /* GameLoadingView.swift in Sources */,
-				48F8660D42218C90A76DB691FA88303C /* GameMenuButton.swift in Sources */,
-				BA45CEB01570F4716DD4D9D0F634F6C3 /* GameMenuPresentationContainer.swift in Sources */,
-				DA3156E7A0D1DD585F809C95D3E561A8 /* GameMenuScreen.swift in Sources */,
-				DEBA60B35469CCA757C5D4F504CD238E /* GameScreen.swift in Sources */,
-				DA7D1D6D76C15265500FC6D680DA5275 /* GameScrollView.swift in Sources */,
-				F20A5346DA25F6FD8E50AD9CAE43BA98 /* GameScrollViewContained.swift in Sources */,
-				6C0D0369471D7C8ECE43452B48089CC8 /* GameView.swift in Sources */,
-				EA3989118F88958917CAD89FB190BE3E /* SKSpriteNode+MultiLineLabel.swift in Sources */,
-				3B2344975C2A4D8D53BE9BF7239BB372 /* SlideOutButtonsTray.swift in Sources */,
+				93C0051260F5D1629171E9B3BCAA0EF7 /* Game.swift in Sources */,
+				70529C8B9F4280864A58548354F78698 /* GameButton.swift in Sources */,
+				BC5259129A21F0698DC7FA55A99B716E /* GameKit-OSX-dummy.m in Sources */,
+				01ADCE129A2505C35C935C7CDF480A97 /* GameLoadingView.swift in Sources */,
+				99E46F029B37DA5E8D2606637A09B625 /* GameMenuButton.swift in Sources */,
+				89EED1DFA9F40DB3BAA2A286537069E8 /* GameMenuPresentationContainer.swift in Sources */,
+				7BD3BAFDC5AA93FE73597E30460185F3 /* GameMenuScreen.swift in Sources */,
+				A11D003406720098BCC938FE14558855 /* GameScreen.swift in Sources */,
+				B48C62ACB429C5745C02118D6E66BE45 /* GameScrollView.swift in Sources */,
+				A50D0EE8989F415D9D3CFC17D2E0B613 /* GameScrollViewContained.swift in Sources */,
+				396B56719C28B2C11C54D34DBD36CFFE /* GameView.swift in Sources */,
+				3606EA63E1B786AD07DD93D406A0C995 /* NSAttributedString+Extensions.swift in Sources */,
+				5B1AAE520804E39BF6EFD33AAE5D0662 /* SKSpriteNode+MultiLineLabel.swift in Sources */,
+				EE89490B92CBA17906FD79C388BE02F0 /* SlideOutButtonsTray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D5D80F8518561ED371008666E006670 /* Sources */ = {
+		868EB21F92D4D466CDCB3C5F1EFA7D1A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EF8C221CE4A4A1A60E1F67C7A76B270 /* ConsoleOutput.swift in Sources */,
-				E965B1287E71AA1F9D6B630D67E9DAA7 /* FileOutput.swift in Sources */,
-				87E12D37FC5333935CB8F700974D16D3 /* Log.swift in Sources */,
-				D06FC5114DF52F14E8B2D3BE3DCBF4E9 /* Logger.swift in Sources */,
-				3B41214FFE4BBF2E32A60B9C10F5206F /* LogOutput.swift in Sources */,
-				F13B8A01F5C13A27406A60627C9CD86E /* SWLogger-OSX-dummy.m in Sources */,
+				B33A43D5AB8F73C1BF662008350736D5 /* LaughingAdventure-Logging-Purchase-dummy.m in Sources */,
+				C82094B83253B28EE603A0D16C188E81 /* Logging.swift in Sources */,
+				EC14C81C0014FF9F62D22912C2585C92 /* ProductsHandler.swift in Sources */,
+				E657E11D85EC81118A287FA85D0C3A20 /* Purchaser.swift in Sources */,
+				080B05E9B0E5B7ADEF72C9B0787B9520 /* SKProduct+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1077,6 +1148,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A31BA0619EC38CB26CB0ACF88E272118 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				960CAD647F0A61F2A8D7AD4349789190 /* Game.swift in Sources */,
+				4AB58A7B5AFEBD027F67B9E23D026EFE /* GameButton.swift in Sources */,
+				734D8014FC05435EF086DB56DA3186E5 /* GameKit-iOS-dummy.m in Sources */,
+				A9F1014FD9FE821820F9AF471ADC6052 /* GameLoadingView.swift in Sources */,
+				190C123AAFE824056BB560BE5205CE85 /* GameMenuButton.swift in Sources */,
+				939282C04F37F4F7DAB6CA6E2D8C9583 /* GameMenuPresentationContainer.swift in Sources */,
+				7388AEBF2972EF7476E03BE9E02AA38B /* GameMenuScreen.swift in Sources */,
+				6AE1EFE75F81A3B85FF27BA2C9100CD4 /* GameScreen.swift in Sources */,
+				5B507866F3284F5E64978C04E2FB0BCE /* GameScrollView.swift in Sources */,
+				0141474F86507675827067B17F4204EA /* GameScrollViewContained.swift in Sources */,
+				04251F0DF3B0AA1DCA60DD068CE4A985 /* GameView.swift in Sources */,
+				092F3C960E7297FA43FDBC76A98D56BC /* NSAttributedString+Extensions.swift in Sources */,
+				40AACC5806EB7F514F5030F88005204D /* SKSpriteNode+MultiLineLabel.swift in Sources */,
+				7D50F90824A356EA091ED8B2BD6BB05C /* SlideOutButtonsTray.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A369C61902533FB8B723A7333E8E2050 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AABE45B8A98D31BBE3EC1D7B0645FE6 /* ConsoleOutput.swift in Sources */,
+				80AC3EF0C228CCCF8B6223057A2757B1 /* FileOutput.swift in Sources */,
+				6E3BEEE1B16C85809EEB31A545EABD19 /* Log.swift in Sources */,
+				C9AE8747F6B7B8D2EDA1C0AD7B282863 /* Logger.swift in Sources */,
+				90E08DAB06A6D33031440907A6F8B5B3 /* LogOutput.swift in Sources */,
+				61EC5A005FBD765AD254E73A2C9708FE /* ShakeWindow.swift in Sources */,
+				8F9A78F719398BBE4CB363E0AE3E62A7 /* SWLogger-iOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B929DEA57CDD53F65C00726A8C3E6076 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1085,90 +1191,106 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9B5B09730C136486F0E3B7FBE354B93 /* Sources */ = {
+		F486866CF423B975D70E28DD740F4966 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0551A042FAEC7B842567E2FE45E8C203 /* Game.swift in Sources */,
-				DF78859AC5F7A1FF96BD9A350E612F46 /* GameButton.swift in Sources */,
-				34244E747B43A2F5CC966849715C470D /* GameKit-OSX-dummy.m in Sources */,
-				0A57419F24F46129B092DF4B98646715 /* GameLoadingView.swift in Sources */,
-				BA11DCC191DEF71E8CF102BFCAC373E0 /* GameMenuButton.swift in Sources */,
-				9AFB3A139BD219A105BA7B8389672E49 /* GameMenuPresentationContainer.swift in Sources */,
-				8A29BDBE8888B0FFF7D211279DD27E11 /* GameMenuScreen.swift in Sources */,
-				72245DB2FF26143BD07A3B6BD38120FB /* GameScreen.swift in Sources */,
-				391460C61CC9C45727C2CDBDCE362AA3 /* GameScrollView.swift in Sources */,
-				5043607D58C1308AD5D66DCDC4D39024 /* GameScrollViewContained.swift in Sources */,
-				88BCB55AB5BBCD31A9C3C7A2C0A0066F /* GameView.swift in Sources */,
-				8058278B6890A99876832C7483EBEE2D /* SKSpriteNode+MultiLineLabel.swift in Sources */,
-				ECCBA42448DDE9137CC0C6080E49A3CB /* SlideOutButtonsTray.swift in Sources */,
+				0C8DE20E1ACD191C602949A851FF99F7 /* FeedbackEmailSender.swift in Sources */,
+				D7607E06A5DDDCFBFB4751CF19E3BF00 /* LaughingAdventure-Feedback-Logging-Purchase-dummy.m in Sources */,
+				74F608989E3CD78B4640F4B37662F716 /* Logging.swift in Sources */,
+				87AD0F353A2162A94070AA3514D5E3F9 /* ProductsHandler.swift in Sources */,
+				578421D410885A767433980179CF289C /* Purchaser.swift in Sources */,
+				A025ED3FC1C102C1D2E6AD765AF45C09 /* SKProduct+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C7F0095C1663CE51BACD72B9AB582581 /* Sources */ = {
+		F63ADB8B8CCF4D4B3EB9A4C1702087AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				942E8FAB148987DF7FAED1032E2CEB54 /* Pods-MacTenPair-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9C81FD042C2C01BB08092370703EFA6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9885685D442C6469C7C073295FA920FA /* ConsoleOutput.swift in Sources */,
-				E0A63A64B5308C6001A9B8060155134B /* FileOutput.swift in Sources */,
-				DE58CA4BB3A83C326C6DBFA5FBCD9F05 /* Log.swift in Sources */,
-				23A9B9C84FF6F94FF689D532A1DD027B /* Logger.swift in Sources */,
-				7A270D5698FB4D2FF8D7CFA9AC09AF9C /* LogOutput.swift in Sources */,
-				A741B7212DECC1A0E7B8EA0FB8D0AA93 /* ShakeWindow.swift in Sources */,
-				456CBCD3D8AC834ACBD704DDFCDBF41C /* SWLogger-iOS-dummy.m in Sources */,
+				ED031AC066142694DF8F7C07D6225689 /* Pods-TenPair-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		625C6186AAEC5B46403E980D0B869977 /* PBXTargetDependency */ = {
+		089A4C17DCAC12E4ACA2D160BEAB5B1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LaughingAdventure-Feedback-Logging-Purchase";
+			target = 970F183253B70A77111C468D36EB6CB3 /* LaughingAdventure-Feedback-Logging-Purchase */;
+			targetProxy = 10E959582C02FFC20497E1CE2190CA1E /* PBXContainerItemProxy */;
+		};
+		106EE1E043743CBFACAC8B8D331F3A80 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "GameKit-iOS";
-			target = 016AC58FCE2F43543EC02494C1B72F7B /* GameKit-iOS */;
-			targetProxy = 5E5BD857662BAFD640CB091D94E9FB56 /* PBXContainerItemProxy */;
+			target = D4DB262B3512F64810BB5C5D336D4E73 /* GameKit-iOS */;
+			targetProxy = 46007850C6EC97E8A1B22E0DA9B977A0 /* PBXContainerItemProxy */;
 		};
-		6577FB977905A185A46A3F5255014837 /* PBXTargetDependency */ = {
+		232F0E5AF4C0C3FA1396EA9D7BED36E6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "SWLogger-iOS";
-			target = CCAEAB1614A5D5E6C8C569588C044D88 /* SWLogger-iOS */;
-			targetProxy = D3D1B06AA0D9276E5CF08D851CCE0AE2 /* PBXContainerItemProxy */;
+			name = "LaughingAdventure-Logging-Purchase";
+			target = 32C76B994D3B14CA80494A33E04DD361 /* LaughingAdventure-Logging-Purchase */;
+			targetProxy = 6F21F13D186D3AC515C64D6C283D4A7D /* PBXContainerItemProxy */;
 		};
-		6ADB00F8BF8E50CC3C120D0034A10CAB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "GameKit-OSX";
-			target = EFBEE1D58F7EF6E79F9F2536105CB6C9 /* GameKit-OSX */;
-			targetProxy = F965367B0F1B13B781FCD5D7BD4A4895 /* PBXContainerItemProxy */;
-		};
-		B2F695937C194E6F21165DDFAFB97354 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LaughingAdventure;
-			target = E038ED8128B77FB2F9CE4BEDA6535EF0 /* LaughingAdventure */;
-			targetProxy = 4265DF46A75EFFF55D4F645FF5B47C7E /* PBXContainerItemProxy */;
-		};
-		CC7F6D1E8E1214432BE7EDDBF9D6FCC6 /* PBXTargetDependency */ = {
+		67DC8FBE30D4E37C3DAA67BACD17655F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "SWLogger-OSX";
-			target = 570FDFC594E156D97DA44B4E0758333E /* SWLogger-OSX */;
-			targetProxy = EFA71C11EFBE3DA49064C1207EDEF4A8 /* PBXContainerItemProxy */;
+			target = E7813089A7101283F3540A2195B33B56 /* SWLogger-OSX */;
+			targetProxy = D74EE9F7AF55D774FE91296B51728507 /* PBXContainerItemProxy */;
 		};
-		FDFE89A679D8CDFAA2AA4C5C668334C4 /* PBXTargetDependency */ = {
+		8B30E16E828D1060A76C59CEA761ED07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SWLogger-iOS";
+			target = 20C114BC2F695DA3784614A7216DB3F8 /* SWLogger-iOS */;
+			targetProxy = 8092B1EFD60FE18E9B4AA6181CD99A63 /* PBXContainerItemProxy */;
+		};
+		928E04EEAC19ECC6CA27E82B14C6F5D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "GameKit-OSX";
+			target = 1D9A06BBC1B8298E1C6321EFCB74C5E3 /* GameKit-OSX */;
+			targetProxy = 5457843E7CD623D7772F4144677CC649 /* PBXContainerItemProxy */;
+		};
+		E5A959C0A9E22A7906B2A3C7805A999E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Locksmith;
 			target = 92943306EC8070DF9CD02ECD505D2CD5 /* Locksmith */;
-			targetProxy = 893B7594F21EDBC9A6AA6DEA47587862 /* PBXContainerItemProxy */;
+			targetProxy = EC386BFB61770E097E5DDDA7972083F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		241C86BD31789EC4EC6395CECC49C50D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBE0D5FDFD532447DA64613C0411A8EF /* LaughingAdventure-Logging-Purchase.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LaughingAdventure-Logging-Purchase/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LaughingAdventure;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		24E81F95744F26C89F9158465D8FBE74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40B3AFA63EFFA7C5DA3904CCF6BF3396 /* Pods-TenPairTests.debug.xcconfig */;
@@ -1202,11 +1324,12 @@
 			};
 			name = Debug;
 		};
-		29FCE7C5B88E1A39AA924AE57E14A41C /* Debug */ = {
+		3ED290310EE1E8DF76812F6D55240C94 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A03DA2598FD9A0B1ED89F93CAE7C5E41 /* Pods-TenPair.debug.xcconfig */;
+			baseConfigurationReference = 6E3560C2A2475037D3B7B52DFADE5FE1 /* Pods-MacTenPair.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -1214,83 +1337,23 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TenPair/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-MacTenPair/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TenPair/Pods-TenPair.modulemap";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-MacTenPair/Pods-MacTenPair.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TenPair;
-				SDKROOT = iphoneos;
+				PRODUCT_NAME = Pods_MacTenPair;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		319A91AB88D97E59484172A352B40CFB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCD7E966AA63127F107FC463DC16FC47 /* SWLogger-iOS.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SWLogger-iOS/SWLogger-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SWLogger-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SWLogger-iOS/SWLogger-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SWLogger;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		37569CA76545F60AA562F5B5472AF482 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DD18E39F801A1F6B34B1A4CDC6CB57B /* LaughingAdventure.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LaughingAdventure/LaughingAdventure-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LaughingAdventure/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LaughingAdventure/LaughingAdventure.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = LaughingAdventure;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1298,7 +1361,7 @@
 		};
 		4799CFBC99D2EDFFDAFD3DEF3186789C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E05338B83EE1E16D0ACCF1D9EAA3497 /* Locksmith.xcconfig */;
+			baseConfigurationReference = 6AEF7424C7F532B2158ACE0A785D3F65 /* Locksmith.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1325,63 +1388,36 @@
 			};
 			name = Release;
 		};
-		49581A1DCE4D715153620D2EE78FE86F /* Release */ = {
+		5EB10BC2B1EE570C78B51C2294A28F89 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D17D637F7721D82DF7F62705BB42AC91 /* GameKit-iOS.xcconfig */;
+			baseConfigurationReference = E4DB249B5A01CC84D59AD1F2E2ED68F6 /* SWLogger-OSX.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GameKit-iOS/GameKit-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GameKit-iOS/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SWLogger-OSX/SWLogger-OSX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SWLogger-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GameKit-iOS/GameKit-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = GameKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		520EC7D7CD29DE65CF16289441D79B2A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCD7E966AA63127F107FC463DC16FC47 /* SWLogger-iOS.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SWLogger-iOS/SWLogger-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SWLogger-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SWLogger-iOS/SWLogger-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/SWLogger-OSX/SWLogger-OSX.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = SWLogger;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		62EF35A18AF3411EDFC4A1FA9FD61EDF /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1423,36 +1459,38 @@
 			};
 			name = Release;
 		};
-		66C52D43A3FA21D6CA4BBD71502259E6 /* Debug */ = {
+		64F49936E65048BC73D9B6FE6EB53086 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23AACCD143AA2A32F91D7FB0B4F7DC7D /* GameKit-OSX.xcconfig */;
+			baseConfigurationReference = 109389826F1873CCD767B011F46E3FEE /* Pods-TenPair.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GameKit-OSX/GameKit-OSX-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GameKit-OSX/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TenPair/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/GameKit-OSX/GameKit-OSX.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = GameKit;
-				SDKROOT = macosx;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TenPair/Pods-TenPair.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TenPair;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		6734ABFE9C8BEBABC93D28AD0A04DE49 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1498,9 +1536,9 @@
 			};
 			name = Debug;
 		};
-		691A939B4EE8F6DD8E82247820994DBD /* Release */ = {
+		6EEEC38D40ED60B6D92259C0FF1FFB28 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 245E0C86417BD36D98B0075FE61AC8B8 /* SWLogger-OSX.xcconfig */;
+			baseConfigurationReference = 9DAFF347E73DABC8FA2335428C62FD73 /* GameKit-OSX.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1513,14 +1551,14 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SWLogger-OSX/SWLogger-OSX-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SWLogger-OSX/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/GameKit-OSX/GameKit-OSX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GameKit-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/SWLogger-OSX/SWLogger-OSX.modulemap";
+				MODULEMAP_FILE = "Target Support Files/GameKit-OSX/GameKit-OSX.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SWLogger;
+				PRODUCT_NAME = GameKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1528,75 +1566,9 @@
 			};
 			name = Release;
 		};
-		6BC1CBC066FCF1E4F8FF117C097710E4 /* Debug */ = {
+		9DFF7E8E6C9F59345239B8010022669F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 245E0C86417BD36D98B0075FE61AC8B8 /* SWLogger-OSX.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SWLogger-OSX/SWLogger-OSX-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SWLogger-OSX/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/SWLogger-OSX/SWLogger-OSX.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SWLogger;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		89D51991301D163F2F747FAAB3802E55 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E3560C2A2475037D3B7B52DFADE5FE1 /* Pods-MacTenPair.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MacTenPair/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-MacTenPair/Pods-MacTenPair.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MacTenPair;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9209EF432A0B67C18ABB02BAC5930A14 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 109389826F1873CCD767B011F46E3FEE /* Pods-TenPair.release.xcconfig */;
+			baseConfigurationReference = 4FFE1EE4B2FD75502146A132AB99382E /* LaughingAdventure-Feedback-Logging-Purchase.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1607,45 +1579,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TenPair/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/LaughingAdventure-Feedback-Logging-Purchase/LaughingAdventure-Feedback-Logging-Purchase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LaughingAdventure-Feedback-Logging-Purchase/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TenPair/Pods-TenPair.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TenPair;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A09801F468CB76A763EAA369D868EEE7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DD18E39F801A1F6B34B1A4CDC6CB57B /* LaughingAdventure.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LaughingAdventure/LaughingAdventure-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LaughingAdventure/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LaughingAdventure/LaughingAdventure.modulemap";
+				MODULEMAP_FILE = "Target Support Files/LaughingAdventure-Feedback-Logging-Purchase/LaughingAdventure-Feedback-Logging-Purchase.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = LaughingAdventure;
 				SDKROOT = iphoneos;
@@ -1656,7 +1595,7 @@
 			};
 			name = Release;
 		};
-		A1BF9E0AA4682C3711632700FE97B184 /* Release */ = {
+		A3265A35CD51B3E23639599F3C341D0F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 409B323F4B5F1F2560FAC769C7DCFB3B /* Pods-MacTenPair.release.xcconfig */;
 			buildSettings = {
@@ -1690,14 +1629,73 @@
 			};
 			name = Release;
 		};
-		B60B4E36F68128765A668CDEC9C89213 /* Release */ = {
+		B3CACC954FC32777493218FB4E83F98E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23AACCD143AA2A32F91D7FB0B4F7DC7D /* GameKit-OSX.xcconfig */;
+			baseConfigurationReference = 6E3476D5CBB0108A171CB65364B9767C /* SWLogger-iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SWLogger-iOS/SWLogger-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SWLogger-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SWLogger-iOS/SWLogger-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SWLogger;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CD13E5DDF7E023CFF7B3EA2EBD71A076 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBE0D5FDFD532447DA64613C0411A8EF /* LaughingAdventure-Logging-Purchase.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LaughingAdventure-Logging-Purchase/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = LaughingAdventure;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D3901DCFBF0CCC7E7FD9F94F64216528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DAFF347E73DABC8FA2335428C62FD73 /* GameKit-OSX.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1711,18 +1709,49 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MODULEMAP_FILE = "Target Support Files/GameKit-OSX/GameKit-OSX.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = GameKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		B872540408218F13422182FABE6448EC /* Debug */ = {
+		DBA888CC199D653E1E5E69F6F16EE207 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D17D637F7721D82DF7F62705BB42AC91 /* GameKit-iOS.xcconfig */;
+			baseConfigurationReference = 6AEF7424C7F532B2158ACE0A785D3F65 /* Locksmith.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Locksmith/Locksmith-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Locksmith/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Locksmith/Locksmith.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Locksmith;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DC6A0A2EA4752233B47A9C334406527D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F53CB48F5A6316FCBDFF1D6E5933542 /* GameKit-iOS.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1750,9 +1779,9 @@
 			};
 			name = Debug;
 		};
-		DBA888CC199D653E1E5E69F6F16EE207 /* Debug */ = {
+		DF29E4BF172A19A2DD44D8C8C7A6AF4B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E05338B83EE1E16D0ACCF1D9EAA3497 /* Locksmith.xcconfig */;
+			baseConfigurationReference = 6E3476D5CBB0108A171CB65364B9767C /* SWLogger-iOS.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1763,14 +1792,137 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Locksmith/Locksmith-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Locksmith/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SWLogger-iOS/SWLogger-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SWLogger-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Locksmith/Locksmith.modulemap";
+				MODULEMAP_FILE = "Target Support Files/SWLogger-iOS/SWLogger-iOS.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Locksmith;
+				PRODUCT_NAME = SWLogger;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E374D10018C64D0F751ED5A1C36E3414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4DB249B5A01CC84D59AD1F2E2ED68F6 /* SWLogger-OSX.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SWLogger-OSX/SWLogger-OSX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SWLogger-OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/SWLogger-OSX/SWLogger-OSX.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SWLogger;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E5DD62E5E255FEDF8D86530A7C4C5DFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FFE1EE4B2FD75502146A132AB99382E /* LaughingAdventure-Feedback-Logging-Purchase.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LaughingAdventure-Feedback-Logging-Purchase/LaughingAdventure-Feedback-Logging-Purchase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LaughingAdventure-Feedback-Logging-Purchase/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LaughingAdventure-Feedback-Logging-Purchase/LaughingAdventure-Feedback-Logging-Purchase.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LaughingAdventure;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EB34EE8F459908B4A29AC29ACE380369 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F53CB48F5A6316FCBDFF1D6E5933542 /* GameKit-iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GameKit-iOS/GameKit-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GameKit-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GameKit-iOS/GameKit-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = GameKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F0AD678C365D3B9827C86829D90A4BF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A03DA2598FD9A0B1ED89F93CAE7C5E41 /* Pods-TenPair.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TenPair/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TenPair/Pods-TenPair.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TenPair;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1816,11 +1968,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		19E856981C400DC905E85ACA4447003C /* Build configuration list for PBXNativeTarget "GameKit-iOS" */ = {
+		25FD24D90CB6BA215C6A3D4AB1FD5E4C /* Build configuration list for PBXNativeTarget "GameKit-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B872540408218F13422182FABE6448EC /* Debug */,
-				49581A1DCE4D715153620D2EE78FE86F /* Release */,
+				D3901DCFBF0CCC7E7FD9F94F64216528 /* Debug */,
+				6EEEC38D40ED60B6D92259C0FF1FFB28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1834,20 +1986,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58457BEB4BA935052F8D1FAE9854350B /* Build configuration list for PBXNativeTarget "Pods-MacTenPair" */ = {
+		3103D2EE20BCF6385419DEF0904A65B3 /* Build configuration list for PBXNativeTarget "SWLogger-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				89D51991301D163F2F747FAAB3802E55 /* Debug */,
-				A1BF9E0AA4682C3711632700FE97B184 /* Release */,
+				5EB10BC2B1EE570C78B51C2294A28F89 /* Debug */,
+				E374D10018C64D0F751ED5A1C36E3414 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5D54765BC5149F9B3BB1D0CF398AC0F8 /* Build configuration list for PBXNativeTarget "LaughingAdventure" */ = {
+		3536553BDF7FA0B84D95C3F495A4C3A5 /* Build configuration list for PBXNativeTarget "LaughingAdventure-Feedback-Logging-Purchase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				37569CA76545F60AA562F5B5472AF482 /* Debug */,
-				A09801F468CB76A763EAA369D868EEE7 /* Release */,
+				E5DD62E5E255FEDF8D86530A7C4C5DFF /* Debug */,
+				9DFF7E8E6C9F59345239B8010022669F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1861,6 +2013,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		7EF4B7648AF62E785EF8BE54B624063C /* Build configuration list for PBXNativeTarget "Pods-TenPair" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0AD678C365D3B9827C86829D90A4BF3 /* Debug */,
+				64F49936E65048BC73D9B6FE6EB53086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8A3F14F49485BB4DB6DD235823E6D9A6 /* Build configuration list for PBXNativeTarget "Locksmith" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1870,38 +2031,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9677BA54471EAACE14662AC65D3A1368 /* Build configuration list for PBXNativeTarget "SWLogger-iOS" */ = {
+		CB5467D35E4B1F02FD52B48E036A707D /* Build configuration list for PBXNativeTarget "SWLogger-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				319A91AB88D97E59484172A352B40CFB /* Debug */,
-				520EC7D7CD29DE65CF16289441D79B2A /* Release */,
+				DF29E4BF172A19A2DD44D8C8C7A6AF4B /* Debug */,
+				B3CACC954FC32777493218FB4E83F98E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF86E807ED4CBBE4AC438B52FE266BE1 /* Build configuration list for PBXNativeTarget "Pods-TenPair" */ = {
+		CF3457E5C3A1EA5BC661450FA3AF8CC2 /* Build configuration list for PBXNativeTarget "LaughingAdventure-Logging-Purchase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29FCE7C5B88E1A39AA924AE57E14A41C /* Debug */,
-				9209EF432A0B67C18ABB02BAC5930A14 /* Release */,
+				241C86BD31789EC4EC6395CECC49C50D /* Debug */,
+				CD13E5DDF7E023CFF7B3EA2EBD71A076 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E6E4FD7D96B2CE8DD426BC1903319E74 /* Build configuration list for PBXNativeTarget "SWLogger-OSX" */ = {
+		EC111810E4C56A00C7FC97FD57425AEC /* Build configuration list for PBXNativeTarget "GameKit-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6BC1CBC066FCF1E4F8FF117C097710E4 /* Debug */,
-				691A939B4EE8F6DD8E82247820994DBD /* Release */,
+				DC6A0A2EA4752233B47A9C334406527D /* Debug */,
+				EB34EE8F459908B4A29AC29ACE380369 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDB86021E5365500001438613506B208 /* Build configuration list for PBXNativeTarget "GameKit-OSX" */ = {
+		F5232A9744556A36FD3D49040906ABC8 /* Build configuration list for PBXNativeTarget "Pods-MacTenPair" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				66C52D43A3FA21D6CA4BBD71502259E6 /* Debug */,
-				B60B4E36F68128765A668CDEC9C89213 /* Release */,
+				3ED290310EE1E8DF76812F6D55240C94 /* Debug */,
+				A3265A35CD51B3E23639599F3C341D0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

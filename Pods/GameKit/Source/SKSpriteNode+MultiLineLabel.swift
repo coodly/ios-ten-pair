@@ -40,39 +40,10 @@ public extension SKSpriteNode {
         string.setAttributes(attributes, range: NSMakeRange(0, message.characters.count))
         
         let rect = string.boundingRectWithSize(CGSizeMake(maxWidth, 1000), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
-        let image = string.render(inBox: rect, attributes: attributes)
+        let image = string.renderIn(rect)
         
         let result = SKSpriteNode(texture: SKTexture(image: image))
         result.colorBlendFactor = 1
         return result
     }
 }
-
-#if os(iOS)
-    import UIKit
-    
-    private extension NSAttributedString {
-        func render(inBox box: CGRect, attributes: [String: AnyObject]) -> UIImage {
-            UIGraphicsBeginImageContextWithOptions(box.size, false, UIScreen.mainScreen().scale)
-            drawInRect(box)
-            
-            #if swift(>=2.3)
-                let image = UIGraphicsGetImageFromCurrentImageContext()!
-            #else
-                let image = UIGraphicsGetImageFromCurrentImageContext()
-            #endif
-            UIGraphicsEndImageContext()
-            
-            return image
-        }
-    }
-#else
-    private extension NSAttributedString {
-        func render(inBox box: CGRect, attributes: [String: AnyObject]) -> NSImage {
-            let image = NSImage(size: box.size)
-            // TODO jaanus: fill in from
-            // http://stackoverflow.com/questions/12223739/ios-to-mac-graphiccontext-explanation-conversion
-            return image
-        }
-    }
-#endif

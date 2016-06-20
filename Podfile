@@ -38,11 +38,13 @@ end
 def local_coodly_mac
     pod 'SWLogger', :path => '../swift-logger'
     pod 'GameKit', :path => '../swift-game-kit'
+    pod 'LaughingAdventure/Purchase', :path => '../swift-laughing-adventure'
 end
 
 def remote_coodly_mac
     pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
     pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git', :branch => 'macos'
+    pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
 end
 
 def mac_pods
