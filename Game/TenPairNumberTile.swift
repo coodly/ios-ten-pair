@@ -47,7 +47,12 @@ class TenPairNumberTile: SKSpriteNode {
         numberSprite.color = TenPairTheme.currentTheme.tileNumberColor!
         numberSprite.colorBlendFactor = 1.0
         self.numberSprite = numberSprite
-        numberSprite.position = CGPointMake(backgroundNode!.size.width / 2, backgroundNode!.size.height * 0.75 / 2)
+        #if os(iOS)
+            numberSprite.position = CGPointMake(backgroundNode!.size.width / 2, backgroundNode!.size.height * 0.75 / 2)
+        #else
+            numberSprite.anchorPoint = CGPointZero
+            numberSprite.position = CGPointMake((backgroundNode!.size.width - numberSprite.size.width) / 2, (backgroundNode!.size.height - numberSprite.size.height) / 2 + backgroundNode!.size.height * 0.2)
+        #endif
         backgroundNode!.addChild(numberSprite)
         
         markUnselected()

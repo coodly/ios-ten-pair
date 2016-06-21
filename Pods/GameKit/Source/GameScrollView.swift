@@ -161,10 +161,17 @@ public class GameScrollView: GameView {
     }
     
     extension GameScrollView {
+        @objc private func didScroll(notification: NSNotification) {
+            guard let object = notification.object as? NSScrollView where scrollView === object else {
+                return
+            }
+            
+            positionPresentedNode()
+        }
+
         func positionScrollView() {
-            scrollView.frame.size = size
+            scrollView.frame = scene!.view!.bounds
             scrollView.contentInsets = contentInset
-            scrollView.scrollerInsets = NSEdgeInsetsMake(contentInset.top, 0, contentInset.bottom, 0)
             
             scene!.view!.addSubview(scrollView)
         }
@@ -189,14 +196,6 @@ public class GameScrollView: GameView {
         
         func scroll(to: CGPoint, animated: Bool) {
             scrollView.documentView!.scrollPoint(to)
-        }
-        
-        @objc private func didScroll(notification: NSNotification) {
-            guard let object = notification.object as? NSScrollView where scrollView === object else {
-                return
-            }
-            
-            positionPresentedNode()
         }
     }
     

@@ -37,9 +37,29 @@ import Foundation
 #else
     public extension NSAttributedString {
         func renderIn(box: CGRect) -> NSImage {
-            let image = NSImage(size: box.size)
-            // TODO jaanus: fill in from
             // http://stackoverflow.com/questions/12223739/ios-to-mac-graphiccontext-explanation-conversion
+            
+            let size = box.size
+            let image = NSImage(size: size)
+
+            let rep = NSBitmapImageRep.init(bitmapDataPlanes: nil,
+                                            pixelsWide: Int(size.width),
+                                            pixelsHigh: Int(size.height),
+                                            bitsPerSample: 8,
+                                            samplesPerPixel: 4,
+                                            hasAlpha: true,
+                                            isPlanar: false,
+                                            colorSpaceName: NSCalibratedRGBColorSpace,
+                                            bytesPerRow: 0,
+                                            bitsPerPixel: 0)!
+            
+            image.addRepresentation(rep)
+            image.lockFocus()
+            
+            drawAtPoint(CGPointZero)
+            
+            image.unlockFocus()
+            
             return image
         }
     }
