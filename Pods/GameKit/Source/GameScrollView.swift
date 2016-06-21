@@ -26,7 +26,8 @@ public class GameScrollView: GameView {
         let view = NSScrollView(frame: CGRectZero)
         view.drawsBackground = false
         view.hasVerticalScroller = true
-        
+        view.automaticallyAdjustsContentInsets = false
+    
         NSNotificationCenter.defaultCenter().addObserver(self, selector: .scrolled, name: NSScrollViewDidLiveScrollNotification, object: nil)
         
         return view
@@ -61,7 +62,6 @@ public class GameScrollView: GameView {
     func positionPresentedNode() {
         let offset = contentOffsetY()
         let nextPosition = CGPointMake((size.width - presented!.size.width) / 2, -presented!.size.height + size.height + offset)
-        print("next >> \(nextPosition)")
         
         let moveAction = SKAction.moveTo(nextPosition, duration: 0)
         
@@ -170,7 +170,6 @@ public class GameScrollView: GameView {
         }
         
         func contentOffsetY() -> CGFloat {
-            print(">>>>>> \(scrollView.contentView.visibleRect)")
             return scrollView.contentView.visibleRect.origin.y
         }
         
