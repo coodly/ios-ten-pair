@@ -133,7 +133,11 @@ public class GameScrollView: GameView {
     
     public func setContentOffset(contentOffset: CGPoint, animated: Bool) {
         var saneYOffset = max(contentOffset.y, 0)
-        saneYOffset = min(saneYOffset, scrollView.contentSize.height - scrollView.bounds.height)
+        #if os(iOS)
+            saneYOffset = min(saneYOffset, scrollView.contentSize.height - scrollView.bounds.height)
+        #else
+            saneYOffset = min(saneYOffset, dummy.bounds.height - scrollView.bounds.height)
+        #endif
         scroll(CGPointMake(0, saneYOffset), animated: animated)
     }
 }
@@ -206,7 +210,9 @@ public class GameScrollView: GameView {
         }
         
         func scroll(to: CGPoint, animated: Bool) {
-            scrollView.documentView!.scrollPoint(to)
+            scrollView.contentView.scrollToPoint(to)
+            scrollView.reflectScrolledClipView(scrollView.contentView)
+            positionPresentedNode()
         }
     }
     
