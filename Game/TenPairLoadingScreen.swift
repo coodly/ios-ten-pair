@@ -29,7 +29,7 @@ class TenPairLoadingScreen : GameLoadingView {
         
         color = TenPairTheme.currentTheme.backgroundColor!.colorWithAlphaComponent(0.8)
         let path = CGPathCreateMutable()
-        CGPathAddArc(path, nil, 0, 0, 50, radians(0), radians(310), true)
+        CGPathAddArc(path, nil, 0, 0, 50, radians(0), radians(310), false)
         let spinner = SKShapeNode()
         self.spinner = spinner
         spinner.path = path 

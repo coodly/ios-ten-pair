@@ -33,7 +33,13 @@ public class GameScrollView: GameView {
         return view
     }()
     public var contentInset = NSEdgeInsetsZero
-    private var dummy: NSView?
+    private lazy var dummy: NSView = {
+        var dummy = Flipper(frame: CGRectZero)
+        dummy.wantsLayer = true
+        dummy.layer!.backgroundColor = SKColor.redColor().colorWithAlphaComponent(0.2).CGColor
+        self.scrollView.documentView = dummy
+        return dummy
+    }()
     #endif
     var presented: GameScrollViewContained?
     var yCenterContent = false
@@ -49,6 +55,11 @@ public class GameScrollView: GameView {
         presented = content
         presented!.scrollView = self
         adjustContentSize()
+        
+        #if os(iOS)
+        #else
+            scrollView.contentView.scrollToPoint(NSMakePoint(0, -contentInset.top))
+        #endif
         
         positionPresentedNode()
     }
@@ -96,16 +107,21 @@ public class GameScrollView: GameView {
         insets.left += presentationInset.left
         insets.right += presentationInset.right
         
+        var performScroll = false
         if (yCenterContent) {
             let yOffset = (size.height - presented!.size.height) / 2
             insets.top = yOffset
             insets.bottom = yOffset
+            performScroll = true
         }
         
         #if os(iOS)
             scrollView.contentInset = insets
         #else
             scrollView.contentInsets = insets
+            if performScroll {
+                scrollView.contentView.scrollToPoint(NSMakePoint(0, -insets.top))
+            }
         #endif
         
         positionPresentedNode()
@@ -185,13 +201,8 @@ public class GameScrollView: GameView {
         }
 
         func adjustContentSize() {
-            dummy?.removeFromSuperview()
-            
             let size = contentSize()
-            dummy = Flipper(frame: CGRectMake(0, 0, self.size.width, size.height))
-            dummy!.wantsLayer = true
-            dummy!.layer!.backgroundColor = SKColor.redColor().colorWithAlphaComponent(0.2).CGColor
-            scrollView.documentView = dummy!
+            dummy.frame = CGRectMake(0, 0, self.size.width, size.height)
         }
         
         func scroll(to: CGPoint, animated: Bool) {
