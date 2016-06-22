@@ -70,11 +70,12 @@ class TenPairNumbersField: GameScrollViewContained {
             self.notifySizeChanged()
         }
     }
+    private var userInputAllowed = true
     
     override func loadContent() {
         name = "TenPairNumbersField"
         
-        userInteractionEnabled = true
+        userInputAllowed = true
         
         background.fillColor = TenPairTheme.currentTheme.consumedTileColor!
         addChild(background)
@@ -99,7 +100,7 @@ class TenPairNumbersField: GameScrollViewContained {
     }
     
     func tappedAt(location: CGPoint) {
-        if !userInteractionEnabled {
+        if !userInputAllowed {
             return
         }
         
@@ -124,7 +125,7 @@ class TenPairNumbersField: GameScrollViewContained {
             return
         }
         
-        userInteractionEnabled = false
+        userInputAllowed = false
         tile.markSelected()
         
         let indexOne = selectedIndex
@@ -188,7 +189,7 @@ class TenPairNumbersField: GameScrollViewContained {
             if lines.count > 0 {
                 self.executeRemovingLines(lines)
             } else {
-                self.userInteractionEnabled = true
+                self.userInputAllowed = true
             }
             
             self.fieldStatus!.addToTiles(-2)
@@ -220,7 +221,7 @@ class TenPairNumbersField: GameScrollViewContained {
         lastHandledVisible = CGRectZero
         
         ensureVisibleCovered(lastHandled, animated: true, completionAction: SKAction.runBlock({ () -> Void in
-            self.userInteractionEnabled = true
+            self.userInputAllowed = true
             self.notifySizeChanged()
             if self.numberOfLines() == 0 {
                 self.runAction(self.gameWonAction!)
@@ -270,7 +271,7 @@ class TenPairNumbersField: GameScrollViewContained {
             two.markUnselected()
             self.selectedTile = nil
             self.selectedIndex = -1
-            self.userInteractionEnabled = true
+            self.userInputAllowed = true
         }
         
         var secondActions = Array(shakeActions)
@@ -311,7 +312,7 @@ class TenPairNumbersField: GameScrollViewContained {
     }
     
     override func scrolledVisibleTo(visibleFrame: CGRect) {
-        userInteractionEnabled = true
+        userInputAllowed = true
         
         if runningActions() {
             return
