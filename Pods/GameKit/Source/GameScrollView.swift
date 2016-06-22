@@ -27,6 +27,7 @@ public class GameScrollView: GameView {
         view.drawsBackground = false
         view.hasVerticalScroller = true
         view.automaticallyAdjustsContentInsets = false
+        view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
     
         NSNotificationCenter.defaultCenter().addObserver(self, selector: .scrolled, name: NSScrollViewDidLiveScrollNotification, object: nil)
         

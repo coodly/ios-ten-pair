@@ -24,6 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, InterstitialPresenter {
         NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": true])
         Fabric.with([Crashlytics.self])
         
+        window.minSize = NSMakeSize(400, 600)
+        
         if !ReleaseBuild {
             Log.addOutput(ConsoleOutput())
             Log.addOutput(FileOutput())
