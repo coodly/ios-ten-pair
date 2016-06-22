@@ -105,15 +105,20 @@ public class Game: SKScene {
         let screenNodes = topScreen.nodesAtPoint(point)
         let sorted = screenNodes.sort({$0.zPosition > $1.zPosition})
         
-        if let button = findButtonInArray(sorted), let tapAction = button.action {
-            if button.touchDisables {
-                button.userInteractionEnabled = false
-            }
-            
-            runAction(tapAction)
-        } else {
+        guard let button = findButtonInArray(sorted), tapAction = button.action else {
             topScreen.handleTapAt(point)
+            return
         }
+        
+        guard button.isEnabled() else {
+            return
+        }
+        
+        if button.touchDisables {
+            button.disable()
+        }
+            
+        runAction(tapAction)
     }
     
     func screensInArray(nodes: [SKNode]) -> [GameScreen] {

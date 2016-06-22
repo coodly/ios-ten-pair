@@ -167,7 +167,7 @@ class TenPairPlayScreen: GameScreen {
         
         let reload = SKAction.runBlock() {
             self.numbersField!.reloadNumbers(SKAction.runBlock({ () -> Void in
-                self.topMenuBar!.reloadButton!.userInteractionEnabled = true
+                self.topMenuBar!.reloadButton!.enable()
                 self.game!.dismissScreen(loading!)
                 
                 completion?()

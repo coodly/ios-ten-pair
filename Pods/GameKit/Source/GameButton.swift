@@ -17,10 +17,16 @@
 import Foundation
 import SpriteKit
 
+enum Status {
+    case Enabled
+    case Disabed
+}
+
 public class GameButton : GameView {
     public var action: SKAction?
     public var touchDisables = false
     public var image: SKSpriteNode?
+    var status: Status = .Enabled
     
     public class func buttonWithImage(imageName: String, closure: () -> ()) -> GameButton {
         return GameButton.buttonWithImage(imageName, action: SKAction.runBlock(closure))
@@ -44,6 +50,18 @@ public class GameButton : GameView {
         
         image.size = fitSizeToHeight(image.size, height: size.height)
         image.position = CGPointMake(size.width / 2, size.height / 2)
+    }
+    
+    public func disable() {
+        status = .Disabed
+    }
+    
+    public func enable() {
+        status = .Enabled
+    }
+    
+    func isEnabled() -> Bool {
+        return status == .Enabled
     }
 }
 
