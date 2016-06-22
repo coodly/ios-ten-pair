@@ -36,7 +36,6 @@ public class GameScrollView: GameView {
     private lazy var dummy: NSView = {
         var dummy = Flipper(frame: CGRectZero)
         dummy.wantsLayer = true
-        dummy.layer!.backgroundColor = SKColor.redColor().colorWithAlphaComponent(0.2).CGColor
         self.scrollView.documentView = dummy
         return dummy
     }()
@@ -205,8 +204,12 @@ public class GameScrollView: GameView {
         }
 
         func adjustContentSize() {
-            let size = contentSize()
-            dummy.frame = CGRectMake(0, 0, self.size.width, size.height)
+            var presentedHeight = contentSize().height
+            let insets = presented!.presentationInsets()
+            presentedHeight += insets.top
+            presentedHeight += insets.bottom
+            presentedHeight += contentInset.bottom
+            dummy.frame = CGRectMake(0, 0, self.size.width, presentedHeight)
         }
         
         func scroll(to: CGPoint, animated: Bool) {
