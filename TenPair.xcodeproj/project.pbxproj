@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		841FDAF79BF56DB585AFA529 /* Pods_TenPairTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F580462683097342ADC13243 /* Pods_TenPairTests.framework */; };
 		9FBFE182016DE5A93280545B /* Pods_MacTenPair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039959ED9B3505A0C180E31E /* Pods_MacTenPair.framework */; };
+		A7106EAF1D1ACC6200519A4A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7106EAB1D1ACC6200519A4A /* InfoPlist.strings */; };
+		A7106EB01D1ACC6200519A4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7106EAD1D1ACC6200519A4A /* Localizable.strings */; };
+		A7106EB11D1ACC7F00519A4A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7106EAB1D1ACC6200519A4A /* InfoPlist.strings */; };
+		A7106EB21D1ACC7F00519A4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7106EAD1D1ACC6200519A4A /* Localizable.strings */; };
 		A73752A11D17BB2500A35FCD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A737529F1D17BB2500A35FCD /* Crashlytics.framework */; };
 		A73752A21D17BB2500A35FCD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73752A01D17BB2500A35FCD /* Fabric.framework */; };
 		A73A97611D0D8FE400CF1B3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A97601D0D8FE400CF1B3B /* Constants.swift */; };
@@ -78,8 +82,6 @@
 		A7EA2DF11D17022A0025D809 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EA2DEF1D17022A0025D809 /* Crashlytics.framework */; };
 		A7EA2DF21D17022A0025D809 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EA2DF01D17022A0025D809 /* Fabric.framework */; };
 		BA29C74345D8AF284AEF358D /* Pods_TenPair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8E7688E7CDE00FCBA4B81D /* Pods_TenPair.framework */; };
-		EA01D8CD1BAF32E1007014FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA01D8C91BAF32E1007014FC /* InfoPlist.strings */; };
-		EA01D8CE1BAF32E1007014FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA01D8CB1BAF32E1007014FC /* Localizable.strings */; };
 		EA02FA921B9C6AA400B93D23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02FA911B9C6AA400B93D23 /* AppDelegate.swift */; };
 		EA02FA981B9C6AA400B93D23 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02FA971B9C6AA400B93D23 /* GameViewController.swift */; };
 		EA02FA9B1B9C6AA400B93D23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA02FA991B9C6AA400B93D23 /* Main.storyboard */; };
@@ -103,6 +105,8 @@
 		12C99812277A1C201C4154B7 /* Pods-MacTenPair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacTenPair.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacTenPair/Pods-MacTenPair.release.xcconfig"; sourceTree = "<group>"; };
 		858FDDE58A3DC23BE208A6C7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8E7688E7CDE00FCBA4B81D /* Pods_TenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7106EAC1D1ACC6200519A4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		A7106EAE1D1ACC6200519A4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		A737529F1D17BB2500A35FCD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = macOSFrameworks/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		A73752A01D17BB2500A35FCD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = macOSFrameworks/Fabric.framework; sourceTree = SOURCE_ROOT; };
 		A73A97601D0D8FE400CF1B3B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -152,8 +156,6 @@
 		BDA980DD7CA0FCA2402F32C5 /* Pods-TenPair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenPair.release.xcconfig"; path = "Pods/Target Support Files/Pods-TenPair/Pods-TenPair.release.xcconfig"; sourceTree = "<group>"; };
 		C59489CCA14E8527D2C93F22 /* Pods-TenPair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenPair.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TenPair/Pods-TenPair.debug.xcconfig"; sourceTree = "<group>"; };
 		E8C734AAAB07E4E5623D7EBD /* Pods-TenPairTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenPairTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TenPairTests/Pods-TenPairTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EA01D8CA1BAF32E1007014FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
-		EA01D8CC1BAF32E1007014FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		EA02FA8E1B9C6AA400B93D23 /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA02FA911B9C6AA400B93D23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA02FA971B9C6AA400B93D23 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A7106EAA1D1ACC6200519A4A /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A7106EAB1D1ACC6200519A4A /* InfoPlist.strings */,
+				A7106EAD1D1ACC6200519A4A /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
 		A737529E1D17BB1500A35FCD /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +258,7 @@
 		A76347411D17C195001A3A95 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				A7106EAA1D1ACC6200519A4A /* en.lproj */,
 				A75682501D182E43006FCA07 /* AlertViewScreen.swift */,
 				A75682291D181D73006FCA07 /* GameConstants.swift */,
 				A756822C1D181E1A006FCA07 /* HintButtonTray.swift */,
@@ -299,20 +311,10 @@
 			children = (
 				A7EA2DEF1D17022A0025D809 /* Crashlytics.framework */,
 				A7EA2DF01D17022A0025D809 /* Fabric.framework */,
-				EA01D8C81BAF32E1007014FC /* en.lproj */,
 				A73A976B1D0DBED200CF1B3B /* Secrets.sample.swift */,
 				A73A976C1D0DBED200CF1B3B /* Secrets.swift */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		EA01D8C81BAF32E1007014FC /* en.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				EA01D8C91BAF32E1007014FC /* InfoPlist.strings */,
-				EA01D8CB1BAF32E1007014FC /* Localizable.strings */,
-			);
-			path = en.lproj;
 			sourceTree = "<group>";
 		};
 		EA02FA851B9C6AA400B93D23 = {
@@ -501,9 +503,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A75682621D183B1E006FCA07 /* GameAssets.xcassets in Resources */,
+				A7106EB21D1ACC7F00519A4A /* Localizable.strings in Resources */,
 				A7E59AE31D16F6ED0065E5EC /* Assets.xcassets in Resources */,
 				A7E59AE11D16F6ED0065E5EC /* GameScene.sks in Resources */,
 				A7E59AE61D16F6ED0065E5EC /* MainMenu.xib in Resources */,
+				A7106EB11D1ACC7F00519A4A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,9 +516,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A75682611D183B1E006FCA07 /* GameAssets.xcassets in Resources */,
-				EA01D8CE1BAF32E1007014FC /* Localizable.strings in Resources */,
+				A7106EAF1D1ACC6200519A4A /* InfoPlist.strings in Resources */,
 				EAB2197C1B9C6B3600ED9CF9 /* Images.xcassets in Resources */,
-				EA01D8CD1BAF32E1007014FC /* InfoPlist.strings in Resources */,
+				A7106EB01D1ACC6200519A4A /* Localizable.strings in Resources */,
 				EAB219B81B9C6C6300ED9CF9 /* LaunchScreen.xib in Resources */,
 				EA02FA9B1B9C6AA400B93D23 /* Main.storyboard in Resources */,
 			);
@@ -662,7 +666,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ruby scripts/check_localizable.rb TenPair";
+			shellScript = "ruby scripts/check_localizable.rb Game";
 		};
 		B15BD8A2A10C05ED3B1E9963 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -804,28 +808,28 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A7106EAB1D1ACC6200519A4A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7106EAC1D1ACC6200519A4A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A7106EAD1D1ACC6200519A4A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7106EAE1D1ACC6200519A4A /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		A7E59AE41D16F6ED0065E5EC /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A7E59AE51D16F6ED0065E5EC /* Base */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		EA01D8C91BAF32E1007014FC /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EA01D8CA1BAF32E1007014FC /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		EA01D8CB1BAF32E1007014FC /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EA01D8CC1BAF32E1007014FC /* en */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		EA02FA991B9C6AA400B93D23 /* Main.storyboard */ = {
