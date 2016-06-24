@@ -8,9 +8,9 @@ def shared
         pod 'GameKit', :path => '../swift-game-kit'
         pod 'LaughingAdventure/Purchase', :path => '../swift-laughing-adventure'
     else
-        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
-        pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git'
-        pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
+        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', :tag => '0.1.2'
+        pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git', :tag => '0.2.0'
+        pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.2.1'
     end
 end
 
@@ -24,7 +24,7 @@ def ios_pods
     if UseLocalPods
         pod 'LaughingAdventure/Feedback', :path => '../swift-laughing-adventure'
     else
-        pod 'LaughingAdventure/Feedback', :git => 'https://github.com/coodly/laughing-adventure.git'
+        pod 'LaughingAdventure/Feedback', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.2.1'
     end
 end
 
