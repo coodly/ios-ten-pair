@@ -21,6 +21,9 @@ protocol StorePresenter {
 }
 
 #if os(iOS)
+    
+let AppStoreID = 837173458
+
 import UIKit
 extension StorePresenter {
     func openInStore() {
@@ -28,9 +31,13 @@ extension StorePresenter {
     }
 }
 #else
+    
+    import AppKit
+    let MacAppStoreID = 1127749175
     extension StorePresenter {
         func openInStore() {
-
+            let url = NSURL(string: "https://itunes.apple.com/app/tenpair/id1127749175")!
+            NSWorkspace.sharedWorkspace().openURL(url)
         }
     }
 #endif

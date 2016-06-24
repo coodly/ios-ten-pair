@@ -21,8 +21,6 @@ import StoreKit
 import LaughingAdventure
 import SWLogger
 
-let AppStoreID = 837173458
-
 private extension Selector {
     static let checkFullVersion = #selector(TenPairMenuScreen.checkFullVersion)
 }
