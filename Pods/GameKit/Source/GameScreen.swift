@@ -20,7 +20,7 @@ public class GameScreen: GameView {
     public var game: Game?
     
     public func handleTapAt(point: CGPoint) {
-        print("handleTapAt:\(point)")
+        Logging.log("handleTapAt:\(point)")
     }
     
     public func dismiss() {

@@ -105,7 +105,7 @@ class TenPairNumbersField: GameScrollViewContained {
         }
         
         let nodes = nodesAtPoint(location)
-        guard let tile = tileInArray(nodes) else {
+        guard let tile = tileInArray(nodes, tappedAt: location) else {
             return
         }
         
@@ -147,9 +147,17 @@ class TenPairNumbersField: GameScrollViewContained {
         executeConsumeWithTiles(selectedTile, two: tile, atIndexOne: indexOne, atIndexTwo: indexTwo)
     }
     
-    func tileInArray(nodes: [AnyObject]) -> TenPairNumberTile! {
+    func tileInArray(nodes: [AnyObject], tappedAt: CGPoint) -> TenPairNumberTile! {
         for node in Array(nodes.reverse()) {
             guard let tile = node as? TenPairNumberTile where !tile.hidden else {
+                continue
+            }
+            
+            var frame = CGRectZero
+            frame.origin = tile.position
+            frame.size = tile.size
+            
+            guard CGRectContainsPoint(frame, tappedAt) else {
                 continue
             }
             

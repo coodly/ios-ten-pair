@@ -12,6 +12,7 @@ import SpriteKit
 import Fabric
 import Crashlytics
 import SWLogger
+import GameKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, InterstitialPresenter {
@@ -19,6 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, InterstitialPresenter {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var skView: SKView!
     private var scene: TenPairGame!
+    private var loggingDelegate: GameKitDelegate!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": true])
@@ -30,6 +32,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, InterstitialPresenter {
             Log.addOutput(ConsoleOutput())
             Log.addOutput(FileOutput())
             Log.logLevel = Log.Level.DEBUG
+            
+            loggingDelegate = GameKitDelegate()
+            Logging.sharedInstance.delegate = loggingDelegate
         }
         
         Log.debug("App launch")
@@ -78,3 +83,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, InterstitialPresenter {
         defaults.synchronize()
     }
 }
+
+private class GameKitDelegate: GameKit.LoggingDelegate {
+    private func log<T>(object: T, file: String, function: String, line: Int) {
+        let message = "L - \(object)"
+        Log.debug(message, file: file, function: function, line: line)
+    }
+}
+
