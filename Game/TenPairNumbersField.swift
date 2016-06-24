@@ -231,7 +231,7 @@ class TenPairNumbersField: GameScrollViewContained {
         ensureVisibleCovered(lastHandled, animated: true, completionAction: SKAction.runBlock({ () -> Void in
             self.userInputAllowed = true
             self.notifySizeChanged()
-            if self.numberOfLines() == 0 {
+            if self.gameCompleted() {
                 self.runAction(self.gameWonAction!)
             }
         }))
@@ -240,7 +240,9 @@ class TenPairNumbersField: GameScrollViewContained {
     func reindexTilesStaringFrom(reindexStart: Int) {
         var indexes = Array(tilesInUse.keys)
         indexes.sortInPlace()
-        let maxIndex = indexes.last!
+        guard let maxIndex = indexes.last else {
+            return
+        }
         
         if maxIndex < reindexStart {
             return
@@ -305,6 +307,14 @@ class TenPairNumbersField: GameScrollViewContained {
     func updateStatusLines() {
         let lines = numberOfLines()
         fieldStatus?.updateLines(lines)
+    }
+    
+    private func gameCompleted() -> Bool {
+        if numberOfLines() > 1 {
+            return false
+        }
+        
+        return presentedNumbers.filter({ $0 != 0}).count == 0
     }
     
     func numberOfLines() -> Int {
