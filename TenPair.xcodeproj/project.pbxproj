@@ -145,6 +145,7 @@
 		A7A775221D15AA7E00FB9976 /* FullVersionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullVersionHandler.swift; sourceTree = "<group>"; };
 		A7B082A41D168512006E0FEC /* InterstitialPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialPresenter.swift; sourceTree = "<group>"; };
 		A7B082A61D168EE0006E0FEC /* InterstitialCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialCounter.swift; sourceTree = "<group>"; };
+		A7C0C25B1D1D24E5008103F6 /* MacTenPair.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MacTenPair.entitlements; sourceTree = "<group>"; };
 		A7E59ADA1D16F6ED0065E5EC /* MacTenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacTenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E59ADC1D16F6ED0065E5EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7E59ADE1D16F6ED0065E5EC /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -295,6 +296,7 @@
 		A7E59ADB1D16F6ED0065E5EC /* MacTenPair */ = {
 			isa = PBXGroup;
 			children = (
+				A7C0C25B1D1D24E5008103F6 /* MacTenPair.entitlements */,
 				A737529E1D17BB1500A35FCD /* Supporting files */,
 				A7E59ADC1D16F6ED0065E5EC /* AppDelegate.swift */,
 				A7E59ADE1D16F6ED0065E5EC /* GameScene.swift */,
@@ -466,6 +468,12 @@
 				TargetAttributes = {
 					A7E59AD91D16F6ED0065E5EC = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 5T8DRBFCBP;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					EA02FA8D1B9C6AA400B93D23 = {
 						CreatedOnToolsVersion = 7.0;
@@ -857,7 +865,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = MacTenPair/MacTenPair.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -880,7 +889,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = MacTenPair/MacTenPair.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
