@@ -89,6 +89,11 @@ public class GameScrollView: GameView {
             
             let intersection = CGRectIntersection(visible, bounds)
             
+            // Sanity check on macOS. Exiting fullscreen gave invalid intersection
+            if CGSizeEqualToSize(CGSizeZero, intersection.size) {
+                return
+            }
+            
             self.presented!.scrolledVisibleTo(intersection)
         }
 
