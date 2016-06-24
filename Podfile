@@ -9,7 +9,7 @@ end
 
 def remote_coodly
     pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
-    pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git', :branch => 'macos'
+    pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git'
     pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
     pod 'LaughingAdventure/Feedback', :git => 'https://github.com/coodly/laughing-adventure.git'
 end
@@ -42,7 +42,7 @@ end
 
 def remote_coodly_mac
     pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
-    pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git', :branch => 'macos'
+    pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git'
     pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
 end
 

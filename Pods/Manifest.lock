@@ -29,7 +29,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/AdMob (= 3.2.1)
   - Firebase/Core (= 3.2.1)
-  - GameKit (from `git@github.com:coodly/GameKit.git`, branch `macos`)
+  - GameKit (from `git@github.com:coodly/GameKit.git`)
   - LaughingAdventure/Feedback (from `https://github.com/coodly/laughing-adventure.git`)
   - LaughingAdventure/Purchase (from `https://github.com/coodly/laughing-adventure.git`)
   - Locksmith (= 2.0.8)
@@ -37,7 +37,6 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   GameKit:
-    :branch: macos
     :git: git@github.com:coodly/GameKit.git
   LaughingAdventure:
     :git: https://github.com/coodly/laughing-adventure.git
@@ -68,6 +67,6 @@ SPEC CHECKSUMS:
   Locksmith: a8ed41ac4c06506ea8cb199d8ec8a8d3d108eb2a
   SWLogger: 47186983d73f82ac74b4965f750a942b190b613d
 
-PODFILE CHECKSUM: 19c09551326c1c7065f392642066a872f855ce94
+PODFILE CHECKSUM: 25db75fd5c672d2b8b3b57473495b30ae7e097f0
 
 COCOAPODS: 1.0.1
