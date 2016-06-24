@@ -17,6 +17,7 @@
 private let HasFullVersionKey = "HasFullVersionKey"
 
 protocol FullVersionHandler {
+    func showFullVersionPurchase() -> Bool
     func fullVersionUnlocked() -> Bool
     func markFullVersionUnlocked()
 }
@@ -26,6 +27,10 @@ import Locksmith
 import SWLogger
 
 extension FullVersionHandler {
+    func showFullVersionPurchase() -> Bool {
+        return true
+    }
+    
     func fullVersionUnlocked() -> Bool {
         guard let data = Locksmith.loadDataForUserAccount(FullVersionKey) else {
             return false
@@ -60,6 +65,10 @@ extension FullVersionHandler {
 }
 #else
     extension FullVersionHandler {
+        func showFullVersionPurchase() -> Bool {
+            return false
+        }
+
         func fullVersionUnlocked() -> Bool {
             return true
         }

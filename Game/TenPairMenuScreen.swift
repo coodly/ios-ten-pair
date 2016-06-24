@@ -66,7 +66,9 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
 
             self.tappedFullVersionButton()
         }
-        addMenuItem(purchaseButton)
+        if showFullVersionPurchase() {
+            addMenuItem(purchaseButton)
+        }
         addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
             [unowned self] in
             
