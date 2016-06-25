@@ -153,7 +153,7 @@
 		A7B082A41D168512006E0FEC /* InterstitialPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialPresenter.swift; sourceTree = "<group>"; };
 		A7B082A61D168EE0006E0FEC /* InterstitialCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialCounter.swift; sourceTree = "<group>"; };
 		A7C0C25B1D1D24E5008103F6 /* MacTenPair.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MacTenPair.entitlements; sourceTree = "<group>"; };
-		A7E59ADA1D16F6ED0065E5EC /* MacTenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacTenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7E59ADA1D16F6ED0065E5EC /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E59ADC1D16F6ED0065E5EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7E59ADE1D16F6ED0065E5EC /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		A7E59AE01D16F6ED0065E5EC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -350,7 +350,7 @@
 			children = (
 				EA02FA8E1B9C6AA400B93D23 /* TenPair.app */,
 				EA02FAA61B9C6AA400B93D23 /* TenPairTests.xctest */,
-				A7E59ADA1D16F6ED0065E5EC /* MacTenPair.app */,
+				A7E59ADA1D16F6ED0065E5EC /* TenPair.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -423,7 +423,7 @@
 			);
 			name = MacTenPair;
 			productName = MacTenPair;
-			productReference = A7E59ADA1D16F6ED0065E5EC /* MacTenPair.app */;
+			productReference = A7E59ADA1D16F6ED0065E5EC /* TenPair.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EA02FA8D1B9C6AA400B93D23 /* TenPair */ = {
@@ -895,7 +895,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.tenpair;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TenPair;
 				PROVISIONING_PROFILE = "2b52041e-46c9-4c2e-a76e-193b8c91b9d5";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 2.3;
@@ -920,7 +920,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.tenpair;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TenPair;
 				PROVISIONING_PROFILE = "2b52041e-46c9-4c2e-a76e-193b8c91b9d5";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 2.3;
