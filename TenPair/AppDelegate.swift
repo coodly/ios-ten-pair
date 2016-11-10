@@ -26,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FullVersionHandler {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics()])
+        
+        UINavigationBar.appearance().barTintColor = TenPairTheme.currentTheme.defaultNumberTileColor
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
         if !ReleaseBuild {
             Log.add(output: ConsoleOutput())

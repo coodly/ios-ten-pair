@@ -5,10 +5,16 @@
 "coodly.feedback.cant.send.email.alert.dismiss.button" = "OK";
 "coodly.feedback.cant.send.email.message" = "Can't send email from this device. Please check your settings.";
 "coodly.feedback.cant.send.email.title" = "Can't send email";
+"coodly.feedback.controller.title" = "Conversations";
 "coodly.feedback.email.not.sent.error.dismiss.button" = "OK";
 "coodly.feedback.email.not.sent.error.message" = "Email could not be sent. Please try again later.";
 "coodly.feedback.email.not.sent.error.title" = "Email not sent";
 "coodly.feedback.email.subject" = "Numbrn feedback";
+"coodly.feedback.header.message" = "Please read this before posting";
+"coodly.feedback.message.compose.controller.send.button" = "Send";
+"coodly.feedback.message.compose.controller.title" = "Write message";
+"coodly.feedback.response.notice" = "Hello\n\nI'm Jaanus Siim, independent developer based in Estonia.\n\nEvery suggestion and feedback is welcome. I promise to read them all. But I may not be able to respond to all messages.\n\nThanks for undertanding.";
+"coodly.feedback.sign.in.message" = "Please sign in to iCloud to send a message.";
 
 "game.hints.no.more.moves.message" = "No more moves available";
 "game.win.share.social.message" = "I just completed game of Numbrn! You should also check it out!";

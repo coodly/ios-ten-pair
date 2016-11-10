@@ -13,6 +13,7 @@
 		A7106EB01D1ACC6200519A4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7106EAD1D1ACC6200519A4A /* Localizable.strings */; };
 		A7106EB11D1ACC7F00519A4A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7106EAB1D1ACC6200519A4A /* InfoPlist.strings */; };
 		A7106EB21D1ACC7F00519A4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7106EAD1D1ACC6200519A4A /* Localizable.strings */; };
+		A72E5C631DD4CD2B005AE764 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A72E5C621DD4CD2B005AE764 /* CloudKit.framework */; };
 		A73752A11D17BB2500A35FCD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A737529F1D17BB2500A35FCD /* Crashlytics.framework */; };
 		A73752A21D17BB2500A35FCD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73752A01D17BB2500A35FCD /* Fabric.framework */; };
 		A73A97611D0D8FE400CF1B3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73A97601D0D8FE400CF1B3B /* Constants.swift */; };
@@ -112,6 +113,8 @@
 		8F8E7688E7CDE00FCBA4B81D /* Pods_TenPair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenPair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7106EAC1D1ACC6200519A4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A7106EAE1D1ACC6200519A4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		A72E5C5F1DD4CCC4005AE764 /* TenPair.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenPair.entitlements; sourceTree = "<group>"; };
+		A72E5C621DD4CD2B005AE764 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A737529F1D17BB2500A35FCD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = macOSFrameworks/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		A73752A01D17BB2500A35FCD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = macOSFrameworks/Fabric.framework; sourceTree = SOURCE_ROOT; };
 		A73A97601D0D8FE400CF1B3B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A78FB11D1D1D231400AA5181 /* Crashlytics.framework in Frameworks */,
+				A72E5C631DD4CD2B005AE764 /* CloudKit.framework in Frameworks */,
 				BA29C74345D8AF284AEF358D /* Pods_TenPair.framework in Frameworks */,
 				A78FB11E1D1D231400AA5181 /* Fabric.framework in Frameworks */,
 			);
@@ -228,6 +232,7 @@
 		5DEF9830C744551042FCEF5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A72E5C621DD4CD2B005AE764 /* CloudKit.framework */,
 				858FDDE58A3DC23BE208A6C7 /* Pods.framework */,
 				8F8E7688E7CDE00FCBA4B81D /* Pods_TenPair.framework */,
 				F580462683097342ADC13243 /* Pods_TenPairTests.framework */,
@@ -358,6 +363,7 @@
 		EA02FA901B9C6AA400B93D23 /* TenPair */ = {
 			isa = PBXGroup;
 			children = (
+				A72E5C5F1DD4CCC4005AE764 /* TenPair.entitlements */,
 				EA01D8C71BAF32C0007014FC /* Supporting Files */,
 				EAB2199C1B9C6BA200ED9CF9 /* Controllers */,
 				EAB2197D1B9C6B8800ED9CF9 /* Game */,
@@ -494,6 +500,14 @@
 						DevelopmentTeam = 5T8DRBFCBP;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					EA02FAA51B9C6AA400B93D23 = {
 						CreatedOnToolsVersion = 7.0;
@@ -1031,6 +1045,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TenPair/TenPair.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
@@ -1057,6 +1072,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TenPair/TenPair.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";

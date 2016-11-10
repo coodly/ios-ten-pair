@@ -104,7 +104,11 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
         gameScene.playScreen.sendFeedbackHandler = {
             [unowned self] in
             
-            self.sendFeedback(FeedbackEmail, subject: FeedbackTitle, mailDelegate: self)
+            
+            let feedback = Feedback.mainController()
+            let navigation = UINavigationController(rootViewController: feedback)
+            navigation.modalPresentationStyle = .formSheet
+            self.present(navigation, animated: true, completion: nil)
         }
     }
     
