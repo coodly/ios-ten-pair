@@ -36,8 +36,8 @@ extension StorePresenter {
     let MacAppStoreID = 1127749175
     extension StorePresenter {
         func openInStore() {
-            let url = NSURL(string: "https://itunes.apple.com/app/tenpair/id1127749175")!
-            NSWorkspace.sharedWorkspace().openURL(url)
+            let url = URL(string: "https://itunes.apple.com/app/tenpair/id1127749175")!
+            NSWorkspace.shared().open(url)
         }
     }
 #endif

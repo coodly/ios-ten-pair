@@ -50,8 +50,8 @@ class TenPairNumberTile: SKSpriteNode {
         #if os(iOS)
             numberSprite.position = CGPoint(x: backgroundNode!.size.width / 2, y: backgroundNode!.size.height * 0.75 / 2)
         #else
-            numberSprite.anchorPoint = CGPointZero
-            numberSprite.position = CGPointMake((backgroundNode!.size.width - numberSprite.size.width) / 2, (backgroundNode!.size.height - numberSprite.size.height) / 2 + backgroundNode!.size.height * 0.2)
+            numberSprite.anchorPoint = .zero
+            numberSprite.position = CGPoint(x: (backgroundNode!.size.width - numberSprite.size.width) / 2, y: (backgroundNode!.size.height - numberSprite.size.height) / 2 + backgroundNode!.size.height * 0.2)
         #endif
         backgroundNode!.addChild(numberSprite)
         
@@ -105,7 +105,11 @@ class TenPairNumberTile: SKSpriteNode {
         
         let rect = string.boundingRect(with: CGSize(width: 1000, height: 1000), options: NSStringDrawingOptions.truncatesLastVisibleLine, context: nil)
         
-        let image = string.renderIn(rect)
+        #if os(iOS)
+            let image = string.renderIn(rect)
+        #else
+            let image = string.renderIn(box: rect)
+        #endif
         return SKTexture(image: image)
     }
 }

@@ -522,7 +522,7 @@ class TenPairNumbersField: GameScrollViewContained {
         return UIEdgeInsetsMake(0, 0, -bottomOffset(), 0)
     }
     #else
-    override func presentationInsets() -> NSEdgeInsets {
+    override func presentationInsets() -> EdgeInsets {
         return NSEdgeInsetsMake(0, 0, -bottomOffset(), 0)
     }
     #endif

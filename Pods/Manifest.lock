@@ -22,6 +22,9 @@ PODS:
   - LaughingAdventure (0.3.0):
     - LaughingAdventure/Core (= 0.3.0)
   - LaughingAdventure/Core (0.3.0)
+  - LaughingAdventure/Logging (0.3.0)
+  - LaughingAdventure/Purchase (0.3.0):
+    - LaughingAdventure/Logging
   - Locksmith (3.0.0)
   - SWLogger (0.3.1)
 
@@ -30,6 +33,7 @@ DEPENDENCIES:
   - Firebase/Core (= 3.2.1)
   - GameKit (from `git@github.com:coodly/GameKit.git`)
   - LaughingAdventure (from `https://github.com/coodly/laughing-adventure.git`)
+  - LaughingAdventure/Purchase (from `https://github.com/coodly/laughing-adventure.git`)
   - Locksmith (= 3.0.0)
   - SWLogger (from `git@github.com:coodly/swlogger.git`)
 
@@ -43,7 +47,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   GameKit:
-    :commit: 7500c5625b4d0b5f580a6b87cbe62b33d3cef8f8
+    :commit: 12a517b58ea2d97d293e3ebfbede51a9df014a3f
     :git: git@github.com:coodly/GameKit.git
   LaughingAdventure:
     :commit: da279fdf2a1475ed2517b7a197ea6cc17a656bbf
@@ -65,6 +69,6 @@ SPEC CHECKSUMS:
   Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
   SWLogger: 333135cadd381962c3667f5af500f7ae140c74a4
 
-PODFILE CHECKSUM: e6b272ff0949c22041c2c4b4f8acb95eb2ce4ed4
+PODFILE CHECKSUM: be3d44f7dc555bbabc29b7c0ff54873e58882439
 
 COCOAPODS: 1.1.1

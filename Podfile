@@ -52,4 +52,12 @@ target 'MacTenPair' do
     platform :osx, '10.11'
     
     shared
+    
+    if UsedSource == PodSource::Local
+        pod 'LaughingAdventure/Purchase', :path => '../swift-laughing-adventure'
+    elsif UsedSource == PodSource::Remote
+        pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
+    else
+        pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.2.1'
+    end
 end

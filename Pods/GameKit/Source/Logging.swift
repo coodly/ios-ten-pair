@@ -14,16 +14,19 @@
  * limitations under the License.
  */
 
-public protocol LoggingDelegate: class {
+public protocol Logger {
     func log<T>(_ object: T, file: String, function: String, line: Int)
 }
 
-open class Logging {
-    open weak var delegate: LoggingDelegate?
+public class Logging {
+    private var logger: Logger?
+    private static let sharedInstance = Logging()
     
-    open static let sharedInstance = Logging()
+    public static func set(logger: Logger) {
+        sharedInstance.logger = logger
+    }
     
     internal class func log<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
-        sharedInstance.delegate?.log(object, file: file, function: function, line: line)
+        sharedInstance.logger?.log(object, file: file, function: function, line: line)
     }
 }

@@ -151,7 +151,7 @@ private class Content: GameScrollViewContained {
         return UIEdgeInsetsMake(20, 0, 0, 0)
     }
     #else
-    private override func presentationInsets() -> NSEdgeInsets {
+    fileprivate override func presentationInsets() -> EdgeInsets {
         return NSEdgeInsetsMake(20, 0, 0, 0)
     }
     #endif

@@ -140,10 +140,11 @@ open class GameScrollView: GameView {
         var saneYOffset = max(contentOffset.y, 0)
         #if os(iOS)
             saneYOffset = min(saneYOffset, scrollView.contentSize.height - scrollView.bounds.height)
+            scroll(CGPoint(x: 0, y: saneYOffset), animated: animated)
         #else
             saneYOffset = min(saneYOffset, dummy.bounds.height - scrollView.bounds.height)
+            scroll(to: CGPoint(x: 0, y: saneYOffset), animated: animated)
         #endif
-        scroll(to: CGPoint(x: 0, y: saneYOffset), animated: animated)
     }
 }
 

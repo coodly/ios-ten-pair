@@ -20,30 +20,28 @@ class AppDelegate: NSObject, NSApplicationDelegate, InterstitialPresenter {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var skView: SKView!
     private var scene: TenPairGame!
-    private var loggingDelegate: GameKitDelegate!
     
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": true])
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
         Fabric.with([Crashlytics.self])
         
         window.minSize = NSMakeSize(400, 600)
         
         if !ReleaseBuild {
-            Log.addOutput(ConsoleOutput())
-            Log.addOutput(FileOutput())
-            Log.logLevel = Log.Level.DEBUG
+            Log.add(output: ConsoleOutput())
+            Log.add(output: FileOutput())
+            Log.logLevel = .debug
             
-            loggingDelegate = GameKitDelegate()
-            Logging.sharedInstance.delegate = loggingDelegate
+            Logging.set(logger: GameKitLogger())
         }
         
         Log.debug("App launch")
         
         let gameScene = TenPairGame(size: skView.bounds.size)
-        if let save = NSUserDefaults.standardUserDefaults().objectForKey(TenPairSaveDataKey) as? [Int] {
+        if let save = UserDefaults.standard.object(forKey: TenPairSaveDataKey) as? [Int] {
             gameScene.startField = save
         }
-        gameScene.scaleMode = SKSceneScaleMode.ResizeFill
+        gameScene.scaleMode = SKSceneScaleMode.resizeFill
         scene = gameScene
         skView.allowsTransparency = false
         skView.shouldCullNonVisibleNodes = false
@@ -58,34 +56,34 @@ class AppDelegate: NSObject, NSApplicationDelegate, InterstitialPresenter {
         gameScene.playScreen.interstitial = self
     }
     
-    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
-    
-    func applicationWillHide(notification: NSNotification) {
+
+    func applicationWillHide(_ notification: Notification) {
         Log.debug("")
     }
     
-    func applicationDidResignActive(notification: NSNotification) {
+    func applicationDidResignActive(_ notification: Notification) {
         Log.debug("")
         saveField()
     }
-    
-    func applicationWillTerminate(notification: NSNotification) {
+
+    func applicationWillTerminate(_ notification: Notification) {
         Log.debug("")
         saveField()
     }
     
     private func saveField() {
         let numbers = scene!.playScreen.playFieldNumbers()
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(numbers, forKey: TenPairSaveDataKey)
+        let defaults = UserDefaults.standard
+        defaults.set(numbers, forKey: TenPairSaveDataKey)
         defaults.synchronize()
     }
 }
 
-private class GameKitDelegate: GameKit.LoggingDelegate {
-    private func log<T>(object: T, file: String, function: String, line: Int) {
+private class GameKitLogger: GameKit.Logger {
+    fileprivate func log<T>(_ object: T, file: String, function: String, line: Int) {
         let message = "L - \(object)"
         Log.debug(message, file: file, function: function, line: line)
     }
