@@ -23,19 +23,19 @@ open class GameScrollView: GameView {
     open var contentInset = UIEdgeInsets.zero
     #else
     public lazy var scrollView: NSScrollView = {
-        let view = NSScrollView(frame: CGRectZero)
+        let view = NSScrollView(frame: .zero)
         view.drawsBackground = false
         view.hasVerticalScroller = true
         view.automaticallyAdjustsContentInsets = false
-        view.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
+        view.autoresizingMask = [.viewWidthSizable, .viewHeightSizable]
     
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: .scrolled, name: NSScrollViewDidLiveScrollNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: .scrolled, name: NSNotification.Name.NSScrollViewDidLiveScroll, object: nil)
         
         return view
     }()
     public var contentInset = NSEdgeInsetsZero
-    private lazy var dummy: NSView = {
-        var dummy = Flipper(frame: CGRectZero)
+    fileprivate lazy var dummy: NSView = {
+        var dummy = Flipper(frame: .zero)
         dummy.wantsLayer = true
         self.scrollView.documentView = dummy
         return dummy
@@ -58,7 +58,7 @@ open class GameScrollView: GameView {
         
         #if os(iOS)
         #else
-            scrollView.contentView.scrollToPoint(NSMakePoint(0, -contentInset.top))
+            scrollView.contentView.scroll(to: NSMakePoint(0, -contentInset.top))
         #endif
         
         positionPresentedNode()
@@ -125,7 +125,7 @@ open class GameScrollView: GameView {
         #else
             scrollView.contentInsets = insets
             if performScroll {
-                scrollView.contentView.scrollToPoint(NSMakePoint(0, -insets.top))
+                scrollView.contentView.scroll(to: NSMakePoint(0, -insets.top))
             }
         #endif
         
@@ -143,7 +143,7 @@ open class GameScrollView: GameView {
         #else
             saneYOffset = min(saneYOffset, dummy.bounds.height - scrollView.bounds.height)
         #endif
-        scroll(CGPoint(x: 0, y: saneYOffset), animated: animated)
+        scroll(to: CGPoint(x: 0, y: saneYOffset), animated: animated)
     }
 }
 
@@ -182,11 +182,11 @@ open class GameScrollView: GameView {
     }
 #else
     private extension Selector {
-        static let scrolled = #selector(GameScrollView.didScroll(_:))
+        static let scrolled = #selector(GameScrollView.didScroll(notification:))
     }
     
     extension GameScrollView {
-        @objc private func didScroll(notification: NSNotification) {
+        @objc fileprivate func didScroll(notification: NSNotification) {
             guard let object = notification.object as? NSScrollView, scrollView === object else {
                 return
             }
@@ -215,18 +215,18 @@ open class GameScrollView: GameView {
             presentedHeight += insets.top
             presentedHeight += insets.bottom
             presentedHeight += contentInset.bottom
-            dummy.frame = CGRectMake(0, 0, self.size.width, presentedHeight)
+            dummy.frame = CGRect(x: 0, y: 0, width: self.size.width, height: presentedHeight)
         }
         
         func scroll(to: CGPoint, animated: Bool) {
-            scrollView.contentView.scrollToPoint(to)
+            scrollView.contentView.scroll(to: to)
             scrollView.reflectScrolledClipView(scrollView.contentView)
             positionPresentedNode()
         }
     }
     
     private class Flipper: NSView {
-        override var flipped: Bool {
+        override var isFlipped: Bool {
             return true
         }
     }

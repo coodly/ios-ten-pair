@@ -56,7 +56,7 @@ import Foundation
             image.addRepresentation(rep)
             image.lockFocus()
             
-            drawAtPoint(CGPointZero)
+            draw(at: .zero)
             
             image.unlockFocus()
             

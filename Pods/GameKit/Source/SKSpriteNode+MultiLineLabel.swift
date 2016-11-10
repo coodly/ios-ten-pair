@@ -39,7 +39,7 @@ public extension SKSpriteNode {
         string.setAttributes(attributes, range: NSMakeRange(0, message.characters.count))
         
         let rect = string.boundingRect(with: CGSize(width: maxWidth, height: 1000), options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
-        let image = string.renderIn(rect)
+        let image = string.renderIn(box: rect)
         
         let result = SKSpriteNode(texture: SKTexture(image: image))
         result.colorBlendFactor = 1

@@ -31,7 +31,7 @@ open class GameScrollViewContained : GameView {
         return UIEdgeInsets.zero
     }
     #else
-    public func presentationInsets() -> NSEdgeInsets {
+    public func presentationInsets() -> EdgeInsets {
         return NSEdgeInsetsZero
     }
     #endif
