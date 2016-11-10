@@ -89,7 +89,7 @@ class TenPairFieldBackground: SKShapeNode {
         
         let path = CGMutablePath()
         path.move(to: CGPoint(x: 0, y: fieldBottom))
-        path.addLine(to: CGPoint(x: 0, y: totalSize.width))
+        path.addLine(to: CGPoint(x: 0, y: totalSize.height))
         path.addLine(to: CGPoint(x: totalSize.width, y: totalSize.height))
 
         if lastRowRemainder == 0 {
