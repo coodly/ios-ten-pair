@@ -17,17 +17,17 @@
 import Foundation
 import SpriteKit
 
-public class GameView: SKSpriteNode {
+open class GameView: SKSpriteNode {
     
-    public func loadContent() {
+    open func loadContent() {
         
     }
     
-    public func unloadContent() {
+    open func unloadContent() {
         
     }
     
-    public func positionContent() {
+    open func positionContent() {
         for node in children {
             guard let view = node as? GameView else {
                 continue
@@ -37,13 +37,13 @@ public class GameView: SKSpriteNode {
         }
     }
     
-    public func update(time: NSTimeInterval) {
+    open func update(_ time: TimeInterval) {
     
     }
     
-    public func addGameView(view: GameView) {
+    open func addGameView(_ view: GameView) {
         addChild(view)
-        view.anchorPoint = CGPointZero
+        view.anchorPoint = CGPoint.zero
         view.loadContent()
     }
 }

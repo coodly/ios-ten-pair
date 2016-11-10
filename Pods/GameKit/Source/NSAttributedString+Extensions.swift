@@ -20,9 +20,9 @@ import Foundation
     import UIKit
     
     public extension NSAttributedString {
-        func renderIn(box: CGRect) -> UIImage {
-            UIGraphicsBeginImageContextWithOptions(box.size, false, UIScreen.mainScreen().scale)
-            drawInRect(box)
+        func renderIn(_ box: CGRect) -> UIImage {
+            UIGraphicsBeginImageContextWithOptions(box.size, false, UIScreen.main.scale)
+            draw(in: box)
             
             #if swift(>=2.3)
                 let image = UIGraphicsGetImageFromCurrentImageContext()!

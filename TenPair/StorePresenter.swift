@@ -27,7 +27,7 @@ let AppStoreID = 837173458
 import UIKit
 extension StorePresenter {
     func openInStore() {
-        _ = UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
+        _ = UIApplication.shared.openURL(URL(string: "itms-apps://itunes.apple.com/app/id\(AppStoreID)")!)
     }
 }
 #else

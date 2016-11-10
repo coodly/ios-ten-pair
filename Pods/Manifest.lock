@@ -19,43 +19,38 @@ PODS:
   - GoogleSymbolUtilities (1.1.1)
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
-  - LaughingAdventure/Feedback (0.1.0)
-  - LaughingAdventure/Logging (0.1.0)
-  - LaughingAdventure/Purchase (0.1.0):
-    - LaughingAdventure/Logging
-  - Locksmith (2.0.8)
-  - SWLogger (0.1.0)
+  - LaughingAdventure (0.3.0):
+    - LaughingAdventure/Core (= 0.3.0)
+  - LaughingAdventure/Core (0.3.0)
+  - Locksmith (3.0.0)
+  - SWLogger (0.3.1)
 
 DEPENDENCIES:
   - Firebase/AdMob (= 3.2.1)
   - Firebase/Core (= 3.2.1)
-  - GameKit (from `git@github.com:coodly/GameKit.git`, tag `0.2.0`)
-  - LaughingAdventure/Feedback (from `https://github.com/coodly/laughing-adventure.git`, tag `0.2.1`)
-  - LaughingAdventure/Purchase (from `https://github.com/coodly/laughing-adventure.git`, tag `0.2.1`)
-  - Locksmith (= 2.0.8)
-  - SWLogger (from `git@github.com:coodly/swlogger.git`, tag `0.1.2`)
+  - GameKit (from `git@github.com:coodly/GameKit.git`)
+  - LaughingAdventure (from `https://github.com/coodly/laughing-adventure.git`)
+  - Locksmith (= 3.0.0)
+  - SWLogger (from `git@github.com:coodly/swlogger.git`)
 
 EXTERNAL SOURCES:
   GameKit:
     :git: git@github.com:coodly/GameKit.git
-    :tag: 0.2.0
   LaughingAdventure:
     :git: https://github.com/coodly/laughing-adventure.git
-    :tag: 0.2.1
   SWLogger:
     :git: git@github.com:coodly/swlogger.git
-    :tag: 0.1.2
 
 CHECKOUT OPTIONS:
   GameKit:
+    :commit: 19b24e59140614a1987ba4f8b9b780cf426bcb06
     :git: git@github.com:coodly/GameKit.git
-    :tag: 0.2.0
   LaughingAdventure:
+    :commit: da279fdf2a1475ed2517b7a197ea6cc17a656bbf
     :git: https://github.com/coodly/laughing-adventure.git
-    :tag: 0.2.1
   SWLogger:
+    :commit: 4905d4e05d8fa9cc0b21b2869fb899e970290443
     :git: git@github.com:coodly/swlogger.git
-    :tag: 0.1.2
 
 SPEC CHECKSUMS:
   Firebase: 6c80ac28d59d06bfd9152a7b6ea17625ca93183d
@@ -66,10 +61,10 @@ SPEC CHECKSUMS:
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
-  LaughingAdventure: 972132814b3d206be9bfce09b0eb3d1f5c688bcf
-  Locksmith: a8ed41ac4c06506ea8cb199d8ec8a8d3d108eb2a
-  SWLogger: 47186983d73f82ac74b4965f750a942b190b613d
+  LaughingAdventure: 287105d900bb1be3214a3aea98f2a75c9b0eac99
+  Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
+  SWLogger: 333135cadd381962c3667f5af500f7ae140c74a4
 
-PODFILE CHECKSUM: 4b03368c97ebbc54a9242272bd7c517cc9354716
+PODFILE CHECKSUM: e6b272ff0949c22041c2c4b4f8acb95eb2ce4ed4
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

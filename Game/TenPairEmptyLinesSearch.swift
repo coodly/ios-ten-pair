@@ -16,7 +16,7 @@
 
 import Foundation
 
-private func contains<S: SequenceType where S.Generator.Element == Range<Int>>(array: S, value: Int) -> Bool {
+private func contains<S: Sequence>(_ array: S, value: Int) -> Bool where S.Iterator.Element == CountableRange<Int> {
     for range in array {
         if range.contains(value) {
             return true
@@ -26,7 +26,7 @@ private func contains<S: SequenceType where S.Generator.Element == Range<Int>>(a
 }
 
 class TenPairEmptyLinesSearch {
-    class func emptyLinesWitaahCheckPoints(checks: [Int], field: [Int]) -> [Int] {
+    class func emptyLinesWitaahCheckPoints(_ checks: [Int], field: [Int]) -> [Int] {
         let checkOne = checks[0]
         let checkTwo = checks[1]
         
@@ -45,33 +45,33 @@ class TenPairEmptyLinesSearch {
         return result
     }
     
-    class func emptyRangesWithCheckPoints(checks: [Int], field: [Int]) -> [Range<Int>] {
-        var results = [Range<Int>]()
+    class func emptyRangesWithCheckPoints(_ checks: [Int], field: [Int]) -> [CountableRange<Int>] {
+        var results = [CountableRange<Int>]()
         
         let first = min(checks[0], checks[1])
         let second = max(checks[0], checks[1])
         
         let startForFirstRange = firstZeroRangeIndexStartingWith(first, inField: field)
         let firstRanges = possibleEmptyRanges(startForFirstRange, inField: field)
-        results.appendContentsOf(firstRanges)
+        results.append(contentsOf: firstRanges)
         
         if contains(results, value: second) {
             return results
         }
         
-        if let last = results.sort({ $0.startIndex < $1.startIndex }).last where last.endIndex + NumberOfColumns > second {
+        if let last = results.sorted(by: { $0.lowerBound < $1.lowerBound }).last, last.upperBound + NumberOfColumns > second {
             return results
         }
 
         let startForSecondRange = firstZeroRangeIndexStartingWith(second, inField: field)
         let seconfRanges = possibleEmptyRanges(startForSecondRange, inField: field)
-        results.appendContentsOf(seconfRanges)
+        results.append(contentsOf: seconfRanges)
 
         return results
     }
     
-    class func possibleEmptyRanges(startIndex: Int, inField field: [Int], rangeLength: Int = NumberOfColumns) -> [Range<Int>] {
-        var result = [Range<Int>]()
+    class func possibleEmptyRanges(_ startIndex: Int, inField field: [Int], rangeLength: Int = NumberOfColumns) -> [CountableRange<Int>] {
+        var result = [CountableRange<Int>]()
 
         var count = 0
         var start = startIndex
@@ -83,7 +83,7 @@ class TenPairEmptyLinesSearch {
             }
             
             if count == rangeLength {
-                result.append(start...index)
+                result.append(start..<index+1)
                 start = index + 1
                 count = 0
             }
@@ -92,7 +92,7 @@ class TenPairEmptyLinesSearch {
         return result
     }
     
-    class func firstZeroRangeIndexStartingWith(index: Int, inField field: [Int]) -> Int {
+    class func firstZeroRangeIndexStartingWith(_ index: Int, inField field: [Int]) -> Int {
         var checked = index
         while checked > 0 {
             let value = field[checked]
@@ -106,11 +106,11 @@ class TenPairEmptyLinesSearch {
         return 0
     }
     
-    class func firstInRowForIndex(index: Int) -> Int {
+    class func firstInRowForIndex(_ index: Int) -> Int {
         return index - index % NumberOfColumns
     }
     
-    class func hasEmptyRowStartingAtIndex(index: Int, field: [Int]) -> Bool {
+    class func hasEmptyRowStartingAtIndex(_ index: Int, field: [Int]) -> Bool {
         let rowEndIndex = index + NumberOfColumns
         if rowEndIndex > field.count {
             return false

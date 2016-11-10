@@ -15,6 +15,8 @@
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google Inc.</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>Firebase</string>
 			<key>Type</key>
@@ -23,6 +25,8 @@
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google Inc.</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>FirebaseAnalytics</string>
 			<key>Type</key>
@@ -31,6 +35,8 @@
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google Inc.</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>FirebaseInstanceID</string>
 			<key>Type</key>
@@ -241,6 +247,8 @@
    limitations under the License.
 
 </string>
+			<key>License</key>
+			<string>Apache 2</string>
 			<key>Title</key>
 			<string>GameKit</string>
 			<key>Type</key>
@@ -249,6 +257,8 @@
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2011 Google Inc. All Rights Reserved.</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>Google-Mobile-Ads-SDK</string>
 			<key>Type</key>
@@ -257,6 +267,8 @@
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2015 Google Inc.</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>GoogleInterchangeUtilities</string>
 			<key>Type</key>
@@ -265,6 +277,8 @@
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2015 Google Inc.</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>GoogleSymbolUtilities</string>
 			<key>Type</key>
@@ -273,6 +287,8 @@
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2015 Google Inc.</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>GoogleUtilities</string>
 			<key>Type</key>
@@ -483,6 +499,8 @@
    limitations under the License.
 
 </string>
+			<key>License</key>
+			<string>Apache 2</string>
 			<key>Title</key>
 			<string>LaughingAdventure</string>
 			<key>Type</key>
@@ -510,6 +528,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>MIT</string>
 			<key>Title</key>
 			<string>Locksmith</string>
 			<key>Type</key>
@@ -720,6 +740,8 @@ THE SOFTWARE.
    limitations under the License.
 
 </string>
+			<key>License</key>
+			<string>Apache 2</string>
 			<key>Title</key>
 			<string>SWLogger</string>
 			<key>Type</key>

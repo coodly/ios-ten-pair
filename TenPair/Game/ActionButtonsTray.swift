@@ -18,7 +18,7 @@ import Foundation
 import GameKit
 
 class ActionButtonsTray: SlideOutButtonsTray {
-    private(set) var hintButton: GameButton!
+    fileprivate(set) var hintButton: GameButton!
     
     override func loadContent() {
         super.loadContent()
@@ -34,9 +34,9 @@ class ActionButtonsTray: SlideOutButtonsTray {
         appendButton(hintButton)
     }
     
-    private func buttonWithImage(named: String) -> GameButton {
+    fileprivate func buttonWithImage(_ named: String) -> GameButton {
         let result = GameButton(imageNamed: named)
-        result.size = CGSizeMake(44, 44)
+        result.size = CGSize(width: 44, height: 44)
         
         return result
     }

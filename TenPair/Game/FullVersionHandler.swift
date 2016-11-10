@@ -32,11 +32,11 @@ extension FullVersionHandler {
     }
     
     func fullVersionUnlocked() -> Bool {
-        guard let data = Locksmith.loadDataForUserAccount(FullVersionKey) else {
+        guard let data = Locksmith.loadDataForUserAccount(userAccount: FullVersionKey) else {
             return false
         }
         
-        guard let has = data[HasFullVersionKey] as? Bool where has else {
+        guard let has = data[HasFullVersionKey] as? Bool, has else {
             return false
         }
         
@@ -46,9 +46,9 @@ extension FullVersionHandler {
     func markFullVersionUnlocked() {
         do {
             let data = [HasFullVersionKey: true]
-            try Locksmith.saveData(data, forUserAccount: FullVersionKey)
+            try Locksmith.saveData(data: data, forUserAccount: FullVersionKey)
             onMainThread() {
-                NSNotificationCenter.defaultCenter().postNotificationName(CheckAppFullVersionNotification, object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: CheckAppFullVersionNotification), object: nil)
             }
         } catch let error as NSError {
             Log.error("Mark full version error: \(error)")
@@ -57,7 +57,7 @@ extension FullVersionHandler {
     
     func removeFullVersion() {
         do {
-            try Locksmith.deleteDataForUserAccount(FullVersionKey)
+            try Locksmith.deleteDataForUserAccount(userAccount: FullVersionKey)
         } catch let error as NSError {
             Log.error("Remove IAP error \(error)")
         }

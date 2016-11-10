@@ -19,7 +19,7 @@ import Foundation
 let columns: Int = 9
 
 class TenPairNumberPathFinder {
-    class func hasClearPath(indexes: [Int], inField: [Int]) -> Bool {
+    class func hasClearPath(_ indexes: [Int], inField: [Int]) -> Bool {
         let one = indexes[0]
         let two = indexes[1]
         
@@ -59,7 +59,7 @@ class TenPairNumberPathFinder {
         return true
     }
     
-    class func onSameVerticalLine(firstIndex: Int, secondIndex: Int) -> Bool {
+    class func onSameVerticalLine(_ firstIndex: Int, secondIndex: Int) -> Bool {
         let firstMod = firstIndex % columns
         let secondMod = secondIndex % columns
         return firstMod == secondMod

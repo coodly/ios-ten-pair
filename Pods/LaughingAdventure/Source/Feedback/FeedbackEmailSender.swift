@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
+#if os(iOS)
 import UIKit
 import MessageUI
 
 public protocol FeedbackEmailSender {
-    func sendFeedback(to: String, subject: String, mailDelegate: MFMailComposeViewControllerDelegate)
+    func sendFeedback(_ to: String, subject: String, mailDelegate: MFMailComposeViewControllerDelegate)
     func presentEmailSendErrorAlert()
 }
 
 public extension FeedbackEmailSender where Self: UIViewController {
-    func sendFeedback(to: String, subject: String, mailDelegate: MFMailComposeViewControllerDelegate) {
+    func sendFeedback(_ to: String, subject: String, mailDelegate: MFMailComposeViewControllerDelegate) {
         if !MFMailComposeViewController.canSendMail() {
             presentEmailConfigurationAlert()
             return
@@ -33,20 +34,21 @@ public extension FeedbackEmailSender where Self: UIViewController {
         mailController.mailComposeDelegate = mailDelegate
         mailController.setToRecipients([to])
         mailController.setSubject(subject)
-        let appVersion = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString")! as! String
+        let appVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")! as! String
         mailController.setMessageBody("\n\n\n| App version: \(appVersion) |", isHTML: false)
-        presentViewController(mailController, animated: true, completion: nil)
+        present(mailController, animated: true, completion: nil)
     }
     
     func presentEmailConfigurationAlert() {
-        let alert = UIAlertController(title: NSLocalizedString("coodly.feedback.cant.send.email.title", comment: ""), message: NSLocalizedString("coodly.feedback.cant.send.email.message", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("coodly.feedback.cant.send.email.alert.dismiss.button", comment: ""), style: UIAlertActionStyle.Default, handler: nil))
-        presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: NSLocalizedString("coodly.feedback.cant.send.email.title", comment: ""), message: NSLocalizedString("coodly.feedback.cant.send.email.message", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("coodly.feedback.cant.send.email.alert.dismiss.button", comment: ""), style: UIAlertActionStyle.default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 
     func presentEmailSendErrorAlert() {
-        let alert = UIAlertController(title: NSLocalizedString("coodly.feedback.email.not.sent.error.title", comment: ""), message: NSLocalizedString("coodly.feedback.email.not.sent.error.message", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("coodly.feedback.email.not.sent.error.dismiss.button", comment: ""), style: UIAlertActionStyle.Default, handler: nil))
-        presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: NSLocalizedString("coodly.feedback.email.not.sent.error.title", comment: ""), message: NSLocalizedString("coodly.feedback.email.not.sent.error.message", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("coodly.feedback.email.not.sent.error.dismiss.button", comment: ""), style: UIAlertActionStyle.default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
+#endif

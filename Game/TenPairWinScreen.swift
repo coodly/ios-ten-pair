@@ -23,7 +23,7 @@ class TenPairWinScreen: TenPairMenuScreen {
     override func loadContent() {
         showResumeOption = false
 
-        let fireworks = NSKeyedUnarchiver.unarchiveObjectWithFile(NSBundle.mainBundle().pathForResource("WinAnimation", ofType: "sks")!) as! SKEmitterNode
+        let fireworks = NSKeyedUnarchiver.unarchiveObject(withFile: Bundle.main.path(forResource: "WinAnimation", ofType: "sks")!) as! SKEmitterNode
         emitter = fireworks
         fireworks.particleBirthRate = size.width / 10
         fireworks.targetNode = scene
@@ -34,7 +34,7 @@ class TenPairWinScreen: TenPairMenuScreen {
     
     override func positionContent() {
         super.positionContent()
-        emitter!.position = CGPointMake(size.width / 2, size.height / 2)
-        emitter!.particlePositionRange = CGVectorMake(size.width, size.height)
+        emitter!.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        emitter!.particlePositionRange = CGVector(dx: size.width, dy: size.height)
     }
 }

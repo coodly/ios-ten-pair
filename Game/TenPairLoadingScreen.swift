@@ -20,16 +20,16 @@ import GameKit
 
 class TenPairLoadingScreen : GameLoadingView {
     var spinner: SKShapeNode?
-    var lastUpdateTime: NSTimeInterval = 0
+    var lastUpdateTime: TimeInterval = 0
     
     override func loadContent() {
         if let _ = self.spinner {
             return
         }
         
-        color = TenPairTheme.currentTheme.backgroundColor!.colorWithAlphaComponent(0.8)
-        let path = CGPathCreateMutable()
-        CGPathAddArc(path, nil, 0, 0, 50, radians(0), radians(310), false)
+        color = TenPairTheme.currentTheme.backgroundColor!.withAlphaComponent(0.8)
+        let path = CGMutablePath()
+        path.addArc(center: CGPoint(x: 0, y: 0), radius: 50, startAngle: radians(0), endAngle: radians(310), clockwise: false)
         let spinner = SKShapeNode()
         self.spinner = spinner
         spinner.path = path 
@@ -39,12 +39,12 @@ class TenPairLoadingScreen : GameLoadingView {
     }
     
     override func positionContent() {
-        spinner!.position = CGPointMake(size.width / 2, size.height / 2)
+        spinner!.position = CGPoint(x: size.width / 2, y: size.height / 2)
         
         super.positionContent()
     }
     
-    override func update(time: NSTimeInterval) {
+    override func update(_ time: TimeInterval) {
         if lastUpdateTime < 1 {
             lastUpdateTime = time
             return

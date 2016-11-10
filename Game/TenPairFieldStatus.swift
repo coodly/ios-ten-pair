@@ -28,8 +28,8 @@ class TenPairFieldStatus: GameView {
     
     override func loadContent() {
         linesIcon.color = TenPairTheme.currentTheme.tintColor!
-        linesIcon.anchorPoint = CGPointZero
-        linesIcon.size = CGSizeMake(linesIcon.size.width / 2, linesIcon.size.height / 2)
+        linesIcon.anchorPoint = CGPoint.zero
+        linesIcon.size = CGSize(width: linesIcon.size.width / 2, height: linesIcon.size.height / 2)
         linesIcon.colorBlendFactor = 1
         addChild(linesIcon)
         
@@ -37,13 +37,13 @@ class TenPairFieldStatus: GameView {
         linesLabel.fontName = "ChalkboardSE-Bold"
         linesLabel.text = "x000"
         linesLabel.fontSize = 14
-        linesLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Baseline
-        linesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        linesLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.baseline
+        linesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         addChild(linesLabel)
         
         tilesIcon.color = TenPairTheme.currentTheme.tintColor!
-        tilesIcon.anchorPoint = CGPointZero
-        tilesIcon.size = CGSizeMake(tilesIcon.size.width / 2, tilesIcon.size.height / 2)
+        tilesIcon.anchorPoint = CGPoint.zero
+        tilesIcon.size = CGSize(width: tilesIcon.size.width / 2, height: tilesIcon.size.height / 2)
         tilesIcon.colorBlendFactor = 1
         addChild(tilesIcon)
 
@@ -51,8 +51,8 @@ class TenPairFieldStatus: GameView {
         tilesLabel.fontName = "ChalkboardSE-Bold"
         tilesLabel.text = "x000"
         tilesLabel.fontSize = 14
-        tilesLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Baseline
-        tilesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        tilesLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.baseline
+        tilesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         addChild(tilesLabel)
         
         positionContent()
@@ -62,34 +62,34 @@ class TenPairFieldStatus: GameView {
         let totalWidth = linesIcon.size.width + linesLabel.frame.size.width + 10 + tilesIcon.size.width + tilesLabel.frame.size.width
         var xOffset = (size.width - totalWidth) / 2
         
-        linesIcon.position = CGPointMake(xOffset, (size.height - linesIcon.size.height) / 2)
+        linesIcon.position = CGPoint(x: xOffset, y: (size.height - linesIcon.size.height) / 2)
         xOffset += linesIcon.size.width
-        linesLabel.position = CGPointMake(xOffset, (size.height - linesLabel.frame.size.height) / 2)
+        linesLabel.position = CGPoint(x: xOffset, y: (size.height - linesLabel.frame.size.height) / 2)
         xOffset += linesLabel.frame.size.width
 
         xOffset += 10
-        tilesIcon.position = CGPointMake(xOffset, (size.height - tilesIcon.size.height) / 2)
+        tilesIcon.position = CGPoint(x: xOffset, y: (size.height - tilesIcon.size.height) / 2)
         xOffset += tilesIcon.size.width
-        tilesLabel.position = CGPointMake(xOffset, (size.height - tilesLabel.frame.size.height) / 2)
+        tilesLabel.position = CGPoint(x: xOffset, y: (size.height - tilesLabel.frame.size.height) / 2)
     }
     
-    func updateLines(lines: Int) {
+    func updateLines(_ lines: Int) {
         knownLines = lines
         linesLabel.text = "x\(lines)"
         positionContent()
     }
     
-    func updateTiles(tiles: Int) {
+    func updateTiles(_ tiles: Int) {
         knownTiles = tiles
         tilesLabel.text = "x\(tiles)"
         positionContent()
     }
     
-    func addToLines(added: Int) {
+    func addToLines(_ added: Int) {
         updateLines(knownLines + added)
     }
     
-    func addToTiles(added: Int) {
+    func addToTiles(_ added: Int) {
         updateTiles(knownTiles + added)
     }
 }

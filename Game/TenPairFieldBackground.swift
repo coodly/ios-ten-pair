@@ -18,17 +18,17 @@ import Foundation
 import SpriteKit
 
 class TenPairFieldBackground: SKShapeNode {
-    var tileSize = CGSizeZero
+    var tileSize = CGSize.zero
     var verticalLines = [SKShapeNode]()
     var horizontalLines = [SKShapeNode]()
     var lastHandledTopLine = -1
     
-    func update(totalSize: CGSize, numberOfLines: Int, numberOfTiles: Int) {
+    func update(_ totalSize: CGSize, numberOfLines: Int, numberOfTiles: Int) {
         updateBackground(totalSize, tileSize: tileSize, numberOfLines: numberOfLines, numberOfTiles: numberOfTiles)
         updateVerticalLines(totalSize, tileSize: tileSize)
     }
     
-    private func updateVerticalLines(totalSize: CGSize, tileSize: CGSize) {
+    fileprivate func updateVerticalLines(_ totalSize: CGSize, tileSize: CGSize) {
         if verticalLines.count == 0 {
             for _ in 0...8 {
                 let line = createLine()
@@ -41,14 +41,14 @@ class TenPairFieldBackground: SKShapeNode {
             let line = verticalLines[index]
             let lineX = tileSize.width + CGFloat(index) * tileSize.width
             
-            let path = CGPathCreateMutable()
-            CGPathMoveToPoint(path, nil, lineX, 0)
-            CGPathAddLineToPoint(path, nil, lineX, totalSize.height)
+            let path = CGMutablePath()
+            path.move(to: CGPoint(x: lineX, y: 0))
+            path.addLine(to: CGPoint(x: lineX, y: totalSize.width))
             line.path = path
         }
     }
     
-    func updateWithTopLine(topLine: Int, totalSize: CGSize) {
+    func updateWithTopLine(_ topLine: Int, totalSize: CGSize) {
         if lastHandledTopLine == topLine {
             return
         }
@@ -67,43 +67,43 @@ class TenPairFieldBackground: SKShapeNode {
             }
             
             let lineY = totalSize.height - CGFloat(lineNumber) * tileSize.height
-            let linePath = CGPathCreateMutable()
-            CGPathMoveToPoint(linePath, nil, 0, lineY)
-            CGPathAddLineToPoint(linePath, nil, totalSize.width * 9, lineY)
+            let linePath = CGMutablePath()
+            linePath.move(to: CGPoint(x: 0, y: lineY))
+            linePath.addLine(to: CGPoint(x: totalSize.width * 9, y: lineY))
             line.path = linePath
         }
     }
     
-    private func createLine() -> SKShapeNode {
+    fileprivate func createLine() -> SKShapeNode {
         let line = SKShapeNode()
         line.lineWidth = 2
         line.fillColor = TenPairTheme.currentTheme.backgroundColor!
-        line.antialiased = false
+        line.isAntialiased = false
         addChild(line)
         return line
     }
     
-    private func updateBackground(totalSize: CGSize, tileSize: CGSize, numberOfLines: Int, numberOfTiles: Int) {
+    fileprivate func updateBackground(_ totalSize: CGSize, tileSize: CGSize, numberOfLines: Int, numberOfTiles: Int) {
         let fieldBottom = totalSize.height - CGFloat(numberOfLines) * tileSize.height
         let lastRowRemainder = numberOfTiles % 9
         
-        let path = CGPathCreateMutable()
-        CGPathMoveToPoint(path, nil, 0, fieldBottom)
-        CGPathAddLineToPoint(path, nil, 0, totalSize.height)
-        CGPathAddLineToPoint(path, nil, totalSize.width, totalSize.height)
+        let path = CGMutablePath()
+        path.move(to: CGPoint(x: 0, y: fieldBottom))
+        path.addLine(to: CGPoint(x: 0, y: totalSize.width))
+        path.addLine(to: CGPoint(x: totalSize.width, y: totalSize.height))
 
         if lastRowRemainder == 0 {
-            CGPathAddLineToPoint(path, nil, totalSize.width, fieldBottom)
+            path.addLine(to: CGPoint(x: totalSize.width, y: fieldBottom))
         } else {
             let bottomOneLineOff = fieldBottom + tileSize.height
-            CGPathAddLineToPoint(path, nil, totalSize.width, bottomOneLineOff)
+            path.addLine(to: CGPoint(x: totalSize.width, y: bottomOneLineOff))
             
             let lastXOffset = CGFloat(lastRowRemainder) * tileSize.width
 
-            CGPathAddLineToPoint(path, nil, lastXOffset, bottomOneLineOff)
-            CGPathAddLineToPoint(path, nil, lastXOffset, fieldBottom)
+            path.addLine(to: CGPoint(x: lastXOffset, y: bottomOneLineOff))
+            path.addLine(to: CGPoint(x: lastXOffset, y: fieldBottom))
         }
-        CGPathCloseSubpath(path)
+        path.closeSubpath()
         
         self.path = path
     }

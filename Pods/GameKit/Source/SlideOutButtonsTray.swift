@@ -17,20 +17,20 @@
 import Foundation
 import SpriteKit
 
-public class SlideOutButtonsTray: GameView {
-    public var openButton: GameButton! {
+open class SlideOutButtonsTray: GameView {
+    open var openButton: GameButton! {
         didSet {
-            openButton.action = SKAction.runBlock() {
+            openButton.action = SKAction.run() {
                 self.toggleOpenState()
             }
         }
     }
     
-    private var buttons = [GameButton]()
-    private var opened = false
-    private var closeX: CGFloat = 0
+    fileprivate var buttons = [GameButton]()
+    fileprivate var opened = false
+    fileprivate var closeX: CGFloat = 0
     
-    public override func positionContent() {
+    open override func positionContent() {
         super.positionContent()
         
         
@@ -40,7 +40,7 @@ public class SlideOutButtonsTray: GameView {
         let positionY = spacing
         for button in positioned {
             positionX += spacing
-            button.position = CGPointMake(positionX + button.size.width / 2, positionY + button.size.height / 2)
+            button.position = CGPoint(x: positionX + button.size.width / 2, y: positionY + button.size.height / 2)
             positionX += button.size.width
             positionX += spacing
         }
@@ -53,26 +53,26 @@ public class SlideOutButtonsTray: GameView {
         }
     }
     
-    public func appendButton(button: GameButton) {
+    open func appendButton(_ button: GameButton) {
         buttons.append(button)
         addChild(button)
     }
     
-    private func toggleOpenState() {
+    fileprivate func toggleOpenState() {
         let slideAction: SKAction
         let rotateAction: SKAction
         let duration = 0.3
         if opened {
             opened = false
-            slideAction = SKAction.moveTo(CGPointMake(closeX, position.y), duration: duration)
-            rotateAction = SKAction.rotateByAngle(radians(180.0), duration: duration)
+            slideAction = SKAction.move(to: CGPoint(x: closeX, y: position.y), duration: duration)
+            rotateAction = SKAction.rotate(byAngle: radians(180.0), duration: duration)
         } else {
             opened = true
-            slideAction = SKAction.moveTo(CGPointMake(0, position.y), duration: duration)
-            rotateAction = SKAction.rotateByAngle(radians(-180.0), duration: duration)
+            slideAction = SKAction.move(to: CGPoint(x: 0, y: position.y), duration: duration)
+            rotateAction = SKAction.rotate(byAngle: radians(-180.0), duration: duration)
         }
         
-        openButton.runAction(rotateAction)
-        runAction(slideAction)
+        openButton.run(rotateAction)
+        run(slideAction)
     }
 }

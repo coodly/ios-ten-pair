@@ -18,16 +18,16 @@ import Foundation
 import SpriteKit
 
 public extension SKSpriteNode {
-    public class func multiLineLabel(message: String, font: String, fontSize: CGFloat, maxWidth: CGFloat) -> SKSpriteNode {
+    public class func multiLineLabel(_ message: String, font: String, fontSize: CGFloat, maxWidth: CGFloat) -> SKSpriteNode {
         let paragraph = NSMutableParagraphStyle()
-        paragraph.alignment = .Center
+        paragraph.alignment = .center
         
         #if os(iOS)
             let labelFont = UIFont(name: font, size: fontSize)!
         #else
             let labelFont = NSFont(name: font, size: fontSize)!
         #endif
-        let color = SKColor.whiteColor()
+        let color = SKColor.white
         
         let string = NSMutableAttributedString(string: message)
         let attributes = [
@@ -38,7 +38,7 @@ public extension SKSpriteNode {
         
         string.setAttributes(attributes, range: NSMakeRange(0, message.characters.count))
         
-        let rect = string.boundingRectWithSize(CGSizeMake(maxWidth, 1000), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
+        let rect = string.boundingRect(with: CGSize(width: maxWidth, height: 1000), options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
         let image = string.renderIn(rect)
         
         let result = SKSpriteNode(texture: SKTexture(image: image))

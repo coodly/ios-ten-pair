@@ -19,7 +19,7 @@ import SpriteKit
 import GameKit
 import SWLogger
 
-private let TenPairRowHideTime: NSTimeInterval = 0.3
+private let TenPairRowHideTime: TimeInterval = 0.3
 private let TenPairHideTileAction = SKAction.hide()
 private let TenPairUnhideTileAction = SKAction.unhide()
 private let TenPairRemoveTileAction = SKAction.removeFromParent()
@@ -28,18 +28,18 @@ private let MaxPadTileWidth: CGFloat = 50
 private let MaxPhoneTileWidth: CGFloat = 35
 
 class TenPairNumbersField: GameScrollViewContained {
-    var runningOn = Platform.Mac
+    var runningOn = Platform.mac
     var presentedNumbers = [Int]()
-    var tileSize = CGSizeZero {
+    var tileSize = CGSize.zero {
         didSet {
             background.tileSize = tileSize
             background.lastHandledTopLine = -1
         }
     }
-    private var selectedTile: TenPairNumberTile?
+    fileprivate var selectedTile: TenPairNumberTile?
     var selectedIndex: Int = -1
     var fieldStatus: TenPairFieldStatus?
-    var lastHandledVisible = CGRectZero
+    var lastHandledVisible = CGRect.zero
     var tilesInUse = [Int: TenPairNumberTile]()
     var reusableTiles = [TenPairNumberTile]()
     var gameWonAction: SKAction?
@@ -51,10 +51,10 @@ class TenPairNumbersField: GameScrollViewContained {
             }
             
             let tileWidth = (presentationWidth - SidesSpacing) / CGFloat(integerLiteral: NumberOfColumns)
-            let maxWidth = runningOn == .Phone ? MaxPhoneTileWidth : MaxPadTileWidth
+            let maxWidth = runningOn == .phone ? MaxPhoneTileWidth : MaxPadTileWidth
             let rounded = min(round(tileWidth), maxWidth)
-            let nextSize = CGSizeMake(rounded, rounded)
-            if CGSizeEqualToSize(nextSize, tileSize) {
+            let nextSize = CGSize(width: rounded, height: rounded)
+            if nextSize.equalTo(tileSize) {
                 return
             }
             
@@ -66,11 +66,11 @@ class TenPairNumbersField: GameScrollViewContained {
             }
             tilesInUse.removeAll()
             
-            self.lastHandledVisible = CGRectZero
+            self.lastHandledVisible = CGRect.zero
             self.notifySizeChanged()
         }
     }
-    private var userInputAllowed = true
+    fileprivate var userInputAllowed = true
     
     override func loadContent() {
         name = "TenPairNumbersField"
@@ -83,29 +83,29 @@ class TenPairNumbersField: GameScrollViewContained {
         notifySizeChanged()
     }
     
-    func reloadNumbers(completion: SKAction = SKAction.waitForDuration(0)) {
+    func reloadNumbers(_ completion: SKAction = SKAction.wait(forDuration: 0)) {
         inBackground() {
             let filtered = self.presentedNumbers.filter({ $0 != 0 })
             
             onMainThread() {
                 self.presentedNumbers += filtered
-                self.lastHandledVisible = CGRectZero
+                self.lastHandledVisible = CGRect.zero
                 self.background.lastHandledTopLine = -1
                 self.notifySizeChanged()
                 self.updateStatusLines()
                 self.fieldStatus!.updateTiles(filtered.count * 2)
-                self.runAction(completion)
+                self.run(completion)
             }
         }
     }
     
-    func tappedAt(location: CGPoint) {
+    func tappedAt(_ location: CGPoint) {
         if !userInputAllowed {
             return
         }
         
-        let nodes = nodesAtPoint(location)
-        guard let tile = tileInArray(nodes, tappedAt: location) else {
+        let checked = nodes(at: location)
+        guard let tile = tileInArray(checked, tappedAt: location) else {
             return
         }
         
@@ -147,17 +147,17 @@ class TenPairNumbersField: GameScrollViewContained {
         executeConsumeWithTiles(selectedTile, two: tile, atIndexOne: indexOne, atIndexTwo: indexTwo)
     }
     
-    func tileInArray(nodes: [AnyObject], tappedAt: CGPoint) -> TenPairNumberTile! {
-        for node in Array(nodes.reverse()) {
-            guard let tile = node as? TenPairNumberTile where !tile.hidden else {
+    func tileInArray(_ nodes: [AnyObject], tappedAt: CGPoint) -> TenPairNumberTile! {
+        for node in Array(nodes.reversed()) {
+            guard let tile = node as? TenPairNumberTile, !tile.isHidden else {
                 continue
             }
             
-            var frame = CGRectZero
+            var frame = CGRect.zero
             frame.origin = tile.position
             frame.size = tile.size
             
-            guard CGRectContainsPoint(frame, tappedAt) else {
+            guard frame.contains(tappedAt) else {
                 continue
             }
             
@@ -167,15 +167,15 @@ class TenPairNumbersField: GameScrollViewContained {
         return nil
     }
     
-    func executeConsumeWithTiles(one: TenPairNumberTile?, two:TenPairNumberTile, atIndexOne: Int, atIndexTwo: Int) {
+    func executeConsumeWithTiles(_ one: TenPairNumberTile?, two:TenPairNumberTile, atIndexOne: Int, atIndexTwo: Int) {
         let consumeActions = [
-            SKAction.colorizeWithColor(TenPairTheme.currentTheme.successTileColor!, colorBlendFactor: 1, duration: 0.3),
-            SKAction.runAction(SKAction.hide(), onChildWithName: "numberLabel"),
-            SKAction.colorizeWithColor(TenPairTheme.currentTheme.consumedTileColor!, colorBlendFactor: 1, duration: 0.3),
+            SKAction.colorize(with: TenPairTheme.currentTheme.successTileColor!, colorBlendFactor: 1, duration: 0.3),
+            SKAction.run(SKAction.hide(), onChildWithName: "numberLabel"),
+            SKAction.colorize(with: TenPairTheme.currentTheme.consumedTileColor!, colorBlendFactor: 1, duration: 0.3),
         ]
         
         if let consumedOne = one {
-            let zeroOneAction = SKAction.runBlock({ () -> Void in
+            let zeroOneAction = SKAction.run({ () -> Void in
                 consumedOne.number = 0
             })
             
@@ -184,10 +184,10 @@ class TenPairNumbersField: GameScrollViewContained {
             
             let firstSequence = SKAction.sequence(firstActions)
             
-            consumedOne.backgroundNode!.runAction(firstSequence)
+            consumedOne.backgroundNode!.run(firstSequence)
         }
 
-        let zeroTwoAndCompleteAction = SKAction.runBlock() {
+        let zeroTwoAndCompleteAction = SKAction.run() {
             two.number = 0
             self.selectedTile = nil
             self.selectedIndex = -1
@@ -208,38 +208,38 @@ class TenPairNumbersField: GameScrollViewContained {
         
         let secondSequence = SKAction.sequence(secondActions)
         
-        two.backgroundNode!.runAction(secondSequence)
+        two.backgroundNode!.run(secondSequence)
     }
     
-    func executeRemovingLines(lins: [Range<Int>]) {
-        let lines = lins.sort({ $0.startIndex > $1.startIndex })
+    func executeRemovingLines(_ lins: [CountableRange<Int>]) {
+        let lines = lins.sorted(by: { $0.lowerBound > $1.lowerBound })
         for removed in lines {
-            presentedNumbers.removeRange(removed)
+            presentedNumbers.removeSubrange(removed)
             for index in removed {
-                if let tile = tilesInUse.removeValueForKey(index) {
-                    tile.runAction(TenPairRemoveTileAction)
+                if let tile = tilesInUse.removeValue(forKey: index) {
+                    tile.run(TenPairRemoveTileAction)
                 }
             }
             
-            reindexTilesStaringFrom(removed.endIndex)
+            reindexTilesStaringFrom(removed.upperBound)
         }
         
         fieldStatus!.addToLines(-lines.count)
         let lastHandled = lastHandledVisible
-        lastHandledVisible = CGRectZero
+        lastHandledVisible = CGRect.zero
         
-        ensureVisibleCovered(lastHandled, animated: true, completionAction: SKAction.runBlock({ () -> Void in
+        ensureVisibleCovered(lastHandled, animated: true, completionAction: SKAction.run({ () -> Void in
             self.userInputAllowed = true
             self.notifySizeChanged()
             if self.gameCompleted() {
-                self.runAction(self.gameWonAction!)
+                self.run(self.gameWonAction!)
             }
         }))
     }
     
-    func reindexTilesStaringFrom(reindexStart: Int) {
+    func reindexTilesStaringFrom(_ reindexStart: Int) {
         var indexes = Array(tilesInUse.keys)
-        indexes.sortInPlace()
+        indexes.sort()
         guard let maxIndex = indexes.last else {
             return
         }
@@ -249,23 +249,23 @@ class TenPairNumbersField: GameScrollViewContained {
         }
         
         for index in reindexStart...maxIndex {
-            if let tile = tilesInUse.removeValueForKey(index) {
+            if let tile = tilesInUse.removeValue(forKey: index) {
                 tilesInUse[index - NumberOfColumns] = tile
             }
         }
     }
     
-    func executeFailureAnimationWithTiles(one: TenPairNumberTile?, two: TenPairNumberTile) {
+    func executeFailureAnimationWithTiles(_ one: TenPairNumberTile?, two: TenPairNumberTile) {
         let shakeActions = [
-            SKAction.colorizeWithColor(TenPairTheme.currentTheme.errorTileColor!, colorBlendFactor: 1, duration: 0.3),
-            SKAction.moveBy(CGVectorMake(2, 0), duration: 0.1),
-            SKAction.moveBy(CGVectorMake(-4, 0), duration: 0.1),
-            SKAction.moveBy(CGVectorMake(2, 0), duration: 0.1),
-            SKAction.colorizeWithColor(TenPairTheme.currentTheme.defaultNumberTileColor!, colorBlendFactor: 1, duration: 0.3),
+            SKAction.colorize(with: TenPairTheme.currentTheme.errorTileColor!, colorBlendFactor: 1, duration: 0.3),
+            SKAction.move(by: CGVector(dx: 2, dy: 0), duration: 0.1),
+            SKAction.move(by: CGVector(dx: -4, dy: 0), duration: 0.1),
+            SKAction.move(by: CGVector(dx: 2, dy: 0), duration: 0.1),
+            SKAction.colorize(with: TenPairTheme.currentTheme.defaultNumberTileColor!, colorBlendFactor: 1, duration: 0.3),
         ]
         
         if let animatedOne = one {
-            let unmarkFirstAction = SKAction.runBlock { () -> Void in
+            let unmarkFirstAction = SKAction.run { () -> Void in
                 animatedOne.markUnselected()
             }
 
@@ -274,10 +274,10 @@ class TenPairNumbersField: GameScrollViewContained {
 
             let firstSequence = SKAction.sequence(firstActions)
             
-            animatedOne.backgroundNode!.runAction(firstSequence)
+            animatedOne.backgroundNode!.run(firstSequence)
         }
         
-        let unmarkSecondAndResetSelectedAction = SKAction.runBlock { () -> Void in
+        let unmarkSecondAndResetSelectedAction = SKAction.run { () -> Void in
             two.markUnselected()
             self.selectedTile = nil
             self.selectedIndex = -1
@@ -289,10 +289,10 @@ class TenPairNumbersField: GameScrollViewContained {
         
         let secondSequence = SKAction.sequence(secondActions)
         
-        two.backgroundNode!.runAction(secondSequence)
+        two.backgroundNode!.run(secondSequence)
     }
     
-    func indexOfNode(node: TenPairNumberTile) -> Int {
+    func indexOfNode(_ node: TenPairNumberTile) -> Int {
         let column = Int(node.position.x / tileSize.width)
         let row = Int((size.height - node.position.y - (tileSize.height / 2)) / tileSize.height)
         let index = row * NumberOfColumns + column
@@ -309,7 +309,7 @@ class TenPairNumbersField: GameScrollViewContained {
         fieldStatus?.updateLines(lines)
     }
     
-    private func gameCompleted() -> Bool {
+    fileprivate func gameCompleted() -> Bool {
         if numberOfLines() > 1 {
             return false
         }
@@ -329,19 +329,19 @@ class TenPairNumbersField: GameScrollViewContained {
         fieldStatus?.updateTiles(nonZero.count)
     }
     
-    override func scrolledVisibleTo(visibleFrame: CGRect) {
+    override func scrolledVisibleTo(_ visibleFrame: CGRect) {
         userInputAllowed = true
         
         if runningActions() {
             return
         }
         
-        if CGRectEqualToRect(lastHandledVisible, visibleFrame) {
+        if lastHandledVisible.equalTo(visibleFrame) {
             return
         }
         
-        var toCheck = CGRectZero
-        if CGRectIsEmpty(lastHandledVisible) {
+        var toCheck = CGRect.zero
+        if lastHandledVisible.isEmpty {
             toCheck = visibleFrame
         } else if lastHandledVisible.height != visibleFrame.height {
             toCheck = visibleFrame
@@ -375,14 +375,14 @@ class TenPairNumbersField: GameScrollViewContained {
         removeHiddenTiles(visibleFrame)
     }
         
-    func removeHiddenTiles(visibleFrame: CGRect) {
+    func removeHiddenTiles(_ visibleFrame: CGRect) {
         var toRemove = [Int]()
         
         for (tileIndex, tile) in tilesInUse {
-            var frame = CGRectZero
+            var frame = CGRect.zero
             frame.origin = tile.position
             frame.size = tile.size
-            if CGRectIntersectsRect(frame, visibleFrame) {
+            if frame.intersects(visibleFrame) {
                 continue
             }
             
@@ -394,13 +394,13 @@ class TenPairNumbersField: GameScrollViewContained {
                 selectedTile = nil
             }
             
-            let tile = tilesInUse.removeValueForKey(index)!
-            tile.runAction(TenPairHideTileAction)
+            let tile = tilesInUse.removeValue(forKey: index)!
+            tile.run(TenPairHideTileAction)
             reusableTiles.append(tile)
         }
     }
     
-    func ensureVisibleCovered(visible: CGRect, animated: Bool = false, completionAction: SKAction = SKAction.waitForDuration(0)) {
+    func ensureVisibleCovered(_ visible: CGRect, animated: Bool = false, completionAction: SKAction = SKAction.wait(forDuration: 0)) {
         let topY = size.height - (visible.origin.y + visible.size.height)
         let topLine = lineForY(topY)
         let startIndex = topLine * NumberOfColumns
@@ -417,27 +417,27 @@ class TenPairNumbersField: GameScrollViewContained {
             }
         }
         
-        let waitAction = SKAction.waitForDuration(TenPairRowHideTime + 0.1)
+        let waitAction = SKAction.wait(forDuration: TenPairRowHideTime + 0.1)
         let sequence = SKAction.sequence([waitAction, completionAction])
-        runAction(sequence)
+        run(sequence)
     }
     
-    func probeTileForIndex(index: Int, animated: Bool) -> CGRect {
+    func probeTileForIndex(_ index: Int, animated: Bool) -> CGRect {
         let column = CGFloat(index % NumberOfColumns)
         let row = CGFloat(index / NumberOfColumns)
-        let position = CGPointMake(column * tileSize.width, size.height - tileSize.height - row * tileSize.height)
+        let position = CGPoint(x: column * tileSize.width, y: size.height - tileSize.height - row * tileSize.height)
         var tile: TenPairNumberTile
         let number = presentedNumbers[index]
 
-        var frame = CGRectZero
+        var frame = CGRect.zero
         frame.origin = position
         frame.size = tileSize
         var tileCreated = false
         
         if number == 0 {
             if let tileAtProbe = tilesInUse[index] {
-                tileAtProbe.runAction(TenPairHideTileAction)
-                tilesInUse.removeValueForKey(index)
+                tileAtProbe.run(TenPairHideTileAction)
+                tilesInUse.removeValue(forKey: index)
                 reusableTiles.append(tileAtProbe)
             }
             
@@ -450,13 +450,13 @@ class TenPairNumbersField: GameScrollViewContained {
             if let reused = reusableTiles.last {
                 reusableTiles.removeLast()
                 sprite = reused
-                reused.runAction(TenPairUnhideTileAction)
+                reused.run(TenPairUnhideTileAction)
             } else {
                 sprite = TenPairNumberTile()
                 addChild(sprite)
             }
             
-            sprite.anchorPoint = CGPointZero
+            sprite.anchorPoint = CGPoint.zero
             sprite.number = number
             sprite.size = tileSize
             sprite.defaultPresentaton()
@@ -470,8 +470,8 @@ class TenPairNumbersField: GameScrollViewContained {
         }
         
         if animated && !tileCreated {
-            let moveAction = SKAction.moveTo(position, duration: TenPairRowHideTime)
-            tile.runAction(moveAction)
+            let moveAction = SKAction.move(to: position, duration: TenPairRowHideTime)
+            tile.run(moveAction)
         } else {
             tile.position = position
         }
@@ -479,7 +479,7 @@ class TenPairNumbersField: GameScrollViewContained {
         return frame
     }
     
-    func lineForY(positionY: CGFloat) -> Int {
+    func lineForY(_ positionY: CGFloat) -> Int {
         return Int(positionY / tileSize.height)
     }
     
@@ -488,7 +488,7 @@ class TenPairNumbersField: GameScrollViewContained {
         
         let heigth = max(size.height, fieldHeight())
         
-        size = CGSizeMake(CGFloat(NumberOfColumns) * tileSize.width, heigth)
+        size = CGSize(width: CGFloat(NumberOfColumns) * tileSize.width, height: heigth)
         
         background.update(size, numberOfLines: lines, numberOfTiles: presentedNumbers.count)
         
@@ -498,13 +498,13 @@ class TenPairNumbersField: GameScrollViewContained {
     func restartGame() {
         selectedTile = nil
         selectedIndex = -1
-        lastHandledVisible = CGRectZero
+        lastHandledVisible = CGRect.zero
         for (_, value) in tilesInUse {
             let tile = value as TenPairNumberTile
-            tile.runAction(TenPairHideTileAction)
+            tile.run(TenPairHideTileAction)
             reusableTiles.append(tile)
         }
-        tilesInUse.removeAll(keepCapacity: true)
+        tilesInUse.removeAll(keepingCapacity: true)
         updateFieldStatus()
         notifySizeChanged()
     }
@@ -527,7 +527,7 @@ class TenPairNumbersField: GameScrollViewContained {
     }
     #endif
     
-    func dumpRange(start: Int, end: Int) {
+    func dumpRange(_ start: Int, end: Int) {
         for index in start...end {
             if index % NumberOfColumns == 0 {
                 print("")
@@ -542,11 +542,11 @@ class TenPairNumbersField: GameScrollViewContained {
         }
     }
     
-    func startOfLineForIndex(index: Int) -> Int {
+    func startOfLineForIndex(_ index: Int) -> Int {
         return index - index % NumberOfColumns
     }
     
-    func endOfLineForIndex(index: Int) -> Int {
+    func endOfLineForIndex(_ index: Int) -> Int {
         return index + (NumberOfColumns - index % NumberOfColumns)
     }
     
@@ -562,13 +562,13 @@ class TenPairNumbersField: GameScrollViewContained {
 }
 
 enum SearchResult {
-    case FoundOnScreen
-    case FoundOffScreen(CGFloat)
-    case NotFound
+    case foundOnScreen
+    case foundOffScreen(CGFloat)
+    case notFound
 }
 
 extension TenPairNumbersField: MatchFinder {
-    func searchForMatch(completion: (SearchResult) -> ()) {
+    func searchForMatch(_ completion: @escaping (SearchResult) -> ()) {
         Log.debug("Search match")
         inBackground() {
             let index = self.openMatchIndex(self.presentedNumbers)
@@ -582,14 +582,14 @@ extension TenPairNumbersField: MatchFinder {
                         Log.debug("Proposed on screen")
                         tile.markSelected()
                         self.selectedTile = tile
-                        completion(.FoundOnScreen)
+                        completion(.foundOnScreen)
                     } else {
                         let row = CGFloat(value / NumberOfColumns)
                         let proposedOffset = row * self.tileSize.height
-                        completion(.FoundOffScreen(proposedOffset))
+                        completion(.foundOffScreen(proposedOffset))
                     }
                 } else {
-                    completion(.NotFound)
+                    completion(.notFound)
                 }
             }
         }

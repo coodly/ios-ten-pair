@@ -21,24 +21,24 @@ import SpriteKit
 private let BackgroundCornerRadius: CGFloat = 5
 
 class HintButtonTray: GameView {
-    private(set) var hintButton: GameButton!
-    private var border: SKShapeNode!
+    fileprivate(set) var hintButton: GameButton!
+    fileprivate var border: SKShapeNode!
     
     override func loadContent() {
-        let path = CGPathCreateMutable()
-        CGPathMoveToPoint(path, nil, -1, 0)
-        CGPathAddLineToPoint(path, nil, size.width, 0)
-        CGPathAddLineToPoint(path, nil, size.width, size.height)
-        CGPathAddLineToPoint(path, nil, -1, size.height)
-        CGPathCloseSubpath(path)
+        let path = CGMutablePath()
+        path.move(to: CGPoint(x: -1, y: 0))
+        path.addLine(to: CGPoint(x: size.width, y: 0))
+        path.addLine(to: CGPoint(x: size.width, y: size.height))
+        path.addLine(to: CGPoint(x: -1, y: size.height))
+        path.closeSubpath()
         border = SKShapeNode(path: path)
         border.fillColor = TenPairTheme.currentTheme.defaultNumberTileColor!
-        border.strokeColor = SKColor.whiteColor()
+        border.strokeColor = SKColor.white
         border.glowWidth = 1
         addChild(border)
         
         hintButton = GameButton(imageNamed: "hint")
-        hintButton.size = CGSizeMake(44, 44)
+        hintButton.size = CGSize(width: 44, height: 44)
         
         addChild(hintButton)
         
@@ -48,6 +48,6 @@ class HintButtonTray: GameView {
     override func positionContent() {
         super.positionContent()
         
-        hintButton.position = CGPointMake(size.width / 2, size.height / 2)
+        hintButton.position = CGPoint(x: size.width / 2, y: size.height / 2)
     }
 }

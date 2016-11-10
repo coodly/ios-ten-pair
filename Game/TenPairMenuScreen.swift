@@ -30,7 +30,7 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
     var showResumeOption = true
     var fullVersionProduct: SKProduct?
     var purchaser: Purchaser!
-    private var purchaseButton: TenPairMenuButton!
+    fileprivate var purchaseButton: TenPairMenuButton!
     var sendFeedbackHandler: (() -> ())?
     
     deinit {
@@ -40,11 +40,11 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
     override func loadContent() {
         super.loadContent()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: .checkFullVersion, name: CheckAppFullVersionNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: .checkFullVersion, name: NSNotification.Name(rawValue: CheckAppFullVersionNotification), object: nil)
         
         name = "TenPairMenuScreen"
         
-        color = TenPairTheme.currentTheme.backgroundColor!.colorWithAlphaComponent(0.95)
+        color = TenPairTheme.currentTheme.backgroundColor!.withAlphaComponent(0.95)
         
         if showResumeOption {
             addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.resume", comment: "")) {
@@ -56,7 +56,7 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
         addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.restart", comment: "")) {
             [unowned self] in
             
-            self.game!.runAction(self.restartGameAction!)
+            self.game!.run(self.restartGameAction!)
             self.dismiss()
         })
         purchaseButton = TenPairMenuButton.menuItemWithTitle(fullVersionMenuItemTitle()) {
@@ -80,7 +80,7 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
     override func unloadContent() {
         super.unloadContent()
         
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
         
     override func positionContent() {
@@ -92,14 +92,14 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
                 continue
             }
             
-            menuButton.size = CGSizeMake(buttonWidth, buttonHeight)
+            menuButton.size = CGSize(width: buttonWidth, height: buttonHeight)
             menuButton.titleFontSize = round(buttonHeight / 2)
         }
         
         super.positionContent()
     }
     
-    private func fullVersionMenuItemTitle() -> String {
+    fileprivate func fullVersionMenuItemTitle() -> String {
         if  fullVersionUnlocked() {
             return NSLocalizedString("menu.option.full.version.purchased", comment: "")
         }
@@ -111,7 +111,7 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
         return String.localizedStringWithFormat(NSLocalizedString("menu.option.full.version.price.base", comment: ""), "-")
     }
     
-    private func tappedFullVersionButton() {
+    fileprivate func tappedFullVersionButton() {
         if fullVersionUnlocked() {
             let alert = AlertViewScreen()
             alert.message = NSLocalizedString("menu.full.version.thanks.message", comment: "")
@@ -140,7 +140,7 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
         game?.presentModalScreen(purchaseScreen)
     }
     
-    @objc private func checkFullVersion() {
+    @objc fileprivate func checkFullVersion() {
         purchaseButton.setTitle(fullVersionMenuItemTitle())
     }
 }

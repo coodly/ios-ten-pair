@@ -18,21 +18,21 @@ import Foundation
 import SpriteKit
 
 enum Status {
-    case Enabled
-    case Disabed
+    case enabled
+    case disabed
 }
 
-public class GameButton : GameView {
-    public var action: SKAction?
-    public var touchDisables = false
-    public var image: SKSpriteNode?
-    var status: Status = .Enabled
+open class GameButton : GameView {
+    open var action: SKAction?
+    open var touchDisables = false
+    open var image: SKSpriteNode?
+    var status: Status = .enabled
     
-    public class func buttonWithImage(imageName: String, closure: () -> ()) -> GameButton {
-        return GameButton.buttonWithImage(imageName, action: SKAction.runBlock(closure))
+    open class func buttonWithImage(_ imageName: String, closure: @escaping () -> ()) -> GameButton {
+        return GameButton.buttonWithImage(imageName, action: SKAction.run(closure))
     }
 
-    public class func buttonWithImage(imageName: String, action: SKAction) -> GameButton {
+    open class func buttonWithImage(_ imageName: String, action: SKAction) -> GameButton {
         let button = GameButton()
         let image = SKSpriteNode(imageNamed: imageName)
         button.image = image
@@ -41,7 +41,7 @@ public class GameButton : GameView {
         return button
     }
     
-    public override func positionContent() {
+    open override func positionContent() {
         super.positionContent()
  
         guard let image = image else {
@@ -49,25 +49,25 @@ public class GameButton : GameView {
         }
         
         image.size = fitSizeToHeight(image.size, height: size.height)
-        image.position = CGPointMake(size.width / 2, size.height / 2)
+        image.position = CGPoint(x: size.width / 2, y: size.height / 2)
     }
     
-    public func disable() {
-        status = .Disabed
+    open func disable() {
+        status = .disabed
     }
     
-    public func enable() {
-        status = .Enabled
+    open func enable() {
+        status = .enabled
     }
     
     func isEnabled() -> Bool {
-        return status == .Enabled
+        return status == .enabled
     }
 }
 
 private extension GameButton {
-    func fitSizeToHeight(size: CGSize, height: CGFloat) -> CGSize {
+    func fitSizeToHeight(_ size: CGSize, height: CGFloat) -> CGSize {
         let ratio = height / size.height
-        return CGSizeMake(size.width * ratio, height)
+        return CGSize(width: size.width * ratio, height: height)
     }
 }

@@ -21,8 +21,8 @@ class GameMenuPresentationContainer: GameScrollViewContained {
     var maxWidth: CGFloat = 0
     let menuSpacing: CGFloat = 10
     
-    func appendItem(item: GameMenuButton) {
-        item.anchorPoint = CGPointZero
+    func appendItem(_ item: GameMenuButton) {
+        item.anchorPoint = CGPoint.zero
         maxWidth = max(item.size.width, maxWidth)
         items.append(item)
         addGameView(item)
@@ -32,15 +32,15 @@ class GameMenuPresentationContainer: GameScrollViewContained {
         super.positionContent()
 
         var yOffset: CGFloat = 0
-        for button in Array(items.reverse()) {
+        for button in Array(items.reversed()) {
             let positionX = (maxWidth - button.size.width) / 2
-            button.position = CGPointMake(positionX, yOffset)
+            button.position = CGPoint(x: positionX, y: yOffset)
             yOffset += button.size.height
             yOffset += menuSpacing
         }
         yOffset -= menuSpacing
         
-        size = CGSizeMake(maxWidth, yOffset)
+        size = CGSize(width: maxWidth, height: yOffset)
         scrollView!.contentSizeChanged()
     }
 }

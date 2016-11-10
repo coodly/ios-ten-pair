@@ -22,55 +22,55 @@ import UIKit
 #endif
 
 public extension SKNode {
-    public func radians(degrees: CGFloat) -> CGFloat {
+    public func radians(_ degrees: CGFloat) -> CGFloat {
         return (degrees * CGFloat(M_PI)) / 180.0
     }
 }
 
-public class Game: SKScene {
+open class Game: SKScene {
     #if os(iOS)
     var tapRecognizer: UITapGestureRecognizer?
     #endif
     
-    private var screens = [GameView]()
+    fileprivate var screens = [GameView]()
     
-    public func presentLoadingView(loadingScreen: GameLoadingView) {
+    open func presentLoadingView(_ loadingScreen: GameLoadingView) {
         presentModalView(loadingScreen)
     }
 
-    func presentModalView(modalView: GameView) {
+    func presentModalView(_ modalView: GameView) {
         tagPresentedScreen(modalView)
         addChild(modalView)
         modalView.size = size
-        modalView.anchorPoint = CGPointMake(0, 0)
+        modalView.anchorPoint = CGPoint(x: 0, y: 0)
         modalView.loadContent()
         modalView.positionContent()
     }
     
-    public func presentModalScreen(screen: GameScreen) {
+    open func presentModalScreen(_ screen: GameScreen) {
         showScreen(screen)
     }
     
-    public func showScreen(screen: GameScreen) {
+    open func showScreen(_ screen: GameScreen) {
         tagPresentedScreen(screen)
         addChild(screen)
         screen.game = self
         screen.size = size
-        screen.anchorPoint = CGPointMake(0, 0)
+        screen.anchorPoint = CGPoint(x: 0, y: 0)
         screen.loadContent()
         screen.positionContent()
     }
     
-    private func tagPresentedScreen(screen: GameView) {
+    fileprivate func tagPresentedScreen(_ screen: GameView) {
         let usedZPos = screens.last?.zPosition ?? 0
         let zPos = usedZPos + 1
         screen.zPosition = zPos
         screens.append(screen)
     }
     
-    public override func update(currentTime: NSTimeInterval) {
+    open override func update(_ currentTime: TimeInterval) {
         for node in self.children {
-            if !node.isKindOfClass(GameView) {
+            if !node.isKind(of: GameView.self) {
                 continue
             }
             
@@ -79,11 +79,11 @@ public class Game: SKScene {
         }
     }
     
-    public override func didChangeSize(oldSize: CGSize) {
+    open override func didChangeSize(_ oldSize: CGSize) {
         positionContent(oldSize)
     }
     
-    func positionContent(oldSize: CGSize) {
+    func positionContent(_ oldSize: CGSize) {
         for node in children {
             guard let view = node as? GameView else {
                 continue
@@ -95,17 +95,17 @@ public class Game: SKScene {
     }
     
     func handleTap(at point: CGPoint) {
-        let nodes = nodesAtPoint(point)
+        let nodes = self.nodes(at: point)
         
         let screens = screensInArray(nodes)
         guard let topScreen = screens.first else {
             return
         }
         
-        let screenNodes = topScreen.nodesAtPoint(point)
-        let sorted = screenNodes.sort({$0.zPosition > $1.zPosition})
+        let screenNodes = topScreen.nodes(at: point)
+        let sorted = screenNodes.sorted(by: {$0.zPosition > $1.zPosition})
         
-        guard let button = findButtonInArray(sorted), tapAction = button.action else {
+        guard let button = findButtonInArray(sorted), let tapAction = button.action else {
             topScreen.handleTapAt(point)
             return
         }
@@ -118,10 +118,10 @@ public class Game: SKScene {
             button.disable()
         }
             
-        runAction(tapAction)
+        run(tapAction)
     }
     
-    func screensInArray(nodes: [SKNode]) -> [GameScreen] {
+    func screensInArray(_ nodes: [SKNode]) -> [GameScreen] {
         var result = [GameScreen]()
         for node in nodes {
             guard let screen = node as? GameScreen else {
@@ -131,15 +131,15 @@ public class Game: SKScene {
             result.append(screen)
         }
         
-        return result.sort({$0.zPosition > $1.zPosition})
+        return result.sorted(by: {$0.zPosition > $1.zPosition})
     }
     
-    func findButtonInArray(nodes: [AnyObject]) -> GameButton? {
+    func findButtonInArray(_ nodes: [AnyObject]) -> GameButton? {
         let usedNodes: [AnyObject]
         if #available(iOS 9, *) {
             usedNodes = nodes
         } else {
-            usedNodes = nodes.reverse()
+            usedNodes = nodes.reversed()
         }
         
         for node in usedNodes {
@@ -151,12 +151,12 @@ public class Game: SKScene {
         return nil
     }
     
-    public func dismissScreen(screen: GameScreen) {
+    open func dismissScreen(_ screen: GameScreen) {
         screen.unloadContent()
         screen.removeFromParent()
         
-        if let index = screens.indexOf({ $0 == screen }) {
-            screens.removeAtIndex(index)
+        if let index = screens.index(where: { $0 == screen }) {
+            screens.remove(at: index)
         }
     }    
 }
@@ -167,19 +167,19 @@ private extension Selector {
 }
     
 extension Game {
-    public override func didMoveToView(view: SKView) {
+    open override func didMove(to view: SKView) {
         let recognizer = UITapGestureRecognizer(target: self, action: .tapped)
         tapRecognizer = recognizer
         view.addGestureRecognizer(recognizer)
     }
     
-    public override func willMoveFromView(view: SKView) {
+    open override func willMove(from view: SKView) {
         view.removeGestureRecognizer(tapRecognizer!)
     }
     
-    func tapped(recognizer: UITapGestureRecognizer) {
-        let pointInView = recognizer.locationInView(self.view)
-        let point = convertPointFromView(pointInView)
+    func tapped(_ recognizer: UITapGestureRecognizer) {
+        let pointInView = recognizer.location(in: self.view)
+        let point = convertPoint(fromView: pointInView)
         handleTap(at: point)
     }
 }

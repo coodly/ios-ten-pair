@@ -17,10 +17,10 @@
 import Foundation
 import SpriteKit
 
-public class GameScrollView: GameView {
+open class GameScrollView: GameView {
     #if os(iOS)
-    public var scrollView = UIScrollView(frame: CGRectZero)
-    public var contentInset = UIEdgeInsetsZero
+    open var scrollView = UIScrollView(frame: CGRect.zero)
+    open var contentInset = UIEdgeInsets.zero
     #else
     public lazy var scrollView: NSScrollView = {
         let view = NSScrollView(frame: CGRectZero)
@@ -44,12 +44,12 @@ public class GameScrollView: GameView {
     var presented: GameScrollViewContained?
     var yCenterContent = false
     
-    override public func loadContent() {
+    override open func loadContent() {
         name = "GameScrollView"
         positionScrollView()
     }
     
-    public func present(content: GameScrollViewContained) {
+    open func present(_ content: GameScrollViewContained) {
         addGameView(content)
 
         presented = content
@@ -64,7 +64,7 @@ public class GameScrollView: GameView {
         positionPresentedNode()
     }
     
-    override public func positionContent() {
+    override open func positionContent() {
         positionPresentedNode()
         
         super.positionContent()
@@ -72,25 +72,25 @@ public class GameScrollView: GameView {
     
     func positionPresentedNode() {
         let offset = contentOffsetY()
-        let nextPosition = CGPointMake((size.width - presented!.size.width) / 2, -presented!.size.height + size.height + offset)
+        let nextPosition = CGPoint(x: (size.width - presented!.size.width) / 2, y: -presented!.size.height + size.height + offset)
         
-        let moveAction = SKAction.moveTo(nextPosition, duration: 0)
+        let moveAction = SKAction.move(to: nextPosition, duration: 0)
         
-        let notifyAction = SKAction.runBlock() {
-            let bottomPoint = self.translatePointToContent(CGPointMake(0, 0))
-            let topPoint = self.translatePointToContent(CGPointMake(0, self.size.height))
+        let notifyAction = SKAction.run() {
+            let bottomPoint = self.translatePointToContent(CGPoint(x: 0, y: 0))
+            let topPoint = self.translatePointToContent(CGPoint(x: 0, y: self.size.height))
             
-            var visible = CGRectZero
-            visible.origin = CGPointMake(0, bottomPoint.y)
-            visible.size = CGSizeMake(self.presented!.size.width, topPoint.y - bottomPoint.y)
+            var visible = CGRect.zero
+            visible.origin = CGPoint(x: 0, y: bottomPoint.y)
+            visible.size = CGSize(width: self.presented!.size.width, height: topPoint.y - bottomPoint.y)
             
-            var bounds = CGRectZero
+            var bounds = CGRect.zero
             bounds.size = self.presented!.size
             
-            let intersection = CGRectIntersection(visible, bounds)
+            let intersection = visible.intersection(bounds)
             
             // Sanity check on macOS. Exiting fullscreen gave invalid intersection
-            if CGSizeEqualToSize(CGSizeZero, intersection.size) {
+            if CGSize.zero.equalTo(intersection.size) {
                 return
             }
             
@@ -98,10 +98,10 @@ public class GameScrollView: GameView {
         }
 
         let sequence = SKAction.sequence([moveAction, notifyAction])
-        presented!.runAction(sequence)
+        presented!.run(sequence)
     }
     
-    public func contentSizeChanged() {
+    open func contentSizeChanged() {
         adjustContentSize()
         
         var insets = contentInset
@@ -132,18 +132,18 @@ public class GameScrollView: GameView {
         positionPresentedNode()
     }
     
-    public func translatePointToContent(point: CGPoint) -> CGPoint {
-        return presented!.convertPoint(point, fromNode: parent!)
+    open func translatePointToContent(_ point: CGPoint) -> CGPoint {
+        return presented!.convert(point, from: parent!)
     }
     
-    public func setContentOffset(contentOffset: CGPoint, animated: Bool) {
+    open func setContentOffset(_ contentOffset: CGPoint, animated: Bool) {
         var saneYOffset = max(contentOffset.y, 0)
         #if os(iOS)
             saneYOffset = min(saneYOffset, scrollView.contentSize.height - scrollView.bounds.height)
         #else
             saneYOffset = min(saneYOffset, dummy.bounds.height - scrollView.bounds.height)
         #endif
-        scroll(CGPointMake(0, saneYOffset), animated: animated)
+        scroll(CGPoint(x: 0, y: saneYOffset), animated: animated)
     }
 }
 
@@ -151,13 +151,13 @@ public class GameScrollView: GameView {
     import UIKit
     
     extension GameScrollView: UIScrollViewDelegate {
-        public func scrollViewDidScroll(scrollView: UIScrollView) {
+        public func scrollViewDidScroll(_ scrollView: UIScrollView) {
             positionPresentedNode()
         }
         
         func positionScrollView() {
             scrollView.frame = scene!.view!.bounds
-            scrollView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+            scrollView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
             scrollView.contentInset = contentInset
             scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(contentInset.top, 0, contentInset.bottom, 0)
             scene!.view!.addSubview(scrollView)
@@ -176,7 +176,7 @@ public class GameScrollView: GameView {
             scrollView.contentSize = contentSize()
         }
         
-        func scroll(to: CGPoint, animated: Bool) {
+        func scroll(_ to: CGPoint, animated: Bool) {
             scrollView.setContentOffset(to, animated: animated)
         }
     }
@@ -187,7 +187,7 @@ public class GameScrollView: GameView {
     
     extension GameScrollView {
         @objc private func didScroll(notification: NSNotification) {
-            guard let object = notification.object as? NSScrollView where scrollView === object else {
+            guard let object = notification.object as? NSScrollView, scrollView === object else {
                 return
             }
             

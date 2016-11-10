@@ -20,13 +20,13 @@ import SpriteKit
 import SWLogger
 
 class AlertViewScreen: GameScreen {
-    private var background: GameButton!
-    private lazy var box: AlertBox = {
+    fileprivate var background: GameButton!
+    fileprivate lazy var box: AlertBox = {
         return AlertBox()
     }()
     var message: String!
-    private lazy var dismissAction: SKAction = {
-        return SKAction.runBlock() {
+    fileprivate lazy var dismissAction: SKAction = {
+        return SKAction.run() {
             [unowned self] in
             
             self.dismiss()
@@ -43,12 +43,12 @@ class AlertViewScreen: GameScreen {
         name = "Alert view screen"
         
         background = GameButton()
-        background.anchorPoint = CGPointZero
-        background.color = TenPairTheme.currentTheme.backgroundColor!.colorWithAlphaComponent(0.95)
+        background.anchorPoint = CGPoint.zero
+        background.color = TenPairTheme.currentTheme.backgroundColor!.withAlphaComponent(0.95)
         background.action = dismissAction
         addChild(background)
         
-        box.size = CGSizeMake(300, 200)
+        box.size = CGSize(width: 300, height: 200)
         box.message = message
         addGameView(box)
     }
@@ -57,11 +57,11 @@ class AlertViewScreen: GameScreen {
         super.positionContent()
         
         background.size = size
-        box.position = CGPointMake((size.width - box.size.width) / 2, (size.height - box.size.height) / 2)
+        box.position = CGPoint(x: (size.width - box.size.width) / 2, y: (size.height - box.size.height) / 2)
     }
     
-    func addAction(iconName: String, closure: () -> ()) {
-        let closureAction = SKAction.runBlock(closure)
+    func addAction(_ iconName: String, closure: @escaping () -> ()) {
+        let closureAction = SKAction.run(closure)
         let combinedAction = SKAction.sequence([closureAction, dismissAction])
         
         box.addAction(iconName, action: combinedAction)
@@ -69,56 +69,56 @@ class AlertViewScreen: GameScreen {
 }
 
 private class AlertBox: GameView {
-    private var background: SKShapeNode!
-    private var message: String!
-    private var text: SKSpriteNode!
-    private var buttons = [GameButton]()
-    private var separator: SKShapeNode!
+    fileprivate var background: SKShapeNode!
+    fileprivate var message: String!
+    fileprivate var text: SKSpriteNode!
+    fileprivate var buttons = [GameButton]()
+    fileprivate var separator: SKShapeNode!
     
-    private override func loadContent() {
+    fileprivate override func loadContent() {
         super.loadContent()
         
-        background = SKShapeNode(rect: CGRectMake(0, 0, size.width, size.height), cornerRadius: 10)
+        background = SKShapeNode(rect: CGRect(x: 0, y: 0, width: size.width, height: size.height), cornerRadius: 10)
         background.strokeColor = TenPairTheme.currentTheme.defaultNumberTileColor!
-        background.fillColor = SKColor.whiteColor()
+        background.fillColor = SKColor.white
         addChild(background)
         
         text = SKSpriteNode.multiLineLabel(message, font: "Copperplate-Bold", fontSize: 32, maxWidth: size.width - 20)
         text.color = TenPairTheme.currentTheme.defaultNumberTileColor!
-        text.anchorPoint = CGPointZero
+        text.anchorPoint = CGPoint.zero
         addChild(text)
         
         for button in buttons {
             addGameView(button)
         }
         
-        let path = CGPathCreateMutable()
-        CGPathMoveToPoint(path, nil, 0, 0)
-        CGPathAddLineToPoint(path, nil, size.width, 0)
+        let path = CGMutablePath()
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: size.width, y: 0))
         separator = SKShapeNode(path: path)
         separator.strokeColor = TenPairTheme.currentTheme.defaultNumberTileColor!
         addChild(separator)
     }
     
-    private override func positionContent() {
-        text.position = CGPointMake((size.width - text.size.width) / 2, size.height - text.size.height - 10)
+    fileprivate override func positionContent() {
+        text.position = CGPoint(x: (size.width - text.size.width) / 2, y: size.height - text.size.height - 10)
         let buttonWidth = size.width / CGFloat(buttons.count)
         
         var buttonXOffset = CGFloat(0)
         for button in buttons {
-            button.position = CGPointMake(buttonXOffset, 0)
-            button.size = CGSizeMake(buttonWidth, 44)
+            button.position = CGPoint(x: buttonXOffset, y: 0)
+            button.size = CGSize(width: buttonWidth, height: 44)
             buttonXOffset += buttonWidth
         }
         
-        separator.position = CGPointMake(0, 44)
+        separator.position = CGPoint(x: 0, y: 44)
         
         super.positionContent()
     }
     
-    private func addAction(iconName: String, action: SKAction) {
+    fileprivate func addAction(_ iconName: String, action: SKAction) {
         let button = GameButton.buttonWithImage(iconName, action: action)
-        button.anchorPoint = CGPointZero
+        button.anchorPoint = CGPoint.zero
         button.image?.color = TenPairTheme.currentTheme.defaultNumberTileColor!
         button.image?.colorBlendFactor = 1
         buttons.append(button)

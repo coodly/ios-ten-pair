@@ -19,14 +19,14 @@ import SpriteKit
 import GameKit
 
 class TenPairMenuButton: GameMenuButton {
-    private var titleLabel: SKLabelNode?
+    fileprivate var titleLabel: SKLabelNode?
     var titleFontSize: CGFloat = 20 {
         didSet {
             titleLabel?.fontSize = titleFontSize
         }
     }
     
-    func setTitle(title: String) {
+    func setTitle(_ title: String) {
         if let existing = titleLabel {
             existing.removeFromParent()
         }
@@ -36,7 +36,7 @@ class TenPairMenuButton: GameMenuButton {
         label.text = title
         label.fontSize = titleFontSize
         label.fontColor = TenPairTheme.currentTheme.menuTitleColor!
-        label.position = CGPointMake(size.width / 2, (size.height - label.frame.size.height) / 2)
+        label.position = CGPoint(x: size.width / 2, y: (size.height - label.frame.size.height) / 2)
         addChild(label)
         
         titleLabel = label
@@ -49,14 +49,14 @@ class TenPairMenuButton: GameMenuButton {
             return
         }
         
-        label.position = CGPointMake(size.width / 2, (size.height - label.frame.size.height) / 2)
+        label.position = CGPoint(x: size.width / 2, y: (size.height - label.frame.size.height) / 2)
     }
     
-    class func menuItemWithTitle(title: String, closure: () -> ()) -> TenPairMenuButton {
+    class func menuItemWithTitle(_ title: String, closure: @escaping () -> ()) -> TenPairMenuButton {
         let item = TenPairMenuButton()
         item.setTitle(title)
         item.color = TenPairTheme.currentTheme.menuOptionBackgroundColor!
-        item.action = SKAction.runBlock(closure)
+        item.action = SKAction.run(closure)
         
         return item
     }

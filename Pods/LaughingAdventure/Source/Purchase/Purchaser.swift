@@ -17,36 +17,25 @@
 import Foundation
 import StoreKit
 
-public enum PurchaseResult {
-    case Success
-    case Cancelled
-    case Failure
-    case Defered
-    case Restored
-}
-
-public protocol PurchaseMonitor: class {
-    func purchase(result: PurchaseResult, forProduct identifier: String)
-}
-
+@available(*, deprecated, message: "Use Storefront")
 public class Purchaser: NSObject {
     public weak var passiveMonitor: PurchaseMonitor?
     public weak var activeMonitor: PurchaseMonitor?
     
     public func startMonitoring() {
         Logging.log("Start monitoring")
-        SKPaymentQueue.defaultQueue().addTransactionObserver(self)
+        SKPaymentQueue.default().add(self)
     }
     
-    public func purchase(product: SKProduct) {
+    public func purchase(_ product: SKProduct) {
         Logging.log("Purchase:\(product.productIdentifier)")
         let payment = SKPayment(product: product)
-        SKPaymentQueue.defaultQueue().addPayment(payment)
+        SKPaymentQueue.default().add(payment)
     }
     
     public func restore() {
         Logging.log("restore purchases")
-        SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
+        SKPaymentQueue.default().restoreCompletedTransactions()
     }
     
     func monitor() -> PurchaseMonitor? {
@@ -59,7 +48,7 @@ public class Purchaser: NSObject {
 }
 
 extension Purchaser: SKPaymentTransactionObserver {
-    @objc public func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    @objc public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             var finishTransaction = false
             
@@ -75,35 +64,35 @@ extension Purchaser: SKPaymentTransactionObserver {
             
             switch transaction.transactionState {
             // Transaction is being added to the server queue.
-            case .Purchasing: Logging.log("Purchasing")
-            case .Purchased: // Transaction is in queue, user has been charged.  Client should complete the transaction.
+            case .purchasing: Logging.log("Purchasing")
+            case .purchased: // Transaction is in queue, user has been charged.  Client should complete the transaction.
                 Logging.log("Purchased")
-                notifyMonitor?.purchase(.Success, forProduct: productIdentifier)
+                notifyMonitor?.purchaseResult(.success, for: productIdentifier)
                 finishTransaction = true
-            case .Failed: // Transaction was cancelled or failed before being added to the server queue.
+            case .failed: // Transaction was cancelled or failed before being added to the server queue.
                 Logging.log("Failed: \(transaction.error)")
                 finishTransaction = true
-                if let error = transaction.error where error.code == SKErrorCode.PaymentCancelled.rawValue {
-                    notifyMonitor?.purchase(.Cancelled, forProduct: productIdentifier)
+                if let error = transaction.error as? NSError, error.code == SKError.paymentCancelled.rawValue {
+                    notifyMonitor?.purchaseResult(.cancelled, for: productIdentifier)
                 } else {
-                    notifyMonitor?.purchase(.Failure, forProduct: productIdentifier)
+                    notifyMonitor?.purchaseResult(.failure, for: productIdentifier)
                 }
-            case .Restored: // Transaction was restored from user's purchase history.  Client should complete the transaction.
+            case .restored: // Transaction was restored from user's purchase history.  Client should complete the transaction.
                 Logging.log("Restored")
                 finishTransaction = true
-                notifyMonitor?.purchase(.Restored, forProduct: productIdentifier)
-            case .Deferred: // The transaction is in the queue, but its final status is pending external action.
+                notifyMonitor?.purchaseResult(.restored, for: productIdentifier)
+            case .deferred: // The transaction is in the queue, but its final status is pending external action.
                 Logging.log("Deferred")
-                notifyMonitor?.purchase(.Cancelled, forProduct: productIdentifier)
+                notifyMonitor?.purchaseResult(.cancelled, for: productIdentifier)
             }
         }
     }
     
-    public func paymentQueueRestoreCompletedTransactionsFinished(queue: SKPaymentQueue) {
+    public func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
         Logging.log("Restore completed")
     }
     
-    public func paymentQueue(queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: NSError) {
+    public func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
         Logging.log("Restore failed with error: \(error)")
     }
 }

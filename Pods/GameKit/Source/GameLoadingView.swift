@@ -16,6 +16,6 @@
 
 import Foundation
 
-public class GameLoadingView: GameScreen {
+open class GameLoadingView: GameScreen {
 
 }

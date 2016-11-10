@@ -25,8 +25,8 @@ protocol InterstitialCounter {
 
 extension InterstitialCounter {
     func showCalled() -> Bool {
-        let count = NSUserDefaults.standardUserDefaults().integerForKey(InterstetialsCountKey) + 1
-        NSUserDefaults.standardUserDefaults().setInteger(count, forKey: InterstetialsCountKey)
+        let count = UserDefaults.standard.integer(forKey: InterstetialsCountKey) + 1
+        UserDefaults.standard.set(count, forKey: InterstetialsCountKey)
         
         return count % ShowEvery == 0
     }

@@ -80,9 +80,9 @@ class TenPairEmptyLinesSearchTests: XCTestCase {
         emptyLinesCheck([16, 0], field: testField, expected: [0...8], tag: "34")
 }
     
-    func emptyLinesCheck(probes: [Int], field: [Int], expected: [Range<Int>], tag: String) {
+    func emptyLinesCheck(_ probes: [Int], field: [Int], expected: [CountableRange<Int>], tag: String) {
         let result = TenPairEmptyLinesSearch.emptyRangesWithCheckPoints(probes, field: field).sort({ $0.startIndex < $1.startIndex })
-        let sortedExpected = expected.sort({ $0.startIndex < $1.startIndex })
+        let sortedExpected = expected.sorted(by: { $0.lowerBound < $1.lowerBound })
         
         XCTAssert(result.count == expected.count, "\(tag) - not same length. Expected \(expected.count), got \(result.count)")
         

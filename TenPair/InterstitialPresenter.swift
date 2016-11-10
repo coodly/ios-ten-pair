@@ -37,7 +37,7 @@ extension InterstitialPresenter where Self: UIViewController {
         
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID]
-        interstitial!.loadRequest(request)
+        interstitial!.load(request)
     }
     
     func presentInterstitial() {
@@ -60,7 +60,7 @@ extension InterstitialPresenter where Self: UIViewController {
             return
         }
         
-        presented.presentFromRootViewController(self)
+        presented.present(fromRootViewController: self)
     }
 }
 #else

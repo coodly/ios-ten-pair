@@ -23,50 +23,49 @@ import LaughingAdventure
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, FullVersionHandler {
     var window: UIWindow?
-    private let laughingDelegate = LaughingDelegate()
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics()])
 
         if !ReleaseBuild {
-            Log.addOutput(ConsoleOutput())
-            Log.addOutput(FileOutput())
-            Log.logLevel = Log.Level.DEBUG
+            Log.add(output: ConsoleOutput())
+            Log.add(output: FileOutput())
+            Log.logLevel = .debug
             
             if wipeIAP() {
                 Log.debug("Wipe IAP")
                 removeFullVersion()
             }
             
-            Logging.sharedInstance.delegate = laughingDelegate            
+            Logging.set(logger: LaughingLogger())
         }
         
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         let controller = application.keyWindow!.rootViewController! as! GameViewController
         controller.saveField()
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 }
 
 private extension AppDelegate {
     func wipeIAP() -> Bool {
-        let env = NSProcessInfo.processInfo().environment
-        if let envValue = env["WIPE"] where envValue == "1" {
+        let env = ProcessInfo.processInfo.environment
+        if let envValue = env["WIPE"], envValue == "1" {
             return true
         }
         
@@ -74,8 +73,8 @@ private extension AppDelegate {
     }
 }
 
-private class LaughingDelegate: LaughingAdventure.LoggingDelegate {
-    private func log<T>(object: T, file: String, function: String, line: Int) {
+private class LaughingLogger: LaughingAdventure.Logger {
+    fileprivate func log<T>(_ object: T, file: String, function: String, line: Int) {
         let message = "L - \(object)"
         Log.debug(message, file: file, function: function, line: line)
     }

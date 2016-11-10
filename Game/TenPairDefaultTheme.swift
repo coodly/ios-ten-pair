@@ -20,14 +20,14 @@ import SpriteKit
 class TenPairDefaultTheme: TenPairTheme {
     init() {
         super.init(tintColor: SKColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1),
-             backgroundColor: SKColor.whiteColor(),
+             backgroundColor: SKColor.white,
       defaultNumberTileColor: SKColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1),
-             tileNumberColor: SKColor.whiteColor(),
+             tileNumberColor: SKColor.white,
            selectedTileColor: SKColor(red: 0, green: 0.400, blue: 1.000, alpha: 1),
               errorTileColor: SKColor(red: 1.000, green: 0.173, blue: 0.333, alpha: 1),
             successTileColor: SKColor(red: 0.239, green: 0.792, blue: 0.416, alpha: 1),
            consumedTileColor: SKColor(white: 0.900, alpha: 1.000),
-              menuTitleColor: SKColor.whiteColor(),
+              menuTitleColor: SKColor.white,
    menuOptionBackgroundColor: SKColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1))
     }
 }

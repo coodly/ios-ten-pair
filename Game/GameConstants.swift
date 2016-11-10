@@ -18,22 +18,22 @@ import Foundation
 
 let NumberOfColumns = 9
 
-func onMainThread(closure: () -> ()) {
-    onQueue(dispatch_get_main_queue(), closure: closure)
+func onMainThread(_ closure: @escaping () -> ()) {
+    onQueue(DispatchQueue.main, closure: closure)
 }
 
-func inBackground(closure: () -> ()) {
-    onQueue(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), closure: closure)
+func inBackground(_ closure: @escaping () -> ()) {
+    onQueue(DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.background), closure: closure)
 }
 
-private func onQueue(queue: dispatch_queue_t, closure: () -> ()) {
-    dispatch_async(queue, closure)
+private func onQueue(_ queue: DispatchQueue, closure: @escaping () -> ()) {
+    queue.async(execute: closure)
 }
 
 enum Platform {
-    case Phone
-    case Pad
-    case Mac
+    case phone
+    case pad
+    case mac
 }
 
 let ReleaseBuild = true

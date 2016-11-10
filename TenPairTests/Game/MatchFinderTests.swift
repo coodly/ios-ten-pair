@@ -10,8 +10,8 @@ import XCTest
 @testable import TenPair
 
 class MatchFinderTests: XCTestCase, MatchFinder {
-    private lazy var playField: [Int] = {
-        let filePath = NSBundle(forClass: MatchFinderTests.self).pathForResource("SavedGame", ofType: "plist")!
+    fileprivate lazy var playField: [Int] = {
+        let filePath = Bundle(for: MatchFinderTests.self).path(forResource: "SavedGame", ofType: "plist")!
         let data = NSDictionary(contentsOfFile: filePath)!
         return data[TenPairSaveDataKey] as! [Int]
     }()

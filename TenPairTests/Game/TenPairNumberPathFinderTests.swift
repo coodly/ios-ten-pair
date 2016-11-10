@@ -93,7 +93,7 @@ class TenPairNumberPathFinderTests: XCTestCase {
         XCTAssert(!TenPairNumberPathFinder.onSameVerticalLine(0, secondIndex: 13), "Failed")
     }
     
-    func performChecWithField(field: [Int], testIndexes: [Int], expectedResult: Bool, tag: String) {
+    func performChecWithField(_ field: [Int], testIndexes: [Int], expectedResult: Bool, tag: String) {
         let resultOne = TenPairNumberPathFinder.hasClearPath(testIndexes, inField: field)
         let resultTwo = TenPairNumberPathFinder.hasClearPath(Array(testIndexes.reverse()), inField: field)
         XCTAssert(resultOne == expectedResult, "One way. Got wrong result - \(tag) - \(resultOne) - \(expectedResult)")

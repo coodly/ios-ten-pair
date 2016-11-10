@@ -17,38 +17,38 @@
 import Foundation
 import SpriteKit
 
-public class GameMenuScreen: GameScreen {
+open class GameMenuScreen: GameScreen {
     let scrollView = GameScrollView()
     let container = GameMenuPresentationContainer()
     var menuItemsSpacing = 10
     var numberOfItems = 0
     var menuYOffset: CGFloat = 0
     
-    public override func loadContent() {
+    open override func loadContent() {
         scrollView.size = size
         scrollView.yCenterContent = true
         addGameView(scrollView)
         
-        container.anchorPoint = CGPointZero
+        container.anchorPoint = CGPoint.zero
         scrollView.present(container)
     }
     
-    public override func positionContent() {
+    open override func positionContent() {
         container.size = size
         scrollView.size = size
         
         super.positionContent()
     }
     
-    public func addMenuItem(item: GameMenuButton) {
+    open func addMenuItem(_ item: GameMenuButton) {
         container.appendItem(item)
     }
     
-    override public func unloadContent() {
+    override open func unloadContent() {
         scrollView.scrollView.removeFromSuperview()
     }
     
-    public func allItems() -> [GameMenuButton] {
+    open func allItems() -> [GameMenuButton] {
         return container.items
     }
 }

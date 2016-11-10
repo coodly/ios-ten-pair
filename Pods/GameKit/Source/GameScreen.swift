@@ -16,14 +16,14 @@
 
 import Foundation
 
-public class GameScreen: GameView {
-    public var game: Game?
+open class GameScreen: GameView {
+    open var game: Game?
     
-    public func handleTapAt(point: CGPoint) {
+    open func handleTapAt(_ point: CGPoint) {
         Logging.log("handleTapAt:\(point)")
     }
     
-    public func dismiss() {
+    open func dismiss() {
         game?.dismissScreen(self)
     }
 }

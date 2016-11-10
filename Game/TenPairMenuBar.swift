@@ -27,21 +27,21 @@ class TenPairMenuBar: GameView {
     override func loadContent() {
         name = "InGameMenuBar"
         
-        color = TenPairTheme.currentTheme.backgroundColor!.colorWithAlphaComponent(0.9)
+        color = TenPairTheme.currentTheme.backgroundColor!.withAlphaComponent(0.9)
 
         let background = GameButton()
         self.background = background
         background.name = "Menu background"
-        background.anchorPoint = CGPointZero
+        background.anchorPoint = CGPoint.zero
         background.size = size
-        background.action = SKAction.waitForDuration(0)
+        background.action = SKAction.wait(forDuration: 0)
         addChild(background)
 
         let menuButton = GameButton(imageNamed: "menu")
         self.menuButton = menuButton
-        menuButton.anchorPoint = CGPointMake(0, 0)
-        menuButton.size = CGSizeMake(size.height, size.height)
-        menuButton.position = CGPointMake(10, 0)
+        menuButton.anchorPoint = CGPoint(x: 0, y: 0)
+        menuButton.size = CGSize(width: size.height, height: size.height)
+        menuButton.position = CGPoint(x: 10, y: 0)
         menuButton.color = TenPairTheme.currentTheme.tintColor!
         menuButton.colorBlendFactor = 1
         menuButton.name = "Menu button"
@@ -50,9 +50,9 @@ class TenPairMenuBar: GameView {
         let reloadButton = GameButton(imageNamed: "reload")
         self.reloadButton = reloadButton
         reloadButton.touchDisables = true
-        reloadButton.anchorPoint = CGPointMake(0, 0)
-        reloadButton.size = CGSizeMake(size.height, size.height)
-        reloadButton.position = CGPointMake(size.width - reloadButton.size.width - 10, 0)
+        reloadButton.anchorPoint = CGPoint(x: 0, y: 0)
+        reloadButton.size = CGSize(width: size.height, height: size.height)
+        reloadButton.position = CGPoint(x: size.width - reloadButton.size.width - 10, y: 0)
         reloadButton.color = TenPairTheme.currentTheme.tintColor!
         reloadButton.colorBlendFactor = 1
         reloadButton.name = "Reload button"
@@ -60,17 +60,17 @@ class TenPairMenuBar: GameView {
         
         let fieldStatus = TenPairFieldStatus()
         self.fieldStatus = fieldStatus
-        fieldStatus.anchorPoint = CGPointZero
-        fieldStatus.size = CGSizeMake(200, size.height)
-        fieldStatus.position = CGPointMake((size.width - fieldStatus.size.width) / 2, 0)
+        fieldStatus.anchorPoint = CGPoint.zero
+        fieldStatus.size = CGSize(width: 200, height: size.height)
+        fieldStatus.position = CGPoint(x: (size.width - fieldStatus.size.width) / 2, y: 0)
         addGameView(fieldStatus)
     }
     
     override func positionContent() {
         background!.size = size
-        menuButton!.position = CGPointMake(10, 0)
-        reloadButton!.position = CGPointMake(size.width - reloadButton!.size.width - 10, 0)
-        fieldStatus!.position = CGPointMake((size.width - fieldStatus!.size.width) / 2, 0)
+        menuButton!.position = CGPoint(x: 10, y: 0)
+        reloadButton!.position = CGPoint(x: size.width - reloadButton!.size.width - 10, y: 0)
+        fieldStatus!.position = CGPoint(x: (size.width - fieldStatus!.size.width) / 2, y: 0)
         
         super.positionContent()
     }

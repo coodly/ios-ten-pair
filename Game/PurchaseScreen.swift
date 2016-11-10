@@ -21,10 +21,10 @@ import LaughingAdventure
 import SWLogger
 
 class PurchaseScreen: GameScreen, FullVersionHandler {
-    private var scrollView: GameScrollView!
+    fileprivate var scrollView: GameScrollView!
     var product: SKProduct!
     var purchaser: Purchaser!
-    private var loadingScreen = TenPairLoadingScreen()
+    fileprivate var loadingScreen = TenPairLoadingScreen()
     
     deinit {
         Log.debug("")
@@ -33,7 +33,7 @@ class PurchaseScreen: GameScreen, FullVersionHandler {
     override func loadContent() {
         super.loadContent()
         
-        color = SKColor.whiteColor()
+        color = SKColor.white
         
         scrollView = GameScrollView()
         
@@ -48,7 +48,7 @@ class PurchaseScreen: GameScreen, FullVersionHandler {
             self.game?.presentModalScreen(self.loadingScreen)
             self.purchaser.purchase(self.product)
         }
-        purchase.size = CGSizeMake(width, 40)
+        purchase.size = CGSize(width: width, height: 40)
         
         let restoreButton = TenPairMenuButton.menuItemWithTitle(NSLocalizedString("purchase.screen.restore.button", comment: "")) {
             [unowned self] in
@@ -57,14 +57,14 @@ class PurchaseScreen: GameScreen, FullVersionHandler {
             self.game?.presentModalScreen(self.loadingScreen)
             self.purchaser.restore()
         }
-        restoreButton.size = CGSizeMake(width, 40)
+        restoreButton.size = CGSize(width: width, height: 40)
         
         let backButton = TenPairMenuButton.menuItemWithTitle(NSLocalizedString("purchase.screen.back.button", comment: "")) {
             [unowned self] in
             
             self.dismiss()
         }
-        backButton.size = CGSizeMake(width, 40)
+        backButton.size = CGSize(width: width, height: 40)
 
         
         let content = Content()
@@ -93,18 +93,18 @@ class PurchaseScreen: GameScreen, FullVersionHandler {
 }
 
 extension PurchaseScreen: PurchaseMonitor {
-    func purchase(result: PurchaseResult, forProduct identifier: String) {
+    func purchaseResult(_ result: PurchaseResult, for identifier: String) {
         game?.dismissScreen(loadingScreen)
         
         guard identifier == FullVersionIdentifier else {
             return
         }
         
-        if result == .Cancelled {
+        if result == .cancelled {
             return
         }
         
-        if result == .Failure {
+        if result == .failure {
             let alert = AlertViewScreen()
             alert.message = NSLocalizedString("purchase.screen.failure.message", comment: "")
             alert.addAction("close") {
@@ -116,7 +116,7 @@ extension PurchaseScreen: PurchaseMonitor {
         
         self.markFullVersionUnlocked()
 
-        if result == .Restored {
+        if result == .restored {
             let alert = AlertViewScreen()
             alert.message = NSLocalizedString("purchase.screen.restored.message", comment: "")
             alert.addAction("close") {
@@ -139,15 +139,15 @@ private class Content: GameScrollViewContained {
     var maxWidth: CGFloat = 0
     let menuSpacing: CGFloat = 10
     
-    func appendItem(item: SKSpriteNode) {
-        item.anchorPoint = CGPointZero
+    func appendItem(_ item: SKSpriteNode) {
+        item.anchorPoint = CGPoint.zero
         maxWidth = max(item.size.width, maxWidth)
         items.append(item)
         addChild(item)
     }
     
     #if os(iOS)
-    private override func presentationInsets() -> UIEdgeInsets {
+    fileprivate override func presentationInsets() -> UIEdgeInsets {
         return UIEdgeInsetsMake(20, 0, 0, 0)
     }
     #else
@@ -160,15 +160,15 @@ private class Content: GameScrollViewContained {
         super.positionContent()
         
         var yOffset: CGFloat = 0
-        for button in Array(items.reverse()) {
+        for button in Array(items.reversed()) {
             let positionX = (maxWidth - button.size.width) / 2
-            button.position = CGPointMake(positionX, yOffset)
+            button.position = CGPoint(x: positionX, y: yOffset)
             yOffset += button.size.height
             yOffset += menuSpacing
         }
         yOffset -= menuSpacing
         
-        size = CGSizeMake(maxWidth, yOffset)
+        size = CGSize(width: maxWidth, height: yOffset)
         scrollView!.contentSizeChanged()
     }
 }

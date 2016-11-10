@@ -30,9 +30,9 @@ class TenPairNumberTile: SKSpriteNode {
         if backgroundNode == nil {
             let background = SKSpriteNode()
             backgroundNode = background
-            background.size = CGSizeMake(self.size.width - 2, self.size.height - 2)
-            background.anchorPoint = CGPointZero
-            background.position = CGPointMake(1, 1)
+            background.size = CGSize(width: self.size.width - 2, height: self.size.height - 2)
+            background.anchorPoint = CGPoint.zero
+            background.position = CGPoint(x: 1, y: 1)
             addChild(background)
         }
         
@@ -48,7 +48,7 @@ class TenPairNumberTile: SKSpriteNode {
         numberSprite.colorBlendFactor = 1.0
         self.numberSprite = numberSprite
         #if os(iOS)
-            numberSprite.position = CGPointMake(backgroundNode!.size.width / 2, backgroundNode!.size.height * 0.75 / 2)
+            numberSprite.position = CGPoint(x: backgroundNode!.size.width / 2, y: backgroundNode!.size.height * 0.75 / 2)
         #else
             numberSprite.anchorPoint = CGPointZero
             numberSprite.position = CGPointMake((backgroundNode!.size.width - numberSprite.size.width) / 2, (backgroundNode!.size.height - numberSprite.size.height) / 2 + backgroundNode!.size.height * 0.2)
@@ -74,7 +74,7 @@ class TenPairNumberTile: SKSpriteNode {
         backgroundNode!.color = TenPairTheme.currentTheme.consumedTileColor!
     }
     
-    func spriteForNumber(number: Int) -> SKSpriteNode {
+    func spriteForNumber(_ number: Int) -> SKSpriteNode {
         let imageKey = "\(size.width)-\(number)"
         var numberImage: SKTexture
         if let image = Cache.imagesCache[imageKey] {
@@ -89,7 +89,7 @@ class TenPairNumberTile: SKSpriteNode {
         return sprite
     }
     
-    func renderImageWithNumber(number: Int, fontSize: CGFloat) -> SKTexture {
+    func renderImageWithNumber(_ number: Int, fontSize: CGFloat) -> SKTexture {
         let string = NSMutableAttributedString(string: "\(number)")
         
         #if os(iOS)
@@ -98,12 +98,12 @@ class TenPairNumberTile: SKSpriteNode {
             let font = NSFont(name: "ChalkboardSE-Bold", size: fontSize)!
         #endif
 
-        let color = SKColor.whiteColor()
+        let color = SKColor.white
         
         string.addAttribute(NSFontAttributeName, value: font, range: NSMakeRange(0, 1))
         string.addAttribute(NSForegroundColorAttributeName, value: color, range: NSMakeRange(0, 1))
         
-        let rect = string.boundingRectWithSize(CGSizeMake(1000, 1000), options: NSStringDrawingOptions.TruncatesLastVisibleLine, context: nil)
+        let rect = string.boundingRect(with: CGSize(width: 1000, height: 1000), options: NSStringDrawingOptions.truncatesLastVisibleLine, context: nil)
         
         let image = string.renderIn(rect)
         return SKTexture(image: image)

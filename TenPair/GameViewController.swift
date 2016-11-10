@@ -30,9 +30,9 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
     @IBOutlet var gameView: SKView!
     @IBOutlet var adContainerView: UIView!
     @IBOutlet var adContainerHeightConstraint: NSLayoutConstraint!
-    private var bannerView: GADBannerView?
-    private var products: [SKProduct]?
-    private var purchaser: Purchaser!
+    fileprivate var bannerView: GADBannerView?
+    fileprivate var products: [SKProduct]?
+    fileprivate var purchaser: Purchaser!
     var interstitial: GADInterstitial?
     
     var scene : TenPairGame?
@@ -40,7 +40,7 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: .checkFullVersion, name: CheckAppFullVersionNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: .checkFullVersion, name: NSNotification.Name(rawValue: CheckAppFullVersionNotification), object: nil)
         
         adContainerHeightConstraint.constant = 0
         
@@ -48,7 +48,7 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
         bannerView!.adUnitID = AdMobAdUnit
         bannerView!.rootViewController = self
         bannerView!.delegate = self
-        bannerView!.autoresizingMask = [.FlexibleTopMargin, .FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleBottomMargin]
+        bannerView!.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
         adContainerView.addSubview(bannerView!)
         
         purchaser = Purchaser()
@@ -56,15 +56,15 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
         purchaser.startMonitoring()
     }
 
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return true
     }
 
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         loadAds()
@@ -73,20 +73,20 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
         scene?.playScreen.purchaser = purchaser
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if scene != nil {
             return
         }
 
-        let skView = gameView
+        let skView = gameView!
 
         let gameScene = TenPairGame(size: skView.bounds.size)
-        if let save = NSUserDefaults.standardUserDefaults().objectForKey(TenPairSaveDataKey) as? [Int] {
+        if let save = UserDefaults.standard.object(forKey: TenPairSaveDataKey) as? [Int] {
             gameScene.startField = save
         }
-        gameScene.scaleMode = SKSceneScaleMode.ResizeFill
+        gameScene.scaleMode = SKSceneScaleMode.resizeFill
         scene = gameScene
         skView.allowsTransparency = false
         skView.shouldCullNonVisibleNodes = false
@@ -96,7 +96,7 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
         }
         skView.presentScene(scene)
 
-        gameScene.playScreen.runningOn = UIDevice.currentDevice().userInterfaceIdiom == .Phone ? Platform.Phone : Platform.Pad
+        gameScene.playScreen.runningOn = UIDevice.current.userInterfaceIdiom == .phone ? Platform.phone : Platform.pad
         gameScene.playScreen.interstitial = self
         
         gameScene.startGame()
@@ -108,22 +108,22 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
         }
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            return UIInterfaceOrientationMask.All
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return UIInterfaceOrientationMask.all
         } else {
-            return UIInterfaceOrientationMask.Portrait
+            return UIInterfaceOrientationMask.portrait
         }
     }
     
     func saveField() {
         let numbers = scene!.playScreen.playFieldNumbers()
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(numbers, forKey: TenPairSaveDataKey)
+        let defaults = UserDefaults.standard
+        defaults.set(numbers, forKey: TenPairSaveDataKey)
         defaults.synchronize()
     }
     
-    @objc private func checkFullVersion() {
+    @objc fileprivate func checkFullVersion() {
         guard fullVersionUnlocked() else {
             return
         }
@@ -144,30 +144,30 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
             banner.removeFromSuperview()
         }
         
-        UIView.animateWithDuration(0.3, animations: animation, completion: completion)
+        UIView.animate(withDuration: 0.3, animations: animation, completion: completion)
     }
 }
 
 extension GameViewController: MFMailComposeViewControllerDelegate {
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         if let _ = error {
             presentEmailSendErrorAlert()
             return
         }
         
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 
 extension GameViewController: PurchaseMonitor {
-    func purchase(result: PurchaseResult, forProduct identifier: String) {
+    func purchaseResult(_ result: PurchaseResult, for identifier: String) {
         Log.debug("Purchase: \(result) - \(identifier)")
         
         guard identifier == FullVersionIdentifier else {
             return
         }
         
-        guard result == .Restored || result == .Success else {
+        guard result == .restored || result == .success else {
             return
         }
         
@@ -210,26 +210,26 @@ extension GameViewController: GADBannerViewDelegate {
         
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID, "466da0f45d3a5e55de0e1b150016b580", "ff31957cce821a3df57613ad34e6293e"]
-        banner.loadRequest(request)
+        banner.load(request)
     }
     
-    func adViewDidReceiveAd(bannerView: GADBannerView!) {
+    func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
         Log.debug("adViewDidReceiveAd: \(bannerView.frame)")
-        bannerView.center = CGPointMake(view.frame.width / 2, bannerView.frame.height / 2)
-        UIView.animateWithDuration(0.3) {
+        bannerView.center = CGPoint(x: view.frame.width / 2, y: bannerView.frame.height / 2)
+        UIView.animate(withDuration: 0.3, animations: {
             self.adContainerHeightConstraint.constant = bannerView.frame.height
-        }
+        }) 
     }
     
-    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+    func adView(_ bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
         Log.error("didFailToReceiveAdWithError: \(error)")
         if adContainerHeightConstraint.constant == 0 {
             return
         }
         
-        UIView.animateWithDuration(0.3) {
+        UIView.animate(withDuration: 0.3, animations: {
             self.adContainerHeightConstraint.constant = 0
-        }
+        }) 
     }
     
 }

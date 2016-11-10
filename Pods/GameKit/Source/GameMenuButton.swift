@@ -16,6 +16,6 @@
 
 import Foundation
 
-public class GameMenuButton: GameButton {
+open class GameMenuButton: GameButton {
     
 }

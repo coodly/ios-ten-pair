@@ -17,22 +17,22 @@
 import Foundation
 
 private enum Look: Int {
-    case Up = -9
-    case Down = 9
-    case Right = 1
-    case Left = -1
+    case up = -9
+    case down = 9
+    case right = 1
+    case left = -1
     
     static func shuffledValues() -> [Look] {
-        return [.Up, .Down, .Left, .Right].shuffle()
+        return [.up, .down, .left, .right].shuffled()
     }
 }
 
 protocol MatchFinder {
-    func openMatchIndex(field: [Int]) -> Int?
+    func openMatchIndex(_ field: [Int]) -> Int?
 }
 
 extension MatchFinder {
-    func openMatchIndex(field: [Int]) -> Int? {
+    func openMatchIndex(_ field: [Int]) -> Int? {
         let randomIndex = Int(arc4random_uniform(UInt32(field.count)))
         let searchBackwards = randomBool()
         let search = Finder(field: field, startIndex: randomIndex, searchBackwards: searchBackwards)
@@ -48,15 +48,15 @@ extension MatchFinder {
         return nil
     }
     
-    private func randomBool() -> Bool {
+    fileprivate func randomBool() -> Bool {
         return arc4random() % 2 == 0
     }
 }
 
 private class Finder {
-    private let field: [Int]
-    private let start: Int
-    private let modifier: Int
+    fileprivate let field: [Int]
+    fileprivate let start: Int
+    fileprivate let modifier: Int
     
     init(field: [Int], startIndex: Int, searchBackwards: Bool) {
         self.field = field
@@ -81,7 +81,7 @@ private class Finder {
         return nil
     }
     
-    private func canSeeMatch(checked: Int, inField field: [Int], look: [Look]) -> Bool {
+    fileprivate func canSeeMatch(_ checked: Int, inField field: [Int], look: [Look]) -> Bool {
         let indexValue = field[checked]
         for looking in look {
             guard let checkAgainst = nextIndexInDirection(checked, field: field, direction: looking) else {
@@ -98,7 +98,7 @@ private class Finder {
         return false
     }
     
-    private func nextIndexInDirection(checked: Int, field: [Int], direction: Look) -> Int? {
+    fileprivate func nextIndexInDirection(_ checked: Int, field: [Int], direction: Look) -> Int? {
         var otherIndex = checked
         while true {
             otherIndex += direction.rawValue
@@ -115,25 +115,27 @@ private class Finder {
     }
 }
 
-private extension CollectionType {
-    /// Return a copy of `self` with its elements shuffled
-    func shuffle() -> [Generator.Element] {
-        var list = Array(self)
-        list.shuffleInPlace()
-        return list
+//http://stackoverflow.com/questions/24026510/how-do-i-shuffle-an-array-in-swift/24029847#24029847
+extension MutableCollection where Indices.Iterator.Element == Index {
+    /// Shuffles the contents of this collection.
+    mutating func shuffle() {
+        let c = count
+        guard c > 1 else { return }
+        
+        for (unshuffledCount, firstUnshuffled) in zip(stride(from: c, to: 1, by: -1), indices) {
+            let d: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            guard d != 0 else { continue }
+            let i = index(firstUnshuffled, offsetBy: d)
+            swap(&self[firstUnshuffled], &self[i])
+        }
     }
 }
 
-private extension MutableCollectionType where Index == Int {
-    /// Shuffle the elements of `self` in-place.
-    mutating func shuffleInPlace() {
-        // empty and single-element collections don't shuffle
-        if count < 2 { return }
-        
-        for i in 0..<count - 1 {
-            let j = Int(arc4random_uniform(UInt32(count - i))) + i
-            guard i != j else { continue }
-            swap(&self[i], &self[j])
-        }
+extension Sequence {
+    /// Returns an array with the contents of this sequence, shuffled.
+    func shuffled() -> [Iterator.Element] {
+        var result = Array(self)
+        result.shuffle()
+        return result
     }
 }

@@ -19,16 +19,16 @@ import Foundation
     import UIKit
 #endif
 
-public class GameScrollViewContained : GameView {
-    public var scrollView: GameScrollView?
+open class GameScrollViewContained : GameView {
+    open var scrollView: GameScrollView?
     
-    public func scrolledVisibleTo(visibleFrame: CGRect) {
+    open func scrolledVisibleTo(_ visibleFrame: CGRect) {
         
     }
 
     #if os(iOS)
-    public func presentationInsets() -> UIEdgeInsets {
-        return UIEdgeInsetsZero
+    open func presentationInsets() -> UIEdgeInsets {
+        return UIEdgeInsets.zero
     }
     #else
     public func presentationInsets() -> NSEdgeInsets {
