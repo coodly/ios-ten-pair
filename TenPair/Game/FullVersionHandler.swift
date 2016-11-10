@@ -47,7 +47,7 @@ extension FullVersionHandler {
         do {
             let data = [HasFullVersionKey: true]
             try Locksmith.saveData(data: data, forUserAccount: FullVersionKey)
-            onMainThread() {
+            DispatchQueue.main.async {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: CheckAppFullVersionNotification), object: nil)
             }
         } catch let error as NSError {

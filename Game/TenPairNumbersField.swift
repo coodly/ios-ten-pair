@@ -84,10 +84,10 @@ class TenPairNumbersField: GameScrollViewContained {
     }
     
     func reloadNumbers(_ completion: SKAction = SKAction.wait(forDuration: 0)) {
-        inBackground() {
+        DispatchQueue.global(qos: .background).async {
             let filtered = self.presentedNumbers.filter({ $0 != 0 })
             
-            onMainThread() {
+            DispatchQueue.main.async {
                 self.presentedNumbers += filtered
                 self.lastHandledVisible = CGRect.zero
                 self.background.lastHandledTopLine = -1
@@ -570,9 +570,9 @@ enum SearchResult {
 extension TenPairNumbersField: MatchFinder {
     func searchForMatch(_ completion: @escaping (SearchResult) -> ()) {
         Log.debug("Search match")
-        inBackground() {
+        DispatchQueue.global(qos: .background).async {
             let index = self.openMatchIndex(self.presentedNumbers)
-            onMainThread() {
+            DispatchQueue.main.async {
                 Log.debug("Match index: \(index)")
                 if let value = index {
                     self.selectedTile?.markUnselected()

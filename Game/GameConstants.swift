@@ -18,18 +18,6 @@ import Foundation
 
 let NumberOfColumns = 9
 
-func onMainThread(_ closure: @escaping () -> ()) {
-    onQueue(DispatchQueue.main, closure: closure)
-}
-
-func inBackground(_ closure: @escaping () -> ()) {
-    onQueue(DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.background), closure: closure)
-}
-
-private func onQueue(_ queue: DispatchQueue, closure: @escaping () -> ()) {
-    queue.async(execute: closure)
-}
-
 enum Platform {
     case phone
     case pad
