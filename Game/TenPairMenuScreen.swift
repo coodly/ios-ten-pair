@@ -47,13 +47,13 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
         color = TenPairTheme.currentTheme.backgroundColor!.withAlphaComponent(0.95)
         
         if showResumeOption {
-            addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.resume", comment: "")) {
+            add(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.resume", comment: "")) {
                 [unowned self] in
                 
                 self.dismiss()
             })
         }
-        addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.restart", comment: "")) {
+        add(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.restart", comment: "")) {
             [unowned self] in
             
             self.game!.run(self.restartGameAction!)
@@ -65,15 +65,15 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
             self.tappedFullVersionButton()
         }
         if showFullVersionPurchase() {
-            addMenuItem(purchaseButton)
+            add(purchaseButton)
         }
-        addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
+        add(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("menu.option.rate", comment: "")) {
             [unowned self] in
             
             self.openInStore()
         })
         if let feedbackClosure = sendFeedbackHandler {
-            addMenuItem(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("manu.option.send.message", comment: ""), closure: feedbackClosure))
+            add(TenPairMenuButton.menuItemWithTitle(NSLocalizedString("manu.option.send.message", comment: ""), closure: feedbackClosure))
         }
     }
     
@@ -119,7 +119,7 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
 
             }
             
-            game?.presentModalScreen(alert)
+            game?.presentModal(screen: alert)
             return
         }
         
@@ -130,14 +130,14 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
 
             }
             
-            game?.presentModalScreen(alert)
+            game?.presentModal(screen: alert)
             return
         }
         
         let purchaseScreen = PurchaseScreen()
         purchaseScreen.product = purchase
         purchaseScreen.purchaser = purchaser
-        game?.presentModalScreen(purchaseScreen)
+        game?.presentModal(screen: purchaseScreen)
     }
     
     @objc fileprivate func checkFullVersion() {

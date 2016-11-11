@@ -25,6 +25,6 @@ class TenPairGame : Game {
         if startField.count > 0 {
             playScreen.startField = startField
         }
-        showScreen(playScreen)
+        show(playScreen)
     }
 }

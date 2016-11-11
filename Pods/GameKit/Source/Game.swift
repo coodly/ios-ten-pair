@@ -34,24 +34,24 @@ open class Game: SKScene {
     
     fileprivate var screens = [GameView]()
     
-    open func presentLoadingView(_ loadingScreen: GameLoadingView) {
-        presentModalView(loadingScreen)
+    open func present(loading view: GameLoadingView) {
+        presentModal(view: view)
     }
 
-    func presentModalView(_ modalView: GameView) {
-        tagPresentedScreen(modalView)
-        addChild(modalView)
-        modalView.size = size
-        modalView.anchorPoint = CGPoint(x: 0, y: 0)
-        modalView.loadContent()
-        modalView.positionContent()
+    func presentModal(view view: GameView) {
+        tagPresentedScreen(view)
+        addChild(view)
+        view.size = size
+        view.anchorPoint = CGPoint(x: 0, y: 0)
+        view.loadContent()
+        view.positionContent()
     }
     
-    open func presentModalScreen(_ screen: GameScreen) {
-        showScreen(screen)
+    open func presentModal(screen screen: GameScreen) {
+        show(screen)
     }
     
-    open func showScreen(_ screen: GameScreen) {
+    open func show(_ screen: GameScreen) {
         tagPresentedScreen(screen)
         addChild(screen)
         screen.game = self
@@ -70,11 +70,10 @@ open class Game: SKScene {
     
     open override func update(_ currentTime: TimeInterval) {
         for node in self.children {
-            if !node.isKind(of: GameView.self) {
+            guard let view = node as? GameView else {
                 continue
             }
             
-            let view = node as! GameView
             view.update(currentTime)
         }
     }
@@ -97,7 +96,7 @@ open class Game: SKScene {
     func handleTap(at point: CGPoint) {
         let nodes = self.nodes(at: point)
         
-        let screens = screensInArray(nodes)
+        let screens = self.screens(in: nodes)
         guard let topScreen = screens.first else {
             return
         }
@@ -105,8 +104,8 @@ open class Game: SKScene {
         let screenNodes = topScreen.nodes(at: point)
         let sorted = screenNodes.sorted(by: {$0.zPosition > $1.zPosition})
         
-        guard let button = findButtonInArray(sorted), let tapAction = button.action else {
-            topScreen.handleTapAt(point)
+        guard let button = findButton(in: sorted), let tapAction = button.action else {
+            topScreen.handleTap(at: point)
             return
         }
         
@@ -121,20 +120,12 @@ open class Game: SKScene {
         run(tapAction)
     }
     
-    func screensInArray(_ nodes: [SKNode]) -> [GameScreen] {
-        var result = [GameScreen]()
-        for node in nodes {
-            guard let screen = node as? GameScreen else {
-                continue
-            }
-
-            result.append(screen)
-        }
-        
+    func screens(in nodes: [SKNode]) -> [GameScreen] {
+        var result = nodes.flatMap({ $0 as? GameScreen })
         return result.sorted(by: {$0.zPosition > $1.zPosition})
     }
     
-    func findButtonInArray(_ nodes: [AnyObject]) -> GameButton? {
+    func findButton(in nodes: [AnyObject]) -> GameButton? {
         let usedNodes: [AnyObject]
         if #available(iOS 9, *) {
             usedNodes = nodes
@@ -151,7 +142,7 @@ open class Game: SKScene {
         return nil
     }
     
-    open func dismissScreen(_ screen: GameScreen) {
+    open func dismiss(_ screen: GameScreen) {
         screen.unloadContent()
         screen.removeFromParent()
         

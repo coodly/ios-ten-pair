@@ -94,7 +94,7 @@ open class GameScrollView: GameView {
                 return
             }
             
-            self.presented!.scrolledVisibleTo(intersection)
+            self.presented!.scrolledVisible(to: intersection)
         }
 
         let sequence = SKAction.sequence([moveAction, notifyAction])

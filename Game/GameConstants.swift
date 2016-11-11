@@ -25,3 +25,14 @@ enum Platform {
 }
 
 let ReleaseBuild = true
+
+struct AppConfig {
+    let stats: Bool
+    let ads: Bool
+    let logs: Bool
+    
+    private static let development = AppConfig(stats: true, ads: true, logs: true)
+    private static let production = AppConfig(stats: false, ads: true, logs: false)
+    
+    static let current: AppConfig = AppConfig.development
+}

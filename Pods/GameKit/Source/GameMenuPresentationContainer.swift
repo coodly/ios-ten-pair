@@ -21,7 +21,7 @@ class GameMenuPresentationContainer: GameScrollViewContained {
     var maxWidth: CGFloat = 0
     let menuSpacing: CGFloat = 10
     
-    func appendItem(_ item: GameMenuButton) {
+    func append(_ item: GameMenuButton) {
         item.anchorPoint = CGPoint.zero
         maxWidth = max(item.size.width, maxWidth)
         items.append(item)

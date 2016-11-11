@@ -45,7 +45,7 @@ class PurchaseScreen: GameScreen, FullVersionHandler {
         let purchase = TenPairMenuButton.menuItemWithTitle(purchaseTitle) {
             [unowned self] in
             
-            self.game?.presentModalScreen(self.loadingScreen)
+            self.game?.presentModal(screen: self.loadingScreen)
             self.purchaser.purchase(self.product)
         }
         purchase.size = CGSize(width: width, height: 40)
@@ -54,7 +54,7 @@ class PurchaseScreen: GameScreen, FullVersionHandler {
             [unowned self] in
             
             
-            self.game?.presentModalScreen(self.loadingScreen)
+            self.game?.presentModal(screen: self.loadingScreen)
             self.purchaser.restore()
         }
         restoreButton.size = CGSize(width: width, height: 40)
@@ -94,7 +94,7 @@ class PurchaseScreen: GameScreen, FullVersionHandler {
 
 extension PurchaseScreen: PurchaseMonitor {
     func purchaseResult(_ result: PurchaseResult, for identifier: String) {
-        game?.dismissScreen(loadingScreen)
+        game?.dismiss(loadingScreen)
         
         guard identifier == FullVersionIdentifier else {
             return
@@ -110,7 +110,7 @@ extension PurchaseScreen: PurchaseMonitor {
             alert.addAction("close") {
 
             }
-            self.game?.presentModalScreen(alert)
+            self.game?.presentModal(screen: alert)
             return
         }
         
@@ -122,9 +122,9 @@ extension PurchaseScreen: PurchaseMonitor {
             alert.addAction("close") {
                 [unowned self] in
                 
-                self.game?.dismissScreen(self)
+                self.game?.dismiss(self)
             }
-            self.game?.presentModalScreen(alert)
+            self.game?.presentModal(screen: alert)
             return
         }
 

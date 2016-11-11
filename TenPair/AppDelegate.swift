@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FullVersionHandler {
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
-        if !ReleaseBuild {
+        if AppConfig.current.logs {
             Log.add(output: ConsoleOutput())
             Log.add(output: FileOutput())
             Log.logLevel = .debug

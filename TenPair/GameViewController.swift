@@ -90,7 +90,7 @@ class GameViewController: UIViewController, FullVersionHandler, InterstitialPres
         scene = gameScene
         skView.allowsTransparency = false
         skView.shouldCullNonVisibleNodes = false
-        if !ReleaseBuild {
+        if AppConfig.current.stats {
             skView.showsFPS = true
             skView.showsNodeCount = true
         }

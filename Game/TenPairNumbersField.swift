@@ -329,7 +329,7 @@ class TenPairNumbersField: GameScrollViewContained {
         fieldStatus?.updateTiles(nonZero.count)
     }
     
-    override func scrolledVisibleTo(_ visibleFrame: CGRect) {
+    override func scrolledVisible(to visibleFrame: CGRect) {
         userInputAllowed = true
         
         if runningActions() {

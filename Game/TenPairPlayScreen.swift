@@ -76,7 +76,7 @@ class TenPairPlayScreen: GameScreen {
                 
                 self.restartGame(winScreen)
             }
-            self.game!.presentModalScreen(winScreen)
+            self.game!.presentModal(screen: winScreen)
         }
 
         topMenuBar.menuButton!.action = SKAction.run() {
@@ -89,7 +89,7 @@ class TenPairPlayScreen: GameScreen {
                 
                 self.restartGame(menuScreen)
             }
-            self.game!.presentModalScreen(menuScreen)
+            self.game!.presentModal(screen: menuScreen)
         }
         
         topMenuBar.reloadButton!.action = SKAction.run() {
@@ -126,13 +126,13 @@ class TenPairPlayScreen: GameScreen {
                         popup.addAction("reload") {
                             self.reloadNumbers()
                         }
-                        self.game?.presentModalScreen(popup)
+                        self.game?.presentModal(screen: popup)
                     case .foundOffScreen(let offset):
                         let scrollTo = offset - self.scrollView!.size.height / 2
                         self.scrollView!.setContentOffset(CGPoint(x: 0, y: scrollTo), animated: true)
                     }
                     
-                    self.game!.dismissScreen(loading!)
+                    self.game!.dismiss(loading!)
                     
                     if showInterstitial {
                         self.interstitial.presentInterstitial()
@@ -157,7 +157,7 @@ class TenPairPlayScreen: GameScreen {
         super.positionContent()
     }
     
-    override func handleTapAt(_ point: CGPoint) {
+    override func handleTap(at point: CGPoint) {
         let locationInField = scrollView!.translatePointToContent(point)
         numbersField!.tappedAt(locationInField)
     }
@@ -168,7 +168,7 @@ class TenPairPlayScreen: GameScreen {
         let reload = SKAction.run() {
             self.numbersField!.reloadNumbers(SKAction.run({ () -> Void in
                 self.topMenuBar!.reloadButton!.enable()
-                self.game!.dismissScreen(loading!)
+                self.game!.dismiss(loading!)
                 
                 completion?()
             }))
@@ -183,7 +183,7 @@ class TenPairPlayScreen: GameScreen {
         let restart = SKAction.run() {
             self.numbersField!.presentedNumbers = TenPairGameStart
             self.numbersField!.restartGame()
-            self.game!.dismissScreen(loading!)
+            self.game!.dismiss(loading!)
         }
         
         loading = executeGameAction(restart)
@@ -192,7 +192,7 @@ class TenPairPlayScreen: GameScreen {
     func executeGameAction(_ action: SKAction) -> TenPairLoadingScreen {
         let loading = TenPairLoadingScreen()
         let show = SKAction.run() {
-            self.game!.presentLoadingView(loading)
+            self.game!.present(loading: loading)
         }
         let delay = SKAction.wait(forDuration: 1)
         let sequence = SKAction.sequence([show, delay, action])

@@ -22,7 +22,7 @@ import Foundation
 open class GameScrollViewContained : GameView {
     open var scrollView: GameScrollView?
     
-    open func scrolledVisibleTo(_ visibleFrame: CGRect) {
+    open func scrolledVisible(to visibleFrame: CGRect) {
         
     }
 

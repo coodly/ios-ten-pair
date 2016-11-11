@@ -19,11 +19,11 @@ import Foundation
 open class GameScreen: GameView {
     open var game: Game?
     
-    open func handleTapAt(_ point: CGPoint) {
+    open func handleTap(at point: CGPoint) {
         Logging.log("handleTapAt:\(point)")
     }
     
     open func dismiss() {
-        game?.dismissScreen(self)
+        game?.dismiss(self)
     }
 }

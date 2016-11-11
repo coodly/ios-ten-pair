@@ -40,8 +40,8 @@ open class GameMenuScreen: GameScreen {
         super.positionContent()
     }
     
-    open func addMenuItem(_ item: GameMenuButton) {
-        container.appendItem(item)
+    open func add(_ item: GameMenuButton) {
+        container.append(item)
     }
     
     override open func unloadContent() {
