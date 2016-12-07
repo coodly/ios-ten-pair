@@ -23,7 +23,19 @@ open class GameMenuScreen: GameScreen {
     var menuItemsSpacing = 10
     var numberOfItems = 0
     var menuYOffset: CGFloat = 0
+    public var statusBar: StatusBar? {
+        didSet {
+            guard let added = statusBar else {
+                return
+            }
+            addGameView(added)
+        }
+    }
     
+    public var allItems: [GameMenuButton] {
+        return container.items
+    }
+
     open override func loadContent() {
         scrollView.size = size
         scrollView.yCenterContent = true
@@ -36,6 +48,10 @@ open class GameMenuScreen: GameScreen {
     open override func positionContent() {
         container.size = size
         scrollView.size = size
+        if let bar = statusBar {
+            bar.position = CGPoint(x: 0, y: size.height - bar.size.height)
+            bar.size.width = size.width
+        }
         
         super.positionContent()
     }
@@ -46,9 +62,7 @@ open class GameMenuScreen: GameScreen {
     
     override open func unloadContent() {
         scrollView.scrollView.removeFromSuperview()
-    }
-    
-    open func allItems() -> [GameMenuButton] {
-        return container.items
+        
+        super.unloadContent()
     }
 }

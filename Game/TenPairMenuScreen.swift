@@ -42,6 +42,12 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
         
         NotificationCenter.default.addObserver(self, selector: .checkFullVersion, name: NSNotification.Name(rawValue: CheckAppFullVersionNotification), object: nil)
         
+        #if os(iOS)
+        statusBar = StatusBar()
+        statusBar?.size =  CGSize(width: 100, height: 20)
+        statusBar?.tintColor = TenPairTheme.currentTheme.menuOptionBackgroundColor!
+        #endif
+        
         name = "TenPairMenuScreen"
         
         color = TenPairTheme.currentTheme.backgroundColor!.withAlphaComponent(0.95)
@@ -84,7 +90,7 @@ class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
     }
         
     override func positionContent() {
-        let buttons = allItems()
+        let buttons = allItems
         let buttonWidth = min(size.width - 80, 400)
         let buttonHeight = round(buttonWidth / 6)
         for button in buttons {

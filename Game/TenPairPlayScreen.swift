@@ -94,7 +94,7 @@ class TenPairPlayScreen: GameScreen {
         
         topMenuBar.reloadButton!.action = SKAction.run() {
             self.reloadNumbers() {
-                onMainThread() {
+                DispatchQueue.main.async {
                     self.interstitial.presentInterstitial()
                 }
             }

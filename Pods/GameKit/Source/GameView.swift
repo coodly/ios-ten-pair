@@ -24,7 +24,13 @@ open class GameView: SKSpriteNode {
     }
     
     open func unloadContent() {
-        
+        for node in children {
+            guard let view = node as? GameView else {
+                continue
+            }
+            
+            view.unloadContent()
+        }
     }
     
     open func positionContent() {
