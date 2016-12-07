@@ -11,7 +11,7 @@ Copyright 2016 Google Inc.
 
 ## FirebaseInstanceID
 
-Copyright 2016 Google Inc.
+Copyright 2016 Google
 
 ## GameKit
 
@@ -225,15 +225,15 @@ Copyright 2011 Google Inc. All Rights Reserved.
 
 ## GoogleInterchangeUtilities
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google
 
 ## GoogleSymbolUtilities
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google
 
 ## GoogleUtilities
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google
 
 ## LaughingAdventure
 

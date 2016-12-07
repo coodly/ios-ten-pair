@@ -104,7 +104,7 @@ internal class ConversationViewController: FetchedTableViewController<Message, M
         return persistence.mainContext.fetchedControllerForMessages(in: presentedConversation)
     }
     
-    override func configure(cell: MessageCell, at indexPath: IndexPath, with message: Message, forMeasuring: Bool) {
+    override func configure(cell: MessageCell, at indexPath: IndexPath, with message: Message) {
         let timeString = dateFormatter.string(from: message.postedAt)
         let timeValue: String
         if let sentBy = message.sentBy {

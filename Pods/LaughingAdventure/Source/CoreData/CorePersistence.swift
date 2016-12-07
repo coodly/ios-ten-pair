@@ -19,12 +19,8 @@ import CoreData
 
 public typealias ContextClosure = (NSManagedObjectContext) -> ()
 
-private extension NSPredicate {
-    static let truePredicate = NSPredicate(format: "TRUEPREDICATE")
-}
-
 public class CorePersistence {
-    private var stack: CoreStack!
+    fileprivate var stack: CoreStack!
     
     public var sqliteFilePath: URL? {
         return stack.databaseFilePath
@@ -72,12 +68,15 @@ public class CorePersistence {
     }
 
     public func performInBackground(tasks: [ContextClosure], completion: (() -> ())? = nil) {
-        Logging.log("Perform \(tasks.count) tasks")
+        Logging.log("Perform \(tasks.count) tasks on \(stack.identifier)")
         if let task = tasks.first {
             stack.performUsingWorker() {
                 context in
                 
+                let start = CFAbsoluteTimeGetCurrent()
                 task(context)
+                let elapsed = CFAbsoluteTimeGetCurrent() - start
+                Logging.log("Task execution time \(elapsed) seconds")
                 self.save(context: context) {
                     var remaining = tasks
                     _ = remaining.removeFirst()
@@ -116,149 +115,20 @@ public class CorePersistence {
     }
 }
 
-public extension NSManagedObjectContext {
-    public func fetch<T: NSManagedObject>(predicate: NSPredicate = .truePredicate, limit: Int? = nil) -> [T] {
-        let request: NSFetchRequest<T> = NSFetchRequest(entityName: T.entityName())
-        request.predicate = predicate
-        if let limit = limit {
-            request.fetchLimit = limit
-        }
-        
-        do {
-            return try fetch(request)
-        } catch {
-            Logging.log("Fetch \(T.entityName()) failure. Error \(error)")
-            return []
-        }
-    }
-    
-    public func fetchFirst<T: NSManagedObject>(predicate: NSPredicate = .truePredicate, sort: [NSSortDescriptor] = []) -> T? {
-        let request: NSFetchRequest<T> = NSFetchRequest(entityName: T.entityName())
-        request.predicate = predicate
-        request.fetchLimit = 1
-        request.sortDescriptors = sort
-        
-        do {
-            let result = try fetch(request)
-            return result.first
-        } catch {
-            Logging.log("Fetch \(T.entityName()) failure. Error \(error)")
-            return nil
-        }
-    }
-    
-    public func fetchEntity<T: NSManagedObject, V: Any>(where name: String, hasValue: V) -> T? {
-        let attributePredicate = predicate(for: name, withValue: hasValue)
-        return fetchFirst(predicate: attributePredicate)
-    }
-    
-    public func predicate<V: Any>(for attribute: String, withValue: V) -> NSPredicate {
-        let predicate: NSPredicate
-        
-        switch(withValue) {
-        case is String:
-            predicate = NSPredicate(format: "%K ==[c] %@", argumentArray: [attribute, withValue])
-        default:
-            predicate = NSPredicate(format: "%K = %@", argumentArray: [attribute, withValue])
-        }
-        
-        return predicate
-    }
-    
-    public func sumOfDecimalProperty<T: NSManagedObject>(onType type: T.Type, name: String, predicate: NSPredicate = .truePredicate) -> NSDecimalNumber {
-        
-        let request: NSFetchRequest<NSDictionary> = NSFetchRequest(entityName: T.entityName())
-        request.resultType = .dictionaryResultType
-        request.predicate = predicate
-        
-        let sumKey = "sumOfProperty"
-        
-        let expression = NSExpressionDescription()
-        expression.name = sumKey
-        expression.expression = NSExpression(forKeyPath: "@sum.\(name)")
-        expression.expressionResultType = .decimalAttributeType
-        
-        request.propertiesToFetch = [expression]
-        
-        do {
-            let result = try fetch(request)
-            if let first = result.first, let value = first[sumKey] as? NSDecimalNumber {
-                return value
-            }
-            
-            Logging.log("Will return zero for sum of \(name)")
-            
-            return NSDecimalNumber.zero
-        } catch {
-            Logging.log("addDecimalProperty error: \(error)")
-            return NSDecimalNumber.notANumber
-        }
-    }
-    
-    public func count<T: NSManagedObject>(instancesOf entity: T.Type, predicate: NSPredicate = .truePredicate) -> Int {
-        let request: NSFetchRequest<NSNumber> = NSFetchRequest(entityName: T.entityName())
-        request.predicate = predicate
-
-        do {
-            return try count(for: request)
-        } catch let error as NSError {
-            fatalError("Count failed: \(error)")
-        }
-    }
-    
-    public func fetchedController<T: NSFetchRequestResult>(predicate: NSPredicate? = nil, sort: [NSSortDescriptor], sectionNameKeyPath: String? = nil) -> NSFetchedResultsController<T> {
-        let fetchRequest: NSFetchRequest<T> = NSFetchRequest(entityName: T.entityName())
+// MARK: -
+// MARK: Batch delete
+extension CorePersistence {
+    public func delete<T: NSManagedObject>(entities: T.Type, predicate: NSPredicate = .truePredicate) {
+        Logging.log("Batch delete on \(T.entityName())")
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: T.entityName())
         fetchRequest.predicate = predicate
-        fetchRequest.sortDescriptors = sort
-        let fetchedController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self, sectionNameKeyPath: sectionNameKeyPath, cacheName: nil)
-        
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        deleteRequest.resultType = .resultTypeCount
         do {
-            try fetchedController.performFetch()
+            let result = try stack.persistentStoreCoordinator.execute(deleteRequest, with: stack.mainContext) as? NSBatchDeleteResult
+            Logging.log("Deleted \(result?.result ?? 0) instances of \(T.entityName())")
         } catch {
-            Logging.log("Fetch error: \(error)")
-        }
-        
-        return fetchedController
-    }
-    
-    public func has<T: NSManagedObject, V: Any>(entity type: T.Type, where attribute: String, is value: V) -> Bool {
-        return count(instancesOf: type, predicate: predicate(for: attribute, withValue: value)) == 1
-    }
-    
-    public func inCurrentContext<T: NSManagedObject>(entities: [T]) -> [T] {
-        var result = [T]()
-        for e in entities {
-            result.append(inCurrentContext(entity: e))
-        }
-        
-        return result
-    }
-    
-    public func inCurrentContext<T: NSManagedObject>(entity: T) -> T {
-        return object(with: entity.objectID) as! T
-    }
-    
-    public func delete<T: NSManagedObject>(objects: [T]) {
-        for d in objects {
-            delete(d)
-        }
-    }
-    
-    public func fetchAttribute<T: NSManagedObject, Result>(named: String, on entity: T.Type, limit: Int? = nil, predicate: NSPredicate = .truePredicate) -> [Result] {
-        let request: NSFetchRequest<NSDictionary> = NSFetchRequest(entityName: T.entityName())
-        request.resultType = .dictionaryResultType
-        request.propertiesToFetch = [named]
-        request.predicate = predicate
-        if let limit = limit {
-            request.fetchLimit = limit
-        }
-        
-        do {
-            let objects = try fetch(request)
-            return objects.flatMap { $0[named] as? Result }
-        } catch {
-            Logging.log("fetchEntityAttribute error: \(error)")
-            return []
+            Logging.log("Batch delete error \(error)")
         }
     }
 }
@@ -268,6 +138,8 @@ private protocol CoreStack {
     var managedObjectModel: NSManagedObjectModel! { get set }
     var databaseFilePath: URL? { get }
     func performUsingWorker(closure: ((NSManagedObjectContext) -> ()))
+    var identifier: String { get }
+    var persistentStoreCoordinator: NSPersistentStoreCoordinator { get }
 }
 
 @available(iOS 10, *)
@@ -293,6 +165,12 @@ private class CoreDataStack: CoreStack {
         return container.viewContext
     }
     fileprivate var managedObjectModel: NSManagedObjectModel!
+    fileprivate var identifier: String {
+        return "TODO: jaanus"
+    }
+    fileprivate var persistentStoreCoordinator: NSPersistentStoreCoordinator {
+        fatalError()
+    }
     
     private var workerCount = 0
     
@@ -341,7 +219,7 @@ private class LegacyCoreStack: CoreStack {
     private var wipeDatabaseOnConflict = false
     private var pathToSQLiteFile: URL?
     private let mergePolicy: NSMergePolicyType
-    private let identifier: String
+    fileprivate let identifier: String
     
     private static var spawnedBackgroundCount = 0
     

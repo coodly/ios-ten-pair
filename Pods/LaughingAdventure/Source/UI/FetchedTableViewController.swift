@@ -22,8 +22,11 @@ private extension Selector {
 }
 
 open class FetchedTableViewController<Entity: NSManagedObject, Cell: UITableViewCell>: UIViewController, FullScreenTableCreate, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, SmoothTableRowDeselection {
+    public var tableTop: NSLayoutConstraint?
+
     @IBOutlet public var tableView: UITableView!
     private var fetchedController: NSFetchedResultsController<Entity>?
+    public var swipeToDeleteEnabled = false
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -74,7 +77,7 @@ open class FetchedTableViewController<Entity: NSManagedObject, Cell: UITableView
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as Cell
         let object = fetchedController!.object(at: indexPath)
-        configure(cell: cell, at: indexPath, with: object, forMeasuring:false)
+        configure(cell: cell, at: indexPath, with: object)
         return cell
     }
     
@@ -145,7 +148,7 @@ open class FetchedTableViewController<Entity: NSManagedObject, Cell: UITableView
         return false
     }
     
-    open func configure(cell: Cell, at indexPath: IndexPath, with object: Entity, forMeasuring: Bool) {
+    open func configure(cell: Cell, at indexPath: IndexPath, with object: Entity) {
         Logging.log("configure(cell: at IndexPath:\(indexPath))")
     }
     
@@ -180,5 +183,13 @@ open class FetchedTableViewController<Entity: NSManagedObject, Cell: UITableView
         }
         tableView.reloadData()
         contentChanged()
+    }
+
+    open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return swipeToDeleteEnabled
+    }
+    
+    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
     }
 }

@@ -19,6 +19,7 @@ import CoreData
 private let SavingContextName = "Saving"
 private let MainContextName = "Main"
 
+@available(*, deprecated, message: "Use CorePersistence")
 public class ObjectModel {
     struct StackConfig {
         var storeType: String!

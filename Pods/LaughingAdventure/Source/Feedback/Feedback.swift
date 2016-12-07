@@ -18,6 +18,7 @@ import Foundation
 
 public let CoodlyFeedbackNewMessagesNotifiction = Notification.Name(rawValue: "CoodlyFeedbackNewMessagesNotifiction")
 
+#if os(iOS)
 public class Feedback: InjectionHandler {
     public static func enable() {
         Injector.sharedInstance.addListener()
@@ -29,3 +30,4 @@ public class Feedback: InjectionHandler {
         return controller
     }
 }
+#endif

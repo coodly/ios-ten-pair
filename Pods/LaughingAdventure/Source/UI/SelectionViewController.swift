@@ -19,6 +19,8 @@ import UIKit
 private let SelectionTableCellIdentifier = "SelectionTableCellIdentifier"
 
 open class SelectionViewController: UIViewController, FullScreenTableCreate, UITableViewDataSource, UITableViewDelegate {
+    public var tableTop: NSLayoutConstraint?
+
     @IBOutlet public var tableView: UITableView!
     
     public var source: SelectionSource!

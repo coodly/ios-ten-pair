@@ -22,18 +22,13 @@ private extension Selector {
     static let contentSizeChanged = #selector(FetchedCollectionViewController.contentSizeChanged)
 }
 
-class CollectionCoreDataChangeAction {
-    var indexPath: IndexPath?
-    var newIndexPath: IndexPath?
-    var changeType = NSFetchedResultsChangeType.update
+private struct ChangeAction {
+    let sectionIndex: Int?
     
-    static func action(_ atIndexPath: IndexPath?, changeType: NSFetchedResultsChangeType, newIndexPath: IndexPath?) -> CollectionCoreDataChangeAction {
-        let result = CollectionCoreDataChangeAction()
-        result.indexPath = atIndexPath
-        result.changeType = changeType
-        result.newIndexPath = newIndexPath
-        return result
-    }
+    let indexPath: IndexPath?
+    let newIndexPath: IndexPath?
+
+    let changeType: NSFetchedResultsChangeType
 }
 
 let FetchedCollectionCellIdentifier = "FetchedCollectionCellIdentifier"
@@ -43,7 +38,7 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
     @IBOutlet public var collectionView: UICollectionView!
     private var fetchedController: NSFetchedResultsController<Model>?
     private var measuringCell: Cell?
-    private var changeActions: [CollectionCoreDataChangeAction]!
+    private var changeActions = [ChangeAction]()
     
     public var ignoreOffScreenUpdates = false
     
@@ -81,7 +76,7 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if fetchedController != nil {
+        guard fetchedController == nil else {
             return
         }
         
@@ -89,6 +84,10 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
         fetchedController!.delegate = self
         
         collectionView.reloadData()
+    }
+    
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return fetchedController?.sections?.count ?? 0
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -123,11 +122,15 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
     
     public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         Logging.log("controllerWillChangeContent")
-        changeActions = [CollectionCoreDataChangeAction]()
+        changeActions.removeAll()
+    }
+    
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        changeActions.append(ChangeAction(sectionIndex: sectionIndex, indexPath: nil, newIndexPath: nil, changeType: type))
     }
     
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        changeActions.append(CollectionCoreDataChangeAction.action(indexPath, changeType: type, newIndexPath: newIndexPath))
+        changeActions.append(ChangeAction(sectionIndex: nil, indexPath: indexPath, newIndexPath: newIndexPath, changeType: type))
     }
     
     public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -135,21 +138,36 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
         let visible = collectionView.indexPathsForVisibleItems
         
         let updateClosure = {
-            for action in self.changeActions {
-                let type = action.changeType
-                switch(type) {
-                case NSFetchedResultsChangeType.update:
-                    if (self.ignoreOffScreenUpdates && !visible.contains(action.indexPath!)) {
-                        continue
-                    }
-                    self.collectionView.reloadItems(at: [action.indexPath!])
-                case NSFetchedResultsChangeType.insert:
-                    self.collectionView.insertItems(at: [action.newIndexPath!])
-                case NSFetchedResultsChangeType.delete:
-                    self.collectionView.deleteItems(at: [action.indexPath!])
-                case NSFetchedResultsChangeType.move:
-                    self.collectionView.moveItem(at: action.indexPath!, to: action.newIndexPath!)
-                }
+            // update sections
+            let sectionActions = self.changeActions.filter({ $0.sectionIndex != nil })
+            Logging.log("\(sectionActions.count) section actions")
+            
+            let sectionInserts = sectionActions.filter({ $0.changeType == .insert }).map({ $0.sectionIndex! })
+            self.collectionView.insertSections(IndexSet(sectionInserts))
+            
+            let sectionDeletes = sectionActions.filter({ $0.changeType == .insert }).map({ $0.sectionIndex! })
+            self.collectionView.deleteSections(IndexSet(sectionDeletes))
+            
+            assert(sectionActions.filter({ $0.changeType != .insert && $0.changeType != .delete}).count == 0)
+            
+            let cellActions = self.changeActions.filter({ $0.sectionIndex == nil })
+            Logging.log("\(cellActions.count) cell actions")
+            
+            var cellUpdates = cellActions.filter({ $0.changeType == .update })
+            if self.ignoreOffScreenUpdates {
+                cellUpdates = cellUpdates.filter({ visible.contains($0.indexPath!) })
+            }
+            self.collectionView.reloadItems(at: cellUpdates.map({ $0.indexPath! }))
+            
+            let cellInserts = cellActions.filter({ $0.changeType == .insert }).map({ $0.newIndexPath! })
+            self.collectionView.insertItems(at: cellInserts)
+            
+            let cellDeletes = cellActions.filter({ $0.changeType == .delete}).map({ $0.indexPath! })
+            self.collectionView.deleteItems(at: cellDeletes)
+            
+            let moveActions = cellActions.filter({ $0.changeType == .move})
+            for action in moveActions {
+                self.collectionView.moveItem(at: action.indexPath!, to: action.newIndexPath!)
             }
         }
         

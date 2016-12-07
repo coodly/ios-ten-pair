@@ -1,6 +1,6 @@
 {
   "name": "LaughingAdventure",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "license": "Apache 2",
   "summary": "Common Swift code used in Coodly",
   "homepage": "https://github.com/coodly/laughing-adventure",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "git@github.com:coodly/laughing-adventure.git",
-    "tag": "0.3.0"
+    "tag": "0.5.0"
   },
   "default_subspecs": "Core",
   "platforms": {

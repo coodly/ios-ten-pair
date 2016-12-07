@@ -107,7 +107,7 @@ public class FeedbackViewController: FetchedTableViewController<Conversation, Co
         return persistence.mainContext.fetchedControllerForConversations()
     }
     
-    public override func configure(cell: ConversationCell, at indexPath: IndexPath, with converation: Conversation, forMeasuring: Bool) {
+    public override func configure(cell: ConversationCell, at indexPath: IndexPath, with converation: Conversation) {
         if let time = converation.lastMessageTime {
             cell.timeLabel.text = "\(dateFormatter.string(from: time)) >"
         } else {
@@ -166,6 +166,7 @@ public class FeedbackViewController: FetchedTableViewController<Conversation, Co
     @objc fileprivate func presentNotice() {
         let controller = FeedbackNoticeViewController()
         let navigation = UINavigationController(rootViewController: controller)
+        navigation.modalPresentationStyle = .formSheet
         present(navigation, animated: true, completion: nil)
     }
 }

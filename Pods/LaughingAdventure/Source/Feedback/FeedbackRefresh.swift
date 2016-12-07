@@ -25,11 +25,13 @@ class FeedbackRefresh: InjectionHandler, PersistenceConsumer {
         op.completionHandler = {
             success in
             
-            self.persistence.performInBackground() {
-                context in
-                
-                let hasUnseen = context.hasUnseenConversations()
-                completion(hasUnseen)
+            DispatchQueue.main.async {
+                self.persistence.performInBackground() {
+                    context in
+                    
+                    let hasUnseen = context.hasUnseenConversations()
+                    completion(hasUnseen)
+                }
             }
         }
         op.start()

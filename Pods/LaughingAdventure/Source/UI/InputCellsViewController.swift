@@ -45,6 +45,8 @@ public class InputCellsSection {
 }
 
 open class InputCellsViewController: UIViewController, FullScreenTableCreate, SmoothTableRowDeselection {
+    public var tableTop: NSLayoutConstraint?
+
     @IBOutlet public var tableView: UITableView!
     fileprivate var sections: [InputCellsSection] = []
     fileprivate var activeCellInputValidation: InputValidation?
@@ -221,11 +223,15 @@ extension InputCellsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let _ = sections[section].header else {
-            return 0
+        if let _ = sections[section].title {
+            return UITableViewAutomaticDimension
         }
         
-        return UITableViewAutomaticDimension
+        if let _ = sections[section].header {
+            return UITableViewAutomaticDimension
+        }
+        
+        return 0
     }
 }
 

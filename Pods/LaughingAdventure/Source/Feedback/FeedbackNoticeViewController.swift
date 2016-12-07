@@ -16,6 +16,7 @@
 
 import UIKit
 
+#if os(iOS)
 private extension Selector {
     static let dismiss = #selector(FeedbackNoticeViewController.dismissPressed)
 }
@@ -47,3 +48,4 @@ class FeedbackNoticeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 }
+#endif
