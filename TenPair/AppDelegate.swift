@@ -44,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FullVersionHandler {
             Logging.set(logger: LaughingLogger())
         }
         
+        Feedback.enable()
+        
         return true
     }
 
