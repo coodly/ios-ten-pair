@@ -15,7 +15,24 @@
 */
 
 import Foundation
+#if os(iOS)
+    import UIKit
+#endif
 
-open class GameLoadingView: GameScreen {
+open class ScrollViewContained: View {
+    open var scrollView: ScrollView?
+    
+    open func scrolledVisible(to visibleFrame: CGRect) {
+        
+    }
 
+    #if os(iOS)
+    open func presentationInsets() -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+    #else
+    open func presentationInsets() -> EdgeInsets {
+        return NSEdgeInsetsZero
+    }
+    #endif
 }

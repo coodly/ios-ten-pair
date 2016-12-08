@@ -18,7 +18,7 @@ import Foundation
 import SpriteKit
 import GameKit
 
-class TenPairMenuButton: GameMenuButton {
+class TenPairMenuButton: MenuButton {
     fileprivate var titleLabel: SKLabelNode?
     var titleFontSize: CGFloat = 20 {
         didSet {

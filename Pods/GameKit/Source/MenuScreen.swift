@@ -17,9 +17,9 @@
 import Foundation
 import SpriteKit
 
-open class GameMenuScreen: GameScreen {
-    let scrollView = GameScrollView()
-    let container = GameMenuPresentationContainer()
+open class MenuScreen: Screen {
+    let scrollView = ScrollView()
+    let container = MenuPresentationContainer()
     var menuItemsSpacing = 10
     var numberOfItems = 0
     var menuYOffset: CGFloat = 0
@@ -32,7 +32,7 @@ open class GameMenuScreen: GameScreen {
         }
     }
     
-    public var allItems: [GameMenuButton] {
+    public var allItems: [MenuButton] {
         return container.items
     }
 
@@ -56,7 +56,7 @@ open class GameMenuScreen: GameScreen {
         super.positionContent()
     }
     
-    open func add(_ item: GameMenuButton) {
+    open func add(_ item: MenuButton) {
         container.append(item)
     }
     

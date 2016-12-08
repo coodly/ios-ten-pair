@@ -20,8 +20,8 @@ import StoreKit
 import LaughingAdventure
 import SWLogger
 
-class PurchaseScreen: GameScreen, FullVersionHandler {
-    fileprivate var scrollView: GameScrollView!
+class PurchaseScreen: Screen, FullVersionHandler {
+    fileprivate var scrollView: ScrollView!
     var product: SKProduct!
     var purchaser: Purchaser!
     fileprivate var loadingScreen = TenPairLoadingScreen()
@@ -35,7 +35,7 @@ class PurchaseScreen: GameScreen, FullVersionHandler {
         
         color = SKColor.white
         
-        scrollView = GameScrollView()
+        scrollView = ScrollView()
         
         let width = min(400, size.width - 20)
         let text = SKSpriteNode.multiLineLabel(NSLocalizedString("purchase.screen.sales.letter", comment: ""), font: "Copperplate", fontSize: 20, maxWidth: width)
@@ -134,7 +134,7 @@ extension PurchaseScreen: PurchaseMonitor {
 }
 
 //TODO jaanus: copy/paste from menu container
-private class Content: GameScrollViewContained {
+private class Content: ScrollViewContained {
     var items: [SKSpriteNode] = []
     var maxWidth: CGFloat = 0
     let menuSpacing: CGFloat = 10

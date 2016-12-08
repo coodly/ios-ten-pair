@@ -18,7 +18,7 @@ import Foundation
 import SpriteKit
 import GameKit
 
-class TenPairLoadingScreen : GameLoadingView {
+class TenPairLoadingScreen : LoadingView {
     var spinner: SKShapeNode?
     var lastUpdateTime: TimeInterval = 0
     

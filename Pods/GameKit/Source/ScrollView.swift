@@ -17,7 +17,7 @@
 import Foundation
 import SpriteKit
 
-open class GameScrollView: GameView {
+open class ScrollView: View {
     #if os(iOS)
     open var scrollView = UIScrollView(frame: CGRect.zero)
     open var contentInset = UIEdgeInsets.zero
@@ -41,7 +41,7 @@ open class GameScrollView: GameView {
         return dummy
     }()
     #endif
-    var presented: GameScrollViewContained?
+    var presented: ScrollViewContained?
     var yCenterContent = false
     
     override open func loadContent() {
@@ -49,7 +49,7 @@ open class GameScrollView: GameView {
         positionScrollView()
     }
     
-    open func present(_ content: GameScrollViewContained) {
+    open func present(_ content: ScrollViewContained) {
         addGameView(content)
 
         presented = content
@@ -151,7 +151,7 @@ open class GameScrollView: GameView {
 #if os(iOS)
     import UIKit
     
-    extension GameScrollView: UIScrollViewDelegate {
+    extension ScrollView: UIScrollViewDelegate {
         public func scrollViewDidScroll(_ scrollView: UIScrollView) {
             positionPresentedNode()
         }
@@ -183,10 +183,10 @@ open class GameScrollView: GameView {
     }
 #else
     private extension Selector {
-        static let scrolled = #selector(GameScrollView.didScroll(notification:))
+        static let scrolled = #selector(ScrollView.didScroll(notification:))
     }
     
-    extension GameScrollView {
+    extension ScrollView {
         @objc fileprivate func didScroll(notification: NSNotification) {
             guard let object = notification.object as? NSScrollView, scrollView === object else {
                 return

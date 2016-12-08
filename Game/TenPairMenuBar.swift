@@ -18,18 +18,18 @@ import Foundation
 import SpriteKit
 import GameKit
 
-class TenPairMenuBar: GameView {
-    var menuButton: GameButton?
-    var reloadButton: GameButton?
+class TenPairMenuBar: View {
+    var menuButton: Button?
+    var reloadButton: Button?
     var fieldStatus: TenPairFieldStatus?
-    var background: GameButton?
+    var background: Button?
     
     override func loadContent() {
         name = "InGameMenuBar"
         
         color = TenPairTheme.currentTheme.backgroundColor!.withAlphaComponent(0.9)
 
-        let background = GameButton()
+        let background = Button()
         self.background = background
         background.name = "Menu background"
         background.anchorPoint = CGPoint.zero
@@ -37,7 +37,7 @@ class TenPairMenuBar: GameView {
         background.action = SKAction.wait(forDuration: 0)
         addChild(background)
 
-        let menuButton = GameButton(imageNamed: "menu")
+        let menuButton = Button(imageNamed: "menu")
         self.menuButton = menuButton
         menuButton.anchorPoint = CGPoint(x: 0, y: 0)
         menuButton.size = CGSize(width: size.height, height: size.height)
@@ -47,7 +47,7 @@ class TenPairMenuBar: GameView {
         menuButton.name = "Menu button"
         addChild(menuButton)
 
-        let reloadButton = GameButton(imageNamed: "reload")
+        let reloadButton = Button(imageNamed: "reload")
         self.reloadButton = reloadButton
         reloadButton.touchDisables = true
         reloadButton.anchorPoint = CGPoint(x: 0, y: 0)

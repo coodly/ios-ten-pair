@@ -15,24 +15,7 @@
 */
 
 import Foundation
-#if os(iOS)
-    import UIKit
-#endif
 
-open class GameScrollViewContained : GameView {
-    open var scrollView: GameScrollView?
+open class MenuButton: Button {
     
-    open func scrolledVisible(to visibleFrame: CGRect) {
-        
-    }
-
-    #if os(iOS)
-    open func presentationInsets() -> UIEdgeInsets {
-        return UIEdgeInsets.zero
-    }
-    #else
-    open func presentationInsets() -> EdgeInsets {
-        return NSEdgeInsetsZero
-    }
-    #endif
 }

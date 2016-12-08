@@ -16,12 +16,12 @@
 
 import Foundation
 
-class GameMenuPresentationContainer: GameScrollViewContained {
-    var items: [GameMenuButton] = []
+class MenuPresentationContainer: ScrollViewContained {
+    var items: [MenuButton] = []
     var maxWidth: CGFloat = 0
     let menuSpacing: CGFloat = 10
     
-    func append(_ item: GameMenuButton) {
+    func append(_ item: MenuButton) {
         item.anchorPoint = CGPoint.zero
         maxWidth = max(item.size.width, maxWidth)
         items.append(item)

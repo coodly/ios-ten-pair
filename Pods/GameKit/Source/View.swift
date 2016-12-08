@@ -17,7 +17,7 @@
 import Foundation
 import SpriteKit
 
-open class GameView: SKSpriteNode {
+open class View: SKSpriteNode {
     
     open func loadContent() {
         
@@ -25,7 +25,7 @@ open class GameView: SKSpriteNode {
     
     open func unloadContent() {
         for node in children {
-            guard let view = node as? GameView else {
+            guard let view = node as? View else {
                 continue
             }
             
@@ -35,7 +35,7 @@ open class GameView: SKSpriteNode {
     
     open func positionContent() {
         for node in children {
-            guard let view = node as? GameView else {
+            guard let view = node as? View else {
                 continue
             }
 
@@ -47,7 +47,7 @@ open class GameView: SKSpriteNode {
     
     }
     
-    open func addGameView(_ view: GameView) {
+    open func addGameView(_ view: View) {
         addChild(view)
         view.anchorPoint = CGPoint.zero
         view.loadContent()

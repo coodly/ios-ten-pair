@@ -32,13 +32,13 @@ open class Game: SKScene {
     var tapRecognizer: UITapGestureRecognizer?
     #endif
     
-    fileprivate var screens = [GameView]()
+    fileprivate var screens = [View]()
     
-    open func present(loading view: GameLoadingView) {
+    open func present(loading view: LoadingView) {
         presentModal(view: view)
     }
 
-    func presentModal(view view: GameView) {
+    func presentModal(view view: View) {
         tagPresentedScreen(view)
         addChild(view)
         view.size = size
@@ -47,11 +47,11 @@ open class Game: SKScene {
         view.positionContent()
     }
     
-    open func presentModal(screen screen: GameScreen) {
+    open func presentModal(screen screen: Screen) {
         show(screen)
     }
     
-    open func show(_ screen: GameScreen) {
+    open func show(_ screen: Screen) {
         tagPresentedScreen(screen)
         addChild(screen)
         screen.game = self
@@ -61,7 +61,7 @@ open class Game: SKScene {
         screen.positionContent()
     }
     
-    fileprivate func tagPresentedScreen(_ screen: GameView) {
+    fileprivate func tagPresentedScreen(_ screen: View) {
         let usedZPos = screens.last?.zPosition ?? 0
         let zPos = usedZPos + 1
         screen.zPosition = zPos
@@ -70,7 +70,7 @@ open class Game: SKScene {
     
     open override func update(_ currentTime: TimeInterval) {
         for node in self.children {
-            guard let view = node as? GameView else {
+            guard let view = node as? View else {
                 continue
             }
             
@@ -84,7 +84,7 @@ open class Game: SKScene {
     
     func positionContent(_ oldSize: CGSize) {
         for node in children {
-            guard let view = node as? GameView else {
+            guard let view = node as? View else {
                 continue
             }
 
@@ -120,12 +120,12 @@ open class Game: SKScene {
         run(tapAction)
     }
     
-    func screens(in nodes: [SKNode]) -> [GameScreen] {
-        var result = nodes.flatMap({ $0 as? GameScreen })
+    func screens(in nodes: [SKNode]) -> [Screen] {
+        var result = nodes.flatMap({ $0 as? Screen })
         return result.sorted(by: {$0.zPosition > $1.zPosition})
     }
     
-    func findButton(in nodes: [AnyObject]) -> GameButton? {
+    func findButton(in nodes: [AnyObject]) -> Button? {
         let usedNodes: [AnyObject]
         if #available(iOS 9, *) {
             usedNodes = nodes
@@ -134,7 +134,7 @@ open class Game: SKScene {
         }
         
         for node in usedNodes {
-            if let button = node as? GameButton {
+            if let button = node as? Button {
                 return button
             }
         }
@@ -142,7 +142,7 @@ open class Game: SKScene {
         return nil
     }
     
-    open func dismiss(_ screen: GameScreen) {
+    open func dismiss(_ screen: Screen) {
         screen.unloadContent()
         screen.removeFromParent()
         

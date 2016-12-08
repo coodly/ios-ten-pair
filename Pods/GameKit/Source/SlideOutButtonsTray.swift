@@ -17,8 +17,8 @@
 import Foundation
 import SpriteKit
 
-open class SlideOutButtonsTray: GameView {
-    open var openButton: GameButton! {
+open class SlideOutButtonsTray: View {
+    open var openButton: Button! {
         didSet {
             openButton.action = SKAction.run() {
                 self.toggleOpenState()
@@ -26,7 +26,7 @@ open class SlideOutButtonsTray: GameView {
         }
     }
     
-    fileprivate var buttons = [GameButton]()
+    fileprivate var buttons = [Button]()
     fileprivate var opened = false
     fileprivate var closeX: CGFloat = 0
     
@@ -53,7 +53,7 @@ open class SlideOutButtonsTray: GameView {
         }
     }
     
-    open func appendButton(_ button: GameButton) {
+    open func appendButton(_ button: Button) {
         buttons.append(button)
         addChild(button)
     }

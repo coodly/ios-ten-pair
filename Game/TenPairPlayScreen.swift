@@ -27,9 +27,9 @@ let TenPairGameStart = [1, 2, 3, 4, 5, 6, 7, 8, 9,
                         1, 1, 1, 2, 1, 3, 1, 4, 1,
                         5, 1, 6, 1, 7, 1, 8, 1, 9]
 
-class TenPairPlayScreen: GameScreen {
+class TenPairPlayScreen: Screen {
     var topMenuBar: TenPairMenuBar?
-    var scrollView: GameScrollView?
+    var scrollView: ScrollView?
     var numbersField: TenPairNumbersField?
     var startField = TenPairGameStart
     fileprivate var actionButtons: HintButtonTray?
@@ -43,7 +43,7 @@ class TenPairPlayScreen: GameScreen {
         name = "TenPairPlayScreen"
         color = TenPairTheme.currentTheme.backgroundColor!
         
-        let scrollView = GameScrollView()
+        let scrollView = ScrollView()
         self.scrollView = scrollView
         scrollView.size = size
         #if os(iOS)

@@ -18,7 +18,7 @@ import Foundation
 import SpriteKit
 import GameKit
 
-class TenPairFieldStatus: GameView {
+class TenPairFieldStatus: View {
     let linesIcon = SKSpriteNode(imageNamed: "lines")
     let linesLabel = SKLabelNode()
     let tilesIcon = SKSpriteNode(imageNamed: "tile")

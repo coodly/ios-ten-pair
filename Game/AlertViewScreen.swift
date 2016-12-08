@@ -19,8 +19,8 @@ import GameKit
 import SpriteKit
 import SWLogger
 
-class AlertViewScreen: GameScreen {
-    fileprivate var background: GameButton!
+class AlertViewScreen: Screen {
+    fileprivate var background: Button!
     fileprivate lazy var box: AlertBox = {
         return AlertBox()
     }()
@@ -42,7 +42,7 @@ class AlertViewScreen: GameScreen {
         
         name = "Alert view screen"
         
-        background = GameButton()
+        background = Button()
         background.anchorPoint = CGPoint.zero
         background.color = TenPairTheme.currentTheme.backgroundColor!.withAlphaComponent(0.95)
         background.action = dismissAction
@@ -68,11 +68,11 @@ class AlertViewScreen: GameScreen {
     }
 }
 
-private class AlertBox: GameView {
+private class AlertBox: View {
     fileprivate var background: SKShapeNode!
     fileprivate var message: String!
     fileprivate var text: SKSpriteNode!
-    fileprivate var buttons = [GameButton]()
+    fileprivate var buttons = [Button]()
     fileprivate var separator: SKShapeNode!
     
     fileprivate override func loadContent() {
@@ -117,7 +117,7 @@ private class AlertBox: GameView {
     }
     
     fileprivate func addAction(_ iconName: String, action: SKAction) {
-        let button = GameButton.buttonWithImage(iconName, action: action)
+        let button = Button.buttonWithImage(iconName, action: action)
         button.anchorPoint = CGPoint.zero
         button.image?.color = TenPairTheme.currentTheme.defaultNumberTileColor!
         button.image?.colorBlendFactor = 1

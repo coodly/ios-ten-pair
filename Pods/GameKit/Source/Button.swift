@@ -19,21 +19,21 @@ import SpriteKit
 
 enum Status {
     case enabled
-    case disabed
+    case disabled
 }
 
-open class GameButton : GameView {
+open class Button: View {
     open var action: SKAction?
     open var touchDisables = false
     open var image: SKSpriteNode?
     var status: Status = .enabled
     
-    open class func buttonWithImage(_ imageName: String, closure: @escaping () -> ()) -> GameButton {
-        return GameButton.buttonWithImage(imageName, action: SKAction.run(closure))
+    open class func buttonWithImage(_ imageName: String, closure: @escaping () -> ()) -> Button {
+        return Button.buttonWithImage(imageName, action: SKAction.run(closure))
     }
 
-    open class func buttonWithImage(_ imageName: String, action: SKAction) -> GameButton {
-        let button = GameButton()
+    open class func buttonWithImage(_ imageName: String, action: SKAction) -> Button {
+        let button = Button()
         let image = SKSpriteNode(imageNamed: imageName)
         button.image = image
         button.action = action
@@ -53,7 +53,7 @@ open class GameButton : GameView {
     }
     
     open func disable() {
-        status = .disabed
+        status = .disabled
     }
     
     open func enable() {
@@ -65,7 +65,7 @@ open class GameButton : GameView {
     }
 }
 
-private extension GameButton {
+private extension Button {
     func fitSizeToHeight(_ size: CGSize, height: CGFloat) -> CGSize {
         let ratio = height / size.height
         return CGSize(width: size.width * ratio, height: height)

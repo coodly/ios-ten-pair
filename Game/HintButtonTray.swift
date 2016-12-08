@@ -20,8 +20,8 @@ import SpriteKit
 
 private let BackgroundCornerRadius: CGFloat = 5
 
-class HintButtonTray: GameView {
-    fileprivate(set) var hintButton: GameButton!
+class HintButtonTray: View {
+    fileprivate(set) var hintButton: Button!
     fileprivate var border: SKShapeNode!
     
     override func loadContent() {
@@ -37,7 +37,7 @@ class HintButtonTray: GameView {
         border.glowWidth = 1
         addChild(border)
         
-        hintButton = GameButton(imageNamed: "hint")
+        hintButton = Button(imageNamed: "hint")
         hintButton.size = CGSize(width: 44, height: 44)
         
         addChild(hintButton)

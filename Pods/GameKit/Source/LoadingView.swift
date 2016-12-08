@@ -16,14 +16,6 @@
 
 import Foundation
 
-open class GameScreen: GameView {
-    open var game: Game?
-    
-    open func handleTap(at point: CGPoint) {
-        Logging.log("handleTapAt:\(point)")
-    }
-    
-    open func dismiss() {
-        game?.dismiss(self)
-    }
+open class LoadingView: Screen {
+
 }

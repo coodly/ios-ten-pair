@@ -25,7 +25,7 @@ private extension Selector {
     static let checkFullVersion = #selector(TenPairMenuScreen.checkFullVersion)
 }
 
-class TenPairMenuScreen: GameMenuScreen, FullVersionHandler, StorePresenter {
+class TenPairMenuScreen: MenuScreen, FullVersionHandler, StorePresenter {
     var restartGameAction: SKAction?
     var showResumeOption = true
     var fullVersionProduct: SKProduct?

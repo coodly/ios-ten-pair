@@ -27,7 +27,7 @@ private let SidesSpacing: CGFloat = 10 * 2
 private let MaxPadTileWidth: CGFloat = 50
 private let MaxPhoneTileWidth: CGFloat = 35
 
-class TenPairNumbersField: GameScrollViewContained {
+class TenPairNumbersField: ScrollViewContained {
     var runningOn = Platform.mac
     var presentedNumbers = [Int]()
     var tileSize = CGSize.zero {

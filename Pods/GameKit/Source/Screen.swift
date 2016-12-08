@@ -16,6 +16,14 @@
 
 import Foundation
 
-open class GameMenuButton: GameButton {
+open class Screen: View {
+    open var game: Game?
     
+    open func handleTap(at point: CGPoint) {
+        Logging.log("handleTapAt:\(point)")
+    }
+    
+    open func dismiss() {
+        game?.dismiss(self)
+    }
 }

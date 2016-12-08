@@ -17,6 +17,7 @@
 import Foundation
 import SpriteKit
 
+#if os(iOS)
 private extension DateFormatter {
     static let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -33,7 +34,7 @@ private extension Selector {
 
 private let BatteryRedLevel: CGFloat = 0.2
 
-public class StatusBar: GameView {
+public class StatusBar: View {
     private var clockLabel: SKLabelNode!
     private var timer: Timer?
     public var tintColor: SKColor = .black {
@@ -109,3 +110,9 @@ public class StatusBar: GameView {
         updateBattery()
     }
 }
+#else
+    //TODO jaanus: handle this. Added dummy class on macOS that is not used at the moment
+    public class StatusBar: View {
+        
+    }
+#endif
