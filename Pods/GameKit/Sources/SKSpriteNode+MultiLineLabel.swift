@@ -17,6 +17,7 @@
 import Foundation
 import SpriteKit
 
+@available(iOS 9, OSX 10.11, *)
 public extension SKSpriteNode {
     public class func multiLineLabel(_ message: String, font: String, fontSize: CGFloat, maxWidth: CGFloat) -> SKSpriteNode {
         let paragraph = NSMutableParagraphStyle()

@@ -38,7 +38,7 @@ open class Game: SKScene {
         presentModal(view: view)
     }
 
-    func presentModal(view view: View) {
+    func presentModal(view: View) {
         tagPresentedScreen(view)
         addChild(view)
         view.size = size
@@ -47,7 +47,7 @@ open class Game: SKScene {
         view.positionContent()
     }
     
-    open func presentModal(screen screen: Screen) {
+    open func presentModal(screen: Screen) {
         show(screen)
     }
     
@@ -121,7 +121,7 @@ open class Game: SKScene {
     }
     
     func screens(in nodes: [SKNode]) -> [Screen] {
-        var result = nodes.flatMap({ $0 as? Screen })
+        let result = nodes.flatMap({ $0 as? Screen })
         return result.sorted(by: {$0.zPosition > $1.zPosition})
     }
     

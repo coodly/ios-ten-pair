@@ -35,6 +35,7 @@ import Foundation
         }
     }
 #else
+    import AppKit
     public extension NSAttributedString {
         func renderIn(box: CGRect) -> NSImage {
             // http://stackoverflow.com/questions/12223739/ios-to-mac-graphiccontext-explanation-conversion

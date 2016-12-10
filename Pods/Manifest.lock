@@ -47,7 +47,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   GameKit:
-    :commit: 7bf052df036c96d8a9b59ecad3644ad5f7e1ee30
+    :commit: ffad91f44e153aadc94c03821c7ce8fa87513902
     :git: git@github.com:coodly/GameKit.git
   LaughingAdventure:
     :commit: 953c3c5d44788832af73d06bbc07d1cf0781ea33
@@ -60,7 +60,7 @@ SPEC CHECKSUMS:
   Firebase: 6c80ac28d59d06bfd9152a7b6ea17625ca93183d
   FirebaseAnalytics: 6f75b04e6bfb8e0b6e9ef298e04c24eea3b13863
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
-  GameKit: cc51a95eb2fc60c2ec5ff5010860038af5736558
+  GameKit: 539775631fb27c13030d324038fb2bd5a6114c60
   Google-Mobile-Ads-SDK: 3c2a6656117989469bfe7645640aa1de024a4c6c
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
