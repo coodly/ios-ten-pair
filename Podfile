@@ -11,13 +11,10 @@ UsedSource = PodSource::Remote
 def shared
     if UsedSource == PodSource::Local
         pod 'SWLogger', :path => '../swift-logger'
-        pod 'GameKit', :path => '../swift-game-kit'
     elsif UsedSource == PodSource::Remote
-        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
-        pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git'
+    pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
     else
         pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', :tag => '0.1.2'
-        pod 'GameKit', :git => 'git@github.com:coodly/GameKit.git', :tag => '0.2.0'
     end
 end
 
@@ -30,34 +27,35 @@ def ios_pods
 
     if UsedSource == PodSource::Local
         pod 'LaughingAdventure', :path => '../swift-laughing-adventure'
+        pod 'GameKit/iOS', :path => '../swift-game-kit'
     elsif UsedSource == PodSource::Remote
         pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git'
+        pod 'GameKit/iOS', :git => 'git@github.com:coodly/GameKit.git', :branch => 'development'
     else
         pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.2.1'
+        pod 'GameKit/iOS', :git => 'git@github.com:coodly/GameKit.git', :tag => '0.2.0'
     end
 end
 
-target 'TenPair' do
+target 'iOS' do
     platform :ios, '9.3'
 
     ios_pods
 end
 
-target 'TenPairTests' do
-    platform :ios, '9.3'
-
-end
-
-target 'MacTenPair' do
+target 'macOS' do
     platform :osx, '10.11'
     
     shared
     
     if UsedSource == PodSource::Local
         pod 'LaughingAdventure/Purchase', :path => '../swift-laughing-adventure'
+        pod 'GameKit/macOS', :path => '../swift-game-kit'
     elsif UsedSource == PodSource::Remote
         pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
+        pod 'GameKit/macOS', :git => 'git@github.com:coodly/GameKit.git', :branch => 'development'
     else
         pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.2.1'
+        pod 'GameKit/macOS', :git => 'git@github.com:coodly/GameKit.git', :tag => '0.2.0'
     end
 end

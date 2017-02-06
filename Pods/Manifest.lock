@@ -15,7 +15,11 @@ PODS:
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (1.0.8)
-  - GameKit (0.1.0)
+  - GameKit/Core (0.1.0)
+  - GameKit/iOS (0.1.0):
+    - GameKit/Core
+  - GameKit/macOS (0.1.0):
+    - GameKit/Core
   - Google-Mobile-Ads-SDK (7.16.0)
   - GoogleInterchangeUtilities (1.2.2):
     - GoogleSymbolUtilities (~> 1.1)
@@ -35,7 +39,8 @@ PODS:
 DEPENDENCIES:
   - Firebase/AdMob (= 3.11.0)
   - Firebase/Core (= 3.11.0)
-  - GameKit (from `git@github.com:coodly/GameKit.git`)
+  - GameKit/iOS (from `git@github.com:coodly/GameKit.git`, branch `development`)
+  - GameKit/macOS (from `git@github.com:coodly/GameKit.git`, branch `development`)
   - LaughingAdventure (from `https://github.com/coodly/laughing-adventure.git`)
   - LaughingAdventure/Purchase (from `https://github.com/coodly/laughing-adventure.git`)
   - Locksmith (= 3.0.0)
@@ -43,6 +48,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   GameKit:
+    :branch: development
     :git: git@github.com:coodly/GameKit.git
   LaughingAdventure:
     :git: https://github.com/coodly/laughing-adventure.git
@@ -51,7 +57,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   GameKit:
-    :commit: ffad91f44e153aadc94c03821c7ce8fa87513902
+    :commit: 0de3c22084eaf2c136ae11891b9e7dd989665f40
     :git: git@github.com:coodly/GameKit.git
   LaughingAdventure:
     :commit: 9cd49a09bd655c13c06fb928e01887426abc2d86
@@ -65,7 +71,7 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
   FirebaseCore: 03da1cb32615569bbc2830a22f9ad753d9a02ef5
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
-  GameKit: 539775631fb27c13030d324038fb2bd5a6114c60
+  GameKit: 56973843e041cc5d9e17e12aa53fd36d9f2ab51a
   Google-Mobile-Ads-SDK: 92dff0e9ce1cfdfe640d9d80ab86d5e4371e478f
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
@@ -74,6 +80,6 @@ SPEC CHECKSUMS:
   Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
   SWLogger: 333135cadd381962c3667f5af500f7ae140c74a4
 
-PODFILE CHECKSUM: 05ac24691e9aa43383beeab6aa331b5ca167b723
+PODFILE CHECKSUM: 6054ccbd57a9e218176c0b48df3e8a4ee06f697b
 
 COCOAPODS: 1.1.1
