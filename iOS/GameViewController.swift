@@ -9,21 +9,25 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import GameKit
 
 class GameViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scene = GameScene.newGameScene()
-
         // Present the scene
         let skView = self.view as! SKView
+
+        let scene = TenPair(size: skView.bounds.size)        
+        scene.scaleMode = .resizeFill
+        
         skView.presentScene(scene)
         
         skView.ignoresSiblingOrder = true
         skView.showsFPS = true
         skView.showsNodeCount = true
+        
+        scene.start()
     }
 
     override var shouldAutorotate: Bool {
@@ -32,7 +36,7 @@ class GameViewController: UIViewController {
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
+            return .portrait
         } else {
             return .all
         }

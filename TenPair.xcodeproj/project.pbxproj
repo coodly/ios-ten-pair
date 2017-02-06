@@ -23,6 +23,12 @@
 		A71A97621E48CCA4005E134F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A973B1E48CCA4005E134F /* GameScene.swift */; };
 		A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A71A97641E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
+		A77DE6F91E48D75200E9214A /* TenPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE6F81E48D75200E9214A /* TenPair.swift */; };
+		A77DE6FD1E48D8D500E9214A /* PlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE6FC1E48D8D500E9214A /* PlayScreen.swift */; };
+		A77DE7091E48E29100E9214A /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE7081E48E29100E9214A /* StatusBar.swift */; };
+		A77DE70C1E48E8AF00E9214A /* TenPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE6F81E48D75200E9214A /* TenPair.swift */; };
+		A77DE70D1E48E8C000E9214A /* PlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE6FC1E48D8D500E9214A /* PlayScreen.swift */; };
+		A77DE70E1E48E8C800E9214A /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE7081E48E29100E9214A /* StatusBar.swift */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +51,9 @@
 		A71A97571E48CCA4005E134F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		A71A975A1E48CCA4005E134F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A71A975C1E48CCA4005E134F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A77DE6F81E48D75200E9214A /* TenPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPair.swift; sourceTree = "<group>"; };
+		A77DE6FC1E48D8D500E9214A /* PlayScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayScreen.swift; sourceTree = "<group>"; };
+		A77DE7081E48E29100E9214A /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		CDBD234CA436EF092F3D679F /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D734C99D56200ECE40196FB7 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FFB053744AB774B5ADBDE43B /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,9 +115,12 @@
 			isa = PBXGroup;
 			children = (
 				A71A97391E48CCA4005E134F /* Actions.sks */,
+				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
 				A71A973A1E48CCA4005E134F /* GameScene.sks */,
 				A71A973B1E48CCA4005E134F /* GameScene.swift */,
-				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
+				A77DE6F81E48D75200E9214A /* TenPair.swift */,
+				A77DE6FC1E48D8D500E9214A /* PlayScreen.swift */,
+				A77DE7081E48E29100E9214A /* StatusBar.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -356,6 +368,9 @@
 				A71A97611E48CCA4005E134F /* GameScene.swift in Sources */,
 				A71A97471E48CCA4005E134F /* GameViewController.swift in Sources */,
 				A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */,
+				A77DE7091E48E29100E9214A /* StatusBar.swift in Sources */,
+				A77DE6F91E48D75200E9214A /* TenPair.swift in Sources */,
+				A77DE6FD1E48D8D500E9214A /* PlayScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +381,9 @@
 				A71A97621E48CCA4005E134F /* GameScene.swift in Sources */,
 				A71A97581E48CCA4005E134F /* GameViewController.swift in Sources */,
 				A71A97561E48CCA4005E134F /* AppDelegate.swift in Sources */,
+				A77DE70E1E48E8C800E9214A /* StatusBar.swift in Sources */,
+				A77DE70C1E48E8AF00E9214A /* TenPair.swift in Sources */,
+				A77DE70D1E48E8C000E9214A /* PlayScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
