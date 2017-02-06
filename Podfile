@@ -22,8 +22,8 @@ def shared
 end
 
 def ios_pods
-    pod 'Firebase/Core', '3.2.1'
-    pod 'Firebase/AdMob', '3.2.1'
+    pod 'Firebase/Core', '3.11.0'
+    pod 'Firebase/AdMob', '3.11.0'
     pod 'Locksmith', '3.0.0'
 
     shared

@@ -482,7 +482,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Coodly LLC";
 				TargetAttributes = {
 					A7E59AD91D16F6ED0065E5EC = {
