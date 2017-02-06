@@ -25,4 +25,8 @@ extension UIView {
     public class func className() -> String {
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
+    
+    public class func identifier() -> String {
+        return className()
+    }
 }

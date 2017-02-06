@@ -78,11 +78,6 @@ open class ConcurrentOperation: Operation {
         main()
     }
     
-    override public final func cancel() {
-        super.cancel()
-        finish()
-    }
-    
     public func finish(_ failed: Bool = false) {
         willChangeValue(forKey: "isExecuting")
         willChangeValue(forKey: "isFinished")

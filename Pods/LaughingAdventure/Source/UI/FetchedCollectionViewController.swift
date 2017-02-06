@@ -22,7 +22,7 @@ private extension Selector {
     static let contentSizeChanged = #selector(FetchedCollectionViewController.contentSizeChanged)
 }
 
-private struct ChangeAction {
+internal struct ChangeAction {
     let sectionIndex: Int?
     
     let indexPath: IndexPath?

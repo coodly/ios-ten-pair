@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Coodly LLC
+ * Copyright 2017 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,12 @@
 
 import UIKit
 
-open class NoCaretTextField: UITextField {
-    override open func caretRect(for position: UITextPosition) -> CGRect {
-        return CGRect.zero
+public extension UICollectionView {
+    public func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
+        return dequeueReusableCell(withReuseIdentifier: T.identifier(), for: indexPath) as! T
+    }
+    
+    public func registerCell<T: UICollectionViewCell>(forType type: T.Type) {
+        register(T.viewNib(), forCellWithReuseIdentifier: T.identifier())
     }
 }

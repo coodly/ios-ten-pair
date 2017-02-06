@@ -19,7 +19,7 @@ import Foundation
 public class Localized {
     public static let LanguageChangedNotification = Notification.Name(rawValue: "com.coodly.LanguageChangedNotification")
 
-    static let sharedInstance = Localized()
+    public static let sharedInstance = Localized()
     public var language = "en" {
         didSet {
             if oldValue != language {

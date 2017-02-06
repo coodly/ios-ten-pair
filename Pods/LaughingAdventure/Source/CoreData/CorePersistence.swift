@@ -27,7 +27,7 @@ public class CorePersistence {
     }
     
     public lazy var mainContext: NSManagedObjectContext = {
-        let context = self.stack.mainContext!
+        let context = self.stack.mainContext
         context.name = "Main"
         return context
     }()
@@ -37,16 +37,26 @@ public class CorePersistence {
             self.stack.managedObjectModel = newValue
         }
         get {
-            return self.stack.managedObjectModel
+            return self.stack.managedObjectModel!
         }
     }
     
     public init(modelName: String, storeType: String = NSSQLiteStoreType, identifier: String = Bundle.main.bundleIdentifier!, in directory: FileManager.SearchPathDirectory = .documentDirectory, wipeOnConflict: Bool = false) {
-        stack = LegacyCoreStack(modelName: modelName, type: storeType, identifier: identifier, in: directory, wipeOnConflict: wipeOnConflict)
+        stack = LegacyDataStack(modelName: modelName, type: storeType, identifier: identifier, in: directory, wipeOnConflict: wipeOnConflict)
+
+        /*if #available(iOS 10, tvOS 10, *) {
+            stack = CoreDataStack(modelName: modelName, type: storeType, identifier: identifier, in: directory, wipeOnConflict: wipeOnConflict)
+        } else {
+            stack = LegacyDataStack(modelName: modelName, type: storeType, identifier: identifier, in: directory, wipeOnConflict: wipeOnConflict)
+        }*/
+    }
+    
+    public func loadPersistentStores(completion: @escaping (() -> ())) {
+        stack.loadPersistentStores(completion: completion)
     }
     
     public func perform(wait: Bool = true, block: @escaping ContextClosure) {
-        let context = stack.mainContext!
+        let context = stack.mainContext
         
         if wait {
             context.performAndWait {
@@ -90,11 +100,7 @@ public class CorePersistence {
     }
     
     public func save(completion: (() -> ())? = nil) {
-        guard let context = stack.mainContext else {
-            return
-        }
-        
-        save(context: context, completion: completion)
+        save(context: stack.mainContext, completion: completion)
     }
     
     private func save(context: NSManagedObjectContext, completion: (() -> ())? = nil) {
@@ -133,137 +139,40 @@ extension CorePersistence {
     }
 }
 
-private protocol CoreStack {
-    var mainContext: NSManagedObjectContext! { get }
-    var managedObjectModel: NSManagedObjectModel! { get set }
-    var databaseFilePath: URL? { get }
-    func performUsingWorker(closure: ((NSManagedObjectContext) -> ()))
-    var identifier: String { get }
-    var persistentStoreCoordinator: NSPersistentStoreCoordinator { get }
-}
-
-@available(iOS 10, *)
-@available(tvOS 10.0, *)
-private class CoreDataStack: CoreStack {
-    fileprivate var databaseFilePath: URL?
-    private let modelName: String!
-    private lazy var container: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: self.modelName)
-        container.loadPersistentStores {
-            storeDescription, error in
-            
-            print(">>>>>>>>> Store: \(storeDescription)")
-            
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-
-        }
-        return container
-    }()
-    fileprivate var mainContext: NSManagedObjectContext! {
-        return container.viewContext
-    }
-    fileprivate var managedObjectModel: NSManagedObjectModel!
-    fileprivate var identifier: String {
-        return "TODO: jaanus"
-    }
+private class CoreStack {
+    fileprivate let modelName: String
+    fileprivate let type: String
+    fileprivate let identifier: String
+    private let directory: FileManager.SearchPathDirectory
+    fileprivate let mergePolicy: NSMergePolicyType
+    fileprivate let wipeOnConflict: Bool
+    fileprivate var managedObjectModel: NSManagedObjectModel?
     fileprivate var persistentStoreCoordinator: NSPersistentStoreCoordinator {
         fatalError()
     }
-    
-    private var workerCount = 0
-    
-    init(modelName: String) {
-        self.modelName = modelName
+    internal var mainContext: NSManagedObjectContext {
+        fatalError()
     }
-    
-    fileprivate func performUsingWorker(closure: ((NSManagedObjectContext) -> ())) {
-        
-    }
-
-    private func performBackgroundTask(closure: @escaping ((NSManagedObjectContext) -> ())) {
-        Logging.log("Main: \(container.viewContext) - \(container.viewContext.parent) - \(container.viewContext.persistentStoreCoordinator)")
-        container.performBackgroundTask() {
-            context in
-            
-            if context.name == nil {
-                self.workerCount += 1
-                context.name = "Worker \(self.workerCount)"
-            }
-            
-            Logging.log(">>> \(context) - \(context.parent) - \(context.persistentStoreCoordinator)")
-            
-            closure(context)
-        }
-    }
-}
-
-private let SavingContextName = "Saving"
-private let MainContextName = "Main"
-private class LegacyCoreStack: CoreStack {
-    struct StackConfig {
-        var storeType: String!
-        var storeURL: URL!
-        var options: [NSObject: AnyObject]?
-    }
-
-    fileprivate var mainContext: NSManagedObjectContext! {
-        return managedObjectContext
-    }
-    
-    private let modelName: String
-    private let storeType: String
-    private let directory: FileManager.SearchPathDirectory
-    private var writingContext: NSManagedObjectContext?
-    private var wipeDatabaseOnConflict = false
-    private var pathToSQLiteFile: URL?
-    private let mergePolicy: NSMergePolicyType
-    fileprivate let identifier: String
-    
-    private static var spawnedBackgroundCount = 0
     
     init(modelName: String, type: String = NSSQLiteStoreType, identifier: String, in directory: FileManager.SearchPathDirectory = .documentDirectory, mergePolicy: NSMergePolicyType = .mergeByPropertyObjectTrumpMergePolicyType, wipeOnConflict: Bool) {
+        
         self.modelName = modelName
-        self.storeType = type
+        self.type = type
+        self.identifier = identifier
         self.directory = directory
         self.mergePolicy = mergePolicy
-        self.wipeDatabaseOnConflict = wipeOnConflict
-        self.identifier = identifier
+        self.wipeOnConflict = wipeOnConflict
     }
     
-    fileprivate func performUsingWorker(closure: ((NSManagedObjectContext) -> ())) {
-        let managedContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        LegacyCoreStack.spawnedBackgroundCount += 1
-        managedContext.name = "Worker \(LegacyCoreStack.spawnedBackgroundCount)"
-        managedContext.parent = managedObjectContext
-        managedContext.mergePolicy = NSMergePolicy(merge: mergePolicy)
-        
-        closure(managedContext)
+    fileprivate var databaseFilePath: URL? {
+        if type == NSSQLiteStoreType {
+            return workingFilesDirectory.appendingPathComponent("\(self.modelName).sqlite")
+        } else {
+            return nil
+        }
     }
     
-    lazy public var managedObjectContext: NSManagedObjectContext = {
-        Logging.log("Creating main context for \(self.identifier) - \(Thread.current.isMainThread)")
-        assert(Thread.current.isMainThread, "Main context should be crated on main thread")
-
-        let mergePolicy = NSMergePolicy(merge: self.mergePolicy)
-        
-        let saving = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        saving.persistentStoreCoordinator = self.persistentStoreCoordinator
-        saving.mergePolicy = mergePolicy
-        self.writingContext = saving
-        saving.name = SavingContextName
-        
-        var managedContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        managedContext.name = MainContextName
-        managedContext.parent = self.writingContext
-        managedContext.mergePolicy = mergePolicy
-        
-        return managedContext
-    }()
-    
-    
-    public lazy var workingFilesDirectory: URL = {
+    private lazy var workingFilesDirectory: URL = {
         let urls = FileManager.default.urls(for: self.directory, in: .userDomainMask)
         let last = urls.last!
         let dbIdentifier = self.identifier + ".db"
@@ -276,28 +185,115 @@ private class LegacyCoreStack: CoreStack {
         return dbFolder
     }()
     
-    lazy var managedObjectModel: NSManagedObjectModel! = {
-        let modelURL = Bundle.main.url(forResource: self.modelName, withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
-    }()
+    fileprivate func performUsingWorker(closure: @escaping ((NSManagedObjectContext) -> ())) {
+        DispatchQueue.global(qos: .background).async {
+            let context = self.newBackgroundContext()
+            closure(context)
+        }
+    }
     
-    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.databaseFilePath
-        
-        Logging.log("Using DB file at \(url)")
-        
-        let options = [NSMigratePersistentStoresAutomaticallyOption as NSObject: true as AnyObject, NSInferMappingModelAutomaticallyOption as NSObject: true as AnyObject]
-        let config = StackConfig(storeType: self.storeType, storeURL: url, options: options)
-        
-        if !self.addPersistentStore(coordinator, config: config, abortOnFailure: !self.wipeDatabaseOnConflict) && self.wipeDatabaseOnConflict {
-            Logging.log("Will delete DB")
-            try! FileManager.default.removeItem(at: url!)
-            _ = self.addPersistentStore(coordinator, config: config, abortOnFailure: true)
+    fileprivate func newBackgroundContext() -> NSManagedObjectContext {
+        fatalError()
+    }
+    
+    fileprivate func loadPersistentStores(completion: @escaping (() -> ())) {
+        fatalError()
+    }
+}
+
+@available(iOS 10, tvOS 10.0, *)
+private class CoreDataStack: CoreStack {
+    private lazy var container: NSPersistentContainer = {
+        let container: NSPersistentContainer
+        if let model = self.managedObjectModel {
+            container = NSPersistentContainer(name: self.modelName, managedObjectModel: model)
+        } else {
+            container = NSPersistentContainer(name: self.modelName)
         }
         
-        return coordinator
+        let config = NSPersistentStoreDescription()
+        config.url = self.databaseFilePath
+        config.type = self.type
+        container.persistentStoreDescriptions = [config]
+        
+        return container
     }()
+
+    override var mainContext: NSManagedObjectContext {
+        return container.viewContext
+    }
+    
+    override var persistentStoreCoordinator: NSPersistentStoreCoordinator {
+        return container.persistentStoreCoordinator
+    }
+    
+    override func newBackgroundContext() -> NSManagedObjectContext {
+        let context = container.newBackgroundContext()
+        context.mergePolicy = NSMergePolicy(merge: self.mergePolicy)
+        return context
+    }
+    
+    fileprivate override func loadPersistentStores(completion: @escaping (() -> ())) {
+        assert(container.managedObjectModel != nil)
+        container.loadPersistentStores {
+            storeDescription, error in
+            
+            self.container.viewContext.automaticallyMergesChangesFromParent = true
+            try! self.container.viewContext.setQueryGenerationFrom(.current)
+            self.container.viewContext.mergePolicy = NSMergePolicy(merge: self.mergePolicy)
+            
+            Logging.log("Store: \(storeDescription)")
+            
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+            
+            DispatchQueue.main.async(execute: completion)
+        }
+    }
+}
+
+private class LegacyDataStack: CoreStack {
+    struct StackConfig {
+        var storeType: String!
+        var storeURL: URL!
+        var options: [NSObject: AnyObject]?
+    }
+    
+    override var persistentStoreCoordinator: NSPersistentStoreCoordinator {
+        return coordinator
+    }
+    
+    override var mainContext: NSManagedObjectContext {
+        return managedObjectContext
+    }
+    
+    private var writingContext: NSManagedObjectContext?
+
+    fileprivate override func loadPersistentStores(completion: @escaping (() -> ())) {
+        DispatchQueue.main.async {
+            // touch/create context on main thread
+            let _ = self.managedObjectContext
+
+            // Load store on background thread
+            DispatchQueue.global(qos: .background).async {
+                let url = self.databaseFilePath
+                
+                Logging.log("Using DB file at \(url)")
+                
+                let options = [NSMigratePersistentStoresAutomaticallyOption as NSObject: true as AnyObject, NSInferMappingModelAutomaticallyOption as NSObject: true as AnyObject]
+                let config = StackConfig(storeType: self.type, storeURL: url, options: options)
+                
+                if !self.addPersistentStore(self.persistentStoreCoordinator, config: config, abortOnFailure: !self.wipeOnConflict) && self.wipeOnConflict {
+                    Logging.log("Will delete DB")
+                    try! FileManager.default.removeItem(at: url!)
+                    _ = self.addPersistentStore(self.persistentStoreCoordinator, config: config, abortOnFailure: true)
+                }
+                
+                DispatchQueue.main.async(execute: completion)
+            }
+        }
+    }
     
     private func addPersistentStore(_ coordinator: NSPersistentStoreCoordinator, config: StackConfig, abortOnFailure: Bool) -> Bool {
         do {
@@ -322,15 +318,40 @@ private class LegacyCoreStack: CoreStack {
         return false
     }
     
-    fileprivate var databaseFilePath: URL? {
-        if let existing = pathToSQLiteFile {
-            return existing
-        } else if self.storeType == NSSQLiteStoreType {
-            //TODO jaanus: check this ! here
-            return workingFilesDirectory.appendingPathComponent("\(self.modelName).sqlite")
-        } else {
-            return nil
-        }
+    private lazy var coordinator: NSPersistentStoreCoordinator = {
+        let model = self.managedObjectModel ?? self.objectModel
+        return NSPersistentStoreCoordinator(managedObjectModel: model)
+    }()
+    
+    private lazy var managedObjectContext: NSManagedObjectContext = {
+        Logging.log("Creating main context for \(self.identifier) - \(Thread.current.isMainThread)")
+        assert(Thread.current.isMainThread, "Main context should be crated on main thread")
+        
+        let mergePolicy = NSMergePolicy(merge: self.mergePolicy)
+        
+        let saving = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        saving.persistentStoreCoordinator = self.persistentStoreCoordinator
+        saving.mergePolicy = mergePolicy
+        self.writingContext = saving
+        saving.name = "Saving"
+        
+        var managedContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        managedContext.name = "Main"
+        managedContext.parent = self.writingContext
+        managedContext.mergePolicy = mergePolicy
+        
+        return managedContext
+    }()
+    
+    private lazy var objectModel: NSManagedObjectModel = {
+        let modelURL = Bundle.main.url(forResource: self.modelName, withExtension: "momd")!
+        return NSManagedObjectModel(contentsOf: modelURL)!
+    }()
+    
+    override func newBackgroundContext() -> NSManagedObjectContext {
+        let managedContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        managedContext.parent = managedObjectContext
+        managedContext.mergePolicy = NSMergePolicy(merge: mergePolicy)
+        return managedContext
     }
 }
-

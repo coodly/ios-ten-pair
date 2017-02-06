@@ -21,7 +21,8 @@ public let CoodlyFeedbackNewMessagesNotifiction = Notification.Name(rawValue: "C
 #if os(iOS)
 public class Feedback: InjectionHandler {
     public static func enable() {
-        Injector.sharedInstance.addListener()
+        // Touch it to start initialization
+        _ = Injector.sharedInstance
     }
     
     public static func mainController() -> FeedbackViewController {
