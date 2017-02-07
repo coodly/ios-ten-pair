@@ -14,14 +14,7 @@
  * limitations under the License.
  */
 
-import UIKit
-
-internal class ReferenceScrollView: UIScrollView, NativeShadowed {
-    var tied: View!
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        positionTied()
-    }
+internal protocol NativeShadowed {
+    var tied: View! { get set }
+    func positionTied()
 }

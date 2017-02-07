@@ -16,36 +16,26 @@
 
 import AppKit
 
-internal class ReferenceView: NSView {
+internal class ReferenceView: NSView, NativeShadowed {
     override static func requiresConstraintBasedLayout() -> Bool {
         return true
     }
     
     var tied: View! {
         didSet {
-            resize(withOldSuperviewSize: bounds.size)
+            positionTied()
         }
     }
     
     override func viewDidMoveToSuperview() {
         super.viewDidMoveToSuperview()
         
-        resize(withOldSuperviewSize: bounds.size)
+        positionTied()
     }
     
     override func resize(withOldSuperviewSize oldSize: NSSize) {
         super.resize(withOldSuperviewSize: oldSize)
 
-        guard let superview = superview else {
-            return
-        }
-        
-        let parentFrame = superview.bounds
-        var myPosition = CGPoint.zero
-        myPosition.x = frame.origin.x
-        myPosition.y = parentFrame.height - bounds.height
-        
-        tied.position = myPosition
-        tied.size = bounds.size
-    }    
+        positionTied()
+    }
 }

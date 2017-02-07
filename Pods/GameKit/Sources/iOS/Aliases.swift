@@ -15,3 +15,4 @@
  */
 
 internal typealias PlatformView = UIView
+public typealias Metrics = [String : Any]?

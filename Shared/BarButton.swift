@@ -14,14 +14,8 @@
  * limitations under the License.
  */
 
-import UIKit
+import GameKit
 
-internal class ReferenceScrollView: UIScrollView, NativeShadowed {
-    var tied: View!
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        positionTied()
-    }
+class BarButton: Button {
+    
 }

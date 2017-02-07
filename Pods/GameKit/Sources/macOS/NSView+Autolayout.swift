@@ -24,15 +24,4 @@ internal extension NSView {
         let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: views)
         addConstraints(vertical + horizontal)
     }
-    
-    func add(toTop view: NSView, height: CGFloat) {
-        addSubview(view)
-        let views: [String: AnyObject] = ["view": view]
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        let vertical = NSLayoutConstraint.constraints(withVisualFormat: "V:|[view(\(height))]", options: [], metrics: nil, views: views)
-        let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: views)
-        addConstraints(vertical + horizontal)
-    }
-
 }

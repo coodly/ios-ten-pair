@@ -14,24 +14,26 @@
  * limitations under the License.
  */
 
-import Foundation
-import GameKit
-
-class PlayScreen: Screen {
-    private var statusBar: TopMenuBar!
-    private var scrollView: ScrollView!
-    
-    override func load() {
-        color = .red
+internal extension NativeShadowed where Self: NSView {
+    func positionTied() {
+        guard let superview = superview else {
+            return
+        }
         
-        scrollView = ScrollView()
-        add(fullSized: scrollView)
+        let parentFrame = superview.bounds
+        var myPosition = CGPoint.zero
+        myPosition.x = frame.origin.x
+        myPosition.y = parentFrame.height - bounds.height
         
-        let field = NumbersField()
-        field.size = CGSize(width: 200, height: 20000)
-        scrollView.present(field)
+        tied.position = myPosition
+        tied.size = bounds.size
         
-        statusBar = TopMenuBar()
-        add(toTop: statusBar, height: 50)
+        for sub in subviews {
+            guard sub.subviews.count == 0, let view = sub as? NativeShadowed else {
+                continue
+            }
+            
+            view.positionTied()
+        }
     }
 }

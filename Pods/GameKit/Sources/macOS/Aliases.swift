@@ -15,3 +15,4 @@
  */
 
 internal typealias PlatformView = NSView
+public typealias Metrics = [String : NSNumber]?

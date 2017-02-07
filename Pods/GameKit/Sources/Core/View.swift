@@ -32,22 +32,38 @@ open class View: SKSpriteNode {
         
     }
     
-    public func add(toTop view: View, height: CGFloat) {
+    public func addSubview(_ view: View) {
         view.anchorPoint = .zero
-        
-        let ref = view.backingView()
-        reference?.add(toTop: ref, height: height)
 
+        let backing = view.backingView()
+        backing.translatesAutoresizingMaskIntoConstraints = false
+        reference?.addSubview(backing)
+        
         addChild(view)
         view.load()
     }
     
-    public func add(fullSized view: View) {
-        view.anchorPoint = .zero
-        let ref = view.backingView()
-        reference?.add(fullSized: ref)
+    public func addConstraints(_ constraints: [LayoutConstraint]) {
+        let wrapped = constraints.map({ $0.wrapped })
+        reference?.addConstraints(wrapped)
+    }
+    
+    public func add(toTop view: View, height: CGFloat) {
+        addSubview(view)
+        let views: [String: AnyObject] = ["view": view]
         
-        addChild(view)
-        view.load()
+        let vertical = LayoutConstraint.constraints(withVisualFormat: "V:|[view(\(height))]", options: [], metrics: nil, views: views)
+        let horizontal = LayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: views)
+        addConstraints(vertical + horizontal)
+    }
+    
+    public func add(fullSized view: View) {
+        addSubview(view)
+        
+        let views: [String: AnyObject] = ["view": view]
+        
+        let vertical = LayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: [], metrics: nil, views: views)
+        let horizontal = LayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: views)
+        addConstraints(vertical + horizontal)
     }
 }

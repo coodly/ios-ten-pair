@@ -17,18 +17,12 @@
 
 import UIKit
 
-internal class ReferenceView: UIView {
+internal class ReferenceView: UIView, NativeShadowed {
     var tied: View!
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let parentFrame = superview!.bounds
-        var myPosition = CGPoint.zero
-        myPosition.x = frame.origin.x
-        myPosition.y = parentFrame.height - bounds.height
-        
-        tied.position = myPosition
-        tied.size = bounds.size
+        positionTied()        
     }
 }
