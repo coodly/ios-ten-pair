@@ -15,22 +15,7 @@
  */
 
 internal extension NSView {
-    func fullSizedReference() -> ReferenceView {
-        let reference = ReferenceView(frame: bounds)
-        add(fullSized: reference)
-        return reference
-    }
-    
-    func topReference(withHeight height: CGFloat) -> ReferenceView {
-        var referenceFrame = bounds
-        referenceFrame.size.height = height
-        
-        let reference = ReferenceView(frame: referenceFrame)
-        add(toTop: reference, height: height)
-        return reference
-    }
-    
-    private func add(fullSized view: NSView) {
+    func add(fullSized view: NSView) {
         addSubview(view)
         let views: [String: AnyObject] = ["view": view]
         
@@ -40,7 +25,7 @@ internal extension NSView {
         addConstraints(vertical + horizontal)
     }
     
-    private func add(toTop view: NSView, height: CGFloat) {
+    func add(toTop view: NSView, height: CGFloat) {
         addSubview(view)
         let views: [String: AnyObject] = ["view": view]
         

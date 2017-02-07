@@ -17,22 +17,37 @@
 import SpriteKit
 
 open class View: SKSpriteNode {
-    weak var reference: ReferenceView?
+    weak var reference: PlatformView?
+    open override var size: CGSize {
+        didSet {
+            sizeChanged()
+        }
+    }
     
     open func load() {
+        
+    }
+    
+    internal func sizeChanged() {
         
     }
     
     public func add(toTop view: View, height: CGFloat) {
         view.anchorPoint = .zero
         
-        let ref = reference!.topReference(withHeight: height)
-        
-        view.reference = ref
-        ref.tied = view
+        let ref = view.backingView()
+        reference?.add(toTop: ref, height: height)
+
+        addChild(view)
+        view.load()
+    }
+    
+    public func add(fullSized view: View) {
+        view.anchorPoint = .zero
+        let ref = view.backingView()
+        reference?.add(fullSized: ref)
         
         addChild(view)
-        
         view.load()
     }
 }

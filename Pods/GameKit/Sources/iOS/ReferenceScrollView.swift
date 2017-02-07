@@ -14,11 +14,20 @@
  * limitations under the License.
  */
 
-import GameKit
+import UIKit
 
-class StatusBar: View {
-    override func load() {
-        color = .green
-        alpha = 0.5
+internal class ReferenceScrollView: UIScrollView {
+    var tied: View!
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let parentFrame = superview!.bounds
+        var myPosition = CGPoint.zero
+        myPosition.x = frame.origin.x
+        myPosition.y = parentFrame.height - bounds.height
+        
+        tied.position = myPosition
+        tied.size = bounds.size
     }
 }

@@ -19,9 +19,17 @@ import GameKit
 
 class PlayScreen: Screen {
     private var statusBar: StatusBar!
+    private var scrollView: ScrollView!
     
     override func load() {
         color = .red
+        
+        scrollView = ScrollView()
+        add(fullSized: scrollView)
+        
+        let field = NumbersField()
+        field.size = CGSize(width: 200, height: 20000)
+        scrollView.present(field)
         
         statusBar = StatusBar()
         add(toTop: statusBar, height: 50)

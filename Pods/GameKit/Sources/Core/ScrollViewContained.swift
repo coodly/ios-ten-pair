@@ -14,11 +14,6 @@
  * limitations under the License.
  */
 
-import GameKit
-
-class StatusBar: View {
-    override func load() {
-        color = .green
-        alpha = 0.5
-    }
+open class ScrollViewContained: View {
+    
 }

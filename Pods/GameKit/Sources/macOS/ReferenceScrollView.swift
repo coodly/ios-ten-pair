@@ -16,11 +16,7 @@
 
 import AppKit
 
-internal class ReferenceView: NSView {
-    override static func requiresConstraintBasedLayout() -> Bool {
-        return true
-    }
-    
+internal class ReferenceScrollView: NSScrollView {
     var tied: View! {
         didSet {
             resize(withOldSuperviewSize: bounds.size)
@@ -35,7 +31,7 @@ internal class ReferenceView: NSView {
     
     override func resize(withOldSuperviewSize oldSize: NSSize) {
         super.resize(withOldSuperviewSize: oldSize)
-
+        
         guard let superview = superview else {
             return
         }
@@ -47,5 +43,5 @@ internal class ReferenceView: NSView {
         
         tied.position = myPosition
         tied.size = bounds.size
-    }    
+    }
 }

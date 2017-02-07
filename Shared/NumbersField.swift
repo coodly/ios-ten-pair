@@ -16,9 +16,8 @@
 
 import GameKit
 
-class StatusBar: View {
+class NumbersField: ScrollViewContained {
     override func load() {
-        color = .green
-        alpha = 0.5
+        color = .blue
     }
 }

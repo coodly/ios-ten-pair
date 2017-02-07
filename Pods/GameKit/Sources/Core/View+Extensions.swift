@@ -14,11 +14,16 @@
  * limitations under the License.
  */
 
-import GameKit
-
-class StatusBar: View {
-    override func load() {
-        color = .green
-        alpha = 0.5
+internal extension View {
+    func backingView() -> PlatformView {
+        if let existing = reference {
+            return existing
+        }
+        
+        let created = ReferenceView()
+        created.tied = self
+        reference = created
+        
+        return created
     }
 }
