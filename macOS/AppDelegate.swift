@@ -7,24 +7,35 @@
 //
 
 import Cocoa
+import SpriteKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+    @IBOutlet weak var window: NSWindow!
+    @IBOutlet weak var skView: SKView!
+    private var scene: TenPair!
+    
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
+        
+        window.minSize = NSMakeSize(400, 600)
+        
+        let gameScene = TenPair(size: skView.bounds.size)
+        gameScene.scaleMode = .resizeFill
+        scene = gameScene
+        skView.allowsTransparency = false
+        skView.shouldCullNonVisibleNodes = false
+        skView.presentScene(scene)
+        gameScene.start()
+    }
+    
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        return true
-    }
-
-
 }
 
