@@ -16,6 +16,7 @@
 
 import Foundation
 import GameKit
+import SpriteKit
 
 private let TopMenuBarHeight: CGFloat = 50
 
@@ -36,5 +37,18 @@ class PlayScreen: Screen {
         
         statusBar = TopMenuBar()
         add(toTop: statusBar, height: TopMenuBarHeight)
+        
+        statusBar.menuButton?.action = SKAction.run {
+            [weak self] in
+            
+            Log.debug("Present menu screen")
+            
+            let menu = MenuSceen()
+            self?.present(menu)
+        }
+        
+        statusBar.reloadButton?.action = SKAction.run {
+            print("Reload")
+        }
     }
 }

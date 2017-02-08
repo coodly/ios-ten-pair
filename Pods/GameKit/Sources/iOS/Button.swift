@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import SpriteKit
+
 open class Button: View {
     private lazy var button: UIButton = {
         let button = UIButton(type: .custom)
@@ -24,4 +26,6 @@ open class Button: View {
     override var backingView: PlatformView {
         return button
     }
+    
+    public var action: SKAction?
 }

@@ -14,10 +14,17 @@
  * limitations under the License.
  */
 
-import SpriteKit
+import SWLogger
 
-open class Screen: View {
-    public func present(_ screen: Screen) {
-        game?.present(screen: screen)
+class Log {
+    class func enable() {
+        SWLogger.Log.add(output: ConsoleOutput())
+        SWLogger.Log.add(output: FileOutput())
+        
+        SWLogger.Log.logLevel = .debug
+    }
+    
+    class func debug<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
+        SWLogger.Log.debug(object, file: file, function: function, line: line)
     }
 }

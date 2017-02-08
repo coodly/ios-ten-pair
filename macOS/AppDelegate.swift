@@ -19,6 +19,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
         
+        Log.enable()
+        
         window.minSize = NSMakeSize(400, 600)
         
         let gameScene = TenPair(size: skView.bounds.size)
@@ -26,6 +28,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         scene = gameScene
         skView.allowsTransparency = false
         skView.shouldCullNonVisibleNodes = false
+        skView.showsFPS = true
+        skView.showsNodeCount = true
         skView.presentScene(scene)
         gameScene.start()
     }

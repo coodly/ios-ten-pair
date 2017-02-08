@@ -12,18 +12,22 @@ import GameplayKit
 import GameKit
 
 class GameViewController: UIViewController {
+    private var game: TenPair?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Present the scene
         let skView = self.view as! SKView
 
-        let scene = TenPair(size: skView.bounds.size)        
+        let scene = TenPair(size: skView.bounds.size)
+        game = scene
         scene.scaleMode = .resizeFill
         
         skView.presentScene(scene)
         
-        skView.ignoresSiblingOrder = true
+        skView.allowsTransparency = false
+        skView.shouldCullNonVisibleNodes = false
         skView.showsFPS = true
         skView.showsNodeCount = true
         
@@ -40,11 +44,6 @@ class GameViewController: UIViewController {
         } else {
             return .all
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
     }
 
     override var prefersStatusBarHidden: Bool {

@@ -17,6 +17,7 @@
 internal extension UIView {
     func add(fullSized view: UIView) {
         addSubview(view)
+        view.frame = bounds
         let views: [String: AnyObject] = ["view": view]
         
         view.translatesAutoresizingMaskIntoConstraints = false

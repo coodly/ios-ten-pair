@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-import SpriteKit
-
-open class Screen: View {
-    public func present(_ screen: Screen) {
-        game?.present(screen: screen)
-    }
+open class MenuScreen: Screen {
+    
 }

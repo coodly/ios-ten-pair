@@ -17,6 +17,8 @@
 import SpriteKit
 
 open class View: SKSpriteNode {
+    internal weak var game: Game?
+    
     private lazy var shadowView: PlatformView = {
         return PlatformView()
     }()
@@ -26,6 +28,10 @@ open class View: SKSpriteNode {
     }
 
     open func load() {
+        
+    }
+    
+    open func unload() {
         
     }
     

@@ -20,6 +20,10 @@ internal extension Selector {
 
 internal extension Button {
     @objc fileprivate func tapped() {
-        print("Tapped")
+        guard let action = action else {
+            return
+        }
+        
+        run(action)
     }   
 }

@@ -26,20 +26,29 @@ open class Game: SKScene {
     }
     
     public func add(fullSized view: View) {
+        view.game = self
+        view.zPosition = CGFloat(self.view?.subviews.count ?? 0) * CGFloat(100)
         view.anchorPoint = .zero
-        let reference = view.backingView
-        self.view!.add(fullSized: reference)        
+        view.position = .zero
+        view.size = size
         addChild(view)
         view.load()
+        let reference = view.backingView
+        self.view!.add(fullSized: reference)
+        triggerUpdate()
     }
     
     open override func didMove(to view: SKView) {
         super.didMove(to: view)
         
-        didChangeSize(view.bounds.size)
+        triggerUpdate()
     }
     
     open override func didChangeSize(_ oldSize: CGSize) {
+        triggerUpdate()
+    }
+    
+    private func triggerUpdate() {
         // let autolayout finish
         DispatchQueue.main.async {
             for child in self.children {

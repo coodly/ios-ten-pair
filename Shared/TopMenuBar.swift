@@ -17,8 +17,8 @@
 import GameKit
 
 class TopMenuBar: View {
-    private var menuButton: Button?
-    private var reloadButton: Button?
+    var menuButton: Button?
+    var reloadButton: Button?
     
     override func load() {
         color = .green

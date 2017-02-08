@@ -14,10 +14,14 @@
  * limitations under the License.
  */
 
+import GameKit
 import SpriteKit
 
-open class Screen: View {
-    public func present(_ screen: Screen) {
-        game?.present(screen: screen)
+class MenuSceen: GameKit.MenuScreen {
+    override func load() {
+        color = SKColor.white.withAlphaComponent(0.95)
+        
+        let statusBar = StatusBar()
+        add(toTop: statusBar, height: 20)
     }
 }
