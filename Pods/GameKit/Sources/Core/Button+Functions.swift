@@ -14,6 +14,12 @@
  * limitations under the License.
  */
 
-open class Button: View {
+internal extension Selector {
+    static let buttonTapped = #selector(Button.tapped)
+}
 
+internal extension Button {
+    @objc fileprivate func tapped() {
+        print("Tapped")
+    }   
 }
