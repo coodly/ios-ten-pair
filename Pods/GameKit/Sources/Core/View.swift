@@ -17,8 +17,7 @@
 import SpriteKit
 
 open class View: SKSpriteNode {
-    internal weak var game: Game?
-    
+    internal weak var game: Game?    
     private lazy var shadowView: PlatformView = {
         return PlatformView()
     }()
@@ -26,7 +25,27 @@ open class View: SKSpriteNode {
     internal var backingView: PlatformView {
         return shadowView
     }
+    private var hiddenNodes: [SKNode] = []
+    internal var delayedAppear = true
 
+    internal final func inflate() {
+        privateLoad()
+        let before = children
+        load()
+        guard delayedAppear else {
+            return
+        }
+        let after = children.filter({ !before.contains($0) }).filter({ $0 is View }).filter({ !$0.isHidden })
+        for hide in after {
+            hide.isHidden = true
+        }
+        hiddenNodes.append(contentsOf: after)
+    }
+    
+    internal func privateLoad() {
+        
+    }
+    
     open func load() {
         
     }
@@ -55,6 +74,11 @@ open class View: SKSpriteNode {
             
             view.sizeChanged()
         }
+        
+        for hidden in hiddenNodes {
+            hidden.run(SKAction.unhide())
+        }
+        hiddenNodes.removeAll()
     }
     
     public func addSubview(_ view: View) {
@@ -65,7 +89,7 @@ open class View: SKSpriteNode {
         backingView.addSubview(backing)
         
         addChild(view)
-        view.load()
+        view.inflate()
     }
     
     public func addConstraints(_ constraints: [LayoutConstraint]) {

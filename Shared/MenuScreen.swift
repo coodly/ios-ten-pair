@@ -19,8 +19,6 @@ import SpriteKit
 
 class MenuSceen: GameKit.MenuScreen {
     override func load() {
-        color = SKColor.white.withAlphaComponent(0.95)
-        
         let statusBar = StatusBar()
         add(toTop: statusBar, height: 20)
     }

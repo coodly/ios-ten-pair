@@ -20,4 +20,8 @@ open class Screen: View {
     public func present(_ screen: Screen) {
         game?.present(screen: screen)
     }
+    
+    public func dismiss(_ screen: Screen) {
+        game?.dismiss(screen)
+    }
 }

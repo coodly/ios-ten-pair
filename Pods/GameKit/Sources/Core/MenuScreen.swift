@@ -14,6 +14,14 @@
  * limitations under the License.
  */
 
+import SpriteKit
+
 open class MenuScreen: Screen {
+    private var scrollView: ScrollView?
+    open var itemSpacing: CGFloat = 10
     
+    override func privateLoad() {
+        scrollView = ScrollView()
+        add(fullSized: scrollView!)
+    }
 }

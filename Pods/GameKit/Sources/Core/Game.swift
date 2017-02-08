@@ -21,18 +21,24 @@ open class Game: SKScene {
         
     }
     
+    public func dismiss(_ sceeen: Screen) {
+        sceeen.backingView.removeFromSuperview()
+        sceeen.removeFromParent()
+    }
+    
     public func present(screen: Screen) {
+        screen.delayedAppear = children.count != 0
         add(fullSized: screen)
     }
     
-    public func add(fullSized view: View) {
+    private func add(fullSized view: View) {
         view.game = self
         view.zPosition = CGFloat(self.view?.subviews.count ?? 0) * CGFloat(100)
         view.anchorPoint = .zero
         view.position = .zero
         view.size = size
         addChild(view)
-        view.load()
+        view.inflate()
         let reference = view.backingView
         self.view!.add(fullSized: reference)
         triggerUpdate()
