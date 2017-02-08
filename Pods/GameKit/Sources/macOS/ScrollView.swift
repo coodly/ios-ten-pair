@@ -19,12 +19,15 @@ private extension Selector {
 }
 
 public class ScrollView: View {
+    override var backingView: PlatformView {
+        return scrollView
+    }
     internal var contained: ScrollViewContained?
     internal var contentOffsetY: CGFloat {
         return scrollView.contentView.visibleRect.origin.y
     }
-    private lazy var scrollView: ReferenceScrollView = {
-        let view = ReferenceScrollView(frame: .zero)
+    private lazy var scrollView: NSScrollView = {
+        let view = NSScrollView(frame: .zero)
         view.drawsBackground = false
         view.hasVerticalScroller = true
         view.automaticallyAdjustsContentInsets = false
@@ -46,17 +49,6 @@ public class ScrollView: View {
     }
     public var contentInset: EdgeInsets = NSEdgeInsetsZero
     
-    override func backingView() -> PlatformView {
-        if let existing = reference as? ReferenceScrollView {
-            return existing
-        }
-        
-        let created = scrollView
-        created.tied = self
-        reference = created
-        return created
-    }
-
     @objc fileprivate func didScroll(notification: NSNotification) {
         guard let object = notification.object as? NSScrollView, scrollView === object else {
             return
@@ -66,6 +58,8 @@ public class ScrollView: View {
     }
     
     override func sizeChanged() {
+        super.sizeChanged()
+        
         positionPresentedNode()
     }
 }

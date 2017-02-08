@@ -27,9 +27,28 @@ open class Game: SKScene {
     
     public func add(fullSized view: View) {
         view.anchorPoint = .zero
-        let reference = view.backingView()
+        let reference = view.backingView
         self.view!.add(fullSized: reference)        
         addChild(view)
         view.load()
+    }
+    
+    open override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        
+        didChangeSize(view.bounds.size)
+    }
+    
+    open override func didChangeSize(_ oldSize: CGSize) {
+        // let autolayout finish
+        DispatchQueue.main.async {
+            for child in self.children {
+                guard let view = child as? View else {
+                    continue
+                }
+                
+                view.sizeChanged()
+            }
+        }
     }
 }

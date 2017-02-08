@@ -17,27 +17,46 @@
 import SpriteKit
 
 open class View: SKSpriteNode {
-    weak var reference: PlatformView?
-    open override var size: CGSize {
-        didSet {
-            sizeChanged()
-        }
-    }
+    private lazy var shadowView: PlatformView = {
+        return PlatformView()
+    }()
     
+    internal var backingView: PlatformView {
+        return shadowView
+    }
+
     open func load() {
         
     }
     
     internal func sizeChanged() {
+        guard let parent = backingView.superview else {
+            return
+        }
         
+        let parentFrame = parent.bounds
+        var myPosition = CGPoint.zero
+        myPosition.x = backingView.frame.origin.x
+        myPosition.y = parentFrame.height - backingView.bounds.height
+        
+        position = myPosition
+        size = backingView.bounds.size
+
+        for child in children {
+            guard let view = child as? View else {
+                continue
+            }
+            
+            view.sizeChanged()
+        }
     }
     
     public func addSubview(_ view: View) {
         view.anchorPoint = .zero
 
-        let backing = view.backingView()
+        let backing = view.backingView
         backing.translatesAutoresizingMaskIntoConstraints = false
-        reference?.addSubview(backing)
+        backingView.addSubview(backing)
         
         addChild(view)
         view.load()
@@ -45,7 +64,7 @@ open class View: SKSpriteNode {
     
     public func addConstraints(_ constraints: [LayoutConstraint]) {
         let wrapped = constraints.map({ $0.wrapped })
-        reference?.addConstraints(wrapped)
+        backingView.addConstraints(wrapped)
     }
     
     public func add(toTop view: View, height: CGFloat) {

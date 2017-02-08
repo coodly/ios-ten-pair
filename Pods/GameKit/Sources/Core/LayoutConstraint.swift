@@ -19,7 +19,7 @@ public class LayoutConstraint {
     
     public convenience init(item view1: View, attribute attr1: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem view2: View?, attribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat) {
         
-        let wrapped = NSLayoutConstraint(item: view1.backingView(), attribute: attr1, relatedBy: relation, toItem: view2?.backingView(), attribute: attr2, multiplier: multiplier, constant: c)
+        let wrapped = NSLayoutConstraint(item: view1.backingView, attribute: attr1, relatedBy: relation, toItem: view2?.backingView, attribute: attr2, multiplier: multiplier, constant: c)
         self.init(wrapped: wrapped)
     }
 
@@ -37,7 +37,7 @@ public class LayoutConstraint {
                 continue
             }
             
-            withBacking[key] = view.backingView()
+            withBacking[key] = view.backingView
         }
         
         let constraints = NSLayoutConstraint.constraints(withVisualFormat: format, options: opts, metrics: metrics, views: withBacking)
