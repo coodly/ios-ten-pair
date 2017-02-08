@@ -44,6 +44,7 @@ public class ScrollView: View {
             dummy.frame = CGRect(x: 0, y: 0, width: self.size.width, height: contentSize.height)
         }
     }
+    public var contentInset: EdgeInsets = NSEdgeInsetsZero
     
     override func backingView() -> PlatformView {
         if let existing = reference as? ReferenceScrollView {

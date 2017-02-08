@@ -17,6 +17,8 @@
 import Foundation
 import GameKit
 
+private let TopMenuBarHeight: CGFloat = 50
+
 class PlayScreen: Screen {
     private var statusBar: TopMenuBar!
     private var scrollView: ScrollView!
@@ -29,9 +31,10 @@ class PlayScreen: Screen {
         
         let field = NumbersField()
         field.size = CGSize(width: 200, height: 20000)
+        scrollView.contentInset = EdgeInsetsMake(TopMenuBarHeight + 10, 0, 0, 0)
         scrollView.present(field)
         
         statusBar = TopMenuBar()
-        add(toTop: statusBar, height: 50)
+        add(toTop: statusBar, height: TopMenuBarHeight)
     }
 }

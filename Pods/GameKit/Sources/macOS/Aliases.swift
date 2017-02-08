@@ -16,3 +16,7 @@
 
 internal typealias PlatformView = NSView
 public typealias Metrics = [String : NSNumber]?
+
+public func EdgeInsetsMake(_ top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> EdgeInsets {
+    return EdgeInsets(top: top, left: left, bottom: bottom, right: right)
+}

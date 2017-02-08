@@ -27,6 +27,12 @@ public class ScrollView: View, UIScrollViewDelegate {
             scrollView?.contentSize = contentSize
         }
     }
+    public var contentInset: EdgeInsets = .zero {
+        didSet {
+            scrollView?.contentInset = contentInset
+            scrollView?.scrollIndicatorInsets = contentInset
+        }
+    }
     
     override func sizeChanged() {
         positionPresentedNode()
