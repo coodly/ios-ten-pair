@@ -18,8 +18,23 @@ import GameKit
 import SpriteKit
 
 class MenuSceen: GameKit.MenuScreen {
+    override var itemSize: CGSize {
+        return CGSize(width: 200, height: 44)
+    }
+    
     override func load() {
         let statusBar = StatusBar()
         add(toTop: statusBar, height: 20)
+        
+        append(button(named: "Resume game"))
+        append(button(named: "Restart game"))
+        append(button(named: "Full version"))
+        append(button(named: "Message to developer"))
+    }
+    
+    private func button(named title: String) -> Button {
+        let button = Button()
+        button.color = .blue
+        return button
     }
 }

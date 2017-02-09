@@ -18,10 +18,45 @@ import SpriteKit
 
 open class MenuScreen: Screen {
     private var scrollView: ScrollView?
-    open var itemSpacing: CGFloat = 10
+    open var itemSpacing: CGFloat {
+        return 10
+    }
+    open var itemSize: CGSize {
+        return CGSize(width: size.width - 40, height: 40)
+    }
+    private var options: [Button] = []
+    private var container = ScrollViewContained()
     
-    override func privateLoad() {
+    override func beforeLoad() {
         scrollView = ScrollView()
         add(fullSized: scrollView!)
+    }
+    
+    override func afterLoad() {
+        
+    }
+    
+    public func append(_ option: Button) {
+        options.append(option)
+        container.addChild(option)
+    }
+    
+    override func sizeChanged() {
+        super.sizeChanged()
+        
+        var positionY: CGFloat = 0
+        for item in options.reversed() {
+            positionY += (positionY > 0 ? itemSpacing : 0)
+            
+            item.anchorPoint = .zero
+            item.position = CGPoint(x: 0, y: positionY)
+            item.size = itemSize
+            
+            positionY += itemSize.height
+        }
+        
+        container.size = CGSize(width: itemSize.width, height: positionY)
+        scrollView?.present(container)
+        container.color = .red
     }
 }

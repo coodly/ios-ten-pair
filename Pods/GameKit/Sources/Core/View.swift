@@ -19,7 +19,9 @@ import SpriteKit
 open class View: SKSpriteNode {
     internal weak var game: Game?    
     private lazy var shadowView: PlatformView = {
-        return PlatformView()
+        let shadow = PlatformView()
+        shadow.frame.size = self.size
+        return shadow
     }()
     
     internal var backingView: PlatformView {
@@ -29,9 +31,10 @@ open class View: SKSpriteNode {
     internal var delayedAppear = true
 
     internal final func inflate() {
-        privateLoad()
+        beforeLoad()
         let before = children
         load()
+        afterLoad()
         guard delayedAppear else {
             return
         }
@@ -42,11 +45,15 @@ open class View: SKSpriteNode {
         hiddenNodes.append(contentsOf: after)
     }
     
-    internal func privateLoad() {
+    internal func beforeLoad() {
         
     }
     
     open func load() {
+        
+    }
+    
+    internal func afterLoad() {
         
     }
     
