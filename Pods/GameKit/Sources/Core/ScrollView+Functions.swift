@@ -19,11 +19,12 @@ import SpriteKit
 public extension ScrollView {
     public func present(_ contained: ScrollViewContained) {
         self.contained = contained
+        contained.scrollView = self
         contained.anchorPoint = .zero
         contentSize = contained.size
         addChild(contained)
         
-        contained.load()
+        contained.inflate()
         positionPresentedNode()
     }
 

@@ -38,9 +38,10 @@ open class Game: SKScene {
         view.position = .zero
         view.size = size
         addChild(view)
-        view.inflate()
         let reference = view.backingView
         self.view!.add(fullSized: reference)
+
+        view.inflate()
         triggerUpdate()
     }
     

@@ -69,7 +69,7 @@ open class View: SKSpriteNode {
         let parentFrame = parent.bounds
         var myPosition = CGPoint.zero
         myPosition.x = backingView.frame.origin.x
-        myPosition.y = parentFrame.height - backingView.bounds.height
+        myPosition.y = InFlippedEnv ? backingView.frame.minY : parentFrame.height - backingView.frame.maxY
         
         position = myPosition
         size = backingView.bounds.size

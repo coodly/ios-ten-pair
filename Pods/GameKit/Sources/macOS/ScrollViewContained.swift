@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-internal typealias PlatformView = UIView
-public typealias Metrics = [String : Any]?
-public typealias EdgeInsets = UIEdgeInsets
-
-public func EdgeInsetsMake(_ top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> EdgeInsets {
-    return EdgeInsets(top: top, left: left, bottom: bottom, right: right)
+open class ScrollViewContained: View {
+    internal weak var scrollView: ScrollView?
+    
+    open override var size: CGSize {
+        didSet {
+            scrollView?.contentSize = size
+        }
+    }
 }
-
-internal let InFlippedEnv = false

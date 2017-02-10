@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var scene: TenPair!
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
+        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true, "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints": true])
         
         Log.enable()
         

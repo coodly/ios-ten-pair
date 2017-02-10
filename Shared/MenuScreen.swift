@@ -26,7 +26,17 @@ class MenuSceen: GameKit.MenuScreen {
         let statusBar = StatusBar()
         add(toTop: statusBar, height: 20)
         
-        append(button(named: "Resume game"))
+        let resume = button(named: "Resume game")
+        append(resume)
+        resume.action = SKAction.run {
+            [weak self] in
+            
+            guard let me = self else {
+                return
+            }
+            
+            me.dismiss(me)
+        }
         append(button(named: "Restart game"))
         append(button(named: "Full version"))
         append(button(named: "Message to developer"))
@@ -34,6 +44,7 @@ class MenuSceen: GameKit.MenuScreen {
     
     private func button(named title: String) -> Button {
         let button = Button()
+        button.name = title
         button.color = .blue
         return button
     }

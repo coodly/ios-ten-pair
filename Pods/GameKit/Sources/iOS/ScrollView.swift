@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import SpriteKit
+
 public class ScrollView: View, UIScrollViewDelegate {
     private lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
@@ -25,13 +27,36 @@ public class ScrollView: View, UIScrollViewDelegate {
         return scrollView
     }
 
-    internal var contained: ScrollViewContained?
+    internal var contained: ScrollViewContained? {
+        didSet {
+            oldValue?.backingView.removeFromSuperview()
+            oldValue?.removeFromParent()
+            
+            guard let contained = contained else {
+                return
+            }
+            
+            contained.backingView.backgroundColor = SKColor.cyan.withAlphaComponent(0.4)
+            scrollView.addSubview(contained.backingView)
+        }
+    }
     internal var contentOffsetY: CGFloat {
         return scrollView.contentOffset.y
     }
     internal var contentSize: CGSize = .zero {
         didSet {
             scrollView.contentSize = contentSize
+            
+            if verticallyCentered {
+                let spacing = max(0, (backingView.frame.size.height - contentSize.height) / 2)
+                scrollView.contentInset = UIEdgeInsetsMake(spacing, 0, spacing, 0)
+            }
+            
+            guard let containedBacking = contained?.backingView else {
+                return
+            }
+            containedBacking.frame.origin.x = max(0, (scrollView.frame.width - containedBacking.frame.width) / 2)
+            contained?.backingView.frame.size = contentSize
         }
     }
     public var contentInset: EdgeInsets = .zero {
@@ -40,6 +65,7 @@ public class ScrollView: View, UIScrollViewDelegate {
             scrollView.scrollIndicatorInsets = contentInset
         }
     }
+    public var verticallyCentered = false
     
     override func sizeChanged() {
         super.sizeChanged()

@@ -15,5 +15,11 @@
  */
 
 open class ScrollViewContained: View {
+    internal weak var scrollView: ScrollView?
     
+    open override var size: CGSize {
+        didSet {
+            scrollView?.contentSize = size
+        }
+    }
 }

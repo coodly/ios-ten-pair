@@ -17,7 +17,12 @@
 import SpriteKit
 
 open class MenuScreen: Screen {
-    private var scrollView: ScrollView?
+    private lazy var scrollView: ScrollView = {
+        let scrollView = ScrollView()
+        scrollView.name = "Menu scroll view"
+        scrollView.verticallyCentered = true
+        return scrollView
+    }()
     open var itemSpacing: CGFloat {
         return 10
     }
@@ -25,38 +30,23 @@ open class MenuScreen: Screen {
         return CGSize(width: size.width - 40, height: 40)
     }
     private var options: [Button] = []
-    private var container = ScrollViewContained()
+    private lazy var container: MenuOptionsContainer = {
+        let container = MenuOptionsContainer()
+        container.name = "Menu options container"
+        return container
+    }()
     
     override func beforeLoad() {
-        scrollView = ScrollView()
-        add(fullSized: scrollView!)
-    }
-    
-    override func afterLoad() {
-        
+        name = "Menu screen"
+        add(fullSized: scrollView)
+        container.itemSize = itemSize
+        container.itemSpacing = itemSpacing
+        container.color = .red
+        scrollView.present(container)
     }
     
     public func append(_ option: Button) {
         options.append(option)
-        container.addChild(option)
-    }
-    
-    override func sizeChanged() {
-        super.sizeChanged()
-        
-        var positionY: CGFloat = 0
-        for item in options.reversed() {
-            positionY += (positionY > 0 ? itemSpacing : 0)
-            
-            item.anchorPoint = .zero
-            item.position = CGPoint(x: 0, y: positionY)
-            item.size = itemSize
-            
-            positionY += itemSize.height
-        }
-        
-        container.size = CGSize(width: itemSize.width, height: positionY)
-        scrollView?.present(container)
-        container.color = .red
-    }
+        container.addSubview(option)
+    }    
 }
