@@ -16,7 +16,7 @@
 
 import SpriteKit
 
-open class View: SKSpriteNode {
+open class View: SKSpriteNode, Themed {
     internal weak var game: Game?    
     private lazy var shadowView: PlatformView = {
         let shadow = PlatformView()
@@ -29,6 +29,12 @@ open class View: SKSpriteNode {
     }
     private var hiddenNodes: [SKNode] = []
     internal var delayedAppear = true
+    
+    public var backgroundColor: SKColor? {
+        didSet {
+            color = backgroundColor ?? color
+        }
+    }
 
     internal final func inflate() {
         beforeLoad()
@@ -121,5 +127,14 @@ open class View: SKSpriteNode {
         let vertical = LayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: [], metrics: nil, views: views)
         let horizontal = LayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: views)
         addConstraints(vertical + horizontal)
+    }
+
+    open func set(_ color: SKColor, for attribute: Appearance.Attribute) {
+        switch attribute {
+        case Appearance.Attribute.background:
+            backgroundColor = color
+        default:
+            break // no op
+        }
     }
 }

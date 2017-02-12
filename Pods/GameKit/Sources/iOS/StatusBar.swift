@@ -110,4 +110,13 @@ public class StatusBar: View {
     @objc fileprivate func batteryLevelChanged(notification: Notification) {
         updateBattery()
     }
+    
+    public override func set(_ color: SKColor, for attribute: Appearance.Attribute) {
+        switch attribute {
+        case Appearance.Attribute.foreground:
+            tintColor = color
+        default:
+            break // no op
+        }
+    }
 }

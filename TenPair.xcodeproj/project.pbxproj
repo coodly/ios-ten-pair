@@ -31,6 +31,7 @@
 		A7D3908E1E4B2AE300EDB111 /* MenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3908C1E4B2AE300EDB111 /* MenuScreen.swift */; };
 		A7D390931E4B47E900EDB111 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D390921E4B47E900EDB111 /* Log.swift */; };
 		A7D390941E4B47E900EDB111 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D390921E4B47E900EDB111 /* Log.swift */; };
+		A7ECCB801E4E275E001ADB51 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ECCB7F1E4E275E001ADB51 /* Tile.swift */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		A7D390821E4B0ADB00EDB111 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		A7D3908C1E4B2AE300EDB111 /* MenuScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScreen.swift; sourceTree = "<group>"; };
 		A7D390921E4B47E900EDB111 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		A7ECCB7F1E4E275E001ADB51 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		CDBD234CA436EF092F3D679F /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D734C99D56200ECE40196FB7 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FFB053744AB774B5ADBDE43B /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				A77DE6FC1E48D8D500E9214A /* PlayScreen.swift */,
 				A77DE6F81E48D75200E9214A /* TenPair.swift */,
 				A77DE7081E48E29100E9214A /* TopMenuBar.swift */,
+				A7ECCB7F1E4E275E001ADB51 /* Tile.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				A718374E1E499FB8002AEBF5 /* NumbersField.swift in Sources */,
 				A7D390801E4B049400EDB111 /* FieldSave.swift in Sources */,
 				A77DE6F91E48D75200E9214A /* TenPair.swift in Sources */,
+				A7ECCB801E4E275E001ADB51 /* Tile.swift in Sources */,
 				A77DE6FD1E48D8D500E9214A /* PlayScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,7 +517,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
 				PRODUCT_NAME = TenPair;
@@ -532,7 +536,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
 				PRODUCT_NAME = TenPair;

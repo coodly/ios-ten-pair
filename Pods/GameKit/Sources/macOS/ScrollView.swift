@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import SpriteKit
+
 private extension Selector {
     static let scrolled = #selector(ScrollView.didScroll(notification:))
 }
@@ -102,6 +104,10 @@ public class ScrollView: View {
         }
 
         positionPresentedNode()
+    }
+    
+    public override func set(_ color: SKColor, for attribute: Appearance.Attribute) {
+        // no op
     }
 }
 

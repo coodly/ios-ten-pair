@@ -16,19 +16,13 @@
 
 import SpriteKit
 
-open class Button: View {
-    private lazy var button: EmptyButton = {
+internal extension Button {
+    func createPlatformButton() -> PlatformView {
         let button = EmptyButton()
         button.target = self
         button.action = .buttonTapped
         return button
-    }()
-    
-    override var backingView: PlatformView {
-        return button
     }
-    
-    public var action: SKAction?
 }
 
 private class EmptyButton: NSButton {

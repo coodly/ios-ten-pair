@@ -17,7 +17,7 @@
 import GameKit
 import SpriteKit
 
-class MenuSceen: GameKit.MenuScreen {
+class MenuScreen: GameKit.MenuScreen {
     override var itemSize: CGSize {
         return CGSize(width: 200, height: 44)
     }

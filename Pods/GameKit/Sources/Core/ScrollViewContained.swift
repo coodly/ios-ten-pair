@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import SpriteKit
+
 open class ScrollViewContained: View {
     internal weak var scrollView: ScrollView?
     
@@ -21,5 +23,9 @@ open class ScrollViewContained: View {
         didSet {
             scrollView?.contentSize = size
         }
+    }
+    
+    open override func set(_ color: SKColor, for attribute: Appearance.Attribute) {
+        // no op
     }
 }

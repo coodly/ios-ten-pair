@@ -43,8 +43,7 @@ class PlayScreen: Screen {
             
             Log.debug("Present menu screen")
             
-            let menu = MenuSceen()
-            menu.color = SKColor.white.withAlphaComponent(0.95)
+            let menu = MenuScreen()
             self?.present(menu)
         }
         

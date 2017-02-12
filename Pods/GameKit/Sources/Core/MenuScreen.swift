@@ -41,7 +41,6 @@ open class MenuScreen: Screen {
         add(fullSized: scrollView)
         container.itemSize = itemSize
         container.itemSpacing = itemSpacing
-        container.color = .red
         scrollView.present(container)
     }
     

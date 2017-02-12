@@ -14,10 +14,15 @@
  * limitations under the License.
  */
 
+import SpriteKit
 import GameKit
 
 class NumbersField: ScrollViewContained {
     override func load() {
         color = .blue
+    }
+    
+    override func set(_ color: SKColor, for attribute: Appearance.Attribute) {
+        
     }
 }

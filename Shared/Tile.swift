@@ -15,17 +15,8 @@
  */
 
 import SpriteKit
+import GameKit
 
-open class Button: View {
-    private lazy var button: UIButton = {
-        let button = UIButton(type: .custom)
-        button.addTarget(self, action: .buttonTapped, for: .touchUpInside)
-        return button
-    }()
-    
-    override var backingView: PlatformView {
-        return button
-    }
-    
-    public var action: SKAction?
+class Tile: SKSpriteNode {
+
 }

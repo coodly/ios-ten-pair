@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-open class ScrollViewContained: View {
-    internal weak var scrollView: ScrollView?
-    
-    open override var size: CGSize {
-        didSet {
-            scrollView?.contentSize = size
-        }
+import SpriteKit
+
+internal extension Button {
+    func createPlatformButton() -> PlatformView {
+        let button = UIButton(type: .custom)
+        button.addTarget(self, action: .buttonTapped, for: .touchUpInside)
+        return button
     }
 }

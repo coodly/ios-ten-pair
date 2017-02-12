@@ -31,7 +31,6 @@ internal class MenuOptionsContainer: ScrollViewContained {
     private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.backgroundColor = SKColor.lightGray.withAlphaComponent(0.5)
         return stack
     }()
     

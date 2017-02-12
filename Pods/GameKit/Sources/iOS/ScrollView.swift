@@ -36,7 +36,6 @@ public class ScrollView: View, UIScrollViewDelegate {
                 return
             }
             
-            contained.backingView.backgroundColor = SKColor.cyan.withAlphaComponent(0.4)
             scrollView.addSubview(contained.backingView)
         }
     }
@@ -75,5 +74,9 @@ public class ScrollView: View, UIScrollViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         positionPresentedNode()
+    }
+    
+    public override func set(_ color: SKColor, for attribute: Appearance.Attribute) {
+        // no op
     }
 }

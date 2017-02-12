@@ -24,10 +24,12 @@ class TopMenuBar: View {
         color = .green
         
         menuButton = Button()
-        menuButton?.color = .gray
+        menuButton?.set(icon: "menu")
+        menuButton?.tintColor = .blue
         addSubview(menuButton!)
         reloadButton = Button()
-        reloadButton?.color = .yellow
+        reloadButton?.set(icon: "reload")
+        reloadButton?.tintColor = .red
         addSubview(reloadButton!)
     
         let views: [String: AnyObject] = ["menu": menuButton!, "reload": reloadButton!]

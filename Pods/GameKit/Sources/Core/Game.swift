@@ -42,6 +42,7 @@ open class Game: SKScene {
         self.view!.add(fullSized: reference)
 
         view.inflate()
+        view.applyTheme()
         triggerUpdate()
     }
     
