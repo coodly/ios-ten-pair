@@ -20,6 +20,8 @@
 		A71A97641E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A777FA831E50758A003E62D7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FA821E50758A003E62D7 /* MenuButton.swift */; };
 		A777FA841E50758A003E62D7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FA821E50758A003E62D7 /* MenuButton.swift */; };
+		A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA861E50CC76003E62D7 /* InfoPlist.strings */; };
+		A777FA8B1E50CC76003E62D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA881E50CC76003E62D7 /* Localizable.strings */; };
 		A77DE6F91E48D75200E9214A /* TenPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE6F81E48D75200E9214A /* TenPair.swift */; };
 		A77DE6FD1E48D8D500E9214A /* PlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE6FC1E48D8D500E9214A /* PlayScreen.swift */; };
 		A77DE7091E48E29100E9214A /* TopMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE7081E48E29100E9214A /* TopMenuBar.swift */; };
@@ -54,6 +56,8 @@
 		A71A97551E48CCA4005E134F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A71A975C1E48CCA4005E134F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A777FA821E50758A003E62D7 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		A777FA871E50CC76003E62D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		A777FA891E50CC76003E62D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		A77DE6F81E48D75200E9214A /* TenPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPair.swift; sourceTree = "<group>"; };
 		A77DE6FC1E48D8D500E9214A /* PlayScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayScreen.swift; sourceTree = "<group>"; };
 		A77DE7081E48E29100E9214A /* TopMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopMenuBar.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 		A71A97381E48CCA4005E134F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A777FA851E50CC76003E62D7 /* en.lproj */,
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
 				A71837681E4A0C5F002AEBF5 /* BarButton.swift */,
 				A7D3907F1E4B049400EDB111 /* FieldSave.swift */,
@@ -168,6 +173,15 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		A777FA851E50CC76003E62D7 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A777FA861E50CC76003E62D7 /* InfoPlist.strings */,
+				A777FA881E50CC76003E62D7 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,6 +190,7 @@
 			buildConfigurationList = A71A97671E48CCA4005E134F /* Build configuration list for PBXNativeTarget "iOS" */;
 			buildPhases = (
 				863D00F969837ECFB965A493 /* [CP] Check Pods Manifest.lock */,
+				A777FA8C1E50CD9D003E62D7 /* Check localization */,
 				A71A973D1E48CCA4005E134F /* Sources */,
 				A71A973E1E48CCA4005E134F /* Frameworks */,
 				A71A973F1E48CCA4005E134F /* Resources */,
@@ -257,7 +272,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A777FA8B1E50CC76003E62D7 /* Localizable.strings in Resources */,
 				A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */,
+				A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */,
 				A71A974D1E48CCA4005E134F /* LaunchScreen.storyboard in Resources */,
 				A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */,
 			);
@@ -334,6 +351,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		A777FA8C1E50CD9D003E62D7 /* Check localization */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check localization";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/env xcrun --sdk macosx swift scripts/CheckLocalization.swift Shared/";
 		};
 		C3B1ABDF78FFD3A6AA92CEDF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -420,6 +451,22 @@
 				A71A974C1E48CCA4005E134F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A777FA861E50CC76003E62D7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A777FA871E50CC76003E62D7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A777FA881E50CC76003E62D7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A777FA891E50CC76003E62D7 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

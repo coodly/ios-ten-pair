@@ -26,7 +26,7 @@ class MenuScreen: GameKit.MenuScreen {
         let statusBar = StatusBar()
         add(toTop: statusBar, height: 20)
         
-        let resume = button(named: "Resume game")
+        let resume = button(named: NSLocalizedString("menu.option.resume", comment: ""))
         append(resume)
         resume.action = SKAction.run {
             [weak self] in
@@ -37,9 +37,9 @@ class MenuScreen: GameKit.MenuScreen {
             
             me.dismiss(me)
         }
-        append(button(named: "Restart game"))
-        append(button(named: "Full version"))
-        append(button(named: "Message to developer"))
+        append(button(named: NSLocalizedString("menu.option.restart", comment: "")))
+        append(button(named: NSLocalizedString("menu.option.full.version.purchased", comment: "")))
+        append(button(named: NSLocalizedString("menu.option.send.message", comment: "")))
     }
     
     private func button(named title: String) -> MenuButton {
