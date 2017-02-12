@@ -106,7 +106,7 @@ public class ScrollView: View {
         positionPresentedNode()
     }
     
-    public override func set(_ color: SKColor, for attribute: Appearance.Attribute) {
+    public override func set(color: SKColor, for attribute: Appearance.Attribute) {
         // no op
     }
 }

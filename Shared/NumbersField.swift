@@ -22,7 +22,7 @@ class NumbersField: ScrollViewContained {
         color = .blue
     }
     
-    override func set(_ color: SKColor, for attribute: Appearance.Attribute) {
+    override func set(color: SKColor, for attribute: Appearance.Attribute) {
         
     }
 }

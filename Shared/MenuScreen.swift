@@ -42,10 +42,10 @@ class MenuScreen: GameKit.MenuScreen {
         append(button(named: "Message to developer"))
     }
     
-    private func button(named title: String) -> Button {
-        let button = Button()
+    private func button(named title: String) -> MenuButton {
+        let button = MenuButton()
         button.name = title
-        button.color = .blue
+        button.set(title: title)
         return button
     }
 }

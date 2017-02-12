@@ -129,12 +129,16 @@ open class View: SKSpriteNode, Themed {
         addConstraints(vertical + horizontal)
     }
 
-    open func set(_ color: SKColor, for attribute: Appearance.Attribute) {
+    open func set(color: SKColor, for attribute: Appearance.Attribute) {
         switch attribute {
         case Appearance.Attribute.background:
             backgroundColor = color
         default:
             break // no op
         }
+    }
+    
+    open func set(value: String, for attribute: Appearance.Attribute) {
+        //No op
     }
 }

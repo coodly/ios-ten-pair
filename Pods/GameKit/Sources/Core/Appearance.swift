@@ -27,8 +27,12 @@ public class Appearance {
     private static var register: [String: Appearance] = [:]
     private var values: [String: Any] = [:]
     
-    public func set(_ color: SKColor, for attribute: Appearance.Attribute) {
+    public func set(color: SKColor, for attribute: Appearance.Attribute) {
         values[attribute] = color
+    }
+    
+    public func set(value: String, for attribute: Appearance.Attribute) {
+        values[attribute] = value
     }
     
     internal static func appearance(for key: String, create: Bool = true) -> Appearance? {

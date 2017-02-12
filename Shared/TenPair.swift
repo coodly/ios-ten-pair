@@ -27,16 +27,20 @@ class TenPair: Game {
     }
     
     private func setAppearance() {
-        View.appearance().set(SKColor.white, for: .background)
-        View.appearance().set(SKColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1), for: .foreground)
-        StatusBar.appearance().set(.clear, for: .background)
-        NumbersField.appearance().set(SKColor(red: 0, green: 0.400, blue: 1.000, alpha: 1), for: .selected)
-        NumbersField.appearance().set(SKColor(red: 0.239, green: 0.792, blue: 0.416, alpha: 1), for: .success)
-        NumbersField.appearance().set(SKColor(red: 1.000, green: 0.173, blue: 0.333, alpha: 1), for: .failure)
-        NumbersField.appearance().set(SKColor(white: 0.900, alpha: 1.000), for: .numberFieldBackground)
-        Button.appearance().set(.white, for: .title)
-        GameKit.MenuScreen.appearance().set(SKColor.white.withAlphaComponent(0.95), for: .background)
-        TopMenuBar.appearance().set(SKColor.white.withAlphaComponent(0.95), for: .background)
+        let lightBlue = SKColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1)
+        View.appearance().set(color: SKColor.white, for: .background)
+        View.appearance().set(color: lightBlue, for: .foreground)
+        StatusBar.appearance().set(color: .clear, for: .background)
+        NumbersField.appearance().set(color: SKColor(red: 0, green: 0.400, blue: 1.000, alpha: 1), for: .selected)
+        NumbersField.appearance().set(color: SKColor(red: 0.239, green: 0.792, blue: 0.416, alpha: 1), for: .success)
+        NumbersField.appearance().set(color: SKColor(red: 1.000, green: 0.173, blue: 0.333, alpha: 1), for: .failure)
+        NumbersField.appearance().set(color: SKColor(white: 0.900, alpha: 1.000), for: .numberFieldBackground)
+        GameKit.MenuScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
+        TopMenuBar.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
+        MenuButton.appearance().set(color: lightBlue, for: .background)
+        MenuButton.appearance().set(color: SKColor.white, for: .foreground)
+        MenuButton.appearance().set(value: "Copperplate-Bold", for: .font)
+        StatusBar.appearance().set(value: "Copperplate-Bold", for: .font)
     }
 }
 

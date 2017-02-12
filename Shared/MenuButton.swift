@@ -14,18 +14,8 @@
  * limitations under the License.
  */
 
-import SpriteKit
+import GameKit
 
-open class ScrollViewContained: View {
-    internal weak var scrollView: ScrollView?
+class MenuButton: Button {
     
-    open override var size: CGSize {
-        didSet {
-            scrollView?.contentSize = size
-        }
-    }
-    
-    open override func set(color: SKColor, for attribute: Appearance.Attribute) {
-        // no op
-    }
 }

@@ -17,7 +17,8 @@
 import SpriteKit
 
 public extension Appearance.Attribute {
-    static let title = UUID().uuidString
+    static let font = UUID().uuidString
+    static let fontSize = UUID().uuidString
 }
 
 internal extension Selector {
@@ -40,19 +41,28 @@ open class Button: View {
                 return
             }
             icon?.color = tint
+            title?.fontColor = tint
         }
     }
     
-    internal var icon: SKSpriteNode?
+    fileprivate var icon: SKSpriteNode?
+    fileprivate var title: SKLabelNode?
+    fileprivate var titleFont: String? {
+        didSet {
+            title?.fontName = titleFont
+        }
+    }
+    
     
     override func sizeChanged() {
         super.sizeChanged()
         
         positionIcon()
+        positionTitle()
     }
     
-    open override func set(_ color: SKColor, for attribute: Appearance.Attribute) {
-        super.set(color, for: attribute)
+    open override func set(color: SKColor, for attribute: Appearance.Attribute) {
+        super.set(color: color, for: attribute)
         
         switch attribute {
         case Appearance.Attribute.foreground:
@@ -61,9 +71,18 @@ open class Button: View {
             break //no op
         }
     }
-}
+    
+    open override func set(value: String, for attribute: Appearance.Attribute) {
+        super.set(value: value, for: attribute)
+        
+        switch attribute {
+        case Appearance.Attribute.font:
+            titleFont = value
+        default:
+            break // no op
+        }
+    }
 
-internal extension Button {
     @objc fileprivate func tapped() {
         guard let action = action else {
             return
@@ -75,17 +94,31 @@ internal extension Button {
 
 public extension Button {
     public func set(icon named: String) {
+        icon?.removeFromParent()
         icon = SKSpriteNode(imageNamed: named)
+        icon?.colorBlendFactor = 1
         addChild(icon!)
     }
     
     internal func positionIcon() {
-        if let tint = tintColor {
-            icon?.color = tint
-            icon?.colorBlendFactor = 1
-        }
-        
         icon?.size = size
         icon?.position = CGPoint(x: size.width / 2, y: size.height / 2)
+    }
+}
+
+public extension Button {
+    public func set(title: String) {
+        self.title?.removeFromParent()
+        self.title = SKLabelNode(text: title)
+        self.title?.fontName = self.titleFont
+        addChild(self.title!)
+    }
+    
+    fileprivate func positionTitle() {
+        guard let label = title else {
+            return
+        }
+        
+        label.position = CGPoint(x: size.width / 2, y: (size.height - label.frame.height) / 2)
     }
 }

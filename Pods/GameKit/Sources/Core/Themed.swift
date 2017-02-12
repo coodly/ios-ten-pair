@@ -19,7 +19,8 @@ import SpriteKit
 public protocol Themed {
     static func appearance() -> Appearance
     
-    func set(_ color: SKColor, for attribute: Appearance.Attribute)
+    func set(color: SKColor, for attribute: Appearance.Attribute)
+    func set(value: String, for attribute: Appearance.Attribute)
 }
 
 public extension Themed where Self: SKNode {
@@ -60,7 +61,9 @@ fileprivate extension SKNode {
         for (key, value) in attributes {
             switch value {
             case is SKColor:
-                themable.set(value as! SKColor, for: key)
+                themable.set(color: value as! SKColor, for: key)
+            case is String:
+                themable.set(value: value as! String, for: key)
             default:
                 fatalError("Unhandled attribute")
             }

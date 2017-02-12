@@ -50,7 +50,6 @@ public class StatusBar: View {
     public override func load() {
         clockLabel = SKLabelNode(text: "12:30")
         clockLabel.fontColor = tintColor
-        clockLabel.fontName = "Copperplate-Bold"
         clockLabel.fontSize = 20
         addChild(clockLabel)
         
@@ -111,10 +110,23 @@ public class StatusBar: View {
         updateBattery()
     }
     
-    public override func set(_ color: SKColor, for attribute: Appearance.Attribute) {
+    public override func set(color: SKColor, for attribute: Appearance.Attribute) {
+        super.set(color: color, for: attribute)
+        
         switch attribute {
         case Appearance.Attribute.foreground:
             tintColor = color
+        default:
+            break // no op
+        }
+    }
+    
+    public override func set(value: String, for attribute: Appearance.Attribute) {
+        super.set(value: value, for: attribute)
+        
+        switch attribute {
+        case Appearance.Attribute.font:
+            clockLabel.fontName = value
         default:
             break // no op
         }
