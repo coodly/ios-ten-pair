@@ -70,6 +70,8 @@ public class ScrollView: View, UIScrollViewDelegate {
     public override func positionChildren() {
         super.positionChildren()
         
+        contained?.presentationWidth = size.width
+        
         positionPresentedNode()
     }
     

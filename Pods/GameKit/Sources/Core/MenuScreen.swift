@@ -35,6 +35,9 @@ open class MenuScreen: Screen {
         container.name = "Menu options container"
         return container
     }()
+    public var allOptions: [Button] {
+        return options
+    }
     
     override func beforeLoad() {
         name = "Menu screen"
@@ -47,5 +50,12 @@ open class MenuScreen: Screen {
     public func append(_ option: Button) {
         options.append(option)
         container.addSubview(option)
-    }    
+    }
+    
+    open override func positionChildren() {
+        super.positionChildren()
+        
+        container.itemSpacing = itemSpacing
+        container.itemSize = itemSize
+    }
 }

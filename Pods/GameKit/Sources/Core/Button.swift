@@ -52,6 +52,11 @@ open class Button: View {
             title?.fontName = titleFont
         }
     }
+    public var titleFontSize: CGFloat = 20 {
+        didSet {
+            title?.fontSize = titleFontSize
+        }
+    }
     
     override open func positionChildren() {
         super.positionChildren()
@@ -110,6 +115,7 @@ public extension Button {
         self.title?.removeFromParent()
         self.title = SKLabelNode(text: title)
         self.title?.fontName = self.titleFont
+        self.title?.fontSize = titleFontSize
         addChild(self.title!)
     }
     

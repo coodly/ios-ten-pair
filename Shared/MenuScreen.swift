@@ -44,6 +44,14 @@ class MenuScreen: GameKit.MenuScreen {
         append(button(named: NSLocalizedString("menu.option.send.message", comment: "")))
     }
     
+    override func positionChildren() {
+        super.positionChildren()
+        
+        for b in allOptions {
+            b.titleFontSize = itemSize.height / 2
+        }
+    }
+    
     private func button(named title: String) -> MenuButton {
         let button = MenuButton()
         button.name = title

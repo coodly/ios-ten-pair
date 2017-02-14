@@ -17,16 +17,30 @@
 import SpriteKit
 
 internal class MenuOptionsContainer: ScrollViewContained {
-    internal var itemSpacing: CGFloat = 10 {
+    internal var itemSpacing: CGFloat = 0 {
         didSet {
+            if oldValue == itemSpacing {
+                return
+            }
+            
             stackView.spacing = itemSpacing
+            adjustStackSize()
         }
     }
     internal var itemSize: CGSize = .zero {
         didSet {
+            if oldValue == itemSize {
+                return
+            }
+            
             stackView.frame.size.width = itemSize.width
+            for height in heightConstraints {
+                height.constant = itemSize.height
+            }
+            adjustStackSize()
         }
     }
+    private var heightConstraints = [NSLayoutConstraint]()
 
     private lazy var stackView: UIStackView = {
         let stack = ShadowStackView()
@@ -40,14 +54,20 @@ internal class MenuOptionsContainer: ScrollViewContained {
     }
     
     override func addSubview(_ view: View) {
-        color = .red
         view.anchorPoint = .zero
         let backing = view.backingView
         backing.translatesAutoresizingMaskIntoConstraints = false
-        backing.heightAnchor.constraint(equalToConstant: itemSize.height).isActive = true
+        let height = NSLayoutConstraint(item: backing, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: itemSize.height)
+        height.priority = UILayoutPriorityDefaultHigh
         stackView.addArrangedSubview(backing)
+        stackView.addConstraint(height)
+        heightConstraints.append(height)
         addChild(view)
         
-        stackView.frame.size = stackView.systemLayoutSizeFitting(CGSize(width: itemSize.width, height: 1000), withHorizontalFittingPriority: UILayoutPriorityRequired, verticalFittingPriority: UILayoutPriorityDefaultHigh)
+        adjustStackSize()
+    }
+    
+    private func adjustStackSize() {
+        stackView.frame.size = stackView.systemLayoutSizeFitting(CGSize(width: itemSize.width, height: CGFloat.greatestFiniteMagnitude), withHorizontalFittingPriority: UILayoutPriorityRequired, verticalFittingPriority: UILayoutPriorityDefaultHigh)
     }
 }
