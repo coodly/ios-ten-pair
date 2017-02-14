@@ -14,20 +14,10 @@
  * limitations under the License.
  */
 
-import SpriteKit
-import GameKit
+import UIKit
 
-class Tile: SKSpriteNode {
-    var number = 0
-    
-    private var numberSprite: SKSpriteNode?
-    
-    private lazy var backgroundNode: SKSpriteNode = {
-        let background = SKSpriteNode()
-        background.size = CGSize(width: self.size.width - 2, height: self.size.height - 2)
-        background.anchorPoint = CGPoint.zero
-        background.position = CGPoint(x: 1, y: 1)
-        self.addChild(background)
-        return background
-    }()
+private let RunningOnPad = UIDevice.current.userInterfaceIdiom == .pad
+
+extension AppConfig {
+    static let current = AppConfig(statusBar: true, ads: true, maxTileWidth: RunningOnPad ? 50 : 35)
 }

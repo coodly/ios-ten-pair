@@ -20,6 +20,12 @@ import SpriteKit
 
 private let TopMenuBarHeight: CGFloat = 50
 
+private let DefaultStartBoard = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9,
+    1, 1, 1, 2, 1, 3, 1, 4, 1,
+    5, 1, 6, 1, 7, 1, 8, 1, 9
+]
+
 class PlayScreen: Screen {
     private var statusBar: TopMenuBar!
     private var scrollView: ScrollView!
@@ -32,9 +38,10 @@ class PlayScreen: Screen {
         add(fullSized: scrollView)
         
         let field = NumbersField()
+        field.presentedNumbers = DefaultStartBoard
         field.name = "Numbers field"
         field.size = CGSize(width: 200, height: 20000)
-        scrollView.contentInset = EdgeInsetsMake(TopMenuBarHeight + 10, 0, 0, 0)
+        scrollView.contentInset = EdgeInsetsMake(TopMenuBarHeight + 10, 0, 10, 0)
         scrollView.present(field)
         
         statusBar = TopMenuBar()

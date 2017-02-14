@@ -25,8 +25,10 @@ class MenuScreen: GameKit.MenuScreen {
     }
     
     override func load() {
-        let statusBar = StatusBar()
-        add(toTop: statusBar, height: 20)
+        if AppConfig.current.statusBar {
+            let statusBar = StatusBar()
+            add(toTop: statusBar, height: 20)
+        }
         
         let resume = button(named: NSLocalizedString("menu.option.resume", comment: ""))
         append(resume)

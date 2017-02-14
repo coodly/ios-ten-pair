@@ -17,7 +17,31 @@
 import SpriteKit
 import GameKit
 
+private let NumberOfColumns = 9
+private let SidesSpacing: CGFloat = 10 * 2
+
 class NumbersField: ScrollViewContained {
+    var presentedNumbers: [Int] = []
+    
+    private var tileSize = CGSize.zero
+    
+    override var presentationWidth: CGFloat {
+        didSet {
+            if oldValue == presentationWidth {
+                return
+            }
+            
+            let tileWidth = (presentationWidth - SidesSpacing) / CGFloat(NumberOfColumns)
+            let maxWidth = CGFloat(AppConfig.current.maxTileWidth)
+            let rounded = min(round(tileWidth), maxWidth)
+            let nextSize = CGSize(width: rounded, height: rounded)
+            
+            if nextSize.equalTo(tileSize) {
+                return
+            }
+        }
+    }
+    
     override func load() {
         color = .blue
     }

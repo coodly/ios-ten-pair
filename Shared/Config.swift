@@ -14,20 +14,11 @@
  * limitations under the License.
  */
 
-import SpriteKit
-import GameKit
+private let ReleaseBuild = false
 
-class Tile: SKSpriteNode {
-    var number = 0
-    
-    private var numberSprite: SKSpriteNode?
-    
-    private lazy var backgroundNode: SKSpriteNode = {
-        let background = SKSpriteNode()
-        background.size = CGSize(width: self.size.width - 2, height: self.size.height - 2)
-        background.anchorPoint = CGPoint.zero
-        background.position = CGPoint(x: 1, y: 1)
-        self.addChild(background)
-        return background
-    }()
+struct AppConfig {
+    let logs = !ReleaseBuild
+    let statusBar: Bool
+    let ads: Bool
+    let maxTileWidth: Int
 }
