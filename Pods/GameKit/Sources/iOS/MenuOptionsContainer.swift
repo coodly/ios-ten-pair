@@ -29,7 +29,8 @@ internal class MenuOptionsContainer: ScrollViewContained {
     }
 
     private lazy var stackView: UIStackView = {
-        let stack = UIStackView()
+        let stack = ShadowStackView()
+        stack.attached = self
         stack.axis = .vertical
         return stack
     }()
@@ -39,6 +40,7 @@ internal class MenuOptionsContainer: ScrollViewContained {
     }
     
     override func addSubview(_ view: View) {
+        color = .red
         view.anchorPoint = .zero
         let backing = view.backingView
         backing.translatesAutoresizingMaskIntoConstraints = false

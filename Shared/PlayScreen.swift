@@ -26,16 +26,19 @@ class PlayScreen: Screen {
     
     override func load() {
         color = .red
-        
+                
         scrollView = ScrollView()
+        scrollView.name = "Play scroll view"
         add(fullSized: scrollView)
         
         let field = NumbersField()
+        field.name = "Numbers field"
         field.size = CGSize(width: 200, height: 20000)
         scrollView.contentInset = EdgeInsetsMake(TopMenuBarHeight + 10, 0, 0, 0)
         scrollView.present(field)
         
         statusBar = TopMenuBar()
+        statusBar.name = "Top menu bar"
         add(toTop: statusBar, height: TopMenuBarHeight)
         
         statusBar.menuButton?.action = SKAction.run {

@@ -19,6 +19,8 @@ import SpriteKit
 open class ScrollViewContained: View {
     internal weak var scrollView: ScrollView?
     
+    open var presentationWidth: CGFloat = 0
+    
     open override var size: CGSize {
         didSet {
             scrollView?.contentSize = size

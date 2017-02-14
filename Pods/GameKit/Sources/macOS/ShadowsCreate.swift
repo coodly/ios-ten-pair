@@ -18,8 +18,10 @@ import SpriteKit
 
 internal extension Button {
     func createPlatformButton() -> PlatformView {
-        let button = UIButton(type: .custom)
-        button.addTarget(self, action: .buttonTapped, for: .touchUpInside)
+        let button = ShadowButton()
+        button.attached = self
+        button.target = self
+        button.action = .buttonTapped
         return button
     }
 }

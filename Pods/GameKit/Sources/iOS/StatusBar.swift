@@ -83,8 +83,8 @@ public class StatusBar: View {
         UIDevice.current.isBatteryMonitoringEnabled = false
     }
     
-    override func sizeChanged() {
-        super.sizeChanged()
+    public override func positionChildren() {
+        super.positionChildren()
         
         clockLabel.position = CGPoint(x: size.width / 2, y: (size.height - clockLabel.frame.size.height) / 2)
         let batteryPoint = CGPoint(x: size.width - batteryBox.frame.size.width - 4, y: (size.height - batteryBox.frame.size.height) / 2)

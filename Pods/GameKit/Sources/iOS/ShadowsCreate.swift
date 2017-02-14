@@ -14,19 +14,11 @@
  * limitations under the License.
  */
 
-import SpriteKit
-
 internal extension Button {
     func createPlatformButton() -> PlatformView {
-        let button = EmptyButton()
-        button.target = self
-        button.action = .buttonTapped
+        let button = ShadowButton(type: .custom)
+        button.attached = self
+        button.addTarget(self, action: .buttonTapped, for: .touchUpInside)
         return button
-    }
-}
-
-private class EmptyButton: NSButton {
-    override func draw(_ dirtyRect: NSRect) {
-        
     }
 }

@@ -24,10 +24,12 @@ class TopMenuBar: View {
         color = .green
         
         menuButton = Button()
+        menuButton?.name = "Menu button"
         menuButton?.set(icon: "menu")
         menuButton?.tintColor = .blue
         addSubview(menuButton!)
         reloadButton = Button()
+        reloadButton?.name = "Reload button"
         reloadButton?.set(icon: "reload")
         reloadButton?.tintColor = .red
         addSubview(reloadButton!)

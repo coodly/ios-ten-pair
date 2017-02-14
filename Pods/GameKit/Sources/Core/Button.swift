@@ -53,9 +53,8 @@ open class Button: View {
         }
     }
     
-    
-    override func sizeChanged() {
-        super.sizeChanged()
+    override open func positionChildren() {
+        super.positionChildren()
         
         positionIcon()
         positionTitle()

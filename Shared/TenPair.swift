@@ -23,6 +23,7 @@ class TenPair: Game {
     override func start() {
         setAppearance()
         play = PlayScreen()
+        play?.name = "Play screen"
         present(screen: play!)
     }
     
@@ -37,10 +38,11 @@ class TenPair: Game {
         NumbersField.appearance().set(color: SKColor(white: 0.900, alpha: 1.000), for: .numberFieldBackground)
         GameKit.MenuScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
         TopMenuBar.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
+        Button.appearance().set(color: .clear, for: .background)
         MenuButton.appearance().set(color: lightBlue, for: .background)
         MenuButton.appearance().set(color: SKColor.white, for: .foreground)
         MenuButton.appearance().set(value: "Copperplate-Bold", for: .font)
-        StatusBar.appearance().set(value: "Copperplate-Bold", for: .font)
+        StatusBar.appearance().set(value: "Copperplate-Bold", for: .font)        
     }
 }
 

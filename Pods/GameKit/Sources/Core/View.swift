@@ -19,9 +19,9 @@ import SpriteKit
 open class View: SKSpriteNode, Themed {
     internal weak var game: Game?    
     private lazy var shadowView: PlatformView = {
-        let shadow = PlatformView()
-        shadow.frame.size = self.size
-        return shadow
+        let view = ShadowView()
+        view.attached = self
+        return view
     }()
     
     internal var backingView: PlatformView {
@@ -87,11 +87,17 @@ open class View: SKSpriteNode, Themed {
             
             view.sizeChanged()
         }
-        
+    }
+    
+    internal func revealHidded() {
         for hidden in hiddenNodes {
             hidden.run(SKAction.unhide())
         }
         hiddenNodes.removeAll()
+    }
+    
+    open func positionChildren() {
+        
     }
     
     public func addSubview(_ view: View) {

@@ -19,7 +19,9 @@ import SpriteKit
 
 class MenuScreen: GameKit.MenuScreen {
     override var itemSize: CGSize {
-        return CGSize(width: 200, height: 44)
+        let buttonWidth = min(size.width - 80, 400)
+        let buttonHeight = round(buttonWidth / 6)
+        return CGSize(width: buttonWidth, height: buttonHeight)
     }
     
     override func load() {

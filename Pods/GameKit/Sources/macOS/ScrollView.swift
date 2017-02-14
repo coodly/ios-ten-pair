@@ -53,7 +53,8 @@ public class ScrollView: View {
         return scrollView.contentView.visibleRect.origin.y
     }
     private lazy var scrollView: NSScrollView = {
-        let view = NSScrollView(frame: .zero)
+        let view = ShadowScrollView(frame: .zero)
+        view.attached = self
         view.drawsBackground = false
         view.hasVerticalScroller = true
         view.automaticallyAdjustsContentInsets = false

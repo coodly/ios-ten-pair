@@ -30,7 +30,8 @@ internal class MenuOptionsContainer: ScrollViewContained {
     }
     
     private lazy var stackView: NSStackView = {
-        let stack = NSStackView()
+        let stack = ShadowStackView()
+        stack.attached = self
         stack.orientation = .vertical
         return stack
     }()

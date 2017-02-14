@@ -43,29 +43,5 @@ open class Game: SKScene {
 
         view.inflate()
         view.applyTheme()
-        triggerUpdate()
-    }
-    
-    open override func didMove(to view: SKView) {
-        super.didMove(to: view)
-        
-        triggerUpdate()
-    }
-    
-    open override func didChangeSize(_ oldSize: CGSize) {
-        triggerUpdate()
-    }
-    
-    private func triggerUpdate() {
-        // let autolayout finish
-        DispatchQueue.main.async {
-            for child in self.children {
-                guard let view = child as? View else {
-                    continue
-                }
-                
-                view.sizeChanged()
-            }
-        }
     }
 }
