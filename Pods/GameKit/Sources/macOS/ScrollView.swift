@@ -90,8 +90,8 @@ public class ScrollView: View {
         positionPresentedNode()
     }
     
-    override func sizeChanged() {
-        super.sizeChanged()
+    public override func positionChildren() {
+        super.positionChildren()
         
         if let contained = contained {
             widthConstraint?.constant = contained.size.width
