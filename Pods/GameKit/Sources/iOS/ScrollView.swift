@@ -59,10 +59,11 @@ public class ScrollView: View, UIScrollViewDelegate {
             contained?.backingView.frame.size = contentSize
         }
     }
-    public var contentInset: EdgeInsets = .zero {
+    public var contentInset: EdgeInsets = .zero
+    internal var presentationInset: EdgeInsets = .zero {
         didSet {
-            scrollView.contentInset = contentInset
-            scrollView.scrollIndicatorInsets = contentInset
+            scrollView.contentInset = presentationInset
+            scrollView.scrollIndicatorInsets = presentationInset
         }
     }
     public var verticallyCentered = false

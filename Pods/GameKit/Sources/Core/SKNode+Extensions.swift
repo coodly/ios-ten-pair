@@ -16,26 +16,8 @@
 
 import SpriteKit
 
-open class ScrollViewContained: View {
-    public weak var scrollView: ScrollView?
-    
-    open var presentationWidth: CGFloat = 0
-    
-    open override var size: CGSize {
-        didSet {
-            scrollView?.contentSize = size
-        }
-    }
-    
-    open override func set(color: SKColor, for attribute: Appearance.Attribute) {
-        // no op
-    }
-    
-    open func scrolledVisible(to visibleFrame: CGRect) {
-        
-    }
-    
-    open func presentationInsets() -> EdgeInsets {
-        return EdgeInsetsMake(0, 0, 0, 0)
+public extension SKNode {
+    public func radians(_ degrees: CGFloat) -> CGFloat {
+        return (degrees * .pi) / 180.0
     }
 }

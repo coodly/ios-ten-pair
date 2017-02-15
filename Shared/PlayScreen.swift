@@ -40,7 +40,6 @@ class PlayScreen: Screen {
         let field = NumbersField()
         field.presentedNumbers = DefaultStartBoard
         field.name = "Numbers field"
-        field.size = CGSize(width: 200, height: 20000)
         scrollView.contentInset = EdgeInsetsMake(TopMenuBarHeight + 10, 0, 10, 0)
         scrollView.present(field)
         
@@ -58,7 +57,15 @@ class PlayScreen: Screen {
         }
         
         statusBar.reloadButton?.action = SKAction.run {
-            print("Reload")
+            [weak self] in
+            
+            Log.debug("Field reload")
+            
+            let loading = LoadingScreen()
+            self?.present(loading)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self?.dismiss(loading)
+            }
         }
     }
 }

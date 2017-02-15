@@ -70,9 +70,17 @@ public class ScrollView: View {
             flipped.frame.size.height = contentSize.height
         }
     }
-    public var contentInset: EdgeInsets = NSEdgeInsetsZero {
+    public var contentInset: EdgeInsets = NSEdgeInsetsZero
+    internal var presentationInset: EdgeInsets = NSEdgeInsetsZero {
         didSet {
-            scrollView.contentInsets = contentInset
+            scrollView.contentInsets = presentationInset
+
+            var presentedHeight = contained!.size.height
+            let insets = contained!.presentationInsets()
+            presentedHeight += insets.top
+            presentedHeight += insets.bottom
+            presentedHeight += contentInset.bottom
+            flipped.frame.size.height = presentedHeight
         }
     }
     public var verticallyCentered = false

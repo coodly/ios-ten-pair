@@ -51,6 +51,8 @@ class TenPair: Game {
         NumbersField.appearance().set(color: SKColor(red: 0.239, green: 0.792, blue: 0.416, alpha: 1), for: .success)
         NumbersField.appearance().set(color: SKColor(red: 1.000, green: 0.173, blue: 0.333, alpha: 1), for: .failure)
         NumbersField.appearance().set(color: SKColor(white: 0.900, alpha: 1.000), for: .numberFieldBackground)
+        
+        LoadingScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.8), for: .background)
     }
 }
 

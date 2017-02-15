@@ -44,4 +44,14 @@ open class Game: SKScene {
         view.inflate()
         view.applyTheme()
     }
+    
+    open override func update(_ currentTime: TimeInterval) {
+        for c in children {
+            guard let view = c as? View else {
+                continue
+            }
+            
+            view.update(currentTime)
+        }
+    }
 }

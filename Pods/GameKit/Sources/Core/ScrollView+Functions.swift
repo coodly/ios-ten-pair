@@ -68,6 +68,16 @@ public extension ScrollView {
     }
     
     public func contentSizeChanged() {
+        var insets = contentInset
+        let presentationInset = contained!.presentationInsets()
+        
+        insets.top += presentationInset.top
+        insets.bottom += presentationInset.bottom
+        insets.left += presentationInset.left
+        insets.right += presentationInset.right
+        
+        self.presentationInset = insets
+
         positionPresentedNode()
     }
 }

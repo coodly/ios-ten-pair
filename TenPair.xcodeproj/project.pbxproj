@@ -18,6 +18,8 @@
 		A71A97561E48CCA4005E134F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A97551E48CCA4005E134F /* AppDelegate.swift */; };
 		A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A71A97641E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
+		A75570BF1E54552300114ED2 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75570BE1E54552300114ED2 /* LoadingScreen.swift */; };
+		A75570C01E54552300114ED2 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75570BE1E54552300114ED2 /* LoadingScreen.swift */; };
 		A777FA831E50758A003E62D7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FA821E50758A003E62D7 /* MenuButton.swift */; };
 		A777FA841E50758A003E62D7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FA821E50758A003E62D7 /* MenuButton.swift */; };
 		A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA861E50CC76003E62D7 /* InfoPlist.strings */; };
@@ -66,6 +68,7 @@
 		A71A97531E48CCA4005E134F /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71A97551E48CCA4005E134F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A71A975C1E48CCA4005E134F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A75570BE1E54552300114ED2 /* LoadingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		A777FA821E50758A003E62D7 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		A777FA871E50CC76003E62D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A777FA891E50CC76003E62D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 				A7B12C1C1E535B18007D7807 /* Config.swift */,
 				A777FA851E50CC76003E62D7 /* en.lproj */,
 				A7D3907F1E4B049400EDB111 /* FieldSave.swift */,
+				A75570BE1E54552300114ED2 /* LoadingScreen.swift */,
 				A7D390921E4B47E900EDB111 /* Log.swift */,
 				A777FA821E50758A003E62D7 /* MenuButton.swift */,
 				A7D3908C1E4B2AE300EDB111 /* MenuScreen.swift */,
@@ -435,6 +439,7 @@
 				A7D390931E4B47E900EDB111 /* Log.swift in Sources */,
 				A71837691E4A0C5F002AEBF5 /* BarButton.swift in Sources */,
 				A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */,
+				A75570BF1E54552300114ED2 /* LoadingScreen.swift in Sources */,
 				A7B12C271E543355007D7807 /* Aliases.swift in Sources */,
 				A77DE7091E48E29100E9214A /* TopMenuBar.swift in Sources */,
 				A7B12C1D1E535B18007D7807 /* Config.swift in Sources */,
@@ -458,6 +463,7 @@
 				A7D3908E1E4B2AE300EDB111 /* MenuScreen.swift in Sources */,
 				A7B12C291E543379007D7807 /* Aliases.swift in Sources */,
 				A7B12C231E542917007D7807 /* Tile.swift in Sources */,
+				A75570C01E54552300114ED2 /* LoadingScreen.swift in Sources */,
 				A77DE70E1E48E8C800E9214A /* TopMenuBar.swift in Sources */,
 				A718374F1E499FB8002AEBF5 /* NumbersField.swift in Sources */,
 				A7B12C2F1E543A10007D7807 /* Tile+Extensions.swift in Sources */,

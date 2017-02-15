@@ -235,8 +235,16 @@ class NumbersField: ScrollViewContained {
         return Int(ceilf(Float(presentedNumbers.count) / Float(NumberOfColumns)))
     }
     
-    func fieldHeight () -> CGFloat {
+    private func fieldHeight () -> CGFloat {
         return CGFloat(numberOfLines()) * tileSize.height
+    }
+    
+    private func bottomOffset() -> CGFloat {
+        return size.height - fieldHeight()
+    }
+    
+    override func presentationInsets() -> EdgeInsets {
+        return EdgeInsetsMake(0, 0, -bottomOffset(), 0)
     }
     
     override func set(color: SKColor, for attribute: Appearance.Attribute) {
