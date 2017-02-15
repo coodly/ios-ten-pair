@@ -17,10 +17,22 @@
 import SpriteKit
 import GameKit
 
+struct ColorSet {
+    var tileColor: SKColor = .clear
+    var tileNumberColor: SKColor = .clear
+    var selectedColor: SKColor = .clear
+    var successColor: SKColor = .clear
+    var failureColor: SKColor = .clear
+    var consumedColor: SKColor = .clear
+}
+
 class Tile: SKSpriteNode {
-    var number = 0
+    private static var textureCache = [String: SKTexture]()
     
+    var number = 0
     private var numberSprite: SKSpriteNode?
+    
+    var colors: ColorSet!
     
     private lazy var backgroundNode: SKSpriteNode = {
         let background = SKSpriteNode()
@@ -30,4 +42,67 @@ class Tile: SKSpriteNode {
         self.addChild(background)
         return background
     }()
+    
+    func defaultPresentaton() {
+        self.numberSprite?.removeFromParent()
+
+        guard number > 0 else {
+            markConsumed()
+            return
+        }
+        
+        let numberSprite = spriteForNumber(number)
+        numberSprite.color = colors.tileNumberColor
+        numberSprite.colorBlendFactor = 1.0
+        self.numberSprite = numberSprite
+
+        center(numberSprite, in: backgroundNode)
+        backgroundNode.addChild(numberSprite)
+        
+        markUnselected()
+    }
+    
+    func markConsumed() {
+        backgroundNode.color = colors.consumedColor
+    }
+    
+    func markUnselected() {
+        backgroundNode.color = colors.tileColor
+    }
+    
+    func markSelected() {
+        backgroundNode.color = colors.selectedColor
+    }
+    
+    private func spriteForNumber(_ number: Int) -> SKSpriteNode {
+        let imageKey = "\(size.width)-\(number)"
+        var numberImage: SKTexture
+        if let image = Tile.textureCache[imageKey] {
+            numberImage = image
+        } else {
+            numberImage = renderImageWithNumber(number, fontSize:size.height * 0.75)
+            Tile.textureCache[imageKey] = numberImage
+        }
+        
+        let sprite = SKSpriteNode(texture: numberImage)
+        sprite.name = "numberLabel"
+        return sprite
+    }
+    
+    private func renderImageWithNumber(_ number: Int, fontSize: CGFloat) -> SKTexture {
+        let string = NSMutableAttributedString(string: "\(number)")
+        
+        let font = Font(name: "ChalkboardSE-Bold", size: fontSize)!
+        
+        let color = SKColor.white
+        
+        string.addAttribute(NSFontAttributeName, value: font, range: NSMakeRange(0, 1))
+        string.addAttribute(NSForegroundColorAttributeName, value: color, range: NSMakeRange(0, 1))
+        
+        let rect = string.boundingRect(with: CGSize(width: 1000, height: 1000), options: NSStringDrawingOptions.truncatesLastVisibleLine, context: nil)
+        
+        let image = string.renderIn(rect)
+        return SKTexture(image: image)
+    }
+
 }

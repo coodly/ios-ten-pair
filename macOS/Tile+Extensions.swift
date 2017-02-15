@@ -16,22 +16,9 @@
 
 import SpriteKit
 
-open class ScrollViewContained: View {
-    public weak var scrollView: ScrollView?
-    
-    open var presentationWidth: CGFloat = 0
-    
-    open override var size: CGSize {
-        didSet {
-            scrollView?.contentSize = size
-        }
-    }
-    
-    open override func set(color: SKColor, for attribute: Appearance.Attribute) {
-        // no op
-    }
-    
-    open func scrolledVisible(to visibleFrame: CGRect) {
-        
+extension Tile {
+    func center(_ number: SKSpriteNode, in background: SKSpriteNode) {
+        number.anchorPoint = .zero
+        number.position = CGPoint(x: (background.size.width - number.size.width) / 2, y: (background.size.height - number.size.height) / 2 + background.size.height * 0.2)
     }
 }

@@ -14,24 +14,16 @@
  * limitations under the License.
  */
 
-import SpriteKit
+import Foundation
 
-open class ScrollViewContained: View {
-    public weak var scrollView: ScrollView?
-    
-    open var presentationWidth: CGFloat = 0
-    
-    open override var size: CGSize {
-        didSet {
-            scrollView?.contentSize = size
-        }
-    }
-    
-    open override func set(color: SKColor, for attribute: Appearance.Attribute) {
-        // no op
-    }
-    
-    open func scrolledVisible(to visibleFrame: CGRect) {
+public extension NSAttributedString {
+    func renderIn(_ box: CGRect) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(box.size, false, UIScreen.main.scale)
+        draw(in: box)
         
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return image
     }
 }

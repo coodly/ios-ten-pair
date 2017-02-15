@@ -93,6 +93,8 @@ public class ScrollView: View {
     public override func positionChildren() {
         super.positionChildren()
         
+        contained?.presentationWidth = size.width
+        
         if let contained = contained {
             widthConstraint?.constant = contained.size.width
             flipped.frame.size.height = contained.size.height

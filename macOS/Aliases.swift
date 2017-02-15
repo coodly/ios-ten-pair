@@ -14,24 +14,6 @@
  * limitations under the License.
  */
 
-import SpriteKit
+import AppKit
 
-open class ScrollViewContained: View {
-    public weak var scrollView: ScrollView?
-    
-    open var presentationWidth: CGFloat = 0
-    
-    open override var size: CGSize {
-        didSet {
-            scrollView?.contentSize = size
-        }
-    }
-    
-    open override func set(color: SKColor, for attribute: Appearance.Attribute) {
-        // no op
-    }
-    
-    open func scrolledVisible(to visibleFrame: CGRect) {
-        
-    }
-}
+typealias Font = NSFont

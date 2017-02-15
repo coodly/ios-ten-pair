@@ -38,7 +38,36 @@ public extension ScrollView {
         
         let moveAction = SKAction.move(to: nextPosition, duration: 0)
         
-        let sequence = SKAction.sequence([moveAction])
+        let notifyAction = SKAction.run() {
+            let bottomPoint = self.translatePointToContent(CGPoint(x: 0, y: 0))
+            let topPoint = self.translatePointToContent(CGPoint(x: 0, y: self.size.height))
+            
+            var visible = CGRect.zero
+            visible.origin = CGPoint(x: 0, y: bottomPoint.y)
+            visible.size = CGSize(width: self.contained!.size.width, height: topPoint.y - bottomPoint.y)
+            
+            var bounds = CGRect.zero
+            bounds.size = self.contained!.size
+            
+            let intersection = visible.intersection(bounds)
+            
+            // Sanity check on macOS. Exiting fullscreen gave invalid intersection
+            if CGSize.zero.equalTo(intersection.size) {
+                return
+            }
+            
+            self.contained!.scrolledVisible(to: intersection)
+        }
+        
+        let sequence = SKAction.sequence([moveAction, notifyAction])
         contained.run(sequence)
+    }
+    
+    private func translatePointToContent(_ point: CGPoint) -> CGPoint {
+        return contained!.convert(point, from: parent!)
+    }
+    
+    public func contentSizeChanged() {
+        positionPresentedNode()
     }
 }
