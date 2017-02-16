@@ -19,6 +19,7 @@ import GameKit
 import SpriteKit
 
 private let TopMenuBarHeight: CGFloat = 50
+private let ActionButtonsTrayHeight: CGFloat = 50
 
 private let DefaultStartBoard = [
     1, 2, 3, 4, 5, 6, 7, 8, 9,
@@ -40,7 +41,7 @@ class PlayScreen: Screen {
         let field = NumbersField()
         field.presentedNumbers = DefaultStartBoard
         field.name = "Numbers field"
-        scrollView.contentInset = EdgeInsetsMake(TopMenuBarHeight + 10, 0, 10, 0)
+        scrollView.contentInset = EdgeInsetsMake(TopMenuBarHeight + 10, 0, 10 + ActionButtonsTrayHeight + 10, 0)
         scrollView.present(field)
         
         statusBar = TopMenuBar()
@@ -83,6 +84,16 @@ class PlayScreen: Screen {
             
             self?.execute(reload)
         }
+        
+        let hintsTray = HintsButtonTray()
+        addSubview(hintsTray)
+
+        let views: [String: AnyObject] = ["hints": hintsTray]
+        
+        let vertical = LayoutConstraint.constraints(withVisualFormat: "V:[hints(\(ActionButtonsTrayHeight))]-(10)-|", options: [], metrics: nil, views: views)
+        let horizontal = LayoutConstraint.constraints(withVisualFormat: "H:|[hints(\(ActionButtonsTrayHeight))]", options: [], metrics: nil, views: views)
+        
+        addConstraints(vertical + horizontal)
     }
     
     private func execute(_ task: SKAction) {

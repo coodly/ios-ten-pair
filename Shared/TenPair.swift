@@ -55,6 +55,11 @@ class TenPair: Game {
         LoadingScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.8), for: .background)
         
         FieldStatusView.appearance().set(color: .clear, for: .background)
+        
+        HintsButtonTray.appearance().set(color: lightBlue, for: .background)
+        
+        HintButton.appearance().set(color: .white, for: .foreground)
+        HintButton.appearance().set(color: .clear, for: .background)
     }
 }
 
