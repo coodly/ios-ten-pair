@@ -53,6 +53,8 @@ class TenPair: Game {
         NumbersField.appearance().set(color: SKColor(white: 0.900, alpha: 1.000), for: .numberFieldBackground)
         
         LoadingScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.8), for: .background)
+        
+        FieldStatusView.appearance().set(color: .clear, for: .background)
     }
 }
 

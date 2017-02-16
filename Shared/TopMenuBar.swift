@@ -16,33 +16,36 @@
 
 import GameKit
 
-class TopMenuBar: View {
+class TopMenuBar: View {    
     var menuButton: Button?
     var reloadButton: Button?
+    var statusView: FieldStatusView?
     
     override func load() {
-        color = .green
-        
         menuButton = Button()
         menuButton?.name = "Menu button"
         menuButton?.set(icon: "menu")
-        menuButton?.tintColor = .blue
         addSubview(menuButton!)
+        
         reloadButton = Button()
         reloadButton?.name = "Reload button"
         reloadButton?.set(icon: "reload")
-        reloadButton?.tintColor = .red
         addSubview(reloadButton!)
+        
+        statusView = FieldStatusView()
+        addSubview(statusView!)
     
-        let views: [String: AnyObject] = ["menu": menuButton!, "reload": reloadButton!]
+        let views: [String: AnyObject] = ["menu": menuButton!, "reload": reloadButton!, "status": statusView!]
         
         let menuWidth = LayoutConstraint(item: menuButton!, attribute: .width, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0)
         let menuVertical = LayoutConstraint.constraints(withVisualFormat: "V:|[menu]|", options: [], metrics: nil, views: views)
-        let menuHorizontal = LayoutConstraint.constraints(withVisualFormat: "H:|-[menu]", options: [], metrics: nil, views: views)
 
         let reloadWidth = LayoutConstraint(item: reloadButton!, attribute: .width, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0)
         let reloadVertical = LayoutConstraint.constraints(withVisualFormat: "V:|[reload]|", options: [], metrics: nil, views: views)
-        let reloadHorizontal = LayoutConstraint.constraints(withVisualFormat: "H:[reload]-|", options: [], metrics: nil, views: views)
-        addConstraints(menuVertical + menuHorizontal + reloadVertical + reloadHorizontal + [menuWidth, reloadWidth])
+        let statusVertical = LayoutConstraint.constraints(withVisualFormat: "V:|[status]|", options: [], metrics: nil, views: views)
+
+        let horizontal = LayoutConstraint.constraints(withVisualFormat: "H:|-[menu]-[status]-[reload]-|", options: [], metrics: nil, views: views)
+
+        addConstraints(menuVertical + reloadVertical + horizontal + [menuWidth, reloadWidth] + statusVertical)
     }
 }
