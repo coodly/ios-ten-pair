@@ -23,6 +23,7 @@
 		A7363A3A1E558EDF00B7C732 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
 		A7363A3B1E558EED00B7C732 /* NumbersPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */; };
 		A7363A3D1E55969600B7C732 /* FieldStatusVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */; };
+		A750CE321E55AAB300852E6A /* FieldStatusVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */; };
 		A75570BF1E54552300114ED2 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75570BE1E54552300114ED2 /* LoadingScreen.swift */; };
 		A75570C01E54552300114ED2 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75570BE1E54552300114ED2 /* LoadingScreen.swift */; };
 		A777FA831E50758A003E62D7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FA821E50758A003E62D7 /* MenuButton.swift */; };
@@ -487,6 +488,7 @@
 				A777FA841E50758A003E62D7 /* MenuButton.swift in Sources */,
 				A7D390811E4B049400EDB111 /* FieldSave.swift in Sources */,
 				A7B12C1E1E535B18007D7807 /* Config.swift in Sources */,
+				A750CE321E55AAB300852E6A /* FieldStatusVIew.swift in Sources */,
 				A7D390941E4B47E900EDB111 /* Log.swift in Sources */,
 				A77DE70D1E48E8C000E9214A /* PlayScreen.swift in Sources */,
 			);

@@ -275,8 +275,6 @@ class NumbersField: ScrollViewContained {
     }
     
     override func handleTap(at point: CGPoint) {
-        Log.debug("handleTap at \(point)")
-        
         let checked = nodes(at: point)
         guard let tile = tileInArray(checked, tappedAt: point) else {
             return

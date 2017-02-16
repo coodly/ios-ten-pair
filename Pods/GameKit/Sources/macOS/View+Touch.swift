@@ -14,8 +14,20 @@
  * limitations under the License.
  */
 
-internal extension View {
+internal protocol MouseDelegate: class {
+    func touchDown(at point: CGPoint)
+}
+
+extension View: MouseDelegate {
     func attatchTapHandler() {
-        //TODO jaanus
-    }    
+        guard let view = backingView as? ShadowView else {
+            return
+        }
+        
+        view.mouseDelelegate = self
+    }
+    
+    func touchDown(at point: CGPoint) {
+        handleTap(at: point)
+    }
 }

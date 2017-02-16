@@ -43,11 +43,17 @@ internal extension ShadowingView where Self: PlatformView {
 
 internal class ShadowView: NSView, ShadowingView {
     weak var attached: View?
+    weak var mouseDelelegate: MouseDelegate?
     
     override func layout() {
         super.layout()
         
         positionAttached()
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        let location = convert(event.locationInWindow, from: nil)
+        mouseDelelegate?.touchDown(at: location)
     }
 }
 
