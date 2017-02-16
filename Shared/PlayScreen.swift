@@ -60,12 +60,23 @@ class PlayScreen: Screen {
             [weak self] in
             
             Log.debug("Field reload")
-            
-            let loading = LoadingScreen()
-            self?.present(loading)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                self?.dismiss(loading)
+
+            let reload = SKAction.run() {
+                field.reload()
             }
+            
+            self?.execute(reload)
         }
+    }
+    
+    private func execute(_ task: SKAction) {
+        let loading = LoadingScreen()
+        present(loading)
+        let wait = SKAction.wait(forDuration: 1)
+        let dismiss = SKAction.run {
+            self.dismiss(loading)
+        }
+        let actions = SKAction.sequence([wait, task, dismiss])
+        run(actions)
     }
 }

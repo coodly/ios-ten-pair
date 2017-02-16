@@ -222,8 +222,6 @@ class NumbersField: ScrollViewContained {
     }
     
     private func notifySizeChanged() {
-        let lines = numberOfLines()
-        
         let heigth = max(size.height, fieldHeight())
         
         size = CGSize(width: CGFloat(NumberOfColumns) * tileSize.width, height: heigth)
@@ -245,6 +243,13 @@ class NumbersField: ScrollViewContained {
     
     override func presentationInsets() -> EdgeInsets {
         return EdgeInsetsMake(0, 0, -bottomOffset(), 0)
+    }
+    
+    func reload() {
+        let filtered = presentedNumbers.filter({ $0 != 0})
+        presentedNumbers += filtered
+        lastHandledVisible = .zero
+        notifySizeChanged()
     }
     
     override func set(color: SKColor, for attribute: Appearance.Attribute) {
