@@ -17,10 +17,9 @@
 import SpriteKit
 
 public class ScrollView: View, UIScrollViewDelegate {
-    private lazy var scrollView: UIScrollView = {
+    private lazy var scrollView: ShadowScrollView = {
         let scroll = ShadowScrollView()
         scroll.attached = self
-        scroll.delegate = self
         return scroll
     }()
     
@@ -70,13 +69,8 @@ public class ScrollView: View, UIScrollViewDelegate {
     
     public override func positionChildren() {
         super.positionChildren()
-        
+
         contained?.presentationWidth = size.width
-        
-        positionPresentedNode()
-    }
-    
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         positionPresentedNode()
     }
     
