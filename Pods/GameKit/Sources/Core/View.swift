@@ -35,6 +35,10 @@ open class View: SKSpriteNode, Themed {
             color = backgroundColor ?? color
         }
     }
+    
+    open var withTaphHandler: Bool {
+        return false
+    }
 
     internal final func inflate() {
         beforeLoad()
@@ -60,7 +64,11 @@ open class View: SKSpriteNode, Themed {
     }
     
     internal func afterLoad() {
+        guard withTaphHandler else {
+            return
+        }
         
+        attatchTapHandler()
     }
     
     open func unload() {
@@ -137,6 +145,10 @@ open class View: SKSpriteNode, Themed {
         let vertical = LayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: [], metrics: nil, views: views)
         let horizontal = LayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: views)
         addConstraints(vertical + horizontal)
+    }
+    
+    open func handleTap(at point: CGPoint) {
+        
     }
 
     open func set(color: SKColor, for attribute: Appearance.Attribute) {

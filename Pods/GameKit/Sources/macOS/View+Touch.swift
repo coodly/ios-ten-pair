@@ -14,13 +14,8 @@
  * limitations under the License.
  */
 
-let NumberOfColumns = 9
-
-private let ReleaseBuild = false
-
-struct AppConfig {
-    let logs = !ReleaseBuild
-    let statusBar: Bool
-    let ads: Bool
-    let maxTileWidth: Int
+internal extension View {
+    func attatchTapHandler() {
+        //TODO jaanus
+    }    
 }

@@ -14,13 +14,20 @@
  * limitations under the License.
  */
 
-let NumberOfColumns = 9
+private extension Selector {
+    static let tapped = #selector(View.tapped(recognizer:))
+}
 
-private let ReleaseBuild = false
-
-struct AppConfig {
-    let logs = !ReleaseBuild
-    let statusBar: Bool
-    let ads: Bool
-    let maxTileWidth: Int
+internal extension View {
+    func attatchTapHandler() {
+        let tap = UITapGestureRecognizer(target: self, action: .tapped)
+        backingView.addGestureRecognizer(tap)
+    }
+    
+    @objc fileprivate func tapped(recognizer: UITapGestureRecognizer) {
+        let pointInView = recognizer.location(in: self.backingView)
+        // flip the y value
+        let converted = CGPoint(x: pointInView.x, y: size.height - pointInView.y)
+        handleTap(at: converted)
+    }
 }

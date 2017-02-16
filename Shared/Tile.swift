@@ -34,7 +34,7 @@ class Tile: SKSpriteNode {
     
     var colors: ColorSet!
     
-    private lazy var backgroundNode: SKSpriteNode = {
+    lazy var backgroundNode: SKSpriteNode = {
         let background = SKSpriteNode()
         background.size = CGSize(width: self.size.width - 2, height: self.size.height - 2)
         background.anchorPoint = CGPoint.zero

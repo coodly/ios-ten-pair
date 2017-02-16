@@ -10,25 +10,26 @@
 		006E33F2D4BBF271402C802F0EED9A32 /* Dictionary_Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA803A531DDFE15AFDEB50D343927E6C /* Dictionary_Initializers.swift */; };
 		008809E13245A1A35E25A4D698FC66CD /* SWLogger-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50080F952E54AAD3CF98D1FA5479B089 /* SWLogger-OSX-dummy.m */; };
 		0187ADAD1E081D04645B1500787EBCE0 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F575B92870E2D2833835D7F50BFE99 /* ConversationViewController.swift */; };
+		0192B9F475C6AE08FA29FA1CBD79FAC3 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E33D1EA8D065273EFD5D8C10F9BA49 /* Appearance.swift */; };
 		02B730017B90D4C2C609B97BBBDDB419 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239C64E272F024A0909B356435EFA34B /* UIView+Autolayout.swift */; };
-		042D1C0FA99A18CCC8EB60FD3476481F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CE4B5B319EE1C2AEF4B06A7513B5CB /* Foundation.framework */; };
+		02D284BAFE4A0839FF9DB213B68C67D0 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8B627EAAC871EC6C1B955485B93224 /* NSAttributedString+Extensions.swift */; };
+		040E35CBB6F7CADE1EFEA4080029F957 /* ScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF6E06CE8276DAC594F2C9709485B1 /* ScrollViewContained.swift */; };
 		04970863F29FB962883FFC21EDA65EF3 /* Storefront.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BCAA25038740B9026F7E69FDE2CAFD /* Storefront.swift */; };
-		077F2113D8A9156198F26FAFF50EBFDE /* MenuOptionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763ADF3CB6714BB2287BBDB675674F16 /* MenuOptionsContainer.swift */; };
+		04DA5A66EFCC6C8936B07900C790BF95 /* GameKit-Core-macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2034523441E50E1739609E2E5A4E1DB3 /* GameKit-Core-macOS-dummy.m */; };
 		08278ED43380572CC22277A63FCB2797 /* Persistence+Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB2DD8EA533D4A7B560026350F4234 /* Persistence+Messages.swift */; };
 		08FDE3A302E15E32B6276338F0D8F326 /* ProductsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C377982EF6D00033B5DA67AA135787 /* ProductsHandler.swift */; };
 		093B2E4E4C343E158CF890E1C2772772 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B7F9B63D22A1B7C9E7A74E16139C4 /* MenuViewController.swift */; };
+		09EE5A32A88C51D697F0E1DAC6385B58 /* NSView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29C58B56EADACE693CCFB5E7626A3FC /* NSView+Autolayout.swift */; };
+		0BECD45B277BBB7F4F57417423F02E9B /* Themed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA66B33766FEBB1BCA0FFCB362E7C973 /* Themed.swift */; };
+		0C0E26E8E836DA175BADC96EEE041396 /* ScrollView+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15EE44ED7B15711EEC07D0653DFD388 /* ScrollView+Functions.swift */; };
+		0D03D1A81A39E6E67C9A84B1320D0CD6 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E33D1EA8D065273EFD5D8C10F9BA49 /* Appearance.swift */; };
 		0E1E2C459F36C07183BC0B61F85CF3A2 /* ShakeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F285D939A793D766AF396307C98C86 /* ShakeWindow.swift */; };
 		10B18A9D348F911C8854B77698EBCAD5 /* Purchaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1E9289B832C7C79E8B45DA70587233 /* Purchaser.swift */; };
-		11882ACE41F680793F30E1E33105ED51 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCB7C86A3DAFEB269D848BA4CC44BC /* LayoutConstraint.swift */; };
-		14332BE4D88E71689A3C175747F28B8C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C28B2A6FB2653D2AEE16E578C5431 /* View.swift */; };
 		1447E5CB97E94041846B54B414E0E198 /* CloudRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647E5568E85E3DDF77BAF12946B65E3 /* CloudRequest.swift */; };
-		147B5016265648233ACD760C1495EA5E /* Themed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AED060D8BAD69EC2A2AB364F75665E0 /* Themed.swift */; };
 		152A4FC79AB6D6409F79F15E5374B651 /* RemoteRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C966272C8F067EB718C8296BC12E081 /* RemoteRecord.swift */; };
-		180DF672985D311ABD071385701B4F34 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F8B44431410449A8FAE6ADE04743FD /* SpriteKit.framework */; };
+		1D8843A481B52E7EEA09E3D3D92D55F6 /* MenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77691828FA183823C5D2BCD15A904E80 /* MenuScreen.swift */; };
 		1F0855EF3FCF0EFE13C50CA329A2156B /* LocksmithAccessibleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C972DFF43A00F5397D4569632E238 /* LocksmithAccessibleOption.swift */; };
-		1FF73F7E4CFC17AC4C48F515ED3AB8AD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E44AEC4904B71F02DB7CE1C0966E9 /* Button.swift */; };
 		20F63B7EB2B00ACF39AB1A6C69CA30CF /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7083EFE50E5BC3F7198BE31866936D6E /* NSManagedObjectContext+Extensions.swift */; };
-		21C45282F92B85E15624B15C2A6DEDAE /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D946A8B111FAB99A97F82FF7DADA79 /* StatusBar.swift */; };
 		24D0F099BBE8E0EC352784FC02D5E4A5 /* SmoothTableRowDeselection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B9FF548EECC1FC15E9452894D7D47 /* SmoothTableRowDeselection.swift */; };
 		253A47F246E8CBF4D751E465C72FB4B3 /* LaughingAdventure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6ABD69C8226A46E28D47ABBF554BF5 /* LaughingAdventure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2688904128C01C2C2960AB56FD154B44 /* NSNotificationCenter+NotificationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E46B91811F3186940781075D4A97BD2 /* NSNotificationCenter+NotificationEnum.swift */; };
@@ -36,6 +37,7 @@
 		27D889D317A485E463FE504E54F451FF /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCECE182C0C798F1367E732BFF7ACA11 /* Locksmith.swift */; };
 		28D98E6CD8A6311C92BC6E341D22246C /* PushMessagesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D7B23532A6C47A0006E859AC9771F4 /* PushMessagesOperation.swift */; };
 		29BD2C2E90CD11188F341753FF285578 /* SelectionSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92750D9F2A4E21680E95E9A0E12EC0AC /* SelectionSource.swift */; };
+		2A428E9D7151296EC17E61CCF2D8B76B /* NativeShadowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C26B13E110935C739921BAC3CAAD3 /* NativeShadowed.swift */; };
 		2AC919699518346CE4F1F8FCBF835CC6 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11473A3D46F31525CD6E88EBE8A3DB /* FeedbackViewController.swift */; };
 		2C03D353418D2E5F687247E519C406CB /* FullScreenTableCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88728C1C38E9249FBC2F3357FD7DE5 /* FullScreenTableCreate.swift */; };
 		2D1B68ACE23AED7B24723350B975A289 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1402157164D4C16A639E6B56A842F4F7 /* Log.swift */; };
@@ -44,47 +46,48 @@
 		2FBE2F764BBB93066171061F24777D36 /* Pods-macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 638997001E55D6E272F76F88B7DD442F /* Pods-macOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3159D7CAFD56B809F40CA3330DA10889 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CE4B5B319EE1C2AEF4B06A7513B5CB /* Foundation.framework */; };
 		31900E03D1FB95536DEE09BE6684EBA5 /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E23C72396CE8DD40A0CE0CD0AAFBA /* FileOutput.swift */; };
-		328336826BC53D261CE7D098B6980D71 /* GameKit-Core-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F03AA60D6B1683BEDAF6D56DD0AC4 /* GameKit-Core-iOS-dummy.m */; };
-		33C58B7FD074ED9590C11A2806AED5E6 /* NativeShadowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742B7CE6D37362833306F9D654B8AE1 /* NativeShadowed.swift */; };
 		33F05B4F754062C23947BA24EAAC308F /* PushConversationsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDBADB6F04E4A4457080BD1F1241E7 /* PushConversationsOperation.swift */; };
 		3441C7968CFC7116517CF2054C52D3BE /* FeedbackMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C29119C8F2059C310CDCDEBCDBE101 /* FeedbackMessageView.swift */; };
 		34E925DF2D169189F4B5502BC191DA36 /* UIRefreshControl+Manual.swift in Sources */ = {isa = PBXBuildFile; fileRef = D408B54A5D4CA2FB597E618740534226 /* UIRefreshControl+Manual.swift */; };
 		36632D1BB313926CB7CB782375C59EFD /* CloudConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13AEAE2B8B2492B7B564F7175A233B2 /* CloudConversation.swift */; };
+		3681766AC05C80CBB3F4B6DC2CE19CFF /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7248C8D1CB41DF5A0F0067F6804C3E1 /* ScrollView.swift */; };
 		37B8B2B19BFF903EC992B8372CD09DE7 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272A4015D55974F652B6F8F77E33B01 /* Feedback.swift */; };
 		38357DB572C99B510C1A509959276075 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6EC59F61A661AC7CE20AE900ECC193 /* Cocoa.framework */; };
+		38D1ABECDAB6242B695BED04E491D4CB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A33307E008714B31829B3EF5A08079 /* Game.swift */; };
 		398DA5FF36921015EC13D0AAF20554D1 /* FetchedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF4F3CD4E763C1DDAFDCC232978E3F /* FetchedCollectionViewController.swift */; };
-		3A4165EFFEA3B40DD0D53D8A6043D856 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC0330D8E20311C906AEA3044B00EE /* Screen.swift */; };
 		3B5ECE8625229C899990F27E2D702AD6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA1D099AD50FA95F46620B87EDBD9ED /* StoreKit.framework */; };
-		3BCD18E37FB0DD0D843E56F14A737039 /* NSView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB331E01E5DBB59FB854A8331CF98DDF /* NSView+Autolayout.swift */; };
 		3C3DDDCE33C4140FB403BFEF5C7E4D07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090AC9C698F0C18EB88959B202E6D30D /* Security.framework */; };
-		3C4682CB38175331F42D0C12AF3F1E7D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB254B1D621DAF6A9F3606F35C23A859 /* Game.swift */; };
+		3CCA610E0F864992030B99D45C5E9E85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CE4B5B319EE1C2AEF4B06A7513B5CB /* Foundation.framework */; };
 		3DF767E5C3DABC78F7CEF6C9924E3014 /* FetchedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D518446290892D4CFABE246B959B126B /* FetchedCollectionView.swift */; };
 		3F46DB9A14C69F2B277DB7F5A9646BB7 /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B1F1324C207C358471F27170517909 /* ConsoleOutput.swift */; };
 		4055A1BA92C8C5BAB91D98E9735D1379 /* SWLogger-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5879250F413472E9A910A490D11B67E /* SWLogger-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4268DF17909473D88F12670DBB56A2FF /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6CB2E9F5290E777258E0CA2C0A3F0 /* SKNode+Extensions.swift */; };
+		41AA7F620AC6DAD3DFE23153B633C81A /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3AAD41EECD86CC41948E3B67EC344F /* LayoutConstraint.swift */; };
+		41E9952DE4EBE0DC5327C6960F6AD5E2 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B2D34BCE573E8DBA9033176AFA8F67 /* SpriteKit.framework */; };
+		426CE2CD05F0820D1B65CFF66FF08406 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4962032818CCCD79D58E0638D9EC4E3 /* SKNode+Extensions.swift */; };
 		4386B97766CDFE9C966EA008C8C73E8A /* FetchedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A44DD43655D23B9BD945BC8145B12C /* FetchedTableViewController.swift */; };
 		44F26EB77F11E81662332477DC68864A /* AdPresentingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DFBF0D1C5C6CD7D035DC9325D85F49 /* AdPresentingContainerViewController.swift */; };
-		4530F2BF08FB4CE9860E840588923C69 /* ScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6554991A06BA97B4BD3E9DC329AAA7AC /* ScrollViewContained.swift */; };
 		4636241775945665D9CD3A47141285F1 /* MultiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618A7D8014C601FAB656E15F3AACF308 /* MultiSelectionViewController.swift */; };
-		4940BAEF1A00B66AD4229C64FDDF2B8E /* ScrollView+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0804181EF2950E186BA41EAE1D7186C /* ScrollView+Functions.swift */; };
+		490248B91214D0F7A648C06805F64969 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99899B6E5838BECF5A30D279DA5F622 /* StatusBar.swift */; };
+		4B32A76B948147B296D9F4D8CD035F59 /* GameKit-Core-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D1BC4A80003CFAFC6C374B30FFBB9175 /* GameKit-Core-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C9F7894F522C95D823B761D169F8BD2 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F8B44431410449A8FAE6ADE04743FD /* SpriteKit.framework */; };
 		4D781B95DDEC2724F59D252B24678174 /* Pods-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD41C1D63F7E1BA3F4B041D60D286A8 /* Pods-iOS-dummy.m */; };
+		4E361F3CDAF84ED9ED9D01166EABD955 /* Shadowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA865C3C43008CAE4BD775A509685E /* Shadowed.swift */; };
+		4F251BCA802801F1FEE6EEA685682954 /* MenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77691828FA183823C5D2BCD15A904E80 /* MenuScreen.swift */; };
 		4F5F86016EE2665329610289DFDBF30E /* NSManagedObjectModel+Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC85BE4C33581986F32281FA4650D6F /* NSManagedObjectModel+Feedback.swift */; };
-		4F915931D0FCC3FF72FA81CC9AE40DD2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C28B2A6FB2653D2AEE16E578C5431 /* View.swift */; };
 		4FA8892FBB7BFA0EC78E085D02E2FDE6 /* FeedbackInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9372CE6B4279C2034CFA4CCE97C2BDC /* FeedbackInjector.swift */; };
 		5063EA6DC0505EEF9317AFB149CDEAE2 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1402157164D4C16A639E6B56A842F4F7 /* Log.swift */; };
 		508B03D54F848369E1F2C19839762DF2 /* CloudKitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7579BA1614ACED12977A0504D81E05F3 /* CloudKitRequest.swift */; };
 		51BA3F70A2BBD6354BF83176060077A6 /* StaticCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F562724ED3A2FAAA25C2AFB153F31 /* StaticCollectionViewController.swift */; };
-		52F0B7E1EE8A10C23CAC0065F636FC50 /* MenuOptionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4336064CF956ECBE031654B61FF6C3F4 /* MenuOptionsContainer.swift */; };
 		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = D37FF45F26AC2B70D1D781D73932CC5F /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58B53421AED02C4739EDB262F373FA57 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40E020DAF41B5CFE9A075ECB083C1C /* View.swift */; };
+		5956A1F2114B3F9027B499E756C020DA /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E6FBAFFD87BF3F32FE92934B794D4 /* Aliases.swift */; };
 		59BD05CDD99E112C535CC494DA6CB1D3 /* SKProduct+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B73158935C06D079B4B9974A05322 /* SKProduct+Extensions.swift */; };
-		5A0D507FFC26BF50D8C72BBF1DEB990A /* ShadowsCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3C5BEF9BA4C8EBF896DB18D16F24D /* ShadowsCreate.swift */; };
 		5B98D091D557B69DB1835979DC7A6CDF /* Persistence+Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A861070EC453710F089D3611717148CE /* Persistence+Conversations.swift */; };
+		5C964D362A8055E35E7948B3EC366D2A /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A363A70B18BDDAA8D3CAF9B489F92C /* NSAttributedString+Extensions.swift */; };
 		5E01D47BAA4506A2D0B91F03933DE7B9 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD601AD93334BE2C8EEF492DF3D79543 /* Conversation.swift */; };
-		60B87E58C698ACD3300D2BC31C212F56 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31316727661291638242AAD0F1770A65 /* Aliases.swift */; };
 		625CDB6A0768152B4B9E4EB42E7B4898 /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF72B3A3CB2BEDCF96E12E3DDFD158 /* InputValidation.swift */; };
 		62754F4AA0271F7A602C24EE29F4CDC2 /* NoCaretTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DDA63B46CD7D551B3F8A6E8CFE87F /* NoCaretTextField.swift */; };
 		62BBC323F2D442432DE8AC1E7FFFB6ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CE4B5B319EE1C2AEF4B06A7513B5CB /* Foundation.framework */; };
-		632812AF69C91726580CA7E13B205488 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E44AEC4904B71F02DB7CE1C0966E9 /* Button.swift */; };
 		6443B20FCA2B60608F90D8AFB85D6DFD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6EC59F61A661AC7CE20AE900ECC193 /* Cocoa.framework */; };
 		6476ED125F629DA54260CAD6BDB5B36C /* MessagesPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BA25CB363B2AA2AEA1AE56D0753CA /* MessagesPush.swift */; };
 		662B9738103692AD5CA629F11A515214 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61CE6709C5AB9D0B893B3691007D561 /* UIView+Shake.swift */; };
@@ -93,99 +96,98 @@
 		6791734CA52EBD4BECEBA9E1805757C2 /* SubscriptionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA2F83D86C3B49AF5DBFFE5E72905 /* SubscriptionCheck.swift */; };
 		69FB97EBC45CC40E7500A3BDA00BE9CA /* SWLogger-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B00EAF333D8BF07EE847ADC1B0E2BC6B /* SWLogger-iOS-dummy.m */; };
 		6D970E11E796DB6C9ED59DAFD548AA30 /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987F6AE16879DB59293B452A27DFEF0C /* LogOutput.swift */; };
-		6F24786033A2DF689883DD35B11D3B8A /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31A373CBB64183D8172051DE0DDB66 /* Appearance.swift */; };
+		702385C3127DA0C433C7247577792EE7 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4962032818CCCD79D58E0638D9EC4E3 /* SKNode+Extensions.swift */; };
 		70D19028CD268F84254960D5B29DC67D /* FileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E23C72396CE8DD40A0CE0CD0AAFBA /* FileOutput.swift */; };
 		7114BB351F3F9716C7834008F939B2D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CE4B5B319EE1C2AEF4B06A7513B5CB /* Foundation.framework */; };
 		75100BE4A3D641F450E03313887DC0B1 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC171FAC2806A4FFF1F67ABAF87837 /* SlideMenuController.swift */; };
 		75118673ACECD349D390FA4ACA04E1CB /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BA818EC03B11699B98DFD9B9A98D1 /* SelectionViewController.swift */; };
-		756234F27F2FCA2DB2DCE6A48EF73A6A /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917EACE96C5502C87CD886E26C902E10 /* StatusBar.swift */; };
-		779FB8B625D102B039070CC0950AA222 /* ShadowsCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F784BAD3FDAAC6AAFC3E14A5C0D264C /* ShadowsCreate.swift */; };
+		76D9C1B23BF9B7DA2772A33F439C17A0 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11AB4F6884A7395E08B57BC26E8D123 /* Screen.swift */; };
 		78B2338EFDF22FFA6575BA90469BEB29 /* Locksmith-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C29CEDA858B32A72B31A42312FCAD7 /* Locksmith-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79156DAEED8CD620F63F8E82BB14EDD9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6EC59F61A661AC7CE20AE900ECC193 /* Cocoa.framework */; };
 		7DA716B9E3B806B97EB4DBD3E8472DFD /* Pods-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4BC1C994A07886C48AC466E227403 /* Pods-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7FBDA22BC8E282470B033630D9E5210F /* LocksmithSecurityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52A92B6E59437BE6EC582AF0859001 /* LocksmithSecurityClass.swift */; };
+		80557C1CF6A1E001A734C8D27026A966 /* ShadowsCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F8CC7D72C23714F7B9A133CEE5F4C /* ShadowsCreate.swift */; };
 		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B456AAD6CDC7E7E03F659D5D69DC1ADA /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81E6BA1BE068D4EFBFAE67E4C74D13A9 /* GameKit-Core-macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18F6B5826985632E27F439E243FA1365 /* GameKit-Core-macOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83E5993FCFC9D5E075A3B52C35B99489 /* CloudMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491DC4C3C8B4E998EAB5594E6B974C3 /* CloudMessage.swift */; };
-		849C476EB8FC0A58358713155FD3E01B /* MenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC5B301D180AF6A4037CD40E280B1C /* MenuScreen.swift */; };
 		84A3D8FBEF2026DE15080264A89DFAB1 /* ProductsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C377982EF6D00033B5DA67AA135787 /* ProductsHandler.swift */; };
 		8589410660ED3CD78CD0B5600830B2F9 /* CorePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE9A026A0239C277158FEC08499AEE /* CorePersistence.swift */; };
 		885F43CDD35B6F364D5B9CEE6C650F7E /* LaughingAdventure-Logging-Purchase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1D2771C1909304A22F4E63A1BAAF2 /* LaughingAdventure-Logging-Purchase-dummy.m */; };
+		88A5846E38CB7AFF81C2EA161DD20432 /* ScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF6E06CE8276DAC594F2C9709485B1 /* ScrollViewContained.swift */; };
 		88CEB549249BE3C54955DDC15172E7FA /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D563607A877C2CF979149C057CD551ED /* String+Extensions.swift */; };
+		8936A985959608DB1F0AF318332DEB8C /* GameKit-Core-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A99EED5880720F04D8E2C82999318F35 /* GameKit-Core-iOS-dummy.m */; };
 		8B1DA3BE591936A4E4D90540C3C9D03E /* LaughingAdventure-Logging-Purchase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 036D52CB1D2C1347D3179FE950BD174A /* LaughingAdventure-Logging-Purchase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B8847E6FFEFA83F5FDBFBFDCA2F0D0D /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCB7C86A3DAFEB269D848BA4CC44BC /* LayoutConstraint.swift */; };
 		8C7EE90B8EE1ECD38DEF0D346F54950D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2804DA1D8B0E16EE5BF27E322657A299 /* Helpers.swift */; };
+		8CA6DA5F26BD881569A5ACC412FC4D30 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A33307E008714B31829B3EF5A08079 /* Game.swift */; };
 		8D3BB10C30B780347AAB0ECB7895FF2F /* LocksmithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E5AD51E7708733B5EEFDB94FAED779 /* LocksmithError.swift */; };
 		8FA9B26AA518B65A03682A1781E2B4D1 /* Locksmith.h in Headers */ = {isa = PBXBuildFile; fileRef = 53304D0E58F438B0129FDEC8A756D3D9 /* Locksmith.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FB919709593DF94907A60298B5A6DCA /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3AAD41EECD86CC41948E3B67EC344F /* LayoutConstraint.swift */; };
 		91AD45B427E4480C4D958A58666D789E /* LocksmithInternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553562B57E1C4791D93221883DF396D /* LocksmithInternetAuthenticationType.swift */; };
 		96625E955DA60F3CB8405C28E59EB16C /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67168B9774048690BF236C612BA1E0D /* Localized.swift */; };
 		9680A35BB6E99530DD7D758B97E684FF /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C2056A55B933DE00DB0E9681D27983 /* UICollectionView+Dequeue.swift */; };
 		974AF13035715411770A24B50184863E /* Array+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73EF0DF6871A4D79EC407E001D92818 /* Array+Operations.swift */; };
 		986A609F6DAC2A2C144E098FB8D2FB8E /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84C367C1E0894B3C1FD480E04C15C7 /* ConversationCell.swift */; };
-		9BFC8A6A04F36A9C57D4127C6E7E1422 /* GameKit-Core-macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4950F563F25959487E5C0FF50F49DB5F /* GameKit-Core-macOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9CFB7E79F3EA6343A0DB2803AEE90DFB /* MenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC5B301D180AF6A4037CD40E280B1C /* MenuScreen.swift */; };
-		9E12776A97629AE2932C6757E5381232 /* GameKit-Core-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EAA817666B8DCEBF4081635C6EBD913 /* GameKit-Core-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C14F21DF3B3282E17935D6E43B6D574 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80EF800026818E3E78B07D11D78D825 /* Button.swift */; };
+		9DF4389FF5EBDB67356DF702AFBBF109 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C89DBED69FC99F213E199086DD9F35E /* StatusBar.swift */; };
 		9E78B45D510BFE5F51151F8F848361D0 /* UIView+FindCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9172E721BA91DC820098098EFBE58 /* UIView+FindCell.swift */; };
 		A180A2F65637FCED5C97F777977077B2 /* TextEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EC0D984B813029F7E8C1C68DB50C6 /* TextEntryCell.swift */; };
 		A1BF3C7767029ACB09446551E4872649 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CE4B5B319EE1C2AEF4B06A7513B5CB /* Foundation.framework */; };
-		A2587C3B0D5B3FE2D231C106B753EE30 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B3F7DBB4AE49CF18C05DDEA6F76D /* UIView+Autolayout.swift */; };
 		A2860BE6DFC6C3D87541774487671B04 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142B0B9BC430E85278C9093218C14D1 /* MessageCell.swift */; };
 		A2D6A45A556958FCDBAD729B95FC7B37 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099D3D51CA200EF4805D9B087C692AD /* Logging.swift */; };
 		A52A02C9932C0B8859D52A900007DCF8 /* PullMessagesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CCC998C8648D7751ED9D0C4B31B6F3 /* PullMessagesOperation.swift */; };
 		A5842693A950E6BB23608CF6A48ACE43 /* CoodlySlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BA5471823F8E3C225A9593239914C /* CoodlySlideMenuViewController.swift */; };
-		A66BA2063EC001DE68534BEAC6A08026 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6CB2E9F5290E777258E0CA2C0A3F0 /* SKNode+Extensions.swift */; };
 		A83415C4FE6B215D07831EA7F93EDC0E /* PullConversationsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB267FA89A9378B081F4963060AE0B /* PullConversationsOperation.swift */; };
+		A9C1DA58B2EBE2D01C3A7320E783C0C5 /* MenuOptionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEA4A289826037E17A91B43EECD5284 /* MenuOptionsContainer.swift */; };
 		A9E5757ABE1FCD7F11DC0C5AC277FA5A /* Purchaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1E9289B832C7C79E8B45DA70587233 /* Purchaser.swift */; };
 		AAECCF169CF859B3F5AF3D9593B901D6 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099D3D51CA200EF4805D9B087C692AD /* Logging.swift */; };
-		ABC89638C341ED00BD41FD282BDD71B3 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3DC8F0F876EAB31D9595CFBFA31B49 /* NSAttributedString+Extensions.swift */; };
-		AC572323850F8788EB9193C080564BB0 /* Shadowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F5E2D2376F0C7E451711D0E851379 /* Shadowed.swift */; };
 		AD5E4606ECA3FF14A8CA58DE42D2BE24 /* Persistence+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4C9E405B9DD0F9B95BD2CCBDD3F26 /* Persistence+Settings.swift */; };
 		ADC36B8893CD62F2525ACCAE6450822B /* ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B1F1324C207C358471F27170517909 /* ConsoleOutput.swift */; };
 		AF623183DD4600C0F9195FF3E8A97517 /* FeedbackNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F0D48174CF82D62E37BB07E5AECDA /* FeedbackNoticeViewController.swift */; };
-		B16C04D5B1FFF81C932DFC326A06CAD3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB254B1D621DAF6A9F3606F35C23A859 /* Game.swift */; };
-		B2234F864B100F633699E53FBA664E56 /* NativeShadowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742B7CE6D37362833306F9D654B8AE1 /* NativeShadowed.swift */; };
-		B3CB1FED140CEF7EE8553677B5F66988 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC0330D8E20311C906AEA3044B00EE /* Screen.swift */; };
-		B455A7510352E31F5A62C9BA9973BC92 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B2D34BCE573E8DBA9033176AFA8F67 /* SpriteKit.framework */; };
 		B49793A549C15271D717AFD84929D587 /* NSManagedObject+EnityDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49BDB28474E39912D086A7D56B226FE /* NSManagedObject+EnityDefinition.swift */; };
+		B5CB7C74B49F8DD382DAFA45863BEF47 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7228F160D4A55A9FB4A4776D48715 /* UIView+Autolayout.swift */; };
 		B66000B53A08AE2EBB6FB90486E08701 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FE9F2D7B8A808D33E45F295EA79D33 /* Logger.swift */; };
 		B875F14E78DB15D8C4D65BB69E55BA04 /* Locksmith-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A0B173B72EB5D2EEC83B1573A33C1 /* Locksmith-dummy.m */; };
 		B9B69F91F6C93D03DEC639853AD4F2DA /* LaughingAdventure-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC396CCBEC1F9B613B4A5B10D753C3 /* LaughingAdventure-dummy.m */; };
 		BB3D50B73300531E5751A85F3A17ED52 /* Pods-macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 236F26A5C80B45F50A91BD8E15F5A09E /* Pods-macOS-dummy.m */; };
-		C148315535BDED1C5EC145491E754EEC /* Themed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AED060D8BAD69EC2A2AB364F75665E0 /* Themed.swift */; };
-		C732DCAE414A5DF57FB4EBBB5A7ADD2D /* Shadowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260D091162F387AB1F7352A961AD17DE /* Shadowed.swift */; };
+		BFBEB5C9A050746564FD29FAF3279E00 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11AB4F6884A7395E08B57BC26E8D123 /* Screen.swift */; };
+		C280B6F82DF1C6B479793D996A6E4AF1 /* MenuOptionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E61BA730D16C5BCAF100E73F72E3F /* MenuOptionsContainer.swift */; };
+		C74FC8304EF0CA3F80ED0D9030169303 /* NativeShadowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C26B13E110935C739921BAC3CAAD3 /* NativeShadowed.swift */; };
 		CAA418DF1176F5AA55E12FBAB8860CED /* LocksmithInternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAADE69CB2BB186B5A8AD2454642560 /* LocksmithInternetProtocol.swift */; };
 		CB9EFE003348193461CDFA48BBD82D6C /* AdsMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8EEB0B4680F16DA927AC8BC27616A0 /* AdsMediator.swift */; };
 		CD9D4B1ECAE170881D6A5B54D3A56D3D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0EBA07B95C74A02374AF17BA957F78 /* Message.swift */; };
-		CF10DCBDD1DA2578DD9580F0756D6744 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380F8F95123707D4EE9149247D21900E /* NSAttributedString+Extensions.swift */; };
 		CF195C32B3146DD17E0C041DD41447DC /* SKProduct+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B73158935C06D079B4B9974A05322 /* SKProduct+Extensions.swift */; };
+		D0E88AE7C5076C6671109AB134ACC1CC /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40E020DAF41B5CFE9A075ECB083C1C /* View.swift */; };
 		D3560CFCC72F10DB6D84AE6B0F59BAD1 /* DynamicFontReloadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1193C3AE785771F87997D0294C041C /* DynamicFontReloadingCollectionViewCell.swift */; };
-		D5908207103DC01D092B0328BBB28818 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31A373CBB64183D8172051DE0DDB66 /* Appearance.swift */; };
-		D7649FAE78987923F48B921349D3CF1D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6EC59F61A661AC7CE20AE900ECC193 /* Cocoa.framework */; };
+		D4DAA032BD2DF8F88FF289BDAA2A126A /* Themed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA66B33766FEBB1BCA0FFCB362E7C973 /* Themed.swift */; };
 		D7B3E63819C4136663368FC59E6326B6 /* FooterLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45048623CDB301512985FDA10D16CF31 /* FooterLoadingView.swift */; };
+		D9BF9C5D815FBC4EC867391C7834E5C1 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40019EE232441016544952A9165123 /* Aliases.swift */; };
 		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 003ADFA13C61481A44FF70F49E447A84 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCAC6501A6F028F2CEC6509D819F09F9 /* MoneyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660ABB0212E07AD87DE9FC429410CB8 /* MoneyFormatter.swift */; };
+		DD8EEAC44E06A8AA3A2EC7648EF52706 /* ScrollView+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15EE44ED7B15711EEC07D0653DFD388 /* ScrollView+Functions.swift */; };
 		DE6DAD2FF80C41C6B43F1444F24CB2F3 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3A091AD623ABCB08F6D53F89BD9365 /* LogsViewController.swift */; };
 		DF791FA025E3B736A91C5AF0B5C8A12B /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9518434C03A70BA0C0CF6CA79B4C9F /* UIViewController+Helpers.swift */; };
 		E24526A1FB202B64B9FA967028D981AA /* UINib+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8AD611B291060E2719471F0F787EC /* UINib+Loading.swift */; };
 		E47DA36AC8C2A623E557FFD55C7D03FA /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B24E9DA1274A5D886DBCBB823446DE4 /* UIView+Loading.swift */; };
-		E4A0B8E2E727A56F1118440525823073 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B560133C1E83CEF81094E5FE2E0032CF /* Aliases.swift */; };
 		E5171A09A9FB281D6EE1B0710AF18545 /* DynamicFontReloadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20615D66720BF45D08859C7F1B87458B /* DynamicFontReloadingTableViewCell.swift */; };
 		E58271092A7F273DE984F11008E17273 /* SWLogger-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F1D0B906625D85C1548C20F8B2255D /* SWLogger-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E739A3481C66B1A3B8670D5C6584C2E6 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1119B5C9C82BD03A3522DA0B663C63 /* ScrollView.swift */; };
 		E7FC5E4ADCC0BDE7CC57CF96FF28DCFF /* FetchedSelectionSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F257B47A4A6E17966D77B7034025B /* FetchedSelectionSource.swift */; };
+		E8051F983BA3D15F1CBC34294475ECE9 /* Shadowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA88F77662F7B10C37ED4A3A7D3ADA9 /* Shadowed.swift */; };
+		EA212B54AE26980A661510E195C0CF9F /* View+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5E2CC17378F768E6FB33592640AD33 /* View+Touch.swift */; };
 		EA22A5060666D4A160F8CF6192971A05 /* FeedbackEmailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351C67B10EA5EDFB4EE536A83F055599 /* FeedbackEmailSender.swift */; };
+		EB2BBAD49967CEE3EC75D592CB96A911 /* View+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC3DE101DD6DCF253D503CFE9ACFAC /* View+Touch.swift */; };
+		ED83F268449173C513839F3F14BD25B3 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B04E823A00DBE859A77F5AF297AC05 /* ScrollView.swift */; };
 		EDA7F1BBABFD8BBF59F6F9CCC3D1EDE5 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3A091AD623ABCB08F6D53F89BD9365 /* LogsViewController.swift */; };
 		EDE3E4D83A9EE76F8912C9B5A8C53615 /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987F6AE16879DB59293B452A27DFEF0C /* LogOutput.swift */; };
-		F0156220DCCA48B7FEF68AFF33DEB280 /* ScrollView+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0804181EF2950E186BA41EAE1D7186C /* ScrollView+Functions.swift */; };
 		F0D31B05A6E0E08F8651A6FEBD30A994 /* InputCellsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27A5870AE5FF1B50E01933A847025D /* InputCellsViewController.swift */; };
-		F1CD77BE4740FB0A6C9E4F5F73466725 /* GameKit-Core-macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DE01CCE823D9A3AEE21CE1B66691BB /* GameKit-Core-macOS-dummy.m */; };
+		F29610F4C4559DD88B23C7BBE5EDE3C6 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80EF800026818E3E78B07D11D78D825 /* Button.swift */; };
 		F2FFE2758AB45685724571847532581E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6EC59F61A661AC7CE20AE900ECC193 /* Cocoa.framework */; };
 		F576C113F2CF11A9F380826FC66A8164 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CCA9E2A17612DDEB02A8E5E1076B73 /* Setting.swift */; };
 		F7669E30731438E46372EDDEE7ADBD17 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25574D1CF3669DC7ADD41C74BA8418 /* UITableView+Dequeue.swift */; };
 		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB74B91D6103DF3F0FD3D31358FA4AB /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		F8D16EA89CEF47C5D92A0BA3CBD8A8F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CE4B5B319EE1C2AEF4B06A7513B5CB /* Foundation.framework */; };
-		FAC1BAF14FC6DECBACC7B4E241E3582E /* ScrollViewContained.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6554991A06BA97B4BD3E9DC329AAA7AC /* ScrollViewContained.swift */; };
 		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 592691CBD0C7298B1A45C90E2516F59A /* GoogleToolboxForMac-dummy.m */; };
 		FBB4E69E7A82196DBC193906E2B51100 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FE9F2D7B8A808D33E45F295EA79D33 /* Logger.swift */; };
-		FE35BF6B5B78A755425493B969FBC08B /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3ADF703FDCBD139F82436EF8265468 /* ScrollView.swift */; };
+		FFB66450AF5940AADF0CB5B19BD329BE /* ShadowsCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA43A01034C448205592936CB02E22C1 /* ShadowsCreate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,7 +195,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A90F823CE6B404300D2B4173A87D7E37;
+			remoteGlobalIDString = FAE196E21D7AEBC435B2317487D696DD;
 			remoteInfo = "GameKit-Core-iOS";
 		};
 		394DB16A1F3036C42F6F507A0D59F9C8 /* PBXContainerItemProxy */ = {
@@ -221,7 +223,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4D02F0485F26B9EFFA52BE2AE0D0DEB6;
+			remoteGlobalIDString = A3E270942AC72F0B7D85738980446B74;
 			remoteInfo = "GameKit-Core-macOS";
 		};
 		CD9B6CABBB24EA0095C7B2083E4BED0A /* PBXContainerItemProxy */ = {
@@ -251,20 +253,18 @@
 		003ADFA13C61481A44FF70F49E447A84 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
 		021C972DFF43A00F5397D4569632E238 /* LocksmithAccessibleOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithAccessibleOption.swift; path = Source/LocksmithAccessibleOption.swift; sourceTree = "<group>"; };
 		036D52CB1D2C1347D3179FE950BD174A /* LaughingAdventure-Logging-Purchase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LaughingAdventure-Logging-Purchase-umbrella.h"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase-umbrella.h"; sourceTree = "<group>"; };
-		04D6CB2E9F5290E777258E0CA2C0A3F0 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKNode+Extensions.swift"; path = "Sources/Core/SKNode+Extensions.swift"; sourceTree = "<group>"; };
 		06FC396CCBEC1F9B613B4A5B10D753C3 /* LaughingAdventure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LaughingAdventure-dummy.m"; sourceTree = "<group>"; };
 		07AC171FAC2806A4FFF1F67ABAF87837 /* SlideMenuController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SlideMenuController.swift; path = Source/UI/SlideMenuController.swift; sourceTree = "<group>"; };
 		090AC9C698F0C18EB88959B202E6D30D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		0B3ADF703FDCBD139F82436EF8265468 /* ScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollView.swift; path = Sources/macOS/ScrollView.swift; sourceTree = "<group>"; };
 		0C966272C8F067EB718C8296BC12E081 /* RemoteRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RemoteRecord.swift; path = Source/Cloud/RemoteRecord.swift; sourceTree = "<group>"; };
-		0C9F5E2D2376F0C7E451711D0E851379 /* Shadowed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shadowed.swift; path = Sources/iOS/Shadowed.swift; sourceTree = "<group>"; };
-		0EAA817666B8DCEBF4081635C6EBD913 /* GameKit-Core-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-Core-iOS-umbrella.h"; sourceTree = "<group>"; };
 		0FEF2C89EB0FB66ED170594C8B3D9D6B /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_macOS.framework; path = "Pods-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1024496E4FBEFC6653977AD85FCB44C2 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
 		10D7B23532A6C47A0006E859AC9771F4 /* PushMessagesOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PushMessagesOperation.swift; path = Source/Feedback/PushMessagesOperation.swift; sourceTree = "<group>"; };
 		12E5AD51E7708733B5EEFDB94FAED779 /* LocksmithError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithError.swift; path = Source/LocksmithError.swift; sourceTree = "<group>"; };
 		1402157164D4C16A639E6B56A842F4F7 /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Sources/Log.swift; sourceTree = "<group>"; };
-		190E44AEC4904B71F02DB7CE1C0966E9 /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Button.swift; path = Sources/Core/Button.swift; sourceTree = "<group>"; };
+		15F25E2083BA1B3567A6352FE9FE58E4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F7228F160D4A55A9FB4A4776D48715 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Autolayout.swift"; path = "Sources/iOS/UIView+Autolayout.swift"; sourceTree = "<group>"; };
+		18F6B5826985632E27F439E243FA1365 /* GameKit-Core-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GameKit-Core-macOS-umbrella.h"; path = "../GameKit-Core-macOS/GameKit-Core-macOS-umbrella.h"; sourceTree = "<group>"; };
 		1AD41C1D63F7E1BA3F4B041D60D286A8 /* Pods-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS-dummy.m"; sourceTree = "<group>"; };
 		1D1193C3AE785771F87997D0294C041C /* DynamicFontReloadingCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicFontReloadingCollectionViewCell.swift; path = Source/UI/DynamicFontReloadingCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D52A92B6E59437BE6EC582AF0859001 /* LocksmithSecurityClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithSecurityClass.swift; path = Source/LocksmithSecurityClass.swift; sourceTree = "<group>"; };
@@ -272,43 +272,43 @@
 		1EAFC6598DD692E7AC01A67D7B35C3D1 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		1EC85BE4C33581986F32281FA4650D6F /* NSManagedObjectModel+Feedback.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectModel+Feedback.swift"; path = "Source/Feedback/NSManagedObjectModel+Feedback.swift"; sourceTree = "<group>"; };
 		1F7C413EAF9018742F0881F573BC4741 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2034523441E50E1739609E2E5A4E1DB3 /* GameKit-Core-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GameKit-Core-macOS-dummy.m"; path = "../GameKit-Core-macOS/GameKit-Core-macOS-dummy.m"; sourceTree = "<group>"; };
 		204FA2F83D86C3B49AF5DBFFE5E72905 /* SubscriptionCheck.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubscriptionCheck.swift; path = Source/Cloud/SubscriptionCheck.swift; sourceTree = "<group>"; };
 		20615D66720BF45D08859C7F1B87458B /* DynamicFontReloadingTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicFontReloadingTableViewCell.swift; path = Source/UI/DynamicFontReloadingTableViewCell.swift; sourceTree = "<group>"; };
-		20AC0330D8E20311C906AEA3044B00EE /* Screen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Screen.swift; path = Sources/Core/Screen.swift; sourceTree = "<group>"; };
+		20A363A70B18BDDAA8D3CAF9B489F92C /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Extensions.swift"; path = "Sources/iOS/NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		21112D3F9F7FA7A64043D52E4876F95B /* SWLogger-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SWLogger-OSX.xcconfig"; sourceTree = "<group>"; };
 		22C29CEDA858B32A72B31A42312FCAD7 /* Locksmith-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-umbrella.h"; sourceTree = "<group>"; };
 		236F26A5C80B45F50A91BD8E15F5A09E /* Pods-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-macOS-dummy.m"; sourceTree = "<group>"; };
 		239C64E272F024A0909B356435EFA34B /* UIView+Autolayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Autolayout.swift"; path = "Source/UI/UIView+Autolayout.swift"; sourceTree = "<group>"; };
-		260D091162F387AB1F7352A961AD17DE /* Shadowed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shadowed.swift; path = Sources/macOS/Shadowed.swift; sourceTree = "<group>"; };
+		25102D5639BF8FC751F011D67AF23D8F /* GameKit-Core-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "GameKit-Core-macOS.xcconfig"; path = "../GameKit-Core-macOS/GameKit-Core-macOS.xcconfig"; sourceTree = "<group>"; };
 		276D443587453F497E730320CF720356 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
 		27F8B44431410449A8FAE6ADE04743FD /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/SpriteKit.framework; sourceTree = DEVELOPER_DIR; };
 		2804DA1D8B0E16EE5BF27E322657A299 /* Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = Source/Utils/Helpers.swift; sourceTree = "<group>"; };
 		29B1F1324C207C358471F27170517909 /* ConsoleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleOutput.swift; path = Sources/ConsoleOutput.swift; sourceTree = "<group>"; };
 		2A1F257B47A4A6E17966D77B7034025B /* FetchedSelectionSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FetchedSelectionSource.swift; path = Source/CoreData/FetchedSelectionSource.swift; sourceTree = "<group>"; };
-		2ADCB7C86A3DAFEB269D848BA4CC44BC /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Sources/Core/LayoutConstraint.swift; sourceTree = "<group>"; };
+		2B1E6FBAFFD87BF3F32FE92934B794D4 /* Aliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Aliases.swift; path = Sources/iOS/Aliases.swift; sourceTree = "<group>"; };
 		2BAADE69CB2BB186B5A8AD2454642560 /* LocksmithInternetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetProtocol.swift; path = Source/LocksmithInternetProtocol.swift; sourceTree = "<group>"; };
 		2CB74B91D6103DF3F0FD3D31358FA4AB /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
 		2E6EC59F61A661AC7CE20AE900ECC193 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		31316727661291638242AAD0F1770A65 /* Aliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Aliases.swift; path = Sources/macOS/Aliases.swift; sourceTree = "<group>"; };
 		351C67B10EA5EDFB4EE536A83F055599 /* FeedbackEmailSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeedbackEmailSender.swift; path = Source/Feedback/FeedbackEmailSender.swift; sourceTree = "<group>"; };
-		380F8F95123707D4EE9149247D21900E /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Extensions.swift"; path = "Sources/macOS/NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		3994FBAED121398C9FF7D91063489B9F /* SingleSelectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleSelectionViewController.swift; path = Source/UI/SingleSelectionViewController.swift; sourceTree = "<group>"; };
 		39FE9A026A0239C277158FEC08499AEE /* CorePersistence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CorePersistence.swift; path = Source/CoreData/CorePersistence.swift; sourceTree = "<group>"; };
+		3A40E020DAF41B5CFE9A075ECB083C1C /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = View.swift; path = Sources/Core/View.swift; sourceTree = "<group>"; };
+		3B8B627EAAC871EC6C1B955485B93224 /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Extensions.swift"; path = "Sources/macOS/NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		3DA1D099AD50FA95F46620B87EDBD9ED /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		40C0C754ADD50C9D579DA9D6D0066C3D /* SWLogger-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SWLogger-iOS.xcconfig"; path = "../SWLogger-iOS/SWLogger-iOS.xcconfig"; sourceTree = "<group>"; };
 		425F0D6AC99EA8BF772CF771158111BE /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
-		42DE01CCE823D9A3AEE21CE1B66691BB /* GameKit-Core-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GameKit-Core-macOS-dummy.m"; path = "../GameKit-Core-macOS/GameKit-Core-macOS-dummy.m"; sourceTree = "<group>"; };
-		4336064CF956ECBE031654B61FF6C3F4 /* MenuOptionsContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MenuOptionsContainer.swift; path = Sources/iOS/MenuOptionsContainer.swift; sourceTree = "<group>"; };
 		45048623CDB301512985FDA10D16CF31 /* FooterLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FooterLoadingView.swift; path = Source/Feedback/FooterLoadingView.swift; sourceTree = "<group>"; };
 		467BD3FE24FDE09DDB13B9B70C9F0CD1 /* Pods-macOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-macOS-resources.sh"; sourceTree = "<group>"; };
-		4742B7CE6D37362833306F9D654B8AE1 /* NativeShadowed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NativeShadowed.swift; path = Sources/Core/NativeShadowed.swift; sourceTree = "<group>"; };
 		47F575B92870E2D2833835D7F50BFE99 /* ConversationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConversationViewController.swift; path = Source/Feedback/ConversationViewController.swift; sourceTree = "<group>"; };
-		4950F563F25959487E5C0FF50F49DB5F /* GameKit-Core-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GameKit-Core-macOS-umbrella.h"; path = "../GameKit-Core-macOS/GameKit-Core-macOS-umbrella.h"; sourceTree = "<group>"; };
 		4B405E8CAC275A47CBB7BC526D8048F0 /* Pods-macOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-macOS-frameworks.sh"; sourceTree = "<group>"; };
 		4D022683A88DC6A32822E4A3589E3757 /* ComposeViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComposeViewController.swift; path = Source/Feedback/ComposeViewController.swift; sourceTree = "<group>"; };
 		4D033C9C5F49B65A248ED62AC9F99805 /* FeedbackRefresh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeedbackRefresh.swift; path = Source/Feedback/FeedbackRefresh.swift; sourceTree = "<group>"; };
 		4E27A5870AE5FF1B50E01933A847025D /* InputCellsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputCellsViewController.swift; path = Source/UI/InputCellsViewController.swift; sourceTree = "<group>"; };
+		4E5E2CC17378F768E6FB33592640AD33 /* View+Touch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+Touch.swift"; path = "Sources/iOS/View+Touch.swift"; sourceTree = "<group>"; };
 		50080F952E54AAD3CF98D1FA5479B089 /* SWLogger-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWLogger-OSX-dummy.m"; sourceTree = "<group>"; };
+		52BC3DE101DD6DCF253D503CFE9ACFAC /* View+Touch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+Touch.swift"; path = "Sources/macOS/View+Touch.swift"; sourceTree = "<group>"; };
+		52E9EDD0A555A32DD38F2F1F22AF1768 /* GameKit-Core-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GameKit-Core-macOS-prefix.pch"; path = "../GameKit-Core-macOS/GameKit-Core-macOS-prefix.pch"; sourceTree = "<group>"; };
 		53304D0E58F438B0129FDEC8A756D3D9 /* Locksmith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Locksmith.h; path = Source/Locksmith.h; sourceTree = "<group>"; };
 		53F8AD611B291060E2719471F0F787EC /* UINib+Loading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINib+Loading.swift"; path = "Source/Views/UINib+Loading.swift"; sourceTree = "<group>"; };
 		54D1D2771C1909304A22F4E63A1BAAF2 /* LaughingAdventure-Logging-Purchase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "LaughingAdventure-Logging-Purchase-dummy.m"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase-dummy.m"; sourceTree = "<group>"; };
@@ -316,21 +316,18 @@
 		5876197ED09A2765A8DC24F5F71DE5F3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		592691CBD0C7298B1A45C90E2516F59A /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
 		5A9518434C03A70BA0C0CF6CA79B4C9F /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Helpers.swift"; path = "Source/UI/UIViewController+Helpers.swift"; sourceTree = "<group>"; };
-		5AED060D8BAD69EC2A2AB364F75665E0 /* Themed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Themed.swift; path = Sources/Core/Themed.swift; sourceTree = "<group>"; };
-		5AFC5B301D180AF6A4037CD40E280B1C /* MenuScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MenuScreen.swift; path = Sources/Core/MenuScreen.swift; sourceTree = "<group>"; };
 		5B11473A3D46F31525CD6E88EBE8A3DB /* FeedbackViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeedbackViewController.swift; path = Source/Feedback/FeedbackViewController.swift; sourceTree = "<group>"; };
 		5BF056D6736D2AA60186F290A8ABED58 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SWLogger.framework; path = "SWLogger-OSX.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C40019EE232441016544952A9165123 /* Aliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Aliases.swift; path = Sources/macOS/Aliases.swift; sourceTree = "<group>"; };
 		5E0BEBB7A6EF36E2C8B4FA4478D342A6 /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		5E88728C1C38E9249FBC2F3357FD7DE5 /* FullScreenTableCreate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FullScreenTableCreate.swift; path = Source/UI/FullScreenTableCreate.swift; sourceTree = "<group>"; };
-		5F784BAD3FDAAC6AAFC3E14A5C0D264C /* ShadowsCreate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShadowsCreate.swift; path = Sources/macOS/ShadowsCreate.swift; sourceTree = "<group>"; };
 		5FC9172E721BA91DC820098098EFBE58 /* UIView+FindCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+FindCell.swift"; path = "Source/Views/UIView+FindCell.swift"; sourceTree = "<group>"; };
-		6141A4EB219526E655CB34D6AA5AFCFE /* GameKit-Core-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "GameKit-Core-iOS.xcconfig"; sourceTree = "<group>"; };
 		618A7D8014C601FAB656E15F3AACF308 /* MultiSelectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiSelectionViewController.swift; path = Source/UI/MultiSelectionViewController.swift; sourceTree = "<group>"; };
 		61CCA9E2A17612DDEB02A8E5E1076B73 /* Setting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = Source/Feedback/Setting.swift; sourceTree = "<group>"; };
+		6212ABA3F4339E06D293CFE25DC49216 /* GameKit-Core-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "GameKit-Core-iOS.modulemap"; sourceTree = "<group>"; };
 		624BA5471823F8E3C225A9593239914C /* CoodlySlideMenuViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoodlySlideMenuViewController.swift; path = Source/UI/CoodlySlideMenuViewController.swift; sourceTree = "<group>"; };
 		638997001E55D6E272F76F88B7DD442F /* Pods-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-macOS-umbrella.h"; sourceTree = "<group>"; };
 		63C29119C8F2059C310CDCDEBCDBE101 /* FeedbackMessageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeedbackMessageView.swift; path = Source/Feedback/FeedbackMessageView.swift; sourceTree = "<group>"; };
-		6554991A06BA97B4BD3E9DC329AAA7AC /* ScrollViewContained.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollViewContained.swift; path = Sources/Core/ScrollViewContained.swift; sourceTree = "<group>"; };
 		65FEAC1DA6016939E0D5DAB7BD88A7E6 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6647E5568E85E3DDF77BAF12946B65E3 /* CloudRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudRequest.swift; path = Source/Cloud/CloudRequest.swift; sourceTree = "<group>"; };
 		66CE4B5B319EE1C2AEF4B06A7513B5CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -343,42 +340,45 @@
 		6E8A454CA52499F8B299DE0669BB1A6B /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
 		7083EFE50E5BC3F7198BE31866936D6E /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+Extensions.swift"; path = "Source/CoreData/NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		7398A52F554E3D2F577BB489E6995074 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		73EF6E06CE8276DAC594F2C9709485B1 /* ScrollViewContained.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollViewContained.swift; path = Sources/Core/ScrollViewContained.swift; sourceTree = "<group>"; };
 		742C138A48616CDE0CCE7C46C2F75218 /* Locksmith-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-prefix.pch"; sourceTree = "<group>"; };
 		7579BA1614ACED12977A0504D81E05F3 /* CloudKitRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKitRequest.swift; path = Source/Cloud/CloudKitRequest.swift; sourceTree = "<group>"; };
-		763ADF3CB6714BB2287BBDB675674F16 /* MenuOptionsContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MenuOptionsContainer.swift; path = Sources/macOS/MenuOptionsContainer.swift; sourceTree = "<group>"; };
-		764B66297558EB9C5A32A99713119C32 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76BCAA25038740B9026F7E69FDE2CAFD /* Storefront.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Storefront.swift; path = Source/Purchase/Storefront.swift; sourceTree = "<group>"; };
 		76FE9F2D7B8A808D33E45F295EA79D33 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Sources/Logger.swift; sourceTree = "<group>"; };
-		7878B3F7DBB4AE49CF18C05DDEA6F76D /* UIView+Autolayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Autolayout.swift"; path = "Sources/iOS/UIView+Autolayout.swift"; sourceTree = "<group>"; };
+		77691828FA183823C5D2BCD15A904E80 /* MenuScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MenuScreen.swift; path = Sources/Core/MenuScreen.swift; sourceTree = "<group>"; };
 		797DDA63B46CD7D551B3F8A6E8CFE87F /* NoCaretTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoCaretTextField.swift; path = Source/Views/NoCaretTextField.swift; sourceTree = "<group>"; };
 		7B24E9DA1274A5D886DBCBB823446DE4 /* UIView+Loading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Loading.swift"; path = "Source/Views/UIView+Loading.swift"; sourceTree = "<group>"; };
-		7C807EA2E11B848D3897491043301513 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../GameKit-Core-macOS/Info.plist"; sourceTree = "<group>"; };
+		7C2F8CC7D72C23714F7B9A133CEE5F4C /* ShadowsCreate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShadowsCreate.swift; path = Sources/iOS/ShadowsCreate.swift; sourceTree = "<group>"; };
 		7D3A0B173B72EB5D2EEC83B1573A33C1 /* Locksmith-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Locksmith-dummy.m"; sourceTree = "<group>"; };
 		7E46B91811F3186940781075D4A97BD2 /* NSNotificationCenter+NotificationEnum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSNotificationCenter+NotificationEnum.swift"; path = "Source/Notifications/NSNotificationCenter+NotificationEnum.swift"; sourceTree = "<group>"; };
 		800B73158935C06D079B4B9974A05322 /* SKProduct+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKProduct+Extensions.swift"; path = "Source/Purchase/SKProduct+Extensions.swift"; sourceTree = "<group>"; };
 		80AD03ADA8341BED82688F851CB27AE7 /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		836B674C7134ABEFCC9D40B8D8244F8F /* Pods-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		839E23C72396CE8DD40A0CE0CD0AAFBA /* FileOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileOutput.swift; path = Sources/FileOutput.swift; sourceTree = "<group>"; };
+		83A33307E008714B31829B3EF5A08079 /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Sources/Core/Game.swift; sourceTree = "<group>"; };
 		8466DC7C34A9EE82684584ECB523BB71 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
 		84BB267FA89A9378B081F4963060AE0B /* PullConversationsOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PullConversationsOperation.swift; path = Source/Feedback/PullConversationsOperation.swift; sourceTree = "<group>"; };
+		863E61BA730D16C5BCAF100E73F72E3F /* MenuOptionsContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MenuOptionsContainer.swift; path = Sources/iOS/MenuOptionsContainer.swift; sourceTree = "<group>"; };
 		86A44DD43655D23B9BD945BC8145B12C /* FetchedTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FetchedTableViewController.swift; path = Source/UI/FetchedTableViewController.swift; sourceTree = "<group>"; };
 		8DE5D8F8F0CE23FB22EC5DFC91EE6ECE /* GameKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GameKit.framework; path = "GameKit-Core-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8EEB0B4680F16DA927AC8BC27616A0 /* AdsMediator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdsMediator.swift; path = Source/Ads/AdsMediator.swift; sourceTree = "<group>"; };
 		90CCC998C8648D7751ED9D0C4B31B6F3 /* PullMessagesOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PullMessagesOperation.swift; path = Source/Feedback/PullMessagesOperation.swift; sourceTree = "<group>"; };
-		917EACE96C5502C87CD886E26C902E10 /* StatusBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StatusBar.swift; path = Sources/iOS/StatusBar.swift; sourceTree = "<group>"; };
 		924608F244C351F8CB58A1BE6381859F /* GameKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GameKit.framework; path = "GameKit-Core-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92750D9F2A4E21680E95E9A0E12EC0AC /* SelectionSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectionSource.swift; path = Source/UI/SelectionSource.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93DFBF0D1C5C6CD7D035DC9325D85F49 /* AdPresentingContainerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdPresentingContainerViewController.swift; path = Source/Ads/AdPresentingContainerViewController.swift; sourceTree = "<group>"; };
-		9602C4944FC2444BB7C20984D9AE6DF6 /* GameKit-Core-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GameKit-Core-macOS-prefix.pch"; path = "../GameKit-Core-macOS/GameKit-Core-macOS-prefix.pch"; sourceTree = "<group>"; };
+		96BA865C3C43008CAE4BD775A509685E /* Shadowed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shadowed.swift; path = Sources/iOS/Shadowed.swift; sourceTree = "<group>"; };
 		97C377982EF6D00033B5DA67AA135787 /* ProductsHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductsHandler.swift; path = Source/Purchase/ProductsHandler.swift; sourceTree = "<group>"; };
 		987F6AE16879DB59293B452A27DFEF0C /* LogOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogOutput.swift; path = Sources/LogOutput.swift; sourceTree = "<group>"; };
-		992F03AA60D6B1683BEDAF6D56DD0AC4 /* GameKit-Core-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GameKit-Core-iOS-dummy.m"; sourceTree = "<group>"; };
+		98C6DBB8FA9655AE9ADC4DB8AFAE85E7 /* GameKit-Core-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "GameKit-Core-macOS.modulemap"; path = "../GameKit-Core-macOS/GameKit-Core-macOS.modulemap"; sourceTree = "<group>"; };
 		999EA0FCF83804EF9B2709BE3850E61A /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS.framework; path = "Pods-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99BF4F3CD4E763C1DDAFDCC232978E3F /* FetchedCollectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FetchedCollectionViewController.swift; path = Source/UI/FetchedCollectionViewController.swift; sourceTree = "<group>"; };
+		9C89DBED69FC99F213E199086DD9F35E /* StatusBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StatusBar.swift; path = Sources/macOS/StatusBar.swift; sourceTree = "<group>"; };
 		9CE047D0BC93251D6DA767AB9769BECD /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SWLogger.framework; path = "SWLogger-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC8EA2F929B812A29271D2D2D884AF3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0F1D0B906625D85C1548C20F8B2255D /* SWLogger-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SWLogger-iOS-umbrella.h"; path = "../SWLogger-iOS/SWLogger-iOS-umbrella.h"; sourceTree = "<group>"; };
+		A11AB4F6884A7395E08B57BC26E8D123 /* Screen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Screen.swift; path = Sources/Core/Screen.swift; sourceTree = "<group>"; };
+		A17C26B13E110935C739921BAC3CAAD3 /* NativeShadowed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NativeShadowed.swift; path = Sources/Core/NativeShadowed.swift; sourceTree = "<group>"; };
 		A2DB2DD8EA533D4A7B560026350F4234 /* Persistence+Messages.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Persistence+Messages.swift"; path = "Source/Feedback/Persistence+Messages.swift"; sourceTree = "<group>"; };
 		A2EF72B3A3CB2BEDCF96E12E3DDFD158 /* InputValidation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputValidation.swift; path = Source/UI/InputValidation.swift; sourceTree = "<group>"; };
 		A31F0D48174CF82D62E37BB07E5AECDA /* FeedbackNoticeViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeedbackNoticeViewController.swift; path = Source/Feedback/FeedbackNoticeViewController.swift; sourceTree = "<group>"; };
@@ -387,9 +387,12 @@
 		A861070EC453710F089D3611717148CE /* Persistence+Conversations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Persistence+Conversations.swift"; path = "Source/Feedback/Persistence+Conversations.swift"; sourceTree = "<group>"; };
 		A93F562724ED3A2FAAA25C2AFB153F31 /* StaticCollectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StaticCollectionViewController.swift; path = Source/UI/StaticCollectionViewController.swift; sourceTree = "<group>"; };
 		A950F4ED52C284773947243AC3D5391E /* Pods-macOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-macOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		A99EED5880720F04D8E2C82999318F35 /* GameKit-Core-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GameKit-Core-iOS-dummy.m"; sourceTree = "<group>"; };
+		AA66B33766FEBB1BCA0FFCB362E7C973 /* Themed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Themed.swift; path = Sources/Core/Themed.swift; sourceTree = "<group>"; };
 		AA803A531DDFE15AFDEB50D343927E6C /* Dictionary_Initializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dictionary_Initializers.swift; path = Source/Dictionary_Initializers.swift; sourceTree = "<group>"; };
 		ADD0E95FC621E2F2DB9BA71425983EF4 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
 		AE1EC0D984B813029F7E8C1C68DB50C6 /* TextEntryCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextEntryCell.swift; path = Source/UI/TextEntryCell.swift; sourceTree = "<group>"; };
+		AFEA4A289826037E17A91B43EECD5284 /* MenuOptionsContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MenuOptionsContainer.swift; path = Sources/macOS/MenuOptionsContainer.swift; sourceTree = "<group>"; };
 		B00EAF333D8BF07EE847ADC1B0E2BC6B /* SWLogger-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SWLogger-iOS-dummy.m"; path = "../SWLogger-iOS/SWLogger-iOS-dummy.m"; sourceTree = "<group>"; };
 		B210662092B3A81DF0E3D75CFC8A127D /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		B272A4015D55974F652B6F8F77E33B01 /* Feedback.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Feedback.swift; path = Source/Feedback/Feedback.swift; sourceTree = "<group>"; };
@@ -398,58 +401,56 @@
 		B456AAD6CDC7E7E03F659D5D69DC1ADA /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
 		B49BDB28474E39912D086A7D56B226FE /* NSManagedObject+EnityDefinition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSManagedObject+EnityDefinition.swift"; path = "Source/CoreData/NSManagedObject+EnityDefinition.swift"; sourceTree = "<group>"; };
 		B553562B57E1C4791D93221883DF396D /* LocksmithInternetAuthenticationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetAuthenticationType.swift; path = Source/LocksmithInternetAuthenticationType.swift; sourceTree = "<group>"; };
-		B560133C1E83CEF81094E5FE2E0032CF /* Aliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Aliases.swift; path = Sources/iOS/Aliases.swift; sourceTree = "<group>"; };
 		B5CDBADB6F04E4A4457080BD1F1241E7 /* PushConversationsOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PushConversationsOperation.swift; path = Source/Feedback/PushConversationsOperation.swift; sourceTree = "<group>"; };
 		BA25574D1CF3669DC7ADD41C74BA8418 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+Dequeue.swift"; path = "Source/Views/UITableView+Dequeue.swift"; sourceTree = "<group>"; };
-		BAF2A25DA773B9416BAE72D55098C501 /* GameKit-Core-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "GameKit-Core-macOS.modulemap"; path = "../GameKit-Core-macOS/GameKit-Core-macOS.modulemap"; sourceTree = "<group>"; };
-		BB254B1D621DAF6A9F3606F35C23A859 /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Sources/Core/Game.swift; sourceTree = "<group>"; };
-		BB31A373CBB64183D8172051DE0DDB66 /* Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Appearance.swift; path = Sources/Core/Appearance.swift; sourceTree = "<group>"; };
 		BC3A091AD623ABCB08F6D53F89BD9365 /* LogsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogsViewController.swift; path = Sources/LogsViewController.swift; sourceTree = "<group>"; };
+		BCA88F77662F7B10C37ED4A3A7D3ADA9 /* Shadowed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shadowed.swift; path = Sources/macOS/Shadowed.swift; sourceTree = "<group>"; };
 		BE0EBA07B95C74A02374AF17BA957F78 /* Message.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Source/Feedback/Message.swift; sourceTree = "<group>"; };
-		C0804181EF2950E186BA41EAE1D7186C /* ScrollView+Functions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ScrollView+Functions.swift"; path = "Sources/Core/ScrollView+Functions.swift"; sourceTree = "<group>"; };
 		C099D3D51CA200EF4805D9B087C692AD /* Logging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = Source/Log/Logging.swift; sourceTree = "<group>"; };
 		C13AEAE2B8B2492B7B564F7175A233B2 /* CloudConversation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudConversation.swift; path = Source/Feedback/CloudConversation.swift; sourceTree = "<group>"; };
+		C15EE44ED7B15711EEC07D0653DFD388 /* ScrollView+Functions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ScrollView+Functions.swift"; path = "Sources/Core/ScrollView+Functions.swift"; sourceTree = "<group>"; };
+		C2B04E823A00DBE859A77F5AF297AC05 /* ScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollView.swift; path = Sources/macOS/ScrollView.swift; sourceTree = "<group>"; };
 		C2F4276EC91D60D53C669B3F9B4B6832 /* Pods-macOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-macOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C530A03D70C13B86F3403A54EFEC8423 /* GameKit-Core-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "GameKit-Core-macOS.xcconfig"; path = "../GameKit-Core-macOS/GameKit-Core-macOS.xcconfig"; sourceTree = "<group>"; };
 		C5879250F413472E9A910A490D11B67E /* SWLogger-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-OSX-umbrella.h"; sourceTree = "<group>"; };
 		C5973AFFCC93C347EC4206EA90EE0FC7 /* ConcurrentOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConcurrentOperation.swift; path = Source/Utils/ConcurrentOperation.swift; sourceTree = "<group>"; };
 		C61CE6709C5AB9D0B893B3691007D561 /* UIView+Shake.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Shake.swift"; path = "Source/Views/UIView+Shake.swift"; sourceTree = "<group>"; };
 		C64863376F887C5F0834923A51C87CA5 /* LaughingAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LaughingAdventure.framework; path = "LaughingAdventure-Logging-Purchase.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67168B9774048690BF236C612BA1E0D /* Localized.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Localized.swift; path = Source/Localizable/Localized.swift; sourceTree = "<group>"; };
 		C9372CE6B4279C2034CFA4CCE97C2BDC /* FeedbackInjector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeedbackInjector.swift; path = Source/Feedback/FeedbackInjector.swift; sourceTree = "<group>"; };
-		C9D946A8B111FAB99A97F82FF7DADA79 /* StatusBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StatusBar.swift; path = Sources/macOS/StatusBar.swift; sourceTree = "<group>"; };
-		CB2C28B2A6FB2653D2AEE16E578C5431 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = View.swift; path = Sources/Core/View.swift; sourceTree = "<group>"; };
 		CBC4BC1C994A07886C48AC466E227403 /* Pods-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS-umbrella.h"; sourceTree = "<group>"; };
 		CCECE182C0C798F1367E732BFF7ACA11 /* Locksmith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locksmith.swift; path = Source/Locksmith.swift; sourceTree = "<group>"; };
 		CD601AD93334BE2C8EEF492DF3D79543 /* Conversation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Conversation.swift; path = Source/Feedback/Conversation.swift; sourceTree = "<group>"; };
 		CE6ABD69C8226A46E28D47ABBF554BF5 /* LaughingAdventure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-umbrella.h"; sourceTree = "<group>"; };
+		CF4054387635E7B7783D4347C604060C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../GameKit-Core-macOS/Info.plist"; sourceTree = "<group>"; };
 		D0299CDC70257BC25BA765A64467BD23 /* LaughingAdventure.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LaughingAdventure.xcconfig; sourceTree = "<group>"; };
-		D0E3C5BEF9BA4C8EBF896DB18D16F24D /* ShadowsCreate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShadowsCreate.swift; path = Sources/iOS/ShadowsCreate.swift; sourceTree = "<group>"; };
 		D1199E25A9CB0DEAA98848659CEF7ABA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../SWLogger-iOS/Info.plist"; sourceTree = "<group>"; };
 		D16183E70D5460295B4D7002183BE925 /* LaughingAdventure-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-prefix.pch"; sourceTree = "<group>"; };
+		D1BC4A80003CFAFC6C374B30FFBB9175 /* GameKit-Core-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-Core-iOS-umbrella.h"; sourceTree = "<group>"; };
 		D37FF45F26AC2B70D1D781D73932CC5F /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		D408B54A5D4CA2FB597E618740534226 /* UIRefreshControl+Manual.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIRefreshControl+Manual.swift"; path = "Source/Views/UIRefreshControl+Manual.swift"; sourceTree = "<group>"; };
 		D518446290892D4CFABE246B959B126B /* FetchedCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FetchedCollectionView.swift; path = Source/UI/FetchedCollectionView.swift; sourceTree = "<group>"; };
 		D563607A877C2CF979149C057CD551ED /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Source/Utils/String+Extensions.swift"; sourceTree = "<group>"; };
 		D6E4590AAB9D51F96E441CBE63C04414 /* LaughingAdventure-Logging-Purchase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "LaughingAdventure-Logging-Purchase.modulemap"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase.modulemap"; sourceTree = "<group>"; };
 		D73EF0DF6871A4D79EC407E001D92818 /* Array+Operations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Operations.swift"; path = "Source/Utils/Array+Operations.swift"; sourceTree = "<group>"; };
+		D80EF800026818E3E78B07D11D78D825 /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Button.swift; path = Sources/Core/Button.swift; sourceTree = "<group>"; };
 		D9E9917BC31AB573C274BAA0A86A37C9 /* Locksmith.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Locksmith.xcconfig; sourceTree = "<group>"; };
-		DB331E01E5DBB59FB854A8331CF98DDF /* NSView+Autolayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSView+Autolayout.swift"; path = "Sources/macOS/NSView+Autolayout.swift"; sourceTree = "<group>"; };
+		DA43A01034C448205592936CB02E22C1 /* ShadowsCreate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShadowsCreate.swift; path = Sources/macOS/ShadowsCreate.swift; sourceTree = "<group>"; };
 		DD1CF2006209985323E59DA71F07038E /* Pods-iOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS-frameworks.sh"; sourceTree = "<group>"; };
 		DD1E9289B832C7C79E8B45DA70587233 /* Purchaser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Purchaser.swift; path = Source/Purchase/Purchaser.swift; sourceTree = "<group>"; };
-		DF1119B5C9C82BD03A3522DA0B663C63 /* ScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollView.swift; path = Sources/iOS/ScrollView.swift; sourceTree = "<group>"; };
 		E041445905418D8AE210B3D397E1E960 /* Locksmith.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Locksmith.framework; path = Locksmith.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14A11C4A65D74B5F74B02F54E108033 /* Pods-iOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS-resources.sh"; sourceTree = "<group>"; };
+		E29C58B56EADACE693CCFB5E7626A3FC /* NSView+Autolayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSView+Autolayout.swift"; path = "Sources/macOS/NSView+Autolayout.swift"; sourceTree = "<group>"; };
 		E2E696BB0ED5B7A47A04EF0AB153C198 /* Pods-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-macOS.modulemap"; sourceTree = "<group>"; };
 		E2FEA9DA98676E407B993FBF8A5934CE /* LaughingAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LaughingAdventure.framework; path = LaughingAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E39E3044F3543D8774DF1C2DE8716096 /* GameKit-Core-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-Core-iOS-prefix.pch"; sourceTree = "<group>"; };
+		E3E33D1EA8D065273EFD5D8C10F9BA49 /* Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Appearance.swift; path = Sources/Core/Appearance.swift; sourceTree = "<group>"; };
+		E4962032818CCCD79D58E0638D9EC4E3 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKNode+Extensions.swift"; path = "Sources/Core/SKNode+Extensions.swift"; sourceTree = "<group>"; };
 		E583808DCDA7FD8495422BBA033CE2CA /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
 		E660ABB0212E07AD87DE9FC429410CB8 /* MoneyFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MoneyFormatter.swift; path = Source/Utils/MoneyFormatter.swift; sourceTree = "<group>"; };
 		E6C2056A55B933DE00DB0E9681D27983 /* UICollectionView+Dequeue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Dequeue.swift"; path = "Source/Views/UICollectionView+Dequeue.swift"; sourceTree = "<group>"; };
 		E762814DE7B5104516C21806028C0A73 /* Locksmith.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Locksmith.modulemap; sourceTree = "<group>"; };
 		E809876F499B86FBD73E05FB919A69BE /* Pods-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-iOS.modulemap"; sourceTree = "<group>"; };
 		E93F2FB34B5486EAC72F3F014277C63F /* SWLogger-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-OSX-prefix.pch"; sourceTree = "<group>"; };
-		EB3DC8F0F876EAB31D9595CFBFA31B49 /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Extensions.swift"; path = "Sources/iOS/NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
+		E99899B6E5838BECF5A30D279DA5F622 /* StatusBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StatusBar.swift; path = Sources/iOS/StatusBar.swift; sourceTree = "<group>"; };
 		EBD45962D82729D8CE8F4BE0812158A3 /* SWLogger-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "SWLogger-OSX.modulemap"; sourceTree = "<group>"; };
 		EC7F723862BC6783AD4EA9F12456C6D7 /* LaughingAdventure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LaughingAdventure.modulemap; sourceTree = "<group>"; };
 		EE930324A7E58933C17EECC4B84140B4 /* SWLogger-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SWLogger-iOS-prefix.pch"; path = "../SWLogger-iOS/SWLogger-iOS-prefix.pch"; sourceTree = "<group>"; };
@@ -457,8 +458,11 @@
 		F142B0B9BC430E85278C9093218C14D1 /* MessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageCell.swift; path = Source/Feedback/MessageCell.swift; sourceTree = "<group>"; };
 		F491DC4C3C8B4E998EAB5594E6B974C3 /* CloudMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudMessage.swift; path = Source/Feedback/CloudMessage.swift; sourceTree = "<group>"; };
 		F5558C6F6B528E55FB2BA90423706C6C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7248C8D1CB41DF5A0F0067F6804C3E1 /* ScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollView.swift; path = Sources/iOS/ScrollView.swift; sourceTree = "<group>"; };
 		F81BA25CB363B2AA2AEA1AE56D0753CA /* MessagesPush.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessagesPush.swift; path = Source/Feedback/MessagesPush.swift; sourceTree = "<group>"; };
-		FAECB74FE9E8D472D0B1920DFD48B61F /* GameKit-Core-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "GameKit-Core-iOS.modulemap"; sourceTree = "<group>"; };
+		F8F12FF0AB634FC97C3FD8C1174F592C /* GameKit-Core-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "GameKit-Core-iOS.xcconfig"; sourceTree = "<group>"; };
+		FB3AAD41EECD86CC41948E3B67EC344F /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Sources/Core/LayoutConstraint.swift; sourceTree = "<group>"; };
+		FCCF1280E3FF241AE93BF8735D6419B2 /* GameKit-Core-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GameKit-Core-iOS-prefix.pch"; sourceTree = "<group>"; };
 		FD2F1A3DB599DA9BD7601896FD1B19EB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDD0F7C8EB3E97C3189E10DCF83E2E69 /* LaughingAdventure-Logging-Purchase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LaughingAdventure-Logging-Purchase-prefix.pch"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase-prefix.pch"; sourceTree = "<group>"; };
 		FE8A7FCD776526E2D25A8DA8C751EDF9 /* LaughingAdventure-Logging-Purchase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "LaughingAdventure-Logging-Purchase.xcconfig"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase.xcconfig"; sourceTree = "<group>"; };
@@ -490,21 +494,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9268CC30F810332A16E4ECFE43128C13 /* Frameworks */ = {
+		C6DC7A0E69841FCD09CCCFE0125034F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7649FAE78987923F48B921349D3CF1D /* Cocoa.framework in Frameworks */,
-				180DF672985D311ABD071385701B4F34 /* SpriteKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B660A716CD244E6118620A3DFFB8ED10 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				042D1C0FA99A18CCC8EB60FD3476481F /* Foundation.framework in Frameworks */,
-				B455A7510352E31F5A62C9BA9973BC92 /* SpriteKit.framework in Frameworks */,
+				79156DAEED8CD620F63F8E82BB14EDD9 /* Cocoa.framework in Frameworks */,
+				4C9F7894F522C95D823B761D169F8BD2 /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +526,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6443B20FCA2B60608F90D8AFB85D6DFD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB6DC0428AFF78861B84F2C3645E245 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CCA610E0F864992030B99D45C5E9E85 /* Foundation.framework in Frameworks */,
+				41E9952DE4EBE0DC5327C6960F6AD5E2 /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,7 +599,7 @@
 				241B782BAC66ABA17C3D5EF0E21DC161 /* FirebaseAnalytics */,
 				BA9FF247CB9E04520C56759953618D06 /* FirebaseCore */,
 				CE5F89093C74F2D1EDE73B86C900CE17 /* FirebaseInstanceID */,
-				3952764495ABFA71C1B33208E0051417 /* GameKit */,
+				791991E950C16951C572314D03629465 /* GameKit */,
 				F13ADB097BA9FC8B26290B57227D87DF /* Google-Mobile-Ads-SDK */,
 				0B5BB4237051E29448095EE10C24FDA4 /* GoogleInterchangeUtilities */,
 				0E6A3076BF9441360114C1EC8241D80D /* GoogleSymbolUtilities */,
@@ -614,25 +618,6 @@
 			);
 			name = FirebaseAnalytics;
 			path = FirebaseAnalytics;
-			sourceTree = "<group>";
-		};
-		29ACE3DB809E45C3E92DB27FF26AB4C3 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				BB31A373CBB64183D8172051DE0DDB66 /* Appearance.swift */,
-				190E44AEC4904B71F02DB7CE1C0966E9 /* Button.swift */,
-				BB254B1D621DAF6A9F3606F35C23A859 /* Game.swift */,
-				2ADCB7C86A3DAFEB269D848BA4CC44BC /* LayoutConstraint.swift */,
-				5AFC5B301D180AF6A4037CD40E280B1C /* MenuScreen.swift */,
-				4742B7CE6D37362833306F9D654B8AE1 /* NativeShadowed.swift */,
-				20AC0330D8E20311C906AEA3044B00EE /* Screen.swift */,
-				C0804181EF2950E186BA41EAE1D7186C /* ScrollView+Functions.swift */,
-				6554991A06BA97B4BD3E9DC329AAA7AC /* ScrollViewContained.swift */,
-				04D6CB2E9F5290E777258E0CA2C0A3F0 /* SKNode+Extensions.swift */,
-				5AED060D8BAD69EC2A2AB364F75665E0 /* Themed.swift */,
-				CB2C28B2A6FB2653D2AEE16E578C5431 /* View.swift */,
-			);
-			name = Core;
 			sourceTree = "<group>";
 		};
 		32DB1692F01076A772724BCD8D2C690E /* Support Files */ = {
@@ -655,16 +640,23 @@
 			path = "../Target Support Files/LaughingAdventure";
 			sourceTree = "<group>";
 		};
-		3952764495ABFA71C1B33208E0051417 /* GameKit */ = {
+		3EF576E700CF60261B3529D25761A750 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				29ACE3DB809E45C3E92DB27FF26AB4C3 /* Core */,
-				B8190B3F7E6C80BEC480A93E63263F10 /* iOS */,
-				CAED52A725143AB56347698C8CE40A6D /* macOS */,
-				BC600313A933326A6F9755A8E9BA5BD9 /* Support Files */,
+				E3E33D1EA8D065273EFD5D8C10F9BA49 /* Appearance.swift */,
+				D80EF800026818E3E78B07D11D78D825 /* Button.swift */,
+				83A33307E008714B31829B3EF5A08079 /* Game.swift */,
+				FB3AAD41EECD86CC41948E3B67EC344F /* LayoutConstraint.swift */,
+				77691828FA183823C5D2BCD15A904E80 /* MenuScreen.swift */,
+				A17C26B13E110935C739921BAC3CAAD3 /* NativeShadowed.swift */,
+				A11AB4F6884A7395E08B57BC26E8D123 /* Screen.swift */,
+				C15EE44ED7B15711EEC07D0653DFD388 /* ScrollView+Functions.swift */,
+				73EF6E06CE8276DAC594F2C9709485B1 /* ScrollViewContained.swift */,
+				E4962032818CCCD79D58E0638D9EC4E3 /* SKNode+Extensions.swift */,
+				AA66B33766FEBB1BCA0FFCB362E7C973 /* Themed.swift */,
+				3A40E020DAF41B5CFE9A075ECB083C1C /* View.swift */,
 			);
-			name = GameKit;
-			path = GameKit;
+			name = Core;
 			sourceTree = "<group>";
 		};
 		4287F9E92A94989F7EE2DE7942AEF835 /* GoogleToolboxForMac */ = {
@@ -753,6 +745,18 @@
 				B3B2D34BCE573E8DBA9033176AFA8F67 /* SpriteKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		791991E950C16951C572314D03629465 /* GameKit */ = {
+			isa = PBXGroup;
+			children = (
+				3EF576E700CF60261B3529D25761A750 /* Core */,
+				D624710B2EA5A4688526C359A6101A6B /* iOS */,
+				B48FC4D904B01AD15D36BD5E409A419A /* macOS */,
+				C55C801EBE0E8E4BFA6FA7BEF25F98A4 /* Support Files */,
+			);
+			name = GameKit;
+			path = GameKit;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -853,6 +857,22 @@
 			name = Logging;
 			sourceTree = "<group>";
 		};
+		B48FC4D904B01AD15D36BD5E409A419A /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				5C40019EE232441016544952A9165123 /* Aliases.swift */,
+				AFEA4A289826037E17A91B43EECD5284 /* MenuOptionsContainer.swift */,
+				3B8B627EAAC871EC6C1B955485B93224 /* NSAttributedString+Extensions.swift */,
+				E29C58B56EADACE693CCFB5E7626A3FC /* NSView+Autolayout.swift */,
+				C2B04E823A00DBE859A77F5AF297AC05 /* ScrollView.swift */,
+				BCA88F77662F7B10C37ED4A3A7D3ADA9 /* Shadowed.swift */,
+				DA43A01034C448205592936CB02E22C1 /* ShadowsCreate.swift */,
+				9C89DBED69FC99F213E199086DD9F35E /* StatusBar.swift */,
+				52BC3DE101DD6DCF253D503CFE9ACFAC /* View+Touch.swift */,
+			);
+			name = macOS;
+			sourceTree = "<group>";
+		};
 		B60A6567897FA0B38149095F4C6ADE35 /* Pods-iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -888,21 +908,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B8190B3F7E6C80BEC480A93E63263F10 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				B560133C1E83CEF81094E5FE2E0032CF /* Aliases.swift */,
-				4336064CF956ECBE031654B61FF6C3F4 /* MenuOptionsContainer.swift */,
-				EB3DC8F0F876EAB31D9595CFBFA31B49 /* NSAttributedString+Extensions.swift */,
-				DF1119B5C9C82BD03A3522DA0B663C63 /* ScrollView.swift */,
-				0C9F5E2D2376F0C7E451711D0E851379 /* Shadowed.swift */,
-				D0E3C5BEF9BA4C8EBF896DB18D16F24D /* ShadowsCreate.swift */,
-				917EACE96C5502C87CD886E26C902E10 /* StatusBar.swift */,
-				7878B3F7DBB4AE49CF18C05DDEA6F76D /* UIView+Autolayout.swift */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 		BA9FF247CB9E04520C56759953618D06 /* FirebaseCore */ = {
 			isa = PBXGroup;
 			children = (
@@ -912,31 +917,31 @@
 			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
-		BC600313A933326A6F9755A8E9BA5BD9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				FAECB74FE9E8D472D0B1920DFD48B61F /* GameKit-Core-iOS.modulemap */,
-				6141A4EB219526E655CB34D6AA5AFCFE /* GameKit-Core-iOS.xcconfig */,
-				992F03AA60D6B1683BEDAF6D56DD0AC4 /* GameKit-Core-iOS-dummy.m */,
-				E39E3044F3543D8774DF1C2DE8716096 /* GameKit-Core-iOS-prefix.pch */,
-				0EAA817666B8DCEBF4081635C6EBD913 /* GameKit-Core-iOS-umbrella.h */,
-				BAF2A25DA773B9416BAE72D55098C501 /* GameKit-Core-macOS.modulemap */,
-				C530A03D70C13B86F3403A54EFEC8423 /* GameKit-Core-macOS.xcconfig */,
-				42DE01CCE823D9A3AEE21CE1B66691BB /* GameKit-Core-macOS-dummy.m */,
-				9602C4944FC2444BB7C20984D9AE6DF6 /* GameKit-Core-macOS-prefix.pch */,
-				4950F563F25959487E5C0FF50F49DB5F /* GameKit-Core-macOS-umbrella.h */,
-				764B66297558EB9C5A32A99713119C32 /* Info.plist */,
-				7C807EA2E11B848D3897491043301513 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/GameKit-Core-iOS";
-			sourceTree = "<group>";
-		};
 		C27DEFB8D7FB3B130AFA77E35572E102 /* Purchase */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Purchase;
+			sourceTree = "<group>";
+		};
+		C55C801EBE0E8E4BFA6FA7BEF25F98A4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6212ABA3F4339E06D293CFE25DC49216 /* GameKit-Core-iOS.modulemap */,
+				F8F12FF0AB634FC97C3FD8C1174F592C /* GameKit-Core-iOS.xcconfig */,
+				A99EED5880720F04D8E2C82999318F35 /* GameKit-Core-iOS-dummy.m */,
+				FCCF1280E3FF241AE93BF8735D6419B2 /* GameKit-Core-iOS-prefix.pch */,
+				D1BC4A80003CFAFC6C374B30FFBB9175 /* GameKit-Core-iOS-umbrella.h */,
+				98C6DBB8FA9655AE9ADC4DB8AFAE85E7 /* GameKit-Core-macOS.modulemap */,
+				25102D5639BF8FC751F011D67AF23D8F /* GameKit-Core-macOS.xcconfig */,
+				2034523441E50E1739609E2E5A4E1DB3 /* GameKit-Core-macOS-dummy.m */,
+				52E9EDD0A555A32DD38F2F1F22AF1768 /* GameKit-Core-macOS-prefix.pch */,
+				18F6B5826985632E27F439E243FA1365 /* GameKit-Core-macOS-umbrella.h */,
+				15F25E2083BA1B3567A6352FE9FE58E4 /* Info.plist */,
+				CF4054387635E7B7783D4347C604060C /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GameKit-Core-iOS";
 			sourceTree = "<group>";
 		};
 		CAC99BAA49B2124FB631F9FC5E8A96D9 /* Support Files */ = {
@@ -953,21 +958,6 @@
 			path = "../Target Support Files/Locksmith";
 			sourceTree = "<group>";
 		};
-		CAED52A725143AB56347698C8CE40A6D /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				31316727661291638242AAD0F1770A65 /* Aliases.swift */,
-				763ADF3CB6714BB2287BBDB675674F16 /* MenuOptionsContainer.swift */,
-				380F8F95123707D4EE9149247D21900E /* NSAttributedString+Extensions.swift */,
-				DB331E01E5DBB59FB854A8331CF98DDF /* NSView+Autolayout.swift */,
-				0B3ADF703FDCBD139F82436EF8265468 /* ScrollView.swift */,
-				260D091162F387AB1F7352A961AD17DE /* Shadowed.swift */,
-				5F784BAD3FDAAC6AAFC3E14A5C0D264C /* ShadowsCreate.swift */,
-				C9D946A8B111FAB99A97F82FF7DADA79 /* StatusBar.swift */,
-			);
-			name = macOS;
-			sourceTree = "<group>";
-		};
 		CE5F89093C74F2D1EDE73B86C900CE17 /* FirebaseInstanceID */ = {
 			isa = PBXGroup;
 			children = (
@@ -976,6 +966,22 @@
 			);
 			name = FirebaseInstanceID;
 			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		D624710B2EA5A4688526C359A6101A6B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2B1E6FBAFFD87BF3F32FE92934B794D4 /* Aliases.swift */,
+				863E61BA730D16C5BCAF100E73F72E3F /* MenuOptionsContainer.swift */,
+				20A363A70B18BDDAA8D3CAF9B489F92C /* NSAttributedString+Extensions.swift */,
+				F7248C8D1CB41DF5A0F0067F6804C3E1 /* ScrollView.swift */,
+				96BA865C3C43008CAE4BD775A509685E /* Shadowed.swift */,
+				7C2F8CC7D72C23714F7B9A133CEE5F4C /* ShadowsCreate.swift */,
+				E99899B6E5838BECF5A30D279DA5F622 /* StatusBar.swift */,
+				17F7228F160D4A55A9FB4A4776D48715 /* UIView+Autolayout.swift */,
+				4E5E2CC17378F768E6FB33592640AD33 /* View+Touch.swift */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		E004C49DD24B957CF7310E9F6706AFFC /* Frameworks */ = {
@@ -1116,6 +1122,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		020945560FC2AEE3F1B562C0B97FE237 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B32A76B948147B296D9F4D8CD035F59 /* GameKit-Core-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5091ED631155E51E6887122E12A23736 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1124,11 +1138,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		71D719A460B595EDE5D1EEA8B7958B62 /* Headers */ = {
+		8FE156AF53B5BCED45AE5655284CCD87 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E12776A97629AE2932C6757E5381232 /* GameKit-Core-iOS-umbrella.h in Headers */,
+				81E6BA1BE068D4EFBFAE67E4C74D13A9 /* GameKit-Core-macOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1181,14 +1195,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EB066B8BFC2FD05BE2936465F22BBC2F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9BFC8A6A04F36A9C57D4127C6E7E1422 /* GameKit-Core-macOS-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FDA600FDC48ED17BA03DA2D85D4EDA97 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1234,23 +1240,6 @@
 			name = "LaughingAdventure-Logging-Purchase";
 			productName = "LaughingAdventure-Logging-Purchase";
 			productReference = C64863376F887C5F0834923A51C87CA5 /* LaughingAdventure.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4D02F0485F26B9EFFA52BE2AE0D0DEB6 /* GameKit-Core-macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E53A1CD0F9C8928EBC6E7AE8BD65C4FA /* Build configuration list for PBXNativeTarget "GameKit-Core-macOS" */;
-			buildPhases = (
-				BA1ECE2A7B99D8C4BCB04C269C474E6D /* Sources */,
-				9268CC30F810332A16E4ECFE43128C13 /* Frameworks */,
-				EB066B8BFC2FD05BE2936465F22BBC2F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "GameKit-Core-macOS";
-			productName = "GameKit-Core-macOS";
-			productReference = 8DE5D8F8F0CE23FB22EC5DFC91EE6ECE /* GameKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6602043DA69D259E4EB475B11AB610BE /* Pods-iOS */ = {
@@ -1312,21 +1301,21 @@
 			productReference = E2FEA9DA98676E407B993FBF8A5934CE /* LaughingAdventure.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A90F823CE6B404300D2B4173A87D7E37 /* GameKit-Core-iOS */ = {
+		A3E270942AC72F0B7D85738980446B74 /* GameKit-Core-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEEA96DFA005FDA238753CEAB6B40F6F /* Build configuration list for PBXNativeTarget "GameKit-Core-iOS" */;
+			buildConfigurationList = 4657D5F2AD321E7C54B148E7E13B4AC1 /* Build configuration list for PBXNativeTarget "GameKit-Core-macOS" */;
 			buildPhases = (
-				C2E162D2AD59CF70911EADE6490B2860 /* Sources */,
-				B660A716CD244E6118620A3DFFB8ED10 /* Frameworks */,
-				71D719A460B595EDE5D1EEA8B7958B62 /* Headers */,
+				AFAA6CF5CD0264FD55B7648F5A0BD456 /* Sources */,
+				C6DC7A0E69841FCD09CCCFE0125034F2 /* Frameworks */,
+				8FE156AF53B5BCED45AE5655284CCD87 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "GameKit-Core-iOS";
-			productName = "GameKit-Core-iOS";
-			productReference = 924608F244C351F8CB58A1BE6381859F /* GameKit.framework */;
+			name = "GameKit-Core-macOS";
+			productName = "GameKit-Core-macOS";
+			productReference = 8DE5D8F8F0CE23FB22EC5DFC91EE6ECE /* GameKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C7F727D48928BF47D913AFC48BB6A978 /* Locksmith */ = {
@@ -1380,6 +1369,23 @@
 			productReference = 9CE047D0BC93251D6DA767AB9769BECD /* SWLogger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		FAE196E21D7AEBC435B2317487D696DD /* GameKit-Core-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C97BEB1FD19FC01273BA3486A3B6CBA /* Build configuration list for PBXNativeTarget "GameKit-Core-iOS" */;
+			buildPhases = (
+				66ED82F9B1856BC7458AD33AF72FF02B /* Sources */,
+				EDB6DC0428AFF78861B84F2C3645E245 /* Frameworks */,
+				020945560FC2AEE3F1B562C0B97FE237 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GameKit-Core-iOS";
+			productName = "GameKit-Core-iOS";
+			productReference = 924608F244C351F8CB58A1BE6381859F /* GameKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1401,8 +1407,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A90F823CE6B404300D2B4173A87D7E37 /* GameKit-Core-iOS */,
-				4D02F0485F26B9EFFA52BE2AE0D0DEB6 /* GameKit-Core-macOS */,
+				FAE196E21D7AEBC435B2317487D696DD /* GameKit-Core-iOS */,
+				A3E270942AC72F0B7D85738980446B74 /* GameKit-Core-macOS */,
 				00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */,
 				9F82B883A65BBEDAB41C735063BB6CA6 /* LaughingAdventure */,
 				028D728024DEFC516259B21517CD2664 /* LaughingAdventure-Logging-Purchase */,
@@ -1422,6 +1428,35 @@
 			files = (
 				FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */,
 				F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66ED82F9B1856BC7458AD33AF72FF02B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5956A1F2114B3F9027B499E756C020DA /* Aliases.swift in Sources */,
+				0192B9F475C6AE08FA29FA1CBD79FAC3 /* Appearance.swift in Sources */,
+				9C14F21DF3B3282E17935D6E43B6D574 /* Button.swift in Sources */,
+				38D1ABECDAB6242B695BED04E491D4CB /* Game.swift in Sources */,
+				8936A985959608DB1F0AF318332DEB8C /* GameKit-Core-iOS-dummy.m in Sources */,
+				41AA7F620AC6DAD3DFE23153B633C81A /* LayoutConstraint.swift in Sources */,
+				C280B6F82DF1C6B479793D996A6E4AF1 /* MenuOptionsContainer.swift in Sources */,
+				4F251BCA802801F1FEE6EEA685682954 /* MenuScreen.swift in Sources */,
+				C74FC8304EF0CA3F80ED0D9030169303 /* NativeShadowed.swift in Sources */,
+				5C964D362A8055E35E7948B3EC366D2A /* NSAttributedString+Extensions.swift in Sources */,
+				BFBEB5C9A050746564FD29FAF3279E00 /* Screen.swift in Sources */,
+				0C0E26E8E836DA175BADC96EEE041396 /* ScrollView+Functions.swift in Sources */,
+				3681766AC05C80CBB3F4B6DC2CE19CFF /* ScrollView.swift in Sources */,
+				040E35CBB6F7CADE1EFEA4080029F957 /* ScrollViewContained.swift in Sources */,
+				4E361F3CDAF84ED9ED9D01166EABD955 /* Shadowed.swift in Sources */,
+				80557C1CF6A1E001A734C8D27026A966 /* ShadowsCreate.swift in Sources */,
+				426CE2CD05F0820D1B65CFF66FF08406 /* SKNode+Extensions.swift in Sources */,
+				490248B91214D0F7A648C06805F64969 /* StatusBar.swift in Sources */,
+				D4DAA032BD2DF8F88FF289BDAA2A126A /* Themed.swift in Sources */,
+				B5CB7C74B49F8DD382DAFA45863BEF47 /* UIView+Autolayout.swift in Sources */,
+				EA212B54AE26980A661510E195C0CF9F /* View+Touch.swift in Sources */,
+				D0E88AE7C5076C6671109AB134ACC1CC /* View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1574,31 +1609,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA1ECE2A7B99D8C4BCB04C269C474E6D /* Sources */ = {
+		AFAA6CF5CD0264FD55B7648F5A0BD456 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60B87E58C698ACD3300D2BC31C212F56 /* Aliases.swift in Sources */,
-				D5908207103DC01D092B0328BBB28818 /* Appearance.swift in Sources */,
-				1FF73F7E4CFC17AC4C48F515ED3AB8AD /* Button.swift in Sources */,
-				B16C04D5B1FFF81C932DFC326A06CAD3 /* Game.swift in Sources */,
-				F1CD77BE4740FB0A6C9E4F5F73466725 /* GameKit-Core-macOS-dummy.m in Sources */,
-				11882ACE41F680793F30E1E33105ED51 /* LayoutConstraint.swift in Sources */,
-				077F2113D8A9156198F26FAFF50EBFDE /* MenuOptionsContainer.swift in Sources */,
-				9CFB7E79F3EA6343A0DB2803AEE90DFB /* MenuScreen.swift in Sources */,
-				33C58B7FD074ED9590C11A2806AED5E6 /* NativeShadowed.swift in Sources */,
-				CF10DCBDD1DA2578DD9580F0756D6744 /* NSAttributedString+Extensions.swift in Sources */,
-				3BCD18E37FB0DD0D843E56F14A737039 /* NSView+Autolayout.swift in Sources */,
-				B3CB1FED140CEF7EE8553677B5F66988 /* Screen.swift in Sources */,
-				4940BAEF1A00B66AD4229C64FDDF2B8E /* ScrollView+Functions.swift in Sources */,
-				FE35BF6B5B78A755425493B969FBC08B /* ScrollView.swift in Sources */,
-				FAC1BAF14FC6DECBACC7B4E241E3582E /* ScrollViewContained.swift in Sources */,
-				C732DCAE414A5DF57FB4EBBB5A7ADD2D /* Shadowed.swift in Sources */,
-				779FB8B625D102B039070CC0950AA222 /* ShadowsCreate.swift in Sources */,
-				4268DF17909473D88F12670DBB56A2FF /* SKNode+Extensions.swift in Sources */,
-				21C45282F92B85E15624B15C2A6DEDAE /* StatusBar.swift in Sources */,
-				147B5016265648233ACD760C1495EA5E /* Themed.swift in Sources */,
-				14332BE4D88E71689A3C175747F28B8C /* View.swift in Sources */,
+				D9BF9C5D815FBC4EC867391C7834E5C1 /* Aliases.swift in Sources */,
+				0D03D1A81A39E6E67C9A84B1320D0CD6 /* Appearance.swift in Sources */,
+				F29610F4C4559DD88B23C7BBE5EDE3C6 /* Button.swift in Sources */,
+				8CA6DA5F26BD881569A5ACC412FC4D30 /* Game.swift in Sources */,
+				04DA5A66EFCC6C8936B07900C790BF95 /* GameKit-Core-macOS-dummy.m in Sources */,
+				8FB919709593DF94907A60298B5A6DCA /* LayoutConstraint.swift in Sources */,
+				A9C1DA58B2EBE2D01C3A7320E783C0C5 /* MenuOptionsContainer.swift in Sources */,
+				1D8843A481B52E7EEA09E3D3D92D55F6 /* MenuScreen.swift in Sources */,
+				2A428E9D7151296EC17E61CCF2D8B76B /* NativeShadowed.swift in Sources */,
+				02D284BAFE4A0839FF9DB213B68C67D0 /* NSAttributedString+Extensions.swift in Sources */,
+				09EE5A32A88C51D697F0E1DAC6385B58 /* NSView+Autolayout.swift in Sources */,
+				76D9C1B23BF9B7DA2772A33F439C17A0 /* Screen.swift in Sources */,
+				DD8EEAC44E06A8AA3A2EC7648EF52706 /* ScrollView+Functions.swift in Sources */,
+				ED83F268449173C513839F3F14BD25B3 /* ScrollView.swift in Sources */,
+				88A5846E38CB7AFF81C2EA161DD20432 /* ScrollViewContained.swift in Sources */,
+				E8051F983BA3D15F1CBC34294475ECE9 /* Shadowed.swift in Sources */,
+				FFB66450AF5940AADF0CB5B19BD329BE /* ShadowsCreate.swift in Sources */,
+				702385C3127DA0C433C7247577792EE7 /* SKNode+Extensions.swift in Sources */,
+				9DF4389FF5EBDB67356DF702AFBBF109 /* StatusBar.swift in Sources */,
+				0BECD45B277BBB7F4F57417423F02E9B /* Themed.swift in Sources */,
+				EB2BBAD49967CEE3EC75D592CB96A911 /* View+Touch.swift in Sources */,
+				58B53421AED02C4739EDB262F373FA57 /* View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1607,34 +1643,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D781B95DDEC2724F59D252B24678174 /* Pods-iOS-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C2E162D2AD59CF70911EADE6490B2860 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E4A0B8E2E727A56F1118440525823073 /* Aliases.swift in Sources */,
-				6F24786033A2DF689883DD35B11D3B8A /* Appearance.swift in Sources */,
-				632812AF69C91726580CA7E13B205488 /* Button.swift in Sources */,
-				3C4682CB38175331F42D0C12AF3F1E7D /* Game.swift in Sources */,
-				328336826BC53D261CE7D098B6980D71 /* GameKit-Core-iOS-dummy.m in Sources */,
-				8B8847E6FFEFA83F5FDBFBFDCA2F0D0D /* LayoutConstraint.swift in Sources */,
-				52F0B7E1EE8A10C23CAC0065F636FC50 /* MenuOptionsContainer.swift in Sources */,
-				849C476EB8FC0A58358713155FD3E01B /* MenuScreen.swift in Sources */,
-				B2234F864B100F633699E53FBA664E56 /* NativeShadowed.swift in Sources */,
-				ABC89638C341ED00BD41FD282BDD71B3 /* NSAttributedString+Extensions.swift in Sources */,
-				3A4165EFFEA3B40DD0D53D8A6043D856 /* Screen.swift in Sources */,
-				F0156220DCCA48B7FEF68AFF33DEB280 /* ScrollView+Functions.swift in Sources */,
-				E739A3481C66B1A3B8670D5C6584C2E6 /* ScrollView.swift in Sources */,
-				4530F2BF08FB4CE9860E840588923C69 /* ScrollViewContained.swift in Sources */,
-				AC572323850F8788EB9193C080564BB0 /* Shadowed.swift in Sources */,
-				5A0D507FFC26BF50D8C72BBF1DEB990A /* ShadowsCreate.swift in Sources */,
-				A66BA2063EC001DE68534BEAC6A08026 /* SKNode+Extensions.swift in Sources */,
-				756234F27F2FCA2DB2DCE6A48EF73A6A /* StatusBar.swift in Sources */,
-				C148315535BDED1C5EC145491E754EEC /* Themed.swift in Sources */,
-				A2587C3B0D5B3FE2D231C106B753EE30 /* UIView+Autolayout.swift in Sources */,
-				4F915931D0FCC3FF72FA81CC9AE40DD2 /* View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1668,7 +1676,7 @@
 		85CA27B80A98654A653F420ED3BF8ECD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "GameKit-Core-iOS";
-			target = A90F823CE6B404300D2B4173A87D7E37 /* GameKit-Core-iOS */;
+			target = FAE196E21D7AEBC435B2317487D696DD /* GameKit-Core-iOS */;
 			targetProxy = 2FEC8E5CE5C22F4D97EF1F1AFAABA7E8 /* PBXContainerItemProxy */;
 		};
 		BCF6C5CD5566D7489618809613D9E893 /* PBXTargetDependency */ = {
@@ -1686,7 +1694,7 @@
 		EA612FFCFA58A74ED988E80DEE11C260 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "GameKit-Core-macOS";
-			target = 4D02F0485F26B9EFFA52BE2AE0D0DEB6 /* GameKit-Core-macOS */;
+			target = A3E270942AC72F0B7D85738980446B74 /* GameKit-Core-macOS */;
 			targetProxy = 9A7889C5323CEA6354E0364FDF5A17F8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1765,6 +1773,40 @@
 			};
 			name = Debug;
 		};
+		2C335ADC64725971B33E3AF577892AF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25102D5639BF8FC751F011D67AF23D8F /* GameKit-Core-macOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GameKit-Core-macOS/GameKit-Core-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GameKit-Core-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/GameKit-Core-macOS/GameKit-Core-macOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = GameKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		3C482864CC218A1726F1EE107E8DF453 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1807,6 +1849,41 @@
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		404E4DDC3582CD53E798BADB19D73A09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25102D5639BF8FC751F011D67AF23D8F /* GameKit-Core-macOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GameKit-Core-macOS/GameKit-Core-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GameKit-Core-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/GameKit-Core-macOS/GameKit-Core-macOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = GameKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -1980,40 +2057,6 @@
 			};
 			name = Release;
 		};
-		825AE8CBF760C475A49EC027EB88EF44 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C530A03D70C13B86F3403A54EFEC8423 /* GameKit-Core-macOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GameKit-Core-macOS/GameKit-Core-macOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GameKit-Core-macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/GameKit-Core-macOS/GameKit-Core-macOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = GameKit;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		8675F130DAE84B4CFC2892067D190124 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 21112D3F9F7FA7A64043D52E4876F95B /* SWLogger-OSX.xcconfig */;
@@ -2049,15 +2092,15 @@
 			};
 			name = Debug;
 		};
-		A879D1942A92BC99FB76B39F30E8FE74 /* Release */ = {
+		9F2973B732026B5C34E3A787164C0627 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6141A4EB219526E655CB34D6AA5AFCFE /* GameKit-Core-iOS.xcconfig */;
+			baseConfigurationReference = F8F12FF0AB634FC97C3FD8C1174F592C /* GameKit-Core-iOS.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2070,16 +2113,17 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/GameKit-Core-iOS/GameKit-Core-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = GameKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		B7FFF74C3DE216D3A50AB3D2DF1878E5 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2147,6 +2191,38 @@
 			};
 			name = Debug;
 		};
+		E022A7F1D1EAF7DBBD3D972ACED0B7FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8F12FF0AB634FC97C3FD8C1174F592C /* GameKit-Core-iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GameKit-Core-iOS/GameKit-Core-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GameKit-Core-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GameKit-Core-iOS/GameKit-Core-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = GameKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E511F5D2F623FCE64E68A71B86FEE46D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE8A7FCD776526E2D25A8DA8C751EDF9 /* LaughingAdventure-Logging-Purchase.xcconfig */;
@@ -2212,41 +2288,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		E6B1B6877431B34C92606FB03C7EE3AF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C530A03D70C13B86F3403A54EFEC8423 /* GameKit-Core-macOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GameKit-Core-macOS/GameKit-Core-macOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GameKit-Core-macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/GameKit-Core-macOS/GameKit-Core-macOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = GameKit;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		EAD51297C9B43B2BB5BF0C6E8E573464 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2390,39 +2431,6 @@
 			};
 			name = Release;
 		};
-		FC4DEDB884CF8109F985BE22D012D53A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6141A4EB219526E655CB34D6AA5AFCFE /* GameKit-Core-iOS.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GameKit-Core-iOS/GameKit-Core-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GameKit-Core-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GameKit-Core-iOS/GameKit-Core-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = GameKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		FCFEAB87ECCBF2EF76DEA748D620A23D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0299CDC70257BC25BA765A64467BD23 /* LaughingAdventure.xcconfig */;
@@ -2485,11 +2493,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		4657D5F2AD321E7C54B148E7E13B4AC1 /* Build configuration list for PBXNativeTarget "GameKit-Core-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				404E4DDC3582CD53E798BADB19D73A09 /* Debug */,
+				2C335ADC64725971B33E3AF577892AF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4723C9E7CF09AF6780813DBA118C90B5 /* Build configuration list for PBXNativeTarget "Pods-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				079FD5FF02259C507DDF90D0BAF4E3F1 /* Debug */,
 				5E5BC9B35009B34D7348613F0959554A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C97BEB1FD19FC01273BA3486A3B6CBA /* Build configuration list for PBXNativeTarget "GameKit-Core-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F2973B732026B5C34E3A787164C0627 /* Debug */,
+				E022A7F1D1EAF7DBBD3D972ACED0B7FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2535,24 +2561,6 @@
 			buildConfigurations = (
 				D60CD877A708870E2BE96B83BA32F883 /* Debug */,
 				F066921CBDBDB5F45795E50FBC5AC972 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E53A1CD0F9C8928EBC6E7AE8BD65C4FA /* Build configuration list for PBXNativeTarget "GameKit-Core-macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E6B1B6877431B34C92606FB03C7EE3AF /* Debug */,
-				825AE8CBF760C475A49EC027EB88EF44 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FEEA96DFA005FDA238753CEAB6B40F6F /* Build configuration list for PBXNativeTarget "GameKit-Core-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FC4DEDB884CF8109F985BE22D012D53A /* Debug */,
-				A879D1942A92BC99FB76B39F30E8FE74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

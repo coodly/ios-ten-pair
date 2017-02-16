@@ -17,18 +17,24 @@
 import SpriteKit
 import GameKit
 
-private let NumberOfColumns = 9
 private let SidesSpacing: CGFloat = 10 * 2
 private let TenPairRowHideTime: TimeInterval = 0.3
 private let TenPairHideTileAction = SKAction.hide()
 private let TenPairUnhideTileAction = SKAction.unhide()
+private let TenPairRemoveTileAction = SKAction.removeFromParent()
 
 class NumbersField: ScrollViewContained {
+    override var withTaphHandler: Bool {
+        return true
+    }
+    
     var presentedNumbers: [Int] = []
     
     private var tileSize = CGSize.zero
     
     private var tileColors = ColorSet()
+    
+    var gameWonAction: SKAction?
     
     override var presentationWidth: CGFloat {
         didSet {
@@ -256,6 +262,204 @@ class NumbersField: ScrollViewContained {
         presentedNumbers += filtered
         lastHandledVisible = .zero
         notifySizeChanged()
+    }
+    
+    override func handleTap(at point: CGPoint) {
+        Log.debug("handleTap at \(point)")
+        
+        let checked = nodes(at: point)
+        guard let tile = tileInArray(checked, tappedAt: point) else {
+            return
+        }
+        
+        let tileIndex = indexOfNode(tile)
+        
+        if tile.number == 0 {
+            return
+        } else if selectedIndex == -1 {
+            selectedTile = tile
+            selectedIndex = tileIndex
+            tile.markSelected()
+            return
+        } else if (selectedIndex == tileIndex) {
+            tile.markUnselected()
+            selectedTile = nil
+            selectedIndex = -1
+            return
+        }
+        
+        tile.markSelected()
+        
+        let indexOne = selectedIndex
+        let indexTwo = tileIndex
+        
+        guard NumbersPathFinder.hasClearPath([indexOne, indexTwo], inField: presentedNumbers) else {
+            executeFailureAnimationWithTiles(selectedTile, two: tile)
+            return
+        }
+        
+        let valueOne = presentedNumbers[indexOne]
+        let valueTwo = presentedNumbers[indexTwo]
+        
+        guard valueOne == valueTwo || valueOne + valueTwo == 10 else {
+            executeFailureAnimationWithTiles(selectedTile, two: tile)
+            return
+        }
+        
+        executeConsumeWithTiles(selectedTile, two: tile, atIndexOne: indexOne, atIndexTwo: indexTwo)
+    }
+    
+    private func executeConsumeWithTiles(_ one: Tile?, two: Tile, atIndexOne: Int, atIndexTwo: Int) {
+        let consumeActions = [
+            SKAction.colorize(with: tileColors.successColor, colorBlendFactor: 1, duration: 0.3),
+            SKAction.run(SKAction.hide(), onChildWithName: "numberLabel"),
+            SKAction.colorize(with: tileColors.consumedColor, colorBlendFactor: 1, duration: 0.3),
+        ]
+        
+        if let consumedOne = one {
+            let zeroOneAction = SKAction.run({ () -> Void in
+                consumedOne.number = 0
+            })
+            
+            var firstActions = Array(consumeActions)
+            firstActions.append(zeroOneAction)
+            
+            let firstSequence = SKAction.sequence(firstActions)
+            
+            consumedOne.backgroundNode.run(firstSequence)
+        }
+        
+        let zeroTwoAndCompleteAction = SKAction.run() {
+            two.number = 0
+            self.selectedTile = nil
+            self.selectedIndex = -1
+            self.presentedNumbers[atIndexOne] = 0
+            self.presentedNumbers[atIndexTwo] = 0
+            let lines = EmptyLinesSearch.emptyRangesWithCheckPoints([atIndexOne, atIndexTwo], field: self.presentedNumbers)
+            if lines.count > 0 {
+                self.executeRemovingLines(lines)
+            }
+        }
+        
+        var secondActions = Array(consumeActions)
+        secondActions.append(zeroTwoAndCompleteAction)
+        
+        let secondSequence = SKAction.sequence(secondActions)
+        
+        two.backgroundNode.run(secondSequence)
+    }
+    
+    private func executeRemovingLines(_ lins: [CountableRange<Int>]) {
+        let lines = lins.sorted(by: { $0.lowerBound > $1.lowerBound })
+        for removed in lines {
+            presentedNumbers.removeSubrange(removed)
+            for index in removed {
+                if let tile = tilesInUse.removeValue(forKey: index) {
+                    tile.run(TenPairRemoveTileAction)
+                }
+            }
+            
+            reindexTilesStaringFrom(removed.upperBound)
+        }
+        
+        let lastHandled = lastHandledVisible
+        lastHandledVisible = CGRect.zero
+        
+        ensureVisibleCovered(lastHandled, animated: true, completionAction: SKAction.run({ () -> Void in
+            self.notifySizeChanged()
+            if self.gameCompleted() {
+                self.run(self.gameWonAction!)
+            }
+        }))
+    }
+    
+    fileprivate func gameCompleted() -> Bool {
+        if numberOfLines() > 1 {
+            return false
+        }
+        
+        return presentedNumbers.filter({ $0 != 0}).count == 0
+    }
+    
+    private func reindexTilesStaringFrom(_ reindexStart: Int) {
+        var indexes = Array(tilesInUse.keys)
+        indexes.sort()
+        guard let maxIndex = indexes.last else {
+            return
+        }
+        
+        if maxIndex < reindexStart {
+            return
+        }
+        
+        for index in reindexStart...maxIndex {
+            if let tile = tilesInUse.removeValue(forKey: index) {
+                tilesInUse[index - NumberOfColumns] = tile
+            }
+        }
+    }
+    
+    private func executeFailureAnimationWithTiles(_ one: Tile?, two: Tile) {
+        let shakeActions = [
+            SKAction.colorize(with: tileColors.failureColor, colorBlendFactor: 1, duration: 0.3),
+            SKAction.move(by: CGVector(dx: 2, dy: 0), duration: 0.1),
+            SKAction.move(by: CGVector(dx: -4, dy: 0), duration: 0.1),
+            SKAction.move(by: CGVector(dx: 2, dy: 0), duration: 0.1),
+            SKAction.colorize(with: tileColors.tileColor, colorBlendFactor: 1, duration: 0.3),
+        ]
+        
+        if let animatedOne = one {
+            let unmarkFirstAction = SKAction.run { () -> Void in
+                animatedOne.markUnselected()
+            }
+            
+            var firstActions = Array(shakeActions)
+            firstActions.append(unmarkFirstAction)
+            
+            let firstSequence = SKAction.sequence(firstActions)
+            
+            animatedOne.backgroundNode.run(firstSequence)
+        }
+        
+        let unmarkSecondAndResetSelectedAction = SKAction.run {
+            two.markUnselected()
+            self.selectedTile = nil
+            self.selectedIndex = -1
+        }
+        
+        var secondActions = Array(shakeActions)
+        secondActions.append(unmarkSecondAndResetSelectedAction)
+        
+        let secondSequence = SKAction.sequence(secondActions)
+        
+        two.backgroundNode.run(secondSequence)
+    }
+    
+    private func tileInArray(_ nodes: [AnyObject], tappedAt: CGPoint) -> Tile? {
+        for node in Array(nodes.reversed()) {
+            guard let tile = node as? Tile, !tile.isHidden else {
+                continue
+            }
+            
+            var frame = CGRect.zero
+            frame.origin = tile.position
+            frame.size = tile.size
+            
+            guard frame.contains(tappedAt) else {
+                continue
+            }
+            
+            return tile
+        }
+        
+        return nil
+    }
+
+    private func indexOfNode(_ node: Tile) -> Int {
+        let column = Int(node.position.x / tileSize.width)
+        let row = Int((size.height - node.position.y - (tileSize.height / 2)) / tileSize.height)
+        let index = row * NumberOfColumns + column
+        return index
     }
     
     override func set(color: SKColor, for attribute: Appearance.Attribute) {

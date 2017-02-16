@@ -57,7 +57,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   GameKit:
-    :commit: 93991ac8153d3ba5730e47cb60ac57fbb7200f45
+    :commit: 7dbed1ad6d1aa5501b3dc63062c936b24b3af5b5
     :git: git@github.com:coodly/GameKit.git
   LaughingAdventure:
     :commit: 9cd49a09bd655c13c06fb928e01887426abc2d86
