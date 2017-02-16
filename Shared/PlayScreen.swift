@@ -47,12 +47,25 @@ class PlayScreen: Screen {
         statusBar.name = "Top menu bar"
         add(toTop: statusBar, height: TopMenuBarHeight)
         
+        let restartAction = SKAction.run {
+            field.presentedNumbers = DefaultStartBoard
+            field.restart()
+        }
+        
         statusBar.menuButton?.action = SKAction.run {
             [weak self] in
             
             Log.debug("Present menu screen")
             
             let menu = MenuScreen()
+            
+            menu.restartAction = SKAction.run {
+                [unowned menu] in
+                
+                self?.dismiss(menu)
+                self?.execute(restartAction)
+            }
+            
             self?.present(menu)
         }
         
@@ -70,13 +83,21 @@ class PlayScreen: Screen {
     }
     
     private func execute(_ task: SKAction) {
+        execute([task])
+    }
+    
+    private func execute(_ tasks: [SKAction]) {
         let loading = LoadingScreen()
         present(loading)
         let wait = SKAction.wait(forDuration: 1)
         let dismiss = SKAction.run {
             self.dismiss(loading)
         }
-        let actions = SKAction.sequence([wait, task, dismiss])
+        var executed = [SKAction]()
+        executed.append(wait)
+        executed.append(contentsOf: tasks)
+        executed.append(dismiss)
+        let actions = SKAction.sequence(executed)
         run(actions)
     }
 }

@@ -18,6 +18,8 @@ import GameKit
 import SpriteKit
 
 class MenuScreen: GameKit.MenuScreen {
+    var restartAction: SKAction?
+    
     override var itemSize: CGSize {
         let buttonWidth = min(size.width - 80, 400)
         let buttonHeight = round(buttonWidth / 6)
@@ -41,7 +43,11 @@ class MenuScreen: GameKit.MenuScreen {
             
             me.dismiss(me)
         }
-        append(button(named: NSLocalizedString("menu.option.restart", comment: "")))
+        
+        let restartButton = button(named: NSLocalizedString("menu.option.restart", comment: ""))
+        restartButton.action = restartAction
+        append(restartButton)
+        
         append(button(named: NSLocalizedString("menu.option.full.version.purchased", comment: "")))
         append(button(named: NSLocalizedString("menu.option.send.message", comment: "")))
     }

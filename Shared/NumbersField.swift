@@ -64,8 +64,16 @@ class NumbersField: ScrollViewContained {
     private var selectedTile: Tile?
     private var reusableTiles = [Tile]()
     
-    override func load() {
-        color = .blue
+    func restart() {
+        selectedTile = nil
+        selectedIndex = -1
+        lastHandledVisible = CGRect.zero
+        for (_, tile) in tilesInUse {
+            tile.run(TenPairHideTileAction)
+            reusableTiles.append(tile)
+        }
+        tilesInUse.removeAll(keepingCapacity: true)
+        notifySizeChanged()
     }
     
     override func scrolledVisible(to visibleFrame: CGRect) {
@@ -103,8 +111,6 @@ class NumbersField: ScrollViewContained {
             toCheck = visibleFrame
         }
 
-        let topY = size.height - (visibleFrame.origin.y + visibleFrame.height)
-        
         lastHandledVisible = visibleFrame
         ensureVisibleCovered(toCheck)
         removeHiddenTiles(visibleFrame)
