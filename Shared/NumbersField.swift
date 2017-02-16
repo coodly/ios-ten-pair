@@ -36,6 +36,8 @@ class NumbersField: ScrollViewContained {
     
     var gameWonAction: SKAction?
     
+    var statusView: FieldStatusView?
+    
     override var presentationWidth: CGFloat {
         didSet {
             if oldValue == presentationWidth {
@@ -79,6 +81,7 @@ class NumbersField: ScrollViewContained {
             reusableTiles.append(tile)
         }
         tilesInUse.removeAll(keepingCapacity: true)
+        updateFieldStatus()
         notifySizeChanged()
     }
     
@@ -261,7 +264,14 @@ class NumbersField: ScrollViewContained {
         let filtered = presentedNumbers.filter({ $0 != 0})
         presentedNumbers += filtered
         lastHandledVisible = .zero
+        statusView?.set(tiles: filtered.count * 2)
+        updateStatusLines()
         notifySizeChanged()
+    }
+    
+    private func updateStatusLines() {
+        let lines = numberOfLines()
+        statusView?.set(lines: lines)
     }
     
     override func handleTap(at point: CGPoint) {
@@ -339,6 +349,8 @@ class NumbersField: ScrollViewContained {
             if lines.count > 0 {
                 self.executeRemovingLines(lines)
             }
+            
+            self.statusView?.add(tiles: -2)
         }
         
         var secondActions = Array(consumeActions)
@@ -362,6 +374,8 @@ class NumbersField: ScrollViewContained {
             reindexTilesStaringFrom(removed.upperBound)
         }
         
+        statusView?.add(lines: -lines.count)
+        
         let lastHandled = lastHandledVisible
         lastHandledVisible = CGRect.zero
         
@@ -371,6 +385,16 @@ class NumbersField: ScrollViewContained {
                 self.run(self.gameWonAction!)
             }
         }))
+    }
+    
+    func updateFieldStatus() {
+        updateStatusLines()
+        updateStatusTiles()
+    }
+    
+    private func updateStatusTiles() {
+        let nonZero = presentedNumbers.filter({ $0 != 0})
+        statusView?.set(tiles: nonZero.count)
     }
     
     fileprivate func gameCompleted() -> Bool {

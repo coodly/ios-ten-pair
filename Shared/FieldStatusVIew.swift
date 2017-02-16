@@ -81,4 +81,24 @@ class FieldStatusView: View {
             tilesLabel.fontColor = color
         }
     }
+    
+    func set(tiles: Int) {
+        knownTiles = tiles
+        tilesLabel.text = "x\(knownTiles)"
+        positionChildren()
+    }
+    
+    func set(lines: Int) {
+        knownLines = lines
+        linesLabel.text = "x\(lines)"
+        positionChildren()
+    }
+    
+    func add(lines: Int) {
+        set(lines: knownLines + lines)
+    }
+    
+    func add(tiles: Int) {
+        set(tiles: knownTiles + tiles)
+    }
 }

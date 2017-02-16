@@ -47,6 +47,9 @@ class PlayScreen: Screen {
         statusBar.name = "Top menu bar"
         add(toTop: statusBar, height: TopMenuBarHeight)
         
+        field.statusView = statusBar.statusView
+        field.updateFieldStatus()
+        
         let restartAction = SKAction.run {
             field.presentedNumbers = DefaultStartBoard
             field.restart()
