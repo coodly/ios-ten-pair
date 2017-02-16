@@ -85,9 +85,30 @@ class PlayScreen: Screen {
             self?.execute(reload)
         }
         
+        let findMatchAction = SKAction.run {
+            field.searchForMatch() {
+                result in
+                
+                switch result {
+                case .foundOnScreen:
+                    //no op
+                    break
+                case .notFound:
+                    //TODO jaanus: shake the field
+                    break
+                case .foundOffScreen(let offset):
+                    let scrollTo = offset - self.scrollView!.size.height / 2
+                    self.scrollView!.setContentOffset(CGPoint(x: 0, y: scrollTo), animated: true)
+                }
+            }
+        }
+        
         let hintsTray = HintsButtonTray()
         addSubview(hintsTray)
-
+        hintsTray.button?.action = SKAction.run {
+            self.execute(findMatchAction)
+        }
+        
         let views: [String: AnyObject] = ["hints": hintsTray]
         
         let vertical = LayoutConstraint.constraints(withVisualFormat: "V:[hints(\(ActionButtonsTrayHeight))]-(10)-|", options: [], metrics: nil, views: views)

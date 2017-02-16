@@ -120,6 +120,14 @@ public class ScrollView: View {
     public override func set(color: SKColor, for attribute: Appearance.Attribute) {
         // no op
     }
+    
+    internal func scroll(to point: CGPoint, animated: Bool) {
+        let saneYOffset = min(point.y, flipped.bounds.height - scrollView.bounds.height)
+        let to = CGPoint(x: 0, y: saneYOffset)
+        scrollView.contentView.scroll(to: to)
+        scrollView.reflectScrolledClipView(scrollView.contentView)
+        positionPresentedNode()
+    }
 }
 
 private class Flipper: NSView {

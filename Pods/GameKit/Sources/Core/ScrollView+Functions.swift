@@ -80,4 +80,9 @@ public extension ScrollView {
 
         positionPresentedNode()
     }
+    
+    public func setContentOffset(_ offset: CGPoint, animated: Bool) {
+        let saneYOffset = max(offset.y, 0)
+        scroll(to: CGPoint(x: offset.x, y: saneYOffset), animated: animated)
+    }
 }

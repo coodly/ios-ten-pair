@@ -30,7 +30,7 @@ class NumbersField: ScrollViewContained {
     
     var presentedNumbers: [Int] = []
     
-    private var tileSize = CGSize.zero
+    fileprivate var tileSize = CGSize.zero
     
     private var tileColors = ColorSet()
     
@@ -67,9 +67,9 @@ class NumbersField: ScrollViewContained {
     }
     
     private var lastHandledVisible = CGRect.zero
-    private var tilesInUse = [Int: Tile]()
-    private var selectedIndex: Int = -1
-    private var selectedTile: Tile?
+    fileprivate var tilesInUse = [Int: Tile]()
+    fileprivate var selectedIndex: Int = -1
+    fileprivate var selectedTile: Tile?
     private var reusableTiles = [Tile]()
     
     func restart() {
@@ -504,6 +504,39 @@ class NumbersField: ScrollViewContained {
         
         for (_, tile) in tilesInUse {
             tile.colors = tileColors
+        }
+    }
+}
+
+enum SearchResult {
+    case foundOnScreen
+    case foundOffScreen(CGFloat)
+    case notFound
+}
+
+extension NumbersField: MatchFinder {
+    func searchForMatch(_ completion: (SearchResult) -> ()) {
+        Log.debug("Search match")
+        let index = self.openMatchIndex(self.presentedNumbers)
+
+        guard let value = index else {
+            completion(.notFound)
+            return
+        }
+        
+        Log.debug("Match index: \(value)")
+        self.selectedTile?.markUnselected()
+        
+        self.selectedIndex = value
+        if let tile = self.tilesInUse[value] {
+            Log.debug("Proposed on screen")
+            tile.markSelected()
+            self.selectedTile = tile
+            completion(.foundOnScreen)
+        } else {
+            let row = CGFloat(value / NumberOfColumns)
+            let proposedOffset = row * self.tileSize.height
+            completion(.foundOffScreen(proposedOffset))
         }
     }
 }

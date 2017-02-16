@@ -17,8 +17,11 @@
 import GameKit
 
 class HintsButtonTray: View {
+    var button: HintButton?
+    
     override func load() {
         let button = HintButton()
+        self.button = button
         button.set(icon: "hint")
         addSubview(button)
 

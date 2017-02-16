@@ -83,4 +83,9 @@ public class ScrollView: View, UIScrollViewDelegate {
     public override func set(color: SKColor, for attribute: Appearance.Attribute) {
         // no op
     }
+    
+    internal func scroll(to point: CGPoint, animated: Bool) {
+        let saneYOffset = min(point.y, scrollView.contentSize.height - scrollView.bounds.height)
+        scrollView.setContentOffset(CGPoint(x: 0, y: saneYOffset), animated: animated)
+    }
 }
