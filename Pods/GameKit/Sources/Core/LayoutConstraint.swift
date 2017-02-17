@@ -16,6 +16,15 @@
 
 public class LayoutConstraint {
     internal let wrapped: NSLayoutConstraint
+    internal var constant: CGFloat {
+        get {
+            return wrapped.constant
+        }
+        
+        set {
+            wrapped.constant = newValue
+        }
+    }
     
     public convenience init(item view1: View, attribute attr1: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem view2: View?, attribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat) {
         

@@ -21,12 +21,6 @@ open class ScrollViewContained: View {
     
     open var presentationWidth: CGFloat = 0
     
-    open override var size: CGSize {
-        didSet {
-            scrollView?.contentSize = size
-        }
-    }
-    
     open override func set(color: SKColor, for attribute: Appearance.Attribute) {
         // no op
     }

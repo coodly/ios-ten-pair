@@ -16,6 +16,8 @@
 
 internal protocol ShadowingView {
     weak var attached: View? { get set }
+    
+    func extraOffset() -> CGPoint
 }
 
 internal extension ShadowingView where Self: PlatformView {
@@ -27,7 +29,7 @@ internal extension ShadowingView where Self: PlatformView {
         let parentFrame = parent.bounds
         var myPosition = CGPoint.zero
         myPosition.x = frame.origin.x
-        myPosition.y = InFlippedEnv ? frame.minY : parentFrame.height - frame.maxY
+        myPosition.y = InFlippedEnv ? frame.minY : parentFrame.height - frame.maxY + extraOffset().y
         
         attached.position = myPosition
         attached.size = bounds.size
@@ -38,6 +40,10 @@ internal extension ShadowingView where Self: PlatformView {
         for sub in subviews {
             sub.setNeedsLayout()
         }
+    }
+    
+    func extraOffset() -> CGPoint {
+        return .zero
     }
 }
 
@@ -68,6 +74,10 @@ internal class ShadowScrollView: UIScrollView, ShadowingView {
         super.layoutSubviews()
         
         positionAttached()
+    }
+    
+    func extraOffset() -> CGPoint {
+        return contentOffset
     }
 }
 

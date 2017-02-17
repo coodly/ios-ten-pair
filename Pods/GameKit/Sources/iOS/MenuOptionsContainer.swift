@@ -34,9 +34,15 @@ internal class MenuOptionsContainer: ScrollViewContained {
             }
             
             stackView.frame.size.width = itemSize.width
+            
+            guard heightConstraints.count > 0 else {
+                return
+            }
+            
             for height in heightConstraints {
                 height.constant = itemSize.height
             }
+            
             adjustStackSize()
         }
     }
@@ -68,6 +74,7 @@ internal class MenuOptionsContainer: ScrollViewContained {
     }
     
     private func adjustStackSize() {
-        stackView.frame.size = stackView.systemLayoutSizeFitting(CGSize(width: itemSize.width, height: CGFloat.greatestFiniteMagnitude), withHorizontalFittingPriority: UILayoutPriorityRequired, verticalFittingPriority: UILayoutPriorityDefaultHigh)
+        let size = stackView.systemLayoutSizeFitting(CGSize(width: itemSize.width, height: CGFloat.greatestFiniteMagnitude), withHorizontalFittingPriority: UILayoutPriorityRequired, verticalFittingPriority: UILayoutPriorityDefaultHigh)
+        scrollView?.contentSizeChanged(to: size)
     }
 }

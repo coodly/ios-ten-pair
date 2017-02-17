@@ -153,7 +153,7 @@ class NumbersField: ScrollViewContained {
     
     private  func removeHiddenTiles(_ visibleFrame: CGRect) {
         var toRemove = [Int]()
-        
+
         for (tileIndex, tile) in tilesInUse {
             var frame = CGRect.zero
             frame.origin = tile.position
@@ -164,13 +164,15 @@ class NumbersField: ScrollViewContained {
             
             toRemove.append(tileIndex)
         }
-        
+
         for index in toRemove {
             if index == selectedIndex {
                 selectedTile = nil
             }
             
-            let tile = tilesInUse.removeValue(forKey: index)!
+            guard let tile = tilesInUse.removeValue(forKey: index) else {
+                continue
+            }
             tile.run(TenPairHideTileAction)
             reusableTiles.append(tile)
         }
@@ -237,11 +239,10 @@ class NumbersField: ScrollViewContained {
     }
     
     private func notifySizeChanged() {
-        let heigth = max(size.height, fieldHeight())
+        let heigth = max(self.size.height, fieldHeight())
         
-        size = CGSize(width: CGFloat(NumberOfColumns) * tileSize.width, height: heigth)
-        
-        scrollView?.contentSizeChanged()
+        let size = CGSize(width: CGFloat(NumberOfColumns) * tileSize.width, height: heigth)
+        scrollView?.contentSizeChanged(to: size)
     }
 
     private func numberOfLines() -> Int {

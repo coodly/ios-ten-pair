@@ -26,8 +26,18 @@ public class ScrollView: View, UIScrollViewDelegate {
     override internal var backingView: PlatformView {
         return scrollView
     }
-
-    internal var contained: ScrollViewContained? {
+    
+    public var verticallyCentered = false
+    public var contentInset: EdgeInsets = .zero {
+        didSet {
+            scrollView.contentInset = contentInset
+            scrollView.scrollIndicatorInsets = contentInset
+        }
+    }
+    private var contentWidthConstraint: LayoutConstraint?
+    private var contentHeightConstraint: LayoutConstraint?
+    
+    private var contained: ScrollViewContained? {
         didSet {
             oldValue?.backingView.removeFromSuperview()
             oldValue?.removeFromParent()
@@ -36,50 +46,46 @@ public class ScrollView: View, UIScrollViewDelegate {
                 return
             }
             
-            scrollView.addSubview(contained.backingView)
-        }
-    }
-    internal var contentOffsetY: CGFloat {
-        return scrollView.contentOffset.y
-    }
-    internal var contentSize: CGSize = .zero {
-        didSet {
-            scrollView.contentSize = contentSize
+            addSubview(contained)
             
-            if verticallyCentered {
-                let spacing = max(0, (backingView.frame.size.height - contentSize.height) / 2)
-                scrollView.contentInset = UIEdgeInsetsMake(spacing, 0, spacing, 0)
-            }
+            let xCentered = LayoutConstraint(item: contained, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
+            let topAligned = LayoutConstraint(item: contained, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+            contentWidthConstraint = LayoutConstraint(item: contained, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
+            contentHeightConstraint = LayoutConstraint(item: contained, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
             
-            guard let containedBacking = contained?.backingView else {
-                return
-            }
-            containedBacking.frame.origin.x = max(0, (scrollView.frame.width - containedBacking.frame.width) / 2)
-            contained?.backingView.frame.size = contentSize
+            addConstraints([xCentered, topAligned, contentWidthConstraint!, contentHeightConstraint!])
         }
     }
-    public var contentInset: EdgeInsets = .zero
-    internal var presentationInset: EdgeInsets = .zero {
-        didSet {
-            scrollView.contentInset = presentationInset
-            scrollView.scrollIndicatorInsets = presentationInset
-        }
+    
+    public func present(_ contained: ScrollViewContained) {
+        self.contained = contained
+        contained.scrollView = self
     }
-    public var verticallyCentered = false
+    
+    public func setContentOffset(_ offset: CGPoint, animated: Bool) {
+        scrollView.setContentOffset(offset, animated: animated)
+    }
+    
+    public func contentSizeChanged(to size: CGSize) {
+        scrollView.contentSize = size                
+        contentWidthConstraint?.constant = size.width
+        contentHeightConstraint?.constant = size.height
+    }
     
     public override func positionChildren() {
-        super.positionChildren()
+        guard let contained = contained else {
+            return
+        }
+        
+        contained.presentationWidth = size.width
 
-        contained?.presentationWidth = size.width
-        positionPresentedNode()
-    }
-    
-    public override func set(color: SKColor, for attribute: Appearance.Attribute) {
-        // no op
-    }
-    
-    internal func scroll(to point: CGPoint, animated: Bool) {
-        let saneYOffset = min(point.y, scrollView.contentSize.height - scrollView.bounds.height)
-        scrollView.setContentOffset(CGPoint(x: 0, y: saneYOffset), animated: animated)
+        let visible = scrollView.convert(scrollView.bounds, to: contained.backingView)
+        let combined = visible.intersection(contained.backingView.bounds)
+        var inNodeSpace = combined
+        inNodeSpace.origin.y = contained.backingView.bounds.height - combined.size.height - combined.origin.y
+        let notify = SKAction.run {
+            contained.scrolledVisible(to: inNodeSpace)
+        }
+        run(notify)
     }
 }
