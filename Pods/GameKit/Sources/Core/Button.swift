@@ -114,7 +114,7 @@ public extension Button {
     public func set(title: String) {
         self.title?.removeFromParent()
         self.title = SKLabelNode(text: title)
-        self.title?.fontName = self.titleFont
+        self.title?.fontName = titleFont ?? self.title?.fontName
         self.title?.fontSize = titleFontSize
         addChild(self.title!)
     }

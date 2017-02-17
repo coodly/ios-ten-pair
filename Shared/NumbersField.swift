@@ -239,10 +239,10 @@ class NumbersField: ScrollViewContained {
     }
     
     private func notifySizeChanged() {
-        let heigth = max(self.size.height, fieldHeight())
-        
-        let size = CGSize(width: CGFloat(NumberOfColumns) * tileSize.width, height: heigth)
-        scrollView?.contentSizeChanged(to: size)
+        let presentationHeight = fieldHeight()
+        let heigth = max(size.height, presentationHeight)
+        size = CGSize(width: CGFloat(NumberOfColumns) * tileSize.width, height: heigth)
+        scrollView?.contentSizeChanged(to: size, presentationHeight: presentationHeight)
     }
 
     private func numberOfLines() -> Int {

@@ -74,7 +74,7 @@ internal class MenuOptionsContainer: ScrollViewContained {
     }
     
     private func adjustStackSize() {
-        let size = stackView.systemLayoutSizeFitting(CGSize(width: itemSize.width, height: CGFloat.greatestFiniteMagnitude), withHorizontalFittingPriority: UILayoutPriorityRequired, verticalFittingPriority: UILayoutPriorityDefaultHigh)
-        scrollView?.contentSizeChanged(to: size)
+        let height = CGFloat(heightConstraints.count) * itemSize.height + CGFloat(heightConstraints.count - 1) * itemSpacing
+        scrollView?.contentSizeChanged(to: CGSize(width: itemSize.width, height: height))
     }
 }
