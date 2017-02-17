@@ -179,7 +179,7 @@ public class ScrollView: View {
         return contained!.convert(point, from: parent!)
     }
     
-    public func contentSizeChanged() {
+    public func contentSizeChanged(to size: CGSize, presentationHeight: CGFloat = 0) {
         var insets = contentInset
         let presentationInset = contained!.presentationInsets()
         

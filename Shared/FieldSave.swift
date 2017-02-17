@@ -15,6 +15,40 @@
  */
 
 
+import Foundation
+
+private let TenPairSaveDataKey = "NumbersGameSaveDataKey"
+
+let DefaultStartBoard = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9,
+    1, 1, 1, 2, 1, 3, 1, 4, 1,
+    5, 1, 6, 1, 7, 1, 8, 1, 9
+]
+
 class FieldSave {
+    private static let sharedInstance = FieldSave()
     
+    private init() {}
+    
+    static func save(_ numbers: [Int]) {
+        sharedInstance.save(numbers)
+    }
+    
+    static func load() -> [Int] {
+        return sharedInstance.load()
+    }
+    
+    private func save(_ numbers: [Int]) {
+        let defaults = UserDefaults.standard
+        defaults.set(numbers, forKey: TenPairSaveDataKey)
+        defaults.synchronize()
+    }
+    
+    private func load() -> [Int] {
+        if let existing = UserDefaults.standard.value(forKey: TenPairSaveDataKey) as? [Int] {
+            return existing
+        }
+        
+        return DefaultStartBoard
+    }
 }

@@ -23,6 +23,10 @@ private let TenPairHideTileAction = SKAction.hide()
 private let TenPairUnhideTileAction = SKAction.unhide()
 private let TenPairRemoveTileAction = SKAction.removeFromParent()
 
+private extension Selector {
+    static let save = #selector(NumbersField.save)
+}
+
 class NumbersField: ScrollViewContained {
     override var withTaphHandler: Bool {
         return true
@@ -72,6 +76,15 @@ class NumbersField: ScrollViewContained {
     fileprivate var selectedTile: Tile?
     private var reusableTiles = [Tile]()
     
+    override func load() {
+        NotificationCenter.default.addObserver(self, selector: .save, name: .saveField, object: nil)
+    }
+    
+    @objc fileprivate func save() {
+        Log.debug("Save")
+        FieldSave.save(presentedNumbers)
+    }
+    
     func restart() {
         selectedTile = nil
         selectedIndex = -1
@@ -83,6 +96,8 @@ class NumbersField: ScrollViewContained {
         tilesInUse.removeAll(keepingCapacity: true)
         updateFieldStatus()
         notifySizeChanged()
+        
+        save()
     }
     
     override func scrolledVisible(to visibleFrame: CGRect) {
@@ -268,6 +283,8 @@ class NumbersField: ScrollViewContained {
         statusView?.set(tiles: filtered.count * 2)
         updateStatusLines()
         notifySizeChanged()
+        
+        save()
     }
     
     private func updateStatusLines() {

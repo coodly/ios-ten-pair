@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Foundation
+
 let NumberOfColumns = 9
 
 private let ReleaseBuild = false
@@ -23,4 +25,8 @@ struct AppConfig {
     let statusBar: Bool
     let ads: Bool
     let maxTileWidth: Int
+}
+
+extension Notification.Name {
+    static let saveField = Notification.Name(rawValue: "TenPairSaveField")
 }

@@ -39,7 +39,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        NotificationCenter.default.post(name: .saveField, object: nil)
+    }
+    
+    func applicationDidResignActive(_ notification: Notification) {
+        NotificationCenter.default.post(name: .saveField, object: nil)
     }
 }
 
