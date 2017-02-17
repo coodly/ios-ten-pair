@@ -14,7 +14,6 @@
 		A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A97441E48CCA4005E134F /* AppDelegate.swift */; };
 		A71A97471E48CCA4005E134F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A97461E48CCA4005E134F /* GameViewController.swift */; };
 		A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A97481E48CCA4005E134F /* Main.storyboard */; };
-		A71A974D1E48CCA4005E134F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A974B1E48CCA4005E134F /* LaunchScreen.storyboard */; };
 		A71A97561E48CCA4005E134F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A97551E48CCA4005E134F /* AppDelegate.swift */; };
 		A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A71A97641E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
@@ -23,6 +22,7 @@
 		A7363A3A1E558EDF00B7C732 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
 		A7363A3B1E558EED00B7C732 /* NumbersPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */; };
 		A7363A3D1E55969600B7C732 /* FieldStatusVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */; };
+		A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
 		A750CE321E55AAB300852E6A /* FieldStatusVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */; };
 		A750CE341E55D7E500852E6A /* HintsButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE331E55D7E500852E6A /* HintsButtonTray.swift */; };
 		A750CE351E55D7E500852E6A /* HintsButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE331E55D7E500852E6A /* HintsButtonTray.swift */; };
@@ -73,7 +73,6 @@
 		A71A97441E48CCA4005E134F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A71A97461E48CCA4005E134F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		A71A97491E48CCA4005E134F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A71A974C1E48CCA4005E134F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A71A974E1E48CCA4005E134F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A71A97531E48CCA4005E134F /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71A97551E48CCA4005E134F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumbersPathFinder.swift; sourceTree = "<group>"; };
 		A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyLinesSearch.swift; sourceTree = "<group>"; };
 		A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldStatusVIew.swift; sourceTree = "<group>"; };
+		A748DC3A1E57375800F16F92 /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		A750CE331E55D7E500852E6A /* HintsButtonTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintsButtonTray.swift; sourceTree = "<group>"; };
 		A750CE361E55DD9B00852E6A /* MatchFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinder.swift; sourceTree = "<group>"; };
 		A75570BE1E54552300114ED2 /* LoadingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 				A7B12C1F1E535B67007D7807 /* Constants.swift */,
 				A71A97461E48CCA4005E134F /* GameViewController.swift */,
 				A71A974E1E48CCA4005E134F /* Info.plist */,
-				A71A974B1E48CCA4005E134F /* LaunchScreen.storyboard */,
+				A748DC3A1E57375800F16F92 /* LaunchView.xib */,
 				A71A97481E48CCA4005E134F /* Main.storyboard */,
 				A7B12C2C1E5439AA007D7807 /* Tile+Extensions.swift */,
 			);
@@ -323,8 +323,8 @@
 			files = (
 				A777FA8B1E50CC76003E62D7 /* Localizable.strings in Resources */,
 				A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */,
+				A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */,
 				A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */,
-				A71A974D1E48CCA4005E134F /* LaunchScreen.storyboard in Resources */,
 				A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,14 +517,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A71A974B1E48CCA4005E134F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A71A974C1E48CCA4005E134F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		A777FA861E50CC76003E62D7 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -644,7 +636,7 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
 				PRODUCT_NAME = TenPair;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
@@ -663,7 +655,7 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
 				PRODUCT_NAME = TenPair;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
