@@ -22,12 +22,7 @@ internal class MenuOptionsContainer: ScrollViewContained {
             stackView.spacing = itemSpacing
         }
     }
-    internal var itemSize: CGSize = .zero {
-        didSet {
-            stackView.frame.size.width = itemSize.width
-            size.width = itemSize.width
-        }
-    }
+    internal var itemSize: CGSize = .zero
     
     private lazy var stackView: NSStackView = {
         let stack = ShadowStackView()
@@ -36,11 +31,14 @@ internal class MenuOptionsContainer: ScrollViewContained {
         return stack
     }()
     
+    private var itemsCount = 0
+    
     override var backingView: PlatformView {
         return stackView
     }
     
     override func addSubview(_ view: View) {
+        itemsCount += 1
         view.anchorPoint = .zero
         let backing = view.backingView
         backing.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +51,7 @@ internal class MenuOptionsContainer: ScrollViewContained {
         
         addChild(view)
         
-        stackView.frame.size = stackView.fittingSize
-        size.height = stackView.frame.height
+        let height = CGFloat(itemsCount) * itemSize.height + CGFloat(itemsCount - 1) * itemSpacing
+        scrollView?.contentSizeChanged(to: CGSize(width: itemSize.width, height: height))
     }
 }

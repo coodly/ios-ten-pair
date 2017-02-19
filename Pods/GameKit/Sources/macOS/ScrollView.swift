@@ -57,7 +57,6 @@ public class ScrollView: View {
                 return
             }
             
-            contained.color = .red
             contained.anchorPoint = .zero
             addChild(contained)
             contained.inflate()
@@ -117,6 +116,10 @@ public class ScrollView: View {
             return
         }
         
+        if verticallyCentered {
+            adjustVerticalInsets()
+        }
+        
         let visible = scrollView.documentVisibleRect
 
         var position = contained.backingView.frame.origin
@@ -131,6 +134,16 @@ public class ScrollView: View {
             contained.scrolledVisible(to: combined)
         }
         run(notify)
+    }
+    
+    private func adjustVerticalInsets() {
+        let spacing = max(0, (scrollView.bounds.height - containedHeight!.constant) / 2)
+        guard scrollView.contentInsets.top != spacing else {
+            return
+        }
+        
+        scrollView.contentInsets = EdgeInsets(top: spacing, left: 0, bottom: spacing, right: 0)
+        positionChildren()
     }
 }
 
