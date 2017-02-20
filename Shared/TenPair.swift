@@ -61,6 +61,8 @@ class TenPair: Game {
         
         HintButton.appearance().set(color: .white, for: .foreground)
         HintButton.appearance().set(color: .clear, for: .background)
+        
+        WinScreen.appearance().set(color: .clear, for: .background)
     }
 }
 
