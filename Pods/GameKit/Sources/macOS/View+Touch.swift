@@ -28,6 +28,10 @@ extension View: MouseDelegate {
     }
     
     func touchDown(at point: CGPoint) {
+        guard acceptTouches else {
+            return
+        }
+        
         handleTap(at: point)
     }
 }

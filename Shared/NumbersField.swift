@@ -314,6 +314,8 @@ class NumbersField: ScrollViewContained {
             return
         }
         
+        acceptTouches = false
+        
         tile.markSelected()
         
         let indexOne = selectedIndex
@@ -364,6 +366,8 @@ class NumbersField: ScrollViewContained {
             let lines = EmptyLinesSearch.emptyRangesWithCheckPoints([atIndexOne, atIndexTwo], field: self.presentedNumbers)
             if lines.count > 0 {
                 self.executeRemovingLines(lines)
+            } else {
+                self.acceptTouches = true
             }
             
             self.statusView?.add(tiles: -2)
@@ -395,12 +399,15 @@ class NumbersField: ScrollViewContained {
         let lastHandled = lastHandledVisible
         lastHandledVisible = CGRect.zero
         
-        ensureVisibleCovered(lastHandled, animated: true, completionAction: SKAction.run({ () -> Void in
+        let action = SKAction.run {
+            self.acceptTouches = true
             self.notifySizeChanged()
             if self.gameCompleted() {
                 self.run(self.gameWonAction!)
             }
-        }))
+        }
+        
+        ensureVisibleCovered(lastHandled, animated: true, completionAction: action)
     }
     
     func updateFieldStatus() {
@@ -465,6 +472,7 @@ class NumbersField: ScrollViewContained {
             two.markUnselected()
             self.selectedTile = nil
             self.selectedIndex = -1
+            self.acceptTouches = true
         }
         
         var secondActions = Array(shakeActions)

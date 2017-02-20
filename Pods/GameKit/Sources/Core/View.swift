@@ -39,6 +39,7 @@ open class View: SKSpriteNode, Themed {
     open var withTaphHandler: Bool {
         return false
     }
+    public var acceptTouches = true    
     public var borderWidth: CGFloat = 0 {
         didSet {
             border.lineWidth = borderWidth

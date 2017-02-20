@@ -25,6 +25,10 @@ internal extension View {
     }
     
     @objc fileprivate func tapped(recognizer: UITapGestureRecognizer) {
+        guard acceptTouches else {
+            return
+        }
+        
         let pointInView = recognizer.location(in: self.backingView)
         // flip the y value
         let converted = CGPoint(x: pointInView.x, y: size.height - pointInView.y)
