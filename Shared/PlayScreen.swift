@@ -24,6 +24,7 @@ private let ActionButtonsTrayHeight: CGFloat = 50
 class PlayScreen: Screen {
     private var statusBar: TopMenuBar!
     private var scrollView: ScrollView!
+    private var numbersField: NumbersField?
     
     override func load() {
         color = .red
@@ -33,6 +34,7 @@ class PlayScreen: Screen {
         add(fullSized: scrollView)
         
         let field = NumbersField()
+        numbersField = field
         field.presentedNumbers = FieldSave.load()
         field.name = "Numbers field"
         scrollView.contentInset = EdgeInsetsMake(TopMenuBarHeight + 10, 0, 10 + ActionButtonsTrayHeight + 10, 0)
@@ -45,26 +47,12 @@ class PlayScreen: Screen {
         field.statusView = statusBar.statusView
         field.updateFieldStatus()
         
-        let restartAction = SKAction.run {
-            field.presentedNumbers = DefaultStartBoard
-            field.restart()
-        }
-        
         statusBar.menuButton?.action = SKAction.run {
             [weak self] in
             
             Log.debug("Present menu screen")
             
-            let menu = MenuScreen()
-            
-            menu.restartAction = SKAction.run {
-                [unowned menu] in
-                
-                self?.dismiss(menu)
-                self?.execute(restartAction)
-            }
-            
-            self?.present(menu)
+            self?.presentMenu()
         }
         
         statusBar.reloadButton?.action = SKAction.run {
@@ -97,6 +85,14 @@ class PlayScreen: Screen {
             }
         }
         
+        let wonAction = SKAction.run {
+            [weak self] in
+            
+            self?.presentWin()
+        }
+        
+        field.gameWonAction = wonAction
+        
         let hintsTray = HintsButtonTray()
         addSubview(hintsTray)
         hintsTray.button?.action = SKAction.run {
@@ -128,5 +124,37 @@ class PlayScreen: Screen {
         executed.append(dismiss)
         let actions = SKAction.sequence(executed)
         run(actions)
+    }
+    
+    private func presentMenu(withResume: Bool = true, extraDismissed: Screen? = nil) {
+        let restartAction = SKAction.run {
+            self.numbersField?.presentedNumbers = DefaultStartBoard
+            self.numbersField?.restart()
+        }
+
+        let menu = MenuScreen()
+        menu.includeResume = withResume
+        menu.restartAction = SKAction.run {
+            [unowned menu] in
+            
+            if let extra = extraDismissed {
+                self.dismiss(extra)
+            }
+            self.dismiss(menu)
+            self.execute(restartAction)
+        }
+        
+        present(menu)
+    }
+    
+    private func presentWin() {
+        let win = WinScreen()
+        present(win)
+        let wait = SKAction.wait(forDuration: 2)
+        let show = SKAction.run {
+            self.presentMenu(withResume: false, extraDismissed: win)
+        }
+        
+        run(SKAction.sequence([wait, show]))
     }
 }

@@ -376,19 +376,23 @@ class NumbersField: ScrollViewContained {
         }
         
         let zeroTwoAndCompleteAction = SKAction.run() {
+            self.statusView?.add(tiles: -2)
+
             two.number = 0
             self.selectedTile = nil
             self.selectedIndex = -1
             self.presentedNumbers[atIndexOne] = 0
             self.presentedNumbers[atIndexTwo] = 0
             let lines = EmptyLinesSearch.emptyRangesWithCheckPoints([atIndexOne, atIndexTwo], field: self.presentedNumbers)
-            if lines.count > 0 {
+            guard lines.count == 0 else {
                 self.executeRemovingLines(lines)
-            } else {
-                self.acceptTouches = true
+                return
             }
             
-            self.statusView?.add(tiles: -2)
+            self.acceptTouches = true
+            if self.gameCompleted() {
+                self.run(self.gameWonAction!)
+            }
         }
         
         var secondActions = Array(consumeActions)

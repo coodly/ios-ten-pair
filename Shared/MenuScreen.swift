@@ -19,6 +19,7 @@ import SpriteKit
 
 class MenuScreen: SpriteKitUI.MenuScreen {
     var restartAction: SKAction?
+    var includeResume = true
     
     override var itemSize: CGSize {
         let buttonWidth = min(size.width - 80, 400)
@@ -32,16 +33,18 @@ class MenuScreen: SpriteKitUI.MenuScreen {
             add(toTop: statusBar, height: 20)
         }
         
-        let resume = button(named: NSLocalizedString("menu.option.resume", comment: ""))
-        append(resume)
-        resume.action = SKAction.run {
-            [weak self] in
-            
-            guard let me = self else {
-                return
+        if includeResume {
+            let resume = button(named: NSLocalizedString("menu.option.resume", comment: ""))
+            append(resume)
+            resume.action = SKAction.run {
+                [weak self] in
+                
+                guard let me = self else {
+                    return
+                }
+                
+                me.dismiss(me)
             }
-            
-            me.dismiss(me)
         }
         
         let restartButton = button(named: NSLocalizedString("menu.option.restart", comment: ""))
