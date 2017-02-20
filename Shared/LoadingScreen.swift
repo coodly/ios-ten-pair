@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import GameKit
+import SpriteKitUI
 import SpriteKit
 
 class LoadingScreen: Screen {

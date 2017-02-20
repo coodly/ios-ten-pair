@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import GameKit
+import SpriteKitUI
 import SpriteKit
 
-class MenuScreen: GameKit.MenuScreen {
+class MenuScreen: SpriteKitUI.MenuScreen {
     var restartAction: SKAction?
     
     override var itemSize: CGSize {

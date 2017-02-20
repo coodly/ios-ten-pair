@@ -15,7 +15,7 @@
  */
 
 import SpriteKit
-import GameKit
+import SpriteKitUI
 
 private let SidesSpacing: CGFloat = 10 * 2
 private let TenPairRowHideTime: TimeInterval = 0.3

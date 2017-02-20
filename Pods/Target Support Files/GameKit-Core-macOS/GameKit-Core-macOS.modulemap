@@ -1,6 +1,0 @@
-framework module GameKit {
-  umbrella header "GameKit-Core-macOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

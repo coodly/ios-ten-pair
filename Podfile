@@ -6,7 +6,7 @@ module PodSource
     Tagged = 3
 end
 
-UsedSource = PodSource::Remote
+UsedSource = PodSource::Local
 
 def shared
     if UsedSource == PodSource::Local
@@ -27,13 +27,13 @@ def ios_pods
 
     if UsedSource == PodSource::Local
         pod 'LaughingAdventure', :path => '../swift-laughing-adventure'
-        pod 'GameKit/iOS', :path => '../swift-game-kit'
+        pod 'SpriteKitUI/iOS', :path => '../swift-sprite-kit-ui'
     elsif UsedSource == PodSource::Remote
         pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git'
-        pod 'GameKit/iOS', :git => 'git@github.com:coodly/GameKit.git', :branch => 'development'
+        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'development'
     else
         pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.2.1'
-        pod 'GameKit/iOS', :git => 'git@github.com:coodly/GameKit.git', :tag => '0.2.0'
+        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.2.0'
     end
 end
 
@@ -50,12 +50,12 @@ target 'macOS' do
     
     if UsedSource == PodSource::Local
         pod 'LaughingAdventure/Purchase', :path => '../swift-laughing-adventure'
-        pod 'GameKit/macOS', :path => '../swift-game-kit'
+        pod 'SpriteKitUI/macOS', :path => '../swift-sprite-kit-ui'
     elsif UsedSource == PodSource::Remote
         pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
-        pod 'GameKit/macOS', :git => 'git@github.com:coodly/GameKit.git', :branch => 'development'
+        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'development'
     else
         pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.2.1'
-        pod 'GameKit/macOS', :git => 'git@github.com:coodly/GameKit.git', :tag => '0.2.0'
+        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.2.0'
     end
 end

@@ -84,12 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/GameKit-Core-macOS/GameKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LaughingAdventure-Logging-Purchase/LaughingAdventure.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SWLogger-OSX/SWLogger.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SpriteKitUI-Core-macOS/SpriteKitUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/GameKit-Core-macOS/GameKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LaughingAdventure-Logging-Purchase/LaughingAdventure.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SWLogger-OSX/SWLogger.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SpriteKitUI-Core-macOS/SpriteKitUI.framework"
 fi

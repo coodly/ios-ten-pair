@@ -1,14 +1,14 @@
 {
-  "name": "GameKit",
+  "name": "SpriteKitUI",
   "version": "0.1.0",
   "license": "Apache 2",
   "summary": "Game kit on top of SpiteKit",
-  "homepage": "https://github.com/coodly/GameKit",
+  "homepage": "https://github.com/coodly/SpriteKitUI",
   "authors": {
     "Jaanus Siim": "jaanus@coodly.com"
   },
   "source": {
-    "git": "git@github.com:coodly/GameKit.git",
+    "git": "git@github.com:coodly/SpriteKitUI.git",
     "tag": "0.1.0"
   },
   "platforms": {
@@ -25,7 +25,7 @@
     {
       "name": "iOS",
       "dependencies": {
-        "GameKit/Core": [
+        "SpriteKitUI/Core": [
 
         ]
       },
@@ -34,7 +34,7 @@
     {
       "name": "macOS",
       "dependencies": {
-        "GameKit/Core": [
+        "SpriteKitUI/Core": [
 
         ]
       },

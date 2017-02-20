@@ -1,0 +1,6 @@
+framework module SpriteKitUI {
+  umbrella header "SpriteKitUI-Core-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

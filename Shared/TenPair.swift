@@ -15,8 +15,8 @@
  */
 
 import Foundation
-import GameKit
 import SpriteKit
+import SpriteKitUI
 
 class TenPair: Game {
     private var play: PlayScreen?
@@ -40,7 +40,7 @@ class TenPair: Game {
         MenuButton.appearance().set(color: SKColor.white, for: .foreground)
         MenuButton.appearance().set(value: "Copperplate-Bold", for: .font)
 
-        GameKit.MenuScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
+        SpriteKitUI.MenuScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
 
         StatusBar.appearance().set(color: .clear, for: .background)
         StatusBar.appearance().set(value: "Copperplate-Bold", for: .font)

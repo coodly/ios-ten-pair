@@ -15,11 +15,6 @@ PODS:
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (1.0.8)
-  - GameKit/Core (0.1.0)
-  - GameKit/iOS (0.1.0):
-    - GameKit/Core
-  - GameKit/macOS (0.1.0):
-    - GameKit/Core
   - Google-Mobile-Ads-SDK (7.16.0)
   - GoogleInterchangeUtilities (1.2.2):
     - GoogleSymbolUtilities (~> 1.1)
@@ -34,52 +29,45 @@ PODS:
   - LaughingAdventure/Purchase (0.7.0):
     - LaughingAdventure/Logging
   - Locksmith (3.0.0)
+  - SpriteKitUI/Core (0.1.0)
+  - SpriteKitUI/iOS (0.1.0):
+    - SpriteKitUI/Core
+  - SpriteKitUI/macOS (0.1.0):
+    - SpriteKitUI/Core
   - SWLogger (0.3.1)
 
 DEPENDENCIES:
   - Firebase/AdMob (= 3.11.0)
   - Firebase/Core (= 3.11.0)
-  - GameKit/iOS (from `git@github.com:coodly/GameKit.git`, branch `development`)
-  - GameKit/macOS (from `git@github.com:coodly/GameKit.git`, branch `development`)
-  - LaughingAdventure (from `https://github.com/coodly/laughing-adventure.git`)
-  - LaughingAdventure/Purchase (from `https://github.com/coodly/laughing-adventure.git`)
+  - LaughingAdventure (from `../swift-laughing-adventure`)
+  - LaughingAdventure/Purchase (from `../swift-laughing-adventure`)
   - Locksmith (= 3.0.0)
-  - SWLogger (from `git@github.com:coodly/swlogger.git`)
+  - SpriteKitUI/iOS (from `../swift-sprite-kit-ui`)
+  - SpriteKitUI/macOS (from `../swift-sprite-kit-ui`)
+  - SWLogger (from `../swift-logger`)
 
 EXTERNAL SOURCES:
-  GameKit:
-    :branch: development
-    :git: git@github.com:coodly/GameKit.git
   LaughingAdventure:
-    :git: https://github.com/coodly/laughing-adventure.git
+    :path: "../swift-laughing-adventure"
+  SpriteKitUI:
+    :path: "../swift-sprite-kit-ui"
   SWLogger:
-    :git: git@github.com:coodly/swlogger.git
-
-CHECKOUT OPTIONS:
-  GameKit:
-    :commit: 2917d7054e702ec5b6c3283b763e2361d8fc57d3
-    :git: git@github.com:coodly/GameKit.git
-  LaughingAdventure:
-    :commit: 9cd49a09bd655c13c06fb928e01887426abc2d86
-    :git: https://github.com/coodly/laughing-adventure.git
-  SWLogger:
-    :commit: 4905d4e05d8fa9cc0b21b2869fb899e970290443
-    :git: git@github.com:coodly/swlogger.git
+    :path: "../swift-logger"
 
 SPEC CHECKSUMS:
   Firebase: b8134e285eb33201115bc688bc5d7f112923bc1f
   FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
   FirebaseCore: 03da1cb32615569bbc2830a22f9ad753d9a02ef5
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
-  GameKit: 56973843e041cc5d9e17e12aa53fd36d9f2ab51a
   Google-Mobile-Ads-SDK: 92dff0e9ce1cfdfe640d9d80ab86d5e4371e478f
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   LaughingAdventure: 65071080ae74dd696223782f1242dff060247385
   Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
+  SpriteKitUI: 2b6c614125fd27b5b065fc286edc24af53692e91
   SWLogger: 333135cadd381962c3667f5af500f7ae140c74a4
 
-PODFILE CHECKSUM: 6054ccbd57a9e218176c0b48df3e8a4ee06f697b
+PODFILE CHECKSUM: fee718833404e2e6d28777236dfc88d052f064a0
 
 COCOAPODS: 1.1.1

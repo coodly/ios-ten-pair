@@ -15,7 +15,7 @@
  */
 
 import Foundation
-import GameKit
+import SpriteKitUI
 import SpriteKit
 
 private let TopMenuBarHeight: CGFloat = 50
