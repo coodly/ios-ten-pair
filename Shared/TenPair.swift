@@ -57,6 +57,7 @@ class TenPair: Game {
         FieldStatusView.appearance().set(color: .clear, for: .background)
         
         HintsButtonTray.appearance().set(color: lightBlue, for: .background)
+        HintsButtonTray.appearance().set(color: .white, for: .foreground)
         
         HintButton.appearance().set(color: .white, for: .foreground)
         HintButton.appearance().set(color: .clear, for: .background)

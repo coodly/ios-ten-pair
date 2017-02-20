@@ -39,6 +39,21 @@ open class View: SKSpriteNode, Themed {
     open var withTaphHandler: Bool {
         return false
     }
+    public var borderWidth: CGFloat = 0 {
+        didSet {
+            border.lineWidth = borderWidth
+        }
+    }
+    public var borderColor: SKColor = .black {
+        didSet {
+            border.strokeColor = borderColor
+        }
+    }
+    private lazy var border: SKShapeNode = {
+        let node = SKShapeNode()
+        self.addChild(node)
+        return node
+    }()
 
     internal final func inflate() {
         beforeLoad()
@@ -109,7 +124,14 @@ open class View: SKSpriteNode, Themed {
     }
     
     open func positionChildren() {
+        guard borderWidth > 0 else {
+            return
+        }
         
+        var frame = CGRect.zero
+        frame.size = size
+        let path = CGPath(rect: frame, transform: nil)
+        border.path = path
     }
     
     public func addSubview(_ view: View) {

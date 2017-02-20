@@ -15,11 +15,14 @@
  */
 
 import GameKit
+import SpriteKit
 
 class HintsButtonTray: View {
     var button: HintButton?
     
     override func load() {
+        borderWidth = 1
+        
         let button = HintButton()
         self.button = button
         button.set(icon: "hint")
@@ -31,6 +34,14 @@ class HintsButtonTray: View {
         let yCenter = LayoutConstraint(item: button, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
         
         addConstraints([width, height, xCenter, yCenter])
+    }
+    
+    override func set(color: SKColor, for attribute: Appearance.Attribute) {
+        super.set(color: color, for: attribute)
+        
+        if attribute == .foreground {
+            borderColor = color
+        }
     }
 }
 
