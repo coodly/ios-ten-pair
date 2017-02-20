@@ -21,6 +21,8 @@ class MenuScreen: SpriteKitUI.MenuScreen {
     var restartAction: SKAction?
     var includeResume = true
     
+    private var themeButton: MenuButton?
+    
     override var itemSize: CGSize {
         let buttonWidth = min(size.width - 80, 400)
         let buttonHeight = round(buttonWidth / 6)
@@ -51,6 +53,17 @@ class MenuScreen: SpriteKitUI.MenuScreen {
         restartButton.action = restartAction
         append(restartButton)
         
+        let theme = Theme.current()
+        let title = String(format: NSLocalizedString("menu.option.theme.base", comment: ""), theme.localizedName)
+        let themeButton = button(named: title)
+        self.themeButton = themeButton
+        themeButton.action = SKAction.run() {
+            [weak self] in
+            
+            self?.switchToNextTheme()
+        }
+        append(themeButton)
+        
         append(button(named: NSLocalizedString("menu.option.full.version.purchased", comment: "")))
         append(button(named: NSLocalizedString("menu.option.send.message", comment: "")))
     }
@@ -68,5 +81,14 @@ class MenuScreen: SpriteKitUI.MenuScreen {
         button.name = title
         button.set(title: title)
         return button
+    }
+    
+    private func switchToNextTheme() {
+        let theme = Theme.next()
+        theme.load()
+        game?.applyTheme()
+        
+        let title = String(format: NSLocalizedString("menu.option.theme.base", comment: ""), theme.localizedName)
+        themeButton?.set(title: title)
     }
 }

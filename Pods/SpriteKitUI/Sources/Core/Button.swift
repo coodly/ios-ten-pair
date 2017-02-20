@@ -117,6 +117,7 @@ public extension Button {
         self.title?.fontName = titleFont ?? self.title?.fontName
         self.title?.fontSize = titleFontSize
         addChild(self.title!)
+        positionTitle()
     }
     
     fileprivate func positionTitle() {

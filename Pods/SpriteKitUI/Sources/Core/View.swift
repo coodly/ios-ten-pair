@@ -17,7 +17,6 @@
 import SpriteKit
 
 open class View: SKSpriteNode, Themed {
-    internal weak var game: Game?    
     private lazy var shadowView: PlatformView = {
         let view = ShadowView()
         view.attached = self

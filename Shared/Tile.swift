@@ -26,24 +26,63 @@ struct ColorSet {
     var consumedColor: SKColor = .clear
 }
 
+private enum State {
+    case normal
+    case selected
+    case consumed
+    case succss
+    case failure
+}
+
 class Tile: SKSpriteNode {
     private static var textureCache = [String: SKTexture]()
     
     var number = 0
     private var numberSprite: SKSpriteNode?
     
-    var colors: ColorSet!
+    var colors: ColorSet! {
+        didSet {
+            updateColors()
+        }
+    }
     
     lazy var backgroundNode: SKSpriteNode = {
         let background = SKSpriteNode()
-        background.size = CGSize(width: self.size.width - 2, height: self.size.height - 2)
         background.anchorPoint = CGPoint.zero
         background.position = CGPoint(x: 1, y: 1)
         self.addChild(background)
         return background
     }()
     
+    private var state: State = .normal {
+        didSet {
+            updateColors()
+        }
+    }
+    
+    private func updateColors() {
+        if number == 0 {
+            backgroundNode.color = colors.consumedColor
+            return
+        }
+        
+        switch state {
+        case .normal:
+            backgroundNode.color = colors.tileColor
+        case .selected:
+            backgroundNode.color = colors.selectedColor
+        case .consumed:
+            backgroundNode.color = colors.consumedColor
+        case .succss:
+            backgroundNode.color = colors.successColor
+        case .failure:
+            backgroundNode.color = colors.failureColor
+        }
+    }
+    
     func defaultPresentaton() {
+        backgroundNode.size = CGSize(width: self.size.width - 2, height: self.size.height - 2)
+
         self.numberSprite?.removeFromParent()
 
         guard number > 0 else {
@@ -63,15 +102,15 @@ class Tile: SKSpriteNode {
     }
     
     func markConsumed() {
-        backgroundNode.color = colors.consumedColor
+        state = .consumed
     }
     
     func markUnselected() {
-        backgroundNode.color = colors.tileColor
+        state = .normal
     }
     
     func markSelected() {
-        backgroundNode.color = colors.selectedColor
+        state = .selected
     }
     
     private func spriteForNumber(_ number: Int) -> SKSpriteNode {

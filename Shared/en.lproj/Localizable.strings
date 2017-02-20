@@ -3,3 +3,7 @@
 "menu.option.restart" = "Restart game";
 "menu.option.resume" = "Resume game";
 "menu.option.send.message" = "Message to developer";
+"menu.option.theme.base" = "Theme: %@";
+
+"theme.classic.name" = "Classic";
+"theme.pink.name" = "Pink";

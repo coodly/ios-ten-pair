@@ -28,11 +28,11 @@ open class Game: SKScene {
     
     public func present(screen: Screen) {
         screen.delayedAppear = children.count != 0
+        screen.game = self
         add(fullSized: screen)
     }
     
     private func add(fullSized view: View) {
-        view.game = self
         view.zPosition = CGFloat(self.view?.subviews.count ?? 0) * CGFloat(100)
         view.anchorPoint = .zero
         view.position = .zero
@@ -52,6 +52,16 @@ open class Game: SKScene {
             }
             
             view.update(currentTime)
+        }
+    }
+    
+    public func applyTheme() {
+        for child in children {
+            guard let screen = child as? Screen else {
+                continue
+            }
+            
+            screen.applyTheme()
         }
     }
 }

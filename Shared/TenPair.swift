@@ -28,41 +28,8 @@ class TenPair: Game {
     }
     
     private func setAppearance() {
-        let lightBlue = SKColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1)
-        View.appearance().set(color: SKColor.white, for: .background)
-        View.appearance().set(color: lightBlue, for: .foreground)
-
-        TopMenuBar.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
-
-        Button.appearance().set(color: .clear, for: .background)
-
-        MenuButton.appearance().set(color: lightBlue, for: .background)
-        MenuButton.appearance().set(color: SKColor.white, for: .foreground)
-        MenuButton.appearance().set(value: "Copperplate-Bold", for: .font)
-
-        SpriteKitUI.MenuScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
-
-        StatusBar.appearance().set(color: .clear, for: .background)
-        StatusBar.appearance().set(value: "Copperplate-Bold", for: .font)
-
-        NumbersField.appearance().set(color: lightBlue, for: .tile)
-        NumbersField.appearance().set(color: .white, for: .tileNumber)
-        NumbersField.appearance().set(color: SKColor(red: 0, green: 0.400, blue: 1.000, alpha: 1), for: .selected)
-        NumbersField.appearance().set(color: SKColor(red: 0.239, green: 0.792, blue: 0.416, alpha: 1), for: .success)
-        NumbersField.appearance().set(color: SKColor(red: 1.000, green: 0.173, blue: 0.333, alpha: 1), for: .failure)
-        NumbersField.appearance().set(color: SKColor(white: 0.900, alpha: 1.000), for: .numberFieldBackground)
-        
-        LoadingScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.8), for: .background)
-        
-        FieldStatusView.appearance().set(color: .clear, for: .background)
-        
-        HintsButtonTray.appearance().set(color: lightBlue, for: .background)
-        HintsButtonTray.appearance().set(color: .white, for: .foreground)
-        
-        HintButton.appearance().set(color: .white, for: .foreground)
-        HintButton.appearance().set(color: .clear, for: .background)
-        
-        WinScreen.appearance().set(color: .clear, for: .background)
+        let theme = Theme.current()
+        theme.load()
     }
 }
 

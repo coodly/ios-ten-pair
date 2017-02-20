@@ -17,6 +17,8 @@
 import SpriteKit
 
 open class Screen: View {
+    public weak var game: Game?
+
     public func present(_ screen: Screen) {
         game?.present(screen: screen)
     }
