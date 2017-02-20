@@ -34,13 +34,24 @@ class NumbersField: ScrollViewContained {
     
     var presentedNumbers: [Int] = []
     
-    fileprivate var tileSize = CGSize.zero
+    fileprivate var tileSize = CGSize.zero {
+        didSet {
+            background.tileSize = tileSize
+            background.lastHandledTopLine = -1
+        }
+    }
     
     private var tileColors = ColorSet()
     
     var gameWonAction: SKAction?
     
     var statusView: FieldStatusView?
+    
+    private lazy var background: FieldBackground = {
+        let background = FieldBackground()
+        self.addChild(background)
+        return background
+    }()
     
     override var presentationWidth: CGFloat {
         didSet {
@@ -134,6 +145,10 @@ class NumbersField: ScrollViewContained {
         if toCheck.height > visibleFrame.height {
             toCheck = visibleFrame
         }
+
+        let topY = size.height - (visibleFrame.origin.y + visibleFrame.height)
+        let topLine = lineForY(topY)
+        background.updateWithTopLine(topLine, totalSize:size)
 
         lastHandledVisible = visibleFrame
         ensureVisibleCovered(toCheck)
@@ -257,6 +272,8 @@ class NumbersField: ScrollViewContained {
         let presentationHeight = fieldHeight()
         let heigth = max(size.height, presentationHeight)
         size = CGSize(width: CGFloat(NumberOfColumns) * tileSize.width, height: heigth)
+        let lines = numberOfLines()
+        background.update(size, numberOfLines: lines, numberOfTiles: presentedNumbers.count)
         scrollView?.contentSizeChanged(to: size, presentationHeight: presentationHeight)
     }
 
@@ -280,6 +297,7 @@ class NumbersField: ScrollViewContained {
         let filtered = presentedNumbers.filter({ $0 != 0})
         presentedNumbers += filtered
         lastHandledVisible = .zero
+        background.lastHandledTopLine = -1
         statusView?.set(tiles: filtered.count * 2)
         updateStatusLines()
         notifySizeChanged()
@@ -524,6 +542,9 @@ class NumbersField: ScrollViewContained {
             tileColors.failureColor = color
         case Appearance.Attribute.numberFieldBackground:
             tileColors.consumedColor = color
+            background.fillColor = color
+        case Appearance.Attribute.background:
+            background.lineColor = color
         default:
             break // no op
         }
