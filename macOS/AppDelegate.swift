@@ -8,6 +8,8 @@
 
 import Cocoa
 import SpriteKit
+import Fabric
+import Crashlytics
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -18,7 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true, "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints": true])
-        
+        Fabric.with([Crashlytics.self])
+
         Log.enable()
         
         window.minSize = NSMakeSize(400, 600)
