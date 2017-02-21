@@ -156,6 +156,8 @@ class NumbersField: ScrollViewContained {
         lastHandledVisible = visibleFrame
         ensureVisibleCovered(toCheck)
         removeHiddenTiles(visibleFrame)
+        
+        ads?.scrolled(to: visibleFrame)
     }
     
     private func lineForY(_ positionY: CGFloat) -> Int {
@@ -317,6 +319,7 @@ class NumbersField: ScrollViewContained {
     private func updateStatusLines() {
         let lines = numberOfLines()
         statusView?.set(lines: lines)
+        ads?.totalLines = lines
     }
     
     override func handleTap(at point: CGPoint) {
@@ -356,7 +359,7 @@ class NumbersField: ScrollViewContained {
         let valueOne = presentedNumbers[indexOne]
         let valueTwo = presentedNumbers[indexTwo]
         
-        guard true || valueOne == valueTwo || valueOne + valueTwo == 10 else {
+        guard valueOne == valueTwo || valueOne + valueTwo == 10 else {
             executeFailureAnimationWithTiles(selectedTile, two: tile)
             return
         }
@@ -426,6 +429,7 @@ class NumbersField: ScrollViewContained {
         }
         
         statusView?.add(lines: -lines.count)
+        ads?.totalLines = numberOfLines()
         
         let lastHandled = lastHandledVisible
         lastHandledVisible = CGRect.zero
@@ -599,8 +603,9 @@ extension NumbersField: MatchFinder {
             self.selectedTile = tile
             completion(.foundOnScreen)
         } else {
-            let row = CGFloat(value / NumberOfColumns)
-            let proposedOffset = row * self.tileSize.height
+            let row = Int(value / NumberOfColumns)
+            let adLines = ads?.adLines(for: row) ?? 0
+            let proposedOffset = CGFloat(row + adLines) * self.tileSize.height
             completion(.foundOffScreen(proposedOffset))
         }
     }
