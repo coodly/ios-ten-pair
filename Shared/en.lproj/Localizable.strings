@@ -1,4 +1,12 @@
+"coodly.feedback.controller.title" = "Conversations";
+"coodly.feedback.header.message" = "Please read this before posting";
+"coodly.feedback.message.compose.controller.send.button" = "Send";
+"coodly.feedback.message.compose.controller.title" = "Write message";
+"coodly.feedback.response.notice" = "Hello\n\nI'm Jaanus Siim, independent developer based in Estonia.\n\nEvery suggestion and feedback is welcome. I promise to read them all. But I may not be able to respond to all messages.\n\nThanks for undertanding.";
+"coodly.feedback.sign.in.message" = "Please sign in to iCloud to send a message.";
+
 "menu.option.full.version.purchased" = "Full version: ✓";
+"menu.option.message.from" = "● Response from developer";
 "menu.option.rate" = "Rate on AppStore";
 "menu.option.restart" = "Restart game";
 "menu.option.resume" = "Resume game";

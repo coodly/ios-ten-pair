@@ -17,6 +17,7 @@
 import UIKit
 import Fabric
 import Crashlytics
+import LaughingAdventure
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics()])
         
         Log.enable()
+        
+        // just touching it
+        _ = FeedbackService.hasMessage()
+        Feedback.enable()
         
         return true
     }

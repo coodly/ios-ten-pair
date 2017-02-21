@@ -25,6 +25,7 @@ struct AppConfig {
     let statusBar: Bool
     let ads: Bool
     let maxTileWidth: Int
+    let withFeedback: Bool
 }
 
 extension Notification.Name {

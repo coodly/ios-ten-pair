@@ -22,6 +22,7 @@ class MenuScreen: SpriteKitUI.MenuScreen {
     var includeResume = true
     
     private var themeButton: MenuButton?
+    private var feedbackButton: MenuButton?
     
     override var itemSize: CGSize {
         let buttonWidth = min(size.width - 80, 400)
@@ -65,7 +66,20 @@ class MenuScreen: SpriteKitUI.MenuScreen {
         append(themeButton)
         
         append(button(named: NSLocalizedString("menu.option.full.version.purchased", comment: "")))
-        append(button(named: NSLocalizedString("menu.option.send.message", comment: "")))
+        
+        if AppConfig.current.withFeedback {
+            let hasMessage = FeedbackService.hasMessage()
+            let title = hasMessage ? NSLocalizedString("menu.option.message.from", comment: "") : NSLocalizedString("menu.option.send.message", comment: "")
+            
+            feedbackButton = button(named: title)
+            feedbackButton?.action = SKAction.run {
+                [weak self] in
+            
+                self?.presentFeedback()
+            }
+            
+            append(feedbackButton!)
+        }
     }
     
     override func positionChildren() {
@@ -90,5 +104,10 @@ class MenuScreen: SpriteKitUI.MenuScreen {
         
         let title = String(format: NSLocalizedString("menu.option.theme.base", comment: ""), theme.localizedName)
         themeButton?.set(title: title)
+    }
+    
+    private func presentFeedback() {
+        FeedbackService.present()
+        feedbackButton?.set(title: NSLocalizedString("menu.option.send.message", comment: ""))
     }
 }

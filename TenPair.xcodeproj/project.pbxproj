@@ -40,6 +40,7 @@
 		A77DE70C1E48E8AF00E9214A /* TenPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE6F81E48D75200E9214A /* TenPair.swift */; };
 		A77DE70D1E48E8C000E9214A /* PlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE6FC1E48D8D500E9214A /* PlayScreen.swift */; };
 		A77DE70E1E48E8C800E9214A /* TopMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE7081E48E29100E9214A /* TopMenuBar.swift */; };
+		A787133E1E5C2BC3002DEF76 /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787133D1E5C2BC3002DEF76 /* FeedbackService.swift */; };
 		A78D56721E5AD3F7002957DC /* FieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56711E5AD3F7002957DC /* FieldBackground.swift */; };
 		A78D56731E5AD40D002957DC /* FieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56711E5AD3F7002957DC /* FieldBackground.swift */; };
 		A78D56821E5AE54B002957DC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78D56801E5AE54B002957DC /* Crashlytics.framework */; };
@@ -52,6 +53,8 @@
 		A78D56901E5AF095002957DC /* Confetti.sks in Resources */ = {isa = PBXBuildFile; fileRef = A78D568E1E5AF095002957DC /* Confetti.sks */; };
 		A78D56921E5B362F002957DC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56911E5B362F002957DC /* Theme.swift */; };
 		A78D56931E5B362F002957DC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56911E5B362F002957DC /* Theme.swift */; };
+		A78FA2EE1E5C1462002DB0AF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78FA2ED1E5C1462002DB0AF /* CloudKit.framework */; };
+		A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */; };
 		A7B12C1A1E53123D007D7807 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA861E50CC76003E62D7 /* InfoPlist.strings */; };
 		A7B12C1B1E53123D007D7807 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA881E50CC76003E62D7 /* Localizable.strings */; };
 		A7B12C1D1E535B18007D7807 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C1C1E535B18007D7807 /* Config.swift */; };
@@ -102,6 +105,7 @@
 		A77DE6F81E48D75200E9214A /* TenPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenPair.swift; sourceTree = "<group>"; };
 		A77DE6FC1E48D8D500E9214A /* PlayScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayScreen.swift; sourceTree = "<group>"; };
 		A77DE7081E48E29100E9214A /* TopMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopMenuBar.swift; sourceTree = "<group>"; };
+		A787133D1E5C2BC3002DEF76 /* FeedbackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
 		A78D56711E5AD3F7002957DC /* FieldBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldBackground.swift; sourceTree = "<group>"; };
 		A78D56801E5AE54B002957DC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOSFrameworks/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		A78D56811E5AE54B002957DC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOSFrameworks/Fabric.framework; sourceTree = SOURCE_ROOT; };
@@ -110,6 +114,9 @@
 		A78D568B1E5AF01A002957DC /* WinScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinScreen.swift; sourceTree = "<group>"; };
 		A78D568E1E5AF095002957DC /* Confetti.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Confetti.sks; sourceTree = "<group>"; };
 		A78D56911E5B362F002957DC /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A78FA2EC1E5C145C002DB0AF /* TenPair.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenPair.entitlements; sourceTree = "<group>"; };
+		A78FA2ED1E5C1462002DB0AF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
 		A7B12C1C1E535B18007D7807 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A7B12C1F1E535B67007D7807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A7B12C211E535B72007D7807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -133,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A78D56821E5AE54B002957DC /* Crashlytics.framework in Frameworks */,
+				A78FA2EE1E5C1462002DB0AF /* CloudKit.framework in Frameworks */,
 				FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */,
 				A78D56831E5AE54B002957DC /* Fabric.framework in Frameworks */,
 			);
@@ -154,6 +162,7 @@
 		3A55CE60C2DA1BC33147E445 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A78FA2ED1E5C1462002DB0AF /* CloudKit.framework */,
 				91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */,
 				8823AD29127CFC3A63FA4805 /* Pods_macOS.framework */,
 			);
@@ -225,14 +234,16 @@
 		A71A97431E48CCA4005E134F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A78D56741E5AE33B002957DC /* Supporting files */,
 				A7B12C261E543355007D7807 /* Aliases.swift */,
 				A71A97441E48CCA4005E134F /* AppDelegate.swift */,
 				A7B12C1F1E535B67007D7807 /* Constants.swift */,
+				A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */,
 				A71A97461E48CCA4005E134F /* GameViewController.swift */,
 				A71A974E1E48CCA4005E134F /* Info.plist */,
 				A748DC3A1E57375800F16F92 /* LaunchView.xib */,
 				A71A97481E48CCA4005E134F /* Main.storyboard */,
+				A78D56741E5AE33B002957DC /* Supporting files */,
+				A78FA2EC1E5C145C002DB0AF /* TenPair.entitlements */,
 				A7B12C2C1E5439AA007D7807 /* Tile+Extensions.swift */,
 			);
 			path = iOS;
@@ -241,12 +252,13 @@
 		A71A97541E48CCA4005E134F /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				A78D567A1E5AE413002957DC /* Supporting files */,
 				A7B12C281E543379007D7807 /* Aliases.swift */,
 				A71A97551E48CCA4005E134F /* AppDelegate.swift */,
 				A7B12C211E535B72007D7807 /* Constants.swift */,
+				A787133D1E5C2BC3002DEF76 /* FeedbackService.swift */,
 				A71A975C1E48CCA4005E134F /* Info.plist */,
 				A7D390821E4B0ADB00EDB111 /* MainMenu.xib */,
+				A78D567A1E5AE413002957DC /* Supporting files */,
 				A7B12C2E1E543A10007D7807 /* Tile+Extensions.swift */,
 			);
 			path = macOS;
@@ -339,6 +351,14 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 5T8DRBFCBP;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					A71A97521E48CCA4005E134F = {
 						CreatedOnToolsVersion = 8.3;
@@ -540,6 +560,7 @@
 				A7D390931E4B47E900EDB111 /* Log.swift in Sources */,
 				A71837691E4A0C5F002AEBF5 /* BarButton.swift in Sources */,
 				A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */,
+				A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */,
 				A75570BF1E54552300114ED2 /* LoadingScreen.swift in Sources */,
 				A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */,
 				A7B12C271E543355007D7807 /* Aliases.swift in Sources */,
@@ -580,6 +601,7 @@
 				A718374F1E499FB8002AEBF5 /* NumbersField.swift in Sources */,
 				A7B12C2F1E543A10007D7807 /* Tile+Extensions.swift in Sources */,
 				A78D568D1E5AF01A002957DC /* WinScreen.swift in Sources */,
+				A787133E1E5C2BC3002DEF76 /* FeedbackService.swift in Sources */,
 				A77DE70C1E48E8AF00E9214A /* TenPair.swift in Sources */,
 				A777FA841E50758A003E62D7 /* MenuButton.swift in Sources */,
 				A750CE381E55DD9B00852E6A /* MatchFinder.swift in Sources */,
@@ -717,6 +739,7 @@
 			baseConfigurationReference = 0F87E684DF6C56BE4744A9CA /* Pods-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOS/TenPair.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -741,6 +764,7 @@
 			baseConfigurationReference = CDBD234CA436EF092F3D679F /* Pods-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOS/TenPair.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				FRAMEWORK_SEARCH_PATHS = (

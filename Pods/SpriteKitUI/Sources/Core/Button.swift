@@ -121,8 +121,13 @@ public extension Button {
     }
     
     fileprivate func positionTitle() {
-        guard let label = title else {
+        guard let label = title, size != CGSize.zero else {
             return
+        }
+        
+        label.fontSize = titleFontSize
+        while label.frame.width > size.width {
+            label.fontSize = label.fontSize - 1
         }
         
         label.position = CGPoint(x: size.width / 2, y: (size.height - label.frame.height) / 2)

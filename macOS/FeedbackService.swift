@@ -14,6 +14,13 @@
  * limitations under the License.
  */
 
-extension AppConfig {
-    static let current = AppConfig(statusBar: false, ads: false, maxTileWidth: 50, withFeedback: false)
+// just a placeholder that will not be called on macOS
+class FeedbackService {
+    static func hasMessage() -> Bool {
+        return false
+    }
+    
+    static func present() {
+        
+    }
 }
