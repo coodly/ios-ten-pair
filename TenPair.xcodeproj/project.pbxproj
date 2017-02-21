@@ -41,6 +41,8 @@
 		A77DE70D1E48E8C000E9214A /* PlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE6FC1E48D8D500E9214A /* PlayScreen.swift */; };
 		A77DE70E1E48E8C800E9214A /* TopMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DE7081E48E29100E9214A /* TopMenuBar.swift */; };
 		A787133E1E5C2BC3002DEF76 /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787133D1E5C2BC3002DEF76 /* FeedbackService.swift */; };
+		A78713401E5C3C2A002DEF76 /* AdsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787133F1E5C3C2A002DEF76 /* AdsCoordinator.swift */; };
+		A78713411E5C3C2A002DEF76 /* AdsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787133F1E5C3C2A002DEF76 /* AdsCoordinator.swift */; };
 		A78D56721E5AD3F7002957DC /* FieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56711E5AD3F7002957DC /* FieldBackground.swift */; };
 		A78D56731E5AD40D002957DC /* FieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56711E5AD3F7002957DC /* FieldBackground.swift */; };
 		A78D56821E5AE54B002957DC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78D56801E5AE54B002957DC /* Crashlytics.framework */; };
@@ -106,6 +108,7 @@
 		A77DE6FC1E48D8D500E9214A /* PlayScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayScreen.swift; sourceTree = "<group>"; };
 		A77DE7081E48E29100E9214A /* TopMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopMenuBar.swift; sourceTree = "<group>"; };
 		A787133D1E5C2BC3002DEF76 /* FeedbackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
+		A787133F1E5C3C2A002DEF76 /* AdsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsCoordinator.swift; sourceTree = "<group>"; };
 		A78D56711E5AD3F7002957DC /* FieldBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldBackground.swift; sourceTree = "<group>"; };
 		A78D56801E5AE54B002957DC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOSFrameworks/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		A78D56811E5AE54B002957DC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOSFrameworks/Fabric.framework; sourceTree = SOURCE_ROOT; };
@@ -195,6 +198,7 @@
 		A71A97381E48CCA4005E134F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A787133F1E5C3C2A002DEF76 /* AdsCoordinator.swift */,
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
 				A71837681E4A0C5F002AEBF5 /* BarButton.swift */,
 				A78D568E1E5AF095002957DC /* Confetti.sks */,
@@ -574,6 +578,7 @@
 				A7D390801E4B049400EDB111 /* FieldSave.swift in Sources */,
 				A78D568C1E5AF01A002957DC /* WinScreen.swift in Sources */,
 				A78D56721E5AD3F7002957DC /* FieldBackground.swift in Sources */,
+				A78713401E5C3C2A002DEF76 /* AdsCoordinator.swift in Sources */,
 				A777FA831E50758A003E62D7 /* MenuButton.swift in Sources */,
 				A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */,
 				A77DE6F91E48D75200E9214A /* TenPair.swift in Sources */,
@@ -606,6 +611,7 @@
 				A777FA841E50758A003E62D7 /* MenuButton.swift in Sources */,
 				A750CE381E55DD9B00852E6A /* MatchFinder.swift in Sources */,
 				A7D390811E4B049400EDB111 /* FieldSave.swift in Sources */,
+				A78713411E5C3C2A002DEF76 /* AdsCoordinator.swift in Sources */,
 				A750CE351E55D7E500852E6A /* HintsButtonTray.swift in Sources */,
 				A7B12C1E1E535B18007D7807 /* Config.swift in Sources */,
 				A750CE321E55AAB300852E6A /* FieldStatusVIew.swift in Sources */,

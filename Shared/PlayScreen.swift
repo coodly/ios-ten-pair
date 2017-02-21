@@ -22,6 +22,8 @@ private let TopMenuBarHeight: CGFloat = 50
 private let ActionButtonsTrayHeight: CGFloat = 50
 
 class PlayScreen: Screen {
+    var ads: AdsCoordinator?
+    
     private var statusBar: TopMenuBar!
     private var scrollView: ScrollView!
     private var numbersField: NumbersField?
@@ -35,6 +37,7 @@ class PlayScreen: Screen {
         
         let field = NumbersField()
         numbersField = field
+        field.ads = ads
         field.presentedNumbers = FieldSave.load()
         field.name = "Numbers field"
         scrollView.contentInset = EdgeInsetsMake(TopMenuBarHeight + 10, 0, 10 + ActionButtonsTrayHeight + 10, 0)

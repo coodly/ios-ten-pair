@@ -21,6 +21,9 @@ class GameViewController: UIViewController {
         let skView = self.view as! SKView
 
         let scene = TenPair(size: skView.bounds.size)
+        if AppConfig.current.ads {
+            scene.ads = AdsCoordinator()
+        }
         game = scene
         scene.scaleMode = .resizeFill
         

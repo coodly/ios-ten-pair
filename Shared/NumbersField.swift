@@ -28,6 +28,8 @@ private extension Selector {
 }
 
 class NumbersField: ScrollViewContained {
+    var ads: AdsCoordinator?
+    
     override var withTaphHandler: Bool {
         return true
     }
@@ -36,6 +38,7 @@ class NumbersField: ScrollViewContained {
     
     fileprivate var tileSize = CGSize.zero {
         didSet {
+            ads?.tileSize = tileSize
             background.tileSize = tileSize
             background.lastHandledTopLine = -1
         }
@@ -161,7 +164,8 @@ class NumbersField: ScrollViewContained {
     
     private func ensureVisibleCovered(_ visible: CGRect, animated: Bool = false, completionAction: SKAction = SKAction.wait(forDuration: 0)) {
         let topY = size.height - (visible.origin.y + visible.size.height)
-        let topLine = lineForY(topY)
+        let topLineWithAds = lineForY(topY)
+        let topLine = ads?.removeAdLines(topLineWithAds) ?? topLineWithAds
         let startIndex = topLine * NumberOfColumns
         
         guard presentedNumbers.count > startIndex else {
@@ -169,7 +173,7 @@ class NumbersField: ScrollViewContained {
         }
         
         for index in startIndex..<presentedNumbers.count {
-            let tileFrame = probeTileForIndex(index, animated:animated)
+            let tileFrame = probeTileFor(index: index, animated:animated)
             let tileTop = tileFrame.origin.y + tileFrame.size.height
             if tileTop < visible.origin.y {
                 break
@@ -208,10 +212,11 @@ class NumbersField: ScrollViewContained {
         }
     }
     
-    private func probeTileForIndex(_ index: Int, animated: Bool) -> CGRect {
+    private func probeTileFor(index: Int, animated: Bool) -> CGRect {
         let column = CGFloat(index % NumberOfColumns)
         let row = CGFloat(index / NumberOfColumns)
-        let position = CGPoint(x: column * tileSize.width, y: size.height - tileSize.height - row * tileSize.height)
+        let yOffset = CGFloat(ads?.offsetFor(index: index) ?? 0)
+        let position = CGPoint(x: column * tileSize.width, y: size.height - tileSize.height - row * tileSize.height - yOffset)
         var tile: Tile
         let number = presentedNumbers[index]
         
@@ -273,7 +278,8 @@ class NumbersField: ScrollViewContained {
         let heigth = max(size.height, presentationHeight)
         size = CGSize(width: CGFloat(NumberOfColumns) * tileSize.width, height: heigth)
         let lines = numberOfLines()
-        background.update(size, numberOfLines: lines, numberOfTiles: presentedNumbers.count)
+        let adLines = ads?.adLines(for: lines) ?? 0
+        background.update(size, numberOfLines: lines, adLines: adLines, numberOfTiles: presentedNumbers.count)
         scrollView?.contentSizeChanged(to: size, presentationHeight: presentationHeight)
     }
 
@@ -281,8 +287,11 @@ class NumbersField: ScrollViewContained {
         return Int(ceilf(Float(presentedNumbers.count) / Float(NumberOfColumns)))
     }
     
-    private func fieldHeight () -> CGFloat {
-        return CGFloat(numberOfLines()) * tileSize.height
+    private func fieldHeight() -> CGFloat {
+        let lines = numberOfLines()
+        let tilesHight = CGFloat(lines) * tileSize.height
+        let adsHeight = CGFloat(ads?.combinedHeight(with: lines) ?? 0)
+        return tilesHight + adsHeight
     }
     
     private func bottomOffset() -> CGFloat {
@@ -347,7 +356,7 @@ class NumbersField: ScrollViewContained {
         let valueOne = presentedNumbers[indexOne]
         let valueTwo = presentedNumbers[indexTwo]
         
-        guard valueOne == valueTwo || valueOne + valueTwo == 10 else {
+        guard true || valueOne == valueTwo || valueOne + valueTwo == 10 else {
             executeFailureAnimationWithTiles(selectedTile, two: tile)
             return
         }
@@ -403,8 +412,8 @@ class NumbersField: ScrollViewContained {
         two.backgroundNode.run(secondSequence)
     }
     
-    private func executeRemovingLines(_ lins: [CountableRange<Int>]) {
-        let lines = lins.sorted(by: { $0.lowerBound > $1.lowerBound })
+    private func executeRemovingLines(_ removed: [CountableRange<Int>]) {
+        let lines = removed.sorted(by: { $0.lowerBound > $1.lowerBound })
         for removed in lines {
             presentedNumbers.removeSubrange(removed)
             for index in removed {
@@ -526,10 +535,15 @@ class NumbersField: ScrollViewContained {
     }
 
     private func indexOfNode(_ node: Tile) -> Int {
-        let column = Int(node.position.x / tileSize.width)
-        let row = Int((size.height - node.position.y - (tileSize.height / 2)) / tileSize.height)
-        let index = row * NumberOfColumns + column
-        return index
+        for (index, tile) in tilesInUse {
+            guard tile == node else {
+                continue
+            }
+            
+            return index
+        }
+
+        fatalError("Tile not in used ones")
     }
     
     override func set(color: SKColor, for attribute: Appearance.Attribute) {

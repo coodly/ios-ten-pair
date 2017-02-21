@@ -31,8 +31,8 @@ class FieldBackground: SKShapeNode {
         }
     }
     
-    func update(_ totalSize: CGSize, numberOfLines: Int, numberOfTiles: Int) {
-        updateBackground(totalSize, tileSize: tileSize, numberOfLines: numberOfLines, numberOfTiles: numberOfTiles)
+    func update(_ totalSize: CGSize, numberOfLines: Int, adLines: Int, numberOfTiles: Int) {
+        updateBackground(totalSize, tileSize: tileSize, numberOfLines: numberOfLines + adLines, numberOfTiles: numberOfTiles)
         updateVerticalLines(totalSize, tileSize: tileSize)
     }
     
@@ -82,7 +82,7 @@ class FieldBackground: SKShapeNode {
         }
     }
     
-    fileprivate func createLine() -> SKShapeNode {
+    private func createLine() -> SKShapeNode {
         let line = SKShapeNode()
         line.lineWidth = 2
         line.fillColor = lineColor
@@ -91,9 +91,9 @@ class FieldBackground: SKShapeNode {
         return line
     }
     
-    fileprivate func updateBackground(_ totalSize: CGSize, tileSize: CGSize, numberOfLines: Int, numberOfTiles: Int) {
+    private func updateBackground(_ totalSize: CGSize, tileSize: CGSize, numberOfLines: Int, numberOfTiles: Int) {
         let fieldBottom = totalSize.height - CGFloat(numberOfLines) * tileSize.height
-        let lastRowRemainder = numberOfTiles % 9
+        let lastRowRemainder = numberOfTiles % NumberOfColumns
         
         let path = CGMutablePath()
         path.move(to: CGPoint(x: 0, y: fieldBottom))
