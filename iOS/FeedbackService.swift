@@ -52,3 +52,9 @@ class FeedbackService {
         sharedInstace.newMessage = false
     }
 }
+
+extension UINavigationController {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}

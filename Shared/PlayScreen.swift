@@ -156,5 +156,5 @@ class PlayScreen: Screen {
         }
         
         run(SKAction.sequence([wait, show]))
-    }
+    }    
 }
