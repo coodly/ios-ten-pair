@@ -16,7 +16,7 @@
 
 import SpriteKit
 
-private let AdPresentationHeightInTiles = 4
+private let AdPresentationHeightInTiles = 5
 private let ShowEveryXLine = 40
 private let PresentedSectionHeight = AdPresentationHeightInTiles + ShowEveryXLine
 
@@ -94,21 +94,20 @@ class AdsCoordinator {
                 continue
             }
             
-            let adView = UILabel(frame: .zero)
-            adView.text = "\(adLine)"
-            adView.backgroundColor = generateRandomColor()
-            adView.translatesAutoresizingMaskIntoConstraints = false
-            presented[adLine] = adView
-            view.addSubview(adView)
+            let renderView = AdRenderView()
             
-            let top = NSLayoutConstraint(item: adView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: checkedY)
-            let width = NSLayoutConstraint(item: adView, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1, constant: 0)
-            let height = NSLayoutConstraint(item: adView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: adHeight)
-            let centered = NSLayoutConstraint(item: adView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
+            renderView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(renderView)
+            presented[adLine] = renderView
+            
+            let top = NSLayoutConstraint(item: renderView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: checkedY)
+            let width = NSLayoutConstraint(item: renderView, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1, constant: 0)
+            let height = NSLayoutConstraint(item: renderView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: adHeight)
+            let centered = NSLayoutConstraint(item: renderView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
             view.addConstraints([top, width, height, centered])
         }
     }
-    
+        
     private func generateRandomColor() -> UIColor {
         let hue : CGFloat = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0
         let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white

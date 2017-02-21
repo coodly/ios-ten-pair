@@ -18,7 +18,7 @@ import Foundation
 import SpriteKitUI
 import SpriteKit
 
-private let TopMenuBarHeight: CGFloat = 50
+let TopMenuBarHeight: CGFloat = 50
 private let ActionButtonsTrayHeight: CGFloat = 50
 
 class PlayScreen: Screen {

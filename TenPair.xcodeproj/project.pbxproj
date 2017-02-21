@@ -43,6 +43,9 @@
 		A787133E1E5C2BC3002DEF76 /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787133D1E5C2BC3002DEF76 /* FeedbackService.swift */; };
 		A78713431E5C71FC002DEF76 /* AdsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78713421E5C71FC002DEF76 /* AdsCoordinator.swift */; };
 		A78713461E5C8B2C002DEF76 /* AdsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78713451E5C8B2C002DEF76 /* AdsCoordinator.swift */; };
+		A78713481E5C8E1E002DEF76 /* AdRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78713471E5C8E1E002DEF76 /* AdRenderView.swift */; };
+		A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
+		A787134D1E5CA74F002DEF76 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
 		A78D56721E5AD3F7002957DC /* FieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56711E5AD3F7002957DC /* FieldBackground.swift */; };
 		A78D56731E5AD40D002957DC /* FieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56711E5AD3F7002957DC /* FieldBackground.swift */; };
 		A78D56821E5AE54B002957DC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78D56801E5AE54B002957DC /* Crashlytics.framework */; };
@@ -110,6 +113,8 @@
 		A787133D1E5C2BC3002DEF76 /* FeedbackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
 		A78713421E5C71FC002DEF76 /* AdsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsCoordinator.swift; sourceTree = "<group>"; };
 		A78713451E5C8B2C002DEF76 /* AdsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsCoordinator.swift; sourceTree = "<group>"; };
+		A78713471E5C8E1E002DEF76 /* AdRenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdRenderView.swift; sourceTree = "<group>"; };
+		A787134A1E5CA743002DEF76 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		A78D56711E5AD3F7002957DC /* FieldBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldBackground.swift; sourceTree = "<group>"; };
 		A78D56801E5AE54B002957DC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOSFrameworks/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		A78D56811E5AE54B002957DC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOSFrameworks/Fabric.framework; sourceTree = SOURCE_ROOT; };
@@ -199,6 +204,7 @@
 		A71A97381E48CCA4005E134F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A787134A1E5CA743002DEF76 /* Secrets.swift */,
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
 				A71837681E4A0C5F002AEBF5 /* BarButton.swift */,
 				A78D568E1E5AF095002957DC /* Confetti.sks */,
@@ -238,6 +244,7 @@
 		A71A97431E48CCA4005E134F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A78713471E5C8E1E002DEF76 /* AdRenderView.swift */,
 				A78713421E5C71FC002DEF76 /* AdsCoordinator.swift */,
 				A7B12C261E543355007D7807 /* Aliases.swift */,
 				A71A97441E48CCA4005E134F /* AppDelegate.swift */,
@@ -577,9 +584,11 @@
 				A718374E1E499FB8002AEBF5 /* NumbersField.swift in Sources */,
 				A7363A3D1E55969600B7C732 /* FieldStatusVIew.swift in Sources */,
 				A7B12C2D1E5439AA007D7807 /* Tile+Extensions.swift in Sources */,
+				A78713481E5C8E1E002DEF76 /* AdRenderView.swift in Sources */,
 				A7D390801E4B049400EDB111 /* FieldSave.swift in Sources */,
 				A78D568C1E5AF01A002957DC /* WinScreen.swift in Sources */,
 				A78D56721E5AD3F7002957DC /* FieldBackground.swift in Sources */,
+				A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */,
 				A78713431E5C71FC002DEF76 /* AdsCoordinator.swift in Sources */,
 				A777FA831E50758A003E62D7 /* MenuButton.swift in Sources */,
 				A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */,
@@ -605,6 +614,7 @@
 				A7363A3B1E558EED00B7C732 /* NumbersPathFinder.swift in Sources */,
 				A75570C01E54552300114ED2 /* LoadingScreen.swift in Sources */,
 				A77DE70E1E48E8C800E9214A /* TopMenuBar.swift in Sources */,
+				A787134D1E5CA74F002DEF76 /* Secrets.swift in Sources */,
 				A718374F1E499FB8002AEBF5 /* NumbersField.swift in Sources */,
 				A7B12C2F1E543A10007D7807 /* Tile+Extensions.swift in Sources */,
 				A78D568D1E5AF01A002957DC /* WinScreen.swift in Sources */,
