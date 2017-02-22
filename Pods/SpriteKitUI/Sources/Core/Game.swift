@@ -24,9 +24,11 @@ open class Game: SKScene {
     public func dismiss(_ sceeen: Screen) {
         sceeen.backingView.removeFromSuperview()
         sceeen.removeFromParent()
+        topScreen()?.viewDidAppear()
     }
     
     public func present(screen: Screen) {
+        topScreen()?.viewWillDisappear()
         screen.delayedAppear = children.count != 0
         screen.game = self
         add(fullSized: screen)
@@ -63,5 +65,10 @@ open class Game: SKScene {
             
             screen.applyTheme()
         }
+    }
+    
+    private func topScreen() -> Screen? {
+        let screens = children.filter({ $0 is Screen })
+        return screens.sorted(by: { $0.0.zPosition > $0.1.zPosition }).first as? Screen
     }
 }

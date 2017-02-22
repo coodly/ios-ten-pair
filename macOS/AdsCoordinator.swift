@@ -40,4 +40,12 @@ class AdsCoordinator {
     func combinedHeight(with lines: Int) -> Int {
         return 0
     }
+    
+    func hide() {
+        
+    }
+    
+    func show() {
+        
+    }
 }

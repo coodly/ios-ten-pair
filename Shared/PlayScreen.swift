@@ -159,5 +159,13 @@ class PlayScreen: Screen {
         }
         
         run(SKAction.sequence([wait, show]))
-    }    
+    }
+    
+    override func viewDidAppear() {
+        ads?.show()
+    }
+    
+    override func viewWillDisappear() {
+        ads?.hide()
+    }
 }

@@ -54,7 +54,7 @@ CHECKOUT OPTIONS:
     :commit: 9cd49a09bd655c13c06fb928e01887426abc2d86
     :git: https://github.com/coodly/laughing-adventure.git
   SpriteKitUI:
-    :commit: c3dc58842c66cc20ef92fea813c61f7789719fc9
+    :commit: 85ce9f9db69bc135ae66a82b43f5fe53d8e06c90
     :git: git@github.com:coodly/SpriteKitUI.git
   SWLogger:
     :commit: 4905d4e05d8fa9cc0b21b2869fb899e970290443

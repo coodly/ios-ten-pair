@@ -115,4 +115,16 @@ class AdsCoordinator {
         
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
+    
+    func hide() {
+        for (_, view) in presented {
+            view.isHidden = true
+        }
+    }
+    
+    func show() {
+        for (_, view) in presented {
+            view.isHidden = false
+        }
+    }
 }

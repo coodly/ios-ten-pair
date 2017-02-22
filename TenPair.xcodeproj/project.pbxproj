@@ -264,6 +264,7 @@
 		A71A97541E48CCA4005E134F /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				A78713451E5C8B2C002DEF76 /* AdsCoordinator.swift */,
 				A7B12C281E543379007D7807 /* Aliases.swift */,
 				A71A97551E48CCA4005E134F /* AppDelegate.swift */,
 				A7B12C211E535B72007D7807 /* Constants.swift */,
@@ -272,7 +273,6 @@
 				A7D390821E4B0ADB00EDB111 /* MainMenu.xib */,
 				A78D567A1E5AE413002957DC /* Supporting files */,
 				A7B12C2E1E543A10007D7807 /* Tile+Extensions.swift */,
-				A78713451E5C8B2C002DEF76 /* AdsCoordinator.swift */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
