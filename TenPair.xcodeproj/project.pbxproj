@@ -60,7 +60,6 @@
 		A78D56901E5AF095002957DC /* Confetti.sks in Resources */ = {isa = PBXBuildFile; fileRef = A78D568E1E5AF095002957DC /* Confetti.sks */; };
 		A78D56921E5B362F002957DC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56911E5B362F002957DC /* Theme.swift */; };
 		A78D56931E5B362F002957DC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56911E5B362F002957DC /* Theme.swift */; };
-		A78FA2EE1E5C1462002DB0AF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78FA2ED1E5C1462002DB0AF /* CloudKit.framework */; };
 		A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */; };
 		A7B12C1A1E53123D007D7807 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA861E50CC76003E62D7 /* InfoPlist.strings */; };
 		A7B12C1B1E53123D007D7807 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA881E50CC76003E62D7 /* Localizable.strings */; };
@@ -80,6 +79,7 @@
 		A7D3908E1E4B2AE300EDB111 /* MenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3908C1E4B2AE300EDB111 /* MenuScreen.swift */; };
 		A7D390931E4B47E900EDB111 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D390921E4B47E900EDB111 /* Log.swift */; };
 		A7D390941E4B47E900EDB111 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D390921E4B47E900EDB111 /* Log.swift */; };
+		A7D5BA511E5DE63A003333A9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5BA501E5DE63A003333A9 /* CloudKit.framework */; };
 		A7ECCB801E4E275E001ADB51 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ECCB7F1E4E275E001ADB51 /* Tile.swift */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -127,7 +127,6 @@
 		A78D568E1E5AF095002957DC /* Confetti.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Confetti.sks; sourceTree = "<group>"; };
 		A78D56911E5B362F002957DC /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A78FA2EC1E5C145C002DB0AF /* TenPair.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenPair.entitlements; sourceTree = "<group>"; };
-		A78FA2ED1E5C1462002DB0AF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
 		A7B12C1C1E535B18007D7807 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A7B12C1F1E535B67007D7807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -140,6 +139,8 @@
 		A7D390821E4B0ADB00EDB111 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		A7D3908C1E4B2AE300EDB111 /* MenuScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScreen.swift; sourceTree = "<group>"; };
 		A7D390921E4B47E900EDB111 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		A7D5BA4F1E5DE61B003333A9 /* TenPair.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = TenPair.entitlements; sourceTree = "<group>"; };
+		A7D5BA501E5DE63A003333A9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		A7ECCB7F1E4E275E001ADB51 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		CDBD234CA436EF092F3D679F /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D734C99D56200ECE40196FB7 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,7 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A78D56821E5AE54B002957DC /* Crashlytics.framework in Frameworks */,
-				A78FA2EE1E5C1462002DB0AF /* CloudKit.framework in Frameworks */,
+				A7D5BA511E5DE63A003333A9 /* CloudKit.framework in Frameworks */,
 				FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */,
 				A78D56831E5AE54B002957DC /* Fabric.framework in Frameworks */,
 			);
@@ -174,7 +175,7 @@
 		3A55CE60C2DA1BC33147E445 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A78FA2ED1E5C1462002DB0AF /* CloudKit.framework */,
+				A7D5BA501E5DE63A003333A9 /* CloudKit.framework */,
 				91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */,
 				8823AD29127CFC3A63FA4805 /* Pods_macOS.framework */,
 			);
@@ -268,6 +269,7 @@
 		A71A97541E48CCA4005E134F /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				A7D5BA4F1E5DE61B003333A9 /* TenPair.entitlements */,
 				A78713451E5C8B2C002DEF76 /* AdsCoordinator.swift */,
 				A7B12C281E543379007D7807 /* Aliases.swift */,
 				A71A97551E48CCA4005E134F /* AppDelegate.swift */,
@@ -382,8 +384,14 @@
 						DevelopmentTeam = 5T8DRBFCBP;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
 							};
 						};
 					};
@@ -819,8 +827,8 @@
 			baseConfigurationReference = D734C99D56200ECE40196FB7 /* Pods-macOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = iOS/TenPair.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = macOS/TenPair.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -843,8 +851,8 @@
 			baseConfigurationReference = FFB053744AB774B5ADBDE43B /* Pods-macOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = iOS/TenPair.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = macOS/TenPair.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				FRAMEWORK_SEARCH_PATHS = (
