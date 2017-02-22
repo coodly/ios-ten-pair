@@ -27,6 +27,10 @@ open class Screen: View {
         game?.dismiss(screen)
     }
     
+    public func dismissAll(upTo screen: Screen) {
+        game?.dismissAll(upTo: screen)
+    }
+    
     open func viewWillDisappear() {
 
     }

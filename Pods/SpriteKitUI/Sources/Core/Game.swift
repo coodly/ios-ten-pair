@@ -27,6 +27,17 @@ open class Game: SKScene {
         topScreen()?.viewDidAppear()
     }
     
+    public func dismissAll(upTo screen: Screen) {
+        let screens = children.filter({ $0 is Screen}).sorted(by: { $0.0.zPosition > $0.1.zPosition })
+        for dismissed in screens {
+            if screen == dismissed {
+                break
+            }
+            
+            dismiss(dismissed as! Screen)
+        }
+    }
+    
     public func present(screen: Screen) {
         topScreen()?.viewWillDisappear()
         screen.delayedAppear = children.count != 0

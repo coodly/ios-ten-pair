@@ -130,24 +130,44 @@ class PlayScreen: Screen {
     }
     
     private func presentMenu(withResume: Bool = true, extraDismissed: Screen? = nil) {
-        let restartAction = SKAction.run {
-            self.numbersField?.presentedNumbers = DefaultStartBoard
-            self.numbersField?.restart()
-        }
-
         let menu = MenuScreen()
         menu.includeResume = withResume
-        menu.restartAction = SKAction.run {
-            [unowned menu] in
+        menu.restartHandler = {
+            [weak self]
             
-            if let extra = extraDismissed {
-                self.dismiss(extra)
+            option in
+            
+            guard let me = self else {
+                return
             }
-            self.dismiss(menu)
-            self.execute(restartAction)
+            
+            me.dismissAll(upTo: me)
+            me.restart(using: option)
         }
         
         present(menu)
+    }
+    
+    private func restart(using: StartField) {
+        let fill = SKAction.run {
+            let field: [Int]
+            switch using {
+            case .regular:
+                field = DefaultStartBoard
+            case .random(let lines):
+                let tiles = lines * NumberOfColumns
+                var numbers = [Int]()
+                for _ in 0..<tiles {
+                    numbers.append(Int(arc4random_uniform(10)))
+                }
+                field = numbers
+            }
+            
+            self.numbersField?.presentedNumbers = field
+            self.numbersField?.restart()
+        }
+        
+        execute(fill)
     }
     
     private func presentWin() {

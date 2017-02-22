@@ -46,6 +46,8 @@
 		A78713481E5C8E1E002DEF76 /* AdRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78713471E5C8E1E002DEF76 /* AdRenderView.swift */; };
 		A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
 		A787134D1E5CA74F002DEF76 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
+		A787134F1E5D6FDC002DEF76 /* RestartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134E1E5D6FDC002DEF76 /* RestartScreen.swift */; };
+		A78713501E5D6FDC002DEF76 /* RestartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134E1E5D6FDC002DEF76 /* RestartScreen.swift */; };
 		A78D56721E5AD3F7002957DC /* FieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56711E5AD3F7002957DC /* FieldBackground.swift */; };
 		A78D56731E5AD40D002957DC /* FieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56711E5AD3F7002957DC /* FieldBackground.swift */; };
 		A78D56821E5AE54B002957DC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78D56801E5AE54B002957DC /* Crashlytics.framework */; };
@@ -115,6 +117,7 @@
 		A78713451E5C8B2C002DEF76 /* AdsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsCoordinator.swift; sourceTree = "<group>"; };
 		A78713471E5C8E1E002DEF76 /* AdRenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdRenderView.swift; sourceTree = "<group>"; };
 		A787134A1E5CA743002DEF76 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		A787134E1E5D6FDC002DEF76 /* RestartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestartScreen.swift; sourceTree = "<group>"; };
 		A78D56711E5AD3F7002957DC /* FieldBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldBackground.swift; sourceTree = "<group>"; };
 		A78D56801E5AE54B002957DC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOSFrameworks/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		A78D56811E5AE54B002957DC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOSFrameworks/Fabric.framework; sourceTree = SOURCE_ROOT; };
@@ -204,7 +207,6 @@
 		A71A97381E48CCA4005E134F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				A787134A1E5CA743002DEF76 /* Secrets.swift */,
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
 				A71837681E4A0C5F002AEBF5 /* BarButton.swift */,
 				A78D568E1E5AF095002957DC /* Confetti.sks */,
@@ -223,6 +225,8 @@
 				A718374D1E499FB8002AEBF5 /* NumbersField.swift */,
 				A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */,
 				A77DE6FC1E48D8D500E9214A /* PlayScreen.swift */,
+				A787134E1E5D6FDC002DEF76 /* RestartScreen.swift */,
+				A787134A1E5CA743002DEF76 /* Secrets.swift */,
 				A77DE6F81E48D75200E9214A /* TenPair.swift */,
 				A78D56911E5B362F002957DC /* Theme.swift */,
 				A7ECCB7F1E4E275E001ADB51 /* Tile.swift */,
@@ -590,6 +594,7 @@
 				A78D56721E5AD3F7002957DC /* FieldBackground.swift in Sources */,
 				A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */,
 				A78713431E5C71FC002DEF76 /* AdsCoordinator.swift in Sources */,
+				A787134F1E5D6FDC002DEF76 /* RestartScreen.swift in Sources */,
 				A777FA831E50758A003E62D7 /* MenuButton.swift in Sources */,
 				A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */,
 				A77DE6F91E48D75200E9214A /* TenPair.swift in Sources */,
@@ -629,6 +634,7 @@
 				A750CE321E55AAB300852E6A /* FieldStatusVIew.swift in Sources */,
 				A7D390941E4B47E900EDB111 /* Log.swift in Sources */,
 				A77DE70D1E48E8C000E9214A /* PlayScreen.swift in Sources */,
+				A78713501E5D6FDC002DEF76 /* RestartScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

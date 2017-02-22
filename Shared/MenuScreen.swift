@@ -18,8 +18,8 @@ import SpriteKitUI
 import SpriteKit
 
 class MenuScreen: SpriteKitUI.MenuScreen {
-    var restartAction: SKAction?
     var includeResume = true
+    var restartHandler: ((StartField) -> ())?
     
     private var themeButton: MenuButton?
     private var feedbackButton: MenuButton?
@@ -51,7 +51,11 @@ class MenuScreen: SpriteKitUI.MenuScreen {
         }
         
         let restartButton = button(named: NSLocalizedString("menu.option.restart", comment: ""))
-        restartButton.action = restartAction
+        restartButton.action = SKAction.run {
+            [weak self] in
+            
+            self?.showRestartOptions()
+        }
         append(restartButton)
         
         let theme = Theme.current()
@@ -90,7 +94,7 @@ class MenuScreen: SpriteKitUI.MenuScreen {
         }
     }
     
-    private func button(named title: String) -> MenuButton {
+    func button(named title: String) -> MenuButton {
         let button = MenuButton()
         button.name = title
         button.set(title: title)
@@ -109,5 +113,11 @@ class MenuScreen: SpriteKitUI.MenuScreen {
     private func presentFeedback() {
         FeedbackService.present()
         feedbackButton?.set(title: NSLocalizedString("menu.option.send.message", comment: ""))
+    }
+    
+    private func showRestartOptions() {
+        let restart = RestartScreen()
+        restart.restartHandler = restartHandler
+        present(restart)
     }
 }

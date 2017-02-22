@@ -13,5 +13,8 @@
 "menu.option.send.message" = "Message to developer";
 "menu.option.theme.base" = "Theme: %@";
 
+"restart.screen.option.regular" = "Regular board";
+"restart.screen.option.x.lines" = "Random %@ lines";
+
 "theme.classic.name" = "Classic";
 "theme.pink.name" = "Pink";
