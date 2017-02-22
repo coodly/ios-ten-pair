@@ -32,7 +32,7 @@ class AdRenderView: UIView, GADNativeExpressAdViewDelegate {
     }()
     private lazy var clipView: UIView = {
         let clip = UIView()
-        clip.backgroundColor = .red
+        clip.backgroundColor = .lightGray
         clip.clipsToBounds = true
         
         self.clipTop = NSLayoutConstraint(item: clip, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)

@@ -12,15 +12,15 @@ def shared
     if UsedSource == PodSource::Local
         pod 'SWLogger', :path => '../swift-logger'
     elsif UsedSource == PodSource::Remote
-    pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
+        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
     else
         pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', :tag => '0.1.2'
     end
 end
 
 def ios_pods
-    pod 'Firebase/Core', '3.11.0'
-    pod 'Firebase/AdMob', '3.11.0'
+    pod 'Firebase/Core', '3.13.0'
+    pod 'Firebase/AdMob', '3.13.0'
     pod 'Locksmith', '3.0.0'
 
     shared
