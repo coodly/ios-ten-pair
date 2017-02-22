@@ -589,7 +589,14 @@ extension NumbersField: MatchFinder {
         let index = self.openMatchIndex(self.presentedNumbers)
 
         guard let value = index else {
+            let shakeActions = [
+                SKAction.move(by: CGVector(dx: 4, dy: 0), duration: 0.1),
+                SKAction.move(by: CGVector(dx: -8, dy: 0), duration: 0.1),
+                SKAction.move(by: CGVector(dx: 8, dy: 0), duration: 0.1),
+                SKAction.move(by: CGVector(dx: -4, dy: 0), duration: 0.1),
+            ]
             completion(.notFound)
+            run(SKAction.sequence(shakeActions))
             return
         }
         
