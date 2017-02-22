@@ -32,7 +32,7 @@ class AdRenderView: UIView, GADNativeExpressAdViewDelegate {
     }()
     private lazy var clipView: UIView = {
         let clip = UIView()
-        clip.backgroundColor = .lightGray
+        clip.backgroundColor = .clear
         clip.clipsToBounds = true
         
         self.clipTop = NSLayoutConstraint(item: clip, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
@@ -48,6 +48,7 @@ class AdRenderView: UIView, GADNativeExpressAdViewDelegate {
         return clip
     }()
     private var clipTop: NSLayoutConstraint?
+    private var adLeading: NSLayoutConstraint?
     
     private var scroll: UIScrollView?
     private var meInScroll: CGRect {
@@ -84,10 +85,17 @@ class AdRenderView: UIView, GADNativeExpressAdViewDelegate {
         let topMenu = CGRect(x: 0, y: scroll!.contentOffset.y, width: scroll!.frame.width, height: TopMenuBarHeight)
         let topInMe = convert(topMenu, from: scroll!)
         if topInMe.maxY > 0 {
+            clipView.clipsToBounds = true
             clipTop?.constant = topInMe.maxY
         } else {
+            clipView.clipsToBounds = false
             clipTop?.constant = 0
         }
+        
+        let hint = CGRect(x: 0, y: scroll!.contentOffset.y + scroll!.frame.height - 10 - ActionButtonsTrayHeight, width: ActionButtonsTrayHeight, height: ActionButtonsTrayHeight)
+        let hintInMe = convert(hint, from: scroll!)
+        let intersection = bounds.intersection(hintInMe)
+        adLeading?.constant = intersection.width
         
         guard clipView.subviews.count == 0 else {
             return
@@ -97,12 +105,12 @@ class AdRenderView: UIView, GADNativeExpressAdViewDelegate {
         let adView = AdRenderView.adView
         
         let height = NSLayoutConstraint(item: adView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
-        let leading = NSLayoutConstraint(item: adView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0)
-        let trailing = NSLayoutConstraint(item: adView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0)
+        adLeading = NSLayoutConstraint(item: adView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0)
+        let width = NSLayoutConstraint(item: adView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0)
         let bottom = NSLayoutConstraint(item: adView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
         
         clipView.addSubview(adView)
-        addConstraints([height, leading, trailing, bottom])
+        addConstraints([height, adLeading!, width, bottom])
     }
     
     private func isVisible() -> Bool {

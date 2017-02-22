@@ -19,7 +19,7 @@ import SpriteKitUI
 import SpriteKit
 
 let TopMenuBarHeight: CGFloat = 50
-private let ActionButtonsTrayHeight: CGFloat = 50
+let ActionButtonsTrayHeight: CGFloat = 50
 
 class PlayScreen: Screen {
     var ads: AdsCoordinator?
