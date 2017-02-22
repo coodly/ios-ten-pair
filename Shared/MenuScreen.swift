@@ -68,9 +68,7 @@ class MenuScreen: SpriteKitUI.MenuScreen {
             self?.switchToNextTheme()
         }
         append(themeButton)
-        
-        append(button(named: NSLocalizedString("menu.option.full.version.purchased", comment: "")))
-        
+                
         if AppConfig.current.withFeedback {
             let hasMessage = FeedbackService.hasMessage()
             let title = hasMessage ? NSLocalizedString("menu.option.message.from", comment: "") : NSLocalizedString("menu.option.send.message", comment: "")
