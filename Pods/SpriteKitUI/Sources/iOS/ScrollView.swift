@@ -64,6 +64,10 @@ public class ScrollView: View, UIScrollViewDelegate {
         contained.scrollView = self
     }
     
+    public func scrollRectToVisible(_ rect: CGRect, animated: Bool) {
+        scrollView.scrollRectToVisible(rect, animated: animated)
+    }
+    
     public func setContentOffset(_ offset: CGPoint, animated: Bool) {
         scrollView.setContentOffset(offset, animated: animated)
     }

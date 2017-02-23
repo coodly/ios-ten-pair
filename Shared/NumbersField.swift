@@ -36,7 +36,7 @@ class NumbersField: ScrollViewContained {
     
     var presentedNumbers: [Int] = []
     
-    fileprivate var tileSize = CGSize.zero {
+    var tileSize = CGSize.zero {
         didSet {
             ads?.tileSize = tileSize
             background.tileSize = tileSize

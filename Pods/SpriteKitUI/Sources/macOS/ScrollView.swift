@@ -99,6 +99,12 @@ public class ScrollView: View {
         positionChildren()
     }
     
+    public func scrollRectToVisible(_ rect: CGRect, animated: Bool) {
+        scrollView.contentView.scrollToVisible(rect)
+        scrollView.reflectScrolledClipView(scrollView.contentView)
+        positionContained()
+    }
+    
     public func setContentOffset(_ offset: CGPoint, animated: Bool) {
         scrollView.contentView.scroll(to: NSPoint(x: offset.x, y: offset.y))
         scrollView.reflectScrolledClipView(scrollView.contentView)

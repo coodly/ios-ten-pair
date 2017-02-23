@@ -82,8 +82,9 @@ class PlayScreen: Screen {
                     //TODO jaanus: shake the field
                     break
                 case .foundOffScreen(let offset):
-                    let scrollTo = offset - self.scrollView!.size.height / 2
-                    self.scrollView!.setContentOffset(CGPoint(x: 0, y: scrollTo), animated: true)
+                    let tileSize = self.numbersField!.tileSize
+                    let tileRect = CGRect(x: 0, y: offset, width: tileSize.width, height: tileSize.height)
+                    self.scrollView!.scrollRectToVisible(tileRect, animated: true)
                 }
             }
         }
