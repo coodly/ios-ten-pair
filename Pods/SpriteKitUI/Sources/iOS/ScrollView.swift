@@ -101,10 +101,7 @@ public class ScrollView: View, UIScrollViewDelegate {
         let combined = visible.intersection(contained.backingView.bounds)
         var inNodeSpace = combined
         inNodeSpace.origin.y = contained.backingView.bounds.height - combined.size.height - combined.origin.y
-        let notify = SKAction.run {
-            contained.scrolledVisible(to: inNodeSpace)
-        }
-        run(notify)
+        contained.scrolledVisible(to: inNodeSpace)
     }
     
     private func adjustVerticalInsets() {
