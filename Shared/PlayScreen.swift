@@ -150,6 +150,7 @@ class PlayScreen: Screen {
     }
     
     private func restart(using: StartField) {
+        scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 10, height: 10), animated: true)
         let fill = SKAction.run {
             let field: [Int]
             switch using {
