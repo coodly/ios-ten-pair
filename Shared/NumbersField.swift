@@ -248,10 +248,10 @@ class NumbersField: ScrollViewContained {
                 reused.run(TenPairUnhideTileAction)
             } else {
                 sprite = Tile()
+                sprite.colors = tileColors
                 addChild(sprite)
             }
             
-            sprite.colors = tileColors
             sprite.anchorPoint = CGPoint.zero
             sprite.number = number
             sprite.size = tileSize
@@ -264,8 +264,6 @@ class NumbersField: ScrollViewContained {
             tile = sprite
             tilesInUse[index] = sprite
         }
-        
-        tile.colors = tileColors
         
         if animated && !tileCreated {
             let moveAction = SKAction.move(to: position, duration: TenPairRowHideTime)
@@ -574,6 +572,10 @@ class NumbersField: ScrollViewContained {
         }
         
         for (_, tile) in tilesInUse {
+            tile.colors = tileColors
+        }
+        
+        for tile in reusableTiles {
             tile.colors = tileColors
         }
     }
