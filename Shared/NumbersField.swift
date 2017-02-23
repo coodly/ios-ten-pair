@@ -165,6 +165,12 @@ class NumbersField: ScrollViewContained {
     }
     
     private func ensureVisibleCovered(_ visible: CGRect, animated: Bool = false, completionAction: SKAction = SKAction.wait(forDuration: 0)) {
+        defer {
+            let waitAction = SKAction.wait(forDuration: TenPairRowHideTime + 0.1)
+            let sequence = SKAction.sequence([waitAction, completionAction])
+            run(sequence)
+        }
+        
         let topY = size.height - (visible.origin.y + visible.size.height)
         let topLineWithAds = lineForY(topY)
         let topLine = ads?.removeAdLines(topLineWithAds) ?? topLineWithAds
@@ -181,10 +187,6 @@ class NumbersField: ScrollViewContained {
                 break
             }
         }
-        
-        let waitAction = SKAction.wait(forDuration: TenPairRowHideTime + 0.1)
-        let sequence = SKAction.sequence([waitAction, completionAction])
-        run(sequence)
     }
     
     private  func removeHiddenTiles(_ visibleFrame: CGRect) {
