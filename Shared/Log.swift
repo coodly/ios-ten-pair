@@ -18,6 +18,10 @@ import SWLogger
 
 class Log {
     class func enable() {
+        guard AppConfig.current.logs else {
+            return
+        }
+        
         SWLogger.Log.add(output: ConsoleOutput())
         SWLogger.Log.add(output: FileOutput())
         

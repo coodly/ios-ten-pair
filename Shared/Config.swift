@@ -18,7 +18,7 @@ import Foundation
 
 let NumberOfColumns = 9
 
-private let ReleaseBuild = false
+private let ReleaseBuild = true
 
 struct AppConfig {
     let logs = !ReleaseBuild

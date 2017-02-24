@@ -21,6 +21,9 @@ import SpriteKit
 let AdPresentationHeightInTiles = 0
 
 class AdsCoordinator {
+    var background: SKColor?
+    var foreground: SKColor?
+    
     var tileSize: CGSize = .zero
     var totalLines = 0
     
