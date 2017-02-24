@@ -16,49 +16,51 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
-  - LaughingAdventure (0.7.0):
-    - LaughingAdventure/Core (= 0.7.0)
-  - LaughingAdventure/Core (0.7.0)
-  - LaughingAdventure/Logging (0.7.0)
-  - LaughingAdventure/Purchase (0.7.0):
+  - LaughingAdventure (0.7.1):
+    - LaughingAdventure/Core (= 0.7.1)
+  - LaughingAdventure/Core (0.7.1)
+  - LaughingAdventure/Logging (0.7.1)
+  - LaughingAdventure/Purchase (0.7.1):
     - LaughingAdventure/Logging
   - Locksmith (3.0.0)
-  - SpriteKitUI/Core (0.1.0)
-  - SpriteKitUI/iOS (0.1.0):
+  - SpriteKitUI/Core (0.3.0)
+  - SpriteKitUI/iOS (0.3.0):
     - SpriteKitUI/Core
-  - SpriteKitUI/macOS (0.1.0):
+  - SpriteKitUI/macOS (0.3.0):
     - SpriteKitUI/Core
   - SWLogger (0.3.1)
 
 DEPENDENCIES:
   - Firebase/AdMob (= 3.13.0)
   - Firebase/Core (= 3.13.0)
-  - LaughingAdventure (from `https://github.com/coodly/laughing-adventure.git`)
-  - LaughingAdventure/Purchase (from `https://github.com/coodly/laughing-adventure.git`)
+  - LaughingAdventure (from `https://github.com/coodly/laughing-adventure.git`, tag `0.7.1`)
+  - LaughingAdventure/Purchase (from `https://github.com/coodly/laughing-adventure.git`, tag `0.7.1`)
   - Locksmith (= 3.0.0)
-  - SpriteKitUI/iOS (from `git@github.com:coodly/SpriteKitUI.git`, branch `development`)
-  - SpriteKitUI/macOS (from `git@github.com:coodly/SpriteKitUI.git`, branch `development`)
-  - SWLogger (from `git@github.com:coodly/swlogger.git`)
+  - SpriteKitUI/iOS (from `git@github.com:coodly/SpriteKitUI.git`, tag `0.3.0`)
+  - SpriteKitUI/macOS (from `git@github.com:coodly/SpriteKitUI.git`, tag `0.3.0`)
+  - SWLogger (from `git@github.com:coodly/swlogger.git`, tag `0.3.1`)
 
 EXTERNAL SOURCES:
   LaughingAdventure:
     :git: https://github.com/coodly/laughing-adventure.git
+    :tag: 0.7.1
   SpriteKitUI:
-    :branch: development
     :git: git@github.com:coodly/SpriteKitUI.git
+    :tag: 0.3.0
   SWLogger:
     :git: git@github.com:coodly/swlogger.git
+    :tag: 0.3.1
 
 CHECKOUT OPTIONS:
   LaughingAdventure:
-    :commit: 5a22cad81b96346c5da247f56dad39cffe82299c
     :git: https://github.com/coodly/laughing-adventure.git
+    :tag: 0.7.1
   SpriteKitUI:
-    :commit: db5468fc7482780c3e4e6ce741867ba6a1a5dd90
     :git: git@github.com:coodly/SpriteKitUI.git
+    :tag: 0.3.0
   SWLogger:
-    :commit: 4905d4e05d8fa9cc0b21b2869fb899e970290443
     :git: git@github.com:coodly/swlogger.git
+    :tag: 0.3.1
 
 SPEC CHECKSUMS:
   Firebase: 5bc34d7b5ff5792e3386c8b28dc6265deeab0da4
@@ -67,11 +69,11 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   Google-Mobile-Ads-SDK: a8bf4211624999b73e4184be516f94770b139525
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  LaughingAdventure: 65071080ae74dd696223782f1242dff060247385
+  LaughingAdventure: 9eec95e2f075f70eba98d3438e96a77926f883d4
   Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
-  SpriteKitUI: 2b6c614125fd27b5b065fc286edc24af53692e91
+  SpriteKitUI: 5792f4f724f4504cede11996d1a7124045353f32
   SWLogger: 333135cadd381962c3667f5af500f7ae140c74a4
 
-PODFILE CHECKSUM: f3658f1b0262e9fcf00c74d126baf17ea85a7921
+PODFILE CHECKSUM: 80fa15a51e1d450a44522eb5c17cd6918a64b2f6
 
 COCOAPODS: 1.2.0

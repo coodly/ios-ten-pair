@@ -6,7 +6,7 @@ module PodSource
     Tagged = 3
 end
 
-UsedSource = PodSource::Remote
+UsedSource = PodSource::Tagged
 
 def shared
     if UsedSource == PodSource::Local
@@ -14,7 +14,7 @@ def shared
     elsif UsedSource == PodSource::Remote
         pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
     else
-        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', :tag => '0.1.2'
+        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', :tag => '0.3.1'
     end
 end
 
@@ -32,8 +32,8 @@ def ios_pods
         pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git'
         pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'development'
     else
-        pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.2.1'
-        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.2.0'
+        pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.7.1'
+        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.3.0'
     end
 end
 
@@ -55,7 +55,7 @@ target 'macOS' do
         pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
         pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'development'
     else
-        pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.2.1'
-        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.2.0'
+        pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.7.1'
+        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.3.0'
     end
 end
