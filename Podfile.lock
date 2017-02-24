@@ -51,7 +51,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LaughingAdventure:
-    :commit: 9cd49a09bd655c13c06fb928e01887426abc2d86
+    :commit: 5a22cad81b96346c5da247f56dad39cffe82299c
     :git: https://github.com/coodly/laughing-adventure.git
   SpriteKitUI:
     :commit: db5468fc7482780c3e4e6ce741867ba6a1a5dd90

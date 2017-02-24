@@ -40,6 +40,25 @@ internal extension NSManagedObjectModel {
         conversationUnseen.attributeType = .booleanAttributeType
         conversationUnseen.defaultValue = false
         
+        let conversationRecordName = NSAttributeDescription()
+        conversationRecordName.name = "recordName"
+        conversationRecordName.attributeType = .stringAttributeType
+        
+        let conversationRecordData = NSAttributeDescription()
+        conversationRecordData.name = "recordData"
+        conversationRecordData.attributeType = .binaryDataAttributeType
+        conversationRecordData.allowsExternalBinaryDataStorage = true
+        
+        let conversationSyncNeeded = NSAttributeDescription()
+        conversationSyncNeeded.name = "syncNeeded"
+        conversationSyncNeeded.attributeType = .booleanAttributeType
+        conversationSyncNeeded.defaultValue = false
+        
+        let conversationSyncFailed = NSAttributeDescription()
+        conversationSyncFailed.name = "syncFailed"
+        conversationSyncFailed.attributeType = .booleanAttributeType
+        conversationSyncFailed.defaultValue = false
+        
         // # Message #
         let messageDesc = NSEntityDescription()
         messageDesc.name = "Message"
@@ -58,6 +77,26 @@ internal extension NSManagedObjectModel {
         messageSentBy.attributeType = .stringAttributeType
         messageSentBy.isOptional = true
         
+        let messageRecordName = NSAttributeDescription()
+        messageRecordName.name = "recordName"
+        messageRecordName.attributeType = .stringAttributeType
+        
+        let messageRecordData = NSAttributeDescription()
+        messageRecordData.name = "recordData"
+        messageRecordData.attributeType = .binaryDataAttributeType
+        messageRecordData.allowsExternalBinaryDataStorage = true
+        
+        let messageSyncNeeded = NSAttributeDescription()
+        messageSyncNeeded.name = "syncNeeded"
+        messageSyncNeeded.attributeType = .booleanAttributeType
+        messageSyncNeeded.defaultValue = false
+        
+        let messageSyncFailed = NSAttributeDescription()
+        messageSyncFailed.name = "syncFailed"
+        messageSyncFailed.attributeType = .booleanAttributeType
+        messageSyncFailed.defaultValue = false
+
+        
         // # Setting #
         let settingDesc = NSEntityDescription()
         settingDesc.name = "Setting"
@@ -71,26 +110,6 @@ internal extension NSManagedObjectModel {
         settingValue.name = "value"
         settingValue.attributeType = .stringAttributeType
         settingValue.isOptional = true
-        
-        //# common properties
-        let recordName = NSAttributeDescription()
-        recordName.name = "recordName"
-        recordName.attributeType = .stringAttributeType
-
-        let commonRecordData = NSAttributeDescription()
-        commonRecordData.name = "recordData"
-        commonRecordData.attributeType = .binaryDataAttributeType
-        commonRecordData.allowsExternalBinaryDataStorage = true
-        
-        let syncNeeded = NSAttributeDescription()
-        syncNeeded.name = "syncNeeded"
-        syncNeeded.attributeType = .booleanAttributeType
-        syncNeeded.defaultValue = false
-        
-        let syncFailed = NSAttributeDescription()
-        syncFailed.name = "syncFailed"
-        syncFailed.attributeType = .booleanAttributeType
-        syncFailed.defaultValue = false
         
         //relationships
         let conversationHasManyMessages = NSRelationshipDescription()
@@ -108,8 +127,8 @@ internal extension NSManagedObjectModel {
         conversationHasManyMessages.inverseRelationship = messageBelongsToOneConversation
         messageBelongsToOneConversation.inverseRelationship = conversationHasManyMessages
 
-        conversationDesc.properties = [conversationLastMessageTime, recordName, conversationHasManyMessages, conversationSnippet, commonRecordData, syncNeeded, syncFailed, conversationUnseen]
-        messageDesc.properties = [messageTime, messageBody, messageBelongsToOneConversation, commonRecordData, recordName, syncNeeded, syncFailed, messageSentBy]
+        conversationDesc.properties = [conversationLastMessageTime, conversationRecordName, conversationHasManyMessages, conversationSnippet, conversationRecordData, conversationSyncNeeded, conversationSyncFailed, conversationUnseen]
+        messageDesc.properties = [messageTime, messageBody, messageBelongsToOneConversation, messageRecordData, messageRecordName, messageSyncNeeded, messageSyncFailed, messageSentBy]
         settingDesc.properties = [settingKey, settingValue]
         
         let entities = [conversationDesc, messageDesc, settingDesc]
