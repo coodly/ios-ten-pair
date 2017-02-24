@@ -17,8 +17,8 @@
 import UIKit
 import LaughingAdventure
 
-class AdRenderView: UIView {
-    private static var adView: AdLoadingView = {
+class AdRenderView: UIView {    
+    static var adView: AdLoadingView = {
         let ad = AdLoadingView.viewNib().loadInstance() as! AdLoadingView
         ad.translatesAutoresizingMaskIntoConstraints = false
         return ad

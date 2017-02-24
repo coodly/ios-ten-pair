@@ -19,6 +19,23 @@ import GoogleMobileAds
 import LaughingAdventure
 
 class AdLoadingView: UIView, GADNativeExpressAdViewDelegate {
+    @IBOutlet private var labels: [UILabel]!
+    @IBOutlet private var title: UILabel!
+    @IBOutlet private var body: UILabel!
+    
+    var foreground: UIColor? {
+        didSet {
+            for label in labels {
+                label.textColor = foreground
+            }
+        }
+    }
+    var background: UIColor? {
+        didSet {
+            backgroundColor = background
+        }
+    }
+    
     private lazy var adView: GADNativeExpressAdView = {
         let gadView = GADNativeExpressAdView(adSize: GADAdSizeFromCGSize(CGSize(width: 320, height: 240)))!
         gadView.adUnitID = AdMobAdUnitID
@@ -33,6 +50,13 @@ class AdLoadingView: UIView, GADNativeExpressAdViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        title.text = NSLocalizedString("moviez.sale.title", comment: "")
+        body.text = NSLocalizedString("moviez.sale.body", comment: "")
+    }
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
         
         add(fullSized: adView)
         DispatchQueue.main.async {

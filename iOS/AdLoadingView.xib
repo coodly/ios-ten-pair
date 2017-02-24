@@ -14,10 +14,79 @@
         <view contentMode="scaleToFill" id="81f-gl-K3V" customClass="AdLoadingView" customModule="TenPair" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="I8g-Dd-kQx">
+                    <rect key="frame" x="8" y="8" width="304" height="184"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moviez" translatesAutoresizingMaskIntoConstraints="NO" id="9AB-VI-HY4">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="184"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="gxw-X2-UpF"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="aDP-21-CMG">
+                            <rect key="frame" x="68" y="0.0" width="236" height="184"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Sales title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdG-mH-Lg6">
+                                    <rect key="frame" x="0.0" y="0.0" width="236" height="0.0"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="t94-LU-4SB"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Sales body" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgu-qw-Jzc">
+                                    <rect key="frame" x="0.0" y="4" width="236" height="20.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="y9Y-Oo-5Ns"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppStore" translatesAutoresizingMaskIntoConstraints="NO" id="0Or-6J-rVA">
+                                    <rect key="frame" x="0.0" y="28.5" width="236" height="40"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="xd0-5h-qgj"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9V-hf-vqf">
+                                    <rect key="frame" x="0.0" y="72.5" width="236" height="111.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" id="mHe-po-3pT"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="I8g-Dd-kQx" firstAttribute="top" secondItem="81f-gl-K3V" secondAttribute="top" constant="8" id="EWF-Ev-J8C"/>
+                <constraint firstAttribute="bottom" secondItem="I8g-Dd-kQx" secondAttribute="bottom" constant="8" id="IGw-qe-qTk"/>
+                <constraint firstAttribute="trailing" secondItem="I8g-Dd-kQx" secondAttribute="trailing" constant="8" id="RAk-XF-N9s"/>
+                <constraint firstItem="I8g-Dd-kQx" firstAttribute="leading" secondItem="81f-gl-K3V" secondAttribute="leading" constant="8" id="p0o-SL-ODP"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="body" destination="Lgu-qw-Jzc" id="Jei-KJ-RI9"/>
+                <outlet property="title" destination="vdG-mH-Lg6" id="W9Q-Ay-EN6"/>
+                <outletCollection property="labels" destination="vdG-mH-Lg6" collectionClass="NSMutableArray" id="7Wa-kf-PO9"/>
+                <outletCollection property="labels" destination="Lgu-qw-Jzc" collectionClass="NSMutableArray" id="NuH-k7-l3G"/>
+            </connections>
             <point key="canvasLocation" x="-19" y="-9"/>
         </view>
     </objects>
+    <resources>
+        <image name="AppStore" width="135" height="40"/>
+        <image name="Moviez" width="60" height="60"/>
+    </resources>
 </document>

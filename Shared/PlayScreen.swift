@@ -149,6 +149,17 @@ class PlayScreen: Screen {
         present(menu)
     }
     
+    override func set(color: SKColor, for attribute: Appearance.Attribute) {
+        super.set(color: color, for: attribute)
+        
+        if attribute == .background {
+            ads?.foreground = color
+        }
+        if attribute == .foreground {
+            ads?.background = color
+        }
+    }
+    
     private func restart(using: StartField) {
         scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 10, height: 10), animated: true)
         let fill = SKAction.run {

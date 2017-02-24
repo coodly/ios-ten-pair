@@ -33,6 +33,16 @@ class AdsCoordinator {
     var presentIn: UIView?
     var totalLines: Int = 0
     private var presented: [Int: UIView] = [:]
+    var foreground: SKColor = .black {
+        didSet {
+            AdRenderView.adView.foreground = foreground
+        }
+    }
+    var background: SKColor = .white {
+        didSet {
+            AdRenderView.adView.background = background
+        }
+    }
     
     func combinedHeight(with lines: Int) -> Int {
         let adsToShow = Int(lines / ShowEveryXLine)
