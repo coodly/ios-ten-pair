@@ -173,7 +173,8 @@ class NumbersField: ScrollViewContained {
         
         let topY = size.height - (visible.origin.y + visible.size.height)
         let topLineWithAds = lineForY(topY)
-        let topLine = ads?.removeAdLines(topLineWithAds) ?? topLineWithAds
+        // TODO jaanus: fix this.  - AdPresentationHeightInTiles is a workaround for tiles check after hint scroll
+        let topLine = max((ads?.removeAdLines(topLineWithAds) ?? topLineWithAds) - AdPresentationHeightInTiles, 0)
         let startIndex = topLine * NumberOfColumns
         
         guard presentedNumbers.count > startIndex else {

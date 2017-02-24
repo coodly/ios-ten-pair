@@ -16,7 +16,7 @@
 
 import SpriteKit
 
-private let AdPresentationHeightInTiles = 5
+let AdPresentationHeightInTiles = 5
 private let ShowEveryXLine = 40
 private let PresentedSectionHeight = AdPresentationHeightInTiles + ShowEveryXLine
 
