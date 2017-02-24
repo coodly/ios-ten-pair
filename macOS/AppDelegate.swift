@@ -27,7 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var scene: TenPair!
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true, "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints": true])
+        //, "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints": true
+        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
         Fabric.with([Crashlytics.self])
 
         Log.enable()
@@ -39,8 +40,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         scene = gameScene
         skView.allowsTransparency = false
         skView.shouldCullNonVisibleNodes = false
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+        skView.showsFPS = AppConfig.current.logs
+        skView.showsNodeCount = AppConfig.current.logs
         skView.presentScene(scene)
         gameScene.start()
     }

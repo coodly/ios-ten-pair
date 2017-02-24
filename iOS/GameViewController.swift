@@ -34,8 +34,8 @@ class GameViewController: UIViewController, QuickAlertPresenter {
         
         skView.allowsTransparency = false
         skView.shouldCullNonVisibleNodes = false
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+        skView.showsFPS = AppConfig.current.logs
+        skView.showsNodeCount = AppConfig.current.logs
         
         scene.start()
     }
