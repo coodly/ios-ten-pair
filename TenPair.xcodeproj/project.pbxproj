@@ -72,6 +72,8 @@
 		A7B12C291E543379007D7807 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C281E543379007D7807 /* Aliases.swift */; };
 		A7B12C2D1E5439AA007D7807 /* Tile+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C2C1E5439AA007D7807 /* Tile+Extensions.swift */; };
 		A7B12C2F1E543A10007D7807 /* Tile+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C2E1E543A10007D7807 /* Tile+Extensions.swift */; };
+		A7C8AF1F1E605D4B0083648C /* AdLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C8AF1E1E605D4B0083648C /* AdLoadingView.swift */; };
+		A7C8AF211E605D820083648C /* AdLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7C8AF201E605D820083648C /* AdLoadingView.xib */; };
 		A7D390801E4B049400EDB111 /* FieldSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3907F1E4B049400EDB111 /* FieldSave.swift */; };
 		A7D390811E4B049400EDB111 /* FieldSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3907F1E4B049400EDB111 /* FieldSave.swift */; };
 		A7D390831E4B0ADB00EDB111 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D390821E4B0ADB00EDB111 /* MainMenu.xib */; };
@@ -135,6 +137,8 @@
 		A7B12C281E543379007D7807 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
 		A7B12C2C1E5439AA007D7807 /* Tile+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tile+Extensions.swift"; sourceTree = "<group>"; };
 		A7B12C2E1E543A10007D7807 /* Tile+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tile+Extensions.swift"; sourceTree = "<group>"; };
+		A7C8AF1E1E605D4B0083648C /* AdLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdLoadingView.swift; sourceTree = "<group>"; };
+		A7C8AF201E605D820083648C /* AdLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdLoadingView.xib; sourceTree = "<group>"; };
 		A7D3907F1E4B049400EDB111 /* FieldSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldSave.swift; sourceTree = "<group>"; };
 		A7D390821E4B0ADB00EDB111 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		A7D3908C1E4B2AE300EDB111 /* MenuScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScreen.swift; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 		A71A97431E48CCA4005E134F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A7C8AF1E1E605D4B0083648C /* AdLoadingView.swift */,
+				A7C8AF201E605D820083648C /* AdLoadingView.xib */,
 				A78713471E5C8E1E002DEF76 /* AdRenderView.swift */,
 				A78713421E5C71FC002DEF76 /* AdsCoordinator.swift */,
 				A7B12C261E543355007D7807 /* Aliases.swift */,
@@ -426,6 +432,7 @@
 				A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */,
 				A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */,
 				A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */,
+				A7C8AF211E605D820083648C /* AdLoadingView.xib in Resources */,
 				A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +616,7 @@
 				A78713431E5C71FC002DEF76 /* AdsCoordinator.swift in Sources */,
 				A787134F1E5D6FDC002DEF76 /* RestartScreen.swift in Sources */,
 				A777FA831E50758A003E62D7 /* MenuButton.swift in Sources */,
+				A7C8AF1F1E605D4B0083648C /* AdLoadingView.swift in Sources */,
 				A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */,
 				A77DE6F91E48D75200E9214A /* TenPair.swift in Sources */,
 				A7B12C201E535B67007D7807 /* Constants.swift in Sources */,

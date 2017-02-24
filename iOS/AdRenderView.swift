@@ -15,20 +15,13 @@
  */
 
 import UIKit
-import GoogleMobileAds
+import LaughingAdventure
 
-class AdRenderView: UIView, GADNativeExpressAdViewDelegate {
-    private static var adView: GADNativeExpressAdView = {
-        let gadView = GADNativeExpressAdView(adSize: GADAdSizeFromCGSize(CGSize(width: 320, height: 240)))!
-        gadView.adUnitID = AdMobAdUnitID
-        //gadView.delegate = self
-        // |-(
-        gadView.rootViewController = UIApplication.shared.keyWindow?.rootViewController
-        let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
-        gadView.load(request)
-        gadView.translatesAutoresizingMaskIntoConstraints = false
-        return gadView
+class AdRenderView: UIView {
+    private static var adView: AdLoadingView = {
+        let ad = AdLoadingView.viewNib().loadInstance() as! AdLoadingView
+        ad.translatesAutoresizingMaskIntoConstraints = false
+        return ad
     }()
     private lazy var clipView: UIView = {
         let clip = UIView()
@@ -70,8 +63,7 @@ class AdRenderView: UIView, GADNativeExpressAdViewDelegate {
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        
-        AdRenderView.adView.delegate = self
+
         scroll = superview?.superview as? UIScrollView
     }
     
@@ -115,13 +107,5 @@ class AdRenderView: UIView, GADNativeExpressAdViewDelegate {
     
     private func isVisible() -> Bool {
         return meInScroll.intersects(visibleScroll)
-    }
-    
-    public func nativeExpressAdViewDidReceiveAd(_ nativeExpressAdView: GADNativeExpressAdView) {
-        Log.debug("Did receive ad")
-    }
-    
-    public func nativeExpressAdView(_ nativeExpressAdView: GADNativeExpressAdView, didFailToReceiveAdWithError error: GADRequestError) {
-        Log.debug("Failed to receive ad: \(error)")
     }
 }
