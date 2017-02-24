@@ -10,8 +10,9 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import GameKit
+import LaughingAdventure
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, QuickAlertPresenter {
     private var game: TenPair?
     private var ads: AdsCoordinator?
     
@@ -61,6 +62,11 @@ class GameViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        // sanity check
+        if AdMobAdUnitID != ReleaseNativeUnitID {
+            presentAlert("Ad unit", message: "Demo unit used")
+        }
         
         guard let scroll = scrollView(in: view) else {
             return

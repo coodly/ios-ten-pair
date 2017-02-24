@@ -17,8 +17,13 @@
 import UIKit
 import GoogleMobileAds
 import LaughingAdventure
+import StoreKit
 
-class AdLoadingView: UIView, GADNativeExpressAdViewDelegate {
+private extension Selector {
+    static let presentInStore = #selector(AdLoadingView.presentInStore)
+}
+
+class AdLoadingView: UIView, GADNativeExpressAdViewDelegate, SKStoreProductViewControllerDelegate {
     @IBOutlet private var labels: [UILabel]!
     @IBOutlet private var title: UILabel!
     @IBOutlet private var body: UILabel!
@@ -53,6 +58,9 @@ class AdLoadingView: UIView, GADNativeExpressAdViewDelegate {
         
         title.text = NSLocalizedString("moviez.sale.title", comment: "")
         body.text = NSLocalizedString("moviez.sale.body", comment: "")
+        
+        let tap = UITapGestureRecognizer(target: self, action: .presentInStore)
+        addGestureRecognizer(tap)
     }
     
     override func didMoveToSuperview() {
@@ -78,5 +86,28 @@ class AdLoadingView: UIView, GADNativeExpressAdViewDelegate {
     public func nativeExpressAdView(_ nativeExpressAdView: GADNativeExpressAdView, didFailToReceiveAdWithError error: GADRequestError) {
         Log.debug("Failed to receive ad: \(error)")
         adView.isHidden = true
+    }
+    
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
+        Log.debug("Finished")
+        viewController.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc fileprivate func presentInStore() {
+        let storeCtontroller = SKStoreProductViewController()
+        let parameters = [
+            SKStoreProductParameterITunesItemIdentifier: "1107657424",
+            SKStoreProductParameterAffiliateToken: TunesAffiliateToken,
+            SKStoreProductParameterCampaignToken: "TenPair"
+        ]
+        storeCtontroller.loadProduct(withParameters: parameters) {
+            success, error in
+            
+            Log.debug("\(success) - \(error)")
+        }
+        storeCtontroller.delegate = self
+        UIApplication.shared.keyWindow?.rootViewController?.present(storeCtontroller, animated: true) {
+            UIApplication.shared.statusBarStyle = .lightContent
+        }
     }
 }
