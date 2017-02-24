@@ -17,6 +17,9 @@
 import SpriteKit
 
 // Placeholder for compile on macOS. Never called
+
+let AdPresentationHeightInTiles = 0
+
 class AdsCoordinator {
     var tileSize: CGSize = .zero
     var totalLines = 0

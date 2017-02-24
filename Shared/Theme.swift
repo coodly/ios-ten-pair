@@ -125,7 +125,11 @@ class Theme {
     
     static func current() -> Theme {
         let name = UserDefaults.standard.string(forKey: ThemeSettingKey) ?? "classic"
-        return all.filter({ $0.name == name }).first!
+        if let existing = all.filter({ $0.name == name }).first {
+            return existing
+        }
+        
+        return classic
     }
     
     static func next() -> Theme {
