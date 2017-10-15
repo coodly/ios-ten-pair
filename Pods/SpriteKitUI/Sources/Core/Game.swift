@@ -28,7 +28,7 @@ open class Game: SKScene {
     }
     
     public func dismissAll(upTo screen: Screen) {
-        let screens = children.filter({ $0 is Screen}).sorted(by: { $0.0.zPosition > $0.1.zPosition })
+        let screens = children.filter({ $0 is Screen}).sorted(by: { $0.zPosition > $1.zPosition })
         for dismissed in screens {
             if screen == dismissed {
                 break
@@ -80,6 +80,6 @@ open class Game: SKScene {
     
     private func topScreen() -> Screen? {
         let screens = children.filter({ $0 is Screen })
-        return screens.sorted(by: { $0.0.zPosition > $0.1.zPosition }).first as? Screen
+        return screens.sorted(by: { $0.zPosition > $1.zPosition }).first as? Screen
     }
 }

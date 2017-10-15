@@ -29,7 +29,7 @@ open class ScrollViewContained: View {
         
     }
     
-    open func presentationInsets() -> EdgeInsets {
+    open func presentationInsets() -> GameEdgeInsets {
         return EdgeInsetsMake(0, 0, 0, 0)
     }
 }

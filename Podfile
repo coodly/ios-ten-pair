@@ -33,7 +33,7 @@ def ios_pods
         pod 'SpriteKitUI/iOS', :path => '../swift-sprite-kit-ui'
     elsif UsedSource == PodSource::Remote
         pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git'
-        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'development'
+        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'master'
     else
         pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.2.1'
         pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.2.0'
@@ -56,7 +56,7 @@ target 'macOS' do
         pod 'SpriteKitUI/macOS', :path => '../swift-sprite-kit-ui'
     elsif UsedSource == PodSource::Remote
         pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
-        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'development'
+        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'master'
     else
         pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.2.1'
         pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.2.0'

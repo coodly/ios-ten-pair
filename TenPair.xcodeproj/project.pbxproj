@@ -375,6 +375,7 @@
 					A71A97401E48CCA4005E134F = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 5T8DRBFCBP;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -388,6 +389,7 @@
 					A71A97521E48CCA4005E134F = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 5T8DRBFCBP;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -824,7 +826,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
 				PRODUCT_NAME = TenPair;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "";
 			};
@@ -849,7 +852,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
 				PRODUCT_NAME = TenPair;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WARNING_CFLAGS = "";
@@ -876,7 +880,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.tenpair;
 				PRODUCT_NAME = TenPair;
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -900,7 +905,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.tenpair;
 				PRODUCT_NAME = TenPair;
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

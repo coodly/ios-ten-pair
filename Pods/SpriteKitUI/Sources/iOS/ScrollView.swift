@@ -28,7 +28,7 @@ public class ScrollView: View, UIScrollViewDelegate {
     }
     
     public var verticallyCentered = false
-    public var contentInset: EdgeInsets = .zero {
+    public var contentInset: GameEdgeInsets = .zero {
         didSet {
             scrollView.contentInset = contentInset
             scrollView.scrollIndicatorInsets = contentInset

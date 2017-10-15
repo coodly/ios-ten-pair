@@ -301,7 +301,7 @@ class NumbersField: ScrollViewContained {
         return size.height - fieldHeight()
     }
     
-    override func presentationInsets() -> EdgeInsets {
+    override func presentationInsets() -> GameEdgeInsets {
         return EdgeInsetsMake(0, 0, -bottomOffset(), 0)
     }
     
