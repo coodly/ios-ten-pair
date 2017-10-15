@@ -133,7 +133,7 @@ open class FetchedTableViewController<Entity: NSManagedObject, Cell: UITableView
         contentChanged()
     }
         
-    func contentSizeChanged() {
+    @objc func contentSizeChanged() {
         DispatchQueue.main.async { () -> Void in
             self.tableView.reloadData()
         }

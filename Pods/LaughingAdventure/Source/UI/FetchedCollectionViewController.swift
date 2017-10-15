@@ -70,7 +70,7 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
 
         let cellNib = Cell.viewNib()
         collectionView.register(cellNib, forCellWithReuseIdentifier: FetchedCollectionCellIdentifier)
-        measuringCell = cellNib.loadInstance() as! Cell
+        measuringCell = Cell.loadInstance() as Cell
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -179,8 +179,12 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
         
         collectionView.performBatchUpdates(updateClosure, completion: completion)
     }
-        
-    func contentSizeChanged() {
+    
+    open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        fatalError()
+    }
+    
+    @objc func contentSizeChanged() {
         DispatchQueue.main.async { () -> Void in
             self.collectionView.reloadData()
         }
@@ -202,7 +206,7 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
         Logging.log("configureCell(atIndexPath:\(indexPath))")
     }
     
-    open func tappedCell(at indexPath: IndexPath, object object: Model) {
+    open func tappedCell(at indexPath: IndexPath, object entity: Model) {
         Logging.log("tappedCell(indexPath:\(indexPath))")
     }
     
@@ -237,5 +241,34 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
     
     public func object(at indexPath: IndexPath) -> Model {
         return fetchedController!.object(at: indexPath)
+    }
+    
+    public func updateFetch(predicate: NSPredicate? = nil, sort: [NSSortDescriptor]? = nil) {
+        guard let controller = fetchedController else {
+            return
+        }
+        
+        var modified = false
+        if let predicate = predicate {
+            controller.fetchRequest.predicate = predicate
+            modified = true
+        }
+        
+        if let sort = sort {
+            controller.fetchRequest.sortDescriptors = sort
+            modified = true
+        }
+        
+        guard modified else {
+            return
+        }
+        
+        do {
+            try controller.performFetch()
+        } catch {
+            fatalError("Fetch failed: \(error)")
+        }
+        collectionView.reloadData()
+        contentChanged()
     }
 }

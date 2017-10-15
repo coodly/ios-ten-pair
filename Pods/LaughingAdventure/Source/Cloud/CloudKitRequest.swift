@@ -95,8 +95,8 @@ public extension CloudKitRequest {
         operation.modifyRecordsCompletionBlock = {
             saved, deleted, error in
             
-            Logging.log("Saved: \(saved?.count)")
-            Logging.log("Deleted: \(deleted?.count)")
+            Logging.log("Saved: \(String(describing: saved?.count))")
+            Logging.log("Deleted: \(String(describing: deleted?.count))")
             if let deleted = deleted {
                 self.deleted.append(contentsOf: deleted)
             }
@@ -118,8 +118,8 @@ public extension CloudKitRequest {
         operation.modifyRecordsCompletionBlock = {
             saved, deleted, error in
             
-            Logging.log("Saved: \(saved?.count)")
-            Logging.log("Deleted: \(deleted?.count)")
+            Logging.log("Saved: \(String(describing: saved?.count))")
+            Logging.log("Deleted: \(String(describing: deleted?.count))")
             
             if let saved = saved {
                 for s in saved {
@@ -199,7 +199,7 @@ public extension CloudKitRequest {
                 return
             }
             
-            Logging.log("Completion: \(cursor) - \(error)")
+            Logging.log("Completion: \(String(describing: cursor)) - \(error)")
             Logging.log("Have \(self.records.count) records")
             
             let usedCursor = pullAll ? cursor : nil

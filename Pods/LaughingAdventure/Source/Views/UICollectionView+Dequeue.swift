@@ -22,6 +22,6 @@ public extension UICollectionView {
     }
     
     public func registerCell<T: UICollectionViewCell>(forType type: T.Type) {
-        register(T.viewNib(), forCellWithReuseIdentifier: T.identifier())
+        register(T.viewNib(Bundle(for: T.self)), forCellWithReuseIdentifier: T.identifier())
     }
 }

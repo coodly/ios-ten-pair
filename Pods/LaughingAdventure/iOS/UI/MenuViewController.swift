@@ -14,12 +14,10 @@
 * limitations under the License.
 */
 
-#if os(iOS)
-    
 import UIKit
 
-open class MenuViewController: InputCellsViewController {
-    public var container: CoodlySlideMenuViewController!
+open class MenuViewController: InputCellsViewController, MenuContainerAware {
+    public var container: CoodlySlideMenuViewController?
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,4 +26,3 @@ open class MenuViewController: InputCellsViewController {
     }
 }
 
-#endif

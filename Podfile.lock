@@ -1,4 +1,5 @@
 PODS:
+  - CoreDataPersistence (0.1.1)
   - Firebase/AdMob (3.13.0):
     - Firebase/Core
     - Google-Mobile-Ads-SDK (= 7.17.0)
@@ -13,16 +14,17 @@ PODS:
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (1.0.9)
   - Google-Mobile-Ads-SDK (7.17.0)
-  - GoogleToolboxForMac/Defines (2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-  - LaughingAdventure (0.7.0):
-    - LaughingAdventure/Core (= 0.7.0)
-  - LaughingAdventure/Core (0.7.0)
-  - LaughingAdventure/Logging (0.7.0)
-  - LaughingAdventure/Purchase (0.7.0):
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - LaughingAdventure (0.8.0):
+    - LaughingAdventure/Core (= 0.8.0)
+  - LaughingAdventure/Core (0.8.0):
+    - CoreDataPersistence (= 0.1.1)
+  - LaughingAdventure/Logging (0.8.0)
+  - LaughingAdventure/Purchase (0.8.0):
     - LaughingAdventure/Logging
-  - Locksmith (3.0.0)
+  - Locksmith (4.0.0)
   - SpriteKitUI/Core (0.1.0)
   - SpriteKitUI/iOS (0.1.0):
     - SpriteKitUI/Core
@@ -35,7 +37,7 @@ DEPENDENCIES:
   - Firebase/Core (= 3.13.0)
   - LaughingAdventure (from `https://github.com/coodly/laughing-adventure.git`)
   - LaughingAdventure/Purchase (from `https://github.com/coodly/laughing-adventure.git`)
-  - Locksmith (= 3.0.0)
+  - Locksmith (= 4.0.0)
   - SpriteKitUI/iOS (from `git@github.com:coodly/SpriteKitUI.git`, branch `development`)
   - SpriteKitUI/macOS (from `git@github.com:coodly/SpriteKitUI.git`, branch `development`)
   - SWLogger (from `git@github.com:coodly/swlogger.git`)
@@ -51,7 +53,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LaughingAdventure:
-    :commit: 5a22cad81b96346c5da247f56dad39cffe82299c
+    :commit: 1218a45e2964206d4f436c9e0a09fa568d959a5e
     :git: https://github.com/coodly/laughing-adventure.git
   SpriteKitUI:
     :commit: db5468fc7482780c3e4e6ce741867ba6a1a5dd90
@@ -61,17 +63,18 @@ CHECKOUT OPTIONS:
     :git: git@github.com:coodly/swlogger.git
 
 SPEC CHECKSUMS:
+  CoreDataPersistence: 9c8d8bb4b2d2eab7f2d7b7787fd9b90c5a8eb3b9
   Firebase: 5bc34d7b5ff5792e3386c8b28dc6265deeab0da4
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
   FirebaseCore: 1c0a13bf59bb95cdd19577252499f0ec6a03e999
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   Google-Mobile-Ads-SDK: a8bf4211624999b73e4184be516f94770b139525
-  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  LaughingAdventure: 65071080ae74dd696223782f1242dff060247385
-  Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  LaughingAdventure: 86f0ecb5ec01939aeb110bdf52386fb8c2821d60
+  Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   SpriteKitUI: 2b6c614125fd27b5b065fc286edc24af53692e91
   SWLogger: 333135cadd381962c3667f5af500f7ae140c74a4
 
-PODFILE CHECKSUM: f3658f1b0262e9fcf00c74d126baf17ea85a7921
+PODFILE CHECKSUM: 0a37bdc40c9f8396876e16741ab840b3e623b209
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.3.1

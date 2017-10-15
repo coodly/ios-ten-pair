@@ -29,7 +29,7 @@ public class ConversationCell: UITableViewCell {
         timeLabel.text = "2016-09-12"
         timeLabel.numberOfLines = 1
         timeLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        timeLabel.setContentCompressionResistancePriority(1000, for: .vertical)
+        timeLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         timeLabel.textAlignment = .right
         timeLabel.textColor = .lightGray
@@ -37,7 +37,7 @@ public class ConversationCell: UITableViewCell {
         snippetLabel = UILabel()
         snippetLabel.numberOfLines = 3
         snippetLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        snippetLabel.setContentCompressionResistancePriority(1000, for: .vertical)
+        snippetLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         snippetLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let stack = UIStackView(arrangedSubviews: [timeLabel, snippetLabel])

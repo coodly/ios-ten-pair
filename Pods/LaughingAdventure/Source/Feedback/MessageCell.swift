@@ -59,15 +59,15 @@ internal class MessageCell: UITableViewCell {
         timeLabel = UILabel()
         timeLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         timeLabel.numberOfLines = 1
-        timeLabel.setContentCompressionResistancePriority(1000, for: .vertical)
-        timeLabel.setContentHuggingPriority(1000, for: .vertical)
+        timeLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        timeLabel.setContentHuggingPriority(.required, for: .vertical)
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         
         messageLabel = UILabel()
         messageLabel.font = UIFont.preferredFont(forTextStyle: .body)
         messageLabel.numberOfLines = 0
-        messageLabel.setContentCompressionResistancePriority(999, for: .vertical)
-        messageLabel.setContentHuggingPriority(1000, for: .vertical)
+        messageLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+        messageLabel.setContentHuggingPriority(.required, for: .vertical)
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         
         stack = UIStackView(arrangedSubviews: [timeLabel, messageLabel])

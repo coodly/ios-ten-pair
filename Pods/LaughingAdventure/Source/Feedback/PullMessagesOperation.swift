@@ -16,6 +16,7 @@
 
 import Foundation
 import CloudKit
+import CoreDataPersistence
 
 internal class PullMessagesOperation: CloudKitRequest<CloudMessage>, PersistenceConsumer, FeedbackContainerConsumer {
     var persistence: CorePersistence!

@@ -1,3 +1,6 @@
+source 'https://github.com/coodly/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 use_frameworks!
 
 module PodSource
@@ -21,7 +24,7 @@ end
 def ios_pods
     pod 'Firebase/Core', '3.13.0'
     pod 'Firebase/AdMob', '3.13.0'
-    pod 'Locksmith', '3.0.0'
+    pod 'Locksmith', '4.0.0'
 
     shared
 

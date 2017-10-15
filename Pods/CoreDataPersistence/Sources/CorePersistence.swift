@@ -186,8 +186,8 @@ private class CoreStack {
     }()
     
     fileprivate func performUsingWorker(closure: @escaping ((NSManagedObjectContext) -> ())) {
-        DispatchQueue.global(qos: .background).async {
-            let context = self.newBackgroundContext()
+        let context = self.newBackgroundContext()
+        context.perform {
             closure(context)
         }
     }

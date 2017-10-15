@@ -16,11 +16,15 @@
 
 import UIKit
 
-public protocol InputValidation {
+public protocol InputValidation: class {
+    weak var attached: UITextField? { get set }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool
 }
 
 public class DecimalInputValidation: InputValidation {
+    public weak var attached: UITextField?
+    
     public init() {
         
     }

@@ -14,8 +14,6 @@
 * limitations under the License.
 */
 
-#if os(iOS)
-
 import UIKit
 
 private extension Selector {
@@ -24,12 +22,23 @@ private extension Selector {
 
 open class CoodlySlideMenuViewController: SlideMenuController {
     private var containedNavigation: UINavigationController!
-    private var menuController: MenuViewController!
+    private var menuController: MenuContainerAware?
     private var shown = false
     
     public var initialViewController: UIViewController!
     public var menuButton: UIBarButtonItem!
+    
+    public init(mainViewController: UIViewController, leftMenuViewController: UIViewController) {
+        super.init(nibName: nil, bundle: nil)
+        self.mainViewController = mainViewController
+        self.leftViewController = leftMenuViewController
+        initView()
+    }
 
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -42,9 +51,9 @@ open class CoodlySlideMenuViewController: SlideMenuController {
         shown = true
 
         containedNavigation = mainViewController as! UINavigationController
-        menuController = leftViewController as! MenuViewController
+        menuController = leftViewController as? MenuContainerAware
 
-        menuController.container = self
+        menuController?.container = self
 
         present(root: initialViewController)
     }
@@ -71,7 +80,7 @@ open class CoodlySlideMenuViewController: SlideMenuController {
         containedNavigation.setViewControllers([controller], animated: containedNavigation.viewControllers.count > 0)
     }
 
-    func openMenu() {
+    @objc fileprivate func openMenu() {
         addLeftGestures()
         openLeft()
     }
@@ -88,4 +97,3 @@ open class CoodlySlideMenuViewController: SlideMenuController {
     }
 }
 
-#endif
