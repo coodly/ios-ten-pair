@@ -15,12 +15,14 @@ import LaughingAdventure
 class GameViewController: UIViewController, QuickAlertPresenter {
     private var game: TenPair?
     private var ads: AdsCoordinator?
+    @IBOutlet private var gameContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Present the scene
-        let skView = self.view as! SKView
+        let skView = SKView(frame: gameContainerView.bounds)
+        gameContainerView.add(fullSized: skView)        
 
         let scene = TenPair(size: skView.bounds.size)
         if AppConfig.current.ads {
