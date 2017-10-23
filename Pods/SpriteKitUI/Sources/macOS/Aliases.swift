@@ -21,6 +21,7 @@ public typealias LayoutAttribute = NSLayoutConstraint.Attribute
 public typealias LayoutRelation = NSLayoutConstraint.Relation
 public typealias LayoutFormatOptions = NSLayoutConstraint.FormatOptions
 public typealias StringDrawingOptions = NSString.DrawingOptions
+public typealias LayoutGuide = NSLayoutGuide
 
 public func EdgeInsetsMake(_ top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> GameEdgeInsets {
     return NSEdgeInsets(top: top, left: left, bottom: bottom, right: right)

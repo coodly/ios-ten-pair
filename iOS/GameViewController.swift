@@ -55,11 +55,11 @@ class GameViewController: UIViewController, QuickAlertPresenter {
     }
 
     override var prefersStatusBarHidden: Bool {
-        return true
+        return false
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .default
     }
     
     override func viewDidAppear(_ animated: Bool) {

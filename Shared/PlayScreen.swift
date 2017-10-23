@@ -43,9 +43,32 @@ class PlayScreen: Screen {
         scrollView.contentInset = EdgeInsetsMake(TopMenuBarHeight + 10, 0, 10 + ActionButtonsTrayHeight + 10, 0)
         scrollView.present(field)
         
+        let topBackground = TopMenuBackground()
+        topBackground.name = "Top menu background"
+        addSubview(topBackground)
+        
         statusBar = TopMenuBar()
         statusBar.name = "Top menu bar"
-        add(toTop: statusBar, height: TopMenuBarHeight)
+        //add(toTop: statusBar, height: TopMenuBarHeight)
+        addSubview(statusBar)
+        
+        let statusLeading = LayoutConstraint(item: statusBar, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0)
+        let statusTrailing = LayoutConstraint(item: statusBar, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0)
+        let statusHeight = LayoutConstraint(item: statusBar, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: TopMenuBarHeight)
+        let top: LayoutConstraint
+        if #available(iOS 11, *) {
+            top = LayoutConstraint(wrapped: statusBar.topAnchor.constraint(equalTo: safeAreaLayoutTopAnchor))
+        } else {
+            top = LayoutConstraint(item: statusBar, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 20)
+        }
+        addConstraints([statusLeading, statusTrailing, statusHeight, top])
+        
+        let topBackgroundTop = LayoutConstraint(item: topBackground, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+        let topBackgroundLeft = LayoutConstraint(item: topBackground, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0)
+        let topBackgroundRight = LayoutConstraint(item: topBackground, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0)
+        let topBackgroundBottom = LayoutConstraint(item: topBackground, attribute: .bottom, relatedBy: .equal, toItem: statusBar, attribute: .bottom, multiplier: 1, constant: 0)
+        addConstraints([topBackgroundTop, topBackgroundLeft, topBackgroundRight, topBackgroundBottom])
+
         
         field.statusView = statusBar.statusView
         field.updateFieldStatus()
@@ -108,7 +131,13 @@ class PlayScreen: Screen {
         let vertical = LayoutConstraint.constraints(withVisualFormat: "V:[hints(\(ActionButtonsTrayHeight))]-(10)-|", options: [], metrics: nil, views: views)
         let horizontal = LayoutConstraint.constraints(withVisualFormat: "H:|[hints(\(ActionButtonsTrayHeight))]", options: [], metrics: nil, views: views)
         
-        addConstraints(vertical + horizontal)
+        let hintsLeading = LayoutConstraint(item: hintsTray, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0)
+        let hintsWidth = LayoutConstraint(item: hintsTray, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: ActionButtonsTrayHeight)
+        let hintsHeight = LayoutConstraint(item: hintsTray, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: ActionButtonsTrayHeight)
+        let hintsBottom = LayoutConstraint(wrapped: hintsTray.bottomAnchor.constraint(equalTo: safeAreaLayoutBottomAnchor))
+        addConstraints([hintsLeading, hintsWidth, hintsHeight, hintsBottom])
+        
+        //addConstraints(vertical + horizontal)
     }
     
     private func execute(_ task: SKAction) {

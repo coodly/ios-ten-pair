@@ -19,6 +19,9 @@ import SpriteKit
 public class ScrollView: View, UIScrollViewDelegate {
     private lazy var scrollView: ShadowScrollView = {
         let scroll = ShadowScrollView()
+        if #available(iOS 11, *) {
+            scroll.contentInsetAdjustmentBehavior = .never
+        }
         scroll.attached = self
         return scroll
     }()

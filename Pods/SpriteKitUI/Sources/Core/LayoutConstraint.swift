@@ -32,7 +32,7 @@ public class LayoutConstraint {
         self.init(wrapped: wrapped)
     }
 
-    private init(wrapped: NSLayoutConstraint) {
+    public init(wrapped: NSLayoutConstraint) {
         self.wrapped = wrapped
     }
 

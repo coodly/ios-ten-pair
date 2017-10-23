@@ -21,9 +21,9 @@ open class Game: SKScene {
         
     }
     
-    public func dismiss(_ sceeen: Screen) {
-        sceeen.backingView.removeFromSuperview()
-        sceeen.removeFromParent()
+    public func dismiss(_ sceen: Screen) {
+        sceen.backingView.removeFromSuperview()
+        sceen.removeFromParent()
         topScreen()?.viewDidAppear()
     }
     

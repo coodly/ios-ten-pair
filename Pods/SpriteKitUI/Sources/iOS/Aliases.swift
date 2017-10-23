@@ -15,6 +15,7 @@
  */
 
 internal typealias PlatformView = UIView
+public typealias LayoutGuide = UILayoutGuide
 public typealias Metrics = [String : Any]?
 public typealias GameEdgeInsets = UIEdgeInsets
 public typealias LayoutAttribute = NSLayoutAttribute

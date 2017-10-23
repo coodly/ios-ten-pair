@@ -26,7 +26,8 @@ class Theme {
             View.appearance().set(color: SKColor.white, for: .background)
             View.appearance().set(color: lightBlue, for: .foreground)
             
-            TopMenuBar.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
+            TopMenuBackground.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
+            TopMenuBar.appearance().set(color: SKColor.clear, for: .background)
             
             Button.appearance().set(color: .clear, for: .background)
             
@@ -67,8 +68,9 @@ class Theme {
             View.appearance().set(color: SKColor.white, for: .background)
             View.appearance().set(color: lightBlue, for: .foreground)
             
-            TopMenuBar.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
-            
+            TopMenuBackground.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
+            TopMenuBar.appearance().set(color: SKColor.clear, for: .background)
+
             Button.appearance().set(color: .clear, for: .background)
             
             MenuButton.appearance().set(color: lightBlue, for: .background)

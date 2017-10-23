@@ -31,7 +31,7 @@ class MenuScreen: SpriteKitUI.MenuScreen {
     }
     
     override func load() {
-        if AppConfig.current.statusBar {
+        if AppConfig.current.statusBar && false {
             let statusBar = StatusBar()
             add(toTop: statusBar, height: 20)
         }
