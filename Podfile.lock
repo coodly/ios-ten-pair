@@ -1,19 +1,21 @@
 PODS:
   - CoreDataPersistence (0.1.1)
-  - Firebase/AdMob (3.13.0):
+  - Firebase/AdMob (4.3.0):
     - Firebase/Core
-    - Google-Mobile-Ads-SDK (= 7.17.0)
-  - Firebase/Core (3.13.0):
-    - FirebaseAnalytics (= 3.7.0)
-    - FirebaseCore (= 3.5.0)
-  - FirebaseAnalytics (3.7.0):
-    - FirebaseCore (~> 3.5)
-    - FirebaseInstanceID (~> 1.0)
+    - Google-Mobile-Ads-SDK (= 7.24.1)
+  - Firebase/Core (4.3.0):
+    - FirebaseAnalytics (= 4.0.4)
+    - FirebaseCore (= 4.0.8)
+  - FirebaseAnalytics (4.0.4):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (3.5.0):
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.8):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (1.0.9)
-  - Google-Mobile-Ads-SDK (7.17.0)
+    - nanopb (~> 0.3)
+  - FirebaseInstanceID (2.0.4)
+  - Google-Mobile-Ads-SDK (7.24.1)
   - GoogleToolboxForMac/Defines (2.1.3)
   - GoogleToolboxForMac/NSData+zlib (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
@@ -25,6 +27,11 @@ PODS:
   - LaughingAdventure/Purchase (0.8.0):
     - LaughingAdventure/Logging
   - Locksmith (4.0.0)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - SpriteKitUI/Core (0.3.0)
   - SpriteKitUI/iOS (0.3.0):
     - SpriteKitUI/Core
@@ -33,8 +40,7 @@ PODS:
   - SWLogger (0.3.1)
 
 DEPENDENCIES:
-  - Firebase/AdMob (= 3.13.0)
-  - Firebase/Core (= 3.13.0)
+  - Firebase/AdMob (= 4.3.0)
   - LaughingAdventure (from `https://github.com/coodly/laughing-adventure.git`)
   - LaughingAdventure/Purchase (from `https://github.com/coodly/laughing-adventure.git`)
   - Locksmith (= 4.0.0)
@@ -64,17 +70,18 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CoreDataPersistence: 9c8d8bb4b2d2eab7f2d7b7787fd9b90c5a8eb3b9
-  Firebase: 5bc34d7b5ff5792e3386c8b28dc6265deeab0da4
-  FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
-  FirebaseCore: 1c0a13bf59bb95cdd19577252499f0ec6a03e999
-  FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
-  Google-Mobile-Ads-SDK: a8bf4211624999b73e4184be516f94770b139525
+  Firebase: 83283761a1ef6dc9846e03d08059f51421afbd65
+  FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
+  FirebaseCore: 69b1a5ac5f857ba6d5fd9d5fe794f4786dd5e579
+  FirebaseInstanceID: 70c2b877e9338971b2429ea5a4293df6961aa44e
+  Google-Mobile-Ads-SDK: ed8004a7265b424568dc84f3d2bbe3ea3fff958f
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   LaughingAdventure: 86f0ecb5ec01939aeb110bdf52386fb8c2821d60
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SpriteKitUI: 5792f4f724f4504cede11996d1a7124045353f32
   SWLogger: 333135cadd381962c3667f5af500f7ae140c74a4
 
-PODFILE CHECKSUM: b1e560f8c6462e41dc479873cd7a7f00dbabb110
+PODFILE CHECKSUM: 0a25062a03a7b333df3d2456fd4326d1c34c6d4c
 
 COCOAPODS: 1.3.1
