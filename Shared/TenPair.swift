@@ -19,13 +19,10 @@ import SpriteKit
 import SpriteKitUI
 
 class TenPair: Game {
-    var ads: AdsCoordinator?
-    
     private var play: PlayScreen?
     override func start() {
         setAppearance()
         play = PlayScreen()
-        play?.ads = ads
         play?.name = "Play screen"
         present(screen: play!)
     }

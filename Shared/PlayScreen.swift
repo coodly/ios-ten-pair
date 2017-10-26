@@ -22,8 +22,6 @@ let TopMenuBarHeight: CGFloat = 50
 let ActionButtonsTrayHeight: CGFloat = 50
 
 class PlayScreen: Screen {
-    var ads: AdsCoordinator?
-    
     private var statusBar: TopMenuBar!
     private var scrollView: ScrollView!
     private var numbersField: NumbersField?
@@ -38,7 +36,6 @@ class PlayScreen: Screen {
         
         let field = NumbersField()
         numbersField = field
-        field.ads = ads
         field.presentedNumbers = FieldSave.load()
         field.name = "Numbers field"
         scrollView.present(field)
@@ -187,17 +184,6 @@ class PlayScreen: Screen {
         present(menu)
     }
     
-    override func set(color: SKColor, for attribute: Appearance.Attribute) {
-        super.set(color: color, for: attribute)
-        
-        if attribute == .background {
-            ads?.foreground = color
-        }
-        if attribute == .foreground {
-            ads?.background = color
-        }
-    }
-    
     private func restart(using: StartField) {
         scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 10, height: 10), animated: true)
         let fill = SKAction.run {
@@ -230,13 +216,5 @@ class PlayScreen: Screen {
         }
         
         run(SKAction.sequence([wait, show]))
-    }
-    
-    override func viewDidAppear() {
-        ads?.show()
-    }
-    
-    override func viewWillDisappear() {
-        ads?.hide()
     }
 }

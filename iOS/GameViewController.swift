@@ -14,7 +14,6 @@ import LaughingAdventure
 
 class GameViewController: UIViewController, QuickAlertPresenter {
     private var game: TenPair?
-    private var ads: AdsCoordinator?
     @IBOutlet private var gameContainerView: UIView!
     
     override func viewDidLoad() {
@@ -26,8 +25,7 @@ class GameViewController: UIViewController, QuickAlertPresenter {
 
         let scene = TenPair(size: skView.bounds.size)
         if AppConfig.current.ads {
-            ads = AdsCoordinator()
-            scene.ads = ads
+
         }
         game = scene
         scene.scaleMode = .resizeFill
@@ -69,16 +67,6 @@ class GameViewController: UIViewController, QuickAlertPresenter {
         if AdMobAdUnitID != ReleaseNativeUnitID {
             presentAlert("Ad unit", message: "Demo unit used")
         }
-        
-        guard let scroll = scrollView(in: view) else {
-            return
-        }
-        
-        guard let container = scroll.subviews.filter({ !($0 is UIImageView) }).first else {
-            return
-        }
-        
-        ads?.presentIn = container
     }
     
     private func scrollView(in checked: UIView) -> UIScrollView? {
