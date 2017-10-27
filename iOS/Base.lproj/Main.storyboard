@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MiF-Aw-8bT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MiF-Aw-8bT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,20 +19,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-Oo-pQm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkI-EA-dZ3">
+                                <rect key="frame" x="0.0" y="599" width="375" height="68"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="fXh-Fv-X1C"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eP1-Oo-pQm" firstAttribute="top" secondItem="WMe-P6-ELc" secondAttribute="top" id="4bC-XX-Qx1"/>
-                            <constraint firstAttribute="bottom" secondItem="eP1-Oo-pQm" secondAttribute="bottom" id="Iee-Ao-58P"/>
+                            <constraint firstItem="OkI-EA-dZ3" firstAttribute="bottom" secondItem="WMe-P6-ELc" secondAttribute="bottom" id="9WS-F5-j1j"/>
+                            <constraint firstItem="OkI-EA-dZ3" firstAttribute="leading" secondItem="WMe-P6-ELc" secondAttribute="leading" id="D1g-Lt-nQ4"/>
                             <constraint firstItem="eP1-Oo-pQm" firstAttribute="leading" secondItem="WMe-P6-ELc" secondAttribute="leading" id="ab2-yy-mqe"/>
+                            <constraint firstItem="OkI-EA-dZ3" firstAttribute="trailing" secondItem="WMe-P6-ELc" secondAttribute="trailing" id="d8U-Ay-lQ0"/>
                             <constraint firstAttribute="trailing" secondItem="eP1-Oo-pQm" secondAttribute="trailing" id="pzA-a2-aBo"/>
+                            <constraint firstItem="OkI-EA-dZ3" firstAttribute="top" secondItem="eP1-Oo-pQm" secondAttribute="bottom" id="rM7-xa-Ylu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zhO-91-jgR"/>
                     </view>
                     <connections>
+                        <outlet property="adContainerHeight" destination="fXh-Fv-X1C" id="BbF-4w-ApT"/>
+                        <outlet property="adContainerView" destination="OkI-EA-dZ3" id="uk6-N2-Lg5"/>
                         <outlet property="gameContainerView" destination="eP1-Oo-pQm" id="hdO-ZS-Wkr"/>
                     </connections>
                 </viewController>

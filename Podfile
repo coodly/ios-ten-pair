@@ -22,8 +22,7 @@ def shared
 end
 
 def ios_pods
-    #pod 'Firebase/Core', '4.3.0'
-    pod 'Firebase/AdMob', '4.3.0'
+    pod 'Google-Mobile-Ads-SDK', '7.24.1'
     pod 'Locksmith', '4.0.0'
 
     shared

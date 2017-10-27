@@ -59,6 +59,7 @@
 		A78D56921E5B362F002957DC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56911E5B362F002957DC /* Theme.swift */; };
 		A78D56931E5B362F002957DC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56911E5B362F002957DC /* Theme.swift */; };
 		A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */; };
+		A79F0B091FA38B8D00FE21F6 /* AdLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79F0B081FA38B8D00FE21F6 /* AdLoadingViewController.swift */; };
 		A7B12C1A1E53123D007D7807 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA861E50CC76003E62D7 /* InfoPlist.strings */; };
 		A7B12C1B1E53123D007D7807 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA881E50CC76003E62D7 /* Localizable.strings */; };
 		A7B12C1D1E535B18007D7807 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C1C1E535B18007D7807 /* Config.swift */; };
@@ -126,6 +127,7 @@
 		A78D56911E5B362F002957DC /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A78FA2EC1E5C145C002DB0AF /* TenPair.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenPair.entitlements; sourceTree = "<group>"; };
 		A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
+		A79F0B081FA38B8D00FE21F6 /* AdLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdLoadingViewController.swift; sourceTree = "<group>"; };
 		A7B12C1C1E535B18007D7807 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A7B12C1F1E535B67007D7807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A7B12C211E535B72007D7807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		A71A97431E48CCA4005E134F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A79F0B081FA38B8D00FE21F6 /* AdLoadingViewController.swift */,
 				A7B12C261E543355007D7807 /* Aliases.swift */,
 				A71A97441E48CCA4005E134F /* AppDelegate.swift */,
 				A7B12C1F1E535B67007D7807 /* Constants.swift */,
@@ -583,22 +586,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iOS/Pods-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/LaughingAdventure/LaughingAdventure.framework",
 				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
 				"${BUILT_PRODUCTS_DIR}/SWLogger-iOS/SWLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/SpriteKitUI-Core-iOS/SpriteKitUI.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LaughingAdventure.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpriteKitUI.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -620,6 +619,7 @@
 				A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */,
 				A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */,
 				A75570BF1E54552300114ED2 /* LoadingScreen.swift in Sources */,
+				A79F0B091FA38B8D00FE21F6 /* AdLoadingViewController.swift in Sources */,
 				A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */,
 				A7B12C271E543355007D7807 /* Aliases.swift in Sources */,
 				A77DE7091E48E29100E9214A /* TopMenuBar.swift in Sources */,

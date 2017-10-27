@@ -12,7 +12,7 @@ import GameplayKit
 import GameKit
 import LaughingAdventure
 
-class GameViewController: UIViewController, QuickAlertPresenter {
+class GameViewController: AdLoadingViewController, QuickAlertPresenter {
     private var game: TenPair?
     @IBOutlet private var gameContainerView: UIView!
     
