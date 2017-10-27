@@ -64,7 +64,7 @@ class GameViewController: UIViewController, QuickAlertPresenter {
         super.viewDidAppear(animated)
         
         // sanity check
-        if AdMobAdUnitID != ReleaseNativeUnitID {
+        if AppConfig.current.adUnits.banner != AdUnits.live.banner {
             presentAlert("Ad unit", message: "Demo unit used")
         }
     }

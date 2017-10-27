@@ -20,12 +20,20 @@ let NumberOfColumns = 9
 
 private let ReleaseBuild = true
 
+struct AdUnits {
+    let banner: String
+    let interstitial: String
+    static let live = AdUnits(banner: AdMobBannerUnit, interstitial: AdMobInterstitial)
+    static let demo = AdUnits(banner: DemoAdMobBannerUnit, interstitial: DemoInterstitial)
+}
+
 struct AppConfig {
     let logs = !ReleaseBuild
     let statusBar: Bool
     let ads: Bool
     let maxTileWidth: Int
     let withFeedback: Bool
+    let adUnits = AdUnits.demo
 }
 
 extension Notification.Name {
