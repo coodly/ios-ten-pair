@@ -20,10 +20,19 @@ private extension Selector {
     static let dismissKeyboardPressed = #selector(TextEntryCell.dismissPressed)
 }
 
-open class TextEntryCell: DynamicFontReloadingTableViewCell {
+open class TextEntryCell: DynamicFontReloadingTableViewCell, EntryValidated {
     @IBOutlet public var entryField: UITextField!
-    public var inputValidation: InputValidation?
+    public var inputValidation: InputValidation? {
+        didSet {
+            if let validator = inputValidation {
+                addValidator(validator, for: entryField)
+            } else {
+                validators.removeValue(forKey: entryField)
+            }
+        }
+    }
     fileprivate var dismissButton: UIBarButtonItem?
+    public var validators = [UITextField: InputValidation]()
     
     public func value() -> String {
         if let result = entryField.text {

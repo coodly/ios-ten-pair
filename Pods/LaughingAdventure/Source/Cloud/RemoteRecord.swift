@@ -32,7 +32,7 @@ public extension RemoteRecord {
     internal mutating func load(record: CKRecord) -> Bool {
         recordData = archive(record: record) as Data
         recordName = record.recordID.recordName
-        if #available(iOS 10, tvOS 10, *) {
+        if #available(iOS 10, tvOS 10, macOS 10.12, *) {
             parent = record.parent?.recordID
         }
         return loadFields(from: record)
@@ -77,7 +77,7 @@ public extension RemoteRecord {
                 continue
             }
             
-            if #available(iOS 10, tvOS 10, *), label == "parent", let value = child.value as? CKRecordID {
+            if #available(iOS 10, tvOS 10, macOS 10.12, *), label == "parent", let value = child.value as? CKRecordID {
                 modified.setParent(value)
             } else if let value = child.value as? NSString {
                 modified[label] = value

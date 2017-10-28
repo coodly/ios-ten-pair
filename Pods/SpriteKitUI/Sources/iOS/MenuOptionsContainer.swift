@@ -64,7 +64,7 @@ internal class MenuOptionsContainer: ScrollViewContained {
         let backing = view.backingView
         backing.translatesAutoresizingMaskIntoConstraints = false
         let height = NSLayoutConstraint(item: backing, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: itemSize.height)
-        height.priority = UILayoutPriorityDefaultHigh
+        height.priority = UILayoutPriority.defaultHigh
         stackView.addArrangedSubview(backing)
         stackView.addConstraint(height)
         heightConstraints.append(height)

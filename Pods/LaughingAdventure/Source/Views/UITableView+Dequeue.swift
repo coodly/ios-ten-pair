@@ -22,13 +22,13 @@ public extension UITableView {
             return cell
         }
         
-        register(T.viewNib(), forCellReuseIdentifier: T.identifier())
+        register(T.viewNib(Bundle(for: T.self)), forCellReuseIdentifier: T.identifier())
         
         return dequeueReusableCell(withIdentifier: T.identifier()) as! T
     }
 
     public func registerCell<T: UITableViewCell>(forType type: T.Type) {
-        register(T.viewNib(), forCellReuseIdentifier: T.identifier())
+        register(T.viewNib(Bundle(for: T.self)), forCellReuseIdentifier: T.identifier())
     }
     
     public func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {

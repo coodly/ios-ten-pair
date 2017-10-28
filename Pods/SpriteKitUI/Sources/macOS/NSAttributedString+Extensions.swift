@@ -28,7 +28,7 @@ public extension NSAttributedString {
                                         samplesPerPixel: 4,
                                         hasAlpha: true,
                                         isPlanar: false,
-                                        colorSpaceName: NSCalibratedRGBColorSpace,
+                                        colorSpaceName: NSColorSpaceName.calibratedRGB,
                                         bytesPerRow: 0,
                                         bitsPerPixel: 0)!
         

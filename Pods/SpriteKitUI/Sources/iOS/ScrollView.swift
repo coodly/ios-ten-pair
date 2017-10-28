@@ -19,6 +19,9 @@ import SpriteKit
 public class ScrollView: View, UIScrollViewDelegate {
     private lazy var scrollView: ShadowScrollView = {
         let scroll = ShadowScrollView()
+        if #available(iOS 11, *) {
+            scroll.contentInsetAdjustmentBehavior = .never
+        }
         scroll.attached = self
         return scroll
     }()
@@ -28,7 +31,7 @@ public class ScrollView: View, UIScrollViewDelegate {
     }
     
     public var verticallyCentered = false
-    public var contentInset: EdgeInsets = .zero {
+    public var contentInset: GameEdgeInsets = .zero {
         didSet {
             scrollView.contentInset = contentInset
             scrollView.scrollIndicatorInsets = contentInset

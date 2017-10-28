@@ -15,11 +15,16 @@
  */
 
 internal typealias PlatformView = UIView
+public typealias LayoutGuide = UILayoutGuide
 public typealias Metrics = [String : Any]?
-public typealias EdgeInsets = UIEdgeInsets
+public typealias GameEdgeInsets = UIEdgeInsets
+public typealias LayoutAttribute = NSLayoutAttribute
+public typealias LayoutRelation = NSLayoutRelation
+public typealias LayoutFormatOptions = NSLayoutFormatOptions
+public typealias StringDrawingOptions = NSStringDrawingOptions
 
-public func EdgeInsetsMake(_ top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> EdgeInsets {
-    return EdgeInsets(top: top, left: left, bottom: bottom, right: right)
+public func EdgeInsetsMake(_ top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> GameEdgeInsets {
+    return UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
 }
 
 internal let InFlippedEnv = false

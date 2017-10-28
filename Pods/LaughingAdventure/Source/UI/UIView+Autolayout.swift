@@ -34,8 +34,18 @@ public extension UIView {
         let usedHeight = height ?? view.frame.height
         
         view.translatesAutoresizingMaskIntoConstraints = false
-        let vertical = NSLayoutConstraint.constraints(withVisualFormat: "V:|[view(\(usedHeight))]", options: [], metrics: nil, views: views)
         let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: views)
+        
+        let top = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+        let heightConstraint: NSLayoutConstraint
+        if usedHeight < 1 {
+            heightConstraint = NSLayoutConstraint(item: view, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
+        } else {
+            heightConstraint = NSLayoutConstraint(item: view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: usedHeight)
+        }
+        
+        let vertical = [top, heightConstraint]
+        
         addConstraints(vertical + horizontal)
     }
 }

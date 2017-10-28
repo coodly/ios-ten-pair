@@ -69,7 +69,7 @@ public class SubscriptionCheck {
                     let deletionHandler: (String?, Error?) -> () = {
                         id, error in
                         
-                        Logging.log("Deletion result: \(id) - \(error)")
+                        Logging.log("Deletion result: \(String(describing: id)) - \(String(describing: error))")
                     }
                     
                     self.container.publicCloudDatabase.delete(withSubscriptionID: sub.subscriptionID, completionHandler: deletionHandler)
@@ -102,7 +102,7 @@ public class SubscriptionCheck {
         container.publicCloudDatabase.save(subscription) {
             subscription, error in
             
-            Logging.log("Subscription result: \(subscription) - \(error)")
+            Logging.log("Subscription result: \(String(describing: subscription)) - \(String(describing: error))")
         }
 
     }

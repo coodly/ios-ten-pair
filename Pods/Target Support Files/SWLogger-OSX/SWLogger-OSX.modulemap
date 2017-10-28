@@ -1,6 +1,0 @@
-framework module SWLogger {
-  umbrella header "SWLogger-OSX-umbrella.h"
-
-  export *
-  module * { export * }
-}

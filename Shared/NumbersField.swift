@@ -28,8 +28,6 @@ private extension Selector {
 }
 
 class NumbersField: ScrollViewContained {
-    var ads: AdsCoordinator?
-    
     override var withTaphHandler: Bool {
         return true
     }
@@ -38,7 +36,6 @@ class NumbersField: ScrollViewContained {
     
     var tileSize = CGSize.zero {
         didSet {
-            ads?.tileSize = tileSize
             background.tileSize = tileSize
             background.lastHandledTopLine = -1
         }
@@ -156,8 +153,6 @@ class NumbersField: ScrollViewContained {
         lastHandledVisible = visibleFrame
         ensureVisibleCovered(toCheck)
         removeHiddenTiles(visibleFrame)
-        
-        ads?.scrolled(to: visibleFrame)
     }
     
     private func lineForY(_ positionY: CGFloat) -> Int {
@@ -174,7 +169,7 @@ class NumbersField: ScrollViewContained {
         let topY = size.height - (visible.origin.y + visible.size.height)
         let topLineWithAds = lineForY(topY)
         // TODO jaanus: fix this.  - AdPresentationHeightInTiles is a workaround for tiles check after hint scroll
-        let topLine = max((ads?.removeAdLines(topLineWithAds) ?? topLineWithAds) - AdPresentationHeightInTiles, 0)
+        let topLine = topLineWithAds
         let startIndex = topLine * NumberOfColumns
         
         guard presentedNumbers.count > startIndex else {
@@ -220,7 +215,7 @@ class NumbersField: ScrollViewContained {
     private func probeTileFor(index: Int, animated: Bool) -> CGRect {
         let column = CGFloat(index % NumberOfColumns)
         let row = CGFloat(index / NumberOfColumns)
-        let yOffset = CGFloat(ads?.offsetFor(index: index) ?? 0)
+        let yOffset = CGFloat(0)
         let position = CGPoint(x: column * tileSize.width, y: size.height - tileSize.height - row * tileSize.height - yOffset)
         var tile: Tile
         let number = presentedNumbers[index]
@@ -281,7 +276,7 @@ class NumbersField: ScrollViewContained {
         let heigth = max(size.height, presentationHeight)
         size = CGSize(width: CGFloat(NumberOfColumns) * tileSize.width, height: heigth)
         let lines = numberOfLines()
-        let adLines = ads?.adLines(for: lines) ?? 0
+        let adLines = 0
         background.update(size, numberOfLines: lines, adLines: adLines, numberOfTiles: presentedNumbers.count)
         scrollView?.contentSizeChanged(to: size, presentationHeight: presentationHeight)
     }
@@ -293,7 +288,7 @@ class NumbersField: ScrollViewContained {
     private func fieldHeight() -> CGFloat {
         let lines = numberOfLines()
         let tilesHight = CGFloat(lines) * tileSize.height
-        let adsHeight = CGFloat(ads?.combinedHeight(with: lines) ?? 0)
+        let adsHeight = CGFloat(0)
         return tilesHight + adsHeight
     }
     
@@ -301,7 +296,7 @@ class NumbersField: ScrollViewContained {
         return size.height - fieldHeight()
     }
     
-    override func presentationInsets() -> EdgeInsets {
+    override func presentationInsets() -> GameEdgeInsets {
         return EdgeInsetsMake(0, 0, -bottomOffset(), 0)
     }
     
@@ -320,7 +315,6 @@ class NumbersField: ScrollViewContained {
     private func updateStatusLines() {
         let lines = numberOfLines()
         statusView?.set(lines: lines)
-        ads?.totalLines = lines
     }
     
     override func handleTap(at point: CGPoint) {
@@ -430,7 +424,6 @@ class NumbersField: ScrollViewContained {
         }
         
         statusView?.add(lines: -lines.count)
-        ads?.totalLines = numberOfLines()
         
         let lastHandled = lastHandledVisible
         lastHandledVisible = CGRect.zero
@@ -616,7 +609,7 @@ extension NumbersField: MatchFinder {
             completion(.foundOnScreen)
         } else {
             let row = Int(value / NumberOfColumns)
-            let adLines = ads?.adLines(for: row) ?? 0
+            let adLines = 0
             let proposedOffset = CGFloat(row + adLines) * self.tileSize.height
             completion(.foundOffScreen(proposedOffset))
         }

@@ -1,3 +1,6 @@
+source 'https://github.com/coodly/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 use_frameworks!
 
 module PodSource
@@ -19,9 +22,8 @@ def shared
 end
 
 def ios_pods
-    pod 'Firebase/Core', '3.13.0'
-    pod 'Firebase/AdMob', '3.13.0'
-    pod 'Locksmith', '3.0.0'
+    pod 'Google-Mobile-Ads-SDK', '7.24.1'
+    pod 'Locksmith', '4.0.0'
 
     shared
 
@@ -30,10 +32,10 @@ def ios_pods
         pod 'SpriteKitUI/iOS', :path => '../swift-sprite-kit-ui'
     elsif UsedSource == PodSource::Remote
         pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git'
-        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'development'
+        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'master'
     else
-        pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.7.1'
-        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.3.0'
+        pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.9.0'
+        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.4.0'
     end
 end
 
@@ -53,9 +55,9 @@ target 'macOS' do
         pod 'SpriteKitUI/macOS', :path => '../swift-sprite-kit-ui'
     elsif UsedSource == PodSource::Remote
         pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
-        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'development'
+        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'master'
     else
-        pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.7.1'
-        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.3.0'
+        pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.9.0'
+        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.4.0'
     end
 end

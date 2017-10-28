@@ -12,31 +12,30 @@ import GameplayKit
 import GameKit
 import LaughingAdventure
 
-class GameViewController: UIViewController, QuickAlertPresenter {
+class GameViewController: AdLoadingViewController, QuickAlertPresenter {
     private var game: TenPair?
-    private var ads: AdsCoordinator?
+    @IBOutlet private var gameContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Present the scene
-        let skView = self.view as! SKView
+        let skView = SKView(frame: gameContainerView.bounds)
+        skView.backgroundColor = .white
+        gameContainerView.add(fullSized: skView)        
 
         let scene = TenPair(size: skView.bounds.size)
-        if AppConfig.current.ads {
-            ads = AdsCoordinator()
-            scene.ads = ads
-        }
         game = scene
         scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
         
         skView.presentScene(scene)
         
         skView.allowsTransparency = false
         skView.shouldCullNonVisibleNodes = false
-        skView.showsFPS = AppConfig.current.logs
-        skView.showsNodeCount = AppConfig.current.logs
-        
+        skView.showsFPS = AppConfig.current.showDebugInfo
+        skView.showsNodeCount = AppConfig.current.showDebugInfo
+
         scene.start()
     }
 
@@ -53,30 +52,20 @@ class GameViewController: UIViewController, QuickAlertPresenter {
     }
 
     override var prefersStatusBarHidden: Bool {
-        return true
+        return false
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .default
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // sanity check
-        if AdMobAdUnitID != ReleaseNativeUnitID {
+        if AppConfig.current.adUnits.banner != AdUnits.live.banner {
             presentAlert("Ad unit", message: "Demo unit used")
         }
-        
-        guard let scroll = scrollView(in: view) else {
-            return
-        }
-        
-        guard let container = scroll.subviews.filter({ !($0 is UIImageView) }).first else {
-            return
-        }
-        
-        ads?.presentIn = container
     }
     
     private func scrollView(in checked: UIView) -> UIScrollView? {

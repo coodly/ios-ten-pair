@@ -22,11 +22,10 @@ let TopMenuBarHeight: CGFloat = 50
 let ActionButtonsTrayHeight: CGFloat = 50
 
 class PlayScreen: Screen {
-    var ads: AdsCoordinator?
-    
     private var statusBar: TopMenuBar!
     private var scrollView: ScrollView!
     private var numbersField: NumbersField?
+    private var hintsTray: HintsButtonTray?
     
     override func load() {
         color = .red
@@ -37,15 +36,35 @@ class PlayScreen: Screen {
         
         let field = NumbersField()
         numbersField = field
-        field.ads = ads
         field.presentedNumbers = FieldSave.load()
         field.name = "Numbers field"
-        scrollView.contentInset = EdgeInsetsMake(TopMenuBarHeight + 10, 0, 10 + ActionButtonsTrayHeight + 10, 0)
         scrollView.present(field)
+        
+        let topBackground = TopMenuBackground()
+        topBackground.name = "Top menu background"
+        addSubview(topBackground)
         
         statusBar = TopMenuBar()
         statusBar.name = "Top menu bar"
-        add(toTop: statusBar, height: TopMenuBarHeight)
+        addSubview(statusBar)
+        
+        let statusLeading = LayoutConstraint(item: statusBar, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0)
+        let statusTrailing = LayoutConstraint(item: statusBar, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0)
+        let statusHeight = LayoutConstraint(item: statusBar, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: TopMenuBarHeight)
+        let top: LayoutConstraint
+        if #available(iOS 11, *) {
+            top = LayoutConstraint(wrapped: statusBar.topAnchor.constraint(equalTo: safeAreaLayoutTopAnchor))
+        } else {
+            top = LayoutConstraint(item: statusBar, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 20)
+        }
+        addConstraints([statusLeading, statusTrailing, statusHeight, top])
+        
+        let topBackgroundTop = LayoutConstraint(item: topBackground, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+        let topBackgroundLeft = LayoutConstraint(item: topBackground, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0)
+        let topBackgroundRight = LayoutConstraint(item: topBackground, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0)
+        let topBackgroundBottom = LayoutConstraint(item: topBackground, attribute: .bottom, relatedBy: .equal, toItem: statusBar, attribute: .bottom, multiplier: 1, constant: 0)
+        addConstraints([topBackgroundTop, topBackgroundLeft, topBackgroundRight, topBackgroundBottom])
+
         
         field.statusView = statusBar.statusView
         field.updateFieldStatus()
@@ -65,6 +84,7 @@ class PlayScreen: Screen {
 
             let reload = SKAction.run() {
                 field.reload()
+                NotificationCenter.default.post(name: .fieldReload, object: nil)
             }
             
             self?.execute(reload)
@@ -86,6 +106,13 @@ class PlayScreen: Screen {
                     let tileRect = CGRect(x: 0, y: offset, width: tileSize.width, height: tileSize.height)
                     self.scrollView!.scrollRectToVisible(tileRect, animated: true)
                 }
+                
+                switch result {
+                case .foundOnScreen, .foundOffScreen(_):
+                    NotificationCenter.default.post(name: .hintTaken, object: nil)
+                default:
+                    break
+                }
             }
         }
         
@@ -98,17 +125,33 @@ class PlayScreen: Screen {
         field.gameWonAction = wonAction
         
         let hintsTray = HintsButtonTray()
+        self.hintsTray = hintsTray
         addSubview(hintsTray)
         hintsTray.button?.action = SKAction.run {
             self.execute(findMatchAction)
         }
         
-        let views: [String: AnyObject] = ["hints": hintsTray]
+        let hintsLeading = LayoutConstraint(item: hintsTray, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0)
+        let hintsWidth = LayoutConstraint(item: hintsTray, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: ActionButtonsTrayHeight)
+        let hintsHeight = LayoutConstraint(item: hintsTray, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: ActionButtonsTrayHeight)
+        let hintsBottom = LayoutConstraint(wrapped: hintsTray.bottomAnchor.constraint(equalTo: safeAreaLayoutBottomAnchor))
+        addConstraints([hintsLeading, hintsWidth, hintsHeight, hintsBottom])
+    }
+    
+    override func positionChildren() {
+        super.positionChildren()
         
-        let vertical = LayoutConstraint.constraints(withVisualFormat: "V:[hints(\(ActionButtonsTrayHeight))]-(10)-|", options: [], metrics: nil, views: views)
-        let horizontal = LayoutConstraint.constraints(withVisualFormat: "H:|[hints(\(ActionButtonsTrayHeight))]", options: [], metrics: nil, views: views)
-        
-        addConstraints(vertical + horizontal)
+        DispatchQueue.main.async {
+            let top = self.frame.size.height - self.statusBar.frame.minY + 10
+            let bottom = (self.hintsTray?.frame.maxY ?? 0) + 10
+            
+            guard self.scrollView.contentInset.top < 1 else {
+                return
+            }
+            
+            self.scrollView.contentInset = EdgeInsetsMake(top, 0, bottom, 0)
+            self.scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 10, height: 10), animated: false)
+        }
     }
     
     private func execute(_ task: SKAction) {
@@ -149,17 +192,6 @@ class PlayScreen: Screen {
         present(menu)
     }
     
-    override func set(color: SKColor, for attribute: Appearance.Attribute) {
-        super.set(color: color, for: attribute)
-        
-        if attribute == .background {
-            ads?.foreground = color
-        }
-        if attribute == .foreground {
-            ads?.background = color
-        }
-    }
-    
     private func restart(using: StartField) {
         scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 10, height: 10), animated: true)
         let fill = SKAction.run {
@@ -192,13 +224,5 @@ class PlayScreen: Screen {
         }
         
         run(SKAction.sequence([wait, show]))
-    }
-    
-    override func viewDidAppear() {
-        ads?.show()
-    }
-    
-    override func viewWillDisappear() {
-        ads?.hide()
     }
 }

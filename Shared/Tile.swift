@@ -16,6 +16,7 @@
 
 import SpriteKit
 import GameKit
+import SpriteKitUI
 
 struct ColorSet {
     var tileColor: SKColor = .clear
@@ -135,10 +136,10 @@ class Tile: SKSpriteNode {
         
         let color = SKColor.white
         
-        string.addAttribute(NSFontAttributeName, value: font, range: NSMakeRange(0, 1))
-        string.addAttribute(NSForegroundColorAttributeName, value: color, range: NSMakeRange(0, 1))
+        string.addAttribute(NSAttributedStringKey.font, value: font, range: NSMakeRange(0, 1))
+        string.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: NSMakeRange(0, 1))
         
-        let rect = string.boundingRect(with: CGSize(width: 1000, height: 1000), options: NSStringDrawingOptions.truncatesLastVisibleLine, context: nil)
+        let rect = string.boundingRect(with: CGSize(width: 1000, height: 1000), options: StringDrawingOptions.truncatesLastVisibleLine, context: nil)
         
         let image = string.renderIn(rect)
         return SKTexture(image: image)

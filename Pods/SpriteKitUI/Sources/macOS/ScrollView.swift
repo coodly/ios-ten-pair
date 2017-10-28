@@ -33,11 +33,11 @@ public class ScrollView: View {
         view.automaticallyAdjustsContentInsets = false
         view.documentView = self.flipped
         
-        NotificationCenter.default.addObserver(self, selector: .scrolled, name: NSNotification.Name.NSScrollViewDidLiveScroll, object: nil)
+        NotificationCenter.default.addObserver(self, selector: .scrolled, name: NSScrollView.didLiveScrollNotification, object: nil)
         
         return view
     }()
-    public var contentInset: EdgeInsets = NSEdgeInsetsZero {
+    public var contentInset: NSEdgeInsets = NSEdgeInsetsZero {
         didSet {
             scrollView.contentInsets = contentInset
         }
@@ -148,7 +148,7 @@ public class ScrollView: View {
             return
         }
         
-        scrollView.contentInsets = EdgeInsets(top: spacing, left: 0, bottom: spacing, right: 0)
+        scrollView.contentInsets = NSEdgeInsets(top: spacing, left: 0, bottom: spacing, right: 0)
         positionChildren()
     }
 }

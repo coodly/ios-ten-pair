@@ -1,6 +1,6 @@
 {
   "name": "LaughingAdventure",
-  "version": "0.7.1",
+  "version": "0.9.0",
   "license": "Apache 2",
   "summary": "Common Swift code used in Coodly",
   "homepage": "https://github.com/coodly/laughing-adventure",
@@ -9,19 +9,27 @@
   },
   "source": {
     "git": "git@github.com:coodly/laughing-adventure.git",
-    "tag": "0.7.1"
+    "tag": "0.9.0"
   },
   "default_subspecs": "Core",
   "platforms": {
-    "ios": "9.0",
-    "tvos": "9.0",
+    "ios": "9.3",
+    "tvos": "9.3",
     "osx": "10.11"
   },
   "requires_arc": true,
   "subspecs": [
     {
       "name": "Core",
-      "source_files": "Source/*/*.swift"
+      "source_files": "Source/*/*.swift",
+      "ios": {
+        "source_files": "iOS/*/*.swift"
+      },
+      "dependencies": {
+        "CoreDataPersistence": [
+          "0.1.1"
+        ]
+      }
     },
     {
       "name": "Logging",
@@ -43,16 +51,12 @@
     },
     {
       "name": "Feedback",
-      "source_files": "Source/Feedback"
-    },
-    {
-      "name": "CoreData",
+      "source_files": "Source/Feedback",
       "dependencies": {
-        "LaughingAdventure/Logging": [
-
+        "CoreDataPersistence": [
+          "0.1.1"
         ]
       },
-      "source_files": "Source/CoreData",
       "frameworks": "CoreData"
     },
     {

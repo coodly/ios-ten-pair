@@ -55,7 +55,7 @@ public class AdPresentingContainerViewController: UIViewController {
     
     private func loadBanner() {
         Logging.log("Load banner")
-        guard var med = mediator else {
+        guard let med = mediator else {
             return
         }
 

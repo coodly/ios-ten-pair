@@ -26,17 +26,17 @@ public class LayoutConstraint {
         }
     }
     
-    public convenience init(item view1: View, attribute attr1: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem view2: View?, attribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat) {
+    public convenience init(item view1: View, attribute attr1: LayoutAttribute, relatedBy relation: LayoutRelation, toItem view2: View?, attribute attr2: LayoutAttribute, multiplier: CGFloat, constant c: CGFloat) {
         
         let wrapped = NSLayoutConstraint(item: view1.backingView, attribute: attr1, relatedBy: relation, toItem: view2?.backingView, attribute: attr2, multiplier: multiplier, constant: c)
         self.init(wrapped: wrapped)
     }
 
-    private init(wrapped: NSLayoutConstraint) {
+    public init(wrapped: NSLayoutConstraint) {
         self.wrapped = wrapped
     }
 
-    public class func constraints(withVisualFormat format: String, options opts: NSLayoutFormatOptions = [], metrics: Metrics = [:], views: [String : Any]) -> [LayoutConstraint] {
+    public class func constraints(withVisualFormat format: String, options opts: LayoutFormatOptions = [], metrics: Metrics = [:], views: [String : Any]) -> [LayoutConstraint] {
         
         
         var withBacking = [String: Any]()

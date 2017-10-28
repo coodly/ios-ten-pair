@@ -85,7 +85,7 @@ open class FetchedCollectionView<Model: NSManagedObject, Cell: UICollectionViewC
             let cellActions = self.changeActions.filter({ $0.sectionIndex == nil })
             Logging.log("\(cellActions.count) cell actions")
             
-            var cellUpdates = cellActions.filter({ $0.changeType == .update })
+            let cellUpdates = cellActions.filter({ $0.changeType == .update })
             self.reloadItems(at: cellUpdates.map({ $0.indexPath! }))
             
             let cellInserts = cellActions.filter({ $0.changeType == .insert }).map({ $0.newIndexPath! })

@@ -17,6 +17,7 @@
 import UIKit
 import CloudKit
 import CoreData
+import CoreDataPersistence
 
 #if os(iOS)
 private extension Selector {
@@ -71,7 +72,7 @@ public class FeedbackViewController: FetchedTableViewController<Conversation, Co
         self.headerLabel = label
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.attributedText = NSAttributedString(string: NSLocalizedString("coodly.feedback.header.message", comment: ""), attributes: [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleDouble.rawValue, NSFontAttributeName: UIFont.preferredFont(forTextStyle: .headline)])
+        label.attributedText = NSAttributedString(string: NSLocalizedString("coodly.feedback.header.message", comment: ""), attributes: [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleDouble.rawValue, NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .headline)])
         label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         header.addSubview(label)
@@ -144,7 +145,7 @@ public class FeedbackViewController: FetchedTableViewController<Conversation, Co
         let op = PullConversationsOperation()
         inject(into: op)
         op.completionHandler = {
-            success in
+            success, _ in
             
             DispatchQueue.main.async {
                 self.refreshControl.endRefreshing()

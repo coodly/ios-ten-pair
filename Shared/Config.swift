@@ -20,14 +20,25 @@ let NumberOfColumns = 9
 
 private let ReleaseBuild = true
 
+struct AdUnits {
+    let banner: String
+    let interstitial: String
+    static let live = AdUnits(banner: AdMobBannerUnit, interstitial: AdMobInterstitial)
+    static let demo = AdUnits(banner: DemoAdMobBannerUnit, interstitial: DemoInterstitial)
+}
+
 struct AppConfig {
     let logs = !ReleaseBuild
     let statusBar: Bool
     let ads: Bool
     let maxTileWidth: Int
     let withFeedback: Bool
+    let adUnits = ReleaseBuild ? AdUnits.live : AdUnits.demo
+    let showDebugInfo = !ReleaseBuild
 }
 
 extension Notification.Name {
     static let saveField = Notification.Name(rawValue: "TenPairSaveField")
+    static let hintTaken = Notification.Name(rawValue: "TenPairHintTaken")
+    static let fieldReload = Notification.Name(rawValue: "TenPairFieldReload")
 }
