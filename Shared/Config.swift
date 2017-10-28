@@ -38,4 +38,6 @@ struct AppConfig {
 
 extension Notification.Name {
     static let saveField = Notification.Name(rawValue: "TenPairSaveField")
+    static let hintTaken = Notification.Name(rawValue: "TenPairHintTaken")
+    static let fieldReload = Notification.Name(rawValue: "TenPairFieldReload")
 }

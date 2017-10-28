@@ -17,6 +17,12 @@
 import UIKit
 import GoogleMobileAds
 
+private let InterstitialShowTreshold = 10
+
+private extension Selector {
+    static let tickInterstitial = #selector(AdLoadingViewController.tickInterstitial)
+}
+
 class AdLoadingViewController: UIViewController {
     @IBOutlet private var adContainerView: UIView!
     @IBOutlet private var adContainerHeight: NSLayoutConstraint!
@@ -27,10 +33,15 @@ class AdLoadingViewController: UIViewController {
         banner.delegate = self
         return banner
     }()
+    private var interstitial: GADInterstitial?
+    private var interstitialCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: .tickInterstitial, name: .hintTaken, object: nil)
+        NotificationCenter.default.addObserver(self, selector: .tickInterstitial, name: .fieldReload, object: nil)
+        
         adContainerHeight.constant = 0
         
         adContainerView.clipsToBounds = true
@@ -49,6 +60,37 @@ class AdLoadingViewController: UIViewController {
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID]
         banner.load(request)
+        
+        loadInterstitial()
+    }
+    
+    private func loadInterstitial() {
+        interstitial = GADInterstitial(adUnitID: AppConfig.current.adUnits.interstitial)
+        interstitial!.delegate = self
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        interstitial!.load(request)
+    }
+    
+    @objc fileprivate func tickInterstitial() {
+        interstitialCount += 1
+        
+        guard interstitialCount >= InterstitialShowTreshold, (interstitial?.isReady ?? false) else {
+            return
+        }
+        
+        interstitialCount = 0
+        interstitial?.present(fromRootViewController: self)
+    }
+}
+
+extension AdLoadingViewController: GADInterstitialDelegate {
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        loadInterstitial()
+    }
+    
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        Log.debug("Interstitial received")
     }
 }
 

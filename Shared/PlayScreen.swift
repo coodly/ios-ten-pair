@@ -84,6 +84,7 @@ class PlayScreen: Screen {
 
             let reload = SKAction.run() {
                 field.reload()
+                NotificationCenter.default.post(name: .fieldReload, object: nil)
             }
             
             self?.execute(reload)
@@ -104,6 +105,13 @@ class PlayScreen: Screen {
                     let tileSize = self.numbersField!.tileSize
                     let tileRect = CGRect(x: 0, y: offset, width: tileSize.width, height: tileSize.height)
                     self.scrollView!.scrollRectToVisible(tileRect, animated: true)
+                }
+                
+                switch result {
+                case .foundOnScreen, .foundOffScreen(_):
+                    NotificationCenter.default.post(name: .hintTaken, object: nil)
+                default:
+                    break
                 }
             }
         }
