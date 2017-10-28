@@ -57,6 +57,10 @@ class AdLoadingViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        guard AppConfig.current.ads else {
+            return
+        }
+        
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID]
         banner.load(request)

@@ -24,9 +24,6 @@ class GameViewController: AdLoadingViewController, QuickAlertPresenter {
         gameContainerView.add(fullSized: skView)        
 
         let scene = TenPair(size: skView.bounds.size)
-        if AppConfig.current.ads {
-
-        }
         game = scene
         scene.scaleMode = .resizeFill
         
@@ -34,8 +31,8 @@ class GameViewController: AdLoadingViewController, QuickAlertPresenter {
         
         skView.allowsTransparency = false
         skView.shouldCullNonVisibleNodes = false
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+        skView.showsFPS = AppConfig.current.showDebugInfo
+        skView.showsNodeCount = AppConfig.current.showDebugInfo
         
         scene.start()
     }

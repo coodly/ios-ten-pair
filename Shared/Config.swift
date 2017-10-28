@@ -34,6 +34,7 @@ struct AppConfig {
     let maxTileWidth: Int
     let withFeedback: Bool
     let adUnits = ReleaseBuild ? AdUnits.live : AdUnits.demo
+    let showDebugInfo = !ReleaseBuild
 }
 
 extension Notification.Name {
