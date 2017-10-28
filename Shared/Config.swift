@@ -18,7 +18,7 @@ import Foundation
 
 let NumberOfColumns = 9
 
-private let ReleaseBuild = false
+private let ReleaseBuild = true
 
 struct AdUnits {
     let banner: String
@@ -33,7 +33,7 @@ struct AppConfig {
     let ads: Bool
     let maxTileWidth: Int
     let withFeedback: Bool
-    let adUnits = AdUnits.demo
+    let adUnits = ReleaseBuild ? AdUnits.live : AdUnits.demo
 }
 
 extension Notification.Name {

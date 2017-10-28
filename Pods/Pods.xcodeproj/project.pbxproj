@@ -264,7 +264,7 @@
 		002EB6DD52C53B2C5640AC73B25A097A /* Array+Operations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Operations.swift"; path = "Source/Utils/Array+Operations.swift"; sourceTree = "<group>"; };
 		0197F8D3686617DC91559539E8DFB1F2 /* SWLogger-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SWLogger-macOS.xcconfig"; path = "../SWLogger-macOS/SWLogger-macOS.xcconfig"; sourceTree = "<group>"; };
 		01F2B6C1C4BEBD9F64F8231DD04B5346 /* FeedbackInjector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeedbackInjector.swift; path = Source/Feedback/FeedbackInjector.swift; sourceTree = "<group>"; };
-		0259B58CF51B7AE849424C658E24AE36 /* LaughingAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LaughingAdventure.framework; path = "LaughingAdventure-Logging-Purchase.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0259B58CF51B7AE849424C658E24AE36 /* LaughingAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaughingAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EDB6BB4A0E83507EBA1DFE2A0028E7 /* Locksmith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Locksmith.h; path = Source/Locksmith.h; sourceTree = "<group>"; };
 		0334C5118912429185A7638F31B7C7A2 /* LocksmithInternetAuthenticationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetAuthenticationType.swift; path = Source/LocksmithInternetAuthenticationType.swift; sourceTree = "<group>"; };
 		04E136D6116C27B5FF12739C747788A5 /* FileOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileOutput.swift; path = Sources/FileOutput.swift; sourceTree = "<group>"; };
@@ -283,12 +283,12 @@
 		11B37CB5BC202FEB9847C1D8C8F224B7 /* StoryboardLoaded.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardLoaded.swift; path = Source/Storyboards/StoryboardLoaded.swift; sourceTree = "<group>"; };
 		124B993E8C9A50130228173548C35ED2 /* LocksmithAccessibleOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithAccessibleOption.swift; path = Source/LocksmithAccessibleOption.swift; sourceTree = "<group>"; };
 		1AD41C1D63F7E1BA3F4B041D60D286A8 /* Pods-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS-dummy.m"; sourceTree = "<group>"; };
-		1C9B4B05E93B2954B7B97A349F6B2EAA /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_macOS.framework; path = "Pods-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C9B4B05E93B2954B7B97A349F6B2EAA /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E8EB90AD2A9F2386FBAB3716F8A891A /* DynamicFontReloadingTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicFontReloadingTableViewCell.swift; path = Source/UI/DynamicFontReloadingTableViewCell.swift; sourceTree = "<group>"; };
 		1F7C413EAF9018742F0881F573BC4741 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21F3E43B2A0B135A67224B567181EAE4 /* MenuScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MenuScreen.swift; path = Sources/Core/MenuScreen.swift; sourceTree = "<group>"; };
 		21FCBBB71F8AEEBF609F71AD2C846985 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SpriteKit.framework; sourceTree = DEVELOPER_DIR; };
-		222318BAA5FDE01BB357CFEE6EDFDC7D /* LaughingAdventure-Logging-Purchase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "LaughingAdventure-Logging-Purchase.modulemap"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase.modulemap"; sourceTree = "<group>"; };
+		222318BAA5FDE01BB357CFEE6EDFDC7D /* LaughingAdventure-Logging-Purchase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "LaughingAdventure-Logging-Purchase.modulemap"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase.modulemap"; sourceTree = "<group>"; };
 		226075F256FB97A3F613A8535BDEFF6B /* Dictionary_Initializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dictionary_Initializers.swift; path = Source/Dictionary_Initializers.swift; sourceTree = "<group>"; };
 		22A3405B45E65FC460B6FE6BF661FE44 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		236F26A5C80B45F50A91BD8E15F5A09E /* Pods-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-macOS-dummy.m"; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 		59D43F71348DEBDE7804A27362F9DF76 /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Sources/Log.swift; sourceTree = "<group>"; };
 		5A919510333E2718292DCC8C284B3F75 /* LaughingAdventure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LaughingAdventure-umbrella.h"; sourceTree = "<group>"; };
 		5AF4C61FC38C52420EAEE74D7B63AACF /* CoreDataPersistence.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CoreDataPersistence.xcconfig; sourceTree = "<group>"; };
-		5BDC20B68CB87A398AB6A46056E2D654 /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS.framework; path = "Pods-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BDC20B68CB87A398AB6A46056E2D654 /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C235AE3C0CF6C63C8ADBFE092974FEF /* View+SafeArea.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+SafeArea.swift"; path = "Sources/macOS/View+SafeArea.swift"; sourceTree = "<group>"; };
 		5E0BEBB7A6EF36E2C8B4FA4478D342A6 /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		5F591ABA197B5CCCDCC12C7231838DB9 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Sources/Core/LayoutConstraint.swift; sourceTree = "<group>"; };
@@ -377,7 +377,7 @@
 		6F6E32684DBEF37D785F9FC8BC66C4D4 /* ConversationCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConversationCell.swift; path = Source/Feedback/ConversationCell.swift; sourceTree = "<group>"; };
 		726B57138282B6A64C246DAE3433C2FD /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = View.swift; path = Sources/Core/View.swift; sourceTree = "<group>"; };
 		73E21070B1291C21E422E59CF71F1780 /* ConsoleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleOutput.swift; path = Sources/ConsoleOutput.swift; sourceTree = "<group>"; };
-		7495207845C2933F7D67B7C1561454C0 /* SWLogger-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "SWLogger-macOS.modulemap"; path = "../SWLogger-macOS/SWLogger-macOS.modulemap"; sourceTree = "<group>"; };
+		7495207845C2933F7D67B7C1561454C0 /* SWLogger-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "SWLogger-macOS.modulemap"; path = "../SWLogger-macOS/SWLogger-macOS.modulemap"; sourceTree = "<group>"; };
 		760DD39267379B26E3AB3496B13B83CD /* Aliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Aliases.swift; path = Sources/iOS/Aliases.swift; sourceTree = "<group>"; };
 		76FC81CBEE7D0F65AA8288D013DA1976 /* Themed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Themed.swift; path = Sources/Core/Themed.swift; sourceTree = "<group>"; };
 		7991A8F5AE9693212941D3BD7579FA7F /* CloudKitRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKitRequest.swift; path = Source/Cloud/CloudKitRequest.swift; sourceTree = "<group>"; };
@@ -387,20 +387,20 @@
 		7B146F0855A4F38BA2C9EACB65CC20C9 /* CoodlySlideMenuViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoodlySlideMenuViewController.swift; path = iOS/UI/CoodlySlideMenuViewController.swift; sourceTree = "<group>"; };
 		7C802A6E91BF408C706A4416B8D47DEF /* FullScreenTableCreate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FullScreenTableCreate.swift; path = Source/UI/FullScreenTableCreate.swift; sourceTree = "<group>"; };
 		80AD03ADA8341BED82688F851CB27AE7 /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		80D12E988D17988249AADCECEC572487 /* SpriteKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SpriteKitUI.framework; path = "SpriteKitUI-Core-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D12E988D17988249AADCECEC572487 /* SpriteKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpriteKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		831E03A850B61849FABC3F7920DC13CF /* Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Appearance.swift; path = Sources/Core/Appearance.swift; sourceTree = "<group>"; };
 		836B674C7134ABEFCC9D40B8D8244F8F /* Pods-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		87907152DDD84AD84975045399BE99EC /* ScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollView.swift; path = Sources/iOS/ScrollView.swift; sourceTree = "<group>"; };
 		88E3FCE8E760F92479D4EBB2B89062AA /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Button.swift; path = Sources/Core/Button.swift; sourceTree = "<group>"; };
-		8982529DBA5D88C25C6916A083443F3B /* SWLogger-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "SWLogger-iOS.modulemap"; sourceTree = "<group>"; };
-		8B0DD183F874D0EB9B1E54ED209967BD /* Locksmith.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Locksmith.framework; path = Locksmith.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8982529DBA5D88C25C6916A083443F3B /* SWLogger-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "SWLogger-iOS.modulemap"; sourceTree = "<group>"; };
+		8B0DD183F874D0EB9B1E54ED209967BD /* Locksmith.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Locksmith.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB7940B0C05F5AD8670FE7A44B25D9B /* CoreDataPersistence-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CoreDataPersistence-umbrella.h"; sourceTree = "<group>"; };
 		8C021D3364A4671823ACF6571E8BF943 /* SpriteKitUI-Core-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SpriteKitUI-Core-macOS-umbrella.h"; path = "../SpriteKitUI-Core-macOS/SpriteKitUI-Core-macOS-umbrella.h"; sourceTree = "<group>"; };
-		9061F76068B1CF92A65A0EDA1F9F88C3 /* LaughingAdventure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LaughingAdventure.modulemap; sourceTree = "<group>"; };
-		9237EC1F04B9FF848B29FDE05E121A3C /* LaughingAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LaughingAdventure.framework; path = LaughingAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9061F76068B1CF92A65A0EDA1F9F88C3 /* LaughingAdventure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LaughingAdventure.modulemap; sourceTree = "<group>"; };
+		9237EC1F04B9FF848B29FDE05E121A3C /* LaughingAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaughingAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		98F3D33C0BBF1DD4A878B1F3919FAAA6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../LaughingAdventure-Logging-Purchase/Info.plist"; sourceTree = "<group>"; };
-		9AE6594ABD10EDCE6D0C756FC28583F9 /* SpriteKitUI-Core-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "SpriteKitUI-Core-iOS.modulemap"; sourceTree = "<group>"; };
+		9AE6594ABD10EDCE6D0C756FC28583F9 /* SpriteKitUI-Core-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "SpriteKitUI-Core-iOS.modulemap"; sourceTree = "<group>"; };
 		9E0A043050F5FC2663EA7C79E44A49BD /* MenuOptionsContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MenuOptionsContainer.swift; path = Sources/iOS/MenuOptionsContainer.swift; sourceTree = "<group>"; };
 		A0454C989EEABAE2738D04405DC6FC19 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		A23B5443DCC796EF9CC90238FFC3DD8D /* AdsMediator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdsMediator.swift; path = Source/Ads/AdsMediator.swift; sourceTree = "<group>"; };
@@ -417,13 +417,13 @@
 		ABA63F703193CB81DAF124B82398050F /* Persistence+Conversations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Persistence+Conversations.swift"; path = "Source/Feedback/Persistence+Conversations.swift"; sourceTree = "<group>"; };
 		ABD9D8B39C2FFDD334523AF7514B3BBE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF2CF5ED912762D5F86790BDBA07C555 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		B017D2EF8B1F0EEB22D255D19188AA51 /* SpriteKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SpriteKitUI.framework; path = "SpriteKitUI-Core-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B017D2EF8B1F0EEB22D255D19188AA51 /* SpriteKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpriteKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0ECC7D6F0119BDDDC87C3A7D4CB67B1 /* Feedback.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Feedback.swift; path = Source/Feedback/Feedback.swift; sourceTree = "<group>"; };
 		B339F2733AEA9C5814DCA6154A11FE2A /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B4410D3BA11D493BE3AF92A731A24C26 /* StaticCollectionSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StaticCollectionSection.swift; path = Source/SectionedCollection/StaticCollectionSection.swift; sourceTree = "<group>"; };
 		B6253390A502FAAFB7231CADE98B364A /* FeedbackEmailSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeedbackEmailSender.swift; path = Source/Feedback/FeedbackEmailSender.swift; sourceTree = "<group>"; };
 		B729D502FC7A4A4E439D228754609B7B /* FetchedCollectionSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FetchedCollectionSection.swift; path = Source/SectionedCollection/FetchedCollectionSection.swift; sourceTree = "<group>"; };
-		B841F32E6784316936587AC74F7A2A47 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SWLogger.framework; path = "SWLogger-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B841F32E6784316936587AC74F7A2A47 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93E0A750F6B9B01CC4AF2B2B50859FE /* SelectionSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectionSource.swift; path = Source/UI/SelectionSource.swift; sourceTree = "<group>"; };
 		BA87448B87E7E70F1FD1E2A6B22A7347 /* CorePersistence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CorePersistence.swift; path = Sources/CorePersistence.swift; sourceTree = "<group>"; };
 		BD12FA639376DFC4DD9A46C051C138FC /* LaughingAdventure.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LaughingAdventure.xcconfig; sourceTree = "<group>"; };
@@ -437,32 +437,32 @@
 		C44583301FCE5726E59E1E577E179F27 /* Logging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = Source/Log/Logging.swift; sourceTree = "<group>"; };
 		C4691957293226BC527503F447C33589 /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Sources/Core/Game.swift; sourceTree = "<group>"; };
 		C4803AEE55714DCE88288ABDBF523B7D /* SWLogger-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWLogger-iOS-dummy.m"; sourceTree = "<group>"; };
-		C48453B1FB3E7C2EA4C678BD7519427A /* CoreDataPersistence.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CoreDataPersistence.modulemap; sourceTree = "<group>"; };
+		C48453B1FB3E7C2EA4C678BD7519427A /* CoreDataPersistence.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CoreDataPersistence.modulemap; sourceTree = "<group>"; };
 		C525999BABAD173A2A1D7A459A3F1AE0 /* StatusBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StatusBar.swift; path = Sources/iOS/StatusBar.swift; sourceTree = "<group>"; };
 		C78DD186CF32589BAB66BE1B163AEA4D /* CloudRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudRequest.swift; path = Source/Cloud/CloudRequest.swift; sourceTree = "<group>"; };
 		C95C99D66542A983E1D555693B2939F0 /* Locksmith-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-prefix.pch"; sourceTree = "<group>"; };
 		C96B3402B93594F7FD0C53E61BF3B877 /* ConversationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConversationViewController.swift; path = Source/Feedback/ConversationViewController.swift; sourceTree = "<group>"; };
 		CBC4BC1C994A07886C48AC466E227403 /* Pods-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS-umbrella.h"; sourceTree = "<group>"; };
-		CBDB927E9336B74803EFFE8361DD9DB7 /* SpriteKitUI-Core-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "SpriteKitUI-Core-macOS.modulemap"; path = "../SpriteKitUI-Core-macOS/SpriteKitUI-Core-macOS.modulemap"; sourceTree = "<group>"; };
+		CBDB927E9336B74803EFFE8361DD9DB7 /* SpriteKitUI-Core-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "SpriteKitUI-Core-macOS.modulemap"; path = "../SpriteKitUI-Core-macOS/SpriteKitUI-Core-macOS.modulemap"; sourceTree = "<group>"; };
 		D3DC1D6469BCA4785094C14D01FBB1B5 /* ConcurrentOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConcurrentOperation.swift; path = Source/Utils/ConcurrentOperation.swift; sourceTree = "<group>"; };
 		D5E3ABA15819086473B4D3EAB3EC4C72 /* LocksmithInternetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithInternetProtocol.swift; path = Source/LocksmithInternetProtocol.swift; sourceTree = "<group>"; };
-		D6625037A2EDD4686C5B8AEB1A558CA4 /* Locksmith.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Locksmith.modulemap; sourceTree = "<group>"; };
+		D6625037A2EDD4686C5B8AEB1A558CA4 /* Locksmith.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Locksmith.modulemap; sourceTree = "<group>"; };
 		D70A994B29E5CA6BB5E6F0A948FACE31 /* SWLogger-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWLogger-iOS-umbrella.h"; sourceTree = "<group>"; };
 		D72544FCDB989576D4362A744186C2DF /* InputValidation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputValidation.swift; path = Source/UI/InputValidation.swift; sourceTree = "<group>"; };
 		D9F0BD2620BD298D3D2ED1CEAE9337B7 /* FetchedCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FetchedCollectionView.swift; path = Source/UI/FetchedCollectionView.swift; sourceTree = "<group>"; };
 		DB6621AB4F1E4432BA08A389C281675F /* NoCaretTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoCaretTextField.swift; path = Source/Views/NoCaretTextField.swift; sourceTree = "<group>"; };
 		DD1CF2006209985323E59DA71F07038E /* Pods-iOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS-frameworks.sh"; sourceTree = "<group>"; };
 		DFE764E3FBA70FDF5BB711964CD691AD /* TextEntryCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextEntryCell.swift; path = Source/UI/TextEntryCell.swift; sourceTree = "<group>"; };
-		E1166B67C707E36BF926F40CA9114B77 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SWLogger.framework; path = "SWLogger-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E143410FF414C61DC278A8AFD9021667 /* CoreDataPersistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CoreDataPersistence.framework; path = CoreDataPersistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1166B67C707E36BF926F40CA9114B77 /* SWLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E143410FF414C61DC278A8AFD9021667 /* CoreDataPersistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreDataPersistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14A11C4A65D74B5F74B02F54E108033 /* Pods-iOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS-resources.sh"; sourceTree = "<group>"; };
 		E25EE729615826C4A009808DBB05662B /* LocksmithError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithError.swift; path = Source/LocksmithError.swift; sourceTree = "<group>"; };
-		E2E696BB0ED5B7A47A04EF0AB153C198 /* Pods-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-macOS.modulemap"; sourceTree = "<group>"; };
+		E2E696BB0ED5B7A47A04EF0AB153C198 /* Pods-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-macOS.modulemap"; sourceTree = "<group>"; };
 		E50C0CAEB012B382651046F82FE37E4C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6312800C110C2DD593072A98CB5095B /* MultiSelectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiSelectionViewController.swift; path = Source/UI/MultiSelectionViewController.swift; sourceTree = "<group>"; };
 		E76D86B2CDA78541838E4CDF4054A474 /* LaughingAdventure-Logging-Purchase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "LaughingAdventure-Logging-Purchase.xcconfig"; path = "../LaughingAdventure-Logging-Purchase/LaughingAdventure-Logging-Purchase.xcconfig"; sourceTree = "<group>"; };
 		E7C10139177E37E910C1CBFCC5725407 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
-		E809876F499B86FBD73E05FB919A69BE /* Pods-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-iOS.modulemap"; sourceTree = "<group>"; };
+		E809876F499B86FBD73E05FB919A69BE /* Pods-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-iOS.modulemap"; sourceTree = "<group>"; };
 		EA31EAE5D5E9A96DF7EA835D81C8546D /* Locksmith-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Locksmith-dummy.m"; sourceTree = "<group>"; };
 		EBF1CAFA89CC8C595D40074407E8CEF6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../SpriteKitUI-Core-macOS/Info.plist"; sourceTree = "<group>"; };
 		EC20CD51118670E97AB63B747CFF62DF /* LogsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogsViewController.swift; path = Sources/LogsViewController.swift; sourceTree = "<group>"; };
@@ -624,7 +624,6 @@
 				C18E932879D5EE44D9848541E07F60BA /* Purchase */,
 				26525370E5CF7F20D39889D4B08CBDB2 /* Support Files */,
 			);
-			name = LaughingAdventure;
 			path = LaughingAdventure;
 			sourceTree = "<group>";
 		};
@@ -683,7 +682,6 @@
 			children = (
 				C74FE52A499B3D9EE6437889D5F75D92 /* Frameworks */,
 			);
-			name = "Google-Mobile-Ads-SDK";
 			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
 		};
@@ -699,7 +697,6 @@
 				EE1FAC9008D31B2A1356DCEFCBA8ECB4 /* ShakeWindow.swift */,
 				61A57C8872C1512A516C827523DD79F9 /* Support Files */,
 			);
-			name = SWLogger;
 			path = SWLogger;
 			sourceTree = "<group>";
 		};
@@ -960,7 +957,6 @@
 				35BE3AFA53BCABB694C20BB21A936F59 /* LocksmithSecurityClass.swift */,
 				1CF06CBF4A0B86749485BB3AB408BFD6 /* Support Files */,
 			);
-			name = Locksmith;
 			path = Locksmith;
 			sourceTree = "<group>";
 		};
@@ -987,7 +983,6 @@
 				626B621E20714011B46C5DA67567480C /* NSManagedObjectContext+Extensions.swift */,
 				E386A60D7FEB84FB6A5BFDA11AB25E84 /* Support Files */,
 			);
-			name = CoreDataPersistence;
 			path = CoreDataPersistence;
 			sourceTree = "<group>";
 		};
@@ -999,7 +994,6 @@
 				01ED2BD4D358C30E5E48B1B22FFEE022 /* macOS */,
 				D2CF6868E800A16F0F7A482351BB474E /* Support Files */,
 			);
-			name = SpriteKitUI;
 			path = SpriteKitUI;
 			sourceTree = "<group>";
 		};
@@ -1286,7 +1280,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0910;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1942,7 +1936,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1950,15 +1946,21 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
@@ -2240,7 +2242,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2248,14 +2252,20 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
