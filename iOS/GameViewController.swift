@@ -21,11 +21,13 @@ class GameViewController: AdLoadingViewController, QuickAlertPresenter {
         
         // Present the scene
         let skView = SKView(frame: gameContainerView.bounds)
+        skView.backgroundColor = .white
         gameContainerView.add(fullSized: skView)        
 
         let scene = TenPair(size: skView.bounds.size)
         game = scene
         scene.scaleMode = .resizeFill
+        scene.backgroundColor = .white
         
         skView.presentScene(scene)
         
