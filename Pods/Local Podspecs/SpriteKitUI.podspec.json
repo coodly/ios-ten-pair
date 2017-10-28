@@ -1,6 +1,6 @@
 {
   "name": "SpriteKitUI",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "Apache 2",
   "summary": "Game kit on top of SpiteKit",
   "homepage": "https://github.com/coodly/SpriteKitUI",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "git@github.com:coodly/SpriteKitUI.git",
-    "tag": "0.3.0"
+    "tag": "0.4.0"
   },
   "platforms": {
     "ios": "9.0",
