@@ -17,7 +17,7 @@
 import SpriteKitUI
 import SpriteKit
 
-class HintsButtonTray: View {
+class ButtonTray: View {
     var button: HintButton?
     
     override func load() {

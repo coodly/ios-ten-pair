@@ -51,8 +51,8 @@ class Theme {
             
             FieldStatusView.appearance().set(color: .clear, for: .background)
             
-            HintsButtonTray.appearance().set(color: lightBlue, for: .background)
-            HintsButtonTray.appearance().set(color: .white, for: .foreground)
+            ButtonTray.appearance().set(color: lightBlue, for: .background)
+            ButtonTray.appearance().set(color: .white, for: .foreground)
             
             HintButton.appearance().set(color: .white, for: .foreground)
             HintButton.appearance().set(color: .clear, for: .background)
@@ -93,8 +93,8 @@ class Theme {
             
             FieldStatusView.appearance().set(color: .clear, for: .background)
             
-            HintsButtonTray.appearance().set(color: lightBlue, for: .background)
-            HintsButtonTray.appearance().set(color: .white, for: .foreground)
+            ButtonTray.appearance().set(color: lightBlue, for: .background)
+            ButtonTray.appearance().set(color: .white, for: .foreground)
             
             HintButton.appearance().set(color: .white, for: .foreground)
             HintButton.appearance().set(color: .clear, for: .background)

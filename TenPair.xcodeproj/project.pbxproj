@@ -24,8 +24,8 @@
 		A7363A3D1E55969600B7C732 /* FieldStatusVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */; };
 		A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
 		A750CE321E55AAB300852E6A /* FieldStatusVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */; };
-		A750CE341E55D7E500852E6A /* HintsButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE331E55D7E500852E6A /* HintsButtonTray.swift */; };
-		A750CE351E55D7E500852E6A /* HintsButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE331E55D7E500852E6A /* HintsButtonTray.swift */; };
+		A750CE341E55D7E500852E6A /* ButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE331E55D7E500852E6A /* ButtonTray.swift */; };
+		A750CE351E55D7E500852E6A /* ButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE331E55D7E500852E6A /* ButtonTray.swift */; };
 		A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE361E55DD9B00852E6A /* MatchFinder.swift */; };
 		A750CE381E55DD9B00852E6A /* MatchFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE361E55DD9B00852E6A /* MatchFinder.swift */; };
 		A75570BF1E54552300114ED2 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75570BE1E54552300114ED2 /* LoadingScreen.swift */; };
@@ -104,7 +104,7 @@
 		A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyLinesSearch.swift; sourceTree = "<group>"; };
 		A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldStatusVIew.swift; sourceTree = "<group>"; };
 		A748DC3A1E57375800F16F92 /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
-		A750CE331E55D7E500852E6A /* HintsButtonTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintsButtonTray.swift; sourceTree = "<group>"; };
+		A750CE331E55D7E500852E6A /* ButtonTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTray.swift; sourceTree = "<group>"; };
 		A750CE361E55DD9B00852E6A /* MatchFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinder.swift; sourceTree = "<group>"; };
 		A75570BE1E54552300114ED2 /* LoadingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		A777FA821E50758A003E62D7 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
@@ -211,6 +211,7 @@
 			children = (
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
 				A71837681E4A0C5F002AEBF5 /* BarButton.swift */,
+				A750CE331E55D7E500852E6A /* ButtonTray.swift */,
 				A78D568E1E5AF095002957DC /* Confetti.sks */,
 				A7B12C1C1E535B18007D7807 /* Config.swift */,
 				A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */,
@@ -218,7 +219,6 @@
 				A78D56711E5AD3F7002957DC /* FieldBackground.swift */,
 				A7D3907F1E4B049400EDB111 /* FieldSave.swift */,
 				A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */,
-				A750CE331E55D7E500852E6A /* HintsButtonTray.swift */,
 				A75570BE1E54552300114ED2 /* LoadingScreen.swift */,
 				A7D390921E4B47E900EDB111 /* Log.swift */,
 				A750CE361E55DD9B00852E6A /* MatchFinder.swift */,
@@ -579,7 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A750CE341E55D7E500852E6A /* HintsButtonTray.swift in Sources */,
+				A750CE341E55D7E500852E6A /* ButtonTray.swift in Sources */,
 				A7D3908D1E4B2AE300EDB111 /* MenuScreen.swift in Sources */,
 				A71A97471E48CCA4005E134F /* GameViewController.swift in Sources */,
 				A7D390931E4B47E900EDB111 /* Log.swift in Sources */,
@@ -638,7 +638,7 @@
 				A750CE381E55DD9B00852E6A /* MatchFinder.swift in Sources */,
 				A7D390811E4B049400EDB111 /* FieldSave.swift in Sources */,
 				A78713461E5C8B2C002DEF76 /* AdsCoordinator.swift in Sources */,
-				A750CE351E55D7E500852E6A /* HintsButtonTray.swift in Sources */,
+				A750CE351E55D7E500852E6A /* ButtonTray.swift in Sources */,
 				A7B12C1E1E535B18007D7807 /* Config.swift in Sources */,
 				A750CE321E55AAB300852E6A /* FieldStatusVIew.swift in Sources */,
 				A7D390941E4B47E900EDB111 /* Log.swift in Sources */,

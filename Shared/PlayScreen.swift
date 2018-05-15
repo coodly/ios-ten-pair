@@ -25,7 +25,7 @@ class PlayScreen: Screen {
     private var statusBar: TopMenuBar!
     private var scrollView: ScrollView!
     private var numbersField: NumbersField?
-    private var hintsTray: HintsButtonTray?
+    private var hintsTray: ButtonTray?
     
     override func load() {
         color = .red
@@ -124,7 +124,7 @@ class PlayScreen: Screen {
         
         field.gameWonAction = wonAction
         
-        let hintsTray = HintsButtonTray()
+        let hintsTray = ButtonTray()
         self.hintsTray = hintsTray
         addSubview(hintsTray)
         hintsTray.button?.action = SKAction.run {
