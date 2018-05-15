@@ -26,7 +26,7 @@ DEPENDENCIES:
   - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Google-Mobile-Ads-SDK
     - Locksmith
   https://github.com/coodly/Specs.git:
@@ -62,4 +62,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5ad95b0de26899ab19ab5011bf9c16bcaa121f73
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2
