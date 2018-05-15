@@ -15,7 +15,7 @@
  */
 
 internal protocol ShadowingView {
-    weak var attached: View? { get set }
+    var attached: View? { get set }
 }
 
 internal extension ShadowingView where Self: PlatformView {

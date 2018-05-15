@@ -54,7 +54,7 @@ public class Appearance {
         var attributes: [String: Any] = [:]
         var key = ""
         for atom in atoms {
-            if key.characters.count > 0 {
+            if key.count > 0 {
                 key = "." + key
             }
             
