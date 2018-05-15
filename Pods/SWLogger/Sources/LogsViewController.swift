@@ -104,6 +104,10 @@ private extension LogsViewController {
         } catch let error as NSError {
             Log.error(error)
         }
+        
+        files.sort(by: { (left, right) -> Bool in
+            return left.name.compare(right.name) == .orderedDescending
+        })
     }
 }
 #endif

@@ -27,7 +27,7 @@
       },
       "dependencies": {
         "CoreDataPersistence": [
-          "0.1.1"
+          "0.1.5"
         ]
       }
     },
@@ -54,7 +54,7 @@
       "source_files": "Source/Feedback",
       "dependencies": {
         "CoreDataPersistence": [
-          "0.1.1"
+          "0.1.5"
         ]
       },
       "frameworks": "CoreData"

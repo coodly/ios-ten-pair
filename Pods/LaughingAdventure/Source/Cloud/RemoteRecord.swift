@@ -100,7 +100,7 @@ public extension RemoteRecord {
             } else if let value = child.value as? [CKReference] {
                 modified[label] = value as CKRecordValue
             } else {
-                Logging.log("Could not cast \(child) value")
+                //Logging.log("Could not cast \(child) value")
             }
         }
 

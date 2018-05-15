@@ -9,7 +9,7 @@ module PodSource
     Tagged = 3
 end
 
-UsedSource = PodSource::Tagged
+UsedSource = PodSource::Remote
 
 def shared
     if UsedSource == PodSource::Local

@@ -21,9 +21,10 @@ public enum PurchaseResult {
     case success
     case cancelled
     case failure
-    case defered
+    case deferred
     case restored
     case notAllowed
+    case restoreFailure
 }
 
 public protocol PurchaseMonitor: class {
@@ -34,10 +35,10 @@ public typealias ProductsResponse = ([SKProduct], [String]) -> ()
 
 public class Storefront: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     private var requests = [SKProductsRequest: ProductsResponse]()
-
+    
     public weak var passiveMonitor: PurchaseMonitor?
     public weak var activeMonitor: PurchaseMonitor?
-
+    
     override public init() {
         super.init()
         SKPaymentQueue.default().add(self)
@@ -76,15 +77,12 @@ public class Storefront: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
     
-    func monitor() -> PurchaseMonitor? {
-        if let active = activeMonitor {
-            return active
-        }
-        
-        return passiveMonitor
+    private func monitor() -> PurchaseMonitor? {
+        return activeMonitor ?? passiveMonitor
     }
     
     public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        Logging.log("updatedTransactions: \(transactions.count)")
         for transaction in transactions {
             var finishTransaction = false
             
@@ -99,7 +97,7 @@ public class Storefront: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
             if notifyMonitor == nil {
                 Logging.log("No monitor set")
             }
-            Logging.log("identifier: \(productIdentifier)")
+            Logging.log("Identifier: \(productIdentifier)")
             
             switch transaction.transactionState {
             // Transaction is being added to the server queue.
@@ -111,7 +109,7 @@ public class Storefront: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
             case .failed: // Transaction was cancelled or failed before being added to the server queue.
                 Logging.log("Failed: \(transaction.error.debugDescription)")
                 finishTransaction = true
-                let cancelledCode = SKError.paymentCancelled.rawValue                
+                let cancelledCode = SKError.paymentCancelled.rawValue
                 if let error = transaction.error as NSError?, error.code == cancelledCode {
                     notifyMonitor?.purchaseResult(.cancelled, for: productIdentifier)
                 } else {
@@ -130,9 +128,16 @@ public class Storefront: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
     
     public func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
         Logging.log("Restore completed")
+        monitor()?.purchaseResult(.restored, for: "")
     }
     
     public func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
         Logging.log("Restore failed with error: \(error)")
+        let cancelledCode = SKError.paymentCancelled.rawValue
+        if let error = error as NSError?, error.code == cancelledCode {
+            monitor()?.purchaseResult(.cancelled, for: "")
+        } else {
+            monitor()?.purchaseResult(.restoreFailure, for: "")
+        }
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "SWLogger",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "license": "Apache 2",
   "summary": "Logging in Swift",
   "homepage": "https://github.com/coodly/swlogger",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "git@github.com:coodly/swlogger.git",
-    "tag": "0.3.1"
+    "tag": "0.3.2"
   },
   "platforms": {
     "ios": "8.0",

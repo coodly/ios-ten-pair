@@ -115,6 +115,7 @@ extension NSManagedObjectContext {
         }
     }
     
+    @available(iOS 9, tvOS 9, macOS 10.12, *)
     public func fetchedController<T: NSFetchRequestResult>(predicate: NSPredicate? = nil, sort: [NSSortDescriptor], batchSize: Int = 0, sectionNameKeyPath: String? = nil) -> NSFetchedResultsController<T> {
         let fetchRequest: NSFetchRequest<T> = NSFetchRequest(entityName: T.entityName())
         fetchRequest.predicate = predicate
@@ -154,10 +155,11 @@ extension NSManagedObjectContext {
         }
     }
     
-    public func fetchAttribute<T: NSManagedObject, Result>(named: String, on entity: T.Type, limit: Int? = nil, predicate: NSPredicate = .truePredicate) -> [Result] {
+    public func fetchAttribute<T: NSManagedObject, Result>(named: String, on entity: T.Type, limit: Int? = nil, predicate: NSPredicate = .truePredicate, distinctResults: Bool = false) -> [Result] {
         let request: NSFetchRequest<NSDictionary> = NSFetchRequest(entityName: T.entityName())
         request.resultType = .dictionaryResultType
         request.propertiesToFetch = [named]
+        request.returnsDistinctResults = distinctResults
         request.predicate = predicate
         if let limit = limit {
             request.fetchLimit = limit

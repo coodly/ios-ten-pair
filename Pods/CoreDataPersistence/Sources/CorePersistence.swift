@@ -19,7 +19,7 @@ import CoreData
 
 public typealias ContextClosure = (NSManagedObjectContext) -> ()
 
-public class CorePersistence {
+open class CorePersistence {
     fileprivate var stack: CoreStack!
     
     public var sqliteFilePath: URL? {
@@ -41,8 +41,8 @@ public class CorePersistence {
         }
     }
     
-    public init(modelName: String, storeType: String = NSSQLiteStoreType, identifier: String = Bundle.main.bundleIdentifier!, in directory: FileManager.SearchPathDirectory = .documentDirectory, wipeOnConflict: Bool = false) {
-        stack = LegacyDataStack(modelName: modelName, type: storeType, identifier: identifier, in: directory, wipeOnConflict: wipeOnConflict)
+    public init(modelName: String, storeType: String = NSSQLiteStoreType, identifier: String = Bundle.main.bundleIdentifier!, bundle: Bundle = Bundle.main, in directory: FileManager.SearchPathDirectory = .documentDirectory, wipeOnConflict: Bool = false) {
+        stack = LegacyDataStack(modelName: modelName, type: storeType, identifier: identifier, bundle: bundle, in: directory, wipeOnConflict: wipeOnConflict)
 
         /*if #available(iOS 10, tvOS 10, *) {
             stack = CoreDataStack(modelName: modelName, type: storeType, identifier: identifier, in: directory, wipeOnConflict: wipeOnConflict)
@@ -105,19 +105,31 @@ public class CorePersistence {
     
     private func save(context: NSManagedObjectContext, completion: (() -> ())? = nil) {
         context.perform {
-            if context.hasChanges {
-                Logging.log("Save \(context.name)")
-                try! context.save()
+            guard context.hasChanges else {
+                Logging.log("No changes")
+                completion?()
+                return
             }
+            
+            Logging.log("Save \(String(describing: context.name))")
+            guard context.parent != nil || (context.persistentStoreCoordinator?.persistentStores.count ?? 0) > 0 else {
+                assert(self.stack.type == NSInMemoryStoreType)
+                return
+            }
+            
+            try! context.save()
             
             if let parent = context.parent {
                 self.save(context: parent)
             }
             
-            if let completion = completion {
-                completion()
-            }
+            completion?()
         }
+    }
+    
+    public func write(block: @escaping ContextClosure) {
+        perform(wait: true, block: block)
+        save()
     }
 }
 
@@ -143,6 +155,7 @@ private class CoreStack {
     fileprivate let modelName: String
     fileprivate let type: String
     fileprivate let identifier: String
+    fileprivate let bundle: Bundle
     private let directory: FileManager.SearchPathDirectory
     fileprivate let mergePolicy: NSMergePolicyType
     fileprivate let wipeOnConflict: Bool
@@ -154,11 +167,12 @@ private class CoreStack {
         fatalError()
     }
     
-    init(modelName: String, type: String = NSSQLiteStoreType, identifier: String, in directory: FileManager.SearchPathDirectory = .documentDirectory, mergePolicy: NSMergePolicyType = .mergeByPropertyObjectTrumpMergePolicyType, wipeOnConflict: Bool) {
+    init(modelName: String, type: String = NSSQLiteStoreType, identifier: String, bundle: Bundle, in directory: FileManager.SearchPathDirectory = .documentDirectory, mergePolicy: NSMergePolicyType = .mergeByPropertyObjectTrumpMergePolicyType, wipeOnConflict: Bool) {
         
         self.modelName = modelName
         self.type = type
         self.identifier = identifier
+        self.bundle = bundle
         self.directory = directory
         self.mergePolicy = mergePolicy
         self.wipeOnConflict = wipeOnConflict
@@ -201,7 +215,7 @@ private class CoreStack {
     }
 }
 
-@available(iOS 10, tvOS 10.0, *)
+@available(iOS 10, tvOS 10.0, macOS 10.12, *)
 private class CoreDataStack: CoreStack {
     private lazy var container: NSPersistentContainer = {
         let container: NSPersistentContainer
@@ -279,7 +293,7 @@ private class LegacyDataStack: CoreStack {
             DispatchQueue.global(qos: .background).async {
                 let url = self.databaseFilePath
                 
-                Logging.log("Using DB file at \(url)")
+                Logging.log("Using DB file at \(String(describing: url))")
                 
                 let options = [NSMigratePersistentStoresAutomaticallyOption as NSObject: true as AnyObject, NSInferMappingModelAutomaticallyOption as NSObject: true as AnyObject]
                 let config = StackConfig(storeType: self.type, storeURL: url, options: options)
@@ -344,8 +358,8 @@ private class LegacyDataStack: CoreStack {
     }()
     
     private lazy var objectModel: NSManagedObjectModel = {
-        let modelURL = Bundle.main.url(forResource: self.modelName, withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
+        let modelURL = self.bundle.url(forResource: self.modelName, withExtension: "momd")!
+        return makeOptional(NSManagedObjectModel(contentsOf: modelURL))!
     }()
     
     override func newBackgroundContext() -> NSManagedObjectContext {
@@ -355,3 +369,9 @@ private class LegacyDataStack: CoreStack {
         return managedContext
     }
 }
+
+//TODO jaanus: remove this. Issue in Xcode9 b5
+private func makeOptional<T>(_ value: T?) -> T? {
+    return value
+}
+
