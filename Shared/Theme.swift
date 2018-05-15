@@ -54,8 +54,8 @@ class Theme {
             ButtonTray.appearance().set(color: lightBlue, for: .background)
             ButtonTray.appearance().set(color: .white, for: .foreground)
             
-            HintButton.appearance().set(color: .white, for: .foreground)
-            HintButton.appearance().set(color: .clear, for: .background)
+            TrayButton.appearance().set(color: .white, for: .foreground)
+            TrayButton.appearance().set(color: .clear, for: .background)
             
             WinScreen.appearance().set(color: .clear, for: .background)
         }
@@ -96,8 +96,8 @@ class Theme {
             ButtonTray.appearance().set(color: lightBlue, for: .background)
             ButtonTray.appearance().set(color: .white, for: .foreground)
             
-            HintButton.appearance().set(color: .white, for: .foreground)
-            HintButton.appearance().set(color: .clear, for: .background)
+            TrayButton.appearance().set(color: .white, for: .foreground)
+            TrayButton.appearance().set(color: .clear, for: .background)
             
             WinScreen.appearance().set(color: .clear, for: .background)
         }

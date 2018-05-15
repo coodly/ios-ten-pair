@@ -26,6 +26,7 @@ class PlayScreen: Screen {
     private var scrollView: ScrollView!
     private var numbersField: NumbersField?
     private var hintsTray: ButtonTray?
+    private var undoTray: ButtonTray?
     
     override func load() {
         color = .red
@@ -126,16 +127,31 @@ class PlayScreen: Screen {
         
         let hintsTray = ButtonTray()
         self.hintsTray = hintsTray
+        hintsTray.iconName = "hint"
         addSubview(hintsTray)
         hintsTray.button?.action = SKAction.run {
             self.execute(findMatchAction)
         }
         
-        let hintsLeading = LayoutConstraint(item: hintsTray, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0)
+        let hintsLeading = LayoutConstraint(item: hintsTray, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
         let hintsWidth = LayoutConstraint(item: hintsTray, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: ActionButtonsTrayHeight)
         let hintsHeight = LayoutConstraint(item: hintsTray, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: ActionButtonsTrayHeight)
         let hintsBottom = LayoutConstraint(wrapped: hintsTray.bottomAnchor.constraint(equalTo: safeAreaLayoutBottomAnchor))
         addConstraints([hintsLeading, hintsWidth, hintsHeight, hintsBottom])
+        
+        let undoTray = ButtonTray()
+        self.undoTray = undoTray
+        undoTray.iconName = "Undo"
+        addSubview(undoTray)
+        undoTray.button?.action = SKAction.run {
+            Log.debug("Undo")
+        }
+        
+        let undoTrailing = LayoutConstraint(item: undoTray, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
+        let undoWidth = LayoutConstraint(item: undoTray, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: ActionButtonsTrayHeight)
+        let undoHeight = LayoutConstraint(item: undoTray, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: ActionButtonsTrayHeight)
+        let undoBottom = LayoutConstraint(wrapped: undoTray.bottomAnchor.constraint(equalTo: safeAreaLayoutBottomAnchor))
+        addConstraints([undoTrailing, undoWidth, undoHeight, undoBottom])
     }
     
     override func positionChildren() {

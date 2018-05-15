@@ -18,14 +18,15 @@ import SpriteKitUI
 import SpriteKit
 
 class ButtonTray: View {
-    var button: HintButton?
+    var button: TrayButton?
+    var iconName = ""
     
     override func load() {
         borderWidth = 1
         
-        let button = HintButton()
+        let button = TrayButton()
         self.button = button
-        button.set(icon: "hint")
+        button.set(icon: iconName)
         addSubview(button)
 
         let width = LayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 44)
@@ -45,6 +46,6 @@ class ButtonTray: View {
     }
 }
 
-class HintButton: Button {
+class TrayButton: Button {
     
 }
