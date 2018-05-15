@@ -1,6 +1,6 @@
 PODS:
   - CoreDataPersistence (0.1.5)
-  - Google-Mobile-Ads-SDK (7.24.1)
+  - Google-Mobile-Ads-SDK (7.30.0)
   - LaughingAdventure (0.9.0):
     - LaughingAdventure/Core (= 0.9.0)
   - LaughingAdventure/Core (0.9.0):
@@ -17,7 +17,7 @@ PODS:
   - SWLogger (0.3.2)
 
 DEPENDENCIES:
-  - Google-Mobile-Ads-SDK (= 7.24.1)
+  - Google-Mobile-Ads-SDK (= 7.30.0)
   - LaughingAdventure (from `https://github.com/coodly/laughing-adventure.git`)
   - LaughingAdventure/Purchase (from `https://github.com/coodly/laughing-adventure.git`)
   - Locksmith (= 4.0.0)
@@ -54,12 +54,12 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CoreDataPersistence: 605a7fc5a96eeea8e27d0f02607b51627fe774bc
-  Google-Mobile-Ads-SDK: ed8004a7265b424568dc84f3d2bbe3ea3fff958f
+  Google-Mobile-Ads-SDK: 7404f68120ae8682afeb5af001fbf4aad731c78e
   LaughingAdventure: ba3ef66c6c28e2cf0bb5affcfccd23d5bfc76f3b
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   SpriteKitUI: c2fced7bf2fad2b658deea5ea43b3491f89dba54
   SWLogger: 505a8a32339f88f9a31521d8d359d32fa4e2e223
 
-PODFILE CHECKSUM: 229ef6d7602f4dc65105dda8857f742a1bb3c254
+PODFILE CHECKSUM: 5ad95b0de26899ab19ab5011bf9c16bcaa121f73
 
 COCOAPODS: 1.5.0
