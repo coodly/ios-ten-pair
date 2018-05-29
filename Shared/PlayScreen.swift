@@ -27,6 +27,7 @@ class PlayScreen: Screen {
     private var numbersField: NumbersField?
     private var hintsTray: ButtonTray?
     private var undoTray: ButtonTray?
+    private lazy var undo = UndoManager()
     
     override func load() {
         color = .red
@@ -37,6 +38,7 @@ class PlayScreen: Screen {
         
         let field = NumbersField()
         numbersField = field
+        field.undo = undo
         field.presentedNumbers = FieldSave.load()
         field.name = "Numbers field"
         scrollView.present(field)

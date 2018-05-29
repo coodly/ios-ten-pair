@@ -28,6 +28,8 @@ private extension Selector {
 }
 
 class NumbersField: ScrollViewContained {
+    internal var undo: UndoManager!
+    
     override var withTaphHandler: Bool {
         return true
     }
@@ -109,6 +111,8 @@ class NumbersField: ScrollViewContained {
         notifySizeChanged()
         
         save()
+        
+        undo.removeAllActions()
     }
     
     override func scrolledVisible(to visibleFrame: CGRect) {
@@ -310,6 +314,8 @@ class NumbersField: ScrollViewContained {
         notifySizeChanged()
         
         save()
+        
+        undo.removeAllActions()
     }
     
     private func updateStatusLines() {
