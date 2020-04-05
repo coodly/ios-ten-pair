@@ -40,7 +40,7 @@ def ios_pods
 end
 
 target 'iOS' do
-    platform :ios, '9.3'
+    platform :ios, '10.3'
 
     ios_pods
 end
