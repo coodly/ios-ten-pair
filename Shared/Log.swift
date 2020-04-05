@@ -25,7 +25,7 @@ class Log {
         SWLogger.Log.add(output: ConsoleOutput())
         SWLogger.Log.add(output: FileOutput())
         
-        SWLogger.Log.logLevel = .debug
+        SWLogger.Log.level = .debug
     }
     
     class func debug<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {

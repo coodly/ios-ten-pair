@@ -41,8 +41,12 @@ open class CorePersistence {
         }
     }
     
-    public init(modelName: String, storeType: String = NSSQLiteStoreType, identifier: String = Bundle.main.bundleIdentifier!, bundle: Bundle = Bundle.main, in directory: FileManager.SearchPathDirectory = .documentDirectory, wipeOnConflict: Bool = false) {
-        stack = LegacyDataStack(modelName: modelName, type: storeType, identifier: identifier, bundle: bundle, in: directory, wipeOnConflict: wipeOnConflict)
+    public convenience init(modelName: String, identifier: String = Bundle.main.bundleIdentifier!, bundle: Bundle = Bundle.main, groupIdentifier: String, wipeOnConflict: Bool = false) {
+        self.init(modelName: modelName, storeType: NSSQLiteStoreType, identifier: identifier, bundle: bundle, in: .documentDirectory, groupIdentifier: groupIdentifier, wipeOnConflict: wipeOnConflict)
+    }
+
+    public init(modelName: String, storeType: String = NSSQLiteStoreType, identifier: String = Bundle.main.bundleIdentifier!, bundle: Bundle = Bundle.main, in directory: FileManager.SearchPathDirectory = .documentDirectory, groupIdentifier: String? = nil, wipeOnConflict: Bool = false, sharedBackgroundContext: Bool = false) {
+        stack = LegacyDataStack(modelName: modelName, type: storeType, identifier: identifier, bundle: bundle, in: directory, groupIdentifier: groupIdentifier, wipeOnConflict: wipeOnConflict, sharedBackgroundContext: sharedBackgroundContext)
 
         /*if #available(iOS 10, tvOS 10, *) {
             stack = CoreDataStack(modelName: modelName, type: storeType, identifier: identifier, in: directory, wipeOnConflict: wipeOnConflict)
@@ -127,9 +131,12 @@ open class CorePersistence {
         }
     }
     
-    public func write(block: @escaping ContextClosure) {
-        perform(wait: true, block: block)
-        save()
+    public func write(block: ContextClosure) {
+        let context = stack.mainContext
+        context.performAndWait {
+            block(context)
+        }
+        save(context: context)
     }
 }
 
@@ -157,8 +164,10 @@ private class CoreStack {
     fileprivate let identifier: String
     fileprivate let bundle: Bundle
     private let directory: FileManager.SearchPathDirectory
+    private let groupIdentifier: String?
     fileprivate let mergePolicy: NSMergePolicyType
     fileprivate let wipeOnConflict: Bool
+    fileprivate let sharedBackgroundContext: Bool
     fileprivate var managedObjectModel: NSManagedObjectModel?
     fileprivate var persistentStoreCoordinator: NSPersistentStoreCoordinator {
         fatalError()
@@ -167,15 +176,17 @@ private class CoreStack {
         fatalError()
     }
     
-    init(modelName: String, type: String = NSSQLiteStoreType, identifier: String, bundle: Bundle, in directory: FileManager.SearchPathDirectory = .documentDirectory, mergePolicy: NSMergePolicyType = .mergeByPropertyObjectTrumpMergePolicyType, wipeOnConflict: Bool) {
+    init(modelName: String, type: String = NSSQLiteStoreType, identifier: String, bundle: Bundle, in directory: FileManager.SearchPathDirectory = .documentDirectory, groupIdentifier: String?, mergePolicy: NSMergePolicyType = .mergeByPropertyObjectTrumpMergePolicyType, wipeOnConflict: Bool, sharedBackgroundContext: Bool) {
         
         self.modelName = modelName
         self.type = type
         self.identifier = identifier
         self.bundle = bundle
         self.directory = directory
+        self.groupIdentifier = groupIdentifier
         self.mergePolicy = mergePolicy
         self.wipeOnConflict = wipeOnConflict
+        self.sharedBackgroundContext = sharedBackgroundContext
     }
     
     fileprivate var databaseFilePath: URL? {
@@ -187,10 +198,15 @@ private class CoreStack {
     }
     
     private lazy var workingFilesDirectory: URL = {
-        let urls = FileManager.default.urls(for: self.directory, in: .userDomainMask)
-        let last = urls.last!
+        let baseDirecrtory: URL
+        if let group = groupIdentifier {
+            baseDirecrtory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: group)!
+        } else {
+            let urls = FileManager.default.urls(for: self.directory, in: .userDomainMask)
+            baseDirecrtory = urls.last!
+        }
         let dbIdentifier = self.identifier + ".db"
-        let dbFolder = last.appendingPathComponent(dbIdentifier)
+        let dbFolder = baseDirecrtory.appendingPathComponent(dbIdentifier)
         do {
             try FileManager.default.createDirectory(at: dbFolder, withIntermediateDirectories: true, attributes: nil)
         } catch let error as NSError {
@@ -283,6 +299,7 @@ private class LegacyDataStack: CoreStack {
     }
     
     private var writingContext: NSManagedObjectContext?
+    private lazy var sharedWorkerContext: NSManagedObjectContext = self.createBackgroundContext()
 
     fileprivate override func loadPersistentStores(completion: @escaping (() -> ())) {
         DispatchQueue.main.async {
@@ -359,19 +376,21 @@ private class LegacyDataStack: CoreStack {
     
     private lazy var objectModel: NSManagedObjectModel = {
         let modelURL = self.bundle.url(forResource: self.modelName, withExtension: "momd")!
-        return makeOptional(NSManagedObjectModel(contentsOf: modelURL))!
+        return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
     override func newBackgroundContext() -> NSManagedObjectContext {
+        if sharedBackgroundContext {
+            return sharedWorkerContext
+        }
+        
+        return createBackgroundContext()
+    }
+    
+    private func createBackgroundContext() -> NSManagedObjectContext {
         let managedContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         managedContext.parent = managedObjectContext
         managedContext.mergePolicy = NSMergePolicy(merge: mergePolicy)
         return managedContext
     }
 }
-
-//TODO jaanus: remove this. Issue in Xcode9 b5
-private func makeOptional<T>(_ value: T?) -> T? {
-    return value
-}
-

@@ -17,11 +17,6 @@
 #if os(iOS)
 import UIKit
 
-struct LogFile {
-    let name: String
-    let path: URL
-}
-
 private extension Selector {
     static let dismiss = #selector(LogsViewController.dismissLogsController)
 }
@@ -58,6 +53,7 @@ public class LogsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) ?? UITableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
         let file = files[(indexPath as NSIndexPath).row]
         cell.textLabel?.text = file.name
+        cell.textLabel?.lineBreakMode = .byTruncatingMiddle
         return cell
     }
 
@@ -66,7 +62,7 @@ public class LogsViewController: UITableViewController {
         
         let file = files[(indexPath as NSIndexPath).row]
         
-        let activityController = UIActivityViewController(activityItems: [file.path], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [file.file], applicationActivities: nil)
         
         let rect = tableView.rectForRow(at: indexPath)
         activityController.popoverPresentationController?.sourceView = tableView

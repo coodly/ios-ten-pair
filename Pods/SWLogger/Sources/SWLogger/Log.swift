@@ -21,25 +21,29 @@ public class Log {
         case verbose = 0, debug, info, error, none
     }
 
-    public static var logLevel = Level.none
+    public static var level = Level.none
+    
+    private static let base = Logging(name: "App")
     
     public class func info<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
-        Logger.sharedInstance.log(object, file: file, function: function, line: line, level: .info)
+        base.info(object, file: file, function: function, line: line)
     }
 
     public class func debug<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
-        Logger.sharedInstance.log(object, file: file, function: function, line: line, level: .debug)
+        base.debug(object, file: file, function: function, line: line)
     }
     
     public class func error<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
-        Logger.sharedInstance.log(object, file: file, function: function, line: line, level: .error)
+        base.error(object, file: file, function: function, line: line)
     }
 
     public class func verbose<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
-        Logger.sharedInstance.log(object, file: file, function: function, line: line, level: .verbose)
+        base.verbose(object, file: file, function: function, line: line)
     }
     
     public class func add(output: LogOutput) {
         Logger.sharedInstance.add(output: output)
     }
+    
+    internal static let logger = Logging(name: "SWLogger")
 }

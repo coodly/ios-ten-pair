@@ -19,27 +19,31 @@ import Foundation
 internal class Logger {
     internal static let sharedInstance = Logger()
     internal var outputs = [LogOutput]()
+    private var cleaned = [String: String]()
         
+    private lazy var queue = DispatchQueue(label: "com.coodly.logging.queue")
+    
     internal func add(output: LogOutput) {
         outputs.append(output)
     }
     
-    internal func log<T>(_ object: T, file: String, function: String, line: Int, level: Log.Level) {
-        if level.rawValue < Log.logLevel.rawValue {
-            return
-        }
+    internal func log<T>(message: Message<T>) {
+        queue.sync {
+            guard message.level.rawValue >= Log.level.rawValue else {
+                return
+            }
 
-        let time = timeFormatter.string(from: Date())
-        let levelString = levelToString(level)
-        let fileURL = URL(fileURLWithPath: file, isDirectory: false)
-        let cleanedFile = fileURL.lastPathComponent
-        let message = "\(time) - \(levelString) - \(cleanedFile).\(function):\(line) - \(object)"
+            let time = timeFormatter.string(from: message.time)
+            let levelString = levelToString(message.level)
+            let cleanedFile = cleaned(path: message.file)
+            let message = "\(time) - \(message.logger) - \(levelString) - \(cleanedFile).\(message.function):\(message.line) - \(message.object)"
 
-        for output: LogOutput in outputs {
-            output.printMessage(message)
+            for output: LogOutput in outputs {
+                output.printMessage(message)
+            }
         }
     }
-    
+        
     private func levelToString(_ level: Log.Level) -> String {
         switch(level) {
         case .error:
@@ -53,6 +57,17 @@ internal class Logger {
         default:
             return ""
         }
+    }
+    
+    private func cleaned(path: String) -> String {
+        if let existing = self.cleaned[path] {
+            return existing
+        }
+        
+        let fileURL = URL(fileURLWithPath: path, isDirectory: false)
+        let cleanedFile = fileURL.lastPathComponent
+        self.cleaned[path] = cleanedFile
+        return cleanedFile
     }
     
     private lazy var timeFormatter: DateFormatter = {

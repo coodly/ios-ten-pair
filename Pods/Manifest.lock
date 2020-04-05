@@ -1,12 +1,12 @@
 PODS:
-  - CoreDataPersistence (0.1.5)
+  - CoreDataPersistence (0.1.8)
   - Google-Mobile-Ads-SDK (7.30.0)
-  - LaughingAdventure (0.9.0):
-    - LaughingAdventure/Core (= 0.9.0)
-  - LaughingAdventure/Core (0.9.0):
-    - CoreDataPersistence (= 0.1.5)
-  - LaughingAdventure/Logging (0.9.0)
-  - LaughingAdventure/Purchase (0.9.0):
+  - LaughingAdventure (0.9.2):
+    - LaughingAdventure/Core (= 0.9.2)
+  - LaughingAdventure/Core (0.9.2):
+    - CoreDataPersistence (= 0.1.8)
+  - LaughingAdventure/Logging (0.9.2)
+  - LaughingAdventure/Purchase (0.9.2):
     - LaughingAdventure/Logging
   - Locksmith (4.0.0)
   - SpriteKitUI/Core (0.4.0)
@@ -14,7 +14,7 @@ PODS:
     - SpriteKitUI/Core
   - SpriteKitUI/macOS (0.4.0):
     - SpriteKitUI/Core
-  - SWLogger (0.3.2)
+  - SWLogger (0.4.1)
 
 DEPENDENCIES:
   - Google-Mobile-Ads-SDK (= 7.30.0)
@@ -26,7 +26,7 @@ DEPENDENCIES:
   - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs:
     - Google-Mobile-Ads-SDK
     - Locksmith
   https://github.com/coodly/Specs.git:
@@ -43,23 +43,23 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LaughingAdventure:
-    :commit: ade9dbe158e05299ec10f8d4693aab68ea4a8169
+    :commit: 333d66f271f74eac458f506eb6e00bd7261db980
     :git: https://github.com/coodly/laughing-adventure.git
   SpriteKitUI:
     :commit: d047fe25e8c423c89b5d7f197d9421e5097c2f09
     :git: "git@github.com:coodly/SpriteKitUI.git"
   SWLogger:
-    :commit: a291fb5d2674b48511b4d28c773a90d84311b002
+    :commit: b484b0b867257960ba67cd53dae153d69f5ff068
     :git: "git@github.com:coodly/swlogger.git"
 
 SPEC CHECKSUMS:
-  CoreDataPersistence: 605a7fc5a96eeea8e27d0f02607b51627fe774bc
+  CoreDataPersistence: ade442c0009318efc9a53e04b79479311fbbba86
   Google-Mobile-Ads-SDK: 7404f68120ae8682afeb5af001fbf4aad731c78e
-  LaughingAdventure: ba3ef66c6c28e2cf0bb5affcfccd23d5bfc76f3b
+  LaughingAdventure: ff87594a587bd39c9c4b0b9207005322082a9622
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   SpriteKitUI: c2fced7bf2fad2b658deea5ea43b3491f89dba54
-  SWLogger: 505a8a32339f88f9a31521d8d359d32fa4e2e223
+  SWLogger: 59335ac2bdfb269d9379820c97094de5114ba031
 
 PODFILE CHECKSUM: 5ad95b0de26899ab19ab5011bf9c16bcaa121f73
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.9.1

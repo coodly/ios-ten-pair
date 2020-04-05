@@ -167,7 +167,7 @@ extension NSManagedObjectContext {
         
         do {
             let objects = try fetch(request)
-            return objects.flatMap { $0[named] as? Result }
+            return objects.compactMap({ $0[named] as? Result })
         } catch {
             Logging.log("fetchEntityAttribute error: \(error)")
             return []
