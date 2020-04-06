@@ -18,9 +18,9 @@ internal typealias PlatformView = UIView
 public typealias LayoutGuide = UILayoutGuide
 public typealias Metrics = [String : Any]?
 public typealias GameEdgeInsets = UIEdgeInsets
-public typealias LayoutAttribute = NSLayoutAttribute
-public typealias LayoutRelation = NSLayoutRelation
-public typealias LayoutFormatOptions = NSLayoutFormatOptions
+public typealias LayoutAttribute = NSLayoutConstraint.Attribute
+public typealias LayoutRelation = NSLayoutConstraint.Relation
+public typealias LayoutFormatOptions = NSLayoutConstraint.FormatOptions
 public typealias StringDrawingOptions = NSStringDrawingOptions
 
 public func EdgeInsetsMake(_ top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> GameEdgeInsets {

@@ -17,7 +17,6 @@
 import UIKit
 import Fabric
 import Crashlytics
-import LaughingAdventure
 import GoogleMobileAds
 
 @UIApplicationMain
@@ -37,9 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Log.enable()
         
-        // just touching it
-        _ = FeedbackService.hasMessage()
-        Feedback.enable()
+        FeedbackService.load()
         
         return true
     }

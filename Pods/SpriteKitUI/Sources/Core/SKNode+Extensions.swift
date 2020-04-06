@@ -16,7 +16,7 @@
 
 import SpriteKit
 
-public extension SKNode {
+extension SKNode {
     public func radians(_ degrees: CGFloat) -> CGFloat {
         return (degrees * .pi) / 180.0
     }

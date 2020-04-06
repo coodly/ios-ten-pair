@@ -71,9 +71,9 @@ public class StatusBar: View {
         let seconds = Date.timeIntervalSinceReferenceDate.truncatingRemainder(dividingBy: 60)
         let fireAt = Date(timeIntervalSinceNow: 60 - seconds)
         timer = Timer(fireAt: fireAt, interval: 60, target: self, selector: .updateTime, userInfo: nil, repeats: true)
-        RunLoop.current.add(timer!, forMode: RunLoopMode.defaultRunLoopMode)
+        RunLoop.current.add(timer!, forMode: RunLoop.Mode.default)
         
-        NotificationCenter.default.addObserver(self, selector: .batteryLevelChanged, name: Notification.Name.UIDeviceBatteryLevelDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: .batteryLevelChanged, name: UIDevice.batteryLevelDidChangeNotification, object: nil)
         UIDevice.current.isBatteryMonitoringEnabled = true
     }
     

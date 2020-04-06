@@ -15,46 +15,50 @@
  */
 
 import Foundation
-import LaughingAdventure
+import CloudFeedback
+import CloudKit
 
-private extension Selector {
-    static let messageReceived = #selector(FeedbackService.messageReceived)
-}
-
-class FeedbackService {
-    private static let sharedInstace = FeedbackService()
-    private var newMessage = false
+internal class FeedbackService {
+    private static let shared = FeedbackService()
     
-    private init() {
-        NotificationCenter.default.addObserver(self, selector: .messageReceived, name: CoodlyFeedbackNewMessagesNotifiction, object: nil)
+    private lazy var feedback: CloudFeedback.Feedback = {
+        var translation = Translation()
+        
+        translation.conversations.title = NSLocalizedString("coodly.feedback.controller.title", comment: "")
+        translation.conversations.loginMessage = NSLocalizedString("coodly.feedback.sign.in.message", comment: "")
+        translation.conversations.notice = NSLocalizedString("coodly.feedback.header.message", comment: "")
+        
+        translation.notice.content = NSLocalizedString("coodly.feedback.response.notice", comment: "")
+        
+        translation.input.title = NSLocalizedString("coodly.feedback.message.compose.controller.title", comment: "")
+        translation.input.sendButton = NSLocalizedString("coodly.feedback.message.compose.controller.send.button", comment: "")
+        
+        return CloudFeedback.Feedback(container: CKContainer(identifier: "iCloud.com.coodly.feedback"), translation: translation)
+    }()
+
+    internal static func load() {
+        //NotificationCenter.default.addObserver(self, selector: .feedbackMessageReceived, name: .feedbackNewMessageReceived, object: nil)
+        
+        //CloudFeedback.Logging.set(logger: FeedbackLogger())
+        shared.feedback.load()
     }
+
     
     static func hasMessage() -> Bool {
-        return sharedInstace.hasMessage()
+        shared.feedback.hasUnreadMessages
     }
-    
-    private func hasMessage() -> Bool {
-        return newMessage
-    }
-    
-    @objc fileprivate func messageReceived() {
-        newMessage = true
-    }
-    
+        
     static func present() {
         guard let controller = UIApplication.shared.keyWindow?.rootViewController else {
             return
         }
         
-        let navigation = UINavigationController(rootViewController: Feedback.mainController())
+        guard #available(iOS 13.0, *) else {
+            return
+        }
+        
+        let navigation = UINavigationController(rootViewController: shared.feedback.client.feedbackController())
         navigation.modalPresentationStyle = .formSheet
         controller.present(navigation, animated: true, completion: nil)
-        sharedInstace.newMessage = false
-    }
-}
-
-extension UINavigationController {
-    open override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
 }

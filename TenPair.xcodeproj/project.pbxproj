@@ -82,6 +82,7 @@
 		A7EADCF91F9D1D47007BA0E8 /* TopMenuBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EADCF81F9D1D47007BA0E8 /* TopMenuBackground.swift */; };
 		A7ECCB801E4E275E001ADB51 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ECCB7F1E4E275E001ADB51 /* Tile.swift */; };
 		A7ED7FCF1F9E5165005AE9C9 /* TopMenuBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EADCF81F9D1D47007BA0E8 /* TopMenuBackground.swift */; };
+		A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +144,7 @@
 		A7D5BA501E5DE63A003333A9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		A7EADCF81F9D1D47007BA0E8 /* TopMenuBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuBackground.swift; sourceTree = "<group>"; };
 		A7ECCB7F1E4E275E001ADB51 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		CDBD234CA436EF092F3D679F /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D734C99D56200ECE40196FB7 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FFB053744AB774B5ADBDE43B /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		A71A97431E48CCA4005E134F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A7EE33B8243B741A004CF496 /* Extensions */,
 				A79F0B081FA38B8D00FE21F6 /* AdLoadingViewController.swift */,
 				A7B12C261E543355007D7807 /* Aliases.swift */,
 				A71A97441E48CCA4005E134F /* AppDelegate.swift */,
@@ -311,6 +314,14 @@
 			name = "Supporting files";
 			sourceTree = "<group>";
 		};
+		A7EE33B8243B741A004CF496 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,7 +373,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Coodly LLC";
 				TargetAttributes = {
 					A71A97401E48CCA4005E134F = {
@@ -382,7 +393,7 @@
 					A71A97521E48CCA4005E134F = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 5T8DRBFCBP;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -532,13 +543,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-macOS/Pods-macOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/LaughingAdventure-Logging-Purchase/LaughingAdventure.framework",
 				"${BUILT_PRODUCTS_DIR}/SWLogger-macOS/SWLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/SpriteKitUI-Core-macOS/SpriteKitUI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LaughingAdventure.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpriteKitUI.framework",
 			);
@@ -554,17 +563,19 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CloudFeedback/CloudFeedback.framework",
 				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
-				"${BUILT_PRODUCTS_DIR}/LaughingAdventure/LaughingAdventure.framework",
 				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
+				"${BUILT_PRODUCTS_DIR}/Puff/Puff.framework",
 				"${BUILT_PRODUCTS_DIR}/SWLogger-iOS/SWLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/SpriteKitUI-Core-iOS/SpriteKitUI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CloudFeedback.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LaughingAdventure.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Puff.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpriteKitUI.framework",
 			);
@@ -608,6 +619,7 @@
 				A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */,
 				A77DE6F91E48D75200E9214A /* TenPair.swift in Sources */,
 				A7B12C201E535B67007D7807 /* Constants.swift in Sources */,
+				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
 				A7ECCB801E4E275E001ADB51 /* Tile.swift in Sources */,
 				A77DE6FD1E48D8D500E9214A /* PlayScreen.swift in Sources */,
 			);
@@ -682,6 +694,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -739,6 +752,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -846,6 +860,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/macOS",
@@ -858,7 +873,7 @@
 				PRODUCT_NAME = TenPair;
 				SDKROOT = macosx;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -871,6 +886,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/macOS",
@@ -883,7 +899,7 @@
 				PRODUCT_NAME = TenPair;
 				SDKROOT = macosx;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

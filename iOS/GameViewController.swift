@@ -10,9 +10,8 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import GameKit
-import LaughingAdventure
 
-class GameViewController: AdLoadingViewController, QuickAlertPresenter {
+class GameViewController: AdLoadingViewController {
     private var game: TenPair?
     @IBOutlet private var gameContainerView: UIView!
     
@@ -22,7 +21,8 @@ class GameViewController: AdLoadingViewController, QuickAlertPresenter {
         // Present the scene
         let skView = SKView(frame: gameContainerView.bounds)
         skView.backgroundColor = .white
-        gameContainerView.add(fullSized: skView)        
+        gameContainerView.addSubview(skView)
+        skView.pinToSuperviewEdges()
 
         let scene = TenPair(size: skView.bounds.size)
         game = scene
@@ -64,7 +64,9 @@ class GameViewController: AdLoadingViewController, QuickAlertPresenter {
         
         // sanity check
         if AppConfig.current.adUnits.banner != AdUnits.live.banner {
-            presentAlert("Ad unit", message: "Demo unit used")
+            let alert = UIAlertController(title: "Ad unit", message: "Demo unit used", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
         }
     }
     

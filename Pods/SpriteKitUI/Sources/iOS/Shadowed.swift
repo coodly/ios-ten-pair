@@ -15,7 +15,7 @@
  */
 
 internal protocol ShadowingView {
-    weak var attached: View? { get set }
+    var attached: View? { get set }
     
     func extraOffset() -> CGPoint
 }

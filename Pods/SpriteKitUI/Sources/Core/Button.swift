@@ -96,7 +96,7 @@ open class Button: View {
     }
 }
 
-public extension Button {
+extension Button {
     public func set(icon named: String) {
         icon?.removeFromParent()
         icon = SKSpriteNode(imageNamed: named)
@@ -110,7 +110,7 @@ public extension Button {
     }
 }
 
-public extension Button {
+extension Button {
     public func set(title: String) {
         self.title?.removeFromParent()
         self.title = SKLabelNode(text: title)

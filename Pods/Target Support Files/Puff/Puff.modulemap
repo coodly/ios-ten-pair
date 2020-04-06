@@ -1,0 +1,6 @@
+framework module Puff {
+  umbrella header "Puff-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -19,5 +19,12 @@ import UIKit
 private let RunningOnPad = UIDevice.current.userInterfaceIdiom == .pad
 
 extension AppConfig {
-    static let current = AppConfig(statusBar: true, ads: true, maxTileWidth: RunningOnPad ? 50 : 35, withFeedback: true)
+    private static let haveFeedback: Bool = {
+        if #available(iOS 13.0, *) {
+            return true
+        }
+        
+        return false
+    }()
+    static let current = AppConfig(statusBar: true, ads: true, maxTileWidth: RunningOnPad ? 50 : 35, withFeedback: haveFeedback)
 }

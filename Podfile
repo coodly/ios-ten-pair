@@ -28,14 +28,24 @@ def ios_pods
     shared
 
     if UsedSource == PodSource::Local
-        pod 'LaughingAdventure', :path => '../swift-laughing-adventure'
         pod 'SpriteKitUI/iOS', :path => '../swift-sprite-kit-ui'
     elsif UsedSource == PodSource::Remote
-        pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git'
         pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'master'
     else
-        pod 'LaughingAdventure', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.9.0'
         pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.4.0'
+    end
+end
+
+def feedback_pod
+    if UsedSource == PodSource::Local
+        pod 'CloudFeedback/Client', :path => '../swift-cloud-feedback'
+        pod 'CloudFeedback/iOS', :path => '../swift-cloud-feedback'
+    elsif UsedSource == PodSource::Remote
+        pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git'
+        pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git'
+    else
+        pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.5'
+        pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.5'
     end
 end
 
@@ -43,6 +53,7 @@ target 'iOS' do
     platform :ios, '10.3'
 
     ios_pods
+    feedback_pod
 end
 
 target 'macOS' do
@@ -51,13 +62,10 @@ target 'macOS' do
     shared
     
     if UsedSource == PodSource::Local
-        pod 'LaughingAdventure/Purchase', :path => '../swift-laughing-adventure'
         pod 'SpriteKitUI/macOS', :path => '../swift-sprite-kit-ui'
     elsif UsedSource == PodSource::Remote
-        pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git'
         pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'master'
     else
-        pod 'LaughingAdventure/Purchase', :git => 'https://github.com/coodly/laughing-adventure.git', :tag => '0.9.0'
         pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.4.0'
     end
 end

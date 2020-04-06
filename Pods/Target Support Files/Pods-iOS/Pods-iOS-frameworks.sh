@@ -197,16 +197,18 @@ if [ -r "${ARTIFACT_LIST_FILE}" ]; then
 fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CloudFeedback/CloudFeedback.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/LaughingAdventure/LaughingAdventure.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Puff/Puff.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SWLogger-iOS/SWLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SpriteKitUI-Core-iOS/SpriteKitUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CloudFeedback/CloudFeedback.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/LaughingAdventure/LaughingAdventure.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Puff/Puff.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SWLogger-iOS/SWLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SpriteKitUI-Core-iOS/SpriteKitUI.framework"
 fi

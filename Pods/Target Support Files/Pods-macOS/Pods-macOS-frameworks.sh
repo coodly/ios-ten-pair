@@ -197,12 +197,10 @@ if [ -r "${ARTIFACT_LIST_FILE}" ]; then
 fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/LaughingAdventure-Logging-Purchase/LaughingAdventure.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SWLogger-macOS/SWLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SpriteKitUI-Core-macOS/SpriteKitUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/LaughingAdventure-Logging-Purchase/LaughingAdventure.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SWLogger-macOS/SWLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SpriteKitUI-Core-macOS/SpriteKitUI.framework"
 fi
