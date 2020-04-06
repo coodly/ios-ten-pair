@@ -136,7 +136,7 @@ class Theme {
     
     static func next() -> Theme {
         let active = current()
-        guard let index = all.index(where: { $0.name == active.name }) else {
+        guard let index = all.firstIndex(where: { $0.name == active.name }) else {
             return active
         }
         

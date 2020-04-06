@@ -136,8 +136,8 @@ class Tile: SKSpriteNode {
         
         let color = SKColor.white
         
-        string.addAttribute(NSAttributedStringKey.font, value: font, range: NSMakeRange(0, 1))
-        string.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: NSMakeRange(0, 1))
+        string.addAttribute(NSAttributedString.Key.font, value: font, range: NSMakeRange(0, 1))
+        string.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: NSMakeRange(0, 1))
         
         let rect = string.boundingRect(with: CGSize(width: 1000, height: 1000), options: StringDrawingOptions.truncatesLastVisibleLine, context: nil)
         
