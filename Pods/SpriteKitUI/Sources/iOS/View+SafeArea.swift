@@ -16,7 +16,7 @@
 
 import Foundation
 
-public extension View {
+extension View {
     public var safeAreaLayoutTopAnchor: NSLayoutYAxisAnchor {
         if #available(iOS 11, *) {
             return backingView.safeAreaLayoutGuide.topAnchor

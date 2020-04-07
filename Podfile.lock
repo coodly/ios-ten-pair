@@ -55,7 +55,7 @@ CHECKOUT OPTIONS:
     :commit: 533a36813f5e3e4cdca29080b881164cc8c6fe15
     :git: "git@github.com:coodly/CloudFeedback.git"
   SpriteKitUI:
-    :commit: e26d21688eeb6a20e51d51de99fcb7fffdf57cb7
+    :commit: 6b4837c29e139823528fc3775c94f271e25d7bb9
     :git: "git@github.com:coodly/SpriteKitUI.git"
   SWLogger:
     :commit: b484b0b867257960ba67cd53dae153d69f5ff068
@@ -67,7 +67,7 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 7404f68120ae8682afeb5af001fbf4aad731c78e
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   Puff: f796a20bebacea50c5c51a3c4e75e7171fb1395d
-  SpriteKitUI: c2fced7bf2fad2b658deea5ea43b3491f89dba54
+  SpriteKitUI: 2cd0edf133742834bdb4a45382488c4757b99a3c
   SWLogger: 59335ac2bdfb269d9379820c97094de5114ba031
 
 PODFILE CHECKSUM: 67535938b5ac52d8d4da1f355b37639b4a291aed

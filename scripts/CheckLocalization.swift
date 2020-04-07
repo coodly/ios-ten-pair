@@ -73,14 +73,14 @@ class Language {
     func write() {
         let unsorted: [String]
         var sorted: [String]
-        if let splitIndex = lines.index(where: { $0.isSortMarker() }) {
+        if let splitIndex = lines.firstIndex(where: { $0.isSortMarker() }) {
             unsorted = Array(lines.prefix(upTo: 0.distance(to: splitIndex) + 1))
             sorted = Array(lines.suffix(from: 0.distance(to: splitIndex) + 1))
         } else {
             unsorted = []
             sorted = lines
         }
-
+        
         var content = unsorted.joined(separator: "\n")
         if hadSortMarker {
             content.append("\n")
@@ -98,7 +98,7 @@ class Language {
             if !last.hasSamePrefix(line) && !content.isEmpty {
                 content.append("\n")
             }
-
+            
             content.append(line)
             content.append("\n")
             
@@ -142,8 +142,8 @@ class Checker {
                 continue
             }
             
-            let indexOfSuffix = f.range(of: ".lproj")!.lowerBound
-            let code = f.substring(to: f.index(indexOfSuffix, offsetBy: 0))
+            let range = f.range(of: ".lproj")!
+            let code = String(f.prefix(upTo: range.lowerBound))
             let language = Language(code: code, path: localizable)
             languages.append(language)
         }
