@@ -18,6 +18,7 @@ import UIKit
 import Fabric
 import Crashlytics
 import GoogleMobileAds
+import AVKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Log.enable()
         
         FeedbackService.load()
+        
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
         
         return true
     }
