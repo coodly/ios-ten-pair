@@ -36,22 +36,18 @@ class AdLoadingViewController: UIViewController {
     private var interstitial: GADInterstitial?
     private var interstitialCount = 0
     
+    @IBOutlet private var contentBottomWithAd: NSLayoutConstraint!
+    @IBOutlet private var contentBottomWithoutAd: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(self, selector: .tickInterstitial, name: .hintTaken, object: nil)
         NotificationCenter.default.addObserver(self, selector: .tickInterstitial, name: .fieldReload, object: nil)
         
-        adContainerHeight.constant = 0
-        
         adContainerView.clipsToBounds = true
         adContainerView.addSubview(banner)
-        banner.translatesAutoresizingMaskIntoConstraints = false
-        
-        let top = NSLayoutConstraint(item: banner, attribute: .top, relatedBy: .equal, toItem: adContainerView, attribute: .top, multiplier: 1, constant: 0)
-        let left = NSLayoutConstraint(item: banner, attribute: .left, relatedBy: .equal, toItem: adContainerView, attribute: .left, multiplier: 1, constant: 0)
-        let right = NSLayoutConstraint(item: banner, attribute: .right, relatedBy: .equal, toItem: adContainerView, attribute: .right, multiplier: 1, constant: 0)
-        adContainerView.addConstraints([top, left, right])
+        banner.pinToSuperviewEdges()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -101,19 +97,29 @@ extension AdLoadingViewController: GADInterstitialDelegate {
 extension AdLoadingViewController: GADBannerViewDelegate {
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         Log.debug("Did receive ad")
-        if #available(iOS 11, *) {
-            adContainerHeight.constant = bannerView.frame.height + view.safeAreaInsets.bottom
-        } else {
-            adContainerHeight.constant = bannerView.frame.height
+
+        adContainerHeight.constant = bannerView.frame.height
+        if contentBottomWithoutAd.isActive {
+            adContainerView.alpha = 0
         }
+
+        NSLayoutConstraint.deactivate([contentBottomWithoutAd])
+        NSLayoutConstraint.activate([contentBottomWithAd])
+        
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
+        UIView.animate(withDuration: 0.3, delay: 1, animations: {
+            self.adContainerView.alpha = 1
+        })
     }
     
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
         Log.debug("didFailToReceiveAdWithError: \(error)")
-        adContainerHeight.constant = 0
+        
+        NSLayoutConstraint.deactivate([contentBottomWithAd])
+        NSLayoutConstraint.activate([contentBottomWithAd])
+        
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
