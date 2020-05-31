@@ -5,3 +5,4 @@ xcshareddata
 TenPair/Secrets.swift
 project.xcworkspace
 Shared/Secrets.swift
+iOS/Secrets/GoogleService-Info.plist

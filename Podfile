@@ -24,6 +24,7 @@ end
 def ios_pods
     pod 'Google-Mobile-Ads-SDK', '7.60.0'
     pod 'Locksmith', '4.0.0'
+    pod 'Firebase/Crashlytics', '6.25.0'
 
     shared
 

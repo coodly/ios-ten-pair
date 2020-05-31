@@ -48,8 +48,6 @@
 		A78713501E5D6FDC002DEF76 /* RestartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134E1E5D6FDC002DEF76 /* RestartScreen.swift */; };
 		A78D56721E5AD3F7002957DC /* FieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56711E5AD3F7002957DC /* FieldBackground.swift */; };
 		A78D56731E5AD40D002957DC /* FieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56711E5AD3F7002957DC /* FieldBackground.swift */; };
-		A78D56821E5AE54B002957DC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78D56801E5AE54B002957DC /* Crashlytics.framework */; };
-		A78D56831E5AE54B002957DC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78D56811E5AE54B002957DC /* Fabric.framework */; };
 		A78D56861E5AE55E002957DC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78D56841E5AE55E002957DC /* Crashlytics.framework */; };
 		A78D56871E5AE55E002957DC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78D56851E5AE55E002957DC /* Fabric.framework */; };
 		A78D568C1E5AF01A002957DC /* WinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D568B1E5AF01A002957DC /* WinScreen.swift */; };
@@ -59,6 +57,7 @@
 		A78D56921E5B362F002957DC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56911E5B362F002957DC /* Theme.swift */; };
 		A78D56931E5B362F002957DC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D56911E5B362F002957DC /* Theme.swift */; };
 		A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */; };
+		A797BD712483808F00A6E27D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A797BD702483808F00A6E27D /* GoogleService-Info.plist */; };
 		A79F0B091FA38B8D00FE21F6 /* AdLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79F0B081FA38B8D00FE21F6 /* AdLoadingViewController.swift */; };
 		A7B12C1A1E53123D007D7807 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA861E50CC76003E62D7 /* InfoPlist.strings */; };
 		A7B12C1B1E53123D007D7807 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA881E50CC76003E62D7 /* Localizable.strings */; };
@@ -128,6 +127,7 @@
 		A78D56911E5B362F002957DC /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A78FA2EC1E5C145C002DB0AF /* TenPair.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenPair.entitlements; sourceTree = "<group>"; };
 		A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
+		A797BD702483808F00A6E27D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A79F0B081FA38B8D00FE21F6 /* AdLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdLoadingViewController.swift; sourceTree = "<group>"; };
 		A7B12C1C1E535B18007D7807 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A7B12C1F1E535B67007D7807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -155,10 +155,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A78D56821E5AE54B002957DC /* Crashlytics.framework in Frameworks */,
 				A7D5BA511E5DE63A003333A9 /* CloudKit.framework in Frameworks */,
 				FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */,
-				A78D56831E5AE54B002957DC /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +251,7 @@
 		A71A97431E48CCA4005E134F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A797BD6F2483803F00A6E27D /* Secrets */,
 				A7EE33B8243B741A004CF496 /* Extensions */,
 				A79F0B081FA38B8D00FE21F6 /* AdLoadingViewController.swift */,
 				A7B12C261E543355007D7807 /* Aliases.swift */,
@@ -314,6 +313,14 @@
 			name = "Supporting files";
 			sourceTree = "<group>";
 		};
+		A797BD6F2483803F00A6E27D /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				A797BD702483808F00A6E27D /* GoogleService-Info.plist */,
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
 		A7EE33B8243B741A004CF496 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +342,7 @@
 				A71A973E1E48CCA4005E134F /* Frameworks */,
 				A71A973F1E48CCA4005E134F /* Resources */,
 				FC65018DCB3FFEB2D42F2F78 /* [CP] Embed Pods Frameworks */,
+				A797BD722483831C00A6E27D /* Upload symbols */,
 				A78D56791E5AE35F002957DC /* Crashlytics */,
 			);
 			buildRules = (
@@ -439,6 +447,7 @@
 				A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */,
 				A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */,
 				A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */,
+				A797BD712483808F00A6E27D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,13 +522,15 @@
 			files = (
 			);
 			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			name = Crashlytics;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"./iOSFrameworks/Fabric.framework/run\" 1498b1e841189deded0a8957a47057c88a75503b 84939d122fb533ac07e3e9b3d0fb8601e68f89a868e9f5889891d1a6684b0d72";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		A78D567F1E5AE476002957DC /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -534,6 +545,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./macOSFrameworks/Fabric.framework/run 1498b1e841189deded0a8957a47057c88a75503b 84939d122fb533ac07e3e9b3d0fb8601e68f89a868e9f5889891d1a6684b0d72";
+		};
+		A797BD722483831C00A6E27D /* Upload symbols */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Upload symbols";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/upload-symbols\" -gsp \"${PROJECT_DIR}/iOS/Secrets/GoogleService-Info.plist\" -p ios \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n";
 		};
 		C3B1ABDF78FFD3A6AA92CEDF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -811,11 +840,7 @@
 				CODE_SIGN_ENTITLEMENTS = iOS/TenPair.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/iOS",
-					"$(PROJECT_DIR)/iOSFrameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -837,11 +862,7 @@
 				CODE_SIGN_ENTITLEMENTS = iOS/TenPair.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/iOS",
-					"$(PROJECT_DIR)/iOSFrameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

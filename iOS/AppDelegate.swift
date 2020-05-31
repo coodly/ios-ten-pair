@@ -15,10 +15,9 @@
  */
 
 import UIKit
-import Fabric
-import Crashlytics
 import GoogleMobileAds
 import AVKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Fabric.with([Crashlytics()])
+        FirebaseApp.configure()
         
         UINavigationBar.appearance().barTintColor = UIColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1)
         UINavigationBar.appearance().tintColor = .white
