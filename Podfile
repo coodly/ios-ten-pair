@@ -22,7 +22,7 @@ def shared
 end
 
 def ios_pods
-    pod 'Google-Mobile-Ads-SDK', '7.30.0'
+    pod 'Google-Mobile-Ads-SDK', '7.60.0'
     pod 'Locksmith', '4.0.0'
 
     shared

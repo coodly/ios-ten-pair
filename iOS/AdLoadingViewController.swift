@@ -58,7 +58,6 @@ class AdLoadingViewController: UIViewController {
         }
         
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
         banner.load(request)
         
         loadInterstitial()
@@ -68,7 +67,6 @@ class AdLoadingViewController: UIViewController {
         interstitial = GADInterstitial(adUnitID: AppConfig.current.adUnits.interstitial)
         interstitial!.delegate = self
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
         interstitial!.load(request)
     }
     

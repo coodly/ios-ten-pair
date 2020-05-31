@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
-        GADMobileAds.configure(withApplicationID: AdMobAppID)
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         Log.enable()
         
