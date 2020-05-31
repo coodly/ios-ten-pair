@@ -19,8 +19,12 @@ import CloudKit
 public let PuffSystemAttributeRecordName = "recordName"
 public let PuffSystemAttributes = [PuffSystemAttributeRecordName, "recordData"]
 public let PuffSystemAttributeModificationDate = "modificationDate"
+public let PuffSystemAttributeZoneName = "zoneName"
+public let PuffAttributeIgnored = "puff-ignored"
 
 open class RecordSerialization<R: RemoteRecord> {
+    public var zoneMigration: CustomZoneMigration?
+    
     public init() {
         
     }
@@ -29,7 +33,7 @@ open class RecordSerialization<R: RemoteRecord> {
         fatalError()
     }
     
-    open func deserialize(records: [CKRecord]) -> [R] {
+    open func deserialize(records: [CKRecord], from zone: CKRecordZone) -> [R] {
         fatalError()
     }
     

@@ -112,7 +112,7 @@ open class FileOutput: LogOutput {
             return
         }
         
-        try? Data().write(to: atURL, options: [.atomicWrite])
+        try? Data().write(to: atURL, options: [.atomic])
     }
     
     private lazy var dateFormatter: DateFormatter = {

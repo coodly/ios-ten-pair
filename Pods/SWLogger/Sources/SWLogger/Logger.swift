@@ -21,7 +21,7 @@ internal class Logger {
     internal var outputs = [LogOutput]()
     private var cleaned = [String: String]()
         
-    private lazy var queue = DispatchQueue(label: "com.coodly.logging.queue")
+    private let queue = DispatchQueue(label: "com.coodly.logging.queue")
     
     internal func add(output: LogOutput) {
         outputs.append(output)

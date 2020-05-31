@@ -1,28 +1,28 @@
 PODS:
-  - CloudFeedback/Client (0.2.9):
+  - CloudFeedback/Client (0.2.10):
     - CloudFeedback/Core
-  - CloudFeedback/Core (0.2.9):
+  - CloudFeedback/Core (0.2.10):
     - CoreDataPersistence (= 0.2.1)
-    - Puff/Core (= 0.5.6)
-    - Puff/CoreData (= 0.5.6)
-  - CloudFeedback/iOS (0.2.9):
+    - Puff/Core (= 0.6.0)
+    - Puff/CoreData (= 0.6.0)
+  - CloudFeedback/iOS (0.2.10):
     - CloudFeedback/Core
   - CoreDataPersistence (0.2.1)
   - Google-Mobile-Ads-SDK (7.30.0)
   - Locksmith (4.0.0)
-  - Puff/Core (0.5.6):
+  - Puff/Core (0.6.0):
     - Puff/Logger
     - Puff/Serialization
-  - Puff/CoreData (0.5.6)
-  - Puff/Logger (0.5.6)
-  - Puff/Serialization (0.5.6):
+  - Puff/CoreData (0.6.0)
+  - Puff/Logger (0.6.0)
+  - Puff/Serialization (0.6.0):
     - Puff/Logger
   - SpriteKitUI/Core (0.4.0)
   - SpriteKitUI/iOS (0.4.0):
     - SpriteKitUI/Core
   - SpriteKitUI/macOS (0.4.0):
     - SpriteKitUI/Core
-  - SWLogger (0.4.1)
+  - SWLogger (0.4.3)
 
 DEPENDENCIES:
   - "CloudFeedback/Client (from `git@github.com:coodly/CloudFeedback.git`)"
@@ -52,23 +52,23 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CloudFeedback:
-    :commit: 533a36813f5e3e4cdca29080b881164cc8c6fe15
+    :commit: fdee5e8d4fe3b6d63c0f1306d62d719d4cc03e8c
     :git: "git@github.com:coodly/CloudFeedback.git"
   SpriteKitUI:
     :commit: 6b4837c29e139823528fc3775c94f271e25d7bb9
     :git: "git@github.com:coodly/SpriteKitUI.git"
   SWLogger:
-    :commit: b484b0b867257960ba67cd53dae153d69f5ff068
+    :commit: b26e4fd01ef133f41b065e91e03caad5ec4a7ad2
     :git: "git@github.com:coodly/swlogger.git"
 
 SPEC CHECKSUMS:
-  CloudFeedback: 34f4e48645336f925463b711092e16719c2ee518
+  CloudFeedback: 7f2baed97b331b22878065f8ebafb173d1357fbf
   CoreDataPersistence: ea9d57c4650ae4c3a66b4020e36f61f3026b36e4
   Google-Mobile-Ads-SDK: 7404f68120ae8682afeb5af001fbf4aad731c78e
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
-  Puff: f796a20bebacea50c5c51a3c4e75e7171fb1395d
+  Puff: c47402c40261fc55c277075478cc9f9581f21a68
   SpriteKitUI: 2cd0edf133742834bdb4a45382488c4757b99a3c
-  SWLogger: 59335ac2bdfb269d9379820c97094de5114ba031
+  SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
 PODFILE CHECKSUM: 67535938b5ac52d8d4da1f355b37639b4a291aed
 

@@ -39,14 +39,24 @@ public class CoreDataSerialization<R: RemoteRecord & NSManagedObject>: RecordSer
         return records.map({ serialize(entity: $0, in: zone) })
     }
     
-    public override func deserialize(records: [CKRecord]) -> [R] {
+    public override func deserialize(records: [CKRecord], from zone: CKRecordZone = .default()) -> [R] {
         var deserialized = [R]()
         context.performAndWait {
             let names = records.map({ $0.recordID.recordName })
             let existing: [R] = context.fetch(with: names)
             for record in records {
                 let saved: R = existing.first(where: { $0.recordName == record.recordID.recordName }) ?? context.insertEntity()
+                
+                if let migration = zoneMigration, let zoned = saved as? CustomZoned, !migration.shouldLoad(entity: zoned, from: zone) {
+                    continue
+                }
+                
                 load(record: record, into: saved)
+                
+                if var zoned = saved as? CustomZoned {
+                    zoned.zoneName = zone.zoneID.zoneName
+                }
+                
                 deserialized.append(saved)
             }
         }
@@ -82,10 +92,10 @@ public class CoreDataSerialization<R: RemoteRecord & NSManagedObject>: RecordSer
                 continue
             }
             
-            if attribute.isTransient {
+            if attribute.puffIgnored {
                 continue
             }
-            
+                        
             switch attribute.attributeType {
             case .stringAttributeType,
                  .integer16AttributeType,
@@ -110,6 +120,11 @@ public class CoreDataSerialization<R: RemoteRecord & NSManagedObject>: RecordSer
         
         for (name, relationship) in R.entity().relationshipsByName {
             guard cloudSerialized.shouldSerializeRelationship(named: name) else {
+                continue
+            }
+            
+            if let strings = record[name] as? [String], let loading = local as? RelationshipListLoading {
+                loading.load(values: strings, on: name)
                 continue
             }
 
@@ -172,7 +187,11 @@ public class CoreDataSerialization<R: RemoteRecord & NSManagedObject>: RecordSer
                 continue
             }
             
-            if attribute.isTransient {
+            if name == PuffSystemAttributeZoneName, entity is CustomZoned {
+                continue
+            }
+            
+            if attribute.puffIgnored {
                 continue
             }
             
@@ -207,15 +226,17 @@ public class CoreDataSerialization<R: RemoteRecord & NSManagedObject>: RecordSer
             }
             
             if let synced = entity.value(forKey: name) as? RemoteRecord {
-                record[name] = synced.referenceRepresentation(action: .none)
+                record[name] = zonedReference(from: synced, fallback: zone)
                 continue
             }
-            
-            guard let set = entity.value(forKey: name) as? NSSet, let relationshipRecords = Array(set) as? [RemoteRecord] else {
-                continue
+
+            if let set = entity.value(forKey: name) as? NSSet, let toListElements = Array(set) as? [StringListItem] {
+                record[name] = toListElements.compactMap({ $0.stringValue() })
             }
             
-            record[name] = relationshipRecords.map({ $0.referenceRepresentation(action: .none) })
+            if let set = entity.value(forKey: name) as? NSSet, let relationshipRecords = Array(set) as? [RemoteRecord] {
+                record[name] = relationshipRecords.map({ zonedReference(from: $0, fallback: zone) })
+            }
         }
         
         return record
@@ -243,5 +264,30 @@ public class CoreDataSerialization<R: RemoteRecord & NSManagedObject>: RecordSer
             Logging.log("Asset file write failed: \(error)")
             return nil
         }
+    }
+    
+    private func zonedReference(from record: RemoteRecord, fallback: CKRecordZone) -> CKRecord.Reference {
+        let zone: CKRecordZone
+        if let zoned = record as? CustomZoned, zoned.zoneName.count > 0 {
+            zone = CKRecordZone(zoneName: zoned.zoneName)
+        } else {
+            zone = fallback
+        }
+        
+        return CKRecord.Reference(recordID: CKRecord.ID(recordName: record.recordName!, zoneID: zone.zoneID), action: .none)
+    }
+}
+
+extension NSAttributeDescription {
+    fileprivate var puffIgnored: Bool {
+        if isTransient {
+            return true
+        }
+        
+        if let flag = userInfo?[PuffAttributeIgnored] as? String, let value = Bool(flag), value {
+            return true
+        }
+        
+        return false
     }
 }

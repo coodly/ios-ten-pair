@@ -144,7 +144,7 @@ extension CloudKitRequest {
             Logging.log("Deleted: \(String(describing: deleted?.count))")
             
             if let saved = saved {
-                let local = self.serialization.deserialize(records: saved)
+                let local = self.serialization.deserialize(records: saved, from: self.zone)
                 self.records.append(contentsOf: local)
             }
             
@@ -205,7 +205,7 @@ public extension CloudKitRequest {
         fetchOperation.recordFetchedBlock = {
             record in
             
-            if let local = self.serialization.deserialize(records: [record]).first {
+            if let local = self.serialization.deserialize(records: [record], from: self.zone).first {
                 self.records.append(local)
             }
         }

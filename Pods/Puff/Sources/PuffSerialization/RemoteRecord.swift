@@ -43,7 +43,13 @@ public extension RemoteRecord {
     }
     
     func referenceRepresentation(action: CKRecord.Reference.Action = .deleteSelf) -> CKRecord.Reference {
-        return CKRecord.Reference(recordID: CKRecord.ID(recordName: recordName!), action: action)
+        let zone: CKRecordZone
+        if let custom = self as? CustomZoned {
+            zone = CKRecordZone(zoneName: custom.zoneName)
+        } else {
+            zone = .default()
+        }
+        return CKRecord.Reference(recordID: CKRecord.ID(recordName: recordName!, zoneID: zone.zoneID), action: action)
     }
     
     private func archive(record: CKRecord) -> NSMutableData {

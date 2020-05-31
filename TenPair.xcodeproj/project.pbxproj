@@ -505,7 +505,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/bin/env xcrun --sdk macosx swift scripts/CheckLocalization.swift Shared/";
+			shellScript = "#/usr/bin/env xcrun --sdk macosx swift scripts/CheckLocalization.swift Shared/\nruby scripts/check_localizable.rb Shared\n";
 		};
 		A78D56791E5AE35F002957DC /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -80,7 +80,7 @@ class Language {
             unsorted = []
             sorted = lines
         }
-        
+
         var content = unsorted.joined(separator: "\n")
         if hadSortMarker {
             content.append("\n")
@@ -98,7 +98,7 @@ class Language {
             if !last.hasSamePrefix(line) && !content.isEmpty {
                 content.append("\n")
             }
-            
+
             content.append(line)
             content.append("\n")
             
@@ -106,7 +106,11 @@ class Language {
         }
         
         let data = content.data(using: .utf8)!
-        try! data.write(to: path)
+        do {
+            try data.write(to: path)
+        } catch {
+            print(error)
+        }
     }
 }
 
@@ -142,8 +146,8 @@ class Checker {
                 continue
             }
             
-            let range = f.range(of: ".lproj")!
-            let code = String(f.prefix(upTo: range.lowerBound))
+            let indexOfSuffix = f.range(of: ".lproj")!.lowerBound
+            let code = f.substring(to: f.index(indexOfSuffix, offsetBy: 0))
             let language = Language(code: code, path: localizable)
             languages.append(language)
         }
