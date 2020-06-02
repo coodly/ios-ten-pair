@@ -66,6 +66,7 @@ target 'iOS' do
     ios_pods
     feedback_pod
     insight_pod
+    pod 'PersonalizedAdConsent', '1.0.5'
 end
 
 target 'macOS' do

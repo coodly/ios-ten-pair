@@ -86,6 +86,7 @@ PODS:
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
+  - PersonalizedAdConsent (1.0.5)
   - PromisesObjC (1.2.8)
   - Puff/Core (0.6.0):
     - Puff/Logger
@@ -108,6 +109,7 @@ DEPENDENCIES:
   - Firebase/Crashlytics (= 6.25.0)
   - Google-Mobile-Ads-SDK (= 7.60.0)
   - Locksmith (= 4.0.0)
+  - PersonalizedAdConsent (= 1.0.5)
   - "SpriteKitUI/iOS (from `git@github.com:coodly/SpriteKitUI.git`, branch `master`)"
   - "SpriteKitUI/macOS (from `git@github.com:coodly/SpriteKitUI.git`, branch `master`)"
   - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
@@ -129,6 +131,7 @@ SPEC REPOS:
     - KeychainAccess
     - Locksmith
     - nanopb
+    - PersonalizedAdConsent
     - PromisesObjC
   https://github.com/coodly/Specs.git:
     - CoreDataPersistence
@@ -178,11 +181,12 @@ SPEC CHECKSUMS:
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  PersonalizedAdConsent: dbecabb3467df967c16d9cebc2ef4a8890e4bbd8
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Puff: c47402c40261fc55c277075478cc9f9581f21a68
   SpriteKitUI: 2cd0edf133742834bdb4a45382488c4757b99a3c
   SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
-PODFILE CHECKSUM: ad21c9f630bed742aab85086eebca6a11a16c54c
+PODFILE CHECKSUM: a549b9fee4e0979a732b6c8c6d35cc18655070ec
 
 COCOAPODS: 1.9.1
