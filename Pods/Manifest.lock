@@ -7,6 +7,15 @@ PODS:
     - Puff/CoreData (= 0.6.0)
   - CloudFeedback/iOS (0.2.10):
     - CloudFeedback/Core
+  - CloudInsight (0.1.4):
+    - CloudInsight/Client (= 0.1.4)
+  - CloudInsight/Client (0.1.4):
+    - CloudInsight/Core
+  - CloudInsight/Core (0.1.4):
+    - CoreDataPersistence (= 0.2.1)
+    - KeychainAccess (= 4.1.0)
+    - Puff/Core (= 0.6.0)
+    - Puff/CoreData (= 0.6.0)
   - CoreDataPersistence (0.2.1)
   - Firebase/CoreOnly (6.25.0):
     - FirebaseCore (= 6.7.1)
@@ -70,6 +79,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.6.0):
     - GoogleUtilities/Logger
+  - KeychainAccess (4.1.0)
   - Locksmith (4.0.0)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
@@ -94,6 +104,7 @@ PODS:
 DEPENDENCIES:
   - "CloudFeedback/Client (from `git@github.com:coodly/CloudFeedback.git`)"
   - "CloudFeedback/iOS (from `git@github.com:coodly/CloudFeedback.git`)"
+  - "CloudInsight (from `git@github.com:coodly/CloudInsight.git`)"
   - Firebase/Crashlytics (= 6.25.0)
   - Google-Mobile-Ads-SDK (= 7.60.0)
   - Locksmith (= 4.0.0)
@@ -115,6 +126,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
+    - KeychainAccess
     - Locksmith
     - nanopb
     - PromisesObjC
@@ -125,6 +137,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CloudFeedback:
     :git: "git@github.com:coodly/CloudFeedback.git"
+  CloudInsight:
+    :git: "git@github.com:coodly/CloudInsight.git"
   SpriteKitUI:
     :branch: master
     :git: "git@github.com:coodly/SpriteKitUI.git"
@@ -135,6 +149,9 @@ CHECKOUT OPTIONS:
   CloudFeedback:
     :commit: fdee5e8d4fe3b6d63c0f1306d62d719d4cc03e8c
     :git: "git@github.com:coodly/CloudFeedback.git"
+  CloudInsight:
+    :commit: fc7f7c29d37db63cecdde05c3001dbf4b96d63d1
+    :git: "git@github.com:coodly/CloudInsight.git"
   SpriteKitUI:
     :commit: 6b4837c29e139823528fc3775c94f271e25d7bb9
     :git: "git@github.com:coodly/SpriteKitUI.git"
@@ -144,6 +161,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CloudFeedback: 7f2baed97b331b22878065f8ebafb173d1357fbf
+  CloudInsight: 3e13af8d4082f76c90a203afe8935c2ab5849100
   CoreDataPersistence: ea9d57c4650ae4c3a66b4020e36f61f3026b36e4
   Firebase: 5719b4f965f76643241a1bb8244483ff6117db39
   FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
@@ -157,6 +175,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: ad884314b81cdb808fb1d23787b367ff8da4e28a
   GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
+  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
@@ -164,6 +183,6 @@ SPEC CHECKSUMS:
   SpriteKitUI: 2cd0edf133742834bdb4a45382488c4757b99a3c
   SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
-PODFILE CHECKSUM: 73773dc8779a6c6c1c7b3795d55a0e5ec8e933b8
+PODFILE CHECKSUM: ad21c9f630bed742aab85086eebca6a11a16c54c
 
 COCOAPODS: 1.9.1

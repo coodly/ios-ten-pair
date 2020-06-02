@@ -45,9 +45,19 @@ def feedback_pod
         pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git'
         pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git'
     else
-        pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.5'
-        pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.5'
+        pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.10'
+        pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.10'
     end
+end
+
+def insight_pod
+  if UsedSource == PodSource::Local
+    pod 'CloudInsight', :path => '../swift-cloud-insight'
+  elsif UsedSource == PodSource::Remote
+    pod 'CloudInsight', :git => 'git@github.com:coodly/CloudInsight.git'
+  else
+    pod 'CloudInsight', :git => 'git@github.com:coodly/CloudInsight.git', :tag => '0.1.4'
+  end
 end
 
 target 'iOS' do
@@ -55,6 +65,7 @@ target 'iOS' do
 
     ios_pods
     feedback_pod
+    insight_pod
 end
 
 target 'macOS' do

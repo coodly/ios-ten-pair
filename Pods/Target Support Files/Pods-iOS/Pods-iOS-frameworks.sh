@@ -198,8 +198,10 @@ fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CloudFeedback/CloudFeedback.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CloudInsight/CloudInsight.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Puff/Puff.framework"
@@ -209,8 +211,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CloudFeedback/CloudFeedback.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CloudInsight/CloudInsight.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Puff/Puff.framework"
