@@ -22,6 +22,7 @@
 		A7363A3A1E558EDF00B7C732 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
 		A7363A3B1E558EED00B7C732 /* NumbersPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */; };
 		A7363A3D1E55969600B7C732 /* FieldStatusVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */; };
+		A742610A2486B3F6003B9E9E /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74261092486B3F6003B9E9E /* Insight.swift */; };
 		A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
 		A750CE321E55AAB300852E6A /* FieldStatusVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */; };
 		A750CE341E55D7E500852E6A /* ButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE331E55D7E500852E6A /* ButtonTray.swift */; };
@@ -103,6 +104,7 @@
 		A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumbersPathFinder.swift; sourceTree = "<group>"; };
 		A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyLinesSearch.swift; sourceTree = "<group>"; };
 		A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldStatusVIew.swift; sourceTree = "<group>"; };
+		A74261092486B3F6003B9E9E /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
 		A748DC3A1E57375800F16F92 /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		A750CE331E55D7E500852E6A /* ButtonTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTray.swift; sourceTree = "<group>"; };
 		A750CE361E55DD9B00852E6A /* MatchFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinder.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		A71A97431E48CCA4005E134F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A74261082486B3E6003B9E9E /* Insight */,
 				A797BD6F2483803F00A6E27D /* Secrets */,
 				A7EE33B8243B741A004CF496 /* Extensions */,
 				A79F0B081FA38B8D00FE21F6 /* AdLoadingViewController.swift */,
@@ -284,6 +287,14 @@
 				A7B12C2E1E543A10007D7807 /* Tile+Extensions.swift */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		A74261082486B3E6003B9E9E /* Insight */ = {
+			isa = PBXGroup;
+			children = (
+				A74261092486B3F6003B9E9E /* Insight.swift */,
+			);
+			path = Insight;
 			sourceTree = "<group>";
 		};
 		A777FA851E50CC76003E62D7 /* en.lproj */ = {
@@ -659,6 +670,7 @@
 				A7B12C201E535B67007D7807 /* Constants.swift in Sources */,
 				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
 				A7ECCB801E4E275E001ADB51 /* Tile.swift in Sources */,
+				A742610A2486B3F6003B9E9E /* Insight.swift in Sources */,
 				A77DE6FD1E48D8D500E9214A /* PlayScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

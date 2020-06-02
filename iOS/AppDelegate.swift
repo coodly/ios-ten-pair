@@ -24,9 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    private lazy var insight = Insight()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        
+        insight.load()
         
         UINavigationBar.appearance().barTintColor = UIColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1)
         UINavigationBar.appearance().tintColor = .white

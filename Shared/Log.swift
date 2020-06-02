@@ -28,6 +28,8 @@ class Log {
         SWLogger.Log.level = .debug
     }
     
+    public static let insight = Logging(name: "Insight")
+    
     class func debug<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
         SWLogger.Log.debug(object, file: file, function: function, line: line)
     }
