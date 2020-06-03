@@ -28,9 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        
-        insight.load()
-        
+                
         UINavigationBar.appearance().barTintColor = UIColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1)
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -40,7 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Log.enable()
         
         FeedbackService.load()
-        
+        insight.load()
+
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
         
         return true

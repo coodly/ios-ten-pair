@@ -23,6 +23,7 @@
 		A7363A3B1E558EED00B7C732 /* NumbersPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */; };
 		A7363A3D1E55969600B7C732 /* FieldStatusVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */; };
 		A742610A2486B3F6003B9E9E /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74261092486B3F6003B9E9E /* Insight.swift */; };
+		A742610D2486B57B003B9E9E /* AdMobGDPRCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742610C2486B57B003B9E9E /* AdMobGDPRCheck.swift */; };
 		A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
 		A750CE321E55AAB300852E6A /* FieldStatusVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */; };
 		A750CE341E55D7E500852E6A /* ButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE331E55D7E500852E6A /* ButtonTray.swift */; };
@@ -105,6 +106,7 @@
 		A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyLinesSearch.swift; sourceTree = "<group>"; };
 		A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldStatusVIew.swift; sourceTree = "<group>"; };
 		A74261092486B3F6003B9E9E /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
+		A742610C2486B57B003B9E9E /* AdMobGDPRCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobGDPRCheck.swift; sourceTree = "<group>"; };
 		A748DC3A1E57375800F16F92 /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		A750CE331E55D7E500852E6A /* ButtonTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTray.swift; sourceTree = "<group>"; };
 		A750CE361E55DD9B00852E6A /* MatchFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinder.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		A71A97431E48CCA4005E134F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A742610B2486B56F003B9E9E /* GDPR */,
 				A74261082486B3E6003B9E9E /* Insight */,
 				A797BD6F2483803F00A6E27D /* Secrets */,
 				A7EE33B8243B741A004CF496 /* Extensions */,
@@ -295,6 +298,14 @@
 				A74261092486B3F6003B9E9E /* Insight.swift */,
 			);
 			path = Insight;
+			sourceTree = "<group>";
+		};
+		A742610B2486B56F003B9E9E /* GDPR */ = {
+			isa = PBXGroup;
+			children = (
+				A742610C2486B57B003B9E9E /* AdMobGDPRCheck.swift */,
+			);
+			path = GDPR;
 			sourceTree = "<group>";
 		};
 		A777FA851E50CC76003E62D7 /* en.lproj */ = {
@@ -649,6 +660,7 @@
 				A71837691E4A0C5F002AEBF5 /* BarButton.swift in Sources */,
 				A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */,
 				A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */,
+				A742610D2486B57B003B9E9E /* AdMobGDPRCheck.swift in Sources */,
 				A75570BF1E54552300114ED2 /* LoadingScreen.swift in Sources */,
 				A79F0B091FA38B8D00FE21F6 /* AdLoadingViewController.swift in Sources */,
 				A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */,

@@ -33,21 +33,28 @@ class AdLoadingViewController: UIViewController {
         banner.delegate = self
         return banner
     }()
-    private var interstitial: GADInterstitial?
+    private lazy var interstitial = GADInterstitial(adUnitID: AppConfig.current.adUnits.interstitial)
     private var interstitialCount = 0
     
     @IBOutlet private var contentBottomWithAd: NSLayoutConstraint!
     @IBOutlet private var contentBottomWithoutAd: NSLayoutConstraint!
     
+    private lazy var gdpr = AdMobGDPRCheck()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gdpr.check()
 
         NotificationCenter.default.addObserver(self, selector: .tickInterstitial, name: .hintTaken, object: nil)
         NotificationCenter.default.addObserver(self, selector: .tickInterstitial, name: .fieldReload, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadAds), name: .personalizedAdsStatusChanged, object: nil)
         
         adContainerView.clipsToBounds = true
         adContainerView.addSubview(banner)
         banner.pinToSuperviewEdges()
+
+        interstitial.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,34 +64,42 @@ class AdLoadingViewController: UIViewController {
             return
         }
         
-        let request = GADRequest()
-        banner.load(request)
-        
-        loadInterstitial()
+        loadAds()
     }
     
-    private func loadInterstitial() {
-        interstitial = GADInterstitial(adUnitID: AppConfig.current.adUnits.interstitial)
-        interstitial!.delegate = self
-        let request = GADRequest()
-        interstitial!.load(request)
+    @objc fileprivate func loadAds() {
+        banner.load(adRequest())
+        interstitial.load(adRequest())
     }
     
     @objc fileprivate func tickInterstitial() {
         interstitialCount += 1
         
-        guard interstitialCount >= InterstitialShowTreshold, (interstitial?.isReady ?? false) else {
+        guard interstitialCount >= InterstitialShowTreshold, interstitial.isReady else {
             return
         }
         
         interstitialCount = 0
-        interstitial?.present(fromRootViewController: self)
+        interstitial.present(fromRootViewController: self)
+    }
+    
+    private func adRequest() -> GADRequest {
+        let request = GADRequest()
+        if gdpr.canShowPersonalizedAds {
+            Log.ads.debug("Can show personalized")
+        } else {
+            Log.ads.debug("Load non personalized ads")
+            let extras = GADExtras()
+            extras.additionalParameters = ["npa": "1"]
+            request.register(extras)
+        }
+        return request
     }
 }
 
 extension AdLoadingViewController: GADInterstitialDelegate {
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        loadInterstitial()
+        interstitial.load(adRequest())
     }
     
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {

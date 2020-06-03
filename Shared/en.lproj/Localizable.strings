@@ -5,6 +5,7 @@
 "coodly.feedback.response.notice" = "Hello\n\nI'm Jaanus Siim, independent developer based in Estonia.\n\nEvery suggestion and feedback is welcome. I promise to read them all. But I may not be able to respond to all messages.\n\nThanks for undertanding.";
 "coodly.feedback.sign.in.message" = "Please sign in to iCloud to send a message.";
 
+"menu.option.gdpr" = "Personalized ads";
 "menu.option.message.from" = "● Response from developer";
 "menu.option.rate" = "Rate on AppStore";
 "menu.option.restart" = "Restart game";
