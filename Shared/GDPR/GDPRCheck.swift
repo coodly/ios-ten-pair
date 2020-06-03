@@ -13,4 +13,5 @@ public protocol GDPRCheck {
     var canShowPersonalizedAds: Bool { get }
     
     func check()
+    func present()
 }

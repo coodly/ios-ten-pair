@@ -45,6 +45,7 @@ class AdLoadingViewController: UIViewController {
         super.viewDidLoad()
         
         gdpr.check()
+        gdpr.showOn = self
 
         NotificationCenter.default.addObserver(self, selector: .tickInterstitial, name: .hintTaken, object: nil)
         NotificationCenter.default.addObserver(self, selector: .tickInterstitial, name: .fieldReload, object: nil)

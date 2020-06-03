@@ -86,6 +86,7 @@ class MenuScreen: SpriteKitUI.MenuScreen {
         
         if gdprCheck?.showGDPRConsentMenuItem ?? false {
             let gdpr = button(named: NSLocalizedString("menu.option.gdpr", comment: ""))
+            gdpr.action = SKAction.run(gdprCheck!.present)
             append(gdpr)
         }
     }

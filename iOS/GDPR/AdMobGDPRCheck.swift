@@ -21,11 +21,9 @@ extension Notification.Name {
     public static let personalizedAdsStatusChanged = Notification.Name(rawValue: "com.coodly.stocked.personalized.ads")
 }
 
-public protocol GDPRConsentPreseter {
-    func present(on controller: UIViewController)
-}
-
-internal class AdMobGDPRCheck: GDPRCheck, GDPRConsentPreseter {
+internal class AdMobGDPRCheck: GDPRCheck {
+    internal weak var showOn: UIViewController?
+    
     var showGDPRConsentMenuItem: Bool {
         PACConsentInformation.sharedInstance.isRequestLocationInEEAOrUnknown
     }
@@ -62,7 +60,7 @@ internal class AdMobGDPRCheck: GDPRCheck, GDPRConsentPreseter {
         }
     }
     
-    func present(on controller: UIViewController) {
+    func present() {
         guard let privacyUrl = URL(string: "http://www.coodly.com/tenpair/privacy.html"),
             let form = PACConsentForm(applicationPrivacyPolicyURL: privacyUrl) else {
                 print("incorrect privacy URL.")
@@ -78,7 +76,7 @@ internal class AdMobGDPRCheck: GDPRCheck, GDPRConsentPreseter {
             if let error = error {
                 Log.ads.error("Load form error: \(error)")
             } else {
-                form.present(from: controller) {
+                form.present(from: self.showOn!) {
                     error, adFree in
                     
                     if let error = error {
