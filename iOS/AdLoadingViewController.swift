@@ -58,6 +58,14 @@ class AdLoadingViewController: UIViewController {
         interstitial.delegate = self
     }
     
+    override func viewWillTransition(to size: CGSize,
+                            with coordinator: UIViewControllerTransitionCoordinator) {
+      super.viewWillTransition(to:size, with:coordinator)
+      coordinator.animate(alongsideTransition: { _ in
+        self.loadBannerAd()
+      })
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -69,8 +77,22 @@ class AdLoadingViewController: UIViewController {
     }
     
     @objc fileprivate func loadAds() {
-        banner.load(adRequest())
+        loadBannerAd()
         interstitial.load(adRequest())
+    }
+    
+    private func loadBannerAd() {
+        let frame = { () -> CGRect in
+          if #available(iOS 11.0, *) {
+            return view.frame.inset(by: view.safeAreaInsets)
+          } else {
+            return view.frame
+          }
+        }()
+        let viewWidth = frame.size.width
+
+        banner.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+        banner.load(adRequest())
     }
     
     @objc fileprivate func tickInterstitial() {
