@@ -39,7 +39,7 @@ class AdLoadingViewController: UIViewController {
     @IBOutlet private var contentBottomWithAd: NSLayoutConstraint!
     @IBOutlet private var contentBottomWithoutAd: NSLayoutConstraint!
     
-    private lazy var gdpr = AdMobGDPRCheck()
+    private(set) lazy var gdpr = AdMobGDPRCheck()
     
     override func viewDidLoad() {
         super.viewDidLoad()

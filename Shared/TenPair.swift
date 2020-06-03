@@ -19,10 +19,13 @@ import SpriteKit
 import SpriteKitUI
 
 class TenPair: Game {
+    internal var gdprCheck: GDPRCheck?
+    
     private var play: PlayScreen?
     override func start() {
         setAppearance()
         play = PlayScreen()
+        play?.gdprCheck = gdprCheck
         play?.name = "Play screen"
         present(screen: play!)
     }

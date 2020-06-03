@@ -21,20 +21,13 @@ extension Notification.Name {
     public static let personalizedAdsStatusChanged = Notification.Name(rawValue: "com.coodly.stocked.personalized.ads")
 }
 
-public protocol GDPRCheck {
-    var showGDPRConsentMenuItem: Bool { get }
-    var canShowPersonalizedAds: Bool { get }
-    
-    func check()
-}
-
 public protocol GDPRConsentPreseter {
     func present(on controller: UIViewController)
 }
 
 internal class AdMobGDPRCheck: GDPRCheck, GDPRConsentPreseter {
     var showGDPRConsentMenuItem: Bool {
-        return PACConsentInformation.sharedInstance.isRequestLocationInEEAOrUnknown
+        PACConsentInformation.sharedInstance.isRequestLocationInEEAOrUnknown
     }
     
     var canShowPersonalizedAds: Bool {

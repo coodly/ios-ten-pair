@@ -20,6 +20,7 @@ import SpriteKit
 class MenuScreen: SpriteKitUI.MenuScreen {
     var includeResume = true
     var restartHandler: ((StartField) -> ())?
+    internal var gdprCheck: GDPRCheck?
     
     private var themeButton: MenuButton?
     private var feedbackButton: MenuButton?
@@ -81,6 +82,11 @@ class MenuScreen: SpriteKitUI.MenuScreen {
             }
             
             append(feedbackButton!)
+        }
+        
+        if gdprCheck?.showGDPRConsentMenuItem ?? false {
+            let gdpr = button(named: NSLocalizedString("menu.option.gdpr", comment: ""))
+            append(gdpr)
         }
     }
     

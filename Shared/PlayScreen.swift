@@ -28,6 +28,7 @@ class PlayScreen: Screen {
     private var hintsTray: ButtonTray?
     private var undoTray: ButtonTray?
     private lazy var undo = UndoManager()
+    internal var gdprCheck: GDPRCheck?
     
     override func load() {
         color = .red
@@ -193,6 +194,7 @@ class PlayScreen: Screen {
     
     private func presentMenu(withResume: Bool = true, extraDismissed: Screen? = nil) {
         let menu = MenuScreen()
+        menu.gdprCheck = gdprCheck
         menu.includeResume = withResume
         menu.restartHandler = {
             [weak self]

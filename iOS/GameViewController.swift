@@ -25,6 +25,7 @@ class GameViewController: AdLoadingViewController {
         skView.pinToSuperviewEdges()
 
         let scene = TenPair(size: skView.bounds.size)
+        scene.gdprCheck = gdpr
         game = scene
         scene.scaleMode = .resizeFill
         scene.backgroundColor = .white

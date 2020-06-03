@@ -24,6 +24,7 @@
 		A7363A3D1E55969600B7C732 /* FieldStatusVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */; };
 		A742610A2486B3F6003B9E9E /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74261092486B3F6003B9E9E /* Insight.swift */; };
 		A742610D2486B57B003B9E9E /* AdMobGDPRCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742610C2486B57B003B9E9E /* AdMobGDPRCheck.swift */; };
+		A7426110248769DA003B9E9E /* GDPRCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742610F248769DA003B9E9E /* GDPRCheck.swift */; };
 		A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
 		A750CE321E55AAB300852E6A /* FieldStatusVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */; };
 		A750CE341E55D7E500852E6A /* ButtonTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE331E55D7E500852E6A /* ButtonTray.swift */; };
@@ -107,6 +108,7 @@
 		A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldStatusVIew.swift; sourceTree = "<group>"; };
 		A74261092486B3F6003B9E9E /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
 		A742610C2486B57B003B9E9E /* AdMobGDPRCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobGDPRCheck.swift; sourceTree = "<group>"; };
+		A742610F248769DA003B9E9E /* GDPRCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDPRCheck.swift; sourceTree = "<group>"; };
 		A748DC3A1E57375800F16F92 /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		A750CE331E55D7E500852E6A /* ButtonTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTray.swift; sourceTree = "<group>"; };
 		A750CE361E55DD9B00852E6A /* MatchFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinder.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		A71A97381E48CCA4005E134F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A742610E248769CE003B9E9E /* GDPR */,
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
 				A71837681E4A0C5F002AEBF5 /* BarButton.swift */,
 				A750CE331E55D7E500852E6A /* ButtonTray.swift */,
@@ -304,6 +307,14 @@
 			isa = PBXGroup;
 			children = (
 				A742610C2486B57B003B9E9E /* AdMobGDPRCheck.swift */,
+			);
+			path = GDPR;
+			sourceTree = "<group>";
+		};
+		A742610E248769CE003B9E9E /* GDPR */ = {
+			isa = PBXGroup;
+			children = (
+				A742610F248769DA003B9E9E /* GDPRCheck.swift */,
 			);
 			path = GDPR;
 			sourceTree = "<group>";
@@ -666,6 +677,7 @@
 				A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */,
 				A7B12C271E543355007D7807 /* Aliases.swift in Sources */,
 				A77DE7091E48E29100E9214A /* TopMenuBar.swift in Sources */,
+				A7426110248769DA003B9E9E /* GDPRCheck.swift in Sources */,
 				A7B12C1D1E535B18007D7807 /* Config.swift in Sources */,
 				A7363A371E5589DB00B7C732 /* EmptyLinesSearch.swift in Sources */,
 				A78D56921E5B362F002957DC /* Theme.swift in Sources */,
