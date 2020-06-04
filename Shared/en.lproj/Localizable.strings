@@ -19,5 +19,6 @@
 "restart.screen.option.regular" = "Regular board";
 "restart.screen.option.x.lines" = "Random %@ lines";
 
-"theme.classic.name" = "Classic";
-"theme.pink.name" = "Pink";
+"theme.name.classic" = "Classic";
+"theme.name.dark" = "Dark";
+"theme.name.pink" = "Pink";

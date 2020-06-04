@@ -105,13 +105,57 @@ class Theme {
         return theme
     }()
     
+    private static var dark: Theme = {
+        let theme = Theme("dark") {
+            let lightBlue = SKColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1)
+            View.appearance().set(color: SKColor.white, for: .background)
+            View.appearance().set(color: lightBlue, for: .foreground)
+            
+            TopMenuBackground.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
+            TopMenuBar.appearance().set(color: SKColor.clear, for: .background)
+
+            Button.appearance().set(color: .clear, for: .background)
+            
+            MenuButton.appearance().set(color: lightBlue, for: .background)
+            MenuButton.appearance().set(color: SKColor.white, for: .foreground)
+            MenuButton.appearance().set(value: "Copperplate-Bold", for: .font)
+            
+            SpriteKitUI.MenuScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
+            
+            StatusBar.appearance().set(color: .clear, for: .background)
+            StatusBar.appearance().set(value: "Copperplate-Bold", for: .font)
+            
+            NumbersField.appearance().set(color: lightBlue, for: .tile)
+            NumbersField.appearance().set(color: .white, for: .tileNumber)
+            NumbersField.appearance().set(color: SKColor(red: 60.0 / 255.0, green: 145.0 / 255.0, blue: 230.0 / 255.0, alpha: 1), for: .selected)
+            NumbersField.appearance().set(color: SKColor(red: 27.0 / 255.0, green: 153.0 / 255.0, blue: 130.0 / 255.0, alpha: 1), for: .success)
+            NumbersField.appearance().set(color: SKColor(red: 1.000, green: 0.173, blue: 0.333, alpha: 1), for: .failure)
+            NumbersField.appearance().set(color: SKColor(white: 0.900, alpha: 1.000), for: .numberFieldBackground)
+            
+            LoadingScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.8), for: .background)
+            
+            FieldStatusView.appearance().set(color: .clear, for: .background)
+            
+            ButtonTray.appearance().set(color: lightBlue, for: .background)
+            ButtonTray.appearance().set(color: .white, for: .foreground)
+            
+            TrayButton.appearance().set(color: .white, for: .foreground)
+            TrayButton.appearance().set(color: .clear, for: .background)
+            
+            WinScreen.appearance().set(color: .clear, for: .background)
+        }
+        
+        return theme
+    }()
+    
     private static var all = [
         classic,
-        pink
+        pink,
+        dark
     ]
     
     var localizedName: String {
-        let key = "theme.\(name).name"
+        let key = "theme.name.\(name)"
         return NSLocalizedString(key, comment: "")
     }
     private let name: String
