@@ -64,16 +64,16 @@ class Theme {
     
     private static var pink: Theme = {
         let theme = Theme("pink") {
-            let lightBlue = SKColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1)
+            let pinkColor = SKColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1)
             View.appearance().set(color: SKColor.white, for: .background)
-            View.appearance().set(color: lightBlue, for: .foreground)
+            View.appearance().set(color: pinkColor, for: .foreground)
             
             TopMenuBackground.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
             TopMenuBar.appearance().set(color: SKColor.clear, for: .background)
 
             Button.appearance().set(color: .clear, for: .background)
             
-            MenuButton.appearance().set(color: lightBlue, for: .background)
+            MenuButton.appearance().set(color: pinkColor, for: .background)
             MenuButton.appearance().set(color: SKColor.white, for: .foreground)
             MenuButton.appearance().set(value: "Copperplate-Bold", for: .font)
             
@@ -82,7 +82,7 @@ class Theme {
             StatusBar.appearance().set(color: .clear, for: .background)
             StatusBar.appearance().set(value: "Copperplate-Bold", for: .font)
             
-            NumbersField.appearance().set(color: lightBlue, for: .tile)
+            NumbersField.appearance().set(color: pinkColor, for: .tile)
             NumbersField.appearance().set(color: .white, for: .tileNumber)
             NumbersField.appearance().set(color: SKColor(red: 60.0 / 255.0, green: 145.0 / 255.0, blue: 230.0 / 255.0, alpha: 1), for: .selected)
             NumbersField.appearance().set(color: SKColor(red: 27.0 / 255.0, green: 153.0 / 255.0, blue: 130.0 / 255.0, alpha: 1), for: .success)
@@ -93,7 +93,7 @@ class Theme {
             
             FieldStatusView.appearance().set(color: .clear, for: .background)
             
-            ButtonTray.appearance().set(color: lightBlue, for: .background)
+            ButtonTray.appearance().set(color: pinkColor, for: .background)
             ButtonTray.appearance().set(color: .white, for: .foreground)
             
             TrayButton.appearance().set(color: .white, for: .foreground)
@@ -107,39 +107,47 @@ class Theme {
     
     private static var dark: Theme = {
         let theme = Theme("dark") {
-            let lightBlue = SKColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1)
-            View.appearance().set(color: SKColor.white, for: .background)
-            View.appearance().set(color: lightBlue, for: .foreground)
+            let background = SKColor.color(hexString: "#121212")
+            let tiles = SKColor.color(hexString: "#243458")
+            let text = SKColor.color(hexString: "#D4D4D4")
+
+            let foreground = tiles
+            View.appearance().set(color: background, for: .background)
+            View.appearance().set(color: foreground, for: .foreground)
             
-            TopMenuBackground.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
+            TopMenuBackground.appearance().set(color: background.withAlphaComponent(0.95), for: .background)
             TopMenuBar.appearance().set(color: SKColor.clear, for: .background)
+            TopMenuBar.appearance().set(color: text, for: .foreground)
 
             Button.appearance().set(color: .clear, for: .background)
+            Button.appearance().set(color: text, for: .foreground)
             
-            MenuButton.appearance().set(color: lightBlue, for: .background)
+            MenuButton.appearance().set(color: foreground, for: .background)
             MenuButton.appearance().set(color: SKColor.white, for: .foreground)
             MenuButton.appearance().set(value: "Copperplate-Bold", for: .font)
             
-            SpriteKitUI.MenuScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.95), for: .background)
+            SpriteKitUI.MenuScreen.appearance().set(color: background.withAlphaComponent(0.95), for: .background)
             
             StatusBar.appearance().set(color: .clear, for: .background)
             StatusBar.appearance().set(value: "Copperplate-Bold", for: .font)
             
-            NumbersField.appearance().set(color: lightBlue, for: .tile)
-            NumbersField.appearance().set(color: .white, for: .tileNumber)
+            NumbersField.appearance().set(color: tiles, for: .tile)
+            NumbersField.appearance().set(color: text, for: .tileNumber)
             NumbersField.appearance().set(color: SKColor(red: 60.0 / 255.0, green: 145.0 / 255.0, blue: 230.0 / 255.0, alpha: 1), for: .selected)
             NumbersField.appearance().set(color: SKColor(red: 27.0 / 255.0, green: 153.0 / 255.0, blue: 130.0 / 255.0, alpha: 1), for: .success)
             NumbersField.appearance().set(color: SKColor(red: 1.000, green: 0.173, blue: 0.333, alpha: 1), for: .failure)
-            NumbersField.appearance().set(color: SKColor(white: 0.900, alpha: 1.000), for: .numberFieldBackground)
+            NumbersField.appearance().set(color: SKColor(white: 0.500, alpha: 1.000), for: .numberFieldBackground)
             
-            LoadingScreen.appearance().set(color: SKColor.white.withAlphaComponent(0.8), for: .background)
+            LoadingScreen.appearance().set(color: background.withAlphaComponent(0.8), for: .background)
+            LoadingScreen.appearance().set(color: text, for: .foreground)
             
             FieldStatusView.appearance().set(color: .clear, for: .background)
+            FieldStatusView.appearance().set(color: text, for: .foreground)
             
-            ButtonTray.appearance().set(color: lightBlue, for: .background)
+            ButtonTray.appearance().set(color: foreground, for: .background)
             ButtonTray.appearance().set(color: .white, for: .foreground)
             
-            TrayButton.appearance().set(color: .white, for: .foreground)
+            TrayButton.appearance().set(color: text, for: .foreground)
             TrayButton.appearance().set(color: .clear, for: .background)
             
             WinScreen.appearance().set(color: .clear, for: .background)
@@ -194,5 +202,26 @@ class Theme {
         
         UserDefaults.standard.set(returned.name, forKey: ThemeSettingKey)
         return returned
+    }
+}
+
+extension SKColor {
+    //https://gist.github.com/arshad/de147c42d7b3063ef7bc#gistcomment-1607094
+    class func color(hexString: String) -> UIColor {
+        let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int = UInt32()
+        Scanner(string: hex).scanHexInt32(&int)
+        let a, r, g, b: UInt32
+        switch hex.count {
+        case 3: // RGB (12-bit)
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6: // RGB (24-bit)
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8: // ARGB (32-bit)
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+        default:
+            (a, r, g, b) = (1, 1, 1, 0)
+        }
+        return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(a) / 255.0)
     }
 }
