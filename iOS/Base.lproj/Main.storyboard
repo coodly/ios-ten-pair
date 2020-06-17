@@ -105,12 +105,37 @@
                                     <outlet property="delegate" destination="jw4-Ud-5aG" id="sLF-80-4XC"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQF-tF-W9G">
+                                <rect key="frame" x="0.0" y="611" width="48" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVv-YB-EfX">
+                                        <rect key="frame" x="2" y="2" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="TJa-ls-xhB"/>
+                                            <constraint firstAttribute="width" constant="44" id="w58-W7-A8o"/>
+                                        </constraints>
+                                        <state key="normal" image="hint"/>
+                                        <connections>
+                                            <action selector="giveAHint" destination="jw4-Ud-5aG" eventType="touchUpInside" id="C0I-RV-ICc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tVv-YB-EfX" secondAttribute="trailing" constant="2" id="0hA-bg-e2s"/>
+                                    <constraint firstItem="tVv-YB-EfX" firstAttribute="leading" secondItem="cQF-tF-W9G" secondAttribute="leading" constant="2" id="433-d6-1Qw"/>
+                                    <constraint firstAttribute="bottom" secondItem="tVv-YB-EfX" secondAttribute="bottom" constant="2" id="5sG-bc-H1E"/>
+                                    <constraint firstItem="tVv-YB-EfX" firstAttribute="top" secondItem="cQF-tF-W9G" secondAttribute="top" constant="2" id="BHc-P9-Qra"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="cQF-tF-W9G" firstAttribute="leading" secondItem="sTh-Hc-Hbi" secondAttribute="leading" id="1ko-9F-1Eu"/>
                             <constraint firstItem="apk-88-TNQ" firstAttribute="leading" secondItem="sTh-Hc-Hbi" secondAttribute="leading" id="9tm-dB-I63"/>
                             <constraint firstItem="apk-88-TNQ" firstAttribute="top" secondItem="sTh-Hc-Hbi" secondAttribute="top" id="LxE-sz-75m"/>
                             <constraint firstItem="apk-88-TNQ" firstAttribute="bottom" secondItem="sTh-Hc-Hbi" secondAttribute="bottom" id="tHg-pg-MKN"/>
+                            <constraint firstItem="fua-Tt-jpf" firstAttribute="bottom" secondItem="cQF-tF-W9G" secondAttribute="bottom" constant="8" id="tNn-eZ-riv"/>
                             <constraint firstItem="apk-88-TNQ" firstAttribute="trailing" secondItem="sTh-Hc-Hbi" secondAttribute="trailing" id="wpP-2d-oRt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fua-Tt-jpf"/>
@@ -125,4 +150,7 @@
             <point key="canvasLocation" x="660" y="715.59220389805103"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hint" width="70" height="70"/>
+    </resources>
 </document>

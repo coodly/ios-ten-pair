@@ -21,14 +21,15 @@ internal enum MatchAction: String {
     case failure
 }
 
-internal class PlayField {
+internal class PlayField: MatchFinder {
     private var numbers = [Int]()
+    private var clearedCount = 0
     
     internal func load() {
         numbers = FieldSave.load()
     }
     
-    private func save() {
+    internal func save() {
         FieldSave.save(numbers)
     }
     
@@ -64,9 +65,21 @@ internal class PlayField {
     
     internal func clear(numbers: Set<Int>) {
         numbers.forEach({ self.numbers[$0] = 0 })
+        
+        clearedCount += 1
+        guard clearedCount.isMultiple(of: 100) else {
+            return
+        }
+        
+        clearedCount = 0
+        save()
     }
     
     internal func hasValue(at index: Int) -> Bool {
         numbers[index] != 0
+    }
+    
+    internal func openMatch() -> Int? {
+        openMatchIndex(numbers)
     }
 }

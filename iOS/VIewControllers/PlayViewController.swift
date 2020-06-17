@@ -45,6 +45,8 @@ internal class PlayViewController: UIViewController {
         collectionView.registerCell(forType: NumberCell.self)
         
         machine.enter(SelectingNumber.self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(saveField), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
     @objc fileprivate func reloadField() {
@@ -56,6 +58,24 @@ internal class PlayViewController: UIViewController {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
+    }
+    
+    @objc fileprivate func saveField() {
+        field.save()
+    }
+    
+    @IBAction func giveAHint() {
+        guard let hintIndex = field.openMatch() else {
+            return
+        }
+        
+        selected.removeAll()
+        selected.insert(hintIndex)
+        let index = IndexPath(row: hintIndex, section: 0)
+        if collectionView.indexPathsForVisibleItems.contains(index) {
+            reload(previous: selected, current: selected, animated: false)
+        }
+        collectionView.scrollToItem(at: index, at: .centeredVertically, animated: true)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
