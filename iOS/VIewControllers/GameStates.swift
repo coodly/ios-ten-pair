@@ -23,6 +23,12 @@ internal class PlayState: GKState {
     }
 }
 
+internal class EmptyLinesCheck: PlayState {
+    override func didEnter(from previousState: GKState?) {
+        delegate?.checkEmptyLines()
+    }
+}
+
 internal class SelectingNumber: PlayState {
     override func didEnter(from previousState: GKState?) {
         delegate?.clearSelection()

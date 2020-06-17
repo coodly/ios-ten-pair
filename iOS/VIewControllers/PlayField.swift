@@ -82,4 +82,16 @@ internal class PlayField: MatchFinder {
     internal func openMatch() -> Int? {
         openMatchIndex(numbers)
     }
+    
+    internal func emptyLines(with pointers: Set<Int>) -> [CountableRange<Int>] {
+        let points = Array(pointers.sorted().reversed())
+        return EmptyLinesSearch.emptyRangesWithCheckPoints(points, field: numbers)
+    }
+    
+    internal func remove(lines removed: [CountableRange<Int>]) {
+        let lines = removed.sorted(by: { $0.lowerBound > $1.lowerBound })
+        for removed in lines {
+            numbers.removeSubrange(removed)
+        }
+    }
 }

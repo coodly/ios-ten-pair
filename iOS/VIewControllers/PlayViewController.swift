@@ -21,6 +21,7 @@ internal protocol PlayDelegate: class {
     func animateFailure()
     func animateSuccess()
     func clearSelection()
+    func checkEmptyLines()
 }
 
 internal class PlayViewController: UIViewController {
@@ -33,7 +34,8 @@ internal class PlayViewController: UIViewController {
     private lazy var machine = GKStateMachine(states: [
         SelectingNumber(delegate: self),
         AnimatingSuccess(delegate: self),
-        AnimatingFailure(delegate: self)
+        AnimatingFailure(delegate: self),
+        EmptyLinesCheck(delegate: self)
     ])
     
     override func viewDidLoad() {
@@ -134,7 +136,7 @@ extension PlayViewController: PlayDelegate {
             _ in
             
             self.field.clear(numbers: self.selected)
-            self.machine.enter(SelectingNumber.self)
+            self.machine.enter(EmptyLinesCheck.self)
         }
     }
     
@@ -147,9 +149,42 @@ extension PlayViewController: PlayDelegate {
     }
     
     func clearSelection() {
+        guard selected.count > 0 else {
+            return
+        }
+        
         let animated = selected
         selected.removeAll()
         reload(indexes: animated)
+    }
+    
+    func checkEmptyLines() {
+        let animated = selected
+        selected.removeAll()
+        reload(indexes: animated) {
+            _ in
+            
+            self.removeEmptyLines(checked: animated)
+        }
+    }
+    
+    private func removeEmptyLines(checked: Set<Int>) {
+        let empty = field.emptyLines(with: checked)
+        guard empty.count > 0 else {
+            machine.enter(SelectingNumber.self)
+            return
+        }
+        
+        field.remove(lines: empty)
+        let removed = empty.map({ Array($0.lowerBound..<$0.upperBound) }).flatMap({ $0 }).map({ IndexPath(row: $0, section: 0) })
+        let update: (() -> Void) = {
+            self.collectionView.deleteItems(at: removed)
+        }
+        collectionView.performBatchUpdates(update) {
+            _ in
+            
+            self.machine.enter(SelectingNumber.self)
+        }
     }
 }
 
