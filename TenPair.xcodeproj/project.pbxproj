@@ -13,6 +13,7 @@
 		A70BBA2E24992FA4003E561F /* NumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70BBA2C24992FA4003E561F /* NumberCell.xib */; };
 		A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */; };
 		A70BBA322499CC20003E561F /* NumbersFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */; };
+		A70BBA342499F29B003E561F /* PlayField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA332499F29B003E561F /* PlayField.swift */; };
 		A718374E1E499FB8002AEBF5 /* NumbersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718374D1E499FB8002AEBF5 /* NumbersField.swift */; };
 		A718374F1E499FB8002AEBF5 /* NumbersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718374D1E499FB8002AEBF5 /* NumbersField.swift */; };
 		A71837691E4A0C5F002AEBF5 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71837681E4A0C5F002AEBF5 /* BarButton.swift */; };
@@ -102,6 +103,7 @@
 		A70BBA2C24992FA4003E561F /* NumberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCell.xib; sourceTree = "<group>"; };
 		A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeue.swift"; sourceTree = "<group>"; };
 		A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersFlowLayout.swift; sourceTree = "<group>"; };
+		A70BBA332499F29B003E561F /* PlayField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayField.swift; sourceTree = "<group>"; };
 		A718374D1E499FB8002AEBF5 /* NumbersField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumbersField.swift; sourceTree = "<group>"; };
 		A71837681E4A0C5F002AEBF5 /* BarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
 		A71A973C1E48CCA4005E134F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				A70BBA2B24992FA4003E561F /* NumberCell.swift */,
 				A70BBA2C24992FA4003E561F /* NumberCell.xib */,
 				A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */,
+				A70BBA332499F29B003E561F /* PlayField.swift */,
 				A70BBA2924992E2B003E561F /* PlayViewController.swift */,
 			);
 			path = VIewControllers;
@@ -698,6 +701,7 @@
 				A742610D2486B57B003B9E9E /* AdMobGDPRCheck.swift in Sources */,
 				A75570BF1E54552300114ED2 /* LoadingScreen.swift in Sources */,
 				A79F0B091FA38B8D00FE21F6 /* AdLoadingViewController.swift in Sources */,
+				A70BBA342499F29B003E561F /* PlayField.swift in Sources */,
 				A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */,
 				A7B12C271E543355007D7807 /* Aliases.swift in Sources */,
 				A77DE7091E48E29100E9214A /* TopMenuBar.swift in Sources */,

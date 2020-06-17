@@ -17,21 +17,27 @@
 import UIKit
 
 internal class PlayViewController: UIViewController {
+    private lazy var field = PlayField()
+    
     @IBOutlet private var collectionView: UICollectionView!
     private var selected = -1
-    private var numbers: [Int] = (0...10000).enumerated().map({ _, _ in Int.random(in: 0..<10) })
     
     private lazy var reloadButton = UIBarButtonItem(title: "Reload", style: .plain, target: self, action: #selector(reload))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        field.load()
+        
         navigationItem.rightBarButtonItem = reloadButton
         collectionView.registerCell(forType: NumberCell.self)
     }
     
     @objc fileprivate func reload() {
-        
+        field.reload()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -45,12 +51,12 @@ internal class PlayViewController: UIViewController {
 
 extension PlayViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        numbers.count
+        field.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: NumberCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.show(number: numbers[indexPath.row], selected: false)
+        cell.show(number: field.number(at: indexPath.row), selected: false)
         return cell
     }
 }
