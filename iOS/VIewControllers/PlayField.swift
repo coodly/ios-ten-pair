@@ -48,6 +48,17 @@ internal class PlayField {
     }
     
     internal func match(first: Int, second: Int) -> MatchAction {
-        .failure
+        guard NumbersPathFinder.hasClearPath([first, second], inField: numbers) else {
+            return .failure
+        }
+        
+        let valueOne = numbers[first]
+        let valueTwo = numbers[second]
+        
+        guard valueOne == valueTwo || valueOne + valueTwo == 10 else {
+            return .failure
+        }
+
+        return .match
     }
 }
