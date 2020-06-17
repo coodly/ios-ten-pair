@@ -22,7 +22,7 @@ internal class PlayViewController: UIViewController {
     @IBOutlet private var collectionView: UICollectionView!
     private var selected = Set<Int>()
     
-    private lazy var reloadButton = UIBarButtonItem(title: "Reload", style: .plain, target: self, action: #selector(reload))
+    private lazy var reloadButton = UIBarButtonItem(title: "Reload", style: .plain, target: self, action: #selector(reloadField))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ internal class PlayViewController: UIViewController {
         collectionView.registerCell(forType: NumberCell.self)
     }
     
-    @objc fileprivate func reload() {
+    @objc fileprivate func reloadField() {
         field.reload()
         DispatchQueue.main.async {
             self.collectionView.reloadData()
@@ -45,6 +45,21 @@ internal class PlayViewController: UIViewController {
 
         DispatchQueue.main.async {
             self.collectionView.collectionViewLayout.invalidateLayout()
+        }
+    }
+    
+    private func reload(previous: Set<Int>, current: Set<Int>, animated: Bool) {
+        let reloaded = previous.union(current)
+        let indexPaths = reloaded.map({ IndexPath(row: $0, section: 0) })
+        
+        let animation: (() -> Void) = {
+            self.collectionView.reloadItems(at: indexPaths)
+        }
+        
+        if animated {
+            animation()
+        } else {
+            UIView.performWithoutAnimation(animation)
         }
     }
 }
@@ -70,13 +85,6 @@ extension PlayViewController: UICollectionViewDelegate {
             selected.insert(indexPath.row)
         }
         
-        let reloaded = original.union(selected)
-        let paths = reloaded.map({ IndexPath(row: $0, section: 0) })
-        
-        let updates: (() -> Void) = {
-            self.collectionView.reloadItems(at: paths)
-        }
-        
-        collectionView.performBatchUpdates(updates, completion: nil)
+        reload(previous: original, current: selected, animated: false)
     }
 }
