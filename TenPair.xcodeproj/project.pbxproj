@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		397AC755070F530439647551 /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8823AD29127CFC3A63FA4805 /* Pods_macOS.framework */; };
+		A70BBA2A24992E2B003E561F /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2924992E2B003E561F /* PlayViewController.swift */; };
+		A70BBA2D24992FA4003E561F /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2B24992FA4003E561F /* NumberCell.swift */; };
+		A70BBA2E24992FA4003E561F /* NumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70BBA2C24992FA4003E561F /* NumberCell.xib */; };
+		A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */; };
+		A70BBA322499CC20003E561F /* NumbersFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */; };
 		A718374E1E499FB8002AEBF5 /* NumbersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718374D1E499FB8002AEBF5 /* NumbersField.swift */; };
 		A718374F1E499FB8002AEBF5 /* NumbersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A718374D1E499FB8002AEBF5 /* NumbersField.swift */; };
 		A71837691E4A0C5F002AEBF5 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71837681E4A0C5F002AEBF5 /* BarButton.swift */; };
@@ -92,6 +97,11 @@
 		0F87E684DF6C56BE4744A9CA /* Pods-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8823AD29127CFC3A63FA4805 /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70BBA2924992E2B003E561F /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		A70BBA2B24992FA4003E561F /* NumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCell.swift; sourceTree = "<group>"; };
+		A70BBA2C24992FA4003E561F /* NumberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCell.xib; sourceTree = "<group>"; };
+		A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeue.swift"; sourceTree = "<group>"; };
+		A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersFlowLayout.swift; sourceTree = "<group>"; };
 		A718374D1E499FB8002AEBF5 /* NumbersField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumbersField.swift; sourceTree = "<group>"; };
 		A71837681E4A0C5F002AEBF5 /* BarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
 		A71A973C1E48CCA4005E134F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +210,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A70BBA2824992E1F003E561F /* VIewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A70BBA2B24992FA4003E561F /* NumberCell.swift */,
+				A70BBA2C24992FA4003E561F /* NumberCell.xib */,
+				A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */,
+				A70BBA2924992E2B003E561F /* PlayViewController.swift */,
+			);
+			path = VIewControllers;
+			sourceTree = "<group>";
+		};
 		A71A97331E48CCA4005E134F = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +283,7 @@
 				A74261082486B3E6003B9E9E /* Insight */,
 				A797BD6F2483803F00A6E27D /* Secrets */,
 				A7EE33B8243B741A004CF496 /* Extensions */,
+				A70BBA2824992E1F003E561F /* VIewControllers */,
 				A79F0B081FA38B8D00FE21F6 /* AdLoadingViewController.swift */,
 				A7B12C261E543355007D7807 /* Aliases.swift */,
 				A71A97441E48CCA4005E134F /* AppDelegate.swift */,
@@ -358,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */,
+				A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -474,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70BBA2E24992FA4003E561F /* NumberCell.xib in Resources */,
 				A777FA8B1E50CC76003E62D7 /* Localizable.strings in Resources */,
 				A78D568F1E5AF095002957DC /* Confetti.sks in Resources */,
 				A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */,
@@ -690,11 +714,15 @@
 				A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */,
 				A787134F1E5D6FDC002DEF76 /* RestartScreen.swift in Sources */,
 				A777FA831E50758A003E62D7 /* MenuButton.swift in Sources */,
+				A70BBA2A24992E2B003E561F /* PlayViewController.swift in Sources */,
 				A7EADCF91F9D1D47007BA0E8 /* TopMenuBackground.swift in Sources */,
 				A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */,
 				A77DE6F91E48D75200E9214A /* TenPair.swift in Sources */,
 				A7B12C201E535B67007D7807 /* Constants.swift in Sources */,
 				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
+				A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */,
+				A70BBA2D24992FA4003E561F /* NumberCell.swift in Sources */,
+				A70BBA322499CC20003E561F /* NumbersFlowLayout.swift in Sources */,
 				A7ECCB801E4E275E001ADB51 /* Tile.swift in Sources */,
 				A742610A2486B3F6003B9E9E /* Insight.swift in Sources */,
 				A77DE6FD1E48D8D500E9214A /* PlayScreen.swift in Sources */,

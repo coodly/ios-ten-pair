@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NumberCell" customModule="TenPair" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udP-pg-kg7">
+                        <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P00-kJ-Ssa">
+                                <rect key="frame" x="1" y="1" width="32" height="32"/>
+                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="P00-kJ-Ssa" firstAttribute="leading" secondItem="udP-pg-kg7" secondAttribute="leading" constant="1" id="Bzt-za-C5b"/>
+                            <constraint firstAttribute="trailing" secondItem="P00-kJ-Ssa" secondAttribute="trailing" constant="1" id="Wsi-NB-XLl"/>
+                            <constraint firstAttribute="bottom" secondItem="P00-kJ-Ssa" secondAttribute="bottom" constant="1" id="aKi-c8-vvH"/>
+                            <constraint firstItem="P00-kJ-Ssa" firstAttribute="top" secondItem="udP-pg-kg7" secondAttribute="top" constant="1" id="dol-0y-qjH"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhp-if-r2S">
+                        <rect key="frame" x="9.5" y="0.0" width="15" height="34"/>
+                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="24"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="dhp-if-r2S" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="6aj-HB-aKV"/>
+                <constraint firstAttribute="trailing" secondItem="udP-pg-kg7" secondAttribute="trailing" id="Bng-Ey-qSA"/>
+                <constraint firstItem="udP-pg-kg7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PAz-yx-daC"/>
+                <constraint firstAttribute="bottom" secondItem="udP-pg-kg7" secondAttribute="bottom" id="SZ3-ZP-agC"/>
+                <constraint firstItem="udP-pg-kg7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UT4-1V-Vxt"/>
+                <constraint firstItem="dhp-if-r2S" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="xdI-O1-bHI"/>
+            </constraints>
+            <size key="customSize" width="93" height="77"/>
+            <connections>
+                <outlet property="number" destination="dhp-if-r2S" id="yTn-Xv-HJD"/>
+            </connections>
+            <point key="canvasLocation" x="168.84057971014494" y="161.71875"/>
+        </collectionViewCell>
+    </objects>
+</document>
