@@ -23,6 +23,7 @@
 		A71A97561E48CCA4005E134F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A97551E48CCA4005E134F /* AppDelegate.swift */; };
 		A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A71A97641E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
+		A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C0D28249A46DF00EFE21D /* GameStates.swift */; };
 		A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */; };
 		A7363A371E5589DB00B7C732 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
 		A7363A3A1E558EDF00B7C732 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
@@ -115,6 +116,7 @@
 		A71A97531E48CCA4005E134F /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71A97551E48CCA4005E134F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A71A975C1E48CCA4005E134F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A72C0D28249A46DF00EFE21D /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
 		A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumbersPathFinder.swift; sourceTree = "<group>"; };
 		A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyLinesSearch.swift; sourceTree = "<group>"; };
 		A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldStatusVIew.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */,
 				A70BBA332499F29B003E561F /* PlayField.swift */,
 				A70BBA2924992E2B003E561F /* PlayViewController.swift */,
+				A72C0D28249A46DF00EFE21D /* GameStates.swift */,
 			);
 			path = VIewControllers;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				A7426110248769DA003B9E9E /* GDPRCheck.swift in Sources */,
 				A7B12C1D1E535B18007D7807 /* Config.swift in Sources */,
 				A7363A371E5589DB00B7C732 /* EmptyLinesSearch.swift in Sources */,
+				A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */,
 				A78D56921E5B362F002957DC /* Theme.swift in Sources */,
 				A718374E1E499FB8002AEBF5 /* NumbersField.swift in Sources */,
 				A7363A3D1E55969600B7C732 /* FieldStatusVIew.swift in Sources */,

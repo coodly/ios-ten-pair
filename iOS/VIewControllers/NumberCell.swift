@@ -15,13 +15,43 @@
 */
 
 import UIKit
+import GameplayKit
+
+internal enum NumberMarker: String {
+    case standard
+    case selection
+    case success
+    case failure
+    
+    internal static func from(state: PlayState?) -> NumberMarker {
+        switch state {
+        case is SelectingNumber:
+            return .selection
+        case is AnimatingSuccess:
+            return .success
+        case is AnimatingFailure:
+            return .failure
+        default:
+            fatalError()
+        }
+    }
+}
 
 internal class NumberCell: UICollectionViewCell {
     @IBOutlet private var number: UILabel!
     @IBOutlet private var numberBackground: UIView!
     
-    internal func show(number: Int, selected: Bool) {
+    internal func show(number: Int, marker: NumberMarker) {
         self.number.text = String(describing: number)
-        numberBackground.backgroundColor = selected ? UIColor.green : UIColor.blue
+        switch marker {
+        case .standard:
+            numberBackground.backgroundColor = UIColor.blue
+        case .selection:
+            numberBackground.backgroundColor = UIColor.yellow
+        case .success:
+            numberBackground.backgroundColor = UIColor.green
+        case .failure:
+            numberBackground.backgroundColor = UIColor.red
+        }
     }
 }

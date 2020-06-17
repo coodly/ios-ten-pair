@@ -15,6 +15,13 @@
 */
 
 import UIKit
+import GameplayKit
+
+internal protocol PlayDelegate: class {
+    func animateFailure()
+    func animateSuccess()
+    func clearSelection()
+}
 
 internal class PlayViewController: UIViewController {
     private lazy var field = PlayField()
@@ -23,6 +30,11 @@ internal class PlayViewController: UIViewController {
     private var selected = Set<Int>()
     
     private lazy var reloadButton = UIBarButtonItem(title: "Reload", style: .plain, target: self, action: #selector(reloadField))
+    private lazy var machine = GKStateMachine(states: [
+        SelectingNumber(delegate: self),
+        AnimatingSuccess(delegate: self),
+        AnimatingFailure(delegate: self)
+    ])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +43,15 @@ internal class PlayViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = reloadButton
         collectionView.registerCell(forType: NumberCell.self)
+        
+        machine.enter(SelectingNumber.self)
     }
     
     @objc fileprivate func reloadField() {
+        guard machine.currentState is SelectingNumber else {
+            return
+        }
+        
         field.reload()
         DispatchQueue.main.async {
             self.collectionView.reloadData()
@@ -48,12 +66,19 @@ internal class PlayViewController: UIViewController {
         }
     }
     
-    private func reload(previous: Set<Int>, current: Set<Int>, animated: Bool) {
+    private func reload(indexes: Set<Int>, completion: ((Bool) -> Void)? = nil) {
+        reload(previous: indexes, current: indexes, animated: true, completion: completion)
+    }
+    
+    private func reload(previous: Set<Int>, current: Set<Int>, animated: Bool, completion: ((Bool) -> Void)? = nil) {
         let reloaded = previous.union(current)
         let indexPaths = reloaded.map({ IndexPath(row: $0, section: 0) })
         
         let animation: (() -> Void) = {
-            self.collectionView.reloadItems(at: indexPaths)
+            let updates: (() -> Void) = {
+                self.collectionView.reloadItems(at: indexPaths)
+            }
+            self.collectionView.performBatchUpdates(updates, completion: completion)
         }
         
         if animated {
@@ -61,6 +86,49 @@ internal class PlayViewController: UIViewController {
         } else {
             UIView.performWithoutAnimation(animation)
         }
+    }
+    
+    private func checkForMatch() {
+        guard selected.count > 1 else {
+            return
+        }
+        
+        let array = Array(selected)
+        guard let first = array.first, let second = array.last else {
+            return
+        }
+        
+        let action = field.match(first: first, second: second)
+        switch action {
+        case .failure:
+            machine.enter(AnimatingFailure.self)
+        case .match:
+            machine.enter(AnimatingSuccess.self)
+        }
+    }
+}
+
+extension PlayViewController: PlayDelegate {
+    func animateSuccess() {
+        reload(indexes: selected) {
+            _ in
+            
+            self.machine.enter(SelectingNumber.self)
+        }
+    }
+    
+    func animateFailure() {
+        reload(indexes: selected) {
+            _ in
+            
+            self.machine.enter(SelectingNumber.self)
+        }
+    }
+    
+    func clearSelection() {
+        let animated = selected
+        selected.removeAll()
+        reload(indexes: animated)
     }
 }
 
@@ -71,12 +139,22 @@ extension PlayViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: NumberCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.show(number: field.number(at: indexPath.row), selected: selected.contains(indexPath.row))
+        let marker: NumberMarker
+        if selected.contains(indexPath.row) {
+            marker = NumberMarker.from(state: machine.currentState as? PlayState)
+        } else {
+            marker = .standard
+        }
+        cell.show(number: field.number(at: indexPath.row), marker: marker)
         return cell
     }
 }
 
 extension PlayViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        machine.currentState is SelectingNumber
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let original = selected
         if selected.contains(indexPath.row) {
@@ -85,6 +163,10 @@ extension PlayViewController: UICollectionViewDelegate {
             selected.insert(indexPath.row)
         }
         
-        reload(previous: original, current: selected, animated: false)
+        reload(previous: original, current: selected, animated: false) {
+            _ in
+            
+            self.checkForMatch()
+        }
     }
 }

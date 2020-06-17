@@ -16,6 +16,11 @@
 
 import Foundation
 
+internal enum MatchAction: String {
+    case match
+    case failure
+}
+
 internal class PlayField {
     private var numbers = [Int]()
     
@@ -40,5 +45,9 @@ internal class PlayField {
         numbers.append(contentsOf: added)
         
         save()
+    }
+    
+    internal func match(first: Int, second: Int) -> MatchAction {
+        .failure
     }
 }
