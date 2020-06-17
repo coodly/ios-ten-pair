@@ -113,6 +113,7 @@ extension PlayViewController: PlayDelegate {
         reload(indexes: selected) {
             _ in
             
+            self.field.clear(numbers: self.selected)
             self.machine.enter(SelectingNumber.self)
         }
     }
@@ -152,7 +153,11 @@ extension PlayViewController: UICollectionViewDataSource {
 
 extension PlayViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        machine.currentState is SelectingNumber
+        guard machine.currentState is SelectingNumber else {
+            return false
+        }
+        
+        return field.hasValue(at: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

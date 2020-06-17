@@ -61,4 +61,12 @@ internal class PlayField {
 
         return .match
     }
+    
+    internal func clear(numbers: Set<Int>) {
+        numbers.forEach({ self.numbers[$0] = 0 })
+    }
+    
+    internal func hasValue(at index: Int) -> Bool {
+        numbers[index] != 0
+    }
 }

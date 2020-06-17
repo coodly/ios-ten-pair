@@ -42,6 +42,12 @@ internal class NumberCell: UICollectionViewCell {
     @IBOutlet private var numberBackground: UIView!
     
     internal func show(number: Int, marker: NumberMarker) {
+        if number == 0 {
+            self.number.text = ""
+            self.numberBackground.backgroundColor = UIColor.lightGray
+            return
+        }
+        
         self.number.text = String(describing: number)
         switch marker {
         case .standard:
