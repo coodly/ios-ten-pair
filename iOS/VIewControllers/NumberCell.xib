@@ -51,6 +51,7 @@
             <size key="customSize" width="93" height="77"/>
             <connections>
                 <outlet property="number" destination="dhp-if-r2S" id="yTn-Xv-HJD"/>
+                <outlet property="numberBackground" destination="P00-kJ-Ssa" id="6U7-az-3mq"/>
             </connections>
             <point key="canvasLocation" x="168.84057971014494" y="161.71875"/>
         </collectionViewCell>

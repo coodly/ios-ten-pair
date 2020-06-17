@@ -20,7 +20,7 @@ internal class PlayViewController: UIViewController {
     private lazy var field = PlayField()
     
     @IBOutlet private var collectionView: UICollectionView!
-    private var selected = -1
+    private var selected = Set<Int>()
     
     private lazy var reloadButton = UIBarButtonItem(title: "Reload", style: .plain, target: self, action: #selector(reload))
     
@@ -56,13 +56,27 @@ extension PlayViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: NumberCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.show(number: field.number(at: indexPath.row), selected: false)
+        cell.show(number: field.number(at: indexPath.row), selected: selected.contains(indexPath.row))
         return cell
     }
 }
 
 extension PlayViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selected = indexPath.row        
+        let original = selected
+        if selected.contains(indexPath.row) {
+            selected.remove(indexPath.row)
+        } else {
+            selected.insert(indexPath.row)
+        }
+        
+        let reloaded = original.union(selected)
+        let paths = reloaded.map({ IndexPath(row: $0, section: 0) })
+        
+        let updates: (() -> Void) = {
+            self.collectionView.reloadItems(at: paths)
+        }
+        
+        collectionView.performBatchUpdates(updates, completion: nil)
     }
 }

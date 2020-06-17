@@ -18,8 +18,10 @@ import UIKit
 
 internal class NumberCell: UICollectionViewCell {
     @IBOutlet private var number: UILabel!
+    @IBOutlet private var numberBackground: UIView!
     
     internal func show(number: Int, selected: Bool) {
         self.number.text = String(describing: number)
+        numberBackground.backgroundColor = selected ? UIColor.green : UIColor.blue
     }
 }
