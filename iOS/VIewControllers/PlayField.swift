@@ -21,12 +21,37 @@ internal enum MatchAction: String {
     case failure
 }
 
+internal protocol PlayFieldStatusDelegate: class {
+    func statusUpdate(lines: Int, tiles: Int)
+}
+
 internal class PlayField: MatchFinder {
     private var numbers = [Int]()
     private var clearedCount = 0
+    private var numberOfLines = 0 {
+        didSet {
+            forwardStatus()
+        }
+    }
+    private var numberOfTiles = 0 {
+        didSet {
+            forwardStatus()
+        }
+    }
+    
+    internal weak var statusDelegate: PlayFieldStatusDelegate? {
+        didSet {
+            forwardStatus()
+        }
+    }
+    
+    private func forwardStatus() {
+        statusDelegate?.statusUpdate(lines: numberOfLines, tiles: numberOfTiles)
+    }
     
     internal func load() {
         numbers = FieldSave.load()
+        updateStatus()
     }
     
     internal func save() {
@@ -46,6 +71,8 @@ internal class PlayField: MatchFinder {
         numbers.append(contentsOf: added)
         
         save()
+        
+        updateStatus()
     }
     
     internal func match(first: Int, second: Int) -> MatchAction {
@@ -65,6 +92,7 @@ internal class PlayField: MatchFinder {
     
     internal func clear(numbers: Set<Int>) {
         numbers.forEach({ self.numbers[$0] = 0 })
+        numberOfTiles -= numbers.count
         
         clearedCount += 1
         guard clearedCount.isMultiple(of: 100) else {
@@ -93,5 +121,19 @@ internal class PlayField: MatchFinder {
         for removed in lines {
             numbers.removeSubrange(removed)
         }
+        updateLines()
+    }
+    
+    private func updateStatus() {
+        updateLines()
+        countTiles()
+    }
+    
+    private func updateLines() {
+        numberOfLines = (numbers.count / 9) + 1
+    }
+    
+    private func countTiles() {
+        numberOfTiles = numbers.filter({ $0 != 0 }).count
     }
 }

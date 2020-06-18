@@ -31,7 +31,8 @@ internal class PlayViewController: UIViewController {
     @IBOutlet private var collectionView: UICollectionView!
     private var selected = Set<Int>()
     
-    private lazy var reloadButton = UIBarButtonItem(title: "Reload", style: .plain, target: self, action: #selector(reloadField))
+    private lazy var menuButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: nil, action: nil)
+    private lazy var reloadButton = UIBarButtonItem(image: UIImage(named: "reload"), style: .plain, target: self, action: #selector(reloadField))
     private lazy var machine = GKStateMachine(states: [
         SelectingNumber(delegate: self),
         AnimatingSuccess(delegate: self),
@@ -44,9 +45,12 @@ internal class PlayViewController: UIViewController {
         
         field.load()
         
+        navigationItem.leftBarButtonItem = menuButton
         navigationItem.rightBarButtonItem = reloadButton
         collectionView.registerCell(forType: NumberCell.self)
         navigationItem.titleView = statusView
+        
+        field.statusDelegate = statusView
         
         machine.enter(SelectingNumber.self)
         
