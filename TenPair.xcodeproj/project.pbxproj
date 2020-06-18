@@ -24,6 +24,8 @@
 		A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A71A97641E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C0D28249A46DF00EFE21D /* GameStates.swift */; };
+		A72C0D2B249B2D1A00EFE21D /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C0D2A249B2D1A00EFE21D /* StatusView.swift */; };
+		A72C0D2D249B2D2300EFE21D /* StatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A72C0D2C249B2D2300EFE21D /* StatusView.xib */; };
 		A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */; };
 		A7363A371E5589DB00B7C732 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
 		A7363A3A1E558EDF00B7C732 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
@@ -117,6 +119,8 @@
 		A71A97551E48CCA4005E134F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A71A975C1E48CCA4005E134F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A72C0D28249A46DF00EFE21D /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
+		A72C0D2A249B2D1A00EFE21D /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		A72C0D2C249B2D2300EFE21D /* StatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusView.xib; sourceTree = "<group>"; };
 		A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumbersPathFinder.swift; sourceTree = "<group>"; };
 		A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyLinesSearch.swift; sourceTree = "<group>"; };
 		A7363A3C1E55969600B7C732 /* FieldStatusVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldStatusVIew.swift; sourceTree = "<group>"; };
@@ -217,12 +221,14 @@
 		A70BBA2824992E1F003E561F /* VIewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A72C0D28249A46DF00EFE21D /* GameStates.swift */,
 				A70BBA2B24992FA4003E561F /* NumberCell.swift */,
 				A70BBA2C24992FA4003E561F /* NumberCell.xib */,
 				A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */,
 				A70BBA332499F29B003E561F /* PlayField.swift */,
 				A70BBA2924992E2B003E561F /* PlayViewController.swift */,
-				A72C0D28249A46DF00EFE21D /* GameStates.swift */,
+				A72C0D2A249B2D1A00EFE21D /* StatusView.swift */,
+				A72C0D2C249B2D2300EFE21D /* StatusView.xib */,
 			);
 			path = VIewControllers;
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 				A70BBA2E24992FA4003E561F /* NumberCell.xib in Resources */,
 				A777FA8B1E50CC76003E62D7 /* Localizable.strings in Resources */,
 				A78D568F1E5AF095002957DC /* Confetti.sks in Resources */,
+				A72C0D2D249B2D2300EFE21D /* StatusView.xib in Resources */,
 				A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */,
 				A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */,
 				A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */,
@@ -727,6 +734,7 @@
 				A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */,
 				A77DE6F91E48D75200E9214A /* TenPair.swift in Sources */,
 				A7B12C201E535B67007D7807 /* Constants.swift in Sources */,
+				A72C0D2B249B2D1A00EFE21D /* StatusView.swift in Sources */,
 				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
 				A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */,
 				A70BBA2D24992FA4003E561F /* NumberCell.swift in Sources */,

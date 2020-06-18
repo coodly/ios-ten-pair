@@ -26,6 +26,7 @@ internal protocol PlayDelegate: class {
 
 internal class PlayViewController: UIViewController {
     private lazy var field = PlayField()
+    private lazy var statusView = StatusView.loadInstance()
     
     @IBOutlet private var collectionView: UICollectionView!
     private var selected = Set<Int>()
@@ -45,6 +46,7 @@ internal class PlayViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = reloadButton
         collectionView.registerCell(forType: NumberCell.self)
+        navigationItem.titleView = statusView
         
         machine.enter(SelectingNumber.self)
         

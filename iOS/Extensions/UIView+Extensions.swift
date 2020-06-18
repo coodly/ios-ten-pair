@@ -28,4 +28,21 @@ extension UIView {
         leadingAnchor.constraint(equalTo: parent.leadingAnchor).isActive = true
         trailingAnchor.constraint(equalTo: parent.trailingAnchor).isActive = true
     }
+    
+    internal class func viewNib(_ bundle: Bundle? = nil) -> UINib {
+        let name = className()
+        return UINib(nibName: name, bundle: bundle)
+    }
+    
+    internal class func className() -> String {
+        return NSStringFromClass(self).components(separatedBy: ".").last!
+    }
+    
+    internal class func identifier() -> String {
+        return className()
+    }
+    
+    public static func loadInstance() -> Self {
+        return viewNib(Bundle(for: Self.self)).instantiate(withOwner: nil, options: nil).first as! Self
+    }
 }
