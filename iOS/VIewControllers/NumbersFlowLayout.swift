@@ -19,6 +19,7 @@ import UIKit
 private let Columns = 9
 private let ColumnsF = CGFloat(Columns)
 private let Padding = CGFloat(8)
+private let HintButtonTrayHeight = CGFloat(44 + 2 + 2)
 
 internal class NumbersFlowLayout: UICollectionViewLayout {
     private var itemSize = CGSize(width: 50, height: 50)
@@ -34,7 +35,7 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
         itemSize = CGSize(width: width, height: width)
         
         let inset = ((collectionView!.frame.width - width * ColumnsF) / 2).rounded(.down)
-        sectionInset = UIEdgeInsets(top: Padding, left: inset, bottom: Padding, right: inset)
+        sectionInset = UIEdgeInsets(top: Padding, left: inset, bottom: Padding * 2 + HintButtonTrayHeight, right: inset)
     }
     
     override var collectionViewContentSize: CGSize {
