@@ -18,6 +18,7 @@ import UIKit
 
 private let Columns = 9
 private let ColumnsF = CGFloat(Columns)
+private let Padding = CGFloat(8)
 
 internal class NumbersFlowLayout: UICollectionViewLayout {
     private var itemSize = CGSize(width: 50, height: 50)
@@ -26,11 +27,14 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
     override func prepare() {
         super.prepare()
         
-        let width = min((min(collectionView!.frame.width, collectionView!.frame.height) / ColumnsF).rounded(.down), 50)
+        let minDimension = min(collectionView!.frame.width, collectionView!.frame.height)
+        let availableWidth = minDimension - Padding * 2
+        
+        let width = min((availableWidth / ColumnsF).rounded(.down), 50)
         itemSize = CGSize(width: width, height: width)
         
         let inset = ((collectionView!.frame.width - width * ColumnsF) / 2).rounded(.down)
-        sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
+        sectionInset = UIEdgeInsets(top: Padding, left: inset, bottom: Padding, right: inset)
     }
     
     override var collectionViewContentSize: CGSize {
