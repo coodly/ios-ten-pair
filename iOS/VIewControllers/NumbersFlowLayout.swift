@@ -69,16 +69,12 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
                 checkedY += itemSize.height
             }
             
-            guard checkedY > 0 else {
-                continue
-            }
-            
             let line = Int(checkedY / itemSize.height)
             for column in 0..<Columns {
                 let index = line * Columns + column
-
-                guard index < numberOfTiles else {
-                    break
+                
+                guard index >= 0, index < numberOfTiles else {
+                    continue
                 }
 
                 let indexPath = IndexPath(row: index, section: 0)
