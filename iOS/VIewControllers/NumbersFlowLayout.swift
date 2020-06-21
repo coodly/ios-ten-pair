@@ -16,16 +16,72 @@
 
 import UIKit
 
-private let Columns = CGFloat(9)
+private let Columns = 9
+private let ColumnsF = CGFloat(Columns)
 
-internal class NumbersFlowLayout: UICollectionViewFlowLayout {
+internal class NumbersFlowLayout: UICollectionViewLayout {
+    private var itemSize = CGSize(width: 50, height: 50)
+    private var sectionInset = UIEdgeInsets.zero
+    
     override func prepare() {
         super.prepare()
         
-        let width = min((min(collectionView!.frame.width, collectionView!.frame.height) / Columns).rounded(.down), 50)
+        let width = min((min(collectionView!.frame.width, collectionView!.frame.height) / ColumnsF).rounded(.down), 50)
         itemSize = CGSize(width: width, height: width)
         
-        let inset = ((collectionView!.frame.width - width * Columns) / 2).rounded(.down)
+        let inset = ((collectionView!.frame.width - width * ColumnsF) / 2).rounded(.down)
         sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
+    }
+    
+    override var collectionViewContentSize: CGSize {
+        let tiles = collectionView!.numberOfItems(inSection: 0)
+        let lines = (CGFloat(tiles) / ColumnsF).rounded(.up)
+        
+        return CGSize(width: collectionView!.frame.width, height: sectionInset.top + sectionInset.bottom + lines * itemSize.height)
+    }
+    
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        guard let collectionView = collectionView else { return false }
+        return !newBounds.size.equalTo(collectionView.bounds.size)
+    }
+    
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+        let line = CGFloat(indexPath.row / Columns)
+        let column = CGFloat(indexPath.row % Columns)
+        let origin = CGPoint(x: sectionInset.left + itemSize.width * column, y: sectionInset.top + line * itemSize.height)
+        attributes.frame = CGRect(origin: origin, size: itemSize)
+        return attributes
+    }
+    
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        let numberOfTiles = collectionView!.numberOfItems(inSection: 0)
+        
+        var result = [UICollectionViewLayoutAttributes]()
+        
+        var checkedY = rect.minY
+        while checkedY < rect.maxY {
+            defer {
+                checkedY += itemSize.height
+            }
+            
+            guard checkedY > 0 else {
+                continue
+            }
+            
+            let line = Int(checkedY / itemSize.height)
+            for column in 0..<Columns {
+                let index = line * Columns + column
+
+                guard index < numberOfTiles else {
+                    break
+                }
+
+                let indexPath = IndexPath(row: index, section: 0)
+                result.append(layoutAttributesForItem(at: indexPath)!)
+            }
+        }
+        
+        return result
     }
 }
