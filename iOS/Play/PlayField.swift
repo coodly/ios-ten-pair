@@ -15,6 +15,7 @@
 */
 
 import Foundation
+import UIKit
 
 internal enum MatchAction: String {
     case match
@@ -130,10 +131,23 @@ internal class PlayField: MatchFinder {
     }
     
     private func updateLines() {
-        numberOfLines = (numbers.count / 9) + 1
+        numberOfLines = Int((CGFloat(numbers.count) / ColumnsF).rounded(.up))
     }
     
     private func countTiles() {
         numberOfTiles = numbers.filter({ $0 != 0 }).count
+    }
+    
+    internal func restart(with lines: Int) {
+        if lines == 0 {
+            numbers = DefaultStartBoard
+        } else {
+            let tileNumbers = 0..<10
+            let tiles = lines * NumberOfColumns
+            numbers =  (0..<tiles).compactMap({ _ in tileNumbers.randomElement() })
+        }
+        
+        save()
+        updateStatus()
     }
 }

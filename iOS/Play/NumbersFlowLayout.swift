@@ -17,7 +17,7 @@
 import UIKit
 
 private let Columns = 9
-private let ColumnsF = CGFloat(Columns)
+internal let ColumnsF = CGFloat(Columns)
 private let Padding = CGFloat(8)
 private let HintButtonTrayHeight = CGFloat(44 + 2 + 2)
 
