@@ -39,25 +39,48 @@ internal enum NumberMarker: String {
 
 internal class NumberCell: UICollectionViewCell {
     @IBOutlet private var number: UILabel!
-    @IBOutlet private var numberBackground: UIView!
+    @IBOutlet private var container: UIView!
+    private lazy var defaultBG = TileDefaultBackground()
+    private lazy var noNumberBG = TileNoNumberBackground()
+    private lazy var selectedBG = TileSelectedBackground()
+    private lazy var successBG = TileSuccessBackground()
+    private lazy var failureBG = TileFailureBackground()
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        [defaultBG, noNumberBG, selectedBG, successBG, failureBG].forEach() {
+            view in
+            
+            container.addSubview(view)
+            view.isOpaque = true
+            view.translatesAutoresizingMaskIntoConstraints = false
+            let padding = CGFloat(1)
+            view.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: padding).isActive = true
+            view.topAnchor.constraint(equalTo: container.topAnchor, constant: padding).isActive = true
+            view.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -padding).isActive = true
+            view.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -padding).isActive = true
+        }
+    }
+        
     internal func show(number: Int, marker: NumberMarker) {
         if number == 0 {
             self.number.text = ""
-            self.numberBackground.backgroundColor = UIColor.lightGray
+            
+            container.bringSubviewToFront(noNumberBG)
             return
         }
         
         self.number.text = String(describing: number)
         switch marker {
         case .standard:
-            numberBackground.backgroundColor = UIColor.blue
+            container.bringSubviewToFront(defaultBG)
         case .selection:
-            numberBackground.backgroundColor = UIColor.yellow
+            container.bringSubviewToFront(selectedBG)
         case .success:
-            numberBackground.backgroundColor = UIColor.green
+            container.bringSubviewToFront(successBG)
         case .failure:
-            numberBackground.backgroundColor = UIColor.red
+            container.bringSubviewToFront(failureBG)
         }
     }
 }

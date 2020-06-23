@@ -82,6 +82,7 @@
 		A7A8373124A1D8E6006DD8B4 /* RestartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373024A1D8E6006DD8B4 /* RestartViewController.swift */; };
 		A7A8373324A1D8ED006DD8B4 /* Restart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A8373224A1D8ED006DD8B4 /* Restart.storyboard */; };
 		A7A8373524A1D924006DD8B4 /* MenuOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373424A1D924006DD8B4 /* MenuOptionsViewController.swift */; };
+		A7A8373824A238ED006DD8B4 /* GameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373724A238ED006DD8B4 /* GameTheme.swift */; };
 		A7B12C1A1E53123D007D7807 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA861E50CC76003E62D7 /* InfoPlist.strings */; };
 		A7B12C1B1E53123D007D7807 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA881E50CC76003E62D7 /* Localizable.strings */; };
 		A7B12C1D1E535B18007D7807 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C1C1E535B18007D7807 /* Config.swift */; };
@@ -175,6 +176,7 @@
 		A7A8373024A1D8E6006DD8B4 /* RestartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartViewController.swift; sourceTree = "<group>"; };
 		A7A8373224A1D8ED006DD8B4 /* Restart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Restart.storyboard; sourceTree = "<group>"; };
 		A7A8373424A1D924006DD8B4 /* MenuOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionsViewController.swift; sourceTree = "<group>"; };
+		A7A8373724A238ED006DD8B4 /* GameTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTheme.swift; sourceTree = "<group>"; };
 		A7B12C1C1E535B18007D7807 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A7B12C1F1E535B67007D7807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A7B12C211E535B72007D7807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				A7A8372724A1C332006DD8B4 /* Play */,
 				A797BD6F2483803F00A6E27D /* Secrets */,
 				A7A8372224A1C257006DD8B4 /* Storyboards */,
+				A7A8373624A238BA006DD8B4 /* Themes */,
 				A79F0B081FA38B8D00FE21F6 /* AdLoadingViewController.swift */,
 				A7B12C261E543355007D7807 /* Aliases.swift */,
 				A71A97441E48CCA4005E134F /* AppDelegate.swift */,
@@ -435,6 +438,14 @@
 				A72C0D2C249B2D2300EFE21D /* StatusView.xib */,
 			);
 			path = Play;
+			sourceTree = "<group>";
+		};
+		A7A8373624A238BA006DD8B4 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				A7A8373724A238ED006DD8B4 /* GameTheme.swift */,
+			);
+			path = Themes;
 			sourceTree = "<group>";
 		};
 		A7EE33B8243B741A004CF496 /* Extensions */ = {
@@ -794,6 +805,7 @@
 				A77DE6F91E48D75200E9214A /* TenPair.swift in Sources */,
 				A7B12C201E535B67007D7807 /* Constants.swift in Sources */,
 				A72C0D2B249B2D1A00EFE21D /* StatusView.swift in Sources */,
+				A7A8373824A238ED006DD8B4 /* GameTheme.swift in Sources */,
 				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
 				A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */,
 				A7A8373124A1D8E6006DD8B4 /* RestartViewController.swift in Sources */,

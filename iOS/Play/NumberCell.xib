@@ -18,19 +18,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udP-pg-kg7">
                         <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P00-kJ-Ssa">
-                                <rect key="frame" x="1" y="1" width="32" height="32"/>
-                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="P00-kJ-Ssa" firstAttribute="leading" secondItem="udP-pg-kg7" secondAttribute="leading" constant="1" id="Bzt-za-C5b"/>
-                            <constraint firstAttribute="trailing" secondItem="P00-kJ-Ssa" secondAttribute="trailing" constant="1" id="Wsi-NB-XLl"/>
-                            <constraint firstAttribute="bottom" secondItem="P00-kJ-Ssa" secondAttribute="bottom" constant="1" id="aKi-c8-vvH"/>
-                            <constraint firstItem="P00-kJ-Ssa" firstAttribute="top" secondItem="udP-pg-kg7" secondAttribute="top" constant="1" id="dol-0y-qjH"/>
-                        </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhp-if-r2S">
                         <rect key="frame" x="9.5" y="0.0" width="15" height="34"/>
@@ -50,8 +38,8 @@
             </constraints>
             <size key="customSize" width="93" height="77"/>
             <connections>
+                <outlet property="container" destination="udP-pg-kg7" id="gg9-Ap-Obt"/>
                 <outlet property="number" destination="dhp-if-r2S" id="yTn-Xv-HJD"/>
-                <outlet property="numberBackground" destination="P00-kJ-Ssa" id="6U7-az-3mq"/>
             </connections>
             <point key="canvasLocation" x="168.84057971014494" y="161.71875"/>
         </collectionViewCell>

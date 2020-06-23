@@ -19,7 +19,7 @@ import UIKit
 internal enum MenuOption {
     case resume
     case restart(Int)
-    case theme
+    case theme(ThemeDefinition)
     case feedback
     case personalizedAds
     case back
@@ -38,8 +38,8 @@ internal enum MenuOption {
             default:
                 return String(format: NSLocalizedString("restart.screen.option.x.lines", comment: ""), NSNumber(value: lines))
             }
-        case .theme:
-            return "Theme"
+        case .theme(let active):
+            return String(format: NSLocalizedString("menu.option.theme.base", comment: ""), active.localizedName)
         case .feedback:
             return NSLocalizedString("menu.option.send.message", comment: "")
         case .personalizedAds:
@@ -55,7 +55,7 @@ internal protocol MenuDelegate: class {
 }
 
 internal class MenuOptionsViewController: UIViewController {
-    private lazy var tableView = ContentSizeBasedTableView()
+    private(set) lazy var tableView = ContentSizeBasedTableView()
     private lazy var dimView = UIView()
     
     internal var options = [MenuOption]()

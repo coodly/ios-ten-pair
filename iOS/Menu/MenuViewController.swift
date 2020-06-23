@@ -19,10 +19,15 @@ import UIKit
 internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        refreshMenuOptions()
+    }
+    
+    private func refreshMenuOptions() {
+        options.removeAll()
         options.append(.resume)
         options.append(.restart(-1))
-        options.append(.theme)
+        options.append(.theme(AppTheme.shared.active))
         options.append(.feedback)
     }
     
@@ -32,6 +37,10 @@ internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded {
             let restart: RestartViewController = Storyboards.loadFromStoryboard()
             restart.delegate = delegate
             navigationController?.pushViewController(restart, animated: false)
+        case .theme(_):
+            _ = AppTheme.shared.switchToNext()
+            refreshMenuOptions()
+            tableView.reloadData()
         default:
             super.tapped(on: option)
         }
