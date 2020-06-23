@@ -16,6 +16,7 @@
 "moviez.sale.body" = "App from Coodly. Helping to discover good movies on iTunes.";
 "moviez.sale.title" = "Find movies to watch";
 
+"restart.screen.back" = "Back";
 "restart.screen.option.regular" = "Regular board";
 "restart.screen.option.x.lines" = "Random %@ lines";
 

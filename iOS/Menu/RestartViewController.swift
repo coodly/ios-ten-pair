@@ -16,22 +16,22 @@
 
 import UIKit
 
-internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded {
+internal class RestartViewController: MenuOptionsViewController, StoryboardLoaded {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        options.append(.resume)
-        options.append(.restart(-1))
-        options.append(.theme)
-        options.append(.feedback)
+        options.append(.restart(0))
+        options.append(.restart(20))
+        options.append(.restart(50))
+        options.append(.restart(100))
+        options.append(.restart(250))
+        options.append(.back)
     }
     
     override func tapped(on option: MenuOption) {
         switch option {
-        case .restart(_):
-            let restart: RestartViewController = Storyboards.loadFromStoryboard()
-            restart.delegate = delegate
-            navigationController?.pushViewController(restart, animated: false)
+        case .back:
+            navigationController?.popViewController(animated: false)
         default:
             super.tapped(on: option)
         }

@@ -137,8 +137,14 @@ internal class PlayViewController: UIViewController {
     
     @objc fileprivate func presentMenu() {
         let menu: MenuViewController = Storyboards.loadFromStoryboard()
-        menu.modalPresentationStyle = .custom
-        present(menu, animated: false)
+        menu.delegate = self
+        
+        let navigation = UINavigationController(rootViewController: menu)
+        navigation.isNavigationBarHidden = true
+        navigation.view.backgroundColor = .clear
+        navigation.modalPresentationStyle = .custom
+        
+        present(navigation, animated: false)
     }
 }
 
@@ -240,5 +246,13 @@ extension PlayViewController: UICollectionViewDelegate {
             
             self.checkForMatch()
         }
+    }
+}
+
+extension PlayViewController: MenuDelegate {
+    func tapped(option: MenuOption) {
+        dismiss(animated: false)
+        
+        
     }
 }
