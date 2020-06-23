@@ -31,7 +31,7 @@ internal class PlayViewController: UIViewController {
     @IBOutlet private var collectionView: UICollectionView!
     private var selected = Set<Int>()
     
-    private lazy var menuButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: nil, action: nil)
+    private lazy var menuButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(presentMenu))
     private lazy var reloadButton = UIBarButtonItem(image: UIImage(named: "reload"), style: .plain, target: self, action: #selector(reloadField))
     private lazy var machine = GKStateMachine(states: [
         SelectingNumber(delegate: self),
@@ -133,6 +133,12 @@ internal class PlayViewController: UIViewController {
         case .match:
             machine.enter(AnimatingSuccess.self)
         }
+    }
+    
+    @objc fileprivate func presentMenu() {
+        let menu: MenuViewController = Storyboards.loadFromStoryboard()
+        menu.modalPresentationStyle = .custom
+        present(menu, animated: false)
     }
 }
 
