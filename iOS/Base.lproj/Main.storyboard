@@ -105,7 +105,7 @@
                                     <outlet property="delegate" destination="jw4-Ud-5aG" id="sLF-80-4XC"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQF-tF-W9G">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQF-tF-W9G" customClass="ButtonTrayView" customModule="TenPair" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="611" width="48" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVv-YB-EfX">

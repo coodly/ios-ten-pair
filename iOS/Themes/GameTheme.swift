@@ -24,29 +24,38 @@ extension Notification.Name {
 private let ThemeSettingKey = "ThemeSettingKey"
 
 internal class AppTheme {
+    private static let classicMain = UIColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1)
+    private static let pinkMain = UIColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1)
     internal static let classic = ThemeDefinition(name: "classic",
-                                                  main: UIColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1),
+                                                  main: classicMain,
                                                   selected: UIColor(red: 0, green: 0.400, blue: 1.000, alpha: 1),
                                                   success: UIColor(red: 0.239, green: 0.792, blue: 0.416, alpha: 1),
                                                   empty: UIColor(white: 0.900, alpha: 1.000),
                                                   background: UIColor.white,
-                                                  statusBar: .default)
+                                                  statusBar: .default,
+                                                  navigationTint: classicMain,
+                                                  text: .white)
     
     internal static let pink = ThemeDefinition(name: "pink",
-                                               main: UIColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1),
+                                               main: pinkMain,
                                                selected: UIColor(red: 60.0 / 255.0, green: 145.0 / 255.0, blue: 230.0 / 255.0, alpha: 1),
                                                success: UIColor(red: 27.0 / 255.0, green: 153.0 / 255.0, blue: 130.0 / 255.0, alpha: 1),
                                                empty: UIColor(white: 0.900, alpha: 1.000),
                                                background: UIColor.white,
-                                               statusBar: .default)
+                                               statusBar: .default,
+                                               navigationTint: pinkMain,
+                                               text: .white)
     
+    private static let darkText = UIColor.color(hexString: "#D4D4D4")
     internal static let dark = ThemeDefinition(name: "dark",
                                                main: UIColor.color(hexString: "#243458"),
                                                selected: UIColor(red: 60.0 / 255.0, green: 145.0 / 255.0, blue: 230.0 / 255.0, alpha: 1),
                                                success: UIColor(red: 0.239, green: 0.792, blue: 0.416, alpha: 1),
                                                empty: UIColor(white: 0.500, alpha: 1.000),
                                                background: UIColor.color(hexString: "#121212"),
-                                               statusBar: .lightContent)
+                                               statusBar: .lightContent,
+                                               navigationTint: darkText,
+                                               text: darkText)
     
     private static let all: [ThemeDefinition] = [classic, pink, dark]
     
@@ -72,7 +81,8 @@ internal class AppTheme {
     }
     
     private func apply(theme: ThemeDefinition) {
-        UINavigationBar.appearance().tintColor = theme.main
+        UINavigationBar.appearance().tintColor = theme.navigationTint
+        UILabel.appearance(whenContainedInInstancesOf: [StatusView.self]).textColor = theme.navigationTint
         UINavigationBar.appearance().barTintColor = theme.background
         TileDefaultBackground.appearance().backgroundColor = theme.main
         TileNoNumberBackground.appearance().backgroundColor = theme.empty
@@ -82,8 +92,9 @@ internal class AppTheme {
         MenuCellBackground.appearance().backgroundColor = theme.main
         BackgroundView.appearance().backgroundColor = theme.background
         OverlayBackgroundView.appearance().backgroundColor = theme.background.withAlphaComponent(0.9)
-        
-        
+        ButtonTrayView.appearance().backgroundColor = theme.main
+        UILabel.appearance(whenContainedInInstancesOf: [NumberCell.self]).textColor = theme.text
+        UIButton.appearance(whenContainedInInstancesOf: [ButtonTrayView.self]).tintColor = theme.text
     }
     
     internal func switchToNext() -> ThemeDefinition {
@@ -122,6 +133,8 @@ internal struct ThemeDefinition: Equatable {
     let empty: UIColor
     let background: UIColor
     let statusBar: UIStatusBarStyle
+    let navigationTint: UIColor
+    let text: UIColor
     
     internal var localizedName: String {
         let key = "theme.name.\(name)"
@@ -158,5 +171,9 @@ internal class BackgroundView: UIView {
 }
 
 internal class OverlayBackgroundView: UIView {
+    
+}
+
+internal class ButtonTrayView: UIView {
     
 }
