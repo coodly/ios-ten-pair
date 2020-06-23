@@ -77,11 +77,12 @@ internal class PlayViewController: UIViewController {
             return
         }
         
+        let original = selected
         selected.removeAll()
         selected.insert(hintIndex)
         let index = IndexPath(row: hintIndex, section: 0)
         if collectionView.indexPathsForVisibleItems.contains(index) {
-            reload(previous: selected, current: selected, animated: false)
+            reload(previous: original, current: selected, animated: false)
         }
         collectionView.scrollToItem(at: index, at: .centeredVertically, animated: true)
     }
