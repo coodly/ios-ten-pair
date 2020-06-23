@@ -65,6 +65,7 @@ internal class AppTheme {
         TileSelectedBackground.appearance().backgroundColor = theme.selected
         TileSuccessBackground.appearance().backgroundColor = theme.success
         TileFailureBackground.appearance().backgroundColor = theme.failure
+        MenuCellBackground.appearance().backgroundColor = theme.main
     }
     
     internal func switchToNext() -> ThemeDefinition {
@@ -124,5 +125,9 @@ internal class TileFailureBackground: UIView {
 }
 
 internal class TileSelectedBackground: UIView {
+    
+}
+
+internal class MenuCellBackground: UIView {
     
 }
