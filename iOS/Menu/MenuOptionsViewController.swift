@@ -56,7 +56,7 @@ internal protocol MenuDelegate: class {
 
 internal class MenuOptionsViewController: UIViewController {
     private(set) lazy var tableView = ContentSizeBasedTableView()
-    private lazy var dimView = UIView()
+    private lazy var dimView = OverlayBackgroundView()
     
     internal var options = [MenuOption]()
     
@@ -67,7 +67,6 @@ internal class MenuOptionsViewController: UIViewController {
         
         view.backgroundColor = .clear
         
-        dimView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
         view.insertSubview(dimView, at: 0)
         dimView.pinToSuperviewEdges()
         

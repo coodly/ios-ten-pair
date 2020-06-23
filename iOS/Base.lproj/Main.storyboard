@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="-12" y="31.934032983508249"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Play Navigation Controller-->
         <scene sceneID="GUs-eX-pGX">
             <objects>
-                <navigationController id="LCd-8J-F2T" sceneMemberID="viewController">
+                <navigationController id="LCd-8J-F2T" customClass="PlayNavigationController" customModule="TenPair" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zMv-sO-R3G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -86,7 +86,7 @@
         <scene sceneID="E9g-8z-3ca">
             <objects>
                 <viewController id="jw4-Ud-5aG" customClass="PlayViewController" customModule="TenPair" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sTh-Hc-Hbi">
+                    <view key="view" contentMode="scaleToFill" id="sTh-Hc-Hbi" customClass="BackgroundView" customModule="TenPair" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

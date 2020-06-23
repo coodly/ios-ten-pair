@@ -43,6 +43,8 @@ internal class PlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.backgroundView = BackgroundView()    
+        
         field.load()
         
         navigationItem.leftBarButtonItem = menuButton
@@ -140,7 +142,7 @@ internal class PlayViewController: UIViewController {
         let menu: MenuViewController = Storyboards.loadFromStoryboard()
         menu.delegate = self
         
-        let navigation = UINavigationController(rootViewController: menu)
+        let navigation = PlayNavigationController(rootViewController: menu)
         navigation.isNavigationBarHidden = true
         navigation.view.backgroundColor = .clear
         navigation.modalPresentationStyle = .custom

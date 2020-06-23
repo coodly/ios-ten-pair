@@ -42,6 +42,7 @@
 		A750CE381E55DD9B00852E6A /* MatchFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE361E55DD9B00852E6A /* MatchFinder.swift */; };
 		A75570BF1E54552300114ED2 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75570BE1E54552300114ED2 /* LoadingScreen.swift */; };
 		A75570C01E54552300114ED2 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75570BE1E54552300114ED2 /* LoadingScreen.swift */; };
+		A766343824A2513900CD1FF6 /* PlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766343724A2513900CD1FF6 /* PlayNavigationController.swift */; };
 		A777FA831E50758A003E62D7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FA821E50758A003E62D7 /* MenuButton.swift */; };
 		A777FA841E50758A003E62D7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FA821E50758A003E62D7 /* MenuButton.swift */; };
 		A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA861E50CC76003E62D7 /* InfoPlist.strings */; };
@@ -143,6 +144,7 @@
 		A750CE331E55D7E500852E6A /* ButtonTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTray.swift; sourceTree = "<group>"; };
 		A750CE361E55DD9B00852E6A /* MatchFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinder.swift; sourceTree = "<group>"; };
 		A75570BE1E54552300114ED2 /* LoadingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
+		A766343724A2513900CD1FF6 /* PlayNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayNavigationController.swift; sourceTree = "<group>"; };
 		A777FA821E50758A003E62D7 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		A777FA871E50CC76003E62D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A777FA891E50CC76003E62D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 				A70BBA2C24992FA4003E561F /* NumberCell.xib */,
 				A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */,
 				A70BBA332499F29B003E561F /* PlayField.swift */,
+				A766343724A2513900CD1FF6 /* PlayNavigationController.swift */,
 				A70BBA2924992E2B003E561F /* PlayViewController.swift */,
 				A72C0D2A249B2D1A00EFE21D /* StatusView.swift */,
 				A72C0D2C249B2D2300EFE21D /* StatusView.xib */,
@@ -765,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A750CE341E55D7E500852E6A /* ButtonTray.swift in Sources */,
+				A766343824A2513900CD1FF6 /* PlayNavigationController.swift in Sources */,
 				A7D3908D1E4B2AE300EDB111 /* MenuScreen.swift in Sources */,
 				A71A97471E48CCA4005E134F /* GameViewController.swift in Sources */,
 				A7A8372F24A1C960006DD8B4 /* UITableView+Dequeue.swift in Sources */,

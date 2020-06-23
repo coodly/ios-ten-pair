@@ -17,23 +17,36 @@
 import Foundation
 import UIKit
 
+extension Notification.Name {
+    static let themeChanged = Notification.Name("com.coodly.ten.pair.theme.changed")
+}
+
 private let ThemeSettingKey = "ThemeSettingKey"
 
 internal class AppTheme {
     internal static let classic = ThemeDefinition(name: "classic",
                                                   main: UIColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1),
                                                   selected: UIColor(red: 0, green: 0.400, blue: 1.000, alpha: 1),
-                                                  success: UIColor(red: 0.239, green: 0.792, blue: 0.416, alpha: 1))
+                                                  success: UIColor(red: 0.239, green: 0.792, blue: 0.416, alpha: 1),
+                                                  empty: UIColor(white: 0.900, alpha: 1.000),
+                                                  background: UIColor.white,
+                                                  statusBar: .default)
     
     internal static let pink = ThemeDefinition(name: "pink",
                                                main: UIColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1),
                                                selected: UIColor(red: 60.0 / 255.0, green: 145.0 / 255.0, blue: 230.0 / 255.0, alpha: 1),
-                                               success: UIColor(red: 27.0 / 255.0, green: 153.0 / 255.0, blue: 130.0 / 255.0, alpha: 1))
+                                               success: UIColor(red: 27.0 / 255.0, green: 153.0 / 255.0, blue: 130.0 / 255.0, alpha: 1),
+                                               empty: UIColor(white: 0.900, alpha: 1.000),
+                                               background: UIColor.white,
+                                               statusBar: .default)
     
     internal static let dark = ThemeDefinition(name: "dark",
                                                main: UIColor.color(hexString: "#243458"),
-                                               selected: UIColor(red: 0, green: 0.400, blue: 1.000, alpha: 1),
-                                               success: UIColor(red: 0.239, green: 0.792, blue: 0.416, alpha: 1))
+                                               selected: UIColor(red: 60.0 / 255.0, green: 145.0 / 255.0, blue: 230.0 / 255.0, alpha: 1),
+                                               success: UIColor(red: 0.239, green: 0.792, blue: 0.416, alpha: 1),
+                                               empty: UIColor(white: 0.500, alpha: 1.000),
+                                               background: UIColor.color(hexString: "#121212"),
+                                               statusBar: .lightContent)
     
     private static let all: [ThemeDefinition] = [classic, pink, dark]
     
@@ -60,12 +73,17 @@ internal class AppTheme {
     
     private func apply(theme: ThemeDefinition) {
         UINavigationBar.appearance().tintColor = theme.main
+        UINavigationBar.appearance().barTintColor = theme.background
         TileDefaultBackground.appearance().backgroundColor = theme.main
         TileNoNumberBackground.appearance().backgroundColor = theme.empty
         TileSelectedBackground.appearance().backgroundColor = theme.selected
         TileSuccessBackground.appearance().backgroundColor = theme.success
         TileFailureBackground.appearance().backgroundColor = theme.failure
         MenuCellBackground.appearance().backgroundColor = theme.main
+        BackgroundView.appearance().backgroundColor = theme.background
+        OverlayBackgroundView.appearance().backgroundColor = theme.background.withAlphaComponent(0.9)
+        
+        
     }
     
     internal func switchToNext() -> ThemeDefinition {
@@ -90,6 +108,7 @@ internal class AppTheme {
                 window.addSubview(sub)
             }
         }
+        NotificationCenter.default.post(name: .themeChanged, object: nil)
         return returned
     }
 }
@@ -100,7 +119,9 @@ internal struct ThemeDefinition: Equatable {
     let selected: UIColor
     let success: UIColor
     let failure = UIColor(red: 1.000, green: 0.173, blue: 0.333, alpha: 1)
-    let empty = UIColor(white: 0.900, alpha: 1.000)
+    let empty: UIColor
+    let background: UIColor
+    let statusBar: UIStatusBarStyle
     
     internal var localizedName: String {
         let key = "theme.name.\(name)"
@@ -129,5 +150,13 @@ internal class TileSelectedBackground: UIView {
 }
 
 internal class MenuCellBackground: UIView {
+    
+}
+
+internal class BackgroundView: UIView {
+    
+}
+
+internal class OverlayBackgroundView: UIView {
     
 }
