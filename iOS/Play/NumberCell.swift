@@ -38,6 +38,8 @@ internal enum NumberMarker: String {
 }
 
 internal class NumberCell: UICollectionViewCell {
+    private static var numbers = [Int: String]()
+    
     @IBOutlet private var number: UILabel!
     @IBOutlet private var container: UIView!
     private lazy var defaultBG = TileDefaultBackground()
@@ -45,6 +47,7 @@ internal class NumberCell: UICollectionViewCell {
     private lazy var selectedBG = TileSelectedBackground()
     private lazy var successBG = TileSuccessBackground()
     private lazy var failureBG = TileFailureBackground()
+    private var showing = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -64,23 +67,27 @@ internal class NumberCell: UICollectionViewCell {
     }
         
     internal func show(number: Int, marker: NumberMarker) {
-        if number == 0 {
-            self.number.text = ""
-            
-            container.bringSubviewToFront(noNumberBG)
+        noNumberBG.isHidden = number != 0
+        defaultBG.isHidden = marker != .standard
+        selectedBG.isHidden = marker != .selection
+        successBG.isHidden = marker != .success
+        failureBG.isHidden = marker != .failure
+
+        if showing == number {
             return
         }
-        
-        self.number.text = String(describing: number)
-        switch marker {
-        case .standard:
-            container.bringSubviewToFront(defaultBG)
-        case .selection:
-            container.bringSubviewToFront(selectedBG)
-        case .success:
-            container.bringSubviewToFront(successBG)
-        case .failure:
-            container.bringSubviewToFront(failureBG)
+
+        let shown: String
+        if number == 0 {
+            shown = ""
+        } else if let existing = NumberCell.numbers[number] {
+            shown = existing
+        } else {
+            shown = String(describing: number)
+            NumberCell.numbers[number] = shown
         }
+
+        self.number.text = shown
+        showing = number
     }
 }
