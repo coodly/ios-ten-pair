@@ -43,6 +43,7 @@ internal class PlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.collectionViewLayout = NumbersFlowLayout()
         collectionView.backgroundView = BackgroundView()    
         
         field.load()
