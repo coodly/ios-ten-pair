@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udP-pg-kg7">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udP-pg-kg7" customClass="TileBackgroundView" customModule="TenPair" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>

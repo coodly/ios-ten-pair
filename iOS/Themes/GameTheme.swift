@@ -34,7 +34,8 @@ internal class AppTheme {
                                                   background: UIColor.white,
                                                   statusBar: .default,
                                                   navigationTint: classicMain,
-                                                  text: .white)
+                                                  text: .white,
+                                                  tileBackground: .white)
     
     internal static let pink = ThemeDefinition(name: "pink",
                                                main: pinkMain,
@@ -44,7 +45,8 @@ internal class AppTheme {
                                                background: UIColor.white,
                                                statusBar: .default,
                                                navigationTint: pinkMain,
-                                               text: .white)
+                                               text: .white,
+                                               tileBackground: .white)
     
     private static let darkText = UIColor.color(hexString: "#D4D4D4")
     internal static let dark = ThemeDefinition(name: "dark",
@@ -54,8 +56,9 @@ internal class AppTheme {
                                                empty: UIColor(white: 0.500, alpha: 1.000),
                                                background: UIColor.color(hexString: "#121212"),
                                                statusBar: .lightContent,
-                                               navigationTint: darkText,
-                                               text: darkText)
+                                               navigationTint: .white,
+                                               text: .white,
+                                               tileBackground: darkText)
     
     private static let all: [ThemeDefinition] = [classic, pink, dark]
     
@@ -95,6 +98,7 @@ internal class AppTheme {
         ButtonTrayView.appearance().backgroundColor = theme.main
         UILabel.appearance(whenContainedInInstancesOf: [NumberCell.self]).textColor = theme.text
         UIButton.appearance(whenContainedInInstancesOf: [ButtonTrayView.self]).tintColor = theme.text
+        TileBackgroundView.appearance().backgroundColor = theme.tileBackground
     }
     
     internal func switchToNext() -> ThemeDefinition {
@@ -135,6 +139,7 @@ internal struct ThemeDefinition: Equatable {
     let statusBar: UIStatusBarStyle
     let navigationTint: UIColor
     let text: UIColor
+    let tileBackground: UIColor
     
     internal var localizedName: String {
         let key = "theme.name.\(name)"
@@ -175,5 +180,9 @@ internal class OverlayBackgroundView: UIView {
 }
 
 internal class ButtonTrayView: UIView {
+    
+}
+
+internal class TileBackgroundView: UIView {
     
 }
