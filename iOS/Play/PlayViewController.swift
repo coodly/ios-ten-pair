@@ -87,15 +87,20 @@ internal class PlayViewController: UIViewController {
         guard let hintIndex = field.openMatch() else {
             return
         }
-        
-        let original = selected
-        selected.removeAll()
-        selected.insert(hintIndex)
-        let index = IndexPath(row: hintIndex, section: 0)
-        if collectionView.indexPathsForVisibleItems.contains(index) {
-            reload(previous: original, current: selected, animated: false)
+
+        performWithLoading() {
+            callback in
+            
+            let original = self.selected
+            self.selected.removeAll()
+            self.selected.insert(hintIndex)
+            let index = IndexPath(row: hintIndex, section: 0)
+            if self.collectionView.indexPathsForVisibleItems.contains(index) {
+                self.reload(previous: original, current: self.selected, animated: false)
+            }
+            self.collectionView.scrollToItem(at: index, at: .centeredVertically, animated: false)
+            callback()
         }
-        collectionView.scrollToItem(at: index, at: .centeredVertically, animated: true)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
