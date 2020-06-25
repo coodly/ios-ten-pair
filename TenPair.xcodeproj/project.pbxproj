@@ -46,6 +46,7 @@
 		A7720B8324A469D6006C40EC /* Rendered.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7720B8224A469D6006C40EC /* Rendered.swift */; };
 		A7720B8524A46A60006C40EC /* Rendered+Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7720B8424A46A60006C40EC /* Rendered+Lines.swift */; };
 		A7720B8724A46ABD006C40EC /* Rendered+Squares.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7720B8624A46ABD006C40EC /* Rendered+Squares.swift */; };
+		A7720B8924A46F6D006C40EC /* Rendered+Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7720B8824A46F6D006C40EC /* Rendered+Hint.swift */; };
 		A777FA831E50758A003E62D7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FA821E50758A003E62D7 /* MenuButton.swift */; };
 		A777FA841E50758A003E62D7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FA821E50758A003E62D7 /* MenuButton.swift */; };
 		A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA861E50CC76003E62D7 /* InfoPlist.strings */; };
@@ -151,6 +152,7 @@
 		A7720B8224A469D6006C40EC /* Rendered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rendered.swift; sourceTree = "<group>"; };
 		A7720B8424A46A60006C40EC /* Rendered+Lines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendered+Lines.swift"; sourceTree = "<group>"; };
 		A7720B8624A46ABD006C40EC /* Rendered+Squares.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendered+Squares.swift"; sourceTree = "<group>"; };
+		A7720B8824A46F6D006C40EC /* Rendered+Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendered+Hint.swift"; sourceTree = "<group>"; };
 		A777FA821E50758A003E62D7 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		A777FA871E50CC76003E62D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A777FA891E50CC76003E62D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				A7720B8224A469D6006C40EC /* Rendered.swift */,
+				A7720B8824A46F6D006C40EC /* Rendered+Hint.swift */,
 				A7720B8424A46A60006C40EC /* Rendered+Lines.swift */,
 				A7720B8624A46ABD006C40EC /* Rendered+Squares.swift */,
 			);
@@ -795,6 +798,7 @@
 				A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */,
 				A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */,
 				A742610D2486B57B003B9E9E /* AdMobGDPRCheck.swift in Sources */,
+				A7720B8924A46F6D006C40EC /* Rendered+Hint.swift in Sources */,
 				A75570BF1E54552300114ED2 /* LoadingScreen.swift in Sources */,
 				A7A8373524A1D924006DD8B4 /* MenuOptionsViewController.swift in Sources */,
 				A79F0B091FA38B8D00FE21F6 /* AdLoadingViewController.swift in Sources */,

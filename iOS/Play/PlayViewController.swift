@@ -39,6 +39,7 @@ internal class PlayViewController: UIViewController {
         AnimatingFailure(delegate: self),
         EmptyLinesCheck(delegate: self)
     ])
+    @IBOutlet private var hintButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,8 @@ internal class PlayViewController: UIViewController {
         machine.enter(SelectingNumber.self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(saveField), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        hintButton.setImage(Rendered.hintIcon(), for: .normal)
     }
     
     @objc fileprivate func reloadField() {
