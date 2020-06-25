@@ -99,6 +99,7 @@ internal class AppTheme {
         UIButton.appearance(whenContainedInInstancesOf: [ButtonTrayView.self]).tintColor = theme.text
         TileBackgroundView.appearance().backgroundColor = theme.tileBackground
         StatusLabel.appearance().textColor = theme.navigationTint
+        SpinnerView.appearance().tintColor = theme.navigationTint
     }
     
     internal func switchToNext() -> ThemeDefinition {
