@@ -1037,7 +1037,7 @@
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2020.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
@@ -1061,7 +1061,7 @@
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2020.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;

@@ -61,7 +61,7 @@ def insight_pod
 end
 
 target 'iOS' do
-    platform :ios, '10.3'
+    platform :ios, '11.4'
 
     ios_pods
     feedback_pod
