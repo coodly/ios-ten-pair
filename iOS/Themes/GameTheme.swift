@@ -84,7 +84,6 @@ internal class AppTheme {
     
     private func apply(theme: ThemeDefinition) {
         UINavigationBar.appearance().tintColor = theme.navigationTint
-        UILabel.appearance(whenContainedInInstancesOf: [StatusView.self]).textColor = theme.navigationTint
         UINavigationBar.appearance().barTintColor = theme.background
         TileDefaultBackground.appearance().backgroundColor = theme.main
         TileNoNumberBackground.appearance().backgroundColor = theme.empty
@@ -99,6 +98,7 @@ internal class AppTheme {
         UILabel.appearance(whenContainedInInstancesOf: [NumberCell.self]).textColor = theme.text
         UIButton.appearance(whenContainedInInstancesOf: [ButtonTrayView.self]).tintColor = theme.text
         TileBackgroundView.appearance().backgroundColor = theme.tileBackground
+        StatusLabel.appearance().textColor = theme.navigationTint
     }
     
     internal func switchToNext() -> ThemeDefinition {

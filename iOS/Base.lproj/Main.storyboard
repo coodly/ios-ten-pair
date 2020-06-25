@@ -148,13 +148,24 @@
                             <constraint firstItem="apk-88-TNQ" firstAttribute="trailing" secondItem="sTh-Hc-Hbi" secondAttribute="trailing" id="wpP-2d-oRt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kNR-91-fLN"/>
+                    <navigationItem key="navigationItem" id="kNR-91-fLN">
+                        <connections>
+                            <outlet property="titleView" destination="oOl-sv-nC1" id="hWc-5v-Evl"/>
+                        </connections>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="apk-88-TNQ" id="S5I-Ph-j8r"/>
                         <outlet property="hintButton" destination="tVv-YB-EfX" id="6rF-Hs-3yj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MhU-zu-hEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" id="oOl-sv-nC1" customClass="StatusLabel" customModule="TenPair" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </objects>
             <point key="canvasLocation" x="660" y="715.59220389805103"/>
         </scene>

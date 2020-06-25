@@ -16,12 +16,9 @@
 
 import UIKit
 
-internal class StatusView: UIView, PlayFieldStatusDelegate {
-    @IBOutlet private(set) var lines: UILabel!
-    @IBOutlet private(set) var tiles: UILabel!
-    
+internal class StatusLabel: UILabel, PlayFieldStatusDelegate {
     func statusUpdate(lines: Int, tiles: Int) {
-        self.lines.text = "x\(lines)"
-        self.tiles.text = "x\(tiles)"
+        text = "☰x\(lines) ■x\(tiles)"
+        sizeToFit()
     }
 }
