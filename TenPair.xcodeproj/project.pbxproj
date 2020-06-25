@@ -43,6 +43,9 @@
 		A75570BF1E54552300114ED2 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75570BE1E54552300114ED2 /* LoadingScreen.swift */; };
 		A75570C01E54552300114ED2 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75570BE1E54552300114ED2 /* LoadingScreen.swift */; };
 		A766343824A2513900CD1FF6 /* PlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766343724A2513900CD1FF6 /* PlayNavigationController.swift */; };
+		A7720B8324A469D6006C40EC /* Rendered.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7720B8224A469D6006C40EC /* Rendered.swift */; };
+		A7720B8524A46A60006C40EC /* Rendered+Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7720B8424A46A60006C40EC /* Rendered+Lines.swift */; };
+		A7720B8724A46ABD006C40EC /* Rendered+Squares.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7720B8624A46ABD006C40EC /* Rendered+Squares.swift */; };
 		A777FA831E50758A003E62D7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FA821E50758A003E62D7 /* MenuButton.swift */; };
 		A777FA841E50758A003E62D7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777FA821E50758A003E62D7 /* MenuButton.swift */; };
 		A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA861E50CC76003E62D7 /* InfoPlist.strings */; };
@@ -145,6 +148,9 @@
 		A750CE361E55DD9B00852E6A /* MatchFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinder.swift; sourceTree = "<group>"; };
 		A75570BE1E54552300114ED2 /* LoadingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		A766343724A2513900CD1FF6 /* PlayNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayNavigationController.swift; sourceTree = "<group>"; };
+		A7720B8224A469D6006C40EC /* Rendered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rendered.swift; sourceTree = "<group>"; };
+		A7720B8424A46A60006C40EC /* Rendered+Lines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendered+Lines.swift"; sourceTree = "<group>"; };
+		A7720B8624A46ABD006C40EC /* Rendered+Squares.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendered+Squares.swift"; sourceTree = "<group>"; };
 		A777FA821E50758A003E62D7 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		A777FA871E50CC76003E62D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A777FA891E50CC76003E62D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -307,6 +313,7 @@
 				A74261082486B3E6003B9E9E /* Insight */,
 				A7A8371D24A1C226006DD8B4 /* Menu */,
 				A7A8372724A1C332006DD8B4 /* Play */,
+				A7720B8124A469C6006C40EC /* Rendered */,
 				A797BD6F2483803F00A6E27D /* Secrets */,
 				A7A8372224A1C257006DD8B4 /* Storyboards */,
 				A7A8373624A238BA006DD8B4 /* Themes */,
@@ -365,6 +372,16 @@
 				A742610F248769DA003B9E9E /* GDPRCheck.swift */,
 			);
 			path = GDPR;
+			sourceTree = "<group>";
+		};
+		A7720B8124A469C6006C40EC /* Rendered */ = {
+			isa = PBXGroup;
+			children = (
+				A7720B8224A469D6006C40EC /* Rendered.swift */,
+				A7720B8424A46A60006C40EC /* Rendered+Lines.swift */,
+				A7720B8624A46ABD006C40EC /* Rendered+Squares.swift */,
+			);
+			path = Rendered;
 			sourceTree = "<group>";
 		};
 		A777FA851E50CC76003E62D7 /* en.lproj */ = {
@@ -769,6 +786,7 @@
 			files = (
 				A750CE341E55D7E500852E6A /* ButtonTray.swift in Sources */,
 				A766343824A2513900CD1FF6 /* PlayNavigationController.swift in Sources */,
+				A7720B8324A469D6006C40EC /* Rendered.swift in Sources */,
 				A7D3908D1E4B2AE300EDB111 /* MenuScreen.swift in Sources */,
 				A71A97471E48CCA4005E134F /* GameViewController.swift in Sources */,
 				A7A8372F24A1C960006DD8B4 /* UITableView+Dequeue.swift in Sources */,
@@ -809,6 +827,7 @@
 				A77DE6F91E48D75200E9214A /* TenPair.swift in Sources */,
 				A7B12C201E535B67007D7807 /* Constants.swift in Sources */,
 				A72C0D2B249B2D1A00EFE21D /* StatusView.swift in Sources */,
+				A7720B8524A46A60006C40EC /* Rendered+Lines.swift in Sources */,
 				A7A8373824A238ED006DD8B4 /* GameTheme.swift in Sources */,
 				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
 				A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */,
@@ -818,6 +837,7 @@
 				A7ECCB801E4E275E001ADB51 /* Tile.swift in Sources */,
 				A742610A2486B3F6003B9E9E /* Insight.swift in Sources */,
 				A77DE6FD1E48D8D500E9214A /* PlayScreen.swift in Sources */,
+				A7720B8724A46ABD006C40EC /* Rendered+Squares.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
