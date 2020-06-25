@@ -66,9 +66,16 @@ internal class PlayViewController: UIViewController {
             return
         }
         
-        field.reload()
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
+        performWithLoading() {
+            callback in
+
+            DispatchQueue.global(qos: .background).async {
+                self.field.reload()
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                    callback()
+                }
+            }            
         }
     }
     
@@ -150,6 +157,22 @@ internal class PlayViewController: UIViewController {
         navigation.modalPresentationStyle = .custom
         
         present(navigation, animated: false)
+    }
+    
+    private typealias Callback = (() -> Void)
+    private func performWithLoading(closure: @escaping ((@escaping Callback) -> Void)) {
+        let loading: LoadingViewController = Storyboards.loadFromStoryboard()
+        loading.modalPresentationStyle = .custom
+        let dismiss: Callback = {
+            [weak self] in
+            
+            self?.dismiss(animated: false)
+        }
+        present(loading, animated: false) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {
+                closure(dismiss)
+            }
+        }
     }
 }
 
@@ -260,6 +283,7 @@ extension PlayViewController: MenuDelegate {
         
         switch option {
         case .restart(let lines):
+            selected.removeAll()
             collectionView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 10, height: 10), animated: false)
             field.restart(with: lines)
             collectionView.reloadData()

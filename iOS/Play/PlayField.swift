@@ -47,7 +47,9 @@ internal class PlayField: MatchFinder {
     }
     
     private func forwardStatus() {
-        statusDelegate?.statusUpdate(lines: numberOfLines, tiles: numberOfTiles)
+        DispatchQueue.main.async {
+            self.statusDelegate?.statusUpdate(lines: self.numberOfLines, tiles: self.numberOfTiles)
+        }
     }
     
     internal func load() {
