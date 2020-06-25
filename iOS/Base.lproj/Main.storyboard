@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LCd-8J-F2T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LCd-8J-F2T">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,6 +33,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="zhO-91-jgR"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="h1u-OK-dn9" firstAttribute="trailing" secondItem="WMe-P6-ELc" secondAttribute="trailing" id="1ve-cy-n0Y"/>
@@ -47,7 +49,6 @@
                             <constraint firstItem="eP1-Oo-pQm" firstAttribute="top" secondItem="WMe-P6-ELc" secondAttribute="top" id="tqF-dc-E65"/>
                             <constraint firstAttribute="bottom" secondItem="eP1-Oo-pQm" secondAttribute="bottom" id="xXY-GD-m7y"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zhO-91-jgR"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="iur-WZ-AKh"/>
@@ -92,7 +93,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="apk-88-TNQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="amc-4n-LNy">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -106,10 +107,14 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQF-tF-W9G" customClass="ButtonTrayView" customModule="TenPair" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="611" width="48" height="48"/>
+                                <rect key="frame" x="0.0" y="607" width="52" height="52"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0F-PJ-y0I" customClass="ButtonTrayBackgroundView" customModule="TenPair" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="51" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVv-YB-EfX">
-                                        <rect key="frame" x="2" y="2" width="44" height="44"/>
+                                        <rect key="frame" x="4" y="4" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="TJa-ls-xhB"/>
                                             <constraint firstAttribute="width" constant="44" id="w58-W7-A8o"/>
@@ -122,14 +127,19 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="tVv-YB-EfX" secondAttribute="trailing" constant="2" id="0hA-bg-e2s"/>
-                                    <constraint firstItem="tVv-YB-EfX" firstAttribute="leading" secondItem="cQF-tF-W9G" secondAttribute="leading" constant="2" id="433-d6-1Qw"/>
-                                    <constraint firstAttribute="bottom" secondItem="tVv-YB-EfX" secondAttribute="bottom" constant="2" id="5sG-bc-H1E"/>
-                                    <constraint firstItem="tVv-YB-EfX" firstAttribute="top" secondItem="cQF-tF-W9G" secondAttribute="top" constant="2" id="BHc-P9-Qra"/>
+                                    <constraint firstAttribute="trailing" secondItem="tVv-YB-EfX" secondAttribute="trailing" constant="4" id="0hA-bg-e2s"/>
+                                    <constraint firstItem="i0F-PJ-y0I" firstAttribute="top" secondItem="cQF-tF-W9G" secondAttribute="top" constant="1" id="1dK-T3-YCd"/>
+                                    <constraint firstItem="i0F-PJ-y0I" firstAttribute="leading" secondItem="cQF-tF-W9G" secondAttribute="leading" id="3bA-aq-agP"/>
+                                    <constraint firstItem="tVv-YB-EfX" firstAttribute="leading" secondItem="cQF-tF-W9G" secondAttribute="leading" constant="4" id="433-d6-1Qw"/>
+                                    <constraint firstAttribute="bottom" secondItem="tVv-YB-EfX" secondAttribute="bottom" constant="4" id="5sG-bc-H1E"/>
+                                    <constraint firstItem="tVv-YB-EfX" firstAttribute="top" secondItem="cQF-tF-W9G" secondAttribute="top" constant="4" id="BHc-P9-Qra"/>
+                                    <constraint firstAttribute="trailing" secondItem="i0F-PJ-y0I" secondAttribute="trailing" constant="1" id="DzW-xt-8kQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="i0F-PJ-y0I" secondAttribute="bottom" constant="1" id="bFv-3n-6ul"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fua-Tt-jpf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cQF-tF-W9G" firstAttribute="leading" secondItem="sTh-Hc-Hbi" secondAttribute="leading" id="1ko-9F-1Eu"/>
                             <constraint firstItem="apk-88-TNQ" firstAttribute="leading" secondItem="sTh-Hc-Hbi" secondAttribute="leading" id="9tm-dB-I63"/>
@@ -138,7 +148,6 @@
                             <constraint firstItem="fua-Tt-jpf" firstAttribute="bottom" secondItem="cQF-tF-W9G" secondAttribute="bottom" constant="8" id="tNn-eZ-riv"/>
                             <constraint firstItem="apk-88-TNQ" firstAttribute="trailing" secondItem="sTh-Hc-Hbi" secondAttribute="trailing" id="wpP-2d-oRt"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fua-Tt-jpf"/>
                     </view>
                     <navigationItem key="navigationItem" id="kNR-91-fLN"/>
                     <connections>
@@ -152,5 +161,8 @@
     </scenes>
     <resources>
         <image name="hint" width="70" height="70"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

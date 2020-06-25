@@ -48,7 +48,6 @@ internal class AppTheme {
                                                text: .white,
                                                tileBackground: .white)
     
-    private static let darkText = UIColor.color(hexString: "#D4D4D4")
     internal static let dark = ThemeDefinition(name: "dark",
                                                main: UIColor.color(hexString: "#243458"),
                                                selected: UIColor(red: 60.0 / 255.0, green: 145.0 / 255.0, blue: 230.0 / 255.0, alpha: 1),
@@ -58,7 +57,7 @@ internal class AppTheme {
                                                statusBar: .lightContent,
                                                navigationTint: .white,
                                                text: .white,
-                                               tileBackground: darkText)
+                                               tileBackground: UIColor.color(hexString: "#D4D4D4"))
     
     private static let all: [ThemeDefinition] = [classic, pink, dark]
     
@@ -95,7 +94,8 @@ internal class AppTheme {
         MenuCellBackground.appearance().backgroundColor = theme.main
         BackgroundView.appearance().backgroundColor = theme.background
         OverlayBackgroundView.appearance().backgroundColor = theme.background.withAlphaComponent(0.9)
-        ButtonTrayView.appearance().backgroundColor = theme.main
+        ButtonTrayBackgroundView.appearance().backgroundColor = theme.main
+        ButtonTrayView.appearance().backgroundColor = .white
         UILabel.appearance(whenContainedInInstancesOf: [NumberCell.self]).textColor = theme.text
         UIButton.appearance(whenContainedInInstancesOf: [ButtonTrayView.self]).tintColor = theme.text
         TileBackgroundView.appearance().backgroundColor = theme.tileBackground
@@ -180,6 +180,10 @@ internal class OverlayBackgroundView: UIView {
 }
 
 internal class ButtonTrayView: UIView {
+    
+}
+
+internal class ButtonTrayBackgroundView: UIView {
     
 }
 
