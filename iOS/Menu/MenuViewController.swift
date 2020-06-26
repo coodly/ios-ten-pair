@@ -17,6 +17,8 @@
 import UIKit
 
 internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded {
+    internal var gameWon = false
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -25,7 +27,9 @@ internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded {
     
     private func refreshMenuOptions() {
         options.removeAll()
-        options.append(.resume)
+        if !gameWon {
+            options.append(.resume)
+        }
         options.append(.restart(-1))
         options.append(.theme(AppTheme.shared.active))
         options.append(.feedback)

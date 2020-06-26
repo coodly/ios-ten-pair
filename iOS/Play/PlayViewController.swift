@@ -22,6 +22,7 @@ internal protocol PlayDelegate: class {
     func animateSuccess()
     func clearSelection()
     func checkEmptyLines()
+    func checkGameEnd()
 }
 
 internal class PlayViewController: UIViewController {
@@ -36,7 +37,8 @@ internal class PlayViewController: UIViewController {
         SelectingNumber(delegate: self),
         AnimatingSuccess(delegate: self),
         AnimatingFailure(delegate: self),
-        EmptyLinesCheck(delegate: self)
+        EmptyLinesCheck(delegate: self),
+        CheckGameEnd(delegate: self)
     ])
     @IBOutlet private var hintButton: UIButton!
     
@@ -156,6 +158,7 @@ internal class PlayViewController: UIViewController {
     @objc fileprivate func presentMenu() {
         let menu: MenuViewController = Storyboards.loadFromStoryboard()
         menu.delegate = self
+        menu.gameWon = field.gameEnded
         
         let navigation = PlayNavigationController(rootViewController: menu)
         navigation.isNavigationBarHidden = true
@@ -223,7 +226,7 @@ extension PlayViewController: PlayDelegate {
     private func removeEmptyLines(checked: Set<Int>) {
         let empty = field.emptyLines(with: checked)
         guard empty.count > 0 else {
-            machine.enter(SelectingNumber.self)
+            machine.enter(CheckGameEnd.self)
             return
         }
         
@@ -235,8 +238,22 @@ extension PlayViewController: PlayDelegate {
         collectionView.performBatchUpdates(update) {
             _ in
             
-            self.machine.enter(SelectingNumber.self)
+            self.machine.enter(CheckGameEnd.self)
         }
+    }
+    
+    func checkGameEnd() {
+        if field.gameEnded {
+            presentWin()
+        }
+        
+        machine.enter(SelectingNumber.self)
+    }
+    
+    private func presentWin() {
+        let win: WinViewController = Storyboards.loadFromStoryboard()
+        win.modalPresentationStyle = .custom
+        present(win, animated: false)
     }
 }
 

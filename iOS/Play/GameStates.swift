@@ -46,3 +46,9 @@ internal class AnimatingFailure: PlayState {
         delegate?.animateFailure()
     }
 }
+
+internal class CheckGameEnd: PlayState {
+    override func didEnter(from previousState: GKState?) {
+        delegate?.checkGameEnd()
+    }
+}

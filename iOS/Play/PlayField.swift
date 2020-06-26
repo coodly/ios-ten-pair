@@ -152,4 +152,14 @@ internal class PlayField: MatchFinder {
         save()
         updateStatus()
     }
+    
+    internal var gameEnded: Bool {
+        for num in numbers {
+            if num != 0 {
+                return false
+            }
+        }
+        
+        return true
+    }
 }
