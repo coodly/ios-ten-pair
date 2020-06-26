@@ -19,6 +19,12 @@ import SpriteKit
 
 internal class WinViewController: UIViewController, StoryboardLoaded {
     private lazy var sceneView = SKView()
+    private lazy var scene = WinScene(size: view.bounds.size)
+    private var timer: Timer? {
+        didSet {
+            oldValue?.invalidate()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,19 +33,32 @@ internal class WinViewController: UIViewController, StoryboardLoaded {
         sceneView.pinToSuperviewEdges()
         sceneView.backgroundColor = .clear
         
-        let scene = WinScene(size: view.bounds.size)
         scene.scaleMode = .aspectFill
         scene.backgroundColor = .clear
         sceneView.presentScene(scene)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            
+        scene.emit()
+        
+        let timer = Timer(timeInterval: 0.5, target: scene, selector: #selector(WinScene.emit), userInfo: nil, repeats: true)
+        self.timer = timer
+        RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        timer = nil
+    }
 }
 
 private class WinScene: SKScene {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let point = touch.location(in: self)
-            addChild(explosion(at: point))
-        }
+    @objc func emit() {
+        let point = size.randomPoint()
+        addChild(explosion(at: point))
     }
     
     private func explosion(at point: CGPoint) -> SKEmitterNode {
@@ -51,5 +70,15 @@ private class WinScene: SKScene {
             SKColor.white,
             SKColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1)].randomElement()!
         return emitter
+    }
+}
+
+extension CGSize {
+    fileprivate func randomPoint() -> CGPoint {
+        let minX = width / 4
+        let minY = height / 4
+        let randomX = CGFloat.random(in: minX..<(minX * 3))
+        let randomY = CGFloat.random(in: minY..<(minY * 3))
+        return CGPoint(x: randomX, y: randomY)
     }
 }
