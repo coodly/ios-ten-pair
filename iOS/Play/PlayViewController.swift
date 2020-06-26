@@ -41,6 +41,7 @@ internal class PlayViewController: UIViewController {
         CheckGameEnd(delegate: self)
     ])
     @IBOutlet private var hintButton: UIButton!
+    @IBOutlet private var undoButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +62,7 @@ internal class PlayViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(saveField), name: UIApplication.willResignActiveNotification, object: nil)
         
         hintButton.setImage(Rendered.hintIcon(), for: .normal)
+        undoButton.setImage(Rendered.undoIcon(), for: .normal)
     }
     
     @objc fileprivate func reloadField() {
@@ -85,7 +87,7 @@ internal class PlayViewController: UIViewController {
         field.save()
     }
     
-    @IBAction func giveAHint() {
+    @IBAction private func giveAHint() {
         guard let hintIndex = field.openMatch() else {
             collectionView.shake()
             return
@@ -104,6 +106,10 @@ internal class PlayViewController: UIViewController {
             self.collectionView.scrollToItem(at: index, at: .centeredVertically, animated: false)
             callback()
         }
+    }
+    
+    @IBAction private func performUndo() {
+
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
