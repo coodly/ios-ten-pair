@@ -85,6 +85,7 @@ internal class PlayViewController: UIViewController {
     
     @IBAction func giveAHint() {
         guard let hintIndex = field.openMatch() else {
+            collectionView.shake()
             return
         }
 
