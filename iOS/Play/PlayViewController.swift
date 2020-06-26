@@ -208,6 +208,38 @@ extension PlayViewController {
         updateUndoVisibility()
     }
     
+    private func register(lines: [Position]) {
+        undoManager?.registerUndo(withTarget: self) {
+            selfTarget in
+            
+            self.restore(lines: lines)
+        }
+    }
+    
+    private func restore(lines: [Position]) {
+        guard let index = lines.first?.index else {
+            return
+        }
+        
+        CATransaction.begin()
+        CATransaction.setCompletionBlock() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                let cellsInsert: (() -> Void) = {
+                    self.field.insert(positions: lines)
+                    self.collectionView.insertItems(at: lines.map({ IndexPath(row: $0.index, section: 0) }))
+                }
+                self.collectionView.performBatchUpdates(cellsInsert) {
+                    _ in
+                    
+                    // extra undo to restore numbers
+                    self.performUndo()
+                }
+            }
+        }
+        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredVertically, animated: true)
+        CATransaction.commit()
+    }
+    
     private func restore(positions: [Position]) {
         guard let index = positions.first?.index else {
             return
@@ -281,7 +313,8 @@ extension PlayViewController: PlayDelegate {
             return
         }
         
-        field.remove(lines: empty)
+        let positions = field.remove(lines: empty)
+        register(lines: positions)
         let removed = empty.map({ Array($0.lowerBound..<$0.upperBound) }).flatMap({ $0 }).map({ IndexPath(row: $0, section: 0) })
         let update: (() -> Void) = {
             self.collectionView.deleteItems(at: removed)
@@ -295,6 +328,8 @@ extension PlayViewController: PlayDelegate {
     
     func checkGameEnd() {
         if field.gameEnded {
+            undoManager?.removeAllActions()
+            updateUndoVisibility()
             presentWin()
         }
         

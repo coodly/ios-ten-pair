@@ -132,12 +132,15 @@ internal class PlayField: MatchFinder {
         return EmptyLinesSearch.emptyRangesWithCheckPoints(points, field: numbers)
     }
     
-    internal func remove(lines removed: [CountableRange<Int>]) {
+    internal func remove(lines removed: [CountableRange<Int>]) -> [Position] {
+        var positions = [Position]()
         let lines = removed.sorted(by: { $0.lowerBound > $1.lowerBound })
         for removed in lines {
+            positions.append(contentsOf: removed.map({ Position(index: $0, value: 0) })) 
             numbers.removeSubrange(removed)
         }
         updateLines()
+        return positions
     }
     
     private func updateStatus() {
@@ -181,5 +184,10 @@ internal class PlayField: MatchFinder {
             numbers[position.index] = position.value
         }
         numberOfTiles += positions.count
+    }
+    
+    internal func insert(positions: [Position]) {
+        let sorted = positions.sorted(by: { $0.index < $1.index })
+        sorted.forEach({ numbers.insert($0.value, at: $0.index) })
     }
 }
