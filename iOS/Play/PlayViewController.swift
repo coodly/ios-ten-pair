@@ -66,7 +66,7 @@ internal class PlayViewController: UIViewController {
         undoButton.setImage(Rendered.undoIcon(), for: .normal)
         
         undoTray.isHidden = true
-        undoManager?.levelsOfUndo = 5
+        undoManager?.levelsOfUndo = 10        
     }
     
     @objc fileprivate func reloadField() {
@@ -199,12 +199,19 @@ internal class PlayViewController: UIViewController {
 
 extension PlayViewController {
     private func register(removed: [Position]) {
+        undoManager?.beginUndoGrouping()
         self.undoManager?.registerUndo(withTarget: self) {
             selfTarget in
             
             selfTarget.restore(positions: removed)
         }
-        
+        let possiblyRemoved = field.emptyLines(with: Set(removed.map({ $0.index })))
+        if possiblyRemoved.count > 0 {
+            let linePositions = possiblyRemoved.flatMap({ $0.map({ Position(index: $0, value: 0) }) })
+            register(lines: linePositions)
+        }
+
+        undoManager?.endUndoGrouping()
         updateUndoVisibility()
     }
     
@@ -228,12 +235,7 @@ extension PlayViewController {
                     self.field.insert(positions: lines)
                     self.collectionView.insertItems(at: lines.map({ IndexPath(row: $0.index, section: 0) }))
                 }
-                self.collectionView.performBatchUpdates(cellsInsert) {
-                    _ in
-                    
-                    // extra undo to restore numbers
-                    self.performUndo()
-                }
+                self.collectionView.performBatchUpdates(cellsInsert)
             }
         }
         collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredVertically, animated: true)
@@ -313,8 +315,7 @@ extension PlayViewController: PlayDelegate {
             return
         }
         
-        let positions = field.remove(lines: empty)
-        register(lines: positions)
+        field.remove(lines: empty)
         let removed = empty.map({ Array($0.lowerBound..<$0.upperBound) }).flatMap({ $0 }).map({ IndexPath(row: $0, section: 0) })
         let update: (() -> Void) = {
             self.collectionView.deleteItems(at: removed)
