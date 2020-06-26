@@ -26,6 +26,12 @@ internal protocol PlayFieldStatusDelegate: class {
     func statusUpdate(lines: Int, tiles: Int)
 }
 
+internal struct Position {
+    let index: Int
+    let value: Int
+}
+
+
 internal class PlayField: MatchFinder {
     private var numbers = [Int]()
     private var clearedCount = 0
@@ -93,17 +99,24 @@ internal class PlayField: MatchFinder {
         return .match
     }
     
-    internal func clear(numbers: Set<Int>) {
+    internal func clear(numbers: Set<Int>) -> [Position] {
+        var positions = [Position]()
+        for index in numbers {
+            let value = self.numbers[index]
+            positions.append(Position(index: index, value: value))
+            self.numbers[index] = 0
+        }
+        
         numbers.forEach({ self.numbers[$0] = 0 })
         numberOfTiles -= numbers.count
         
         clearedCount += 1
-        guard clearedCount.isMultiple(of: 100) else {
-            return
+        if clearedCount.isMultiple(of: 100) {
+            clearedCount = 0
+            save()
         }
-        
-        clearedCount = 0
-        save()
+            
+        return positions
     }
     
     internal func hasValue(at index: Int) -> Bool {
@@ -161,5 +174,12 @@ internal class PlayField: MatchFinder {
         }
         
         return true
+    }
+    
+    internal func restore(positions: [Position]) {
+        for position in positions {
+            numbers[position.index] = position.value
+        }
+        numberOfTiles += positions.count
     }
 }

@@ -189,6 +189,7 @@
                         <outlet property="collectionView" destination="apk-88-TNQ" id="S5I-Ph-j8r"/>
                         <outlet property="hintButton" destination="tVv-YB-EfX" id="6rF-Hs-3yj"/>
                         <outlet property="undoButton" destination="eg2-Q1-cXE" id="6er-AD-88V"/>
+                        <outlet property="undoTray" destination="uMm-Je-WQA" id="SJQ-TB-jq1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MhU-zu-hEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

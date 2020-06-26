@@ -42,6 +42,7 @@ internal class PlayViewController: UIViewController {
     ])
     @IBOutlet private var hintButton: UIButton!
     @IBOutlet private var undoButton: UIButton!
+    @IBOutlet private var undoTray: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,9 @@ internal class PlayViewController: UIViewController {
         
         hintButton.setImage(Rendered.hintIcon(), for: .normal)
         undoButton.setImage(Rendered.undoIcon(), for: .normal)
+        
+        undoTray.isHidden = true
+        undoManager?.levelsOfUndo = 5
     }
     
     @objc fileprivate func reloadField() {
@@ -70,6 +74,8 @@ internal class PlayViewController: UIViewController {
             return
         }
         
+        undoManager?.removeAllActions()
+        updateUndoVisibility()
         performWithLoading() {
             callback in
 
@@ -109,7 +115,7 @@ internal class PlayViewController: UIViewController {
     }
     
     @IBAction private func performUndo() {
-
+        undoManager?.undo()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -191,13 +197,52 @@ internal class PlayViewController: UIViewController {
     }
 }
 
+extension PlayViewController {
+    private func register(removed: [Position]) {
+        self.undoManager?.registerUndo(withTarget: self) {
+            selfTarget in
+            
+            selfTarget.restore(positions: removed)
+        }
+        
+        updateUndoVisibility()
+    }
+    
+    private func restore(positions: [Position]) {
+        guard let index = positions.first?.index else {
+            return
+        }
+        
+        CATransaction.begin()
+        CATransaction.setCompletionBlock() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                self.field.restore(positions: positions)
+                let previous = self.selected
+                self.selected.removeAll()
+                self.reload(previous: previous, current: Set(positions.map({ $0.index })), animated: true) {
+                    _ in
+                    
+                    self.updateUndoVisibility()
+                }
+            }
+        }
+        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredVertically, animated: true)
+        CATransaction.commit()
+    }
+    
+    private func updateUndoVisibility() {
+        undoTray.isHidden = !(undoManager?.canUndo ?? false)
+    }
+}
+
 extension PlayViewController: PlayDelegate {
     func animateSuccess() {
         reload(indexes: selected) {
             _ in
             
-            self.field.clear(numbers: self.selected)
+            let positions = self.field.clear(numbers: self.selected)
             self.machine.enter(EmptyLinesCheck.self)
+            self.register(removed: positions)
         }
     }
     
