@@ -29,6 +29,8 @@ internal class WinViewController: UIViewController, StoryboardLoaded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.color(hexString: "#121212").withAlphaComponent(0.9)
+        
         view.addSubview(sceneView)
         sceneView.pinToSuperviewEdges()
         sceneView.backgroundColor = .clear
@@ -36,6 +38,13 @@ internal class WinViewController: UIViewController, StoryboardLoaded {
         scene.scaleMode = .aspectFill
         scene.backgroundColor = .clear
         sceneView.presentScene(scene)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        sceneView.addGestureRecognizer(tap)
+    }
+    
+    @objc fileprivate func tapped() {
+        dismiss(animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {

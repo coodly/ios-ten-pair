@@ -13,7 +13,7 @@
         <scene sceneID="RZ0-Tq-qHd">
             <objects>
                 <viewController id="Tnc-M8-LjS" customClass="WinViewController" customModule="TenPair" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wmH-LM-UV4" customClass="OverlayBackgroundView" customModule="TenPair" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="wmH-LM-UV4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="T5o-8Q-cwD"/>
