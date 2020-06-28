@@ -43,6 +43,12 @@ internal class PlayViewController: UIViewController {
     @IBOutlet private var hintButton: UIButton!
     @IBOutlet private var undoButton: UIButton!
     @IBOutlet private var undoTray: UIView!
+    private lazy var queue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.qualityOfService = .userInteractive
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -204,6 +210,7 @@ extension PlayViewController {
             selfTarget in
             
             selfTarget.restore(positions: removed)
+            DispatchQueue.main.async(execute: selfTarget.updateUndoVisibility)
         }
         let possiblyRemoved = field.emptyLines(with: Set(removed.map({ $0.index })))
         if possiblyRemoved.count > 0 {
@@ -224,44 +231,13 @@ extension PlayViewController {
     }
     
     private func restore(lines: [Position]) {
-        guard let index = lines.first?.index else {
-            return
-        }
-        
-        CATransaction.begin()
-        CATransaction.setCompletionBlock() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-                let cellsInsert: (() -> Void) = {
-                    self.field.insert(positions: lines)
-                    self.collectionView.insertItems(at: lines.map({ IndexPath(row: $0.index, section: 0) }))
-                }
-                self.collectionView.performBatchUpdates(cellsInsert)
-            }
-        }
-        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredVertically, animated: true)
-        CATransaction.commit()
+        queue.addOperation(ScrollOperation(collection: collectionView, positions: lines))
+        queue.addOperation(RestoreRows(collection: collectionView, positions: lines, field: field))
     }
     
     private func restore(positions: [Position]) {
-        guard let index = positions.first?.index else {
-            return
-        }
-        
-        CATransaction.begin()
-        CATransaction.setCompletionBlock() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-                self.field.restore(positions: positions)
-                let previous = self.selected
-                self.selected.removeAll()
-                self.reload(previous: previous, current: Set(positions.map({ $0.index })), animated: true) {
-                    _ in
-                    
-                    self.updateUndoVisibility()
-                }
-            }
-        }
-        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredVertically, animated: true)
-        CATransaction.commit()
+        queue.addOperation(ScrollOperation(collection: collectionView, positions: positions))
+        queue.addOperation(RestoreNumbers(collection: collectionView, positions: positions, field: field))
     }
     
     private func updateUndoVisibility() {
@@ -399,6 +375,88 @@ extension PlayViewController: MenuDelegate {
             collectionView.reloadData()
         default:
             Log.debug("Unhandled \(option)")
+        }
+    }
+}
+
+private class UIOperation: ConcurrentOperation {
+    final override func main() {
+        DispatchQueue.main.async(execute: performOnMain)
+    }
+    
+    func performOnMain() {
+        fatalError()
+    }
+}
+
+private class ScrollOperation: UIOperation {
+    private let collection: UICollectionView!
+    private let index: Int
+    init(collection: UICollectionView, positions: [Position]) {
+        self.collection = collection
+        self.index = positions.map({ $0.index }).min() ?? 0
+    }
+    
+    override func performOnMain() {
+        let scrollTo = IndexPath(row: index, section: 0)
+        if collection.indexPathsForVisibleItems.contains(scrollTo) {
+            self.finish()
+            return
+        }
+        
+        CATransaction.begin()
+        CATransaction.setCompletionBlock() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                self.finish()
+            }
+        }
+        collection.scrollToItem(at: scrollTo, at: .centeredVertically, animated: true)
+        CATransaction.commit()
+    }
+}
+
+private class RestoreRows: UIOperation {
+    private let collection: UICollectionView
+    private let positions: [Position]
+    private let field: PlayField
+    init(collection: UICollectionView, positions: [Position], field: PlayField) {
+        self.collection = collection
+        self.positions = positions
+        self.field = field
+    }
+    
+    override func performOnMain() {
+        field.insert(positions: positions)
+        let insert: (() -> Void) = {
+            self.collection.insertItems(at: self.positions.map({ IndexPath(row: $0.index, section: 0) }))
+        }
+        collection.performBatchUpdates(insert) {
+            _ in
+            
+            self.finish()
+        }
+    }
+}
+
+private class RestoreNumbers: UIOperation {
+    private let collection: UICollectionView
+    private let positions: [Position]
+    private let field: PlayField
+    init(collection: UICollectionView, positions: [Position], field: PlayField) {
+        self.collection = collection
+        self.positions = positions
+        self.field = field
+    }
+    
+    override func performOnMain() {
+        field.restore(positions: positions)
+        let insert: (() -> Void) = {
+            self.collection.reloadItems(at: self.positions.map({ IndexPath(row: $0.index, section: 0) }))
+        }
+        collection.performBatchUpdates(insert) {
+            _ in
+            
+            self.finish()
         }
     }
 }

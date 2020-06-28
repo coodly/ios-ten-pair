@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		397AC755070F530439647551 /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8823AD29127CFC3A63FA4805 /* Pods_macOS.framework */; };
+		A70078CE24A8659B0009E58C /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */; };
 		A70BBA2A24992E2B003E561F /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2924992E2B003E561F /* PlayViewController.swift */; };
 		A70BBA2D24992FA4003E561F /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2B24992FA4003E561F /* NumberCell.swift */; };
 		A70BBA2E24992FA4003E561F /* NumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70BBA2C24992FA4003E561F /* NumberCell.xib */; };
@@ -125,6 +126,7 @@
 		0F87E684DF6C56BE4744A9CA /* Pods-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8823AD29127CFC3A63FA4805 /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
 		A70BBA2924992E2B003E561F /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		A70BBA2B24992FA4003E561F /* NumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCell.swift; sourceTree = "<group>"; };
 		A70BBA2C24992FA4003E561F /* NumberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCell.xib; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 		A7A8372724A1C332006DD8B4 /* Play */ = {
 			isa = PBXGroup;
 			children = (
+				A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */,
 				A72C0D28249A46DF00EFE21D /* GameStates.swift */,
 				A70BBA2B24992FA4003E561F /* NumberCell.swift */,
 				A70BBA2C24992FA4003E561F /* NumberCell.xib */,
@@ -511,8 +514,8 @@
 		A7EE33B8243B741A004CF496 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */,
 				A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */,
+				A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -879,6 +882,7 @@
 				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
 				A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */,
 				A7A8373124A1D8E6006DD8B4 /* RestartViewController.swift in Sources */,
+				A70078CE24A8659B0009E58C /* ConcurrentOperation.swift in Sources */,
 				A7BD4EBF24A5C77F00D613FC /* WinViewController.swift in Sources */,
 				A70BBA2D24992FA4003E561F /* NumberCell.swift in Sources */,
 				A70BBA322499CC20003E561F /* NumbersFlowLayout.swift in Sources */,
