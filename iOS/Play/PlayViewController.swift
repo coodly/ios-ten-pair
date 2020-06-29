@@ -187,7 +187,7 @@ internal class PlayViewController: UIViewController {
         navigation.view.backgroundColor = .clear
         navigation.modalPresentationStyle = .custom
         
-        present(navigation, animated: false)
+        presentModal(navigation)
     }
     
     private typealias Callback = (() -> Void)
@@ -197,12 +197,29 @@ internal class PlayViewController: UIViewController {
         let dismiss: Callback = {
             [weak self] in
             
-            self?.dismiss(animated: false)
+            self?.dismissModal()
         }
-        present(loading, animated: false) {
+        presentModal(loading) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {
                 closure(dismiss)
             }
+        }
+    }
+    
+    private func presentModal(_ controller: UIViewController, completion: (() -> Void)? = nil) {
+        navigationController?.addChild(controller)
+        navigationController?.view.addSubview(controller.view)
+        controller.view.pinToSuperviewEdges()
+        controller.viewWillAppear(false)
+        completion?()
+    }
+    
+    private func dismissModal() {
+        navigationController?.children.filter({ $0 != self }).forEach() {
+            controller in
+            
+            controller.view.removeFromSuperview()
+            controller.removeFromParent()
         }
     }
 }
@@ -320,7 +337,7 @@ extension PlayViewController: PlayDelegate {
     private func presentWin() {
         let win: WinViewController = Storyboards.loadFromStoryboard()
         win.modalPresentationStyle = .custom
-        present(win, animated: false)
+        presentModal(win)
     }
 }
 
@@ -369,7 +386,7 @@ extension PlayViewController: UICollectionViewDelegate {
 
 extension PlayViewController: MenuDelegate {
     func tapped(option: MenuOption) {
-        dismiss(animated: false)
+        dismissModal()
         
         switch option {
         case .restart(let lines):
