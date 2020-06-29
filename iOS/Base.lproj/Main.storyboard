@@ -211,6 +211,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0W-jS-EPj">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="afN-bN-kIK"/>
+                                </constraints>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aia-3e-TcL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
@@ -219,14 +226,29 @@
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qme-D6-wQo"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="B0W-jS-EPj" firstAttribute="leading" secondItem="3XA-Uw-QCE" secondAttribute="leading" id="C4B-wm-UNY"/>
+                            <constraint firstItem="B0W-jS-EPj" firstAttribute="top" secondItem="aia-3e-TcL" secondAttribute="bottom" constant="24" id="FFX-VA-Prf"/>
                             <constraint firstItem="aia-3e-TcL" firstAttribute="trailing" secondItem="3XA-Uw-QCE" secondAttribute="trailing" id="OGs-Va-k9W"/>
+                            <constraint firstItem="B0W-jS-EPj" firstAttribute="trailing" secondItem="3XA-Uw-QCE" secondAttribute="trailing" id="f53-Mp-lct"/>
                             <constraint firstItem="aia-3e-TcL" firstAttribute="bottom" secondItem="3XA-Uw-QCE" secondAttribute="bottom" id="myH-J5-Qqk"/>
                             <constraint firstItem="aia-3e-TcL" firstAttribute="top" secondItem="3XA-Uw-QCE" secondAttribute="top" id="o4t-3x-M1I"/>
                             <constraint firstItem="aia-3e-TcL" firstAttribute="leading" secondItem="3XA-Uw-QCE" secondAttribute="leading" id="vWx-8g-Z1g"/>
+                            <constraint firstItem="qme-D6-wQo" firstAttribute="bottom" secondItem="B0W-jS-EPj" secondAttribute="bottom" id="xpo-CK-A2u"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FFX-VA-Prf"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="bannerContainer" destination="B0W-jS-EPj" id="9Ya-tJ-L15"/>
+                        <outlet property="bannerHeight" destination="afN-bN-kIK" id="i6j-ie-YWZ"/>
+                        <outlet property="bottomWithAds" destination="FFX-VA-Prf" id="STf-x7-ufr"/>
+                        <outlet property="bottomWithoutAds" destination="myH-J5-Qqk" id="Ei0-9c-XNa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcl-sX-qfq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

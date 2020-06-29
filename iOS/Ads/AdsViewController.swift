@@ -17,6 +17,11 @@
 import UIKit
 
 internal class AdsViewController: UIViewController {
+    @IBOutlet private var bottomWithAds: NSLayoutConstraint!
+    @IBOutlet private var bottomWithoutAds: NSLayoutConstraint!
+    @IBOutlet private var bannerContainer: UIView!
+    @IBOutlet private var bannerHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +41,24 @@ internal class AdsViewController: UIViewController {
             return .allButUpsideDown
         } else {
             return .portrait
+        }
+    }
+    
+    private func showBannerAd() {
+        NSLayoutConstraint.deactivate([bottomWithoutAds])
+        NSLayoutConstraint.activate([bottomWithAds])
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func hideBannerAd() {
+        NSLayoutConstraint.deactivate([bottomWithAds])
+        NSLayoutConstraint.activate([bottomWithoutAds])
+
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
         }
     }
 }
