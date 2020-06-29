@@ -17,6 +17,12 @@
 import UIKit
 import GoogleMobileAds
 
+private let InterstitialShowTreshold = 10
+
+private extension Selector {
+    static let tickInterstitial = #selector(AdsViewController.tickInterstitial)
+}
+
 internal class AdsViewController: UIViewController {
     @IBOutlet private var bottomWithAds: NSLayoutConstraint!
     @IBOutlet private var bottomWithoutAds: NSLayoutConstraint!
@@ -33,6 +39,9 @@ internal class AdsViewController: UIViewController {
     
     private(set) lazy var gdpr = AdMobGDPRCheck()
     
+    private lazy var interstitial = createInterstitial()
+    private var interstitialCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,10 +49,14 @@ internal class AdsViewController: UIViewController {
         gdpr.showOn = self
 
         NotificationCenter.default.addObserver(self, selector: #selector(setNeedsStatusBarAppearanceUpdate), name: .themeChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: .tickInterstitial, name: .hintTaken, object: nil)
+        NotificationCenter.default.addObserver(self, selector: .tickInterstitial, name: .fieldReload, object: nil)
         
         bannerContainer.clipsToBounds = true
         bannerContainer.addSubview(banner)
         banner.pinToSuperviewEdges()
+        
+        loadAds()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -69,15 +82,13 @@ internal class AdsViewController: UIViewController {
         self.loadBannerAd()
       })
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        loadAds()
-    }
-    
     @objc fileprivate func loadAds() {
         loadBannerAd()
+        
+        if AppConfig.current.ads {
+            interstitial.load(adRequest())
+        }
     }
     
     private func loadBannerAd() {
@@ -110,11 +121,43 @@ internal class AdsViewController: UIViewController {
         }
         return request
     }
+    
+    @objc fileprivate func tickInterstitial() {
+        interstitialCount += 1
+        
+        guard interstitialCount >= InterstitialShowTreshold, interstitial.isReady else {
+            return
+        }
+        
+        interstitialCount = 0
+        interstitial.present(fromRootViewController: self)
+    }
+    
+    private func createInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: AppConfig.current.adUnits.interstitial)
+        interstitial.delegate = self
+        return interstitial
+    }
+}
+
+extension AdsViewController: GADInterstitialDelegate {
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitial = createInterstitial()
+        interstitial.load(adRequest())
+    }
+    
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        Log.ads.debug("Interstitial received")
+    }
+    
+    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+        Log.ads.error("didFailToReceiveAdWithError: \(error)")
+    }
 }
 
 extension AdsViewController: GADBannerViewDelegate {
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        Log.debug("Did receive ad")
+        Log.ads.debug("Did receive ad")
 
         bannerHeight.constant = bannerView.frame.height
         if bottomWithoutAds.isActive {
@@ -133,7 +176,7 @@ extension AdsViewController: GADBannerViewDelegate {
     }
     
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        Log.debug("didFailToReceiveAdWithError: \(error)")
+        Log.ads.debug("didFailToReceiveAdWithError: \(error)")
         
         NSLayoutConstraint.deactivate([bottomWithAds])
         NSLayoutConstraint.activate([bottomWithoutAds])

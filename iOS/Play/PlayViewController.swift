@@ -93,6 +93,8 @@ internal class PlayViewController: UIViewController {
                 }
             }            
         }
+        
+        NotificationCenter.default.post(name: .fieldReload, object: nil)
     }
     
     @objc fileprivate func saveField() {
@@ -104,6 +106,8 @@ internal class PlayViewController: UIViewController {
             collectionView.shake()
             return
         }
+
+        NotificationCenter.default.post(name: .hintTaken, object: nil)
 
         performWithLoading() {
             callback in
