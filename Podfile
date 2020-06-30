@@ -11,7 +11,7 @@ end
 
 UsedSource = PodSource::Remote
 
-def shared
+def logger
     if UsedSource == PodSource::Local
         pod 'SWLogger', :path => '../swift-logger'
     elsif UsedSource == PodSource::Remote
@@ -23,10 +23,9 @@ end
 
 def ios_pods
     pod 'Google-Mobile-Ads-SDK', '7.60.0'
-    pod 'Locksmith', '4.0.0'
     pod 'Firebase/Crashlytics', '6.25.0'
 
-    shared
+    logger
 
     if UsedSource == PodSource::Local
         pod 'SpriteKitUI/iOS', :path => '../swift-sprite-kit-ui'
@@ -69,10 +68,17 @@ target 'iOS' do
     pod 'PersonalizedAdConsent', '1.0.5'
 end
 
+target 'Catalyst' do
+    platform :ios, '11.4'
+
+    insight_pod
+    logger
+end
+
 target 'macOS' do
     platform :osx, '10.11'
     
-    shared
+    logger
     
     if UsedSource == PodSource::Local
         pod 'SpriteKitUI/macOS', :path => '../swift-sprite-kit-ui'

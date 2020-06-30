@@ -33,7 +33,14 @@ internal class Injection {
     internal static let shared = Injection()
     
     internal var container: CKContainer?
-    private lazy var keychain = Keychain(service: "com.coodly.insight").accessibility(.alwaysThisDeviceOnly)
+    private lazy var accessibility: Accessibility = {
+        #if targetEnvironment(macCatalyst)
+            return .afterFirstUnlockThisDeviceOnly
+        #else
+            return .alwaysThisDeviceOnly
+        #endif
+    }()
+    private lazy var keychain = Keychain(service: "com.coodly.insight").accessibility(self.accessibility)
     private lazy var push: DataPush = {
         let push = DataPush()
         inject(into: push)

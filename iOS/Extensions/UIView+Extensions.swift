@@ -30,16 +30,16 @@ extension UIView {
     }
     
     internal class func viewNib(_ bundle: Bundle? = nil) -> UINib {
-        let name = className()
+        let name = className
         return UINib(nibName: name, bundle: bundle)
     }
     
-    internal class func className() -> String {
+    internal class var className: String {
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
     
     internal class func identifier() -> String {
-        return className()
+        return className
     }
     
     public static func loadInstance() -> Self {

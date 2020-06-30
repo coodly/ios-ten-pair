@@ -80,7 +80,6 @@ PODS:
   - GoogleUtilities/UserDefaults (6.6.0):
     - GoogleUtilities/Logger
   - KeychainAccess (4.1.0)
-  - Locksmith (4.0.0)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
@@ -108,7 +107,6 @@ DEPENDENCIES:
   - "CloudInsight (from `git@github.com:coodly/CloudInsight.git`)"
   - Firebase/Crashlytics (= 6.25.0)
   - Google-Mobile-Ads-SDK (= 7.60.0)
-  - Locksmith (= 4.0.0)
   - PersonalizedAdConsent (= 1.0.5)
   - "SpriteKitUI/iOS (from `git@github.com:coodly/SpriteKitUI.git`, branch `master`)"
   - "SpriteKitUI/macOS (from `git@github.com:coodly/SpriteKitUI.git`, branch `master`)"
@@ -129,7 +127,6 @@ SPEC REPOS:
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
     - KeychainAccess
-    - Locksmith
     - nanopb
     - PersonalizedAdConsent
     - PromisesObjC
@@ -153,7 +150,7 @@ CHECKOUT OPTIONS:
     :commit: b088d346c7726742e82c81d99da75378601d3e89
     :git: "git@github.com:coodly/CloudFeedback.git"
   CloudInsight:
-    :commit: fc7f7c29d37db63cecdde05c3001dbf4b96d63d1
+    :commit: 0693d8b3da0aa1a601ca036ce788090f83db1858
     :git: "git@github.com:coodly/CloudInsight.git"
   SpriteKitUI:
     :commit: 6b4837c29e139823528fc3775c94f271e25d7bb9
@@ -179,7 +176,6 @@ SPEC CHECKSUMS:
   GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
-  Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PersonalizedAdConsent: dbecabb3467df967c16d9cebc2ef4a8890e4bbd8
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
@@ -187,6 +183,6 @@ SPEC CHECKSUMS:
   SpriteKitUI: 2cd0edf133742834bdb4a45382488c4757b99a3c
   SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
-PODFILE CHECKSUM: 422718e07765675bcbc2913e79767b3ea7639f16
+PODFILE CHECKSUM: b6b50301f99fe07f48cf800f539e61fd5ef8617d
 
 COCOAPODS: 1.9.1
