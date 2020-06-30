@@ -4192,6 +4192,7 @@
 				TargetAttributes = {
 					B68384F090A54EF01A3B4115A0E5E09D = {
 						DevelopmentTeam = 5T8DRBFCBP;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -5533,13 +5534,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A2FE5DD8B21F6A13351F9AF7E758271E /* CloudInsight.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CloudInsight";
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				IBSC_MODULE = CloudInsight;
 				INFOPLIST_FILE = "Target Support Files/CloudInsight/ResourceBundle-CloudInsight-CloudInsight-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_NAME = CloudInsight;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -6155,13 +6160,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8489325A6AAFCA71896823DDD6F4C3B /* CloudInsight.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CloudInsight";
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				IBSC_MODULE = CloudInsight;
 				INFOPLIST_FILE = "Target Support Files/CloudInsight/ResourceBundle-CloudInsight-CloudInsight-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_NAME = CloudInsight;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
