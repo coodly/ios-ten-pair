@@ -64,7 +64,7 @@ public class FeedbackViewController: FetchedTableViewController<Conversation, Co
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: .refreshConversations, for: .valueChanged)
-        tableView.addSubview(refreshControl)
+        tableView.refreshControl = refreshControl
         
         tableView.register(ConversationCell.self, forCellReuseIdentifier: ConversationCell.className)
         

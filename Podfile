@@ -11,30 +11,21 @@ end
 
 UsedSource = PodSource::Remote
 
-def shared
+def logger
     if UsedSource == PodSource::Local
         pod 'SWLogger', :path => '../swift-logger'
     elsif UsedSource == PodSource::Remote
         pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
     else
-        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', :tag => '0.3.1'
+        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', :tag => '0.4.3'
     end
 end
 
 def ios_pods
-    pod 'Google-Mobile-Ads-SDK', '7.60.0'
-    pod 'Locksmith', '4.0.0'
-    pod 'Firebase/Crashlytics', '6.25.0'
+    pod 'Google-Mobile-Ads-SDK', '7.61.0'
+    pod 'Firebase/Crashlytics', '6.27.0'
 
-    shared
-
-    if UsedSource == PodSource::Local
-        pod 'SpriteKitUI/iOS', :path => '../swift-sprite-kit-ui'
-    elsif UsedSource == PodSource::Remote
-        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'master'
-    else
-        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.4.0'
-    end
+    logger
 end
 
 def feedback_pod
@@ -45,8 +36,8 @@ def feedback_pod
         pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git'
         pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git'
     else
-        pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.10'
-        pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.10'
+        pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.11'
+        pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.11'
     end
 end
 
@@ -56,12 +47,12 @@ def insight_pod
   elsif UsedSource == PodSource::Remote
     pod 'CloudInsight', :git => 'git@github.com:coodly/CloudInsight.git'
   else
-    pod 'CloudInsight', :git => 'git@github.com:coodly/CloudInsight.git', :tag => '0.1.4'
+    pod 'CloudInsight', :git => 'git@github.com:coodly/CloudInsight.git', :tag => '0.1.5'
   end
 end
 
 target 'iOS' do
-    platform :ios, '10.3'
+    platform :ios, '11.4'
 
     ios_pods
     feedback_pod
@@ -69,16 +60,9 @@ target 'iOS' do
     pod 'PersonalizedAdConsent', '1.0.5'
 end
 
-target 'macOS' do
-    platform :osx, '10.11'
-    
-    shared
-    
-    if UsedSource == PodSource::Local
-        pod 'SpriteKitUI/macOS', :path => '../swift-sprite-kit-ui'
-    elsif UsedSource == PodSource::Remote
-        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'master'
-    else
-        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.4.0'
-    end
+target 'Catalyst' do
+    platform :ios, '11.4'
+
+    insight_pod
+    logger
 end

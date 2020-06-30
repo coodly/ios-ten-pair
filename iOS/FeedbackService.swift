@@ -37,9 +37,7 @@ internal class FeedbackService {
     }()
 
     internal static func load() {
-        //NotificationCenter.default.addObserver(self, selector: .feedbackMessageReceived, name: .feedbackNewMessageReceived, object: nil)
-        
-        //CloudFeedback.Logging.set(logger: FeedbackLogger())
+        CloudFeedback.Logging.set(logger: FeedbackLogger())
         shared.feedback.load()
     }
 
@@ -60,5 +58,11 @@ internal class FeedbackService {
         let navigation = UINavigationController(rootViewController: shared.feedback.client.feedbackController())
         navigation.modalPresentationStyle = .formSheet
         controller.present(navigation, animated: true, completion: nil)
+    }
+}
+
+private class FeedbackLogger: CloudFeedback.Logger {
+    func log<T>(_ object: T, file: String, function: String, line: Int) {
+        Log.feedback.debug(object, file: file, function: function, line: line)
     }
 }
