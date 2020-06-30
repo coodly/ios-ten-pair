@@ -61,7 +61,7 @@ internal class AdMobGDPRCheck: GDPRCheck {
     }
     
     func present() {
-        guard let privacyUrl = URL(string: "http://www.coodly.com/tenpair/privacy.html"),
+        guard let privacyUrl = URL(string: "https://www.coodly.com/tenpair/privacy"),
             let form = PACConsentForm(applicationPrivacyPolicyURL: privacyUrl) else {
                 print("incorrect privacy URL.")
                 return
