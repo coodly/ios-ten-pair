@@ -17,47 +17,42 @@ PODS:
     - Puff/Core (= 0.6.0)
     - Puff/CoreData (= 0.6.0)
   - CoreDataPersistence (0.2.1)
-  - Firebase/CoreOnly (6.25.0):
-    - FirebaseCore (= 6.7.1)
-  - Firebase/Crashlytics (6.25.0):
+  - Firebase/CoreOnly (6.27.0):
+    - FirebaseCore (= 6.8.0)
+  - Firebase/Crashlytics (6.27.0):
     - Firebase/CoreOnly
-    - FirebaseCrashlytics (~> 4.1.0)
-  - FirebaseAnalyticsInterop (1.5.0)
-  - FirebaseCore (6.7.1):
+    - FirebaseCrashlytics (~> 4.2.0)
+  - FirebaseCore (6.8.0):
     - FirebaseCoreDiagnostics (~> 1.3)
-    - FirebaseCoreDiagnosticsInterop (~> 1.2)
     - GoogleUtilities/Environment (~> 6.5)
     - GoogleUtilities/Logger (~> 6.5)
-  - FirebaseCoreDiagnostics (1.3.0):
-    - FirebaseCoreDiagnosticsInterop (~> 1.2)
+  - FirebaseCoreDiagnostics (1.4.0):
     - GoogleDataTransportCCTSupport (~> 3.1)
     - GoogleUtilities/Environment (~> 6.5)
     - GoogleUtilities/Logger (~> 6.5)
     - nanopb (~> 1.30905.0)
-  - FirebaseCoreDiagnosticsInterop (1.2.0)
-  - FirebaseCrashlytics (4.1.0):
-    - FirebaseAnalyticsInterop (~> 1.2)
-    - FirebaseCore (~> 6.6)
+  - FirebaseCrashlytics (4.2.0):
+    - FirebaseCore (~> 6.8)
     - FirebaseInstallations (~> 1.1)
     - GoogleDataTransport (~> 6.1)
     - GoogleDataTransportCCTSupport (~> 3.1)
     - nanopb (~> 1.30905.0)
     - PromisesObjC (~> 1.2)
-  - FirebaseInstallations (1.2.0):
-    - FirebaseCore (~> 6.6)
+  - FirebaseInstallations (1.4.0):
+    - FirebaseCore (~> 6.8)
     - GoogleUtilities/Environment (~> 6.6)
     - GoogleUtilities/UserDefaults (~> 6.6)
     - PromisesObjC (~> 1.2)
-  - Google-Mobile-Ads-SDK (7.60.0):
+  - Google-Mobile-Ads-SDK (7.61.0):
     - GoogleAppMeasurement (~> 6.0)
-  - GoogleAppMeasurement (6.5.1):
+  - GoogleAppMeasurement (6.6.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 1.30905.0)
-  - GoogleDataTransport (6.1.1)
-  - GoogleDataTransportCCTSupport (3.1.0):
+  - GoogleDataTransport (6.2.1)
+  - GoogleDataTransportCCTSupport (3.2.0):
     - GoogleDataTransport (~> 6.1)
     - nanopb (~> 1.30905.0)
   - GoogleUtilities/AppDelegateSwizzler (6.6.0):
@@ -86,7 +81,7 @@ PODS:
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
   - PersonalizedAdConsent (1.0.5)
-  - PromisesObjC (1.2.8)
+  - PromisesObjC (1.2.9)
   - Puff/Core (0.6.0):
     - Puff/Logger
     - Puff/Serialization
@@ -100,18 +95,16 @@ DEPENDENCIES:
   - "CloudFeedback/Client (from `git@github.com:coodly/CloudFeedback.git`)"
   - "CloudFeedback/iOS (from `git@github.com:coodly/CloudFeedback.git`)"
   - "CloudInsight (from `git@github.com:coodly/CloudInsight.git`)"
-  - Firebase/Crashlytics (= 6.25.0)
-  - Google-Mobile-Ads-SDK (= 7.60.0)
+  - Firebase/Crashlytics (= 6.27.0)
+  - Google-Mobile-Ads-SDK (= 7.61.0)
   - PersonalizedAdConsent (= 1.0.5)
   - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs:
     - Firebase
-    - FirebaseAnalyticsInterop
     - FirebaseCore
     - FirebaseCoreDiagnostics
-    - FirebaseCoreDiagnosticsInterop
     - FirebaseCrashlytics
     - FirebaseInstallations
     - Google-Mobile-Ads-SDK
@@ -150,25 +143,23 @@ SPEC CHECKSUMS:
   CloudFeedback: 7f2baed97b331b22878065f8ebafb173d1357fbf
   CloudInsight: 3e13af8d4082f76c90a203afe8935c2ab5849100
   CoreDataPersistence: ea9d57c4650ae4c3a66b4020e36f61f3026b36e4
-  Firebase: 5719b4f965f76643241a1bb8244483ff6117db39
-  FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
-  FirebaseCore: 6023faeada5afa95a349fccafb40900e32e9ac42
-  FirebaseCoreDiagnostics: 4a773a47bd83bbd5a9b1ccf1ce7caa8b2d535e67
-  FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
-  FirebaseCrashlytics: fff345f16a07f0b23cb342d8de5a42cec6de3492
-  FirebaseInstallations: 2119fb3e46b0a88bfdbf12562f855ee3252462fa
-  Google-Mobile-Ads-SDK: d70efb31e7ea19fe99d466dc5d4788966b6914f8
-  GoogleAppMeasurement: 137afe68bfa406c3f4221b9395253d9e5d4654cf
-  GoogleDataTransport: ad884314b81cdb808fb1d23787b367ff8da4e28a
-  GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
+  Firebase: fc4cbf6f1592636431821ef9a3c557e4dfd9f268
+  FirebaseCore: feda061cb1ee6d8ad4824f4a4a8ffbcfe284f595
+  FirebaseCoreDiagnostics: 4505e4d4009b1d93f605088ee7d7764d5f0d1c84
+  FirebaseCrashlytics: 7d0fa02ea8842cc4b2ab07b0735edafde1ad77d6
+  FirebaseInstallations: 293f567159b6d66d1c990f13bb868066096c94ec
+  Google-Mobile-Ads-SDK: 4c3b24b04293b4bb370b2cb392cdd3ee97c87752
+  GoogleAppMeasurement: 2fd5c5a56c069db635c8e7b92d4809a9591d0a69
+  GoogleDataTransport: 9a8a16f79feffc7f42096743de2a7c4815e84020
+  GoogleDataTransportCCTSupport: 489c1265d2c85b68187a83a911913d190012158d
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PersonalizedAdConsent: dbecabb3467df967c16d9cebc2ef4a8890e4bbd8
-  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Puff: c47402c40261fc55c277075478cc9f9581f21a68
   SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
-PODFILE CHECKSUM: dc0ccdd3eeb0900081ddfbac956ffe48fd6a1d4e
+PODFILE CHECKSUM: e01a964fd3629814957da9946b6b5158d2f1bf2e
 
 COCOAPODS: 1.9.1
