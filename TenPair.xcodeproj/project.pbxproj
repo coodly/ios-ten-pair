@@ -89,7 +89,6 @@
 		A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA861E50CC76003E62D7 /* InfoPlist.strings */; };
 		A777FA8B1E50CC76003E62D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA881E50CC76003E62D7 /* Localizable.strings */; };
 		A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
-		A78D568F1E5AF095002957DC /* Confetti.sks in Resources */ = {isa = PBXBuildFile; fileRef = A78D568E1E5AF095002957DC /* Confetti.sks */; };
 		A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */; };
 		A797BD712483808F00A6E27D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A797BD702483808F00A6E27D /* GoogleService-Info.plist */; };
 		A7A8371F24A1C239006DD8B4 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A8371E24A1C239006DD8B4 /* Menu.storyboard */; };
@@ -174,7 +173,6 @@
 		A78D56811E5AE54B002957DC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOSFrameworks/Fabric.framework; sourceTree = SOURCE_ROOT; };
 		A78D56841E5AE55E002957DC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = macOSFrameworks/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		A78D56851E5AE55E002957DC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = macOSFrameworks/Fabric.framework; sourceTree = SOURCE_ROOT; };
-		A78D568E1E5AF095002957DC /* Confetti.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Confetti.sks; sourceTree = "<group>"; };
 		A78FA2EC1E5C145C002DB0AF /* TenPair.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenPair.entitlements; sourceTree = "<group>"; };
 		A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
 		A797BD702483808F00A6E27D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -302,7 +300,6 @@
 				A7A8373624A238BA006DD8B4 /* Themes */,
 				A7BD4EB524A5C43600D613FC /* Win */,
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
-				A78D568E1E5AF095002957DC /* Confetti.sks */,
 				A7B12C1C1E535B18007D7807 /* Config.swift */,
 				A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */,
 				A777FA851E50CC76003E62D7 /* en.lproj */,
@@ -635,7 +632,6 @@
 				A7BD4EBC24A5C6ED00D613FC /* Fireworks.sks in Resources */,
 				A7BD4EBD24A5C6ED00D613FC /* Assets.xcassets in Resources */,
 				A7D97FA424A4ECAC00F95EC9 /* Loading.storyboard in Resources */,
-				A78D568F1E5AF095002957DC /* Confetti.sks in Resources */,
 				A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */,
 				A7BD4EC124A5C7C400D613FC /* Win.storyboard in Resources */,
 				A7A8372D24A1C848006DD8B4 /* MenuCell.xib in Resources */,
