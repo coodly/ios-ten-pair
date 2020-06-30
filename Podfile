@@ -26,14 +26,6 @@ def ios_pods
     pod 'Firebase/Crashlytics', '6.25.0'
 
     logger
-
-    if UsedSource == PodSource::Local
-        pod 'SpriteKitUI/iOS', :path => '../swift-sprite-kit-ui'
-    elsif UsedSource == PodSource::Remote
-        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'master'
-    else
-        pod 'SpriteKitUI/iOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.4.0'
-    end
 end
 
 def feedback_pod
@@ -73,18 +65,4 @@ target 'Catalyst' do
 
     insight_pod
     logger
-end
-
-target 'macOS' do
-    platform :osx, '10.11'
-    
-    logger
-    
-    if UsedSource == PodSource::Local
-        pod 'SpriteKitUI/macOS', :path => '../swift-sprite-kit-ui'
-    elsif UsedSource == PodSource::Remote
-        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :branch => 'master'
-    else
-        pod 'SpriteKitUI/macOS', :git => 'git@github.com:coodly/SpriteKitUI.git', :tag => '0.4.0'
-    end
 end
