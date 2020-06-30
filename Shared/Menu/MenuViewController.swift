@@ -34,9 +34,11 @@ internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded, 
         }
         options.append(.restart(-1))
         options.append(.theme(AppTheme.shared.active))
+        #if !targetEnvironment(macCatalyst)
         if #available(iOS 13, *) {
             options.append(.feedback(FeedbackService.hasMessage()))
         }
+        #endif
         if gdprCheck?.showGDPRConsentMenuItem ?? false {
             options.append(.personalizedAds)
         }
