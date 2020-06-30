@@ -34,10 +34,12 @@ internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded, 
         }
         options.append(.restart(-1))
         options.append(.theme(AppTheme.shared.active))
+        if #available(iOS 13, *) {
+            options.append(.feedback(FeedbackService.hasMessage()))
+        }
         if gdprCheck?.showGDPRConsentMenuItem ?? false {
             options.append(.personalizedAds)
         }
-        options.append(.feedback)
     }
     
     override func tapped(on option: MenuOption) {
@@ -52,6 +54,10 @@ internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded, 
             tableView.reloadData()
         case .personalizedAds:
             gdprCheck?.present()
+        case .feedback(_):
+            if #available(iOS 13, *) {
+                FeedbackService.present()
+            }
         default:
             super.tapped(on: option)
         }

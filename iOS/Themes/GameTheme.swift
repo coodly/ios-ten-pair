@@ -83,6 +83,7 @@ internal class AppTheme {
     }
     
     private func apply(theme: ThemeDefinition) {
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.navigationTint]
         UINavigationBar.appearance().tintColor = theme.navigationTint
         UINavigationBar.appearance().barTintColor = theme.background
         TileDefaultBackground.appearance().backgroundColor = theme.main

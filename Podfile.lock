@@ -150,7 +150,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CloudFeedback:
-    :commit: fdee5e8d4fe3b6d63c0f1306d62d719d4cc03e8c
+    :commit: b088d346c7726742e82c81d99da75378601d3e89
     :git: "git@github.com:coodly/CloudFeedback.git"
   CloudInsight:
     :commit: fc7f7c29d37db63cecdde05c3001dbf4b96d63d1

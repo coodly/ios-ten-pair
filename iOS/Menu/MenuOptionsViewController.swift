@@ -20,7 +20,7 @@ internal enum MenuOption {
     case resume
     case restart(Int)
     case theme(ThemeDefinition)
-    case feedback
+    case feedback(Bool)
     case personalizedAds
     case back
     
@@ -40,8 +40,8 @@ internal enum MenuOption {
             }
         case .theme(let active):
             return String(format: NSLocalizedString("menu.option.theme.base", comment: ""), active.localizedName)
-        case .feedback:
-            return NSLocalizedString("menu.option.send.message", comment: "")
+        case .feedback(let hasMessage):
+            return hasMessage ? NSLocalizedString("menu.option.message.from", comment: "") : NSLocalizedString("menu.option.send.message", comment: "")
         case .personalizedAds:
             return NSLocalizedString("menu.option.gdpr", comment: "")
         case .back:
