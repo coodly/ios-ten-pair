@@ -17,7 +17,7 @@ def logger
     elsif UsedSource == PodSource::Remote
         pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
     else
-        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', :tag => '0.3.1'
+        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', :tag => '0.4.3'
     end
 end
 
@@ -36,8 +36,8 @@ def feedback_pod
         pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git'
         pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git'
     else
-        pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.10'
-        pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.10'
+        pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.11'
+        pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.2.11'
     end
 end
 
@@ -47,7 +47,7 @@ def insight_pod
   elsif UsedSource == PodSource::Remote
     pod 'CloudInsight', :git => 'git@github.com:coodly/CloudInsight.git'
   else
-    pod 'CloudInsight', :git => 'git@github.com:coodly/CloudInsight.git', :tag => '0.1.4'
+    pod 'CloudInsight', :git => 'git@github.com:coodly/CloudInsight.git', :tag => '0.1.5'
   end
 end
 
