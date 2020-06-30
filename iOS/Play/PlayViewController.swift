@@ -25,7 +25,9 @@ internal protocol PlayDelegate: class {
     func checkGameEnd()
 }
 
-internal class PlayViewController: UIViewController {
+internal class PlayViewController: UIViewController, GDPRCheckConsumer {
+    var gdprCheck: GDPRCheck?
+    
     private lazy var field = PlayField()
     
     @IBOutlet private var collectionView: UICollectionView!
@@ -181,6 +183,7 @@ internal class PlayViewController: UIViewController {
         let menu: MenuViewController = Storyboards.loadFromStoryboard()
         menu.delegate = self
         menu.gameWon = field.gameEnded
+        menu.gdprCheck = gdprCheck
         
         let navigation = PlayNavigationController(rootViewController: menu)
         navigation.isNavigationBarHidden = true

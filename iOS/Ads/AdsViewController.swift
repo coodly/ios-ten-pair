@@ -51,12 +51,15 @@ internal class AdsViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(setNeedsStatusBarAppearanceUpdate), name: .themeChanged, object: nil)
         NotificationCenter.default.addObserver(self, selector: .tickInterstitial, name: .hintTaken, object: nil)
         NotificationCenter.default.addObserver(self, selector: .tickInterstitial, name: .fieldReload, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadAds), name: .personalizedAdsStatusChanged, object: nil)
+
         bannerContainer.clipsToBounds = true
         bannerContainer.addSubview(banner)
         banner.pinToSuperviewEdges()
         
         loadAds()
+        
+        children.compactMap({ $0 as? GDPRCheckConsumer }).forEach({ $0.gdprCheck = gdpr })
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

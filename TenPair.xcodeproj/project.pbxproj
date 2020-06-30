@@ -118,6 +118,7 @@
 		A7D97FA624A4F15D00F95EC9 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA524A4F15D00F95EC9 /* SpinnerView.swift */; };
 		A7EADCF91F9D1D47007BA0E8 /* TopMenuBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EADCF81F9D1D47007BA0E8 /* TopMenuBackground.swift */; };
 		A7ECCB801E4E275E001ADB51 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ECCB7F1E4E275E001ADB51 /* Tile.swift */; };
+		A7ECE41F24AB697C000CBD7F /* GDPRCheckConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ECE41E24AB697C000CBD7F /* GDPRCheckConsumer.swift */; };
 		A7ED7FCF1F9E5165005AE9C9 /* TopMenuBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EADCF81F9D1D47007BA0E8 /* TopMenuBackground.swift */; };
 		A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
@@ -220,6 +221,7 @@
 		A7D97FA524A4F15D00F95EC9 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		A7EADCF81F9D1D47007BA0E8 /* TopMenuBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuBackground.swift; sourceTree = "<group>"; };
 		A7ECCB7F1E4E275E001ADB51 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		A7ECE41E24AB697C000CBD7F /* GDPRCheckConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDPRCheckConsumer.swift; sourceTree = "<group>"; };
 		A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		CDBD234CA436EF092F3D679F /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D734C99D56200ECE40196FB7 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				A742610F248769DA003B9E9E /* GDPRCheck.swift */,
+				A7ECE41E24AB697C000CBD7F /* GDPRCheckConsumer.swift */,
 			);
 			path = GDPR;
 			sourceTree = "<group>";
@@ -880,6 +883,7 @@
 				A787134F1E5D6FDC002DEF76 /* RestartScreen.swift in Sources */,
 				A7D97FA224A4EC9100F95EC9 /* LoadingViewController.swift in Sources */,
 				A7BD4EC324A6440C00D613FC /* Rendered+Undo.swift in Sources */,
+				A7ECE41F24AB697C000CBD7F /* GDPRCheckConsumer.swift in Sources */,
 				A7A8372424A1C28E006DD8B4 /* Storyboards.swift in Sources */,
 				A7A8372C24A1C848006DD8B4 /* MenuCell.swift in Sources */,
 				A777FA831E50758A003E62D7 /* MenuButton.swift in Sources */,

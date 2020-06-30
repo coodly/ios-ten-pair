@@ -16,7 +16,9 @@
 
 import UIKit
 
-internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded {
+internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded, GDPRCheckConsumer {
+    var gdprCheck: GDPRCheck?
+    
     internal var gameWon = false
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +34,9 @@ internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded {
         }
         options.append(.restart(-1))
         options.append(.theme(AppTheme.shared.active))
+        if gdprCheck?.showGDPRConsentMenuItem ?? false {
+            options.append(.personalizedAds)
+        }
         options.append(.feedback)
     }
     
@@ -45,6 +50,8 @@ internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded {
             _ = AppTheme.shared.switchToNext()
             refreshMenuOptions()
             tableView.reloadData()
+        case .personalizedAds:
+            gdprCheck?.present()
         default:
             super.tapped(on: option)
         }

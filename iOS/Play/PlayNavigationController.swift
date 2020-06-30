@@ -16,7 +16,12 @@
 
 import UIKit
 
-internal class PlayNavigationController: UINavigationController {
+internal class PlayNavigationController: UINavigationController, GDPRCheckConsumer {
+    var gdprCheck: GDPRCheck? {
+        didSet {
+            children.compactMap({ $0 as? GDPRCheckConsumer }).forEach({ $0.gdprCheck = gdprCheck })
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
