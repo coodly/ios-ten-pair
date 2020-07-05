@@ -15,6 +15,7 @@
 */
 
 import UIKit
+import SWLogger
 
 internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded, GDPRCheckConsumer {
     var gdprCheck: GDPRCheck?
@@ -42,6 +43,9 @@ internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded, 
         if gdprCheck?.showGDPRConsentMenuItem ?? false {
             options.append(.personalizedAds)
         }
+        if AppConfig.current.logs {
+            options.append(.logs)
+        }
     }
     
     override func tapped(on option: MenuOption) {
@@ -60,6 +64,10 @@ internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded, 
             if #available(iOS 13, *) {
                 FeedbackService.present()
             }
+        case .logs:
+            let logs = LogsViewController()
+            let navigation = UINavigationController(rootViewController: logs)
+            present(navigation, animated: true)
         default:
             super.tapped(on: option)
         }

@@ -23,6 +23,7 @@ internal enum MenuOption {
     case feedback(Bool)
     case personalizedAds
     case back
+    case logs
     
     var title: String {
         switch self {
@@ -46,6 +47,8 @@ internal enum MenuOption {
             return NSLocalizedString("menu.option.gdpr", comment: "")
         case .back:
             return NSLocalizedString("restart.screen.back", comment: "")
+        case .logs:
+            return "Logs"
         }
     }
 }
