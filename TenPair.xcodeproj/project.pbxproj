@@ -156,6 +156,9 @@
 		A75BE55C24AB81A200D0AEB4 /* FeedbackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
 		A75BE55F24AB823500D0AEB4 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		A75BE56424AB849800D0AEB4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		A75E8CDE25700FC800CCB8DC /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
+		A75E8CDF25700FC800CCB8DC /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
+		A75E8CE125700FC800CCB8DC /* 965FUXH96J.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 965FUXH96J.json; sourceTree = "<group>"; };
 		A7720B8224A469D6006C40EC /* Rendered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rendered.swift; sourceTree = "<group>"; };
 		A7720B8824A46F6D006C40EC /* Rendered+Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendered+Hint.swift"; sourceTree = "<group>"; };
 		A7720B8A24A47349006C40EC /* Rendered+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendered+Menu.swift"; sourceTree = "<group>"; };
@@ -261,6 +264,7 @@
 		A71A97331E48CCA4005E134F = {
 			isa = PBXGroup;
 			children = (
+				A75E8CDD25700FC800CCB8DC /* fastlane */,
 				A71A97381E48CCA4005E134F /* Shared */,
 				A71A97431E48CCA4005E134F /* iOS */,
 				A75BE51324AB7A5700D0AEB4 /* Catalyst */,
@@ -365,6 +369,16 @@
 				A748DC3A1E57375800F16F92 /* LaunchView.xib */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		A75E8CDD25700FC800CCB8DC /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				A75E8CDE25700FC800CCB8DC /* Appfile */,
+				A75E8CDF25700FC800CCB8DC /* Fastfile */,
+				A75E8CE125700FC800CCB8DC /* 965FUXH96J.json */,
+			);
+			path = fastlane;
 			sourceTree = "<group>";
 		};
 		A7720B8124A469C6006C40EC /* Rendered */ = {
@@ -1034,7 +1048,7 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2020.1;
+				MARKETING_VERSION = 2020.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
 				PRODUCT_NAME = TenPair;
 				SDKROOT = iphoneos;
@@ -1058,7 +1072,7 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2020.1;
+				MARKETING_VERSION = 2020.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
 				PRODUCT_NAME = TenPair;
 				SDKROOT = iphoneos;

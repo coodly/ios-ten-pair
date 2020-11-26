@@ -6,3 +6,7 @@ TenPair/Secrets.swift
 project.xcworkspace
 Shared/Secrets.swift
 iOS/Secrets/GoogleService-Info.plist
+fastlane/README.md
+fastlane/report.xml
+fastlane/965FUXH96J.json
+fastlane/Appfile
