@@ -17,13 +17,42 @@
 import Foundation
 
 open class ConcurrentOperation: Operation {
-    public var completionHandler: ((Bool, ConcurrentOperation) -> ())?
+    public var cancelOnDependencyFailure = true
+    
+    private struct Forward {
+        fileprivate let callSuccess: (() -> Void)
+        fileprivate let callError: ((Error) -> Void)
+        
+        internal func forwardSuccess() {
+            callSuccess()
+        }
+        
+        internal func forward(error: Error) {
+            callError(error)
+        }
+    }
+    
+    public func onCompletion<T: ConcurrentOperation>(callback: @escaping ((Result<T, Error>) -> Void)) {
+        let onSuccess: (() -> Void) = {
+            [unowned self] in
+            
+            callback(.success(self as! T))
+        }
+        let onError: ((Error) -> Void) = {
+            error in
+            
+            callback(.failure(error))
+        }
+        forward = Forward(callSuccess: onSuccess, callError: onError)
+    }
+    
+    private var forward: Forward?
     
     override open var isConcurrent: Bool {
         return true
     }
 
-    private var failed = false
+    @objc private var failureError: Error?
     
     private var myExecuting: Bool = false
     override public final var isExecuting: Bool {
@@ -54,8 +83,16 @@ open class ConcurrentOperation: Operation {
     }
     
     override public final func start() {
+        Logging.log("Start \(String(describing: type(of: self)))")
         if isCancelled {
             finish()
+            return
+        }
+        
+        if cancelOnDependencyFailure, let dependencyError = anyDependencyError {
+            Logging.log("Dependency had error: \(dependencyError)")
+            let failure = NSError(domain: "com.coodly.concurrent", code: 0, userInfo: [NSUnderlyingErrorKey: dependencyError])
+            finish(failure)
             return
         }
         
@@ -65,11 +102,15 @@ open class ConcurrentOperation: Operation {
             completionBlock = {
                 [unowned self] in
                 
-                guard let completion = self.completionHandler else {
+                guard let forward = self.forward else {
                     return
                 }
                 
-                completion(!self.failed, self)
+                if let error = self.failureError {
+                    forward.forward(error: error)
+                } else {
+                    forward.forwardSuccess()
+                }
             }
         }
         
@@ -78,13 +119,21 @@ open class ConcurrentOperation: Operation {
         main()
     }
     
-    public func finish(_ failed: Bool = false) {
+    public func finish(_ failure: Error? = nil) {
+        Logging.log("Finish \(String(describing: type(of: self)))")
         willChangeValue(forKey: "isExecuting")
         willChangeValue(forKey: "isFinished")
         myExecuting = false
         myFinished = true
-        self.failed = failed
+        failureError = failure
         didChangeValue(forKey: "isExecuting")
         didChangeValue(forKey: "isFinished")
+    }
+    
+    private var anyDependencyError: Error? {
+        let selector = #selector(getter: failureError)
+        let candidates = dependencies.filter({ $0.responds(to: selector )})
+        let errors = candidates.compactMap({ $0.perform(selector)?.takeUnretainedValue() }).compactMap({ $0 as? Error })
+        return errors.first
     }
 }

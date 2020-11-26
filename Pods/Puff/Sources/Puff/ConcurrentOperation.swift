@@ -56,7 +56,7 @@ open class ConcurrentOperation: Operation {
         return true
     }
 
-    private var failureError: Error?
+    @objc private var failureError: Error?
     
     private var myExecuting: Bool = false
     override public final var isExecuting: Bool {
@@ -93,9 +93,9 @@ open class ConcurrentOperation: Operation {
             return
         }
         
-        if cancelOnDependencyFailure, let depencencyError = anyDependencyError {
-            Logging.log("Dependency had error: \(depencencyError)")
-            let failure = NSError(domain: "com.coodly.concurrent", code: 0, userInfo: [NSUnderlyingErrorKey: depencencyError])
+        if cancelOnDependencyFailure, let dependencyError = anyDependencyError {
+            Logging.log("Dependency had error: \(dependencyError)")
+            let failure = NSError(domain: "com.coodly.concurrent", code: 0, userInfo: [NSUnderlyingErrorKey: dependencyError])
             finish(failure)
             return
         }
@@ -134,7 +134,10 @@ open class ConcurrentOperation: Operation {
         didChangeValue(forKey: "isFinished")
     }
     
-    internal var anyDependencyError: Error? {
-        return dependencies.compactMap({ $0 as? ConcurrentOperation }).compactMap({ $0.failureError }).first
+    private var anyDependencyError: Error? {
+        let selector = #selector(getter: failureError)
+        let candidates = dependencies.filter({ $0.responds(to: selector )})
+        let errors = candidates.compactMap({ $0.perform(selector)?.takeUnretainedValue() }).compactMap({ $0 as? Error })
+        return errors.first
     }
 }

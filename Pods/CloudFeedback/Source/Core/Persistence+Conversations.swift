@@ -93,4 +93,14 @@ internal extension NSManagedObjectContext {
         let predicate = NSPredicate(format: "hasUpdate = YES")
         return count(instancesOf: Conversation.self, predicate: predicate) > 0
     }
+    
+    var conversation: Conversation {
+        if let existing: Conversation = fetchFirst() {
+            return existing
+        }
+        
+        let saved: Conversation = insertEntity()
+        saved.recordName = UUID().uuidString
+        return saved
+    }
 }

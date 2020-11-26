@@ -1,22 +1,22 @@
 PODS:
-  - CloudFeedback/Client (0.2.10):
+  - CloudFeedback/Client (0.3.1):
     - CloudFeedback/Core
-  - CloudFeedback/Core (0.2.10):
-    - CoreDataPersistence (= 0.2.1)
-    - Puff/Core (= 0.6.0)
-    - Puff/CoreData (= 0.6.0)
-  - CloudFeedback/iOS (0.2.10):
+  - CloudFeedback/Core (0.3.1):
+    - CoreDataPersistence (= 0.2.3)
+    - Puff/Core (= 0.6.2)
+    - Puff/CoreData (= 0.6.2)
+  - CloudFeedback/iOS (0.3.1):
     - CloudFeedback/Core
-  - CloudInsight (0.1.4):
-    - CloudInsight/Client (= 0.1.4)
-  - CloudInsight/Client (0.1.4):
+  - CloudInsight (0.1.7):
+    - CloudInsight/Client (= 0.1.7)
+  - CloudInsight/Client (0.1.7):
     - CloudInsight/Core
-  - CloudInsight/Core (0.1.4):
-    - CoreDataPersistence (= 0.2.1)
-    - KeychainAccess (= 4.1.0)
-    - Puff/Core (= 0.6.0)
-    - Puff/CoreData (= 0.6.0)
-  - CoreDataPersistence (0.2.1)
+  - CloudInsight/Core (0.1.7):
+    - CoreDataPersistence (= 0.2.3)
+    - KeychainAccess (= 4.2.1)
+    - Puff/Core (= 0.6.2)
+    - Puff/CoreData (= 0.6.2)
+  - CoreDataPersistence (0.2.3)
   - Firebase/CoreOnly (6.27.0):
     - FirebaseCore (= 6.8.0)
   - Firebase/Crashlytics (6.27.0):
@@ -74,7 +74,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.6.0):
     - GoogleUtilities/Logger
-  - KeychainAccess (4.1.0)
+  - KeychainAccess (4.2.1)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
@@ -82,12 +82,12 @@ PODS:
   - nanopb/encode (1.30905.0)
   - PersonalizedAdConsent (1.0.5)
   - PromisesObjC (1.2.9)
-  - Puff/Core (0.6.0):
+  - Puff/Core (0.6.2):
     - Puff/Logger
     - Puff/Serialization
-  - Puff/CoreData (0.6.0)
-  - Puff/Logger (0.6.0)
-  - Puff/Serialization (0.6.0):
+  - Puff/CoreData (0.6.2)
+  - Puff/Logger (0.6.2)
+  - Puff/Serialization (0.6.2):
     - Puff/Logger
   - SWLogger (0.4.3)
 
@@ -130,19 +130,19 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CloudFeedback:
-    :commit: b088d346c7726742e82c81d99da75378601d3e89
+    :commit: cf6c760c2f40b63fdddf7f1afb6fe6aacadf5a70
     :git: "git@github.com:coodly/CloudFeedback.git"
   CloudInsight:
-    :commit: 0693d8b3da0aa1a601ca036ce788090f83db1858
+    :commit: 33d17a15f7d298784f7dc418ce026eb5e63180f3
     :git: "git@github.com:coodly/CloudInsight.git"
   SWLogger:
-    :commit: b26e4fd01ef133f41b065e91e03caad5ec4a7ad2
+    :commit: 18ed3df041436a5984bf81eb2b16f692a0c166bf
     :git: "git@github.com:coodly/swlogger.git"
 
 SPEC CHECKSUMS:
-  CloudFeedback: 7f2baed97b331b22878065f8ebafb173d1357fbf
-  CloudInsight: 3e13af8d4082f76c90a203afe8935c2ab5849100
-  CoreDataPersistence: ea9d57c4650ae4c3a66b4020e36f61f3026b36e4
+  CloudFeedback: e1f033f65376f6a747cd0297a3f244fe313b494e
+  CloudInsight: 3038603eeddf90cb11bdfb37cd0b11f96d088a9d
+  CoreDataPersistence: 2379452444c3020b76f46b28e30903ec533c7b24
   Firebase: fc4cbf6f1592636431821ef9a3c557e4dfd9f268
   FirebaseCore: feda061cb1ee6d8ad4824f4a4a8ffbcfe284f595
   FirebaseCoreDiagnostics: 4505e4d4009b1d93f605088ee7d7764d5f0d1c84
@@ -153,13 +153,13 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 9a8a16f79feffc7f42096743de2a7c4815e84020
   GoogleDataTransportCCTSupport: 489c1265d2c85b68187a83a911913d190012158d
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
-  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
+  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PersonalizedAdConsent: dbecabb3467df967c16d9cebc2ef4a8890e4bbd8
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
-  Puff: c47402c40261fc55c277075478cc9f9581f21a68
+  Puff: 55e8b337d559cade0025ee287397ec18c2a5054b
   SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
 PODFILE CHECKSUM: c3819979f8b805fcb94895fe28dd83729cdad8ef
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

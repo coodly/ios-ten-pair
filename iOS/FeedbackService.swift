@@ -51,7 +51,7 @@ internal class FeedbackService {
             return
         }
         
-        guard #available(iOS 13.0, *) else {
+        guard #available(iOS 14.0, *) else {
             return
         }
         

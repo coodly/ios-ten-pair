@@ -23,21 +23,23 @@ open class FileOutput: LogOutput {
         case number(Int)
     }
     
+    public enum FileTime {
+        case minuteBased
+        case dateBased
+    }
+    
     private var fileHandle: FileHandle!
     private let saveInDirectory: FileManager.SearchPathDirectory
-    internal lazy var logsFolder: URL = {
-        let urls = FileManager.default.urls(for: self.saveInDirectory, in: .userDomainMask)
-        let last = urls.last!
-        let identifier = Bundle.main.bundleIdentifier!
-        let logsIdentifier = identifier + ".logs"
-        let logsFolder = last.appendingPathComponent(logsIdentifier)
-
-        do {
-            try FileManager.default.createDirectory(at: logsFolder, withIntermediateDirectories: true, attributes: nil)
-        } catch let error as NSError {
-            print("Create db folder error \(error)")
+    private let appGroup: String?
+    private lazy var appGroupFolder: URL? = {
+        guard let name = appGroup else {
+            return nil
         }
-        return logsFolder
+        
+        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: name)
+    }()
+    internal lazy var searchPathFolder: URL = {
+        FileManager.default.urls(for: self.saveInDirectory, in: .userDomainMask).last!
     }()
     private lazy var appNamePrefix: String = {
         let displayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
@@ -49,11 +51,33 @@ open class FileOutput: LogOutput {
         return "\(appName)-"
     }()
     private let proposedName: String?
+    private(set) lazy var logsFolder: URL = {
+        let used = appGroupFolder ?? searchPathFolder
+        let logsIdentifier = identifier + ".logs"
+        let logsFolder = used.appendingPathComponent(logsIdentifier)
 
-    public init(saveInDirectory: FileManager.SearchPathDirectory = .documentDirectory, name: String? = nil, keep: Keep = .forever) {
-        self.saveInDirectory = saveInDirectory
-        self.proposedName = name
-        DispatchQueue.global(qos: .background).async {
+        createFolder(logsFolder)
+
+        return logsFolder
+    }()
+    private let fileTime: FileTime
+    private let identifier: String
+
+    public convenience init(appGroup: String, identifier: String = Bundle.main.bundleIdentifier!, name: String? = nil, fileTime: FileTime = .minuteBased, keep: Keep = .forever) {
+        self.init(appGroup: appGroup, directory: .documentDirectory, identifier: identifier, name: name, fileTime: fileTime, keep: keep)
+    }
+    
+    public convenience init(saveInDirectory: FileManager.SearchPathDirectory = .documentDirectory, identifier: String = Bundle.main.bundleIdentifier!, name: String? = nil, fileTime: FileTime = .minuteBased, keep: Keep = .forever) {
+        self.init(appGroup: nil, directory: saveInDirectory, identifier: identifier, name: name, fileTime: fileTime, keep: keep)
+    }
+    
+    private init(appGroup: String?, directory: FileManager.SearchPathDirectory, identifier: String, name: String?, fileTime: FileTime = .minuteBased, keep: Keep) {
+        self.appGroup = appGroup
+        saveInDirectory = directory
+        self.identifier = identifier
+        proposedName = name
+        self.fileTime = fileTime
+        DispatchQueue.global(qos: .utility).async {
             self.cleanOld(with: keep)
         }
     }
@@ -102,7 +126,7 @@ open class FileOutput: LogOutput {
         
         do {
             try FileManager.default.createDirectory(at: path, withIntermediateDirectories: true, attributes: nil)
-        } catch let error as NSError {
+        } catch {
             print("Create logs folder error \(error)")
         }
     }
@@ -117,7 +141,12 @@ open class FileOutput: LogOutput {
     
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd-HH-mm"
+        switch fileTime {
+        case .dateBased:
+            formatter.dateFormat = "yyyy-MM-dd"
+        case .minuteBased:
+            formatter.dateFormat = "yyyy-MM-dd-HH-mm"
+        }
         return formatter
     }()
     
@@ -152,7 +181,7 @@ open class FileOutput: LogOutput {
     private func remove(files: [LogFile]) {
         Log.debug("Will remove \(files.count) files")
         for file in files {
-            DispatchQueue.global(qos: .background).async {
+            DispatchQueue.global(qos: .utility).async {
                 try? FileManager.default.removeItem(at: file.file)
             }
         }

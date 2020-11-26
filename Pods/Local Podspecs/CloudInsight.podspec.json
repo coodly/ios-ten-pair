@@ -1,6 +1,6 @@
 {
   "name": "CloudInsight",
-  "version": "0.1.4",
+  "version": "0.1.7",
   "license": "Apache 2",
   "summary": "Light analytics on top of CloudKit",
   "homepage": "https://github.com/coodly/CloudInsight",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "git@github.com:coodly/CloudInsight.git",
-    "tag": "0.1.4"
+    "tag": "0.1.7"
   },
   "default_subspecs": "Client",
   "platforms": {
@@ -23,16 +23,16 @@
       "source_files": "Source/Core/*.swift",
       "dependencies": {
         "CoreDataPersistence": [
-          "0.2.1"
+          "0.2.3"
         ],
         "Puff/Core": [
-          "0.6.0"
+          "0.6.2"
         ],
         "Puff/CoreData": [
-          "0.6.0"
+          "0.6.2"
         ],
         "KeychainAccess": [
-          "4.1.0"
+          "4.2.1"
         ]
       },
       "resource_bundles": {

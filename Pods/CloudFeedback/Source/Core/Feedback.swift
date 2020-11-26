@@ -39,12 +39,15 @@ public final class Feedback: Dependencies, FeedbackInjector {
         return queue
     }()
     
-    public init(container: CKContainer = .default(), translation: Translation? = nil) {
+    public init(container: CKContainer = .default(), translation: Translation? = nil, styling: Styling? = nil) {
         Logging.log("Start with \(String(describing: container.containerIdentifier))")
         self.container = container
         FeedbackInjection.sharedInstance.feedbackContainer = container
         if let translation = translation {
             FeedbackInjection.sharedInstance.translation = translation
+        }
+        if let styling = styling {
+            FeedbackInjection.sharedInstance.styling = styling
         }
     }
     

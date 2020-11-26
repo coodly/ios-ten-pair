@@ -16,6 +16,7 @@
 
 import Foundation
 import CoreData
+import Combine
 
 internal extension NSManagedObjectContext {
     func fetchedControllerForMessages(in conversation: Conversation) -> NSFetchedResultsController<Message> {
@@ -32,6 +33,7 @@ internal extension NSManagedObjectContext {
         saved.conversation = conversation
         saved.postedAt = now
         saved.syncNeeded = true
+        saved.recordName = UUID().uuidString
         conversation.lastMessageTime = now
         conversation.snippet = message.snippet()
         conversation.syncNeeded = true
@@ -56,5 +58,10 @@ internal extension NSManagedObjectContext {
         saved.syncNeeded = false
         saved.conversation = conversation(for: message.conversation!)!
         saved.sentBy = message.sentBy
+    }
+    
+    @available(iOS 13.0, *)
+    var publisherForAllMessages: AnyPublisher<[Message], Never> {
+        monitorEntities(of: Message.self, predicate: .truePredicate, sort: [NSSortDescriptor(keyPath: \Message.postedAt, ascending: true)])
     }
 }

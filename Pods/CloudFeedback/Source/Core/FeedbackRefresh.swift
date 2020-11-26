@@ -19,23 +19,69 @@ import CoreDataPersistence
 
 class FeedbackRefresh: FeedbackInjector, PersistenceConsumer {
     var persistence: CorePersistence!
+    private lazy var queue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.qualityOfService = .utility
+        return queue
+    }()
     
     public func refresh(completion: @escaping ((Bool) -> ())) {
+        pullConversations(completion: completion)
+    }
+    
+    private func pullConversations(completion: @escaping ((Bool) -> Void)) {
+        Logging.log("Pull coversations")
         let op = PullConversationsOperation()
         inject(into: op)
         let callback: ((Result<PullConversationsOperation, Error>) -> Void) = {
-            _ in
+            result in
             
-            DispatchQueue.main.async {
+            switch result {
+            case .failure(let error):
+                Logging.log("Pull error \(error)")
+                DispatchQueue.main.async() {
+                    completion(false)
+                }
+            case .success(_):
+                self.pullMessages(completion: completion)
+            }
+        }
+        op.onCompletion(callback: callback)
+        queue.addOperation(op)
+    }
+    
+    private func pullMessages(completion: @escaping ((Bool) -> Void)) {
+        Logging.log("Pull messages")
+        persistence.performInBackground() {
+            context in
+            
+            let conversations: [Conversation] = context.fetch()
+            guard conversations.count > 0 else {
+                Logging.log("No conversations")
+                DispatchQueue.main.async {
+                    completion(false)
+                }
+                return
+            }
+            
+            Logging.log("Pull messages in \(conversations.count) conversations")
+            var operations: [Operation] = conversations.map({ PullMessagesOperation(for: $0) })
+            operations.forEach({ self.inject(into: $0) })
+            
+            let finalise = BlockOperation() {
                 self.persistence.performInBackground() {
                     context in
                     
                     let hasUnseen = context.hasUnseenConversations()
-                    completion(hasUnseen)
+                    DispatchQueue.main.async {
+                        completion(hasUnseen)
+                    }
                 }
             }
+            
+            operations.forEach({ finalise.addDependency($0) })
+            operations.append(finalise)
+            self.queue.addOperations(operations, waitUntilFinished: false)
         }
-        op.onCompletion(callback: callback)
-        op.start()
     }
 }

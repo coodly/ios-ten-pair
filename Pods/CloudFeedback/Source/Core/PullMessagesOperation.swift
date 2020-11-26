@@ -48,8 +48,9 @@ internal class PullMessagesOperation: CloudKitRequest<Cloud.Message>, Persistenc
             context in
             
             if result.error != nil {
-                Logging.log("Pull masseges failed")
+                Logging.log("Pull massages failed")
             } else {
+                Logging.log("Pulled \(result.records.count) messages")
                 for m in result.records {
                     context.update(message: m)
                 }

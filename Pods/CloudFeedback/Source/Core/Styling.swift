@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Coodly LLC
+ * Copyright 2020 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,19 +15,17 @@
  */
 
 import Foundation
-import UIKit
 
-extension UIView {
-    public static var className: String {
-        return NSStringFromClass(self).components(separatedBy: ".").last!
-    }
-    
-    public class func viewNib(_ bundle: Bundle? = nil) -> UINib {
-        let name = className
-        return UINib(nibName: name, bundle: bundle)
-    }
-    
-    public class func loadInstance<T: UIView>() -> T {
-        return viewNib(Bundle(for: T.self)).instantiate(withOwner: nil, options: nil).first as! T
+public struct Styling {
+    public var mainColor = UIColor.blue
+    public var greetingTextColor = UIColor.white
+    public var greetingTitle = "Hi there!"
+    public var greetingMessage = "Every suggestion and feedback is welcome"
+    public var loginNotice = "Please sign in to iCloud to send a message"
+}
+
+extension Styling {
+    public static var instance: Styling {
+        Styling()
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Coodly LLC
+ * Copyright 2020 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,165 +16,232 @@
 
 import UIKit
 import CoreDataPersistence
-import CoreData
-import CloudKit
+#if canImport(Combine)
+import SwiftUI
+import Combine
+#endif
 
-@available(iOS 13.0, *)
-private extension Selector {
-    static let addPressed = #selector(FeedbackViewController.addPressed)
-    static let refreshConversations = #selector(FeedbackViewController.refresh)
-    static let presentNotice = #selector(FeedbackViewController.presentNotice)
-}
-
-private typealias Dependencies = PersistenceConsumer & FeedbackContainerConsumer & CloudAvailabilityConsumer & TranslationConsumer
-
-@available(iOS 13.0, *)
-public class FeedbackViewController: FetchedTableViewController<Conversation, ConversationCell>, FeedbackInjector, Dependencies {
-    var persistence: CorePersistence!
-    var feedbackContainer: CKContainer!
-    var cloudAvailable: Bool!
-    var translation: Translation!
-    
-    private var refreshControl: UIRefreshControl!
-    private var accountStatus: CKAccountStatus = .couldNotDetermine
-    private var headerLabel: UILabel?
-    
-    private lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        return formatter
-    }()
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+@available(iOS 14.0, *)
+public class FeedbackViewController: UIViewController {
+    private lazy var viewModel = injected(FeedbackViewModel())
+    private lazy var feedbackView = FeedbackView(viewModel: viewModel)
+    private lazy var hosting = UIHostingController(rootView: feedbackView)
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = translation.conversations.title
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: .addPressed)
-        navigationItem.rightBarButtonItem?.isEnabled = false
-        
-        refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: .refreshConversations, for: .valueChanged)
-        tableView.refreshControl = refreshControl
-        
-        tableView.register(ConversationCell.self, forCellReuseIdentifier: ConversationCell.className)
-        
-        tableView.tableFooterView = UIView()
-        
-        guard let notice = translation.conversations.notice else {
-            return
-        }
-        
-        let header = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
-        header.backgroundColor = .secondarySystemBackground
-        let label = UILabel(frame: CGRect(x: 16, y: 16, width: header.frame.width - 32, height: header.frame.height - 32))
-        self.headerLabel = label
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.attributedText = NSAttributedString(string: notice, attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.double.rawValue, NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)])
-        label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        header.addSubview(label)
-        tableView.tableHeaderView = header
-        
-        let tapHandler = UITapGestureRecognizer(target: self, action: .presentNotice)
-        header.addGestureRecognizer(tapHandler)
+        addChild(hosting)
+        view.addSubview(hosting.view)
+        hosting.view.pinToSuperviewEdges()
     }
-    
-    public override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        guard let label = headerLabel else {
-            return
-        }
-        
-        let height = label.sizeThatFits(CGSize(width: label.frame.width, height: 1000)).height
-        tableView.tableHeaderView!.frame.size.height = height + 32
-    }
-    
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if cloudAvailable! {
-            navigationItem.rightBarButtonItem?.isEnabled = true
-        } else {
-            let message = FeedbackMessageView()
-            message.messageLabel.text = translation.conversations.loginMessage
-            message.frame = self.view.bounds
-            self.view.addSubview(message)
-        }
-    }
-    
-    public override func createFetchedController() -> NSFetchedResultsController<Conversation> {
-        return persistence.mainContext.fetchedControllerForConversations()
-    }
-    
-    override func configure(_ cell: ConversationCell, with conversation: Conversation, at indexPath: IndexPath) {
-        if let time = conversation.lastMessageTime {
-            cell.timeLabel.text = "\(dateFormatter.string(from: time)) >"
-        } else {
-            cell.timeLabel.text = ""
-        }
-        
-        cell.snippetLabel.text =  (conversation.hasUpdate ? "● " : "") + (conversation.snippet ?? "")
-    }
-    
-    override func tapped(on conversation: Conversation, at indexPath: IndexPath) {
-        pushConversationController(with: conversation)
-    }
-    
-    @objc fileprivate func addPressed() {
-        pushConversationController(with: nil)
-    }
-    
-    private func pushConversationController(with conversation: Conversation?) {
-        let conversationController = ConversationViewController()
-        conversationController.conversation = conversation
-        conversationController.goToCompose = conversation == nil
-        inject(into: conversationController)
-        navigationController?.pushViewController(conversationController, animated: true)
-    }
-    
-    @objc fileprivate func refresh() {
-        Logging.log("Refresh conversations")
-        
-        let op = PullConversationsOperation()
-        inject(into: op)
-        let callback: ((Result<PullConversationsOperation, Error>) -> Void) = {
-            _ in
+}
 
-            DispatchQueue.main.async {
-                self.refreshControl.endRefreshing()
+private typealias Dependencies = StylingConsumer & CloudAvailabilityConsumer & PersistenceConsumer
+
+@available(iOS 14.0, *)
+private class FeedbackViewModel: ObservableObject, Dependencies {
+    var styling: Styling!
+    var cloudAvailable: Bool!
+    var persistence: CorePersistence! {
+        didSet {
+            persistence.mainContext
+                .publisherForAllMessages
+                .sink() {
+                    [weak self]
+                    
+                    messages in
+                    
+                    self?.messages = messages
+                    DispatchQueue.main.async {
+                        self?.scrollToLast()
+                    }
+                }
+                .store(in: &disposeBag)
+        }
+    }
+    
+    @Published var messages: [Message] = []
+    
+    @Published var scrolledTo: String? = nil
+    @Published var message = ""
+    private lazy var disposeBag = Set<AnyCancellable>()
+    
+    private func scrollToLast() {
+        scrolledTo = messages.last?.recordName
+    }
+    
+    fileprivate func send() {
+        guard message.hasValue() else {
+            return
+        }
+        
+        persistence.write() {
+            context in
+            
+            context.addMessage(message, for: context.conversation)
+        }
+        message = ""
+    }
+}
+
+@available(iOS 14.0, *)
+private struct FeedbackView: View {
+    @ObservedObject var viewModel: FeedbackViewModel
+    
+    var body: some View {
+        ZStack {
+            Color(UIColor.secondarySystemBackground)
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                ScrollView {
+                    ScrollViewReader {
+                        proxy in
+                        
+                        FeedbackHeaderView(styling: viewModel.styling)
+                        if !viewModel.cloudAvailable {
+                            LoginNoticeView(styling: viewModel.styling)
+                        }
+                        ForEach(viewModel.messages) {
+                            message in
+                            
+                            MessageBubbleView(message: message)
+                        }
+                        .onChange(of: viewModel.scrolledTo) {
+                            target in
+                            
+                            if let target = target {
+                                withAnimation {
+                                    proxy.scrollTo(target, anchor: .bottom)
+                                }
+                            }
+                        }
+                    }
+                }
+                if viewModel.cloudAvailable {
+                    MessageEntryView(viewModel: viewModel)
+                }
+            }
+            .lineLimit(nil)
+        }
+    }
+}
+
+@available(iOS 14.0, *)
+private struct MessageBubbleView: View {
+    let message: Message
+    
+    var body: some View {
+        HStack {
+            if message.fromMe {
+                Spacer(minLength: 20)
+            }
+            VStack(alignment: message.fromMe ? .trailing: .leading) {
+                if let from = message.sentBy {
+                    Text(from)
+                        .font(Font.subheadline.bold())
+                        .foregroundColor(Color(UIColor.secondaryLabel))
+                }
+                Text(message.body ?? "-")
+                    .font(.body)
+            }
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(Color(UIColor.systemBackground))
+            )
+            if !message.fromMe {
+                Spacer(minLength: 20)
             }
         }
-        op.onCompletion(callback: callback)
-        op.start()
+        .padding(.horizontal)
+    }
+}
+
+extension Message: Identifiable {
+    var id: String {
+        recordName!
     }
     
-    private func checkAccountStatus(completion: @escaping ((Bool) -> ())) {
-        Logging.log("Check account")
-        feedbackContainer.accountStatus() {
-            status, error in
-            
-            Logging.log("Account status: \(status.rawValue) - \(String(describing: error))")
-            completion(status == .available)
+    var fromMe: Bool {
+        !(sentBy?.hasValue() ?? false)
+    }
+}
+
+@available(iOS 14.0, *)
+private struct FeedbackHeaderView: View {
+    let styling: Styling
+    
+    var body: some View {
+        ZStack {
+            Color(styling.mainColor)
+                .edgesIgnoringSafeArea([Edge.Set.horizontal, Edge.Set.top])
+            VStack {
+                Text(styling.greetingTitle)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.largeTitle)
+                Text(styling.greetingMessage)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.headline)
+            }
+            .padding()
+            .foregroundColor(Color(styling.greetingTextColor))
         }
     }
+}
+
+@available(iOS 14.0, *)
+private struct MessageEntryView: View {
+    @ObservedObject var viewModel: FeedbackViewModel
     
-    @objc fileprivate func presentNotice() {
-        let controller = FeedbackNoticeViewController()
-        inject(into: controller)
-        let navigation = UINavigationController(rootViewController: controller)
-        navigation.modalPresentationStyle = .formSheet
-        present(navigation, animated: true, completion: nil)
+    var body: some View {
+        HStack(alignment: .top, spacing: 0) {
+            ZStack {
+                Text(viewModel.message)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .opacity(0)
+                    .padding(.all, 8)
+                    .padding([.vertical, .leading])
+                    .layoutPriority(1)
+                TextEditor(text: $viewModel.message)
+                    .padding([.vertical, .leading])
+            }
+            .font(.body)
+            VStack {
+                Button(action: viewModel.send) {
+                    ZStack {
+                        Circle()
+                            .frame(width: 32, height: 32, alignment: .center)
+                            .foregroundColor(.white)
+                        Image(systemName: "arrow.up.circle.fill")
+                            .resizable()
+                            .frame(width: 32, height: 32, alignment: .center)
+                            .padding()
+                    }
+                }
+                .foregroundColor(Color(viewModel.styling.mainColor))
+            }
+        }
+        .background(
+            Color(UIColor.systemFill)
+                .edgesIgnoringSafeArea([Edge.Set.horizontal, Edge.Set.bottom])
+        )
+    }
+}
+
+@available(iOS 14.0, *)
+private struct LoginNoticeView: View {
+    let styling: Styling
+    
+    var body: some View {
+        Text(styling.loginNotice)
+            .font(.body)
+            .multilineTextAlignment(.center)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(Color(UIColor.systemBackground))
+            )
+            .padding(.horizontal)
     }
 }

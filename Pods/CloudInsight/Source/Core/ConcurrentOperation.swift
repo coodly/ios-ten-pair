@@ -17,6 +17,8 @@
 import Foundation
 
 open class ConcurrentOperation: Operation {
+    public var cancelOnDependencyFailure = true
+    
     private struct Forward {
         fileprivate let callSuccess: (() -> Void)
         fileprivate let callError: ((Error) -> Void)
@@ -50,7 +52,7 @@ open class ConcurrentOperation: Operation {
         return true
     }
 
-    private var failureRrror: Error?
+    @objc private var failureError: Error?
     
     private var myExecuting: Bool = false
     override public final var isExecuting: Bool {
@@ -81,13 +83,21 @@ open class ConcurrentOperation: Operation {
     }
     
     override public final func start() {
+        Logging.log("Start \(String(describing: type(of: self)))")
         if isCancelled {
             finish()
             return
         }
         
+        if cancelOnDependencyFailure, let dependencyError = anyDependencyError {
+            Logging.log("Dependency had error: \(dependencyError)")
+            let failure = NSError(domain: "com.coodly.concurrent", code: 0, userInfo: [NSUnderlyingErrorKey: dependencyError])
+            finish(failure)
+            return
+        }
+        
         if completionBlock != nil {
-            print("Existing completion block. Will not add own handling")
+            Logging.log("Existing completion block. Will not add own handling")
         } else {
             completionBlock = {
                 [unowned self] in
@@ -96,7 +106,7 @@ open class ConcurrentOperation: Operation {
                     return
                 }
                 
-                if let error = self.failureRrror {
+                if let error = self.failureError {
                     forward.forward(error: error)
                 } else {
                     forward.forwardSuccess()
@@ -110,12 +120,20 @@ open class ConcurrentOperation: Operation {
     }
     
     public func finish(_ failure: Error? = nil) {
+        Logging.log("Finish \(String(describing: type(of: self)))")
         willChangeValue(forKey: "isExecuting")
         willChangeValue(forKey: "isFinished")
         myExecuting = false
         myFinished = true
-        failureRrror = failure
+        failureError = failure
         didChangeValue(forKey: "isExecuting")
         didChangeValue(forKey: "isFinished")
+    }
+    
+    private var anyDependencyError: Error? {
+        let selector = #selector(getter: failureError)
+        let candidates = dependencies.filter({ $0.responds(to: selector )})
+        let errors = candidates.compactMap({ $0.perform(selector)?.takeUnretainedValue() }).compactMap({ $0 as? Error })
+        return errors.first
     }
 }

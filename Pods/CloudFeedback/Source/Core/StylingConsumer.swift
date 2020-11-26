@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Coodly LLC
+ * Copyright 2020 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +16,6 @@
 
 import Foundation
 
-public extension FeedbackModule {
-    @available(iOS 14.0, *)
-    func feedbackController() -> FeedbackViewController {
-        let controller = FeedbackViewController()
-        inject(into: controller)
-        return controller
-    }
-}
-
-extension FeedbackModule: FeedbackInjector {
-    
+internal protocol StylingConsumer {
+    var styling: Styling! { get set }
 }

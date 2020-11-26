@@ -24,6 +24,8 @@ private extension Selector {
 public class LogsViewController: UITableViewController {
     fileprivate var files = [LogFile]()
     
+    public var includeFilesFrom: FileOutput?
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
 
@@ -74,36 +76,37 @@ public class LogsViewController: UITableViewController {
 
 private extension LogsViewController {
     func listFiles() {
-        var folder: URL?
+        var files = [LogFile]()
         for output in Logger.sharedInstance.outputs {
             guard let fileOutput = output as? FileOutput else {
                 continue
             }
             
-            folder = fileOutput.logsFolder as URL
-            break
+            files.append(contentsOf: listFiles(for: fileOutput))
         }
-        
-        guard let logsFolder = folder else {
-            Log.debug("Logs folder not found. Is file logging enabled?")
-            return
+        if let output = includeFilesFrom {
+            files.append(contentsOf: listFiles(for: output))
         }
-        
+
+        self.files = files.sorted(by: { (left, right) -> Bool in
+            return left.name.compare(right.name) == .orderedDescending
+        })
+    }
+    
+    private func listFiles(for output: FileOutput) -> [LogFile] {
+        var logFiles = [LogFile]()
         do {
-            let files = try FileManager.default.contentsOfDirectory(at: logsFolder, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants]).reversed()
+            let files = try FileManager.default.contentsOfDirectory(at: output.logsFolder, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants]).reversed()
             
             for file in files {
                 let logFile = LogFile(name: file.lastPathComponent, path: file)
-                self.files.append(logFile)
+                logFiles.append(logFile)
             }
-            
         } catch let error as NSError {
             Log.error(error)
         }
         
-        files.sort(by: { (left, right) -> Bool in
-            return left.name.compare(right.name) == .orderedDescending
-        })
+        return logFiles
     }
 }
 #endif

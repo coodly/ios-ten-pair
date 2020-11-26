@@ -65,6 +65,7 @@ internal class FeedbackInjection {
         return "\(device)|\(systemVersion)|\(appVersion)(\(appBuild))"
     }()
     internal var translation = Translation()
+    internal var styling = Styling()
     
     private init() {}
     
@@ -96,6 +97,10 @@ internal class FeedbackInjection {
         
         if var consumer = into as? TranslationConsumer {
             consumer.translation = translation
+        }
+        
+        if var consumer = into as? StylingConsumer {
+            consumer.styling = styling
         }
     }
     
@@ -142,4 +147,9 @@ internal class FeedbackInjection {
             }
         }
     }
+}
+
+internal func injected<T: AnyObject>(_ object: T) -> T {
+    FeedbackInjection.sharedInstance.inject(into: object)
+    return object
 }

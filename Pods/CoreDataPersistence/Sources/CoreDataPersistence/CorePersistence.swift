@@ -138,6 +138,11 @@ open class CorePersistence {
         }
         save(context: context)
     }
+    
+    @available(iOS 10, *)
+    public init(mainContext: NSManagedObjectContext) {
+        stack = UIStack(context: mainContext)
+    }
 }
 
 // MARK: -
@@ -408,5 +413,21 @@ private class LegacyDataStack: CoreStack {
         managedContext.parent = managedObjectContext
         managedContext.mergePolicy = NSMergePolicy(merge: mergePolicy)
         return managedContext
+    }
+}
+
+@available(iOS 10, *)
+private class UIStack: CoreDataStack {
+    override var mainContext: NSManagedObjectContext {
+        context
+    }
+    
+    private let context: NSManagedObjectContext
+    init(context: NSManagedObjectContext) {
+        let created = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        created.parent = context
+        created.mergePolicy = context.mergePolicy
+        self.context = created
+        super.init(modelName: "", identifier: "", bundle: Bundle.main, groupIdentifier: "", wipeOnConflict: true, sharedBackgroundContext: false)
     }
 }
