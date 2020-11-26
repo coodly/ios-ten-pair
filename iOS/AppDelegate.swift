@@ -17,7 +17,6 @@
 import UIKit
 import GoogleMobileAds
 import AVKit
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,9 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private lazy var insight = Insight()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
-                
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {                
         AppTheme.shared.load()
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)

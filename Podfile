@@ -22,9 +22,6 @@ def logger
 end
 
 def ios_pods
-    pod 'Google-Mobile-Ads-SDK', '7.61.0'
-    pod 'Firebase/Crashlytics', '6.27.0'
-
     logger
 end
 

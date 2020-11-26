@@ -17,71 +17,8 @@ PODS:
     - Puff/Core (= 0.6.2)
     - Puff/CoreData (= 0.6.2)
   - CoreDataPersistence (0.2.3)
-  - Firebase/CoreOnly (6.27.0):
-    - FirebaseCore (= 6.8.0)
-  - Firebase/Crashlytics (6.27.0):
-    - Firebase/CoreOnly
-    - FirebaseCrashlytics (~> 4.2.0)
-  - FirebaseCore (6.8.0):
-    - FirebaseCoreDiagnostics (~> 1.3)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Logger (~> 6.5)
-  - FirebaseCoreDiagnostics (1.4.0):
-    - GoogleDataTransportCCTSupport (~> 3.1)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Logger (~> 6.5)
-    - nanopb (~> 1.30905.0)
-  - FirebaseCrashlytics (4.2.0):
-    - FirebaseCore (~> 6.8)
-    - FirebaseInstallations (~> 1.1)
-    - GoogleDataTransport (~> 6.1)
-    - GoogleDataTransportCCTSupport (~> 3.1)
-    - nanopb (~> 1.30905.0)
-    - PromisesObjC (~> 1.2)
-  - FirebaseInstallations (1.4.0):
-    - FirebaseCore (~> 6.8)
-    - GoogleUtilities/Environment (~> 6.6)
-    - GoogleUtilities/UserDefaults (~> 6.6)
-    - PromisesObjC (~> 1.2)
-  - Google-Mobile-Ads-SDK (7.61.0):
-    - GoogleAppMeasurement (~> 6.0)
-  - GoogleAppMeasurement (6.6.1):
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
-    - GoogleUtilities/MethodSwizzler (~> 6.0)
-    - GoogleUtilities/Network (~> 6.0)
-    - "GoogleUtilities/NSData+zlib (~> 6.0)"
-    - nanopb (~> 1.30905.0)
-  - GoogleDataTransport (6.2.1)
-  - GoogleDataTransportCCTSupport (3.2.0):
-    - GoogleDataTransport (~> 6.1)
-    - nanopb (~> 1.30905.0)
-  - GoogleUtilities/AppDelegateSwizzler (6.6.0):
-    - GoogleUtilities/Environment
-    - GoogleUtilities/Logger
-    - GoogleUtilities/Network
-  - GoogleUtilities/Environment (6.6.0):
-    - PromisesObjC (~> 1.2)
-  - GoogleUtilities/Logger (6.6.0):
-    - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (6.6.0):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/Network (6.6.0):
-    - GoogleUtilities/Logger
-    - "GoogleUtilities/NSData+zlib"
-    - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.6.0)"
-  - GoogleUtilities/Reachability (6.6.0):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (6.6.0):
-    - GoogleUtilities/Logger
   - KeychainAccess (4.2.1)
-  - nanopb (1.30905.0):
-    - nanopb/decode (= 1.30905.0)
-    - nanopb/encode (= 1.30905.0)
-  - nanopb/decode (1.30905.0)
-  - nanopb/encode (1.30905.0)
   - PersonalizedAdConsent (1.0.5)
-  - PromisesObjC (1.2.9)
   - Puff/Core (0.6.2):
     - Puff/Logger
     - Puff/Serialization
@@ -95,27 +32,13 @@ DEPENDENCIES:
   - "CloudFeedback/Client (from `git@github.com:coodly/CloudFeedback.git`)"
   - "CloudFeedback/iOS (from `git@github.com:coodly/CloudFeedback.git`)"
   - "CloudInsight (from `git@github.com:coodly/CloudInsight.git`)"
-  - Firebase/Crashlytics (= 6.27.0)
-  - Google-Mobile-Ads-SDK (= 7.61.0)
   - PersonalizedAdConsent (= 1.0.5)
   - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs:
-    - Firebase
-    - FirebaseCore
-    - FirebaseCoreDiagnostics
-    - FirebaseCrashlytics
-    - FirebaseInstallations
-    - Google-Mobile-Ads-SDK
-    - GoogleAppMeasurement
-    - GoogleDataTransport
-    - GoogleDataTransportCCTSupport
-    - GoogleUtilities
     - KeychainAccess
-    - nanopb
     - PersonalizedAdConsent
-    - PromisesObjC
   https://github.com/coodly/Specs.git:
     - CoreDataPersistence
     - Puff
@@ -143,23 +66,11 @@ SPEC CHECKSUMS:
   CloudFeedback: e1f033f65376f6a747cd0297a3f244fe313b494e
   CloudInsight: 3038603eeddf90cb11bdfb37cd0b11f96d088a9d
   CoreDataPersistence: 2379452444c3020b76f46b28e30903ec533c7b24
-  Firebase: fc4cbf6f1592636431821ef9a3c557e4dfd9f268
-  FirebaseCore: feda061cb1ee6d8ad4824f4a4a8ffbcfe284f595
-  FirebaseCoreDiagnostics: 4505e4d4009b1d93f605088ee7d7764d5f0d1c84
-  FirebaseCrashlytics: 7d0fa02ea8842cc4b2ab07b0735edafde1ad77d6
-  FirebaseInstallations: 293f567159b6d66d1c990f13bb868066096c94ec
-  Google-Mobile-Ads-SDK: 4c3b24b04293b4bb370b2cb392cdd3ee97c87752
-  GoogleAppMeasurement: 2fd5c5a56c069db635c8e7b92d4809a9591d0a69
-  GoogleDataTransport: 9a8a16f79feffc7f42096743de2a7c4815e84020
-  GoogleDataTransportCCTSupport: 489c1265d2c85b68187a83a911913d190012158d
-  GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
-  nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PersonalizedAdConsent: dbecabb3467df967c16d9cebc2ef4a8890e4bbd8
-  PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Puff: 55e8b337d559cade0025ee287397ec18c2a5054b
   SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
-PODFILE CHECKSUM: c3819979f8b805fcb94895fe28dd83729cdad8ef
+PODFILE CHECKSUM: e1ee3f93b6af142aa5f54145cf4d6c304b4d16f8
 
 COCOAPODS: 1.10.0

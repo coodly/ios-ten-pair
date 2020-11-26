@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -81,6 +81,12 @@
 		A75BE56724AB84EB00D0AEB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA881E50CC76003E62D7 /* Localizable.strings */; };
 		A75BE56824AB89D500D0AEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A75BE56A24AB89FB00D0AEB4 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
+		A75E8CF22570139A00CCB8DC /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E8CEC2570139300CCB8DC /* nanopb.xcframework */; };
+		A75E8CF32570139A00CCB8DC /* UserMessagingPlatform.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E8CED2570139400CCB8DC /* UserMessagingPlatform.xcframework */; };
+		A75E8CF42570139A00CCB8DC /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E8CEE2570139700CCB8DC /* GoogleMobileAds.xcframework */; };
+		A75E8CF52570139A00CCB8DC /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E8CEF2570139800CCB8DC /* GoogleAppMeasurement.framework */; };
+		A75E8CF62570139A00CCB8DC /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E8CF02570139900CCB8DC /* GoogleUtilities.xcframework */; };
+		A75E8CF72570139A00CCB8DC /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E8CF12570139A00CCB8DC /* PromisesObjC.xcframework */; };
 		A7720B8324A469D6006C40EC /* Rendered.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7720B8224A469D6006C40EC /* Rendered.swift */; };
 		A7720B8924A46F6D006C40EC /* Rendered+Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7720B8824A46F6D006C40EC /* Rendered+Hint.swift */; };
 		A7720B8B24A47349006C40EC /* Rendered+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7720B8A24A47349006C40EC /* Rendered+Menu.swift */; };
@@ -159,6 +165,12 @@
 		A75E8CDE25700FC800CCB8DC /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
 		A75E8CDF25700FC800CCB8DC /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		A75E8CE125700FC800CCB8DC /* 965FUXH96J.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 965FUXH96J.json; sourceTree = "<group>"; };
+		A75E8CEC2570139300CCB8DC /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
+		A75E8CED2570139400CCB8DC /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = UserMessagingPlatform.xcframework; sourceTree = "<group>"; };
+		A75E8CEE2570139700CCB8DC /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMobileAds.xcframework; sourceTree = "<group>"; };
+		A75E8CEF2570139800CCB8DC /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		A75E8CF02570139900CCB8DC /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
+		A75E8CF12570139A00CCB8DC /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
 		A7720B8224A469D6006C40EC /* Rendered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rendered.swift; sourceTree = "<group>"; };
 		A7720B8824A46F6D006C40EC /* Rendered+Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendered+Hint.swift"; sourceTree = "<group>"; };
 		A7720B8A24A47349006C40EC /* Rendered+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendered+Menu.swift"; sourceTree = "<group>"; };
@@ -211,8 +223,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A75E8CF22570139A00CCB8DC /* nanopb.xcframework in Frameworks */,
+				A75E8CF42570139A00CCB8DC /* GoogleMobileAds.xcframework in Frameworks */,
+				A75E8CF62570139A00CCB8DC /* GoogleUtilities.xcframework in Frameworks */,
+				A75E8CF52570139A00CCB8DC /* GoogleAppMeasurement.framework in Frameworks */,
 				A7D5BA511E5DE63A003333A9 /* CloudKit.framework in Frameworks */,
+				A75E8CF32570139A00CCB8DC /* UserMessagingPlatform.xcframework in Frameworks */,
 				FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */,
+				A75E8CF72570139A00CCB8DC /* PromisesObjC.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +282,7 @@
 		A71A97331E48CCA4005E134F = {
 			isa = PBXGroup;
 			children = (
+				A75E8CE92570135A00CCB8DC /* Thirdparty */,
 				A75E8CDD25700FC800CCB8DC /* fastlane */,
 				A71A97381E48CCA4005E134F /* Shared */,
 				A71A97431E48CCA4005E134F /* iOS */,
@@ -379,6 +398,35 @@
 				A75E8CE125700FC800CCB8DC /* 965FUXH96J.json */,
 			);
 			path = fastlane;
+			sourceTree = "<group>";
+		};
+		A75E8CE92570135A00CCB8DC /* Thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				A75E8CEA2570136D00CCB8DC /* GoogleMobileAds */,
+			);
+			path = Thirdparty;
+			sourceTree = "<group>";
+		};
+		A75E8CEA2570136D00CCB8DC /* GoogleMobileAds */ = {
+			isa = PBXGroup;
+			children = (
+				A75E8CEB2570137C00CCB8DC /* 7.68.0 */,
+			);
+			path = GoogleMobileAds;
+			sourceTree = "<group>";
+		};
+		A75E8CEB2570137C00CCB8DC /* 7.68.0 */ = {
+			isa = PBXGroup;
+			children = (
+				A75E8CEF2570139800CCB8DC /* GoogleAppMeasurement.framework */,
+				A75E8CEE2570139700CCB8DC /* GoogleMobileAds.xcframework */,
+				A75E8CF02570139900CCB8DC /* GoogleUtilities.xcframework */,
+				A75E8CEC2570139300CCB8DC /* nanopb.xcframework */,
+				A75E8CF12570139A00CCB8DC /* PromisesObjC.xcframework */,
+				A75E8CED2570139400CCB8DC /* UserMessagingPlatform.xcframework */,
+			);
+			path = 7.68.0;
 			sourceTree = "<group>";
 		};
 		A7720B8124A469C6006C40EC /* Rendered */ = {
@@ -512,8 +560,6 @@
 				A71A973E1E48CCA4005E134F /* Frameworks */,
 				A71A973F1E48CCA4005E134F /* Resources */,
 				FC65018DCB3FFEB2D42F2F78 /* [CP] Embed Pods Frameworks */,
-				A797BD722483831C00A6E27D /* Upload symbols */,
-				A78D56791E5AE35F002957DC /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -696,40 +742,6 @@
 			shellPath = /bin/sh;
 			shellScript = "#/usr/bin/env xcrun --sdk macosx swift scripts/CheckLocalization.swift Shared/\nruby scripts/check_localizable.rb Shared\n";
 		};
-		A78D56791E5AE35F002957DC /* Crashlytics */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
-			name = Crashlytics;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
-		};
-		A797BD722483831C00A6E27D /* Upload symbols */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Upload symbols";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/upload-symbols\" -gsp \"${PROJECT_DIR}/iOS/Secrets/GoogleService-Info.plist\" -p ios \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n";
-		};
 		B5AF2A1C9632980E469A2664 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -762,26 +774,20 @@
 				"${BUILT_PRODUCTS_DIR}/CloudFeedback/CloudFeedback.framework",
 				"${BUILT_PRODUCTS_DIR}/CloudInsight/CloudInsight.framework",
 				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/Puff/Puff.framework",
 				"${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CloudFeedback.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CloudInsight.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PersonalizedAdConsent.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Puff.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1031,7 +1037,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
@@ -1044,11 +1051,35 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 92;
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Thirdparty/GoogleMobileAds/7.68.0",
+				);
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 2020.2;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CloudFeedback\"",
+					"-framework",
+					"\"CloudInsight\"",
+					"-framework",
+					"\"CoreDataPersistence\"",
+					"-framework",
+					"\"KeychainAccess\"",
+					"-framework",
+					"\"PersonalizedAdConsent\"",
+					"-framework",
+					"\"Puff\"",
+					"-framework",
+					"\"SWLogger\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
 				PRODUCT_NAME = TenPair;
 				SDKROOT = iphoneos;
@@ -1068,11 +1099,35 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 92;
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Thirdparty/GoogleMobileAds/7.68.0",
+				);
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 2020.2;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CloudFeedback\"",
+					"-framework",
+					"\"CloudInsight\"",
+					"-framework",
+					"\"CoreDataPersistence\"",
+					"-framework",
+					"\"KeychainAccess\"",
+					"-framework",
+					"\"PersonalizedAdConsent\"",
+					"-framework",
+					"\"Puff\"",
+					"-framework",
+					"\"SWLogger\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
 				PRODUCT_NAME = TenPair;
 				SDKROOT = iphoneos;
@@ -1099,7 +1154,10 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Catalyst/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 2020.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1127,7 +1185,10 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Catalyst/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 2020.1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.tenpair;
