@@ -29,6 +29,8 @@ fileprivate enum MenuMode: String {
 internal class MenuViewModel: ObservableObject {
     fileprivate let randomLines = [20, 50, 100, 250]
     
+    fileprivate lazy var purchaseViewModel = PurchaseViewModel()
+    
     @Published fileprivate var mode = MenuMode.main
     @Published fileprivate var activeTheme = AppTheme.shared.active
 
@@ -93,7 +95,7 @@ private struct MainMenuView: View {
             Button(action: viewModel.switchTheme) {
                 Text(L10n.Menu.Option.Theme.base(viewModel.activeTheme.name))
             }
-            PurchaseSection()
+            PurchaseView(viewModel: viewModel.purchaseViewModel)
             Button(action: {}) {
                 Text(L10n.Menu.Option.Send.message)
             }
@@ -102,19 +104,6 @@ private struct MainMenuView: View {
             }
             Button(action: {}) {
                 Text(L10n.Menu.Option.gdpr)
-            }
-        }
-    }
-}
-
-private struct PurchaseSection: View {
-    var body: some View {
-        VStack(spacing: 4) {
-            Button(action: {}) {
-                Text(L10n.Menu.Option.Remove.Ads.base("€1.00"))
-            }
-            Button(action: {}) {
-                Text(L10n.Menu.Option.Restore.purchase)
             }
         }
     }
