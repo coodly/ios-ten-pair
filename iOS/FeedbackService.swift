@@ -59,6 +59,8 @@ internal class FeedbackService {
     @available(iOS 14.0, *)
     static func present(on controller: UIViewController) {
         let navigation = UINavigationController(rootViewController: shared.feedback.client.feedbackController())
+        navigation.navigationBar.barTintColor = AppTheme.darkMainColor
+        navigation.navigationBar.isTranslucent = false
         navigation.modalPresentationStyle = .formSheet
         controller.present(navigation, animated: true, completion: nil)
     }
