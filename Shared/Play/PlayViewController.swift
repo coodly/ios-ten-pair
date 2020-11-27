@@ -180,17 +180,14 @@ internal class PlayViewController: UIViewController, GDPRCheckConsumer {
     }
     
     @objc fileprivate func presentMenu() {
-        let menu: MenuViewController = Storyboards.loadFromStoryboard()
+        let menu: MenuUIViewController = Storyboards.loadFromStoryboard()
         menu.delegate = self
         menu.gameWon = field.gameEnded
         menu.gdprCheck = gdprCheck
         
-        let navigation = PlayNavigationController(rootViewController: menu)
-        navigation.isNavigationBarHidden = true
-        navigation.view.backgroundColor = .clear
-        navigation.modalPresentationStyle = .custom
+        menu.modalPresentationStyle = .custom
         
-        presentModal(navigation)
+        presentModal(menu)
     }
     
     private typealias Callback = (() -> Void)
@@ -400,6 +397,21 @@ extension PlayViewController: MenuDelegate {
         default:
             Log.debug("Unhandled \(option)")
         }
+    }
+}
+
+extension PlayViewController: MenuUIDelegate {
+    func restart(_ lines: Int) {
+        dismissModal()
+        
+        selected.removeAll()
+        collectionView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 10, height: 10), animated: false)
+        field.restart(with: lines)
+        collectionView.reloadData()
+    }
+    
+    func dismissMenu() {
+        dismissModal()
     }
 }
 

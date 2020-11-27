@@ -23,6 +23,10 @@
 		A7363A371E5589DB00B7C732 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
 		A7419DF62570C81300D4C064 /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = A7419DF52570C81300D4C064 /* Purchases */; };
 		A7419E042570CAB000D4C064 /* RevenueCatPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E032570CAB000D4C064 /* RevenueCatPurchase.swift */; };
+		A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */; };
+		A7419E162570CFC300D4C064 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E152570CFC300D4C064 /* MenuView.swift */; };
+		A7419E1E2570D18200D4C064 /* MenuUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7419E1D2570D18200D4C064 /* MenuUI.storyboard */; };
+		A7419E282570D56F00D4C064 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E272570D56F00D4C064 /* L10n.swift */; };
 		A742610A2486B3F6003B9E9E /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74261092486B3F6003B9E9E /* Insight.swift */; };
 		A742610D2486B57B003B9E9E /* AdMobGDPRCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742610C2486B57B003B9E9E /* AdMobGDPRCheck.swift */; };
 		A7426110248769DA003B9E9E /* GDPRCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742610F248769DA003B9E9E /* GDPRCheck.swift */; };
@@ -152,6 +156,10 @@
 		A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumbersPathFinder.swift; sourceTree = "<group>"; };
 		A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyLinesSearch.swift; sourceTree = "<group>"; };
 		A7419E032570CAB000D4C064 /* RevenueCatPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueCatPurchase.swift; sourceTree = "<group>"; };
+		A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUIViewController.swift; sourceTree = "<group>"; };
+		A7419E152570CFC300D4C064 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		A7419E1D2570D18200D4C064 /* MenuUI.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuUI.storyboard; sourceTree = "<group>"; };
+		A7419E272570D56F00D4C064 /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		A74261092486B3F6003B9E9E /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
 		A742610C2486B57B003B9E9E /* AdMobGDPRCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobGDPRCheck.swift; sourceTree = "<group>"; };
 		A742610F248769DA003B9E9E /* GDPRCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDPRCheck.swift; sourceTree = "<group>"; };
@@ -305,6 +313,7 @@
 				A74261082486B3E6003B9E9E /* Insight */,
 				A75BE56924AB89E700D0AEB4 /* Launch */,
 				A7D97FA024A4EC7A00F95EC9 /* Loading */,
+				A7419E232570D4D600D4C064 /* Localization */,
 				A7A8371D24A1C226006DD8B4 /* Menu */,
 				A7A8372724A1C332006DD8B4 /* Play */,
 				A7720B8124A469C6006C40EC /* Rendered */,
@@ -314,7 +323,6 @@
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
 				A7B12C1C1E535B18007D7807 /* Config.swift */,
 				A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */,
-				A777FA851E50CC76003E62D7 /* en.lproj */,
 				A7D3907F1E4B049400EDB111 /* FieldSave.swift */,
 				A7D390921E4B47E900EDB111 /* Log.swift */,
 				A750CE361E55DD9B00852E6A /* MatchFinder.swift */,
@@ -356,6 +364,15 @@
 				A7419E032570CAB000D4C064 /* RevenueCatPurchase.swift */,
 			);
 			path = Purchase;
+			sourceTree = "<group>";
+		};
+		A7419E232570D4D600D4C064 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				A777FA851E50CC76003E62D7 /* en.lproj */,
+				A7419E272570D56F00D4C064 /* L10n.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		A74261082486B3E6003B9E9E /* Insight */ = {
@@ -488,6 +505,9 @@
 				A7A8372A24A1C848006DD8B4 /* MenuCell.swift */,
 				A7A8372B24A1C848006DD8B4 /* MenuCell.xib */,
 				A7A8373424A1D924006DD8B4 /* MenuOptionsViewController.swift */,
+				A7419E1D2570D18200D4C064 /* MenuUI.storyboard */,
+				A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */,
+				A7419E152570CFC300D4C064 /* MenuView.swift */,
 				A7A8372024A1C24C006DD8B4 /* MenuViewController.swift */,
 				A7A8373224A1D8ED006DD8B4 /* Restart.storyboard */,
 				A7A8373024A1D8E6006DD8B4 /* RestartViewController.swift */,
@@ -569,6 +589,7 @@
 			buildPhases = (
 				863D00F969837ECFB965A493 /* [CP] Check Pods Manifest.lock */,
 				A777FA8C1E50CD9D003E62D7 /* Check localization */,
+				A7419E242570D53300D4C064 /* Generate L10n */,
 				A71A973D1E48CCA4005E134F /* Sources */,
 				A71A973E1E48CCA4005E134F /* Frameworks */,
 				A71A973F1E48CCA4005E134F /* Resources */,
@@ -669,6 +690,7 @@
 				A7BD4EBC24A5C6ED00D613FC /* Fireworks.sks in Resources */,
 				A7BD4EBD24A5C6ED00D613FC /* Assets.xcassets in Resources */,
 				A7D97FA424A4ECAC00F95EC9 /* Loading.storyboard in Resources */,
+				A7419E1E2570D18200D4C064 /* MenuUI.storyboard in Resources */,
 				A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */,
 				A7BD4EC124A5C7C400D613FC /* Win.storyboard in Resources */,
 				A7A8372D24A1C848006DD8B4 /* MenuCell.xib in Resources */,
@@ -747,6 +769,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A7419E242570D53300D4C064 /* Generate L10n */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate L10n";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftgen run strings -t structured-swift5 Shared/Localization/en.lproj/Localizable.strings -o Shared/Localization/L10n.swift\n";
+		};
 		A777FA8C1E50CD9D003E62D7 /* Check localization */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -759,7 +799,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#/usr/bin/env xcrun --sdk macosx swift scripts/CheckLocalization.swift Shared/\nruby scripts/check_localizable.rb Shared\n";
+			shellScript = "#/usr/bin/env xcrun --sdk macosx swift scripts/CheckLocalization.swift Shared/\nruby scripts/check_localizable.rb Shared/Localization\n";
 		};
 		B5AF2A1C9632980E469A2664 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -820,6 +860,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7419E282570D56F00D4C064 /* L10n.swift in Sources */,
 				A7CCF94224A9BED6009DD181 /* PlayNavigationController.swift in Sources */,
 				A70D30FD24A9BD7300CC581A /* AdsViewController.swift in Sources */,
 				A7720B8324A469D6006C40EC /* Rendered.swift in Sources */,
@@ -831,6 +872,7 @@
 				A7720B8924A46F6D006C40EC /* Rendered+Hint.swift in Sources */,
 				A7A8373524A1D924006DD8B4 /* MenuOptionsViewController.swift in Sources */,
 				A70BBA342499F29B003E561F /* PlayField.swift in Sources */,
+				A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */,
 				A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */,
 				A7426110248769DA003B9E9E /* GDPRCheck.swift in Sources */,
 				A7B12C1D1E535B18007D7807 /* Config.swift in Sources */,
@@ -859,6 +901,7 @@
 				A7A8373124A1D8E6006DD8B4 /* RestartViewController.swift in Sources */,
 				A70078CE24A8659B0009E58C /* ConcurrentOperation.swift in Sources */,
 				A7BD4EBF24A5C77F00D613FC /* WinViewController.swift in Sources */,
+				A7419E162570CFC300D4C064 /* MenuView.swift in Sources */,
 				A70BBA2D24992FA4003E561F /* NumberCell.swift in Sources */,
 				A70BBA322499CC20003E561F /* NumbersFlowLayout.swift in Sources */,
 				A742610A2486B3F6003B9E9E /* Insight.swift in Sources */,

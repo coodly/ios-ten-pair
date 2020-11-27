@@ -8,7 +8,9 @@
 "menu.option.gdpr" = "Personalized ads";
 "menu.option.message.from" = "● Response from developer";
 "menu.option.rate" = "Rate on AppStore";
+"menu.option.remove.ads.base" = "Remove ads: %@";
 "menu.option.restart" = "Restart game";
+"menu.option.restore.purchase" = "Restore purchase";
 "menu.option.resume" = "Resume game";
 "menu.option.send.message" = "Message to developer";
 "menu.option.theme.base" = "Theme: %@";
