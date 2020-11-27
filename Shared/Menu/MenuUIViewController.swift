@@ -62,4 +62,8 @@ internal class MenuUIViewController: UIViewController, StoryboardLoaded, GDPRChe
     func resume() {
         delegate?.dismissMenu()
     }
+    
+    func restart(lines: Int) {
+        delegate?.restart(lines)
+    }
 }

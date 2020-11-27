@@ -18,6 +18,7 @@ import SwiftUI
 
 internal protocol MenuViewModelDelegate: class {
     func resume()
+    func restart(lines: Int)
 }
 
 fileprivate enum MenuMode: String {
@@ -51,6 +52,10 @@ internal class MenuViewModel: ObservableObject {
     fileprivate func switchTheme() {
         activeTheme = AppTheme.shared.switchToNext()
     }
+    
+    fileprivate func restart(lines: Int) {
+        delegate?.restart(lines: lines)
+    }
 }
 
 internal struct MenuView: View {
@@ -64,7 +69,7 @@ internal struct MenuView: View {
                 RestartSection(viewModel: viewModel)
             }
         }
-        .frame(width: 250, alignment: .center)
+        .frame(width: 280, alignment: .center)
         .buttonStyle(MenuButtonStyle())
     }
 }
@@ -93,9 +98,6 @@ private struct MainMenuView: View {
             Button(action: {}) {
                 Text(L10n.Menu.Option.gdpr)
             }
-            Button(action: {}) {
-                Text("Logs")
-            }
         }
     }
 }
@@ -118,13 +120,13 @@ private struct RestartSection: View {
     
     var body: some View {
         VStack(spacing: 4) {
-            Button(action: {}) {
+            Button(action: { viewModel.restart(lines: 0) }) {
                 Text(L10n.Restart.Screen.Option.regular)
             }
             ForEach(viewModel.randomLines, id: \.self) {
                 number in
                 
-                Button(action: {}) {
+                Button(action: { viewModel.restart(lines: number) } ) {
                     Text(L10n.Restart.Screen.Option.X.lines(number))
                 }
             }
@@ -140,7 +142,7 @@ internal struct MenuButtonStyle: ButtonStyle {
         configuration.label
             .font(Font(UIFont(name: "Copperplate Bold", size: 20) ?? UIFont.boldSystemFont(ofSize: 20)))
             .foregroundColor(.white)
-            .frame(minWidth: 44, maxWidth: .infinity, minHeight: 44, alignment: .center)
+            .frame(minWidth: 44, maxWidth: .infinity, minHeight: 50, alignment: .center)
             .multilineTextAlignment(.center)
             .lineLimit(nil)
             .background(RowBackground())
