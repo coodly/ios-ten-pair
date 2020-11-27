@@ -46,6 +46,19 @@ internal enum L10n {
     }
   }
 
+  internal enum Feedback {
+    internal enum Greeting {
+      /// I'm Jaanus Siim, independent developer based in Estonia. Every suggestion and feedback is welcome. I promise to read them all.
+      internal static let message = L10n.tr("Localizable", "feedback.greeting.message")
+      /// Hi there!
+      internal static let title = L10n.tr("Localizable", "feedback.greeting.title")
+    }
+    internal enum Login {
+      /// Please sign in to iCloud to send a message
+      internal static let notice = L10n.tr("Localizable", "feedback.login.notice")
+    }
+  }
+
   internal enum Menu {
     internal enum Option {
       /// Personalized ads

@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {                
         AppTheme.shared.load()
         
+        UINavigationBar.appearance().barTintColor = AppTheme.darkMainColor
+        UINavigationBar.appearance().isTranslucent = false
+        
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         Log.enable()

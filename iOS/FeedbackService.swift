@@ -33,7 +33,14 @@ internal class FeedbackService {
         translation.input.title = NSLocalizedString("coodly.feedback.message.compose.controller.title", comment: "")
         translation.input.sendButton = NSLocalizedString("coodly.feedback.message.compose.controller.send.button", comment: "")
         
-        return CloudFeedback.Feedback(container: CKContainer(identifier: "iCloud.com.coodly.feedback"), translation: translation)
+        var styling = Styling.instance
+        styling.mainColor = AppTheme.darkMainColor
+        styling.greetingTextColor = UIColor.white
+        styling.greetingTitle = NSLocalizedString("feedback.greeting.title", comment: "")
+        styling.greetingMessage = NSLocalizedString("feedback.greeting.message", comment: "")
+        styling.loginNotice = NSLocalizedString("feedback.login.notice", comment: "")
+
+        return CloudFeedback.Feedback(container: CKContainer(identifier: "iCloud.com.coodly.feedback"), translation: translation, styling: styling)
     }()
 
     internal static func load() {
@@ -46,15 +53,8 @@ internal class FeedbackService {
         shared.feedback.hasUnreadMessages
     }
         
-    static func present() {
-        guard let controller = UIApplication.shared.keyWindow?.rootViewController else {
-            return
-        }
-        
-        guard #available(iOS 14.0, *) else {
-            return
-        }
-        
+    @available(iOS 14.0, *)
+    static func present(on controller: UIViewController) {
         let navigation = UINavigationController(rootViewController: shared.feedback.client.feedbackController())
         navigation.modalPresentationStyle = .formSheet
         controller.present(navigation, animated: true, completion: nil)

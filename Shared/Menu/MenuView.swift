@@ -21,6 +21,7 @@ internal protocol MenuViewModelDelegate: class {
     func resume()
     func restart(lines: Int)
     func rateApp()
+    func showFeedback()
 }
 
 fileprivate enum MenuMode: String {
@@ -89,6 +90,10 @@ internal class MenuViewModel: ObservableObject {
     fileprivate func gdprShow() {
         gdpr?.present()
     }
+    
+    fileprivate func showFeedback() {
+        delegate?.showFeedback()
+    }
 }
 
 internal struct MenuView: View {
@@ -129,11 +134,13 @@ private struct MainMenuView: View {
                 Text(L10n.Menu.Option.Theme.base(viewModel.activeTheme.name))
             }
             PurchaseView(viewModel: viewModel.purchaseViewModel)
-            Button(action: {}) {
-                Text(L10n.Menu.Option.Send.message)
-            }
-            Button(action: {}) {
-                Text(L10n.Menu.Option.Message.from)
+            if #available(iOS 14, *) {
+                Button(action: viewModel.showFeedback) {
+                    Text(L10n.Menu.Option.Send.message)
+                }
+                Button(action: viewModel.showFeedback) {
+                    Text(L10n.Menu.Option.Message.from)
+                }
             }
             if viewModel.showPersonalizedAdsRow {
                 Button(action: viewModel.gdprShow) {

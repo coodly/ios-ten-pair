@@ -60,10 +60,6 @@ internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded, 
             tableView.reloadData()
         case .personalizedAds:
             gdprCheck?.present()
-        case .feedback(_):
-            if #available(iOS 13, *) {
-                FeedbackService.present()
-            }
         case .logs:
             let logs = LogsViewController()
             let navigation = UINavigationController(rootViewController: logs)

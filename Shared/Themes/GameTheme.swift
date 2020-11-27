@@ -48,8 +48,9 @@ internal class AppTheme {
                                                text: .white,
                                                tileBackground: .white)
     
+    internal static let darkMainColor = UIColor.color(hexString: "#243458")
     internal static let dark = ThemeDefinition(name: "dark",
-                                               main: UIColor.color(hexString: "#243458"),
+                                               main: darkMainColor,
                                                selected: UIColor(red: 60.0 / 255.0, green: 145.0 / 255.0, blue: 230.0 / 255.0, alpha: 1),
                                                success: UIColor(red: 0.239, green: 0.792, blue: 0.416, alpha: 1),
                                                empty: UIColor(white: 0.500, alpha: 1.000),
