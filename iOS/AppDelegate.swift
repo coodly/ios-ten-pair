@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FeedbackService.load()
         insight.load()
+        
+        RevenueCatPurchase.shared.load()
 
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
         
