@@ -16,8 +16,41 @@
 
 import SwiftUI
 
+internal protocol MenuViewModelDelegate: class {
+    func resume()
+}
+
+fileprivate enum MenuMode: String {
+    case main
+    case restart
+}
+
 internal class MenuViewModel: ObservableObject {
     fileprivate let randomLines = [20, 50, 100, 250]
+    
+    @Published fileprivate var mode = MenuMode.main
+    @Published fileprivate var activeTheme = AppTheme.shared.active
+
+    private weak var delegate: MenuViewModelDelegate?
+    internal init(delegate: MenuViewModelDelegate) {
+        self.delegate = delegate
+    }
+    
+    fileprivate func showRestart() {
+        mode = .restart
+    }
+    
+    fileprivate func showMain() {
+        mode = .main
+    }
+    
+    fileprivate func resume() {
+        delegate?.resume()
+    }
+    
+    fileprivate func switchTheme() {
+        activeTheme = AppTheme.shared.switchToNext()
+    }
 }
 
 internal struct MenuView: View {
@@ -25,14 +58,30 @@ internal struct MenuView: View {
     
     var body: some View {
         VStack(spacing: 4) {
-            Button(action: {}) {
+            if viewModel.mode == .main {
+                MainMenuView(viewModel: viewModel)
+            } else {
+                RestartSection(viewModel: viewModel)
+            }
+        }
+        .frame(width: 250, alignment: .center)
+        .buttonStyle(MenuButtonStyle())
+    }
+}
+
+private struct MainMenuView: View {
+    @ObservedObject var viewModel: MenuViewModel
+    
+    var body: some View {
+        VStack(spacing: 4) {
+            Button(action: viewModel.resume) {
                 Text(L10n.Menu.Option.resume)
             }
-            Button(action: {}) {
+            Button(action: viewModel.showRestart) {
                 Text(L10n.Menu.Option.restart)
             }
-            Button(action: {}) {
-                Text(L10n.Menu.Option.Theme.base("Cake"))
+            Button(action: viewModel.switchTheme) {
+                Text(L10n.Menu.Option.Theme.base(viewModel.activeTheme.name))
             }
             PurchaseSection()
             Button(action: {}) {
@@ -47,10 +96,7 @@ internal struct MenuView: View {
             Button(action: {}) {
                 Text("Logs")
             }
-            RestartSection(viewModel: viewModel)
         }
-        .frame(width: 250, alignment: .center)
-        .buttonStyle(MenuButtonStyle())
     }
 }
 
@@ -82,7 +128,7 @@ private struct RestartSection: View {
                     Text(L10n.Restart.Screen.Option.X.lines(number))
                 }
             }
-            Button(action: {}) {
+            Button(action: viewModel.showMain) {
                 Text(L10n.Restart.Screen.back)
             }
         }
@@ -97,7 +143,17 @@ internal struct MenuButtonStyle: ButtonStyle {
             .frame(minWidth: 44, maxWidth: .infinity, minHeight: 44, alignment: .center)
             .multilineTextAlignment(.center)
             .lineLimit(nil)
-            .background(Color.red)
+            .background(RowBackground())
             .opacity(configuration.isPressed ? 0.7 : 1.0)
+    }
+}
+
+private struct RowBackground: UIViewRepresentable {
+    func makeUIView(context: Context) -> some UIView {
+        MenuCellBackground()
+    }
+    
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        
     }
 }

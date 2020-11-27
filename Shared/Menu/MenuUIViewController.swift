@@ -22,7 +22,7 @@ internal protocol MenuUIDelegate: class {
     func dismissMenu()
 }
 
-internal class MenuUIViewController: UIViewController, StoryboardLoaded, GDPRCheckConsumer {
+internal class MenuUIViewController: UIViewController, StoryboardLoaded, GDPRCheckConsumer, MenuViewModelDelegate {
     static var storyboardName: String {
         "MenuUI"
     }
@@ -34,7 +34,7 @@ internal class MenuUIViewController: UIViewController, StoryboardLoaded, GDPRChe
     
     private lazy var dimView = OverlayBackgroundView()
     
-    private lazy var viewModel = MenuViewModel()
+    private lazy var viewModel = MenuViewModel(delegate: self)
     private lazy var menuView = MenuView(viewModel: viewModel)
     private lazy var hosting = UIHostingController(rootView: menuView)
     
@@ -56,6 +56,10 @@ internal class MenuUIViewController: UIViewController, StoryboardLoaded, GDPRChe
     }
     
     @objc fileprivate func dismissMenu() {
+        delegate?.dismissMenu()
+    }
+    
+    func resume() {
         delegate?.dismissMenu()
     }
 }
