@@ -17,6 +17,9 @@
 import Foundation
 import CloudFeedback
 import CloudKit
+#if canImport(Combine)
+import Combine
+#endif
 
 internal class FeedbackService {
     private static let shared = FeedbackService()
@@ -58,6 +61,10 @@ internal class FeedbackService {
         let navigation = UINavigationController(rootViewController: shared.feedback.client.feedbackController())
         navigation.modalPresentationStyle = .formSheet
         controller.present(navigation, animated: true, completion: nil)
+    }
+    
+    internal static var unreadStatus: AnyPublisher<Bool, Never> {
+        shared.feedback.unreadStatus.eraseToAnyPublisher()
     }
 }
 

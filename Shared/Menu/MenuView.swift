@@ -37,10 +37,12 @@ internal class MenuViewModel: ObservableObject {
     @Published fileprivate var mode = MenuMode.main
     @Published fileprivate var activeTheme = AppTheme.shared.active
     @Published fileprivate var showPersonalizedAdsRow = false
+    @Published fileprivate var haveMessageFromDeveloper = false
 
     fileprivate let showResume: Bool
     private let gdpr: GDPRCheck?
     private var adsStatusSubscription: AnyCancellable?
+    private var unreadSubscription: AnyCancellable?
 
     private weak var delegate: MenuViewModelDelegate?
     internal init(delegate: MenuViewModelDelegate, gameWon: Bool, gdpr: GDPRCheck?) {
@@ -49,6 +51,15 @@ internal class MenuViewModel: ObservableObject {
         self.gdpr = gdpr
         
         loadPurchaseStatus()
+        
+        unreadSubscription = FeedbackService.unreadStatus.receive(on: DispatchQueue.main)
+            .sink() {
+                [weak self]
+                
+                haveUnread in
+                
+                self?.haveMessageFromDeveloper = haveUnread
+            }
     }
     
     fileprivate func showRestart() {
@@ -134,12 +145,13 @@ private struct MainMenuView: View {
                 Text(L10n.Menu.Option.Theme.base(viewModel.activeTheme.name))
             }
             PurchaseView(viewModel: viewModel.purchaseViewModel)
-            if #available(iOS 14, *) {
-                Button(action: viewModel.showFeedback) {
-                    Text(L10n.Menu.Option.Send.message)
-                }
+            if #available(iOS 14, *), viewModel.haveMessageFromDeveloper {
                 Button(action: viewModel.showFeedback) {
                     Text(L10n.Menu.Option.Message.from)
+                }
+            } else if #available(iOS 14, *) {
+                Button(action: viewModel.showFeedback) {
+                    Text(L10n.Menu.Option.Send.message)
                 }
             }
             if viewModel.showPersonalizedAdsRow {
