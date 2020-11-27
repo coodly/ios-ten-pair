@@ -16,6 +16,16 @@
 
 import Foundation
 import Purchases
+import Combine
+
+internal enum PurchaseError: LocalizedError {
+    case noProducts
+}
+
+public protocol TenPairProduct {
+    var localizedPrice: String { get }
+    var identifier: String { get }
+}
 
 internal class RevenueCatPurchase: NSObject, PurchasesDelegate {
     internal static let shared = RevenueCatPurchase()
@@ -51,5 +61,64 @@ internal class RevenueCatPurchase: NSObject, PurchasesDelegate {
         }
         
         Log.purchase.debug("Info \(info)")
+    }
+    
+    func purchases(_ purchases: Purchases, didReceiveUpdated purchaserInfo: Purchases.PurchaserInfo) {
+        handle(info: purchaserInfo)
+    }
+    
+    func product() -> AnyPublisher<TenPairProduct, Error> {
+        Future() {
+            promise in
+            
+            Purchases.shared.offerings() {
+                offerings, error in
+                
+                if let error = error {
+                    Log.purchase.error("Get offerings error: \(error)")
+                    promise(.failure(error))
+                    return
+                }
+                
+                Log.purchase.debug("Loded offerings")
+                Log.purchase.debug(offerings?.current?.lifetime?.localizedPriceString)
+                Log.purchase.debug(offerings?.offering(identifier: "com.coodly.ten.pair.full.version")?.lifetime?.localizedPriceString)
+                
+                guard let removeAds: TenPairProduct =
+                        offerings?.current?.lifetime ?? offerings?.offering(identifier: "com.coodly.ten.pair.full.version")?.lifetime else {
+                    promise(.failure(PurchaseError.noProducts))
+                    return
+                }
+                
+                promise(.success(removeAds))
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    func restorePurchases() -> AnyPublisher<Bool, Error> {
+        Future() {
+            promise in
+            
+            Purchases.shared.restoreTransactions() {
+                info, error in
+
+                
+                self.handle(info: info)
+                
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(true))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+}
+
+extension Purchases.Package: TenPairProduct {
+    public var localizedPrice: String {
+        localizedPriceString
     }
 }

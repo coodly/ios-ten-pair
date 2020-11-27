@@ -15,9 +15,54 @@
  */
 
 import SwiftUI
+import Combine
+
+private enum ProductStatus: String {
+    case loading
+    case loaded
+    case failure
+}
 
 internal class PurchaseViewModel: ObservableObject {
     
+    private lazy var disposeBag = Set<AnyCancellable>()
+    @Published fileprivate var productStatus: ProductStatus = .loading
+    @Published var product: TenPairProduct?
+    
+    private let purchase: RevenueCatPurchase
+    
+    internal init(purchase: RevenueCatPurchase) {
+        self.purchase = purchase
+        
+        loadProduct()
+    }
+    
+    private func loadProduct() {
+        let onCompletion: ((Subscribers.Completion<Error>) -> Void) = {
+            [weak self]
+            
+            completion in
+            
+            switch completion {
+            case .failure(_):
+                self?.productStatus = .failure
+            case .finished:
+                self?.productStatus = .loaded
+            }
+        }
+        let process: ((TenPairProduct) -> Void) = {
+            [weak self]
+            
+            product in
+            
+            self?.product = product
+        }
+        
+        purchase.product().receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: onCompletion, receiveValue: process)
+            .store(in: &disposeBag)
+
+    }
 }
 
 internal struct PurchaseView: View {
@@ -26,7 +71,14 @@ internal struct PurchaseView: View {
     var body: some View {
         VStack(spacing: 4) {
             Button(action: {}) {
-                Text(L10n.Menu.Option.Remove.Ads.base("€1.00"))
+                HStack(spacing: 0) {
+                    Text(L10n.Menu.Option.Remove.Ads.base)
+                    if viewModel.productStatus == .loading {
+                        ActivityIndicatorView()
+                    } else {
+                        Text(viewModel.product?.localizedPrice ?? "-")
+                    }
+                }
             }
             Button(action: {}) {
                 Text(L10n.Menu.Option.Restore.purchase)

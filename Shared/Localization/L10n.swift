@@ -62,10 +62,8 @@ internal enum L10n {
       }
       internal enum Remove {
         internal enum Ads {
-          /// Remove ads: %@
-          internal static func base(_ p1: Any) -> String {
-            return L10n.tr("Localizable", "menu.option.remove.ads.base", String(describing: p1))
-          }
+          /// Remove ads: 
+          internal static let base = L10n.tr("Localizable", "menu.option.remove.ads.base")
         }
       }
       internal enum Restore {

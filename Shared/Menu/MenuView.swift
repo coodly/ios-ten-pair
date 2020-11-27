@@ -29,7 +29,7 @@ fileprivate enum MenuMode: String {
 internal class MenuViewModel: ObservableObject {
     fileprivate let randomLines = [20, 50, 100, 250]
     
-    fileprivate lazy var purchaseViewModel = PurchaseViewModel()
+    fileprivate lazy var purchaseViewModel = PurchaseViewModel(purchase: RevenueCatPurchase.shared)
     
     @Published fileprivate var mode = MenuMode.main
     @Published fileprivate var activeTheme = AppTheme.shared.active
