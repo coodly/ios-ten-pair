@@ -67,17 +67,43 @@ internal class PurchaseViewModel: ObservableObject {
     }
     
     fileprivate func purchaseProduct() {
-        purchaseInProgress = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-            self.purchaseInProgress = false
+        guard let product = product else {
+            return
         }
+        
+        purchaseInProgress = true
+        let onCompletion: ((Subscribers.Completion<Error>) -> Void) = {
+            [weak self]
+            
+            completion in
+            
+            self?.purchaseInProgress = false
+        }
+        let process: ((Bool) -> Void) = {
+            _ in
+        }
+        purchase.purchase(product)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: onCompletion, receiveValue: process)
+            .store(in: &disposeBag)
     }
     
     fileprivate func restoreProduct() {
         restoreInProgress = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-            self.restoreInProgress = false
+        let onCompletion: ((Subscribers.Completion<Error>) -> Void) = {
+            [weak self]
+            
+            completion in
+            
+            self?.restoreInProgress = false
         }
+        let process: ((Bool) -> Void) = {
+            _ in
+        }
+        purchase.restorePurchases()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: onCompletion, receiveValue: process)
+            .store(in: &disposeBag)
     }
 }
 

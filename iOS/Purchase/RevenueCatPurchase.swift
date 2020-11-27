@@ -115,6 +115,28 @@ internal class RevenueCatPurchase: NSObject, PurchasesDelegate {
         }
         .eraseToAnyPublisher()
     }
+    
+    func purchase(_ product: TenPairProduct) -> AnyPublisher<Bool, Error> {
+        let package = product as! Purchases.Package
+        
+        return Future() {
+            promise in
+            
+            Purchases.shared.purchasePackage(package) {
+                transaction, info, error, cancelled in
+                
+                self.handle(info: info)
+                
+                if let error = error {
+                    Log.purchase.error("Purchase error \(error)")
+                    promise(.failure(error))
+                } else {
+                    promise(.success(true))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }
 
 extension Purchases.Package: TenPairProduct {
