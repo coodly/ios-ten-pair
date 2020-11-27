@@ -16,8 +16,9 @@
 
 import UIKit
 import GoogleMobileAds
+import Combine
 
-private let InterstitialShowTreshold = 10
+private let InterstitialShowThreshold = 10
 
 private extension Selector {
     static let tickInterstitial = #selector(AdsViewController.tickInterstitial)
@@ -29,7 +30,7 @@ internal class AdsViewController: UIViewController {
     @IBOutlet private var bannerContainer: UIView!
     @IBOutlet private var bannerHeight: NSLayoutConstraint!
     
-    private lazy var banner: GADBannerView = {
+    private lazy var banner: GADBannerView? = {
         let banner = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         banner.adUnitID = AppConfig.current.adUnits.banner
         banner.rootViewController = self
@@ -39,8 +40,11 @@ internal class AdsViewController: UIViewController {
     
     private(set) lazy var gdpr = AdMobGDPRCheck()
     
-    private lazy var interstitial = createInterstitial()
+    private lazy var interstitial: GADInterstitial? = createInterstitial()
     private var interstitialCount = 0
+    
+    private var adsStatusSubscription: AnyCancellable?
+    private var adsDisabled = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,12 +58,35 @@ internal class AdsViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(loadAds), name: .personalizedAdsStatusChanged, object: nil)
 
         bannerContainer.clipsToBounds = true
-        bannerContainer.addSubview(banner)
-        banner.pinToSuperviewEdges()
-        
-        loadAds()
+        bannerContainer.addSubview(banner!)
+        banner!.pinToSuperviewEdges()
         
         children.compactMap({ $0 as? GDPRCheckConsumer }).forEach({ $0.gdprCheck = gdpr })
+        
+        adsStatusSubscription = RevenueCatPurchase.shared.adsStatus
+            .receive(on: DispatchQueue.main)
+            .sink() {
+                [weak self]
+                
+                status in
+                
+                self?.changed(status: status)
+            }
+    }
+    
+    private func changed(status: ShowAdsStatus) {
+        switch status {
+        case .unknown:
+            break
+        case .show:
+            loadAds()
+        case .removed:
+            adsDisabled = true
+            hideBanner() {
+                self.banner = nil
+                self.interstitial = nil
+            }
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -90,11 +117,15 @@ internal class AdsViewController: UIViewController {
         loadBannerAd()
         
         if AppConfig.current.ads {
-            interstitial.load(adRequest())
+            interstitial?.load(adRequest())
         }
     }
     
     private func loadBannerAd() {
+        if adsDisabled {
+            return
+        }
+        
         guard AppConfig.current.ads else {
             return
         }
@@ -108,8 +139,8 @@ internal class AdsViewController: UIViewController {
         }()
         let viewWidth = frame.size.width
 
-        banner.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
-        banner.load(adRequest())
+        banner?.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+        banner?.load(adRequest())
     }
 
     private func adRequest() -> GADRequest {
@@ -126,9 +157,17 @@ internal class AdsViewController: UIViewController {
     }
     
     @objc fileprivate func tickInterstitial() {
+        if adsDisabled {
+            return
+        }
+        
         interstitialCount += 1
         
-        guard interstitialCount >= InterstitialShowTreshold, interstitial.isReady else {
+        guard let interstitial = self.interstitial else {
+            return
+        }
+        
+        guard interstitialCount >= InterstitialShowThreshold, interstitial.isReady else {
             return
         }
         
@@ -141,12 +180,28 @@ internal class AdsViewController: UIViewController {
         interstitial.delegate = self
         return interstitial
     }
+    
+    private func hideBanner(completion: (() -> Void)? = nil) {
+        NSLayoutConstraint.deactivate([bottomWithAds])
+        NSLayoutConstraint.activate([bottomWithoutAds])
+        
+        let animation = {
+            self.view.layoutIfNeeded()
+        }
+        let animationCompletion: ((Bool) -> Void) = {
+            _ in
+            
+            completion?()
+        }
+        
+        UIView.animate(withDuration: 0.3, animations: animation, completion: animationCompletion)
+    }
 }
 
 extension AdsViewController: GADInterstitialDelegate {
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         interstitial = createInterstitial()
-        interstitial.load(adRequest())
+        interstitial?.load(adRequest())
     }
     
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {
@@ -180,12 +235,7 @@ extension AdsViewController: GADBannerViewDelegate {
     
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
         Log.ads.debug("didFailToReceiveAdWithError: \(error)")
-        
-        NSLayoutConstraint.deactivate([bottomWithAds])
-        NSLayoutConstraint.activate([bottomWithoutAds])
-        
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-        }
+
+        hideBanner()
     }
 }
