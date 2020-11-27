@@ -34,10 +34,13 @@ internal class MenuViewModel: ObservableObject {
     
     @Published fileprivate var mode = MenuMode.main
     @Published fileprivate var activeTheme = AppTheme.shared.active
+    
+    fileprivate let showResume: Bool
 
     private weak var delegate: MenuViewModelDelegate?
-    internal init(delegate: MenuViewModelDelegate) {
+    internal init(delegate: MenuViewModelDelegate, gameWon: Bool) {
         self.delegate = delegate
+        showResume = !gameWon
     }
     
     fileprivate func showRestart() {
@@ -87,8 +90,10 @@ private struct MainMenuView: View {
     
     var body: some View {
         VStack(spacing: 4) {
-            Button(action: viewModel.resume) {
-                Text(L10n.Menu.Option.resume)
+            if viewModel.showResume {
+                Button(action: viewModel.resume) {
+                    Text(L10n.Menu.Option.resume)
+                }
             }
             Button(action: viewModel.showRestart) {
                 Text(L10n.Menu.Option.restart)
