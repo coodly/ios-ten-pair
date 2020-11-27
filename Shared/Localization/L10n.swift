@@ -60,6 +60,10 @@ internal enum L10n {
         /// ● Response from developer
         internal static let from = L10n.tr("Localizable", "menu.option.message.from")
       }
+      internal enum Rate {
+        /// Rate app
+        internal static let app = L10n.tr("Localizable", "menu.option.rate.app")
+      }
       internal enum Remove {
         internal enum Ads {
           /// Remove ads: 

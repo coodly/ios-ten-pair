@@ -19,6 +19,7 @@ import SwiftUI
 internal protocol MenuViewModelDelegate: class {
     func resume()
     func restart(lines: Int)
+    func rateApp()
 }
 
 fileprivate enum MenuMode: String {
@@ -29,7 +30,7 @@ fileprivate enum MenuMode: String {
 internal class MenuViewModel: ObservableObject {
     fileprivate let randomLines = [20, 50, 100, 250]
     
-    fileprivate lazy var purchaseViewModel = PurchaseViewModel(purchase: RevenueCatPurchase.shared)
+    fileprivate lazy var purchaseViewModel = PurchaseViewModel(purchase: RevenueCatPurchase.shared, delegate: delegate)
     
     @Published fileprivate var mode = MenuMode.main
     @Published fileprivate var activeTheme = AppTheme.shared.active

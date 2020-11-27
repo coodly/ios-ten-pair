@@ -18,6 +18,12 @@ import Foundation
 import Purchases
 import Combine
 
+internal enum ShowAdsStatus: String {
+    case unknown
+    case removed
+    case show
+}
+
 internal enum PurchaseError: LocalizedError {
     case noProducts
 }
@@ -29,7 +35,9 @@ public protocol TenPairProduct {
 
 internal class RevenueCatPurchase: NSObject, PurchasesDelegate {
     internal static let shared = RevenueCatPurchase()
-    
+
+    private(set) internal var adsStatus = CurrentValueSubject<ShowAdsStatus, Never>(ShowAdsStatus.unknown)
+
     private override init() {}
     
     internal func load() {
@@ -61,6 +69,12 @@ internal class RevenueCatPurchase: NSObject, PurchasesDelegate {
         }
         
         Log.purchase.debug("Info \(info)")
+        if let date = info.purchaseDate(forEntitlement: "com.coodly.ten.pair.remove.ads") {
+            Log.purchase.debug("Ads removed on \(date)")
+            adsStatus.send(.removed)
+        } else {
+            adsStatus.send(.show)
+        }
     }
     
     func purchases(_ purchases: Purchases, didReceiveUpdated purchaserInfo: Purchases.PurchaserInfo) {

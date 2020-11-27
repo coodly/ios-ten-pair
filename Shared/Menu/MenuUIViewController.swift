@@ -58,4 +58,8 @@ internal class MenuUIViewController: UIViewController, StoryboardLoaded, GDPRChe
     func restart(lines: Int) {
         delegate?.restart(lines)
     }
+    
+    func rateApp() {
+        UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/appName/id837173458?mt=8&action=write-review")!, options: [:])
+    }
 }

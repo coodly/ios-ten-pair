@@ -30,13 +30,17 @@ internal class PurchaseViewModel: ObservableObject {
     @Published var product: TenPairProduct?
     @Published var purchaseInProgress = false
     @Published var restoreInProgress = false
+    @Published var adsRemoved = false
     
     private let purchase: RevenueCatPurchase
+    private weak var delegate: MenuViewModelDelegate?
     
-    internal init(purchase: RevenueCatPurchase) {
+    internal init(purchase: RevenueCatPurchase, delegate: MenuViewModelDelegate?) {
         self.purchase = purchase
+        self.delegate = delegate
         
         loadProduct()
+        loadPurchaseStatus()
     }
     
     private func loadProduct() {
@@ -105,6 +109,22 @@ internal class PurchaseViewModel: ObservableObject {
             .sink(receiveCompletion: onCompletion, receiveValue: process)
             .store(in: &disposeBag)
     }
+    
+    private func loadPurchaseStatus() {
+        purchase.adsStatus.receive(on: DispatchQueue.main)
+            .sink() {
+                [weak self]
+                
+                status in
+                
+                self?.adsRemoved = status == .removed
+            }
+            .store(in: &disposeBag)
+    }
+    
+    fileprivate func rateApp() {
+        delegate?.rateApp()
+    }
 }
 
 internal struct PurchaseView: View {
@@ -112,21 +132,27 @@ internal struct PurchaseView: View {
     
     var body: some View {
         VStack(spacing: 4) {
-            Button(action: viewModel.purchaseProduct) {
-                if viewModel.purchaseInProgress {
-                    ActivityIndicatorView()
-                } else {
-                    HStack(spacing: 0) {
-                        Text(L10n.Menu.Option.Remove.Ads.base)
-                        if viewModel.productStatus == .loading {
-                            ActivityIndicatorView()
-                        } else {
-                            Text(viewModel.product?.localizedPrice ?? "-")
+            if viewModel.adsRemoved {
+                Button(action: viewModel.rateApp) {
+                    Text(L10n.Menu.Option.Rate.app)
+                }
+            } else {
+                Button(action: viewModel.purchaseProduct) {
+                    if viewModel.purchaseInProgress {
+                        ActivityIndicatorView()
+                    } else {
+                        HStack(spacing: 0) {
+                            Text(L10n.Menu.Option.Remove.Ads.base)
+                            if viewModel.productStatus == .loading {
+                                ActivityIndicatorView()
+                            } else {
+                                Text(viewModel.product?.localizedPrice ?? "-")
+                            }
                         }
                     }
                 }
+                .disabled(viewModel.purchaseInProgress)
             }
-            .disabled(viewModel.purchaseInProgress)
             Button(action: viewModel.restoreProduct) {
                 if viewModel.restoreInProgress {
                     ActivityIndicatorView()
