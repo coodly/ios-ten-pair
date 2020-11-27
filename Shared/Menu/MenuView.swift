@@ -15,6 +15,7 @@
 */
 
 import SwiftUI
+import Combine
 
 internal protocol MenuViewModelDelegate: class {
     func resume()
@@ -34,13 +35,19 @@ internal class MenuViewModel: ObservableObject {
     
     @Published fileprivate var mode = MenuMode.main
     @Published fileprivate var activeTheme = AppTheme.shared.active
-    
+    @Published fileprivate var showPersonalizedAdsRow = false
+
     fileprivate let showResume: Bool
+    private let gdpr: GDPRCheck?
+    private var adsStatusSubscription: AnyCancellable?
 
     private weak var delegate: MenuViewModelDelegate?
-    internal init(delegate: MenuViewModelDelegate, gameWon: Bool) {
+    internal init(delegate: MenuViewModelDelegate, gameWon: Bool, gdpr: GDPRCheck?) {
         self.delegate = delegate
         showResume = !gameWon
+        self.gdpr = gdpr
+        
+        loadPurchaseStatus()
     }
     
     fileprivate func showRestart() {
@@ -61,6 +68,26 @@ internal class MenuViewModel: ObservableObject {
     
     fileprivate func restart(lines: Int) {
         delegate?.restart(lines: lines)
+    }
+    
+    private func loadPurchaseStatus() {
+        adsStatusSubscription = RevenueCatPurchase.shared.adsStatus
+            .receive(on: DispatchQueue.main)
+            .sink() {
+                [weak self]
+                
+                status in
+                
+                guard let self = self, let gdpr = self.gdpr else {
+                    return
+                }
+                
+                self.showPersonalizedAdsRow = status == .show && gdpr.showGDPRConsentMenuItem
+            }
+    }
+    
+    fileprivate func gdprShow() {
+        gdpr?.present()
     }
 }
 
@@ -108,8 +135,10 @@ private struct MainMenuView: View {
             Button(action: {}) {
                 Text(L10n.Menu.Option.Message.from)
             }
-            Button(action: {}) {
-                Text(L10n.Menu.Option.gdpr)
+            if viewModel.showPersonalizedAdsRow {
+                Button(action: viewModel.gdprShow) {
+                    Text(L10n.Menu.Option.gdpr)
+                }
             }
         }
     }

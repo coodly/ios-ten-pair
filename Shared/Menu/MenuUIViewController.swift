@@ -32,7 +32,7 @@ internal class MenuUIViewController: UIViewController, StoryboardLoaded, GDPRChe
     internal var gameWon = false
     internal var delegate: MenuUIDelegate?
     
-    private lazy var viewModel = MenuViewModel(delegate: self, gameWon: gameWon)
+    private lazy var viewModel = MenuViewModel(delegate: self, gameWon: gameWon, gdpr: gdprCheck)
     private lazy var menuView = MenuView(viewModel: viewModel)
     private lazy var hosting = UIHostingController(rootView: menuView)
     
