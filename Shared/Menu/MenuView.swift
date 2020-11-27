@@ -62,15 +62,20 @@ internal struct MenuView: View {
     @ObservedObject var viewModel: MenuViewModel
     
     var body: some View {
-        VStack(spacing: 4) {
-            if viewModel.mode == .main {
-                MainMenuView(viewModel: viewModel)
-            } else {
-                RestartSection(viewModel: viewModel)
+        ZStack {
+            MenuBackground()
+                .edgesIgnoringSafeArea(.all)
+                .onTapGesture(perform: viewModel.resume)
+            VStack(spacing: 4) {
+                if viewModel.mode == .main {
+                    MainMenuView(viewModel: viewModel)
+                } else {
+                    RestartSection(viewModel: viewModel)
+                }
             }
+            .frame(width: 280, alignment: .center)
+            .buttonStyle(MenuButtonStyle())
         }
-        .frame(width: 280, alignment: .center)
-        .buttonStyle(MenuButtonStyle())
     }
 }
 
@@ -147,6 +152,16 @@ internal struct MenuButtonStyle: ButtonStyle {
             .lineLimit(nil)
             .background(RowBackground())
             .opacity(configuration.isPressed ? 0.7 : 1.0)
+    }
+}
+
+private struct MenuBackground: UIViewRepresentable {
+    func makeUIView(context: Context) -> some UIView {
+        OverlayBackgroundView()
+    }
+    
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        
     }
 }
 

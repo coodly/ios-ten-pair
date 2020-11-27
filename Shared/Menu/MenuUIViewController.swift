@@ -32,8 +32,6 @@ internal class MenuUIViewController: UIViewController, StoryboardLoaded, GDPRChe
     internal var gameWon = false
     internal var delegate: MenuUIDelegate?
     
-    private lazy var dimView = OverlayBackgroundView()
-    
     private lazy var viewModel = MenuViewModel(delegate: self)
     private lazy var menuView = MenuView(viewModel: viewModel)
     private lazy var hosting = UIHostingController(rootView: menuView)
@@ -42,12 +40,6 @@ internal class MenuUIViewController: UIViewController, StoryboardLoaded, GDPRChe
         super.viewDidLoad()
 
         view.backgroundColor = .clear
-        
-        view.insertSubview(dimView, at: 0)
-        dimView.pinToSuperviewEdges()
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissMenu))
-        dimView.addGestureRecognizer(tap)
         
         addChild(hosting)
         view.addSubview(hosting.view)
