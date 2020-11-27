@@ -16,6 +16,9 @@
 
 import CoreData
 import CloudKit
+#if canImport(Combine)
+import Combine
+#endif
 
 internal extension NSPredicate {
     @nonobjc static let needingSync: NSPredicate = {
@@ -102,5 +105,11 @@ internal extension NSManagedObjectContext {
         let saved: Conversation = insertEntity()
         saved.recordName = UUID().uuidString
         return saved
+    }
+    
+    @available(iOS 13.0, *)
+    var unreadConversations: AnyPublisher<[Conversation], Never> {
+        let predicate = NSPredicate(format: "hasUpdate = YES")
+        return monitorEntities(of: Conversation.self, predicate: predicate, sort: [])
     }
 }

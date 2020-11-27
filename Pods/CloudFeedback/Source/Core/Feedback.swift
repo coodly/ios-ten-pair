@@ -16,11 +16,20 @@
 
 import CloudKit
 import CoreDataPersistence
+#if canImport(Combine)
+import Combine
+#endif
 
 private typealias Dependencies = PersistenceConsumer
 
 public final class Feedback: Dependencies, FeedbackInjector {
     var persistence: CorePersistence!
+    
+    @available(iOS 13.0, *)
+    private lazy var disposeBag = Set<AnyCancellable>()
+    
+    @available(iOS 13.0, *)
+    private(set) public lazy var unreadStatus = CurrentValueSubject<Bool, Never>(false)
     
     public var hasUnreadMessages: Bool {
         var hasUnread = false
@@ -58,6 +67,28 @@ public final class Feedback: Dependencies, FeedbackInjector {
             Logging.log("Database loaded")
             
             FeedbackInjection.sharedInstance.setUp()
+            
+            guard #available(iOS 13, *) else {
+                return
+            }
+            
+            self.loadUnreadMonitor()
         }
+    }
+    
+    @available(iOS 13.0, *)
+    private func loadUnreadMonitor() {
+        Logging.log("Load unread monitor")
+        persistence.mainContext.unreadConversations
+            .map(\.count)
+            .receive(on: DispatchQueue.main)
+            .sink() {
+                [unreadStatus]
+                
+                update in
+                
+                unreadStatus.send(update > 0)
+            }
+            .store(in: &disposeBag)
     }
 }

@@ -1,11 +1,11 @@
 PODS:
-  - CloudFeedback/Client (0.3.1):
+  - CloudFeedback/Client (0.3.2):
     - CloudFeedback/Core
-  - CloudFeedback/Core (0.3.1):
+  - CloudFeedback/Core (0.3.2):
     - CoreDataPersistence (= 0.2.3)
     - Puff/Core (= 0.6.2)
     - Puff/CoreData (= 0.6.2)
-  - CloudFeedback/iOS (0.3.1):
+  - CloudFeedback/iOS (0.3.2):
     - CloudFeedback/Core
   - CloudInsight (0.1.7):
     - CloudInsight/Client (= 0.1.7)
@@ -29,11 +29,11 @@ PODS:
   - SWLogger (0.4.3)
 
 DEPENDENCIES:
-  - "CloudFeedback/Client (from `git@github.com:coodly/CloudFeedback.git`)"
-  - "CloudFeedback/iOS (from `git@github.com:coodly/CloudFeedback.git`)"
-  - "CloudInsight (from `git@github.com:coodly/CloudInsight.git`)"
+  - "CloudFeedback/Client (from `git@github.com:coodly/CloudFeedback.git`, tag `0.3.2`)"
+  - "CloudFeedback/iOS (from `git@github.com:coodly/CloudFeedback.git`, tag `0.3.2`)"
+  - "CloudInsight (from `git@github.com:coodly/CloudInsight.git`, tag `0.1.7`)"
   - PersonalizedAdConsent (= 1.0.5)
-  - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
+  - "SWLogger (from `git@github.com:coodly/swlogger.git`, tag `0.5.0`)"
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs:
@@ -46,24 +46,27 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CloudFeedback:
     :git: "git@github.com:coodly/CloudFeedback.git"
+    :tag: 0.3.2
   CloudInsight:
     :git: "git@github.com:coodly/CloudInsight.git"
+    :tag: 0.1.7
   SWLogger:
     :git: "git@github.com:coodly/swlogger.git"
+    :tag: 0.5.0
 
 CHECKOUT OPTIONS:
   CloudFeedback:
-    :commit: cf6c760c2f40b63fdddf7f1afb6fe6aacadf5a70
     :git: "git@github.com:coodly/CloudFeedback.git"
+    :tag: 0.3.2
   CloudInsight:
-    :commit: 33d17a15f7d298784f7dc418ce026eb5e63180f3
     :git: "git@github.com:coodly/CloudInsight.git"
+    :tag: 0.1.7
   SWLogger:
-    :commit: 18ed3df041436a5984bf81eb2b16f692a0c166bf
     :git: "git@github.com:coodly/swlogger.git"
+    :tag: 0.5.0
 
 SPEC CHECKSUMS:
-  CloudFeedback: e1f033f65376f6a747cd0297a3f244fe313b494e
+  CloudFeedback: f2e4847030af0d2a25366ceec6645b36319f7c6b
   CloudInsight: 3038603eeddf90cb11bdfb37cd0b11f96d088a9d
   CoreDataPersistence: 2379452444c3020b76f46b28e30903ec533c7b24
   KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
@@ -71,6 +74,6 @@ SPEC CHECKSUMS:
   Puff: 55e8b337d559cade0025ee287397ec18c2a5054b
   SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
-PODFILE CHECKSUM: e1ee3f93b6af142aa5f54145cf4d6c304b4d16f8
+PODFILE CHECKSUM: 1c758bfb1f62d0a05434b9a3c030403fb8189890
 
 COCOAPODS: 1.10.0
