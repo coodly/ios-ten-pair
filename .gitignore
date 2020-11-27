@@ -10,3 +10,4 @@ fastlane/README.md
 fastlane/report.xml
 fastlane/965FUXH96J.json
 fastlane/Appfile
+iOS/Secrets/Secrets.swift
