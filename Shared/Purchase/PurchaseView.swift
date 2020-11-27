@@ -28,6 +28,8 @@ internal class PurchaseViewModel: ObservableObject {
     private lazy var disposeBag = Set<AnyCancellable>()
     @Published fileprivate var productStatus: ProductStatus = .loading
     @Published var product: TenPairProduct?
+    @Published var purchaseInProgress = false
+    @Published var restoreInProgress = false
     
     private let purchase: RevenueCatPurchase
     
@@ -63,6 +65,20 @@ internal class PurchaseViewModel: ObservableObject {
             .store(in: &disposeBag)
 
     }
+    
+    fileprivate func purchaseProduct() {
+        purchaseInProgress = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+            self.purchaseInProgress = false
+        }
+    }
+    
+    fileprivate func restoreProduct() {
+        restoreInProgress = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+            self.restoreInProgress = false
+        }
+    }
 }
 
 internal struct PurchaseView: View {
@@ -70,19 +86,29 @@ internal struct PurchaseView: View {
     
     var body: some View {
         VStack(spacing: 4) {
-            Button(action: {}) {
-                HStack(spacing: 0) {
-                    Text(L10n.Menu.Option.Remove.Ads.base)
-                    if viewModel.productStatus == .loading {
-                        ActivityIndicatorView()
-                    } else {
-                        Text(viewModel.product?.localizedPrice ?? "-")
+            Button(action: viewModel.purchaseProduct) {
+                if viewModel.purchaseInProgress {
+                    ActivityIndicatorView()
+                } else {
+                    HStack(spacing: 0) {
+                        Text(L10n.Menu.Option.Remove.Ads.base)
+                        if viewModel.productStatus == .loading {
+                            ActivityIndicatorView()
+                        } else {
+                            Text(viewModel.product?.localizedPrice ?? "-")
+                        }
                     }
                 }
             }
-            Button(action: {}) {
-                Text(L10n.Menu.Option.Restore.purchase)
+            .disabled(viewModel.purchaseInProgress)
+            Button(action: viewModel.restoreProduct) {
+                if viewModel.restoreInProgress {
+                    ActivityIndicatorView()
+                } else {
+                    Text(L10n.Menu.Option.Restore.purchase)
+                }
             }
+            .disabled(viewModel.restoreInProgress)
         }
     }
 }
