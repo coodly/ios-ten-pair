@@ -27,9 +27,12 @@ internal class PullMessagesOperation: CloudKitRequest<Cloud.Message>, Persistenc
         }
     }
     
+    private let messagesBefore: Int
+    
     private let pullMessagesFor: Conversation
     init(for conversation: Conversation) {
         pullMessagesFor = conversation
+        messagesBefore = conversation.messages?.count ?? 0
     }
     
     override func performRequest() {
@@ -45,18 +48,21 @@ internal class PullMessagesOperation: CloudKitRequest<Cloud.Message>, Persistenc
     
     override func handle(result: CloudResult<Cloud.Message>, completion: @escaping () -> ()) {
         let save: ContextClosure = {
+            [messagesBefore, pullMessagesFor]
+            
             context in
             
-            if result.error != nil {
-                Logging.log("Pull massages failed")
+            if let error = result.error {
+                Logging.log("Pull massages failed: \(error)")
             } else {
                 Logging.log("Pulled \(result.records.count) messages")
                 for m in result.records {
                     context.update(message: m)
                 }
                 
-                let conversation = context.inCurrentContext(entity: self.pullMessagesFor)
-                conversation.hasUpdate = false
+                let conversation = context.inCurrentContext(entity: pullMessagesFor)
+                let messagesAfter = conversation.messages?.count ?? 0
+                conversation.hasUpdate = conversation.hasUpdate || messagesAfter > messagesBefore
             }
         }
         

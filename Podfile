@@ -33,8 +33,8 @@ def feedback_pod
         pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git'
         pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git'
     else
-        pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.3.2'
-        pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.3.2'
+        pod 'CloudFeedback/Client', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.3.3'
+        pod 'CloudFeedback/iOS', :git => 'git@github.com:coodly/CloudFeedback.git', tag: '0.3.3'
     end
 end
 

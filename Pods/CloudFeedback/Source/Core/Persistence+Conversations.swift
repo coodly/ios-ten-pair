@@ -112,4 +112,10 @@ internal extension NSManagedObjectContext {
         let predicate = NSPredicate(format: "hasUpdate = YES")
         return monitorEntities(of: Conversation.self, predicate: predicate, sort: [])
     }
+    
+    internal func markAllSeen() {
+        let predicate = NSPredicate(format: "hasUpdate = YES")
+        let conversations: [Conversation] = fetch(predicate: predicate)
+        conversations.forEach({ $0.hasUpdate = false })
+    }
 }

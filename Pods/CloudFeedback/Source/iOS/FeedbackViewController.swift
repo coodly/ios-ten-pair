@@ -68,6 +68,7 @@ private class FeedbackViewModel: ObservableObject, Dependencies {
     
     private func scrollToLast() {
         scrolledTo = messages.last?.recordName
+        persistence.write(block: { $0.markAllSeen() })
     }
     
     fileprivate func send() {

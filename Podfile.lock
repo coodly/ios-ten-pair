@@ -1,11 +1,11 @@
 PODS:
-  - CloudFeedback/Client (0.3.2):
+  - CloudFeedback/Client (0.3.3):
     - CloudFeedback/Core
-  - CloudFeedback/Core (0.3.2):
+  - CloudFeedback/Core (0.3.3):
     - CoreDataPersistence (= 0.2.3)
     - Puff/Core (= 0.6.2)
     - Puff/CoreData (= 0.6.2)
-  - CloudFeedback/iOS (0.3.2):
+  - CloudFeedback/iOS (0.3.3):
     - CloudFeedback/Core
   - CloudInsight (0.1.7):
     - CloudInsight/Client (= 0.1.7)
@@ -29,8 +29,8 @@ PODS:
   - SWLogger (0.4.3)
 
 DEPENDENCIES:
-  - "CloudFeedback/Client (from `git@github.com:coodly/CloudFeedback.git`, tag `0.3.2`)"
-  - "CloudFeedback/iOS (from `git@github.com:coodly/CloudFeedback.git`, tag `0.3.2`)"
+  - "CloudFeedback/Client (from `git@github.com:coodly/CloudFeedback.git`, tag `0.3.3`)"
+  - "CloudFeedback/iOS (from `git@github.com:coodly/CloudFeedback.git`, tag `0.3.3`)"
   - "CloudInsight (from `git@github.com:coodly/CloudInsight.git`, tag `0.1.7`)"
   - PersonalizedAdConsent (= 1.0.5)
   - "SWLogger (from `git@github.com:coodly/swlogger.git`, tag `0.5.0`)"
@@ -46,7 +46,7 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CloudFeedback:
     :git: "git@github.com:coodly/CloudFeedback.git"
-    :tag: 0.3.2
+    :tag: 0.3.3
   CloudInsight:
     :git: "git@github.com:coodly/CloudInsight.git"
     :tag: 0.1.7
@@ -57,7 +57,7 @@ EXTERNAL SOURCES:
 CHECKOUT OPTIONS:
   CloudFeedback:
     :git: "git@github.com:coodly/CloudFeedback.git"
-    :tag: 0.3.2
+    :tag: 0.3.3
   CloudInsight:
     :git: "git@github.com:coodly/CloudInsight.git"
     :tag: 0.1.7
@@ -66,7 +66,7 @@ CHECKOUT OPTIONS:
     :tag: 0.5.0
 
 SPEC CHECKSUMS:
-  CloudFeedback: f2e4847030af0d2a25366ceec6645b36319f7c6b
+  CloudFeedback: 07422853ee040559bda83340b82a0b2ddfa42f97
   CloudInsight: 3038603eeddf90cb11bdfb37cd0b11f96d088a9d
   CoreDataPersistence: 2379452444c3020b76f46b28e30903ec533c7b24
   KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
@@ -74,6 +74,6 @@ SPEC CHECKSUMS:
   Puff: 55e8b337d559cade0025ee287397ec18c2a5054b
   SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
-PODFILE CHECKSUM: 1c758bfb1f62d0a05434b9a3c030403fb8189890
+PODFILE CHECKSUM: 2c875417533b0e614a6be87e3f8af79277effcd0
 
 COCOAPODS: 1.10.0

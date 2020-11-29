@@ -1,6 +1,6 @@
 {
   "name": "CloudFeedback",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "license": "Apache 2",
   "summary": "User feedback on top of CloudKit",
   "homepage": "https://github.com/coodly/CloudFeedback",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "git@github.com:coodly/CloudFeedback.git",
-    "tag": "0.3.2"
+    "tag": "0.3.3"
   },
   "default_subspecs": "Client",
   "platforms": {
