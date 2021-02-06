@@ -31,7 +31,7 @@ internal class AdsViewController: UIViewController {
     @IBOutlet private var bannerHeight: NSLayoutConstraint!
     
     private lazy var banner: GADBannerView? = {
-        let banner = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        let banner = GADBannerView(adSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(view.frame.width))
         banner.adUnitID = AppConfig.current.adUnits.banner
         banner.rootViewController = self
         banner.delegate = self
@@ -40,7 +40,7 @@ internal class AdsViewController: UIViewController {
     
     private(set) lazy var gdpr = AdMobGDPRCheck()
     
-    private lazy var interstitial: GADInterstitial? = createInterstitial()
+    private lazy var interstitial: GADInterstitialAd? = createInterstitial()
     private var interstitialCount = 0
     
     private var adsStatusSubscription: AnyCancellable?
@@ -116,9 +116,6 @@ internal class AdsViewController: UIViewController {
     @objc fileprivate func loadAds() {
         loadBannerAd()
         
-        if AppConfig.current.ads {
-            interstitial?.load(adRequest())
-        }
     }
     
     private func loadBannerAd() {
@@ -167,7 +164,7 @@ internal class AdsViewController: UIViewController {
             return
         }
         
-        guard interstitialCount >= InterstitialShowThreshold, interstitial.isReady else {
+        guard interstitialCount >= InterstitialShowThreshold /*, interstitial.isReady*/ else {
             return
         }
         
@@ -175,10 +172,13 @@ internal class AdsViewController: UIViewController {
         interstitial.present(fromRootViewController: self)
     }
     
-    private func createInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: AppConfig.current.adUnits.interstitial)
-        interstitial.delegate = self
-        return interstitial
+    private func createInterstitial() -> GADInterstitialAd {
+        GADInterstitialAd.load(withAdUnitID: AppConfig.current.adUnits.interstitial, request: adRequest()) {
+            interstitial, error in
+            
+            
+        }
+        return GADInterstitialAd()
     }
     
     private func hideBanner(completion: (() -> Void)? = nil) {
@@ -198,23 +198,14 @@ internal class AdsViewController: UIViewController {
     }
 }
 
-extension AdsViewController: GADInterstitialDelegate {
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        interstitial = createInterstitial()
-        interstitial?.load(adRequest())
-    }
-    
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        Log.ads.debug("Interstitial received")
-    }
-    
-    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
-        Log.ads.error("didFailToReceiveAdWithError: \(error)")
+extension AdsViewController: GADFullScreenContentDelegate {
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        
     }
 }
 
 extension AdsViewController: GADBannerViewDelegate {
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         Log.ads.debug("Did receive ad")
 
         bannerHeight.constant = bannerView.frame.height
@@ -233,7 +224,7 @@ extension AdsViewController: GADBannerViewDelegate {
         })
     }
     
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         Log.ads.debug("didFailToReceiveAdWithError: \(error)")
 
         hideBanner()
