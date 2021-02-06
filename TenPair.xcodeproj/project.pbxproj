@@ -799,7 +799,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftgen run strings -t structured-swift5 Shared/Localization/en.lproj/Localizable.strings -o Shared/Localization/L10n.swift\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\narch -x86_64 swiftgen run strings -t structured-swift5 Shared/Localization/en.lproj/Localizable.strings -o Shared/Localization/L10n.swift\n";
 		};
 		A777FA8C1E50CD9D003E62D7 /* Check localization */ = {
 			isa = PBXShellScriptBuildPhase;
