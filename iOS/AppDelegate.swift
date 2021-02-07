@@ -15,7 +15,6 @@
  */
 
 import UIKit
-import GoogleMobileAds
 import AVKit
 
 @UIApplicationMain
@@ -27,9 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {                
         AppTheme.shared.load()
-                
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        
+                        
         Log.enable()
         
         FeedbackService.load()

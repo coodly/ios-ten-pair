@@ -48,6 +48,7 @@ internal class AdsViewController: UIViewController {
     private var shouldLoadAds: Bool {
         !adsDisabled
     }
+    private var sdkLoaded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,12 +118,27 @@ internal class AdsViewController: UIViewController {
     }
         
     @objc fileprivate func loadAds() {
+        if adsDisabled {
+            return
+        }
+        
+        initializeSDK()
+        
         loadBannerAd()
         loadInterstitial()
     }
     
+    private func initializeSDK() {
+        if sdkLoaded {
+            return
+        }
+        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        sdkLoaded = true
+    }
+    
     private func loadBannerAd() {
-        if shouldLoadAds {
+        if adsDisabled {
             return
         }
         

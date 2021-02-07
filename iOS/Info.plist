@@ -22,10 +22,14 @@
 	<false/>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-7419360015628630~9935526906</string>
+	<key>GADDelayAppMeasurementInit</key>
+	<true/>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This identifier will be used to deliver personalized ads to you.</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
