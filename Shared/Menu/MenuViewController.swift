@@ -17,8 +17,8 @@
 import UIKit
 import SWLogger
 
-internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded, GDPRCheckConsumer {
-    var gdprCheck: GDPRCheck?
+internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded, PersonalizedAdsCheckConsumer {
+    var personalizedAds: PersonalizedAdsCheck?
     
     internal var gameWon = false
     
@@ -40,7 +40,7 @@ internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded, 
             options.append(.feedback(FeedbackService.hasMessage()))
         }
         #endif
-        if gdprCheck?.showGDPRConsentMenuItem ?? false {
+        if personalizedAds?.showGDPRConsentMenuItem ?? false {
             options.append(.personalizedAds)
         }
         if AppConfig.current.logs {
@@ -59,7 +59,7 @@ internal class MenuViewController: MenuOptionsViewController, StoryboardLoaded, 
             refreshMenuOptions()
             tableView.reloadData()
         case .personalizedAds:
-            gdprCheck?.present()
+            personalizedAds?.present()
         case .logs:
             let logs = LogsViewController()
             let navigation = UINavigationController(rootViewController: logs)

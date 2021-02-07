@@ -40,12 +40,12 @@ internal class MenuViewModel: ObservableObject {
     @Published fileprivate var haveMessageFromDeveloper = false
 
     fileprivate let showResume: Bool
-    private let gdpr: GDPRCheck?
+    private let gdpr: PersonalizedAdsCheck?
     private var adsStatusSubscription: AnyCancellable?
     private var unreadSubscription: AnyCancellable?
 
     private weak var delegate: MenuViewModelDelegate?
-    internal init(delegate: MenuViewModelDelegate, gameWon: Bool, gdpr: GDPRCheck?) {
+    internal init(delegate: MenuViewModelDelegate, gameWon: Bool, gdpr: PersonalizedAdsCheck?) {
         self.delegate = delegate
         showResume = !gameWon
         self.gdpr = gdpr

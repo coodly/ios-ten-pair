@@ -21,7 +21,7 @@ extension Notification.Name {
     public static let personalizedAdsStatusChanged = Notification.Name(rawValue: "com.coodly.stocked.personalized.ads")
 }
 
-internal class AdMobGDPRCheck: GDPRCheck {
+internal class AdMobGDPRCheck: PersonalizedAdsCheck {
     internal weak var showOn: UIViewController?
     
     var showGDPRConsentMenuItem: Bool {

@@ -1,5 +1,5 @@
 /*
-* Copyright 2017 Coodly LLC
+* Copyright 2020 Coodly LLC
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -16,6 +16,10 @@
 
 import Foundation
 
-internal protocol GDPRCheckConsumer: class {
-    var gdprCheck: GDPRCheck? { get set }
+public protocol PersonalizedAdsCheck {
+    var showGDPRConsentMenuItem: Bool { get }
+    var canShowPersonalizedAds: Bool { get }
+    
+    func check()
+    func present()
 }

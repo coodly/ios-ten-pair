@@ -16,10 +16,10 @@
 
 import UIKit
 
-internal class PlayNavigationController: UINavigationController, GDPRCheckConsumer {
-    var gdprCheck: GDPRCheck? {
+internal class PlayNavigationController: UINavigationController, PersonalizedAdsCheckConsumer {
+    var personalizedAds: PersonalizedAdsCheck? {
         didSet {
-            children.compactMap({ $0 as? GDPRCheckConsumer }).forEach({ $0.gdprCheck = gdprCheck })
+            children.compactMap({ $0 as? PersonalizedAdsCheckConsumer }).forEach({ $0.personalizedAds = personalizedAds })
         }
     }
 

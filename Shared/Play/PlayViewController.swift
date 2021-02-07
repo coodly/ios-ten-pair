@@ -25,8 +25,8 @@ internal protocol PlayDelegate: class {
     func checkGameEnd()
 }
 
-internal class PlayViewController: UIViewController, GDPRCheckConsumer {
-    var gdprCheck: GDPRCheck?
+internal class PlayViewController: UIViewController, PersonalizedAdsCheckConsumer {
+    var personalizedAds: PersonalizedAdsCheck?
     
     private lazy var field = PlayField()
     
@@ -183,7 +183,7 @@ internal class PlayViewController: UIViewController, GDPRCheckConsumer {
         let menu: MenuUIViewController = Storyboards.loadFromStoryboard()
         menu.delegate = self
         menu.gameWon = field.gameEnded
-        menu.gdprCheck = gdprCheck
+        menu.personalizedAds = personalizedAds
         
         menu.modalPresentationStyle = .custom
         

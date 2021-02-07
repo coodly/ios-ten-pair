@@ -65,7 +65,7 @@ internal class AdsViewController: UIViewController {
         bannerContainer.addSubview(banner!)
         banner!.pinToSuperviewEdges()
         
-        children.compactMap({ $0 as? GDPRCheckConsumer }).forEach({ $0.gdprCheck = gdpr })
+        children.compactMap({ $0 as? PersonalizedAdsCheckConsumer }).forEach({ $0.personalizedAds = gdpr })
         
         adsStatusSubscription = RevenueCatPurchase.shared.adsStatus
             .receive(on: DispatchQueue.main)

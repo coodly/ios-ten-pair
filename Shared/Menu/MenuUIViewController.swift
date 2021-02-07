@@ -22,17 +22,17 @@ internal protocol MenuUIDelegate: class {
     func dismissMenu()
 }
 
-internal class MenuUIViewController: UIViewController, StoryboardLoaded, GDPRCheckConsumer, MenuViewModelDelegate {
+internal class MenuUIViewController: UIViewController, StoryboardLoaded, PersonalizedAdsCheckConsumer, MenuViewModelDelegate {
     static var storyboardName: String {
         "MenuUI"
     }
     
-    var gdprCheck: GDPRCheck?
+    var personalizedAds: PersonalizedAdsCheck?
     
     internal var gameWon = false
     internal var delegate: MenuUIDelegate?
     
-    private lazy var viewModel = MenuViewModel(delegate: self, gameWon: gameWon, gdpr: gdprCheck)
+    private lazy var viewModel = MenuViewModel(delegate: self, gameWon: gameWon, gdpr: personalizedAds)
     private lazy var menuView = MenuView(viewModel: viewModel)
     private lazy var hosting = UIHostingController(rootView: menuView)
     
