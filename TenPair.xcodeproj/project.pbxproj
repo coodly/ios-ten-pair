@@ -55,15 +55,6 @@
 		A75BE54024AB807900D0AEB4 /* PlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */; };
 		A75BE54124AB807900D0AEB4 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2924992E2B003E561F /* PlayViewController.swift */; };
 		A75BE54224AB807900D0AEB4 /* StatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97F9D24A4E61600F95EC9 /* StatusLabel.swift */; };
-		A75BE54324AB807E00D0AEB4 /* ContentSizeBasedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372824A1C822006DD8B4 /* ContentSizeBasedTableView.swift */; };
-		A75BE54424AB807E00D0AEB4 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A8371E24A1C239006DD8B4 /* Menu.storyboard */; };
-		A75BE54524AB807E00D0AEB4 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372A24A1C848006DD8B4 /* MenuCell.swift */; };
-		A75BE54624AB807E00D0AEB4 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A8372B24A1C848006DD8B4 /* MenuCell.xib */; };
-		A75BE54724AB807E00D0AEB4 /* MenuOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373424A1D924006DD8B4 /* MenuOptionsViewController.swift */; };
-		A75BE54824AB807E00D0AEB4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372024A1C24C006DD8B4 /* MenuViewController.swift */; };
-		A75BE54924AB807E00D0AEB4 /* Restart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A8373224A1D8ED006DD8B4 /* Restart.storyboard */; };
-		A75BE54A24AB807E00D0AEB4 /* RestartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373024A1D8E6006DD8B4 /* RestartViewController.swift */; };
-		A75BE54B24AB807E00D0AEB4 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372E24A1C960006DD8B4 /* UITableView+Dequeue.swift */; };
 		A75BE54C24AB808800D0AEB4 /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */; };
 		A75BE54E24AB809600D0AEB4 /* Rendered.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7720B8224A469D6006C40EC /* Rendered.swift */; };
 		A75BE54F24AB809600D0AEB4 /* Rendered+Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7720B8824A46F6D006C40EC /* Rendered+Hint.swift */; };
@@ -98,17 +89,8 @@
 		A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
 		A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */; };
 		A797BD712483808F00A6E27D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A797BD702483808F00A6E27D /* GoogleService-Info.plist */; };
-		A7A8371F24A1C239006DD8B4 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A8371E24A1C239006DD8B4 /* Menu.storyboard */; };
-		A7A8372124A1C24C006DD8B4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372024A1C24C006DD8B4 /* MenuViewController.swift */; };
 		A7A8372424A1C28E006DD8B4 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372324A1C28E006DD8B4 /* Storyboards.swift */; };
 		A7A8372624A1C2A9006DD8B4 /* StoryboardLoaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372524A1C2A9006DD8B4 /* StoryboardLoaded.swift */; };
-		A7A8372924A1C822006DD8B4 /* ContentSizeBasedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372824A1C822006DD8B4 /* ContentSizeBasedTableView.swift */; };
-		A7A8372C24A1C848006DD8B4 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372A24A1C848006DD8B4 /* MenuCell.swift */; };
-		A7A8372D24A1C848006DD8B4 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A8372B24A1C848006DD8B4 /* MenuCell.xib */; };
-		A7A8372F24A1C960006DD8B4 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372E24A1C960006DD8B4 /* UITableView+Dequeue.swift */; };
-		A7A8373124A1D8E6006DD8B4 /* RestartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373024A1D8E6006DD8B4 /* RestartViewController.swift */; };
-		A7A8373324A1D8ED006DD8B4 /* Restart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A8373224A1D8ED006DD8B4 /* Restart.storyboard */; };
-		A7A8373524A1D924006DD8B4 /* MenuOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373424A1D924006DD8B4 /* MenuOptionsViewController.swift */; };
 		A7A8373824A238ED006DD8B4 /* GameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373724A238ED006DD8B4 /* GameTheme.swift */; };
 		A7B12C1D1E535B18007D7807 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C1C1E535B18007D7807 /* Config.swift */; };
 		A7BD4EBC24A5C6ED00D613FC /* Fireworks.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EBA24A5C6ED00D613FC /* Fireworks.sks */; };
@@ -192,17 +174,8 @@
 		A78FA2EC1E5C145C002DB0AF /* TenPair.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenPair.entitlements; sourceTree = "<group>"; };
 		A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
 		A797BD702483808F00A6E27D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A7A8371E24A1C239006DD8B4 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
-		A7A8372024A1C24C006DD8B4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A7A8372324A1C28E006DD8B4 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		A7A8372524A1C2A9006DD8B4 /* StoryboardLoaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoaded.swift; sourceTree = "<group>"; };
-		A7A8372824A1C822006DD8B4 /* ContentSizeBasedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSizeBasedTableView.swift; sourceTree = "<group>"; };
-		A7A8372A24A1C848006DD8B4 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
-		A7A8372B24A1C848006DD8B4 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
-		A7A8372E24A1C960006DD8B4 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
-		A7A8373024A1D8E6006DD8B4 /* RestartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartViewController.swift; sourceTree = "<group>"; };
-		A7A8373224A1D8ED006DD8B4 /* Restart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Restart.storyboard; sourceTree = "<group>"; };
-		A7A8373424A1D924006DD8B4 /* MenuOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionsViewController.swift; sourceTree = "<group>"; };
 		A7A8373724A238ED006DD8B4 /* GameTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTheme.swift; sourceTree = "<group>"; };
 		A7B12C1C1E535B18007D7807 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A7BD4EBA24A5C6ED00D613FC /* Fireworks.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fireworks.sks; sourceTree = "<group>"; };
@@ -501,18 +474,9 @@
 		A7A8371D24A1C226006DD8B4 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				A7A8372824A1C822006DD8B4 /* ContentSizeBasedTableView.swift */,
-				A7A8371E24A1C239006DD8B4 /* Menu.storyboard */,
-				A7A8372A24A1C848006DD8B4 /* MenuCell.swift */,
-				A7A8372B24A1C848006DD8B4 /* MenuCell.xib */,
-				A7A8373424A1D924006DD8B4 /* MenuOptionsViewController.swift */,
 				A7419E1D2570D18200D4C064 /* MenuUI.storyboard */,
 				A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */,
 				A7419E152570CFC300D4C064 /* MenuView.swift */,
-				A7A8372024A1C24C006DD8B4 /* MenuViewController.swift */,
-				A7A8373224A1D8ED006DD8B4 /* Restart.storyboard */,
-				A7A8373024A1D8E6006DD8B4 /* RestartViewController.swift */,
-				A7A8372E24A1C960006DD8B4 /* UITableView+Dequeue.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -700,15 +664,12 @@
 			files = (
 				A70BBA2E24992FA4003E561F /* NumberCell.xib in Resources */,
 				A777FA8B1E50CC76003E62D7 /* Localizable.strings in Resources */,
-				A7A8373324A1D8ED006DD8B4 /* Restart.storyboard in Resources */,
 				A7BD4EBC24A5C6ED00D613FC /* Fireworks.sks in Resources */,
 				A7BD4EBD24A5C6ED00D613FC /* Assets.xcassets in Resources */,
 				A7D97FA424A4ECAC00F95EC9 /* Loading.storyboard in Resources */,
 				A7419E1E2570D18200D4C064 /* MenuUI.storyboard in Resources */,
 				A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */,
 				A7BD4EC124A5C7C400D613FC /* Win.storyboard in Resources */,
-				A7A8372D24A1C848006DD8B4 /* MenuCell.xib in Resources */,
-				A7A8371F24A1C239006DD8B4 /* Menu.storyboard in Resources */,
 				A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */,
 				A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */,
 				A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */,
@@ -723,15 +684,12 @@
 				A75BE53D24AB807900D0AEB4 /* NumberCell.xib in Resources */,
 				A75BE56624AB84EB00D0AEB4 /* InfoPlist.strings in Resources */,
 				A75BE56A24AB89FB00D0AEB4 /* LaunchView.xib in Resources */,
-				A75BE54624AB807E00D0AEB4 /* MenuCell.xib in Resources */,
 				A75BE55624AB80A600D0AEB4 /* Assets.xcassets in Resources */,
 				A75BE55824AB80A600D0AEB4 /* Win.storyboard in Resources */,
 				A75BE56824AB89D500D0AEB4 /* Assets.xcassets in Resources */,
 				A75BE55524AB80A600D0AEB4 /* Fireworks.sks in Resources */,
-				A75BE54424AB807E00D0AEB4 /* Menu.storyboard in Resources */,
 				A75BE56724AB84EB00D0AEB4 /* Localizable.strings in Resources */,
 				A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */,
-				A75BE54924AB807E00D0AEB4 /* Restart.storyboard in Resources */,
 				A75BE53124AB804D00D0AEB4 /* Loading.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -878,13 +836,11 @@
 				A7CCF94224A9BED6009DD181 /* PlayNavigationController.swift in Sources */,
 				A70D30FD24A9BD7300CC581A /* AdsViewController.swift in Sources */,
 				A7720B8324A469D6006C40EC /* Rendered.swift in Sources */,
-				A7A8372F24A1C960006DD8B4 /* UITableView+Dequeue.swift in Sources */,
 				A7D390931E4B47E900EDB111 /* Log.swift in Sources */,
 				A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */,
 				A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */,
 				A742610D2486B57B003B9E9E /* AdMobGDPRCheck.swift in Sources */,
 				A7720B8924A46F6D006C40EC /* Rendered+Hint.swift in Sources */,
-				A7A8373524A1D924006DD8B4 /* MenuOptionsViewController.swift in Sources */,
 				A70BBA342499F29B003E561F /* PlayField.swift in Sources */,
 				A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */,
 				A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */,
@@ -898,7 +854,6 @@
 				A7419E042570CAB000D4C064 /* RevenueCatPurchase.swift in Sources */,
 				A7D390801E4B049400EDB111 /* FieldSave.swift in Sources */,
 				A7A8372624A1C2A9006DD8B4 /* StoryboardLoaded.swift in Sources */,
-				A7A8372924A1C822006DD8B4 /* ContentSizeBasedTableView.swift in Sources */,
 				A7419E4C2570E72600D4C064 /* PurchaseView.swift in Sources */,
 				A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */,
 				A7419E502570ED4600D4C064 /* ActivityIndicatorView.swift in Sources */,
@@ -906,15 +861,12 @@
 				A7BD4EC324A6440C00D613FC /* Rendered+Undo.swift in Sources */,
 				A7ECE41F24AB697C000CBD7F /* PersonalizedAdsCheckConsumer.swift in Sources */,
 				A7A8372424A1C28E006DD8B4 /* Storyboards.swift in Sources */,
-				A7A8372C24A1C848006DD8B4 /* MenuCell.swift in Sources */,
 				A70BBA2A24992E2B003E561F /* PlayViewController.swift in Sources */,
 				A7D97F9E24A4E61600F95EC9 /* StatusLabel.swift in Sources */,
 				A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */,
-				A7A8372124A1C24C006DD8B4 /* MenuViewController.swift in Sources */,
 				A7A8373824A238ED006DD8B4 /* GameTheme.swift in Sources */,
 				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
 				A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */,
-				A7A8373124A1D8E6006DD8B4 /* RestartViewController.swift in Sources */,
 				A70078CE24A8659B0009E58C /* ConcurrentOperation.swift in Sources */,
 				A7BD4EBF24A5C77F00D613FC /* WinViewController.swift in Sources */,
 				A7419E162570CFC300D4C064 /* MenuView.swift in Sources */,
@@ -929,7 +881,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A75BE54724AB807E00D0AEB4 /* MenuOptionsViewController.swift in Sources */,
 				A75BE52D24AB801800D0AEB4 /* EmptyLinesSearch.swift in Sources */,
 				A75BE54E24AB809600D0AEB4 /* Rendered.swift in Sources */,
 				A75BE54024AB807900D0AEB4 /* PlayNavigationController.swift in Sources */,
@@ -943,7 +894,6 @@
 				A75BE54F24AB809600D0AEB4 /* Rendered+Hint.swift in Sources */,
 				A75BE56124AB824000D0AEB4 /* UIColor+Extensions.swift in Sources */,
 				A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */,
-				A75BE54B24AB807E00D0AEB4 /* UITableView+Dequeue.swift in Sources */,
 				A75BE54C24AB808800D0AEB4 /* UICollectionView+Dequeue.swift in Sources */,
 				A75BE55D24AB81A200D0AEB4 /* FeedbackService.swift in Sources */,
 				A75BE55924AB80B900D0AEB4 /* PersonalizedAdsCheck.swift in Sources */,
@@ -957,18 +907,14 @@
 				A75BE52C24AB800B00D0AEB4 /* NumbersPathFinder.swift in Sources */,
 				A75BE52824AB7FA100D0AEB4 /* Log.swift in Sources */,
 				A75BE53E24AB807900D0AEB4 /* NumbersFlowLayout.swift in Sources */,
-				A75BE54524AB807E00D0AEB4 /* MenuCell.swift in Sources */,
 				A75BE55A24AB80C600D0AEB4 /* PersonalizedAdsCheckConsumer.swift in Sources */,
-				A75BE54324AB807E00D0AEB4 /* ContentSizeBasedTableView.swift in Sources */,
 				A75BE55224AB809600D0AEB4 /* Rendered+Undo.swift in Sources */,
 				A75BE52E24AB803100D0AEB4 /* Config.swift in Sources */,
-				A75BE54A24AB807E00D0AEB4 /* RestartViewController.swift in Sources */,
 				A75BE54224AB807900D0AEB4 /* StatusLabel.swift in Sources */,
 				A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */,
 				A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */,
 				A75BE55724AB80A600D0AEB4 /* WinViewController.swift in Sources */,
 				A75BE53024AB804D00D0AEB4 /* LoadingViewController.swift in Sources */,
-				A75BE54824AB807E00D0AEB4 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

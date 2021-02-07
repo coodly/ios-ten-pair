@@ -384,22 +384,6 @@ extension PlayViewController: UICollectionViewDelegate {
     }
 }
 
-extension PlayViewController: MenuDelegate {
-    func tapped(option: MenuOption) {
-        dismissModal()
-        
-        switch option {
-        case .restart(let lines):
-            selected.removeAll()
-            collectionView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 10, height: 10), animated: false)
-            field.restart(with: lines)
-            collectionView.reloadData()
-        default:
-            Log.debug("Unhandled \(option)")
-        }
-    }
-}
-
 extension PlayViewController: MenuUIDelegate {
     func restart(_ lines: Int) {
         dismissModal()
