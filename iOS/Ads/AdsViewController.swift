@@ -40,11 +40,14 @@ internal class AdsViewController: UIViewController {
     
     private(set) lazy var gdpr = AdMobGDPRCheck()
     
-    private lazy var interstitial: GADInterstitialAd? = createInterstitial()
+    private var interstitial: GADInterstitialAd?
     private var interstitialCount = 0
     
     private var adsStatusSubscription: AnyCancellable?
     private var adsDisabled = false
+    private var shouldLoadAds: Bool {
+        !adsDisabled
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,11 +118,11 @@ internal class AdsViewController: UIViewController {
         
     @objc fileprivate func loadAds() {
         loadBannerAd()
-        
+        loadInterstitial()
     }
     
     private func loadBannerAd() {
-        if adsDisabled {
+        if shouldLoadAds {
             return
         }
         
@@ -164,21 +167,12 @@ internal class AdsViewController: UIViewController {
             return
         }
         
-        guard interstitialCount >= InterstitialShowThreshold /*, interstitial.isReady*/ else {
+        guard interstitialCount >= InterstitialShowThreshold else {
             return
         }
         
         interstitialCount = 0
         interstitial.present(fromRootViewController: self)
-    }
-    
-    private func createInterstitial() -> GADInterstitialAd {
-        GADInterstitialAd.load(withAdUnitID: AppConfig.current.adUnits.interstitial, request: adRequest()) {
-            interstitial, error in
-            
-            
-        }
-        return GADInterstitialAd()
     }
     
     private func hideBanner(completion: (() -> Void)? = nil) {
@@ -196,11 +190,38 @@ internal class AdsViewController: UIViewController {
         
         UIView.animate(withDuration: 0.3, animations: animation, completion: animationCompletion)
     }
+    
+    private func loadInterstitial() {
+        guard shouldLoadAds else {
+            return
+        }
+        
+        guard interstitial == nil else {
+            return
+        }
+        
+        GADInterstitialAd.load(withAdUnitID: AppConfig.current.adUnits.interstitial, request: adRequest()) {
+            loaded, error in
+            
+            if let error = error {
+                Log.ads.error("Load interstitial error: \(error)")
+            } else if let ad = loaded {
+                Log.ads.debug("Loaded interstitial")
+                ad.fullScreenContentDelegate = self
+                self.interstitial = ad
+            } else {
+                Log.ads.debug("No interstitial")
+            }
+        }
+    }
 }
 
 extension AdsViewController: GADFullScreenContentDelegate {
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        Log.ads.debug("Interstitial dismissed")
+        interstitial = nil
         
+        loadInterstitial()
     }
 }
 
