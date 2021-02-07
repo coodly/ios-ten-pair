@@ -211,6 +211,7 @@ private struct MessageEntryView: View {
                 Button(action: viewModel.send) {
                     ZStack {
                         Circle()
+                            .padding(2)
                             .frame(width: 32, height: 32, alignment: .center)
                             .foregroundColor(.white)
                         Image(systemName: "arrow.up.circle.fill")

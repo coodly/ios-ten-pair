@@ -9,7 +9,7 @@ module PodSource
     Tagged = 3
 end
 
-UsedSource = PodSource::Tagged
+UsedSource = PodSource::Remote
 
 def logger
     if UsedSource == PodSource::Local
@@ -49,7 +49,7 @@ def insight_pod
 end
 
 target 'iOS' do
-    platform :ios, '11.4'
+    platform :ios, '13.0'
 
     ios_pods
     feedback_pod
@@ -58,7 +58,7 @@ target 'iOS' do
 end
 
 target 'Catalyst' do
-    platform :ios, '11.4'
+    platform :ios, '13.0'
 
     insight_pod
     logger

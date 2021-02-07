@@ -29,7 +29,12 @@ public final class Feedback: Dependencies, FeedbackInjector {
     private lazy var disposeBag = Set<AnyCancellable>()
     
     @available(iOS 13.0, *)
-    private(set) public lazy var unreadStatus = CurrentValueSubject<Bool, Never>(false)
+    private lazy var localUnreadStatus = CurrentValueSubject<Bool, Never>(false)
+    
+    @available(iOS 13.0, *)
+    public var unreadStatus: AnyPublisher<Bool, Never> {
+        localUnreadStatus.eraseToAnyPublisher()
+    }
     
     public var hasUnreadMessages: Bool {
         var hasUnread = false
@@ -48,13 +53,10 @@ public final class Feedback: Dependencies, FeedbackInjector {
         return queue
     }()
     
-    public init(container: CKContainer = .default(), translation: Translation? = nil, styling: Styling? = nil) {
+    public init(container: CKContainer = .default(), styling: Styling? = nil) {
         Logging.log("Start with \(String(describing: container.containerIdentifier))")
         self.container = container
         FeedbackInjection.sharedInstance.feedbackContainer = container
-        if let translation = translation {
-            FeedbackInjection.sharedInstance.translation = translation
-        }
         if let styling = styling {
             FeedbackInjection.sharedInstance.styling = styling
         }
@@ -83,11 +85,11 @@ public final class Feedback: Dependencies, FeedbackInjector {
             .map(\.count)
             .receive(on: DispatchQueue.main)
             .sink() {
-                [unreadStatus]
+                [localUnreadStatus]
                 
                 update in
                 
-                unreadStatus.send(update > 0)
+                localUnreadStatus.send(update > 0)
             }
             .store(in: &disposeBag)
     }

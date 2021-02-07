@@ -29,14 +29,14 @@ PODS:
   - SWLogger (0.4.3)
 
 DEPENDENCIES:
-  - "CloudFeedback/Client (from `git@github.com:coodly/CloudFeedback.git`, tag `0.3.3`)"
-  - "CloudFeedback/iOS (from `git@github.com:coodly/CloudFeedback.git`, tag `0.3.3`)"
-  - "CloudInsight (from `git@github.com:coodly/CloudInsight.git`, tag `0.1.7`)"
+  - "CloudFeedback/Client (from `git@github.com:coodly/CloudFeedback.git`)"
+  - "CloudFeedback/iOS (from `git@github.com:coodly/CloudFeedback.git`)"
+  - "CloudInsight (from `git@github.com:coodly/CloudInsight.git`)"
   - PersonalizedAdConsent (= 1.0.5)
-  - "SWLogger (from `git@github.com:coodly/swlogger.git`, tag `0.5.0`)"
+  - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs:
+  https://github.com/CocoaPods/Specs.git:
     - KeychainAccess
     - PersonalizedAdConsent
   https://github.com/coodly/Specs.git:
@@ -46,24 +46,21 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CloudFeedback:
     :git: "git@github.com:coodly/CloudFeedback.git"
-    :tag: 0.3.3
   CloudInsight:
     :git: "git@github.com:coodly/CloudInsight.git"
-    :tag: 0.1.7
   SWLogger:
     :git: "git@github.com:coodly/swlogger.git"
-    :tag: 0.5.0
 
 CHECKOUT OPTIONS:
   CloudFeedback:
+    :commit: eb9b7364a254558e8e5bae3dba09fd6d4367533b
     :git: "git@github.com:coodly/CloudFeedback.git"
-    :tag: 0.3.3
   CloudInsight:
+    :commit: 33d17a15f7d298784f7dc418ce026eb5e63180f3
     :git: "git@github.com:coodly/CloudInsight.git"
-    :tag: 0.1.7
   SWLogger:
+    :commit: 18ed3df041436a5984bf81eb2b16f692a0c166bf
     :git: "git@github.com:coodly/swlogger.git"
-    :tag: 0.5.0
 
 SPEC CHECKSUMS:
   CloudFeedback: 07422853ee040559bda83340b82a0b2ddfa42f97
@@ -74,6 +71,6 @@ SPEC CHECKSUMS:
   Puff: 55e8b337d559cade0025ee287397ec18c2a5054b
   SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
-PODFILE CHECKSUM: 2c875417533b0e614a6be87e3f8af79277effcd0
+PODFILE CHECKSUM: f815211b4a55fd489a354445acbff476b369a1ff
 
 COCOAPODS: 1.10.0

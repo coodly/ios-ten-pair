@@ -25,17 +25,6 @@ internal class FeedbackService {
     private static let shared = FeedbackService()
     
     private lazy var feedback: CloudFeedback.Feedback = {
-        var translation = Translation()
-        
-        translation.conversations.title = NSLocalizedString("coodly.feedback.controller.title", comment: "")
-        translation.conversations.loginMessage = NSLocalizedString("coodly.feedback.sign.in.message", comment: "")
-        translation.conversations.notice = NSLocalizedString("coodly.feedback.header.message", comment: "")
-        
-        translation.notice.content = NSLocalizedString("coodly.feedback.response.notice", comment: "")
-        
-        translation.input.title = NSLocalizedString("coodly.feedback.message.compose.controller.title", comment: "")
-        translation.input.sendButton = NSLocalizedString("coodly.feedback.message.compose.controller.send.button", comment: "")
-        
         var styling = Styling.instance
         styling.mainColor = AppTheme.darkMainColor
         styling.greetingTextColor = UIColor.white
@@ -43,7 +32,7 @@ internal class FeedbackService {
         styling.greetingMessage = NSLocalizedString("feedback.greeting.message", comment: "")
         styling.loginNotice = NSLocalizedString("feedback.login.notice", comment: "")
 
-        return CloudFeedback.Feedback(container: CKContainer(identifier: "iCloud.com.coodly.feedback"), translation: translation, styling: styling)
+        return CloudFeedback.Feedback(container: CKContainer(identifier: "iCloud.com.coodly.feedback"), styling: styling)
     }()
 
     internal static func load() {
