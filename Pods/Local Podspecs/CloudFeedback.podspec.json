@@ -23,13 +23,13 @@
       "source_files": "Source/Core/*.swift",
       "dependencies": {
         "CoreDataPersistence": [
-          "0.2.3"
+          "0.2.4"
         ],
         "Puff/Core": [
-          "0.6.2"
+          "0.6.3"
         ],
         "Puff/CoreData": [
-          "0.6.2"
+          "0.6.3"
         ]
       }
     },

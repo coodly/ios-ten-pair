@@ -15,9 +15,11 @@
  */
 
 import Foundation
-
 #if canImport(PuffLogger)
 import PuffLogger
+#endif
+#if canImport(Combine)
+import Combine
 #endif
 
 open class ConcurrentOperation: Operation {
@@ -35,6 +37,18 @@ open class ConcurrentOperation: Operation {
             callError(error)
         }
     }
+        
+    #if canImport(Combine)
+    @available(iOS 13.0, macOS 10.15, *)
+    public func completionPublisher<T: ConcurrentOperation>() -> AnyPublisher<Result<T, Error>, Never> {
+        Future<Result<T, Error>, Never>() {
+            promise in
+                
+            self.forward = Forward(callSuccess: { promise(.success(.success(self as! T))) }, callError: { promise(.success(.failure($0))) })
+            
+        }.eraseToAnyPublisher()
+    }
+    #endif
     
     public func onCompletion<T: ConcurrentOperation>(callback: @escaping ((Result<T, Error>) -> Void)) {
         let onSuccess: (() -> Void) = {
@@ -93,13 +107,6 @@ open class ConcurrentOperation: Operation {
             return
         }
         
-        if cancelOnDependencyFailure, let dependencyError = anyDependencyError {
-            Logging.log("Dependency had error: \(dependencyError)")
-            let failure = NSError(domain: "com.coodly.concurrent", code: 0, userInfo: [NSUnderlyingErrorKey: dependencyError])
-            finish(failure)
-            return
-        }
-        
         if completionBlock != nil {
             Logging.log("Existing completion block. Will not add own handling")
         } else {
@@ -115,7 +122,17 @@ open class ConcurrentOperation: Operation {
                 } else {
                     forward.forwardSuccess()
                 }
+                
+                self.forward = nil
             }
+        }
+        
+        if cancelOnDependencyFailure, let dependencyError = anyDependencyError {
+            Logging.log("Dependency had error: \(dependencyError)")
+            let forward = (dependencyError as NSError).userInfo[NSUnderlyingErrorKey] as? Error ?? dependencyError
+            let failure = NSError(domain: "com.coodly.concurrent", code: 0, userInfo: [NSUnderlyingErrorKey: forward])
+            finish(failure)
+            return
         }
         
         self.myExecuting = true

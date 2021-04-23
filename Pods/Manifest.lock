@@ -2,9 +2,9 @@ PODS:
   - CloudFeedback/Client (0.3.3):
     - CloudFeedback/Core
   - CloudFeedback/Core (0.3.3):
-    - CoreDataPersistence (= 0.2.3)
-    - Puff/Core (= 0.6.2)
-    - Puff/CoreData (= 0.6.2)
+    - CoreDataPersistence (= 0.2.4)
+    - Puff/Core (= 0.6.3)
+    - Puff/CoreData (= 0.6.3)
   - CloudFeedback/iOS (0.3.3):
     - CloudFeedback/Core
   - CloudInsight (0.1.7):
@@ -12,21 +12,21 @@ PODS:
   - CloudInsight/Client (0.1.7):
     - CloudInsight/Core
   - CloudInsight/Core (0.1.7):
-    - CoreDataPersistence (= 0.2.3)
+    - CoreDataPersistence (= 0.2.4)
     - KeychainAccess (= 4.2.1)
-    - Puff/Core (= 0.6.2)
-    - Puff/CoreData (= 0.6.2)
-  - CoreDataPersistence (0.2.3)
+    - Puff/Core (= 0.6.3)
+    - Puff/CoreData (= 0.6.3)
+  - CoreDataPersistence (0.2.4)
   - KeychainAccess (4.2.1)
   - PersonalizedAdConsent (1.0.5)
-  - Puff/Core (0.6.2):
+  - Puff/Core (0.6.3):
     - Puff/Logger
     - Puff/Serialization
-  - Puff/CoreData (0.6.2)
-  - Puff/Logger (0.6.2)
-  - Puff/Serialization (0.6.2):
+  - Puff/CoreData (0.6.3)
+  - Puff/Logger (0.6.3)
+  - Puff/Serialization (0.6.3):
     - Puff/Logger
-  - SWLogger (0.4.3)
+  - SWLogger (0.6.1)
 
 DEPENDENCIES:
   - "CloudFeedback/Client (from `git@github.com:coodly/CloudFeedback.git`)"
@@ -53,24 +53,24 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CloudFeedback:
-    :commit: eb9b7364a254558e8e5bae3dba09fd6d4367533b
+    :commit: 51f9b1e116c3d73a288b1745dab085b7e8923972
     :git: "git@github.com:coodly/CloudFeedback.git"
   CloudInsight:
-    :commit: 33d17a15f7d298784f7dc418ce026eb5e63180f3
+    :commit: e28180f9da4958bcf1e02d86d2f50f6768e61689
     :git: "git@github.com:coodly/CloudInsight.git"
   SWLogger:
-    :commit: 18ed3df041436a5984bf81eb2b16f692a0c166bf
+    :commit: 85ffc88e98070d62f0c5db8240177e3646b07117
     :git: "git@github.com:coodly/swlogger.git"
 
 SPEC CHECKSUMS:
-  CloudFeedback: 07422853ee040559bda83340b82a0b2ddfa42f97
-  CloudInsight: 3038603eeddf90cb11bdfb37cd0b11f96d088a9d
-  CoreDataPersistence: 2379452444c3020b76f46b28e30903ec533c7b24
+  CloudFeedback: 905e646f90ff5252b552338e03919fcbfcbaccd2
+  CloudInsight: a8ccac57209d1216341cfd0bd0eeab454de4d1e1
+  CoreDataPersistence: 26bbfbb6d2311d0ac9deb57e6903d4bb0a2e4141
   KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
   PersonalizedAdConsent: dbecabb3467df967c16d9cebc2ef4a8890e4bbd8
-  Puff: 55e8b337d559cade0025ee287397ec18c2a5054b
-  SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
+  Puff: 583b69144656654130b551375b8200284d0e87cb
+  SWLogger: a985bc5fd52617a59aaabe4e9a39f082e35dbe97
 
-PODFILE CHECKSUM: f815211b4a55fd489a354445acbff476b369a1ff
+PODFILE CHECKSUM: cd016834e8c09a832c6bf4e8776dabb7e403012a
 
 COCOAPODS: 1.10.0

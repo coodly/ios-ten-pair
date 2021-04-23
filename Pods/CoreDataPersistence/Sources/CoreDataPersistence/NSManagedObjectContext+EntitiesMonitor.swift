@@ -15,20 +15,19 @@
 */
 
 
+#if canImport(Combine)
 import Foundation
 import CoreData
-#if canImport(Combine)
 import Combine
-#endif
 
 extension NSManagedObjectContext {
-    @available(iOS 13.0, *)
+    @available(iOS 13.0, tvOS 13.0, *)
     public func monitorEntities<Entity: NSManagedObject>(of type: Entity.Type, predicate: NSPredicate = .truePredicate, sort: [NSSortDescriptor] = []) -> AnyPublisher<[Entity], Never> {
         EntitiesChangePublisher(type: type, predicate: predicate, sort: sort, context: self).eraseToAnyPublisher()
     }
 }
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, tvOS 13.0, *)
 private struct EntitiesChangePublisher<Entity: NSManagedObject>: Publisher {
     public typealias Output = Array<Entity>
     public typealias Failure = Never
@@ -51,7 +50,7 @@ private struct EntitiesChangePublisher<Entity: NSManagedObject>: Publisher {
 }
 
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, tvOS 13.0, *)
 private class EntitiesChangeSubscription<Entity: NSManagedObject, S: Subscriber>: NSObject, NSFetchedResultsControllerDelegate, Subscription where S.Input == Array<Entity>, S.Failure == Never {
     
     private var controller: NSFetchedResultsController<Entity>?
@@ -93,4 +92,4 @@ private class EntitiesChangeSubscription<Entity: NSManagedObject, S: Subscriber>
         _ = subscriber?.receive(controller?.fetchedObjects ?? [])
     }
 }
-
+#endif
