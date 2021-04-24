@@ -5,18 +5,28 @@ import PackageDescription
 
 let package = Package(
     name: "TenPair",
+    platforms: [.iOS(.v13), .macOS(.v10_15)],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
+        .library(
+            name: "Config",
+            targets: ["Config"]),
+        .library(
+            name: "Logging",
+            targets: ["Logging"]),
         .library(
             name: "TenPair",
             targets: ["TenPair"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
         //.package(path: "../../swift-give-me-ads"),
+        .package(name: "SWLogger", url: "https://github.com/coodly/swlogger.git", from: "0.6.1"),
     ],
     targets: [
+        .target(
+            name: "Config"),
+        .target(
+            name: "Logging",
+            dependencies: ["Config", "SWLogger"]),
         .target(
             name: "TenPair",
             dependencies: []),

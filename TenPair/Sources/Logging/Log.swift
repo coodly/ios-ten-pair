@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
+import Config
 import SWLogger
 
-class Log {
-    class func enable() {
+public class Log {
+    public class func enable() {
         guard AppConfig.current.logs else {
             return
         }

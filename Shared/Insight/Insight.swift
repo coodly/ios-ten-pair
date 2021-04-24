@@ -14,9 +14,10 @@
 * limitations under the License.
 */
 
-import Foundation
 import CloudInsight
 import CloudKit
+import Foundation
+import Logging
 
 internal class Insight {
     private let cloud: InsightClient

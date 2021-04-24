@@ -34,11 +34,9 @@
 		A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE51424AB7A5700D0AEB4 /* AppDelegate.swift */; };
 		A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75BE51A24AB7A5700D0AEB4 /* Main.storyboard */; };
 		A75BE52724AB7F4D00D0AEB4 /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74261092486B3F6003B9E9E /* Insight.swift */; };
-		A75BE52824AB7FA100D0AEB4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D390921E4B47E900EDB111 /* Log.swift */; };
 		A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373724A238ED006DD8B4 /* GameTheme.swift */; };
 		A75BE52C24AB800B00D0AEB4 /* NumbersPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */; };
 		A75BE52D24AB801800D0AEB4 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
-		A75BE52E24AB803100D0AEB4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C1C1E535B18007D7807 /* Config.swift */; };
 		A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
 		A75BE53024AB804D00D0AEB4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA124A4EC9100F95EC9 /* LoadingViewController.swift */; };
 		A75BE53124AB804D00D0AEB4 /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D97FA324A4ECAC00F95EC9 /* Loading.storyboard */; };
@@ -87,7 +85,6 @@
 		A7A8372424A1C28E006DD8B4 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372324A1C28E006DD8B4 /* Storyboards.swift */; };
 		A7A8372624A1C2A9006DD8B4 /* StoryboardLoaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372524A1C2A9006DD8B4 /* StoryboardLoaded.swift */; };
 		A7A8373824A238ED006DD8B4 /* GameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373724A238ED006DD8B4 /* GameTheme.swift */; };
-		A7B12C1D1E535B18007D7807 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C1C1E535B18007D7807 /* Config.swift */; };
 		A7BD4EBC24A5C6ED00D613FC /* Fireworks.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EBA24A5C6ED00D613FC /* Fireworks.sks */; };
 		A7BD4EBD24A5C6ED00D613FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EBB24A5C6ED00D613FC /* Assets.xcassets */; };
 		A7BD4EBF24A5C77F00D613FC /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD4EBE24A5C77F00D613FC /* WinViewController.swift */; };
@@ -95,7 +92,6 @@
 		A7BD4EC324A6440C00D613FC /* Rendered+Undo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD4EC224A6440C00D613FC /* Rendered+Undo.swift */; };
 		A7CCF94224A9BED6009DD181 /* PlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */; };
 		A7D390801E4B049400EDB111 /* FieldSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3907F1E4B049400EDB111 /* FieldSave.swift */; };
-		A7D390931E4B47E900EDB111 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D390921E4B47E900EDB111 /* Log.swift */; };
 		A7D5BA511E5DE63A003333A9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5BA501E5DE63A003333A9 /* CloudKit.framework */; };
 		A7D97F9E24A4E61600F95EC9 /* StatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97F9D24A4E61600F95EC9 /* StatusLabel.swift */; };
 		A7D97FA224A4EC9100F95EC9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA124A4EC9100F95EC9 /* LoadingViewController.swift */; };
@@ -109,6 +105,8 @@
 		EA922DBB25CE5F13007CC237 /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB525CE5F13007CC237 /* GoogleMobileAds.xcframework */; };
 		EA922DBC25CE5F13007CC237 /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB625CE5F13007CC237 /* GoogleAppMeasurement.xcframework */; };
 		EA922DBD25CE5F13007CC237 /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB725CE5F13007CC237 /* GoogleUtilities.xcframework */; };
+		EABB3CDE263439E100FC1391 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDD263439E100FC1391 /* Logging */; };
+		EABB3CE0263439E600FC1391 /* Config in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDF263439E600FC1391 /* Config */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -168,7 +166,6 @@
 		A7A8372324A1C28E006DD8B4 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		A7A8372524A1C2A9006DD8B4 /* StoryboardLoaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoaded.swift; sourceTree = "<group>"; };
 		A7A8373724A238ED006DD8B4 /* GameTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTheme.swift; sourceTree = "<group>"; };
-		A7B12C1C1E535B18007D7807 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A7BD4EBA24A5C6ED00D613FC /* Fireworks.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fireworks.sks; sourceTree = "<group>"; };
 		A7BD4EBB24A5C6ED00D613FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7BD4EBE24A5C77F00D613FC /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
@@ -176,7 +173,6 @@
 		A7BD4EC224A6440C00D613FC /* Rendered+Undo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendered+Undo.swift"; sourceTree = "<group>"; };
 		A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayNavigationController.swift; sourceTree = "<group>"; };
 		A7D3907F1E4B049400EDB111 /* FieldSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldSave.swift; sourceTree = "<group>"; };
-		A7D390921E4B47E900EDB111 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		A7D5BA501E5DE63A003333A9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		A7D97F9D24A4E61600F95EC9 /* StatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusLabel.swift; sourceTree = "<group>"; };
 		A7D97FA124A4EC9100F95EC9 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +202,8 @@
 				A7419DF62570C81300D4C064 /* Purchases in Frameworks */,
 				FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */,
 				EA922DBB25CE5F13007CC237 /* GoogleMobileAds.xcframework in Frameworks */,
+				EABB3CDE263439E100FC1391 /* Logging in Frameworks */,
+				EABB3CE0263439E600FC1391 /* Config in Frameworks */,
 				EA922DB825CE5F13007CC237 /* nanopb.xcframework in Frameworks */,
 				EA922DBD25CE5F13007CC237 /* GoogleUtilities.xcframework in Frameworks */,
 				EA922DBA25CE5F13007CC237 /* UserMessagingPlatform.xcframework in Frameworks */,
@@ -282,10 +280,8 @@
 				A7A8373624A238BA006DD8B4 /* Themes */,
 				A7BD4EB524A5C43600D613FC /* Win */,
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
-				A7B12C1C1E535B18007D7807 /* Config.swift */,
 				A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */,
 				A7D3907F1E4B049400EDB111 /* FieldSave.swift */,
-				A7D390921E4B47E900EDB111 /* Log.swift */,
 				A750CE361E55DD9B00852E6A /* MatchFinder.swift */,
 				A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */,
 				A787134A1E5CA743002DEF76 /* Secrets.swift */,
@@ -544,6 +540,8 @@
 			name = iOS;
 			packageProductDependencies = (
 				A7419DF52570C81300D4C064 /* Purchases */,
+				EABB3CDD263439E100FC1391 /* Logging */,
+				EABB3CDF263439E600FC1391 /* Config */,
 			);
 			productName = iOS;
 			productReference = A71A97411E48CCA4005E134F /* TenPair.app */;
@@ -672,7 +670,6 @@
 				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Puff/Puff.framework",
-				"${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -680,7 +677,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Puff.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -771,7 +767,6 @@
 				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Puff/Puff.framework",
-				"${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -780,7 +775,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Puff.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -797,14 +791,12 @@
 				A7419E282570D56F00D4C064 /* L10n.swift in Sources */,
 				A7CCF94224A9BED6009DD181 /* PlayNavigationController.swift in Sources */,
 				A7720B8324A469D6006C40EC /* Rendered.swift in Sources */,
-				A7D390931E4B47E900EDB111 /* Log.swift in Sources */,
 				A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */,
 				A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */,
 				A7720B8924A46F6D006C40EC /* Rendered+Hint.swift in Sources */,
 				A70BBA342499F29B003E561F /* PlayField.swift in Sources */,
 				A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */,
 				A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */,
-				A7B12C1D1E535B18007D7807 /* Config.swift in Sources */,
 				A7363A371E5589DB00B7C732 /* EmptyLinesSearch.swift in Sources */,
 				A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */,
 				A7720B8B24A47349006C40EC /* Rendered+Menu.swift in Sources */,
@@ -862,10 +854,8 @@
 				A75BE54124AB807900D0AEB4 /* PlayViewController.swift in Sources */,
 				A75BE55124AB809600D0AEB4 /* Rendered+Reload.swift in Sources */,
 				A75BE52C24AB800B00D0AEB4 /* NumbersPathFinder.swift in Sources */,
-				A75BE52824AB7FA100D0AEB4 /* Log.swift in Sources */,
 				A75BE53E24AB807900D0AEB4 /* NumbersFlowLayout.swift in Sources */,
 				A75BE55224AB809600D0AEB4 /* Rendered+Undo.swift in Sources */,
-				A75BE52E24AB803100D0AEB4 /* Config.swift in Sources */,
 				A75BE54224AB807900D0AEB4 /* StatusLabel.swift in Sources */,
 				A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */,
 				A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */,
@@ -1052,8 +1042,6 @@
 					"\"KeychainAccess\"",
 					"-framework",
 					"\"Puff\"",
-					"-framework",
-					"\"SWLogger\"",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
@@ -1095,8 +1083,6 @@
 					"\"KeychainAccess\"",
 					"-framework",
 					"\"Puff\"",
-					"-framework",
-					"\"SWLogger\"",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.numbrn;
@@ -1220,6 +1206,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A7419DF42570C81300D4C064 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = Purchases;
+		};
+		EABB3CDD263439E100FC1391 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logging;
+		};
+		EABB3CDF263439E600FC1391 /* Config */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Config;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

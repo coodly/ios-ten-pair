@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-import Foundation
 import CloudFeedback
 import CloudKit
-#if canImport(Combine)
 import Combine
-#endif
+import Foundation
+import Logging
 
 internal class FeedbackService {
     private static let shared = FeedbackService()

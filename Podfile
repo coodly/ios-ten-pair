@@ -11,20 +11,6 @@ end
 
 UsedSource = PodSource::Remote
 
-def logger
-    if UsedSource == PodSource::Local
-        pod 'SWLogger', :path => '../swift-logger'
-    elsif UsedSource == PodSource::Remote
-        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
-    else
-        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', :tag => '0.5.0'
-    end
-end
-
-def ios_pods
-    logger
-end
-
 def feedback_pod
     if UsedSource == PodSource::Local
         pod 'CloudFeedback/Client', :path => '../swift-cloud-feedback'
@@ -51,7 +37,6 @@ end
 target 'iOS' do
     platform :ios, '13.0'
 
-    ios_pods
     feedback_pod
     insight_pod
 end
@@ -60,7 +45,6 @@ target 'Catalyst' do
     platform :ios, '13.0'
 
     insight_pod
-    logger
 end
 
 post_install do |pi|

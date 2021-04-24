@@ -16,7 +16,7 @@
 
 import Foundation
 
-let NumberOfColumns = 9
+public let NumberOfColumns = 9
 
 private let ReleaseBuild = false
 
@@ -27,17 +27,17 @@ struct AdUnits {
     static let demo = AdUnits(banner: DemoAdMobBannerUnit, interstitial: DemoInterstitial)
 }
 
-struct AppConfig {
-    let logs = !ReleaseBuild
+public struct AppConfig {
+    public let logs = !ReleaseBuild
     let ads: Bool
     let adUnits = ReleaseBuild ? AdUnits.live : AdUnits.demo
     let showDebugInfo = !ReleaseBuild
     
-    static let current = AppConfig(ads: true)
+    public static let current = AppConfig(ads: true)
 }
 
 extension Notification.Name {
-    static let saveField = Notification.Name(rawValue: "TenPairSaveField")
-    static let hintTaken = Notification.Name(rawValue: "TenPairHintTaken")
-    static let fieldReload = Notification.Name(rawValue: "TenPairFieldReload")
+    public static let saveField = Notification.Name(rawValue: "TenPairSaveField")
+    public static let hintTaken = Notification.Name(rawValue: "TenPairHintTaken")
+    public static let fieldReload = Notification.Name(rawValue: "TenPairFieldReload")
 }

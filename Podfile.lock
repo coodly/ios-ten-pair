@@ -25,13 +25,11 @@ PODS:
   - Puff/Logger (0.6.3)
   - Puff/Serialization (0.6.3):
     - Puff/Logger
-  - SWLogger (0.6.1)
 
 DEPENDENCIES:
   - "CloudFeedback/Client (from `git@github.com:coodly/CloudFeedback.git`)"
   - "CloudFeedback/iOS (from `git@github.com:coodly/CloudFeedback.git`)"
   - "CloudInsight (from `git@github.com:coodly/CloudInsight.git`)"
-  - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -45,8 +43,6 @@ EXTERNAL SOURCES:
     :git: "git@github.com:coodly/CloudFeedback.git"
   CloudInsight:
     :git: "git@github.com:coodly/CloudInsight.git"
-  SWLogger:
-    :git: "git@github.com:coodly/swlogger.git"
 
 CHECKOUT OPTIONS:
   CloudFeedback:
@@ -55,9 +51,6 @@ CHECKOUT OPTIONS:
   CloudInsight:
     :commit: e28180f9da4958bcf1e02d86d2f50f6768e61689
     :git: "git@github.com:coodly/CloudInsight.git"
-  SWLogger:
-    :commit: 85ffc88e98070d62f0c5db8240177e3646b07117
-    :git: "git@github.com:coodly/swlogger.git"
 
 SPEC CHECKSUMS:
   CloudFeedback: 905e646f90ff5252b552338e03919fcbfcbaccd2
@@ -65,8 +58,7 @@ SPEC CHECKSUMS:
   CoreDataPersistence: 26bbfbb6d2311d0ac9deb57e6903d4bb0a2e4141
   KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
   Puff: 583b69144656654130b551375b8200284d0e87cb
-  SWLogger: a985bc5fd52617a59aaabe4e9a39f082e35dbe97
 
-PODFILE CHECKSUM: c3b378f870afd2453528c79b1296cf6382bd0d22
+PODFILE CHECKSUM: f06cc13aeae0e9b22499f789a5cc647619adb3cd
 
 COCOAPODS: 1.10.0

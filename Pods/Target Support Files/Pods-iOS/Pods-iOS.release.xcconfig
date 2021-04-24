@@ -1,10 +1,10 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CloudFeedback" "${PODS_CONFIGURATION_BUILD_DIR}/CloudInsight" "${PODS_CONFIGURATION_BUILD_DIR}/CoreDataPersistence" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess" "${PODS_CONFIGURATION_BUILD_DIR}/Puff" "${PODS_CONFIGURATION_BUILD_DIR}/SWLogger"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CloudFeedback" "${PODS_CONFIGURATION_BUILD_DIR}/CloudInsight" "${PODS_CONFIGURATION_BUILD_DIR}/CoreDataPersistence" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess" "${PODS_CONFIGURATION_BUILD_DIR}/Puff"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CloudFeedback/CloudFeedback.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CloudInsight/CloudInsight.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CoreDataPersistence/CoreDataPersistence.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess/KeychainAccess.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Puff/Puff.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SWLogger/SWLogger.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CloudFeedback/CloudFeedback.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CloudInsight/CloudInsight.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CoreDataPersistence/CoreDataPersistence.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess/KeychainAccess.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Puff/Puff.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "CloudFeedback" -framework "CloudInsight" -framework "CoreDataPersistence" -framework "KeychainAccess" -framework "Puff" -framework "SWLogger"
+OTHER_LDFLAGS = $(inherited) -framework "CloudFeedback" -framework "CloudInsight" -framework "CoreDataPersistence" -framework "KeychainAccess" -framework "Puff"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

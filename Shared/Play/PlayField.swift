@@ -14,6 +14,7 @@
 * limitations under the License.
 */
 
+import Config
 import Foundation
 import UIKit
 
@@ -22,7 +23,7 @@ internal enum MatchAction: String {
     case failure
 }
 
-internal protocol PlayFieldStatusDelegate: class {
+internal protocol PlayFieldStatusDelegate: AnyObject {
     func statusUpdate(lines: Int, tiles: Int)
 }
 

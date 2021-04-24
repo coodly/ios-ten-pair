@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import Config
 import Foundation
 
 private func contains<S: Sequence>(_ array: S, value: Int) -> Bool where S.Iterator.Element == CountableRange<Int> {

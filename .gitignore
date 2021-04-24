@@ -13,3 +13,4 @@ fastlane/Appfile
 iOS/Secrets/Secrets.swift
 TenPair.app.dSYM.zip
 TenPair.ipa
+TenPair/Sources/Config/Secrets.swift
