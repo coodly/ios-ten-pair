@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Ff-Pn-6BM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LCd-8J-F2T">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,7 +35,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="apk-88-TNQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="amc-4n-LNy">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -52,7 +53,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dO9-Qf-Pi2" customClass="ButtonTrayBackgroundView" customModule="TenPair" customModuleProvider="target">
                                         <rect key="frame" x="1" y="1" width="51" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg2-Q1-cXE">
                                         <rect key="frame" x="4" y="4" width="44" height="44"/>
@@ -65,7 +66,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="eg2-Q1-cXE" firstAttribute="top" secondItem="uMm-Je-WQA" secondAttribute="top" constant="4" id="0KW-P9-suU"/>
                                     <constraint firstAttribute="trailing" secondItem="dO9-Qf-Pi2" secondAttribute="trailing" id="DoN-7C-42j"/>
@@ -82,7 +83,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0F-PJ-y0I" customClass="ButtonTrayBackgroundView" customModule="TenPair" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="51" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVv-YB-EfX">
                                         <rect key="frame" x="4" y="4" width="44" height="44"/>
@@ -108,7 +109,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fua-Tt-jpf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cQF-tF-W9G" firstAttribute="leading" secondItem="sTh-Hc-Hbi" secondAttribute="leading" id="1ko-9F-1Eu"/>
                             <constraint firstItem="fua-Tt-jpf" firstAttribute="bottom" secondItem="uMm-Je-WQA" secondAttribute="bottom" constant="8" id="91F-F3-tFL"/>
@@ -119,7 +121,6 @@
                             <constraint firstItem="fua-Tt-jpf" firstAttribute="bottom" secondItem="cQF-tF-W9G" secondAttribute="bottom" constant="8" id="tNn-eZ-riv"/>
                             <constraint firstItem="apk-88-TNQ" firstAttribute="trailing" secondItem="sTh-Hc-Hbi" secondAttribute="trailing" id="wpP-2d-oRt"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fua-Tt-jpf"/>
                     </view>
                     <navigationItem key="navigationItem" id="kNR-91-fLN">
                         <connections>
@@ -144,56 +145,10 @@
             </objects>
             <point key="canvasLocation" x="660" y="715.59220389805103"/>
         </scene>
-        <!--Ads View Controller-->
-        <scene sceneID="Mus-cG-RU6">
-            <objects>
-                <viewController id="0Ff-Pn-6BM" customClass="AdsViewController" customModule="TenPair" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3XA-Uw-QCE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0W-jS-EPj">
-                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="afN-bN-kIK"/>
-                                </constraints>
-                            </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aia-3e-TcL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <connections>
-                                    <segue destination="LCd-8J-F2T" kind="embed" id="JZM-IZ-YZs"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="B0W-jS-EPj" firstAttribute="leading" secondItem="3XA-Uw-QCE" secondAttribute="leading" id="C4B-wm-UNY"/>
-                            <constraint firstItem="B0W-jS-EPj" firstAttribute="top" secondItem="aia-3e-TcL" secondAttribute="bottom" constant="24" id="FFX-VA-Prf"/>
-                            <constraint firstItem="aia-3e-TcL" firstAttribute="trailing" secondItem="3XA-Uw-QCE" secondAttribute="trailing" id="OGs-Va-k9W"/>
-                            <constraint firstItem="B0W-jS-EPj" firstAttribute="trailing" secondItem="3XA-Uw-QCE" secondAttribute="trailing" id="f53-Mp-lct"/>
-                            <constraint firstItem="aia-3e-TcL" firstAttribute="bottom" secondItem="3XA-Uw-QCE" secondAttribute="bottom" id="myH-J5-Qqk"/>
-                            <constraint firstItem="aia-3e-TcL" firstAttribute="top" secondItem="3XA-Uw-QCE" secondAttribute="top" id="o4t-3x-M1I"/>
-                            <constraint firstItem="aia-3e-TcL" firstAttribute="leading" secondItem="3XA-Uw-QCE" secondAttribute="leading" id="vWx-8g-Z1g"/>
-                            <constraint firstItem="qme-D6-wQo" firstAttribute="bottom" secondItem="B0W-jS-EPj" secondAttribute="bottom" id="xpo-CK-A2u"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="qme-D6-wQo"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="FFX-VA-Prf"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <connections>
-                        <outlet property="bannerContainer" destination="B0W-jS-EPj" id="9Ya-tJ-L15"/>
-                        <outlet property="bannerHeight" destination="afN-bN-kIK" id="i6j-ie-YWZ"/>
-                        <outlet property="bottomWithAds" destination="FFX-VA-Prf" id="STf-x7-ufr"/>
-                        <outlet property="bottomWithoutAds" destination="myH-J5-Qqk" id="Ei0-9c-XNa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jcl-sX-qfq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-743.20000000000005" y="715.59220389805103"/>
-        </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
