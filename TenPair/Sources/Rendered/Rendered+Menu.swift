@@ -17,7 +17,9 @@
 import UIKit
 
 extension Rendered {
-    internal class func menuIcon() -> UIImage? {
+    public static let menuIcon = drawIcon()
+    
+    private class func drawIcon() -> UIImage? {
         let frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         UIGraphicsBeginImageContextWithOptions(frame.size, false, 0)
         
@@ -29,7 +31,7 @@ extension Rendered {
         return image?.withRenderingMode(.alwaysTemplate)
     }
 
-    internal class func drawMenu(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 24, height: 24), resizing: ResizingBehavior = .aspectFit) {
+    private class func drawMenu(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 24, height: 24), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         

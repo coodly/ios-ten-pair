@@ -17,7 +17,9 @@
 import UIKit
 
 extension Rendered {
-    internal class func undoIcon() -> UIImage? {
+    public static let undoIcon = drawIcon()
+    
+    private class func drawIcon() -> UIImage? {
         let frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         UIGraphicsBeginImageContextWithOptions(frame.size, false, 0)
         
@@ -29,7 +31,7 @@ extension Rendered {
         return image?.withRenderingMode(.alwaysTemplate)
     }
 
-    internal class func drawUndo(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 24, height: 24), resizing: ResizingBehavior = .aspectFit) {
+    private class func drawUndo(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 24, height: 24), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         

@@ -14,6 +14,9 @@ let package = Package(
             name: "Logging",
             targets: ["Logging"]),
         .library(
+            name: "Rendered",
+            targets: ["Rendered"]),
+        .library(
             name: "TenPair",
             targets: ["TenPair"]),
     ],
@@ -27,6 +30,8 @@ let package = Package(
         .target(
             name: "Logging",
             dependencies: ["Config", "SWLogger"]),
+        .target(
+            name: "Rendered"),
         .target(
             name: "TenPair",
             dependencies: []),
