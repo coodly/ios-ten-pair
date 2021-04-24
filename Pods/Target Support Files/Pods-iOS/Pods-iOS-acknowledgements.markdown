@@ -642,10 +642,6 @@ SOFTWARE.
 
 
 
-## PersonalizedAdConsent
-
-Copyright 2018 Google LLC.
-
 ## Puff
 
                                  Apache License

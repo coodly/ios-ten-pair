@@ -17,7 +17,7 @@
 import UIKit
 import GameplayKit
 
-internal protocol PlayDelegate: class {
+internal protocol PlayDelegate: AnyObject {
     func animateFailure()
     func animateSuccess()
     func clearSelection()
@@ -25,9 +25,7 @@ internal protocol PlayDelegate: class {
     func checkGameEnd()
 }
 
-internal class PlayViewController: UIViewController, PersonalizedAdsCheckConsumer {
-    var personalizedAds: PersonalizedAdsCheck?
-    
+internal class PlayViewController: UIViewController {    
     private lazy var field = PlayField()
     
     @IBOutlet private var collectionView: UICollectionView!
@@ -183,7 +181,6 @@ internal class PlayViewController: UIViewController, PersonalizedAdsCheckConsume
         let menu: MenuUIViewController = Storyboards.loadFromStoryboard()
         menu.delegate = self
         menu.gameWon = field.gameEnded
-        menu.personalizedAds = personalizedAds
         
         menu.modalPresentationStyle = .custom
         

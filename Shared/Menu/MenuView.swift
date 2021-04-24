@@ -17,7 +17,7 @@
 import SwiftUI
 import Combine
 
-internal protocol MenuViewModelDelegate: class {
+internal protocol MenuViewModelDelegate: AnyObject {
     func resume()
     func restart(lines: Int)
     func rateApp()
@@ -40,17 +40,13 @@ internal class MenuViewModel: ObservableObject {
     @Published fileprivate var haveMessageFromDeveloper = false
 
     fileprivate let showResume: Bool
-    private let gdpr: PersonalizedAdsCheck?
     private var adsStatusSubscription: AnyCancellable?
     private var unreadSubscription: AnyCancellable?
 
     private weak var delegate: MenuViewModelDelegate?
-    internal init(delegate: MenuViewModelDelegate, gameWon: Bool, gdpr: PersonalizedAdsCheck?) {
+    internal init(delegate: MenuViewModelDelegate, gameWon: Bool) {
         self.delegate = delegate
         showResume = !gameWon
-        self.gdpr = gdpr
-        
-        loadPurchaseStatus()
         
         unreadSubscription = FeedbackService.unreadStatus.receive(on: DispatchQueue.main)
             .sink() {
@@ -81,27 +77,7 @@ internal class MenuViewModel: ObservableObject {
     fileprivate func restart(lines: Int) {
         delegate?.restart(lines: lines)
     }
-    
-    private func loadPurchaseStatus() {
-        adsStatusSubscription = RevenueCatPurchase.shared.adsStatus
-            .receive(on: DispatchQueue.main)
-            .sink() {
-                [weak self]
-                
-                status in
-                
-                guard let self = self, let gdpr = self.gdpr else {
-                    return
-                }
-                
-                self.showPersonalizedAdsRow = status == .show && gdpr.showGDPRConsentMenuItem
-            }
-    }
-    
-    fileprivate func gdprShow() {
-        gdpr?.present()
-    }
-    
+        
     fileprivate func showFeedback() {
         delegate?.showFeedback()
     }
@@ -152,11 +128,6 @@ private struct MainMenuView: View {
             } else if #available(iOS 14, *) {
                 Button(action: viewModel.showFeedback) {
                     Text(L10n.Menu.Option.Send.message)
-                }
-            }
-            if viewModel.showPersonalizedAdsRow {
-                Button(action: viewModel.gdprShow) {
-                    Text(L10n.Menu.Option.gdpr)
                 }
             }
         }

@@ -17,22 +17,20 @@
 import UIKit
 import SwiftUI
 
-internal protocol MenuUIDelegate: class {
+internal protocol MenuUIDelegate: AnyObject {
     func restart(_ lines: Int)
     func dismissMenu()
 }
 
-internal class MenuUIViewController: UIViewController, StoryboardLoaded, PersonalizedAdsCheckConsumer, MenuViewModelDelegate {
+internal class MenuUIViewController: UIViewController, StoryboardLoaded, MenuViewModelDelegate {
     static var storyboardName: String {
         "MenuUI"
     }
     
-    var personalizedAds: PersonalizedAdsCheck?
-    
     internal var gameWon = false
     internal var delegate: MenuUIDelegate?
     
-    private lazy var viewModel = MenuViewModel(delegate: self, gameWon: gameWon, gdpr: personalizedAds)
+    private lazy var viewModel = MenuViewModel(delegate: self, gameWon: gameWon)
     private lazy var menuView = MenuView(viewModel: viewModel)
     private lazy var hosting = UIHostingController(rootView: menuView)
     

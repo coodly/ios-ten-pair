@@ -16,13 +16,7 @@
 
 import UIKit
 
-internal class PlayNavigationController: UINavigationController, PersonalizedAdsCheckConsumer {
-    var personalizedAds: PersonalizedAdsCheck? {
-        didSet {
-            children.compactMap({ $0 as? PersonalizedAdsCheckConsumer }).forEach({ $0.personalizedAds = personalizedAds })
-        }
-    }
-
+internal class PlayNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 

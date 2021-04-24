@@ -29,7 +29,6 @@
 		A7419E4C2570E72600D4C064 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E4B2570E72600D4C064 /* PurchaseView.swift */; };
 		A7419E502570ED4600D4C064 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E4F2570ED4600D4C064 /* ActivityIndicatorView.swift */; };
 		A742610A2486B3F6003B9E9E /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74261092486B3F6003B9E9E /* Insight.swift */; };
-		A7426110248769DA003B9E9E /* PersonalizedAdsCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742610F248769DA003B9E9E /* PersonalizedAdsCheck.swift */; };
 		A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
 		A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE361E55DD9B00852E6A /* MatchFinder.swift */; };
 		A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE51424AB7A5700D0AEB4 /* AppDelegate.swift */; };
@@ -65,8 +64,6 @@
 		A75BE55624AB80A600D0AEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EBB24A5C6ED00D613FC /* Assets.xcassets */; };
 		A75BE55724AB80A600D0AEB4 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD4EBE24A5C77F00D613FC /* WinViewController.swift */; };
 		A75BE55824AB80A600D0AEB4 /* Win.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EC024A5C7C400D613FC /* Win.storyboard */; };
-		A75BE55924AB80B900D0AEB4 /* PersonalizedAdsCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742610F248769DA003B9E9E /* PersonalizedAdsCheck.swift */; };
-		A75BE55A24AB80C600D0AEB4 /* PersonalizedAdsCheckConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ECE41E24AB697C000CBD7F /* PersonalizedAdsCheckConsumer.swift */; };
 		A75BE55B24AB810300D0AEB4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */; };
 		A75BE55D24AB81A200D0AEB4 /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE55C24AB81A200D0AEB4 /* FeedbackService.swift */; };
 		A75BE56024AB823500D0AEB4 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE55F24AB823500D0AEB4 /* UIColor+Extensions.swift */; };
@@ -104,7 +101,6 @@
 		A7D97FA224A4EC9100F95EC9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA124A4EC9100F95EC9 /* LoadingViewController.swift */; };
 		A7D97FA424A4ECAC00F95EC9 /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D97FA324A4ECAC00F95EC9 /* Loading.storyboard */; };
 		A7D97FA624A4F15D00F95EC9 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA524A4F15D00F95EC9 /* SpinnerView.swift */; };
-		A7ECE41F24AB697C000CBD7F /* PersonalizedAdsCheckConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ECE41E24AB697C000CBD7F /* PersonalizedAdsCheckConsumer.swift */; };
 		A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */; };
 		CD3866315F8B8C99B4F4282D /* Pods_Catalyst.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E321120C6B007B1E5BC7AA21 /* Pods_Catalyst.framework */; };
 		EA922DB825CE5F13007CC237 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB225CE5F13007CC237 /* nanopb.xcframework */; };
@@ -113,7 +109,6 @@
 		EA922DBB25CE5F13007CC237 /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB525CE5F13007CC237 /* GoogleMobileAds.xcframework */; };
 		EA922DBC25CE5F13007CC237 /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB625CE5F13007CC237 /* GoogleAppMeasurement.xcframework */; };
 		EA922DBD25CE5F13007CC237 /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB725CE5F13007CC237 /* GoogleUtilities.xcframework */; };
-		EABB3CDC2633E1DF00FC1391 /* AdMobGDPRCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB3CDB2633E1DF00FC1391 /* AdMobGDPRCheck.swift */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -145,7 +140,6 @@
 		A7419E4B2570E72600D4C064 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		A7419E4F2570ED4600D4C064 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		A74261092486B3F6003B9E9E /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
-		A742610F248769DA003B9E9E /* PersonalizedAdsCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizedAdsCheck.swift; sourceTree = "<group>"; };
 		A748DC3A1E57375800F16F92 /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		A750CE361E55DD9B00852E6A /* MatchFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinder.swift; sourceTree = "<group>"; };
 		A75BE51224AB7A5700D0AEB4 /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,7 +182,6 @@
 		A7D97FA124A4EC9100F95EC9 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		A7D97FA324A4ECAC00F95EC9 /* Loading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loading.storyboard; sourceTree = "<group>"; };
 		A7D97FA524A4F15D00F95EC9 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
-		A7ECE41E24AB697C000CBD7F /* PersonalizedAdsCheckConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizedAdsCheckConsumer.swift; sourceTree = "<group>"; };
 		A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		CDBD234CA436EF092F3D679F /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D734C99D56200ECE40196FB7 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,7 +193,6 @@
 		EA922DB625CE5F13007CC237 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
 		EA922DB725CE5F13007CC237 /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
 		EABB3CD82633D24E00FC1391 /* TenPair */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TenPair; sourceTree = "<group>"; };
-		EABB3CDB2633E1DF00FC1391 /* AdMobGDPRCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobGDPRCheck.swift; sourceTree = "<group>"; };
 		EDF772B8615E4E99C520F2F4 /* Pods-Catalyst.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catalyst.release.xcconfig"; path = "Pods/Target Support Files/Pods-Catalyst/Pods-Catalyst.release.xcconfig"; sourceTree = "<group>"; };
 		FFB053744AB774B5ADBDE43B /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				A7EE33B8243B741A004CF496 /* Extensions */,
-				A742610E248769CE003B9E9E /* GDPR */,
 				A74261082486B3E6003B9E9E /* Insight */,
 				A75BE56924AB89E700D0AEB4 /* Launch */,
 				A7D97FA024A4EC7A00F95EC9 /* Loading */,
@@ -314,7 +305,6 @@
 		A71A97431E48CCA4005E134F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A742610B2486B56F003B9E9E /* GDPR */,
 				A7419E022570CA9700D4C064 /* Purchase */,
 				A797BD6F2483803F00A6E27D /* Secrets */,
 				A71A97441E48CCA4005E134F /* AppDelegate.swift */,
@@ -359,23 +349,6 @@
 				A74261092486B3F6003B9E9E /* Insight.swift */,
 			);
 			path = Insight;
-			sourceTree = "<group>";
-		};
-		A742610B2486B56F003B9E9E /* GDPR */ = {
-			isa = PBXGroup;
-			children = (
-				EABB3CDB2633E1DF00FC1391 /* AdMobGDPRCheck.swift */,
-			);
-			path = GDPR;
-			sourceTree = "<group>";
-		};
-		A742610E248769CE003B9E9E /* GDPR */ = {
-			isa = PBXGroup;
-			children = (
-				A742610F248769DA003B9E9E /* PersonalizedAdsCheck.swift */,
-				A7ECE41E24AB697C000CBD7F /* PersonalizedAdsCheckConsumer.swift */,
-			);
-			path = GDPR;
 			sourceTree = "<group>";
 		};
 		A75BE51324AB7A5700D0AEB4 /* Catalyst */ = {
@@ -797,7 +770,6 @@
 				"${BUILT_PRODUCTS_DIR}/CloudInsight/CloudInsight.framework",
 				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${BUILT_PRODUCTS_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.framework",
 				"${BUILT_PRODUCTS_DIR}/Puff/Puff.framework",
 				"${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework",
 			);
@@ -807,7 +779,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CloudInsight.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PersonalizedAdConsent.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Puff.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
 			);
@@ -833,7 +804,6 @@
 				A70BBA342499F29B003E561F /* PlayField.swift in Sources */,
 				A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */,
 				A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */,
-				A7426110248769DA003B9E9E /* PersonalizedAdsCheck.swift in Sources */,
 				A7B12C1D1E535B18007D7807 /* Config.swift in Sources */,
 				A7363A371E5589DB00B7C732 /* EmptyLinesSearch.swift in Sources */,
 				A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */,
@@ -848,12 +818,10 @@
 				A7419E502570ED4600D4C064 /* ActivityIndicatorView.swift in Sources */,
 				A7D97FA224A4EC9100F95EC9 /* LoadingViewController.swift in Sources */,
 				A7BD4EC324A6440C00D613FC /* Rendered+Undo.swift in Sources */,
-				A7ECE41F24AB697C000CBD7F /* PersonalizedAdsCheckConsumer.swift in Sources */,
 				A7A8372424A1C28E006DD8B4 /* Storyboards.swift in Sources */,
 				A70BBA2A24992E2B003E561F /* PlayViewController.swift in Sources */,
 				A7D97F9E24A4E61600F95EC9 /* StatusLabel.swift in Sources */,
 				A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */,
-				EABB3CDC2633E1DF00FC1391 /* AdMobGDPRCheck.swift in Sources */,
 				A7A8373824A238ED006DD8B4 /* GameTheme.swift in Sources */,
 				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
 				A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */,
@@ -886,7 +854,6 @@
 				A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */,
 				A75BE54C24AB808800D0AEB4 /* UICollectionView+Dequeue.swift in Sources */,
 				A75BE55D24AB81A200D0AEB4 /* FeedbackService.swift in Sources */,
-				A75BE55924AB80B900D0AEB4 /* PersonalizedAdsCheck.swift in Sources */,
 				A75BE53A24AB807900D0AEB4 /* ConcurrentOperation.swift in Sources */,
 				A75BE56324AB826E00D0AEB4 /* FieldSave.swift in Sources */,
 				A75BE55024AB809600D0AEB4 /* Rendered+Menu.swift in Sources */,
@@ -897,7 +864,6 @@
 				A75BE52C24AB800B00D0AEB4 /* NumbersPathFinder.swift in Sources */,
 				A75BE52824AB7FA100D0AEB4 /* Log.swift in Sources */,
 				A75BE53E24AB807900D0AEB4 /* NumbersFlowLayout.swift in Sources */,
-				A75BE55A24AB80C600D0AEB4 /* PersonalizedAdsCheckConsumer.swift in Sources */,
 				A75BE55224AB809600D0AEB4 /* Rendered+Undo.swift in Sources */,
 				A75BE52E24AB803100D0AEB4 /* Config.swift in Sources */,
 				A75BE54224AB807900D0AEB4 /* StatusLabel.swift in Sources */,
@@ -1066,10 +1032,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 97;
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Thirdparty/GoogleMobileAds/7.68.0",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1087,8 +1050,6 @@
 					"\"CoreDataPersistence\"",
 					"-framework",
 					"\"KeychainAccess\"",
-					"-framework",
-					"\"PersonalizedAdConsent\"",
 					"-framework",
 					"\"Puff\"",
 					"-framework",
@@ -1114,10 +1075,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 97;
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Thirdparty/GoogleMobileAds/7.68.0",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1135,8 +1093,6 @@
 					"\"CoreDataPersistence\"",
 					"-framework",
 					"\"KeychainAccess\"",
-					"-framework",
-					"\"PersonalizedAdConsent\"",
 					"-framework",
 					"\"Puff\"",
 					"-framework",
