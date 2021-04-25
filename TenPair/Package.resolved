@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SWLogger",
+        "repositoryURL": "https://github.com/coodly/swlogger.git",
+        "state": {
+          "branch": null,
+          "revision": "85ffc88e98070d62f0c5db8240177e3646b07117",
+          "version": "0.6.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
