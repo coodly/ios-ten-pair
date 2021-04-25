@@ -14,6 +14,8 @@
 * limitations under the License.
 */
 
+import Config
+import Play
 import UIKit
 
 private let Columns = 9
@@ -23,7 +25,9 @@ private let HintButtonTrayHeight = CGFloat(44 + 2 + 2)
 
 internal class NumbersFlowLayout: UICollectionViewLayout {
     private var itemSize = CGSize(width: 50, height: 50)
+    private var adSize = CGSize(width: 300, height: 200)
     private var sectionInset = UIEdgeInsets.zero
+    private var position = Play.Position(itemSize: .zero, adSize: .zero, adAfterLines: NativeAfterLines, showingAds: false)
     
     override func prepare() {
         super.prepare()
@@ -34,8 +38,14 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
         let width = min((availableWidth / ColumnsF).rounded(.down), 50)
         itemSize = CGSize(width: width, height: width)
         
+        let adWidth = itemSize.width * ColumnsF
+        let adHeight = adWidth * (3.0 / 4.0)
+        adSize = CGSize(width: adWidth, height: adHeight)
+        
         let inset = ((collectionView!.frame.width - width * ColumnsF) / 2).rounded(.down)
         sectionInset = UIEdgeInsets(top: Padding, left: inset, bottom: Padding * 2 + HintButtonTrayHeight, right: inset)
+        
+        position = Play.Position(itemSize: itemSize, adSize: adSize, adAfterLines: NativeAfterLines, showingAds: false)
     }
     
     override var collectionViewContentSize: CGSize {
@@ -52,10 +62,11 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-        let line = CGFloat(indexPath.row / Columns)
-        let column = CGFloat(indexPath.row % Columns)
-        let origin = CGPoint(x: sectionInset.left + itemSize.width * column, y: sectionInset.top + line * itemSize.height)
-        attributes.frame = CGRect(origin: origin, size: itemSize)
+        let line = indexPath.row / Columns
+        let column = indexPath.row % Columns
+        let calculated = position.frame(for: Tile(line: line, column: column))
+        let origin = CGPoint(x: sectionInset.left + calculated.minX, y: sectionInset.top + calculated.minY)
+        attributes.frame = CGRect(origin: origin, size: calculated.size)
         return attributes
     }
     

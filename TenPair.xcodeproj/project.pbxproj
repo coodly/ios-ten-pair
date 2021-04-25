@@ -98,6 +98,7 @@
 		EABB3CDE263439E100FC1391 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDD263439E100FC1391 /* Logging */; };
 		EABB3CE0263439E600FC1391 /* Config in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDF263439E600FC1391 /* Config */; };
 		EABB3CE226343F7900FC1391 /* Rendered in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CE126343F7900FC1391 /* Rendered */; };
+		EABB3CE426354E3000FC1391 /* Play in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CE326354E3000FC1391 /* Play */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -194,6 +195,7 @@
 				EA922DB825CE5F13007CC237 /* nanopb.xcframework in Frameworks */,
 				EA922DBD25CE5F13007CC237 /* GoogleUtilities.xcframework in Frameworks */,
 				EA922DBA25CE5F13007CC237 /* UserMessagingPlatform.xcframework in Frameworks */,
+				EABB3CE426354E3000FC1391 /* Play in Frameworks */,
 				EA922DBC25CE5F13007CC237 /* GoogleAppMeasurement.xcframework in Frameworks */,
 				EA922DB925CE5F13007CC237 /* PromisesObjC.xcframework in Frameworks */,
 			);
@@ -517,6 +519,7 @@
 				EABB3CDD263439E100FC1391 /* Logging */,
 				EABB3CDF263439E600FC1391 /* Config */,
 				EABB3CE126343F7900FC1391 /* Rendered */,
+				EABB3CE326354E3000FC1391 /* Play */,
 			);
 			productName = iOS;
 			productReference = A71A97411E48CCA4005E134F /* TenPair.app */;
@@ -1183,6 +1186,10 @@
 		EABB3CE126343F7900FC1391 /* Rendered */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Rendered;
+		};
+		EABB3CE326354E3000FC1391 /* Play */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Play;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

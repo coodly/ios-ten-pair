@@ -41,6 +41,11 @@ public struct Position {
     }
     
     public func frame(for tile: Tile) -> CGRect {
+        guard showingAds else {
+            let origin = CGPoint(x: CGFloat(tile.column) * itemSize.height, y: CGFloat(tile.line) * itemSize.height)
+            return CGRect(origin: origin, size: itemSize)
+        }
+        
         let pageLines = adAfterLines + 1
         let onPage = tile.line / pageLines
         let pageHeight = CGFloat(adAfterLines) * itemSize.height + adSize.height
