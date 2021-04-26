@@ -29,6 +29,7 @@ internal protocol PlayDelegate: AnyObject {
 internal class PlayViewController: UIViewController {    
     private lazy var field = PlayField()
     
+    private lazy var layout = NumbersFlowLayout()
     @IBOutlet private var collectionView: UICollectionView!
     private var selected = Set<Int>()
     
@@ -54,7 +55,7 @@ internal class PlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.collectionViewLayout = NumbersFlowLayout()
+        collectionView.collectionViewLayout = layout
         collectionView.backgroundView = BackgroundView()    
         
         field.load()
