@@ -80,4 +80,14 @@ public struct Position {
         let column = tileOnPage % NumberOfColumns
         return Tile(line: line, column: column)
     }
+    
+    public func indexWithoutAd(from index: Int) -> Int {
+        guard showingAds else {
+            return index
+        }
+        
+        let tilesPerPage = (adAfterLines * NumberOfColumns) + 1
+        let pages = index / tilesPerPage
+        return index - pages
+    }
 }

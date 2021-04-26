@@ -65,6 +65,7 @@ internal class PlayViewController: UIViewController {
         navigationItem.leftBarButtonItem = menuButton
         navigationItem.rightBarButtonItem = reloadButton
         collectionView.registerCell(forType: NumberCell.self)
+        collectionView.registerCell(forType: AdPresentingCell.self)
         
         field.statusDelegate = navigationItem.titleView as! StatusLabel
         
@@ -347,7 +348,12 @@ extension PlayViewController: UICollectionViewDataSource {
         field.count + position.numberOfAds(with: field.count)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let tile = position.tile(from: indexPath.row)
+        if position.hasAd(on: tile) {
+            return collectionView.dequeueReusableCell(for: indexPath) as AdPresentingCell
+        }
+        
         let cell: NumberCell = collectionView.dequeueReusableCell(for: indexPath)
         let marker: NumberMarker
         if selected.contains(indexPath.row) {
@@ -355,7 +361,9 @@ extension PlayViewController: UICollectionViewDataSource {
         } else {
             marker = .standard
         }
-        cell.show(number: field.number(at: indexPath.row), marker: marker)
+        let index = position.indexWithoutAd(from: indexPath.row)
+        let number = field.number(at: index)
+        cell.show(number: number, marker: marker)
         return cell
     }
 }

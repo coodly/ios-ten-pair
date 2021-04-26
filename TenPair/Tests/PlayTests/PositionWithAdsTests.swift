@@ -81,4 +81,15 @@ final class PositionWithAdsTests: XCTestCase {
         
         XCTAssertEqual(Tile(line: 8, column: 0), position.tile(from: 56))
     }
+    
+    func testIndexWithoutAds() {
+        XCTAssertEqual(0, position.indexWithoutAd(from: 0))
+        XCTAssertEqual(26, position.indexWithoutAd(from: 26))
+        
+        XCTAssertEqual(27, position.indexWithoutAd(from: 28))
+        
+        XCTAssertEqual(53, position.indexWithoutAd(from: 54))
+        
+        XCTAssertEqual(54, position.indexWithoutAd(from: 56))
+    }
 }
