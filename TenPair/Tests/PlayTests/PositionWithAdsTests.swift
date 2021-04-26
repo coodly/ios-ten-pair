@@ -24,10 +24,10 @@ final class PositionWithAdsTests: XCTestCase {
     // 1 |> 9, ...
     // 2 |> 18, ...
     // 3 |> 27 - ad
-    // 4 |> 28, 28, 30, 31, 32, 33, 34, 35, 36,
-    // 5 |> 37, ...
+    // 4 |> 28, 29, 30, 31, 32, 33, 34, 35, 36,
+    // 5 |> 37, 38, 39, 40, 41, 42, 43, 44, 45,
     // 6 |> 46, ...
-    // 7 |> 45 - ad
+    // 7 |> 55 - ad
 
     func testFirstAdPosition() {
         XCTAssertFalse(position.hasAd(on: Tile(line: 2, column: 8)))
@@ -58,5 +58,27 @@ final class PositionWithAdsTests: XCTestCase {
 
     func testFrameOfSecondAd() {
         XCTAssertEqual(CGRect(x: 0, y: 90, width: 90, height: 30), position.frame(for: Tile(line: 7, column: 0)))
+    }
+    
+    func testNumberOfAds() {
+        XCTAssertEqual(0, position.numberOfAds(with: 18))
+        XCTAssertEqual(1, position.numberOfAds(with: 27))
+        XCTAssertEqual(1, position.numberOfAds(with: 28))
+        XCTAssertEqual(2, position.numberOfAds(with: 64))
+    }
+    
+    func testTileFromIndex() {
+        XCTAssertEqual(Tile(line: 0, column: 0), position.tile(from: 0))
+        XCTAssertEqual(Tile(line: 2, column: 0), position.tile(from: 18))
+        XCTAssertEqual(Tile(line: 2, column: 1), position.tile(from: 19))
+        
+        XCTAssertEqual(Tile(line: 3, column: 0), position.tile(from: 27)) // first ad
+        
+        XCTAssertEqual(Tile(line: 4, column: 0), position.tile(from: 28))
+        XCTAssertEqual(Tile(line: 6, column: 8), position.tile(from: 54))
+        
+        XCTAssertEqual(Tile(line: 7, column: 0), position.tile(from: 55)) // second ad
+        
+        XCTAssertEqual(Tile(line: 8, column: 0), position.tile(from: 56))
     }
 }

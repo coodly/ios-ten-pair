@@ -16,7 +16,7 @@
 
 import Config
 
-public struct Tile {
+public struct Tile: Equatable {
     public let line: Int
     public let column: Int
     

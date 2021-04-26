@@ -27,7 +27,7 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
     private var itemSize = CGSize(width: 50, height: 50)
     private var adSize = CGSize(width: 300, height: 200)
     private var sectionInset = UIEdgeInsets.zero
-    private var position = Play.Position(itemSize: .zero, adSize: .zero, adAfterLines: NativeAfterLines, showingAds: false)
+    private(set) var position = Play.Position(itemSize: .zero, adSize: .zero, adAfterLines: NativeAfterLines, showingAds: false)
     
     override func prepare() {
         super.prepare()

@@ -55,4 +55,29 @@ public struct Position {
         let itemSize = hasAd(on: tile) ? adSize : itemSize
         return CGRect(origin: CGPoint(x: positionX, y: positionY), size: itemSize)
     }
+    
+    public func numberOfAds(with tilesCount: Int) -> Int {
+        guard showingAds else {
+            return 0
+        }
+        
+        let lines = (Float(tilesCount) / Float(NumberOfColumns)).rounded(.up)
+        return Int(lines) / adAfterLines
+    }
+    
+    public func tile(from index: Int) -> Tile {
+        guard showingAds else {
+            let line = index / NumberOfColumns
+            let column = index % NumberOfColumns
+            return Tile(line: line, column: column)
+        }
+        
+        let tilesPerPage = (adAfterLines * NumberOfColumns) + 1
+        let page = index / tilesPerPage
+        let tileOnPage = index % tilesPerPage
+        let lineOnPage = tileOnPage / NumberOfColumns
+        let line = page * (adAfterLines + 1) + lineOnPage
+        let column = tileOnPage % NumberOfColumns
+        return Tile(line: line, column: column)
+    }
 }

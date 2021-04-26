@@ -15,6 +15,7 @@
 */
 
 import GameplayKit
+import Play
 import Rendered
 import UIKit
 
@@ -30,6 +31,7 @@ internal class PlayViewController: UIViewController {
     private lazy var field = PlayField()
     
     private lazy var layout = NumbersFlowLayout()
+    private lazy var position = layout.position
     @IBOutlet private var collectionView: UICollectionView!
     private var selected = Set<Int>()
     
@@ -342,10 +344,10 @@ extension PlayViewController: PlayDelegate {
 
 extension PlayViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        field.count
+        field.count + position.numberOfAds(with: field.count)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {    
         let cell: NumberCell = collectionView.dequeueReusableCell(for: indexPath)
         let marker: NumberMarker
         if selected.contains(indexPath.row) {
