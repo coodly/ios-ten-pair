@@ -374,15 +374,17 @@ extension PlayViewController: UICollectionViewDelegate {
             return false
         }
         
-        return field.hasValue(at: indexPath.row)
+        let withoutAds = position.indexWithoutAd(from: indexPath.row)
+        return field.hasValue(at: withoutAds)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = position.indexWithoutAd(from: indexPath.row)
         let original = selected
-        if selected.contains(indexPath.row) {
-            selected.remove(indexPath.row)
+        if selected.contains(index) {
+            selected.remove(index)
         } else {
-            selected.insert(indexPath.row)
+            selected.insert(index)
         }
         
         reload(previous: original, current: selected, animated: false) {
