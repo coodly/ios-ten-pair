@@ -89,9 +89,9 @@ public struct Position {
             return index
         }
         
-        let tilesPerPage = (adAfterLines * NumberOfColumns) + 1
-        let pages = index / tilesPerPage
-        return index - pages
+        let tilesInPage = NumberOfColumns * adAfterLines + 1
+        let numberOfPages = index / tilesInPage
+        return index - numberOfPages
     }
     
     public func indexWithAds(from index: Int) -> Int {
