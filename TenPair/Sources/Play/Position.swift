@@ -57,12 +57,15 @@ public struct Position {
     }
     
     public func numberOfAds(with tilesCount: Int) -> Int {
-        guard showingAds else {
+        let tilesOnPage = NumberOfColumns * adAfterLines
+        
+        guard showingAds, tilesCount > tilesOnPage else {
             return 0
         }
         
-        let lines = (Float(tilesCount) / Float(NumberOfColumns)).rounded(.up)
-        return Int(lines) / adAfterLines
+        let lines = numberOfLines(from: tilesCount.countToIndex)
+        let ads = lines / adAfterLines
+        return tilesCount % tilesOnPage == 0 ? ads - 1 : ads
     }
     
     public func tile(from index: Int) -> Tile {
@@ -89,5 +92,29 @@ public struct Position {
         let tilesPerPage = (adAfterLines * NumberOfColumns) + 1
         let pages = index / tilesPerPage
         return index - pages
+    }
+    
+    public func indexWithAds(from index: Int) -> Int {
+        guard showingAds else {
+            return index
+        }
+        
+        return index + numberOfAds(with: index.indexToCount)
+    }
+    
+    private func numberOfLines(from index: Int) -> Int {
+        let fullLines = index / NumberOfColumns
+        let hasPartialLine = index % NumberOfColumns != 0
+        return fullLines + (hasPartialLine ? 1 : 0)
+    }
+}
+
+extension Int {
+    fileprivate var countToIndex: Int {
+        self - 1
+    }
+    
+    fileprivate var indexToCount: Int {
+        self + 1
     }
 }

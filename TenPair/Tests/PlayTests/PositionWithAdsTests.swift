@@ -20,14 +20,14 @@ import XCTest
 final class PositionWithAdsTests: XCTestCase {
     private let position = Position(itemSize: CGSize(width: 10, height: 10), adSize: CGSize(width: 90, height: 30), adAfterLines: 3, showingAds: true)
 
-    // 0 |> 0, 1, 2, 3, 4, 5, 6, 7, 8
-    // 1 |> 9, ...
-    // 2 |> 18, ...
-    // 3 |> 27 - ad
-    // 4 |> 28, 29, 30, 31, 32, 33, 34, 35, 36,
-    // 5 |> 37, 38, 39, 40, 41, 42, 43, 44, 45,
-    // 6 |> 46, ...
-    // 7 |> 55 - ad
+    // 0 |> 0, 1, 2, 3, 4, 5, 6, 7, 8                0,  1,  2,  3,  4,  5,  6,  7,  8,
+    // 1 |> 9, ...                                   9, 10, 11, 12, 13, 14, 15, 16, 17,
+    // 2 |> 18, ...                                 18, 19, 20, 21, 22, 23, 24, 25, 26,
+    // 3 |> 27 - ad                                 27, 28, 29, 30, 31, 32, 33, 34, 35,
+    // 4 |> 28, 29, 30, 31, 32, 33, 34, 35, 36,     36, ...
+    // 5 |> 37, 38, 39, 40, 41, 42, 43, 44, 45,     45, ...
+    // 6 |> 46, ...                                 54, ...
+    // 7 |> 55 - ad                                 63, ...
 
     func testFirstAdPosition() {
         XCTAssertFalse(position.hasAd(on: Tile(line: 2, column: 8)))
@@ -61,10 +61,13 @@ final class PositionWithAdsTests: XCTestCase {
     }
     
     func testNumberOfAds() {
+        XCTAssertEqual(0, position.numberOfAds(with: 1))
         XCTAssertEqual(0, position.numberOfAds(with: 18))
-        XCTAssertEqual(1, position.numberOfAds(with: 27))
+        XCTAssertEqual(0, position.numberOfAds(with: 27))
         XCTAssertEqual(1, position.numberOfAds(with: 28))
-        XCTAssertEqual(2, position.numberOfAds(with: 64))
+        XCTAssertEqual(1, position.numberOfAds(with: 45))
+        XCTAssertEqual(1, position.numberOfAds(with: 54))
+        XCTAssertEqual(2, position.numberOfAds(with: 55))
     }
     
     func testTileFromIndex() {
@@ -91,5 +94,16 @@ final class PositionWithAdsTests: XCTestCase {
         XCTAssertEqual(53, position.indexWithoutAd(from: 54))
         
         XCTAssertEqual(54, position.indexWithoutAd(from: 56))
+    }
+    
+    func testIndexWithAds() {
+        XCTAssertEqual(0, position.indexWithAds(from: 0))
+        XCTAssertEqual(26, position.indexWithAds(from: 26))
+
+        XCTAssertEqual(28, position.indexWithAds(from: 27))
+        
+        XCTAssertEqual(54, position.indexWithAds(from: 53))
+        
+        XCTAssertEqual(56, position.indexWithAds(from: 54))
     }
 }
