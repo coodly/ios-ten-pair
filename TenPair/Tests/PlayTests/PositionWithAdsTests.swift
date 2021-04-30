@@ -107,4 +107,15 @@ final class PositionWithAdsTests: XCTestCase {
         
         XCTAssertEqual(56, position.indexWithAds(from: 54))
     }
+    
+    func testContentHeight() {
+        XCTAssertEqual(10, position.contentHeight(with: 2))
+        XCTAssertEqual(20, position.contentHeight(with: 10))
+        XCTAssertEqual(30, position.contentHeight(with: 27))
+        
+        XCTAssertEqual(30 + 30 + 10, position.contentHeight(with: 28))
+        
+        XCTAssertEqual(30 + 30 + 30, position.contentHeight(with: 54))
+        XCTAssertEqual(7 * 10 + 2 * 30, position.contentHeight(with: 55))
+    }
 }

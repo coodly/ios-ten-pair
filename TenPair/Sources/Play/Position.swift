@@ -56,6 +56,13 @@ public struct Position {
         return CGRect(origin: CGPoint(x: positionX, y: positionY), size: itemSize)
     }
     
+    public func contentHeight(with tilesCount: Int) -> CGFloat {
+        let tileLines = numberOfLines(with: tilesCount)
+        let ads = numberOfAds(with: tilesCount)
+        
+        return CGFloat(tileLines) * itemSize.height + CGFloat(ads) * adSize.height
+    }
+    
     public func numberOfAds(with tilesCount: Int) -> Int {
         let tilesOnPage = NumberOfColumns * adAfterLines
         
@@ -63,7 +70,7 @@ public struct Position {
             return 0
         }
         
-        let lines = numberOfLines(from: tilesCount.countToIndex)
+        let lines = numberOfLines(with: tilesCount)
         let ads = lines / adAfterLines
         return tilesCount % tilesOnPage == 0 ? ads - 1 : ads
     }
@@ -102,9 +109,9 @@ public struct Position {
         return index + numberOfAds(with: index.indexToCount)
     }
     
-    private func numberOfLines(from index: Int) -> Int {
-        let fullLines = index / NumberOfColumns
-        let hasPartialLine = index % NumberOfColumns != 0
+    private func numberOfLines(with tilesCount: Int) -> Int {
+        let fullLines = tilesCount / NumberOfColumns
+        let hasPartialLine = tilesCount % NumberOfColumns != 0
         return fullLines + (hasPartialLine ? 1 : 0)
     }
 }
