@@ -15,13 +15,18 @@
 */
 
 import Config
+import CoreGraphics
 
 public struct LayoutPosition {
     private let showingAds: Bool
     private let adAfterLines: Int
-    public init(showingAds: Bool, adAfterLines: Int) {
+    private let itemSize: CGSize
+    private let adSize: CGSize
+    public init(showingAds: Bool, adAfterLines: Int, itemSize: CGSize, adSize: CGSize) {
         self.showingAds = showingAds
         self.adAfterLines = adAfterLines
+        self.itemSize = itemSize
+        self.adSize = adSize
     }
     
     public func numberOfSections(with field: [Int]) -> Int {
@@ -52,5 +57,18 @@ public struct LayoutPosition {
         }
         
         return field.count % numberOfTilesInSection
+    }
+    
+    public func contentHeight(using field: [Int]) -> CGFloat {
+        guard showingAds else {
+            return (CGFloat(field.count) / CGFloat(NumberOfColumns)).rounded(.up) * itemSize.height
+        }
+        
+        let tilesInSection = NumberOfColumns * adAfterLines
+        let fullTilesSections = field.count / tilesInSection
+        let tilesInPartial = field.count % tilesInSection
+        let linesInPartial = (CGFloat(tilesInPartial) / CGFloat(NumberOfColumns)).rounded(.up)
+
+        return CGFloat(adAfterLines * fullTilesSections) * itemSize.height + CGFloat(fullTilesSections) * adSize.height + linesInPartial * itemSize.height
     }
 }
