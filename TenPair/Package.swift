@@ -14,6 +14,9 @@ let package = Package(
             name: "Logging",
             targets: ["Logging"]),
         .library(
+            name: "Play",
+            targets: ["Play"]),
+        .library(
             name: "Rendered",
             targets: ["Rendered"]),
         .library(
@@ -30,6 +33,8 @@ let package = Package(
         .target(
             name: "Logging",
             dependencies: ["Config", "SWLogger"]),
+        .target(
+            name: "Play"),
         .target(
             name: "Rendered"),
         .target(
