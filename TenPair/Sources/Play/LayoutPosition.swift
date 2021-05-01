@@ -34,4 +34,23 @@ public struct LayoutPosition {
         let partial = field.count % tilesInSection != 0
         return fullTilesSections + fullTilesSections + (partial ? 1 : 0)
     }
+    
+    public func numberOfRows(in section: Int, using field: [Int]) -> Int {
+        guard showingAds else {
+            return field.count
+        }
+        
+        if section % 2 == 1 {
+            return 1
+        }
+        
+        let tileSection = section / 2
+        let numberOfTilesInSection = NumberOfColumns * adAfterLines
+        let fullSections = field.count / numberOfTilesInSection
+        if tileSection < fullSections {
+            return numberOfTilesInSection
+        }
+        
+        return field.count % numberOfTilesInSection
+    }
 }
