@@ -89,6 +89,10 @@
 		A7D97FA624A4F15D00F95EC9 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA524A4F15D00F95EC9 /* SpinnerView.swift */; };
 		A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */; };
 		CD3866315F8B8C99B4F4282D /* Pods_Catalyst.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E321120C6B007B1E5BC7AA21 /* Pods_Catalyst.framework */; };
+		EA5DF690263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DF68E263D1CD2001A6B0F /* AdPresentingCell.swift */; };
+		EA5DF691263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DF68E263D1CD2001A6B0F /* AdPresentingCell.swift */; };
+		EA5DF692263D1CD2001A6B0F /* AdPresentingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5DF68F263D1CD2001A6B0F /* AdPresentingCell.xib */; };
+		EA5DF693263D1CD2001A6B0F /* AdPresentingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5DF68F263D1CD2001A6B0F /* AdPresentingCell.xib */; };
 		EA922DB825CE5F13007CC237 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB225CE5F13007CC237 /* nanopb.xcframework */; };
 		EA922DB925CE5F13007CC237 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB325CE5F13007CC237 /* PromisesObjC.xcframework */; };
 		EA922DBA25CE5F13007CC237 /* UserMessagingPlatform.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB425CE5F13007CC237 /* UserMessagingPlatform.xcframework */; };
@@ -168,6 +172,8 @@
 		CDBD234CA436EF092F3D679F /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D734C99D56200ECE40196FB7 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E321120C6B007B1E5BC7AA21 /* Pods_Catalyst.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Catalyst.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA5DF68E263D1CD2001A6B0F /* AdPresentingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPresentingCell.swift; sourceTree = "<group>"; };
+		EA5DF68F263D1CD2001A6B0F /* AdPresentingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdPresentingCell.xib; sourceTree = "<group>"; };
 		EA922DB225CE5F13007CC237 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
 		EA922DB325CE5F13007CC237 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
 		EA922DB425CE5F13007CC237 /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = UserMessagingPlatform.xcframework; sourceTree = "<group>"; };
@@ -427,6 +433,8 @@
 		A7A8372724A1C332006DD8B4 /* Play */ = {
 			isa = PBXGroup;
 			children = (
+				EA5DF68E263D1CD2001A6B0F /* AdPresentingCell.swift */,
+				EA5DF68F263D1CD2001A6B0F /* AdPresentingCell.xib */,
 				A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */,
 				A72C0D28249A46DF00EFE21D /* GameStates.swift */,
 				A70BBA2B24992FA4003E561F /* NumberCell.swift */,
@@ -611,6 +619,7 @@
 				A777FA8A1E50CC76003E62D7 /* InfoPlist.strings in Resources */,
 				A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */,
 				A797BD712483808F00A6E27D /* GoogleService-Info.plist in Resources */,
+				EA5DF692263D1CD2001A6B0F /* AdPresentingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +627,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5DF693263D1CD2001A6B0F /* AdPresentingCell.xib in Resources */,
 				A75BE53D24AB807900D0AEB4 /* NumberCell.xib in Resources */,
 				A75BE56624AB84EB00D0AEB4 /* InfoPlist.strings in Resources */,
 				A75BE56A24AB89FB00D0AEB4 /* LaunchView.xib in Resources */,
@@ -784,6 +794,7 @@
 				A7A8372424A1C28E006DD8B4 /* Storyboards.swift in Sources */,
 				A70BBA2A24992E2B003E561F /* PlayViewController.swift in Sources */,
 				A7D97F9E24A4E61600F95EC9 /* StatusLabel.swift in Sources */,
+				EA5DF690263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */,
 				A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */,
 				A7A8373824A238ED006DD8B4 /* GameTheme.swift in Sources */,
 				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
@@ -812,6 +823,7 @@
 				A75BE53F24AB807900D0AEB4 /* PlayField.swift in Sources */,
 				A75BE56124AB824000D0AEB4 /* UIColor+Extensions.swift in Sources */,
 				A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */,
+				EA5DF691263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */,
 				A75BE54C24AB808800D0AEB4 /* UICollectionView+Dequeue.swift in Sources */,
 				A75BE55D24AB81A200D0AEB4 /* FeedbackService.swift in Sources */,
 				A75BE53A24AB807900D0AEB4 /* ConcurrentOperation.swift in Sources */,
