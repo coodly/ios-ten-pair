@@ -14,8 +14,24 @@
 * limitations under the License.
 */
 
-import Foundation
+import Config
 
 public struct LayoutPosition {
+    private let showingAds: Bool
+    private let adAfterLines: Int
+    public init(showingAds: Bool, adAfterLines: Int) {
+        self.showingAds = showingAds
+        self.adAfterLines = adAfterLines
+    }
     
+    public func numberOfSections(with field: [Int]) -> Int {
+        guard showingAds else {
+            return 1
+        }
+        
+        let tilesInSection = NumberOfColumns * adAfterLines
+        let fullTilesSections = field.count / tilesInSection
+        let partial = field.count % tilesInSection != 0
+        return fullTilesSections + fullTilesSections + (partial ? 1 : 0)
+    }
 }

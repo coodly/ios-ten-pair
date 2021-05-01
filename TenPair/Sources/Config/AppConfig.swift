@@ -17,6 +17,7 @@
 import Foundation
 
 public let NumberOfColumns = 9
+public let AdAfterLines = 10
 
 private let ReleaseBuild = false
 

@@ -34,12 +34,17 @@ let package = Package(
             name: "Logging",
             dependencies: ["Config", "SWLogger"]),
         .target(
-            name: "Play"),
+            name: "Play",
+            dependencies: ["Config"]),
         .target(
             name: "Rendered"),
         .target(
             name: "TenPair",
             dependencies: []),
+
+        .testTarget(
+            name: "PlayTests",
+            dependencies: ["Play"]),
         .testTarget(
             name: "TenPairTests",
             dependencies: ["TenPair"]),
