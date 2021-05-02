@@ -71,4 +71,14 @@ public struct LayoutPosition {
 
         return CGFloat(adAfterLines * fullTilesSections) * itemSize.height + CGFloat(fullTilesSections) * adSize.height + linesInPartial * itemSize.height
     }
+    
+    public func position(of row: Int, in section: Int) -> CGPoint {
+        guard showingAds else {
+            let line = CGFloat(row / NumberOfColumns)
+            let column = CGFloat(row % NumberOfColumns)
+            return CGPoint(x: itemSize.width * column, y: itemSize.height * line)
+        }
+        
+        return .zero
+    }
 }

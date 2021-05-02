@@ -42,4 +42,14 @@ final class LayoutPositionTests: XCTestCase {
         XCTAssertEqual(10 * 10 + 30 * 3, withAds.contentHeight(using: tenLines))
         XCTAssertEqual(10 * 20 + 30 * 6, withAds.contentHeight(using: twentyLines))
     }
+    
+    func testPositionOfCell() {
+        XCTAssertEqual(CGPoint.zero, withoutAds.position(of: 0, in: 0))
+        XCTAssertEqual(CGPoint(x: 80, y: 0), withoutAds.position(of: 8, in: 0))
+        XCTAssertEqual(CGPoint(x: 80, y: 10), withoutAds.position(of: 17, in: 0))
+        XCTAssertEqual(CGPoint(x: 80, y: 20), withoutAds.position(of: 26, in: 0))
+        XCTAssertEqual(CGPoint(x: 10, y: 30), withoutAds.position(of: 28, in: 0))
+        
+        XCTAssertEqual(CGPoint.zero, withAds.position(of: 0, in: 0))
+    }
 }
