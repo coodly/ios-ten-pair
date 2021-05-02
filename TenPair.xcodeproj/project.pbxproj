@@ -99,6 +99,7 @@
 		EA922DBB25CE5F13007CC237 /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB525CE5F13007CC237 /* GoogleMobileAds.xcframework */; };
 		EA922DBC25CE5F13007CC237 /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB625CE5F13007CC237 /* GoogleAppMeasurement.xcframework */; };
 		EA922DBD25CE5F13007CC237 /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB725CE5F13007CC237 /* GoogleUtilities.xcframework */; };
+		EA9D680C263E769400E8E909 /* Play in Frameworks */ = {isa = PBXBuildFile; productRef = EA9D680B263E769400E8E909 /* Play */; };
 		EABB3CDE263439E100FC1391 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDD263439E100FC1391 /* Logging */; };
 		EABB3CE0263439E600FC1391 /* Config in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDF263439E600FC1391 /* Config */; };
 		EABB3CE226343F7900FC1391 /* Rendered in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CE126343F7900FC1391 /* Rendered */; };
@@ -200,6 +201,7 @@
 				EA922DB825CE5F13007CC237 /* nanopb.xcframework in Frameworks */,
 				EA922DBD25CE5F13007CC237 /* GoogleUtilities.xcframework in Frameworks */,
 				EA922DBA25CE5F13007CC237 /* UserMessagingPlatform.xcframework in Frameworks */,
+				EA9D680C263E769400E8E909 /* Play in Frameworks */,
 				EA922DBC25CE5F13007CC237 /* GoogleAppMeasurement.xcframework in Frameworks */,
 				EA922DB925CE5F13007CC237 /* PromisesObjC.xcframework in Frameworks */,
 			);
@@ -525,6 +527,7 @@
 				EABB3CDD263439E100FC1391 /* Logging */,
 				EABB3CDF263439E600FC1391 /* Config */,
 				EABB3CE126343F7900FC1391 /* Rendered */,
+				EA9D680B263E769400E8E909 /* Play */,
 			);
 			productName = iOS;
 			productReference = A71A97411E48CCA4005E134F /* TenPair.app */;
@@ -1183,6 +1186,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A7419DF42570C81300D4C064 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = Purchases;
+		};
+		EA9D680B263E769400E8E909 /* Play */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Play;
 		};
 		EABB3CDD263439E100FC1391 /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;

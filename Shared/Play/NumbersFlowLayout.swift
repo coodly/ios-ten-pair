@@ -14,6 +14,8 @@
 * limitations under the License.
 */
 
+import Config
+import Play
 import UIKit
 
 private let Columns = 9
@@ -23,7 +25,10 @@ private let HintButtonTrayHeight = CGFloat(44 + 2 + 2)
 
 internal class NumbersFlowLayout: UICollectionViewLayout {
     private var itemSize = CGSize(width: 50, height: 50)
+    private var adSize = CGSize(width: 50 * 9, height: 100)
     private var sectionInset = UIEdgeInsets.zero
+    private(set) lazy var layoutPosition = LayoutPosition(showingAds: true, adAfterLines: AdAfterLines, itemSize: itemSize, adSize: adSize)
+    private var calculated = [IndexPath: UICollectionViewLayoutAttributes]()
     
     override func prepare() {
         super.prepare()
@@ -34,15 +39,25 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
         let width = min((availableWidth / ColumnsF).rounded(.down), 50)
         itemSize = CGSize(width: width, height: width)
         
+        let adWidth = itemSize.width * ColumnsF
+        let adHeight = adWidth * (3.0 / 4.0)
+        adSize = CGSize(width: adWidth, height: adHeight)
+        
+        layoutPosition = LayoutPosition(showingAds: true, adAfterLines: AdAfterLines, itemSize: itemSize, adSize: adSize)
+        
         let inset = ((collectionView!.frame.width - width * ColumnsF) / 2).rounded(.down)
         sectionInset = UIEdgeInsets(top: Padding, left: inset, bottom: Padding * 2 + HintButtonTrayHeight, right: inset)
+        
+        calculated.removeAll()
     }
     
     override var collectionViewContentSize: CGSize {
-        let tiles = collectionView!.numberOfItems(inSection: 0)
-        let lines = (CGFloat(tiles) / ColumnsF).rounded(.up)
+        let sections = collectionView!.numberOfSections
+        let itemsInLast = collectionView!.numberOfItems(inSection: sections - 1)
         
-        return CGSize(width: collectionView!.frame.width, height: sectionInset.top + sectionInset.bottom + lines * itemSize.height)
+        let cellsHeight = layoutPosition.contentHeight(with: sections, itemsInLast: itemsInLast)
+        
+        return CGSize(width: collectionView!.frame.width, height: sectionInset.top + sectionInset.bottom + cellsHeight)
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
@@ -51,11 +66,13 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        if let cached = calculated[indexPath] {
+            return cached
+        }
+        
         let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-        let line = CGFloat(indexPath.row / Columns)
-        let column = CGFloat(indexPath.row % Columns)
-        let origin = CGPoint(x: sectionInset.left + itemSize.width * column, y: sectionInset.top + line * itemSize.height)
-        attributes.frame = CGRect(origin: origin, size: itemSize)
+        attributes.frame = frame(for: indexPath)
+        calculated[indexPath] = attributes
         return attributes
     }
     
@@ -84,5 +101,12 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
         }
         
         return result
+    }
+    
+    private func frame(for indexPath: IndexPath) -> CGRect {
+        let position = layoutPosition.position(of: indexPath.row, in: indexPath.section)
+        let origin = CGPoint(x: sectionInset.left + position.x, y: sectionInset.top + position.y)
+        let size = indexPath.section % 2 == 1 ? adSize : itemSize
+        return CGRect(origin: origin, size: size)
     }
 }
