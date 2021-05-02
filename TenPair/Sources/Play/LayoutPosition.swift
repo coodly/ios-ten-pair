@@ -23,6 +23,7 @@ public struct LayoutPosition {
     private let itemSize: CGSize
     private let adSize: CGSize
     private let tilesInSection: Int
+    private let tilesSectionHeight: CGFloat
     public init(showingAds: Bool, adAfterLines: Int, itemSize: CGSize, adSize: CGSize) {
         self.showingAds = showingAds
         self.adAfterLines = adAfterLines
@@ -30,6 +31,7 @@ public struct LayoutPosition {
         self.adSize = adSize
         
         tilesInSection = NumberOfColumns * adAfterLines
+        tilesSectionHeight = CGFloat(adAfterLines) * itemSize.height
     }
     
     public func numberOfSections(with field: [Int]) -> Int {
@@ -136,6 +138,43 @@ public struct LayoutPosition {
     }
 
     private func indexPathsWithAds(from frame: CGRect, max: IndexPath) -> [IndexPath] {
-        []
+        var result = [IndexPath]()
+        
+        var offsetY = Swift.max(frame.origin.y, 0)
+        var section = self.section(from: offsetY)
+        
+        while offsetY <= (frame.origin.y + frame.height) {
+            if section % 2 == 1 {
+                result.append(IndexPath(row: 0, section: section))
+                offsetY += adSize.height
+            } else {
+                let rows = 0..<(NumberOfColumns * AdAfterLines)
+                result.append(contentsOf: rows.map({ IndexPath(row: $0, section: section) }))
+                offsetY += tilesSectionHeight
+            }
+            
+            section += 1
+        }
+        
+        return result.filter({ $0 <= max })
+    }
+    
+    private func section(from y: CGFloat) -> Int {
+        var offset = y
+        var section = 0
+        
+        while offset > 0 {
+            if section % 2 == 1 {
+                offset -= adSize.height
+            } else {
+                offset -= tilesSectionHeight
+            }
+            
+            if offset > 0 {
+                section += 1
+            }
+        }
+        
+        return section
     }
 }

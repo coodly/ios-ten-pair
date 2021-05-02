@@ -27,7 +27,7 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
     private var itemSize = CGSize(width: 50, height: 50)
     private var adSize = CGSize(width: 50 * 9, height: 100)
     private var sectionInset = UIEdgeInsets.zero
-    private(set) lazy var layoutPosition = LayoutPosition(showingAds: false, adAfterLines: AdAfterLines, itemSize: itemSize, adSize: adSize)
+    private(set) lazy var layoutPosition = LayoutPosition(showingAds: true, adAfterLines: AdAfterLines, itemSize: itemSize, adSize: adSize)
     private var calculated = [IndexPath: UICollectionViewLayoutAttributes]()
     
     override func prepare() {
@@ -43,7 +43,7 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
         let adHeight = adWidth * (3.0 / 4.0)
         adSize = CGSize(width: adWidth, height: adHeight)
         
-        layoutPosition = LayoutPosition(showingAds: false, adAfterLines: AdAfterLines, itemSize: itemSize, adSize: adSize)
+        layoutPosition = LayoutPosition(showingAds: true, adAfterLines: AdAfterLines, itemSize: itemSize, adSize: adSize)
         
         let inset = ((collectionView!.frame.width - width * ColumnsF) / 2).rounded(.down)
         sectionInset = UIEdgeInsets(top: Padding, left: inset, bottom: Padding * 2 + HintButtonTrayHeight, right: inset)
