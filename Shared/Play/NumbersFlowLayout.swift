@@ -27,7 +27,7 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
     private var itemSize = CGSize(width: 50, height: 50)
     private var adSize = CGSize(width: 50 * 9, height: 100)
     private var sectionInset = UIEdgeInsets.zero
-    private(set) lazy var layoutPosition = LayoutPosition(showingAds: true, adAfterLines: AdAfterLines, itemSize: itemSize, adSize: adSize)
+    private(set) lazy var layoutPosition = LayoutPosition(showingAds: false, adAfterLines: AdAfterLines, itemSize: itemSize, adSize: adSize)
     private var calculated = [IndexPath: UICollectionViewLayoutAttributes]()
     
     override func prepare() {
@@ -43,7 +43,7 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
         let adHeight = adWidth * (3.0 / 4.0)
         adSize = CGSize(width: adWidth, height: adHeight)
         
-        layoutPosition = LayoutPosition(showingAds: true, adAfterLines: AdAfterLines, itemSize: itemSize, adSize: adSize)
+        layoutPosition = LayoutPosition(showingAds: false, adAfterLines: AdAfterLines, itemSize: itemSize, adSize: adSize)
         
         let inset = ((collectionView!.frame.width - width * ColumnsF) / 2).rounded(.down)
         sectionInset = UIEdgeInsets(top: Padding, left: inset, bottom: Padding * 2 + HintButtonTrayHeight, right: inset)
@@ -77,30 +77,10 @@ internal class NumbersFlowLayout: UICollectionViewLayout {
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        let numberOfTiles = collectionView!.numberOfItems(inSection: 0)
-        
-        var result = [UICollectionViewLayoutAttributes]()
-        
-        var checkedY = rect.minY
-        while checkedY < rect.maxY {
-            defer {
-                checkedY += itemSize.height
-            }
-            
-            let line = Int(checkedY / itemSize.height)
-            for column in 0..<Columns {
-                let index = line * Columns + column
-                
-                guard index >= 0, index < numberOfTiles else {
-                    continue
-                }
-
-                let indexPath = IndexPath(row: index, section: 0)
-                result.append(layoutAttributesForItem(at: indexPath)!)
-            }
-        }
-        
-        return result
+        let sections = collectionView!.numberOfSections
+        let itemsInLast = collectionView!.numberOfItems(inSection: sections - 1)
+        let max = IndexPath(row: itemsInLast - 1, section: sections - 1)
+        return layoutPosition.indexPaths(covering: rect, max: max).compactMap(layoutAttributesForItem(at:))
     }
     
     private func frame(for indexPath: IndexPath) -> CGRect {

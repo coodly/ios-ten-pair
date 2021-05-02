@@ -15,7 +15,7 @@
 */
 
 import Config
-import CoreGraphics
+import UIKit
 
 public struct LayoutPosition {
     private let showingAds: Bool
@@ -108,5 +108,34 @@ public struct LayoutPosition {
         let column = CGFloat(row % NumberOfColumns)
 
         return CGPoint(x: itemSize.width * column, y: itemSize.height * line + sectionOffset)
+    }
+    
+    public func indexPaths(covering frame: CGRect, max: IndexPath) -> [IndexPath] {
+        showingAds ? indexPathsWithAds(from: frame, max: max) : indexPathsWithoutAds(from: frame, max: max)
+    }
+    
+    private func indexPathsWithoutAds(from frame: CGRect, max: IndexPath) -> [IndexPath] {
+        var result = [IndexPath]()
+        var offsetY = Swift.max(frame.minY, 0)
+        let columns = 0...8
+        repeat {
+            let line = Int(offsetY / itemSize.height)
+            for column in columns {
+                let index = line * NumberOfColumns + column
+                                
+                let indexPath = IndexPath(row: index, section: 0)
+                if indexPath <= max {
+                    result.append(indexPath)
+                }
+            }
+
+            offsetY += itemSize.height
+        } while offsetY < frame.maxY
+        
+        return result
+    }
+
+    private func indexPathsWithAds(from frame: CGRect, max: IndexPath) -> [IndexPath] {
+        []
     }
 }
