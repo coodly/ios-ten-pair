@@ -34,7 +34,7 @@ internal struct Position {
 
 
 internal class PlayField: MatchFinder {
-    private var numbers = [Int]()
+    private(set) var numbers = [Int]()
     private var clearedCount = 0
     private var numberOfLines = 0 {
         didSet {
