@@ -51,5 +51,9 @@ final class LayoutPositionTests: XCTestCase {
         XCTAssertEqual(CGPoint(x: 10, y: 30), withoutAds.position(of: 28, in: 0))
         
         XCTAssertEqual(CGPoint.zero, withAds.position(of: 0, in: 0))
+        XCTAssertEqual(CGPoint(x: 0, y: 30), withAds.position(of: 0, in: 1))
+        XCTAssertEqual(CGPoint(x: 0, y: 60), withAds.position(of: 0, in: 2))
+        XCTAssertEqual(CGPoint(x: 0, y: 90), withAds.position(of: 0, in: 3))
+        XCTAssertEqual(CGPoint(x: 40, y: 120), withAds.position(of: 4, in: 4))
     }
 }

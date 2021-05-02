@@ -78,7 +78,23 @@ public struct LayoutPosition {
             let column = CGFloat(row % NumberOfColumns)
             return CGPoint(x: itemSize.width * column, y: itemSize.height * line)
         }
+
+        let tilesSectionHeight = itemSize.height * CGFloat(adAfterLines)
+        let adSectionHeight = adSize.height
+
+        var sectionOffset: CGFloat = 0
         
-        return .zero
+        for index in 0..<section {
+            if index % 2 == 1 {
+                sectionOffset += adSectionHeight
+            } else {
+                sectionOffset += tilesSectionHeight
+            }
+        }
+        
+        let line = CGFloat(row / NumberOfColumns)
+        let column = CGFloat(row % NumberOfColumns)
+
+        return CGPoint(x: itemSize.width * column, y: itemSize.height * line + sectionOffset)
     }
 }
