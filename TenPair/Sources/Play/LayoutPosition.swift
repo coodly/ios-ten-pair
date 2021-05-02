@@ -22,11 +22,14 @@ public struct LayoutPosition {
     private let adAfterLines: Int
     private let itemSize: CGSize
     private let adSize: CGSize
+    private let tilesInSection: Int
     public init(showingAds: Bool, adAfterLines: Int, itemSize: CGSize, adSize: CGSize) {
         self.showingAds = showingAds
         self.adAfterLines = adAfterLines
         self.itemSize = itemSize
         self.adSize = adSize
+        
+        tilesInSection = NumberOfColumns * adAfterLines
     }
     
     public func numberOfSections(with field: [Int]) -> Int {
@@ -34,7 +37,6 @@ public struct LayoutPosition {
             return 1
         }
         
-        let tilesInSection = NumberOfColumns * adAfterLines
         let fullTilesSections = field.count / tilesInSection
         let partial = field.count % tilesInSection != 0
         return fullTilesSections + fullTilesSections + (partial ? 1 : 0)
@@ -50,13 +52,12 @@ public struct LayoutPosition {
         }
         
         let tileSection = section / 2
-        let numberOfTilesInSection = NumberOfColumns * adAfterLines
-        let fullSections = field.count / numberOfTilesInSection
+        let fullSections = field.count / tilesInSection
         if tileSection < fullSections {
-            return numberOfTilesInSection
+            return tilesInSection
         }
         
-        return field.count % numberOfTilesInSection
+        return field.count % tilesInSection
     }
     
     public func contentHeight(using field: [Int]) -> CGFloat {
@@ -64,7 +65,6 @@ public struct LayoutPosition {
             return (CGFloat(field.count) / CGFloat(NumberOfColumns)).rounded(.up) * itemSize.height
         }
         
-        let tilesInSection = NumberOfColumns * adAfterLines
         let fullTilesSections = field.count / tilesInSection
         let tilesInPartial = field.count % tilesInSection
         let linesInPartial = (CGFloat(tilesInPartial) / CGFloat(NumberOfColumns)).rounded(.up)
