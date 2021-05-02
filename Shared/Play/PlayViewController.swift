@@ -51,10 +51,13 @@ internal class PlayViewController: UIViewController {
         return queue
     }()
     
+    private lazy var layout = NumbersFlowLayout()
+    private lazy var layoutPosition = layout.layoutPosition
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.collectionViewLayout = NumbersFlowLayout()
+        collectionView.collectionViewLayout = layout
         collectionView.backgroundView = BackgroundView()    
         
         field.load()
@@ -62,6 +65,7 @@ internal class PlayViewController: UIViewController {
         navigationItem.leftBarButtonItem = menuButton
         navigationItem.rightBarButtonItem = reloadButton
         collectionView.registerCell(forType: NumberCell.self)
+        collectionView.registerCell(forType: AdPresentingCell.self)
         
         field.statusDelegate = navigationItem.titleView as! StatusLabel
         
@@ -340,11 +344,19 @@ extension PlayViewController: PlayDelegate {
 }
 
 extension PlayViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        layoutPosition.numberOfSections(with: field.numbers)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        field.count
+        layoutPosition.numberOfRows(in: section, using: field.numbers)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section % 2 == 1 {
+            return collectionView.dequeueReusableCell(for: indexPath) as AdPresentingCell
+        }
+        
         let cell: NumberCell = collectionView.dequeueReusableCell(for: indexPath)
         let marker: NumberMarker
         if selected.contains(indexPath.row) {
