@@ -56,4 +56,20 @@ final class LayoutPositionTests: XCTestCase {
         XCTAssertEqual(CGPoint(x: 0, y: 90), withAds.position(of: 0, in: 3))
         XCTAssertEqual(CGPoint(x: 40, y: 120), withAds.position(of: 4, in: 4))
     }
+    
+    func testContentHeightWithSections() {
+        XCTAssertEqual(20, withoutAds.contentHeight(with: 1, itemsInLast: 12))
+        XCTAssertEqual(30, withoutAds.contentHeight(with: 1, itemsInLast: 21))
+        XCTAssertEqual(10 * 10, withoutAds.contentHeight(with: 1, itemsInLast: 90))
+        XCTAssertEqual(20 * 10, withoutAds.contentHeight(with: 1, itemsInLast: 180))
+
+        XCTAssertEqual(20, withAds.contentHeight(with: 1, itemsInLast: 12))
+        XCTAssertEqual(30, withAds.contentHeight(with: 1, itemsInLast: 21))
+        
+        // one tile after first ad
+        XCTAssertEqual(10 * 3 + 30 + 10, withAds.contentHeight(with: 3, itemsInLast: 1))
+
+        // two rows after second ad
+        XCTAssertEqual(10 * (3 + 3 + 2) + 30 * 2, withAds.contentHeight(with: 5, itemsInLast: 12))
+    }
 }
