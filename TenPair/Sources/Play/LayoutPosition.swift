@@ -196,4 +196,18 @@ public struct LayoutPosition {
         
         return index
     }
+    
+    public func indexPath(from fieldIndex: Int) -> IndexPath {
+        guard showingAds else {
+            return IndexPath(row: fieldIndex, section: 0)
+        }
+        
+        let page = fieldIndex / tilesInSection
+        let tileInSection = fieldIndex % tilesInSection
+
+        let section = page * 2
+        let row = tileInSection
+        
+        return IndexPath(row: row, section: section)
+    }
 }
