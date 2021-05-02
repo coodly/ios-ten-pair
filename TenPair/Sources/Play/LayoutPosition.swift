@@ -177,4 +177,23 @@ public struct LayoutPosition {
         
         return section
     }
+    
+    public func fieldIndex(from indexPath: IndexPath) -> Int {
+        guard showingAds else {
+            return indexPath.row
+        }
+        
+        var index = 0
+        for section in 0..<indexPath.section {
+            if section % 2 == 1 {
+                continue
+            }
+            
+            index += tilesInSection
+        }
+        
+        index += indexPath.row
+        
+        return index
+    }
 }
