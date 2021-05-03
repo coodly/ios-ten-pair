@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LCd-8J-F2T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ymL-F1-7zI">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,10 +9,62 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Ads View Controller-->
+        <scene sceneID="vfe-OO-fR6">
+            <objects>
+                <viewController id="ymL-F1-7zI" customClass="AdsViewController" customModule="TenPair" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qIr-vn-Fh6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPN-dl-wPN">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="N8s-AW-nHH"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBx-Du-dty">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="LCd-8J-F2T" kind="embed" id="znM-o5-sqC"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jea-Bi-wQe"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="NBx-Du-dty" firstAttribute="leading" secondItem="jea-Bi-wQe" secondAttribute="leading" id="259-7C-NSJ"/>
+                            <constraint firstItem="NBx-Du-dty" firstAttribute="bottom" secondItem="jea-Bi-wQe" secondAttribute="bottom" id="3mJ-oL-h2R"/>
+                            <constraint firstItem="NBx-Du-dty" firstAttribute="trailing" secondItem="jea-Bi-wQe" secondAttribute="trailing" id="68J-x8-7eG"/>
+                            <constraint firstItem="RPN-dl-wPN" firstAttribute="trailing" secondItem="jea-Bi-wQe" secondAttribute="trailing" id="7HF-Gj-ujC"/>
+                            <constraint firstItem="RPN-dl-wPN" firstAttribute="leading" secondItem="jea-Bi-wQe" secondAttribute="leading" id="HTd-jE-yT7"/>
+                            <constraint firstItem="NBx-Du-dty" firstAttribute="top" secondItem="qIr-vn-Fh6" secondAttribute="top" id="S6B-O1-vsB"/>
+                            <constraint firstItem="NBx-Du-dty" firstAttribute="bottom" secondItem="RPN-dl-wPN" secondAttribute="top" constant="-16" id="fdR-4w-QHF"/>
+                            <constraint firstItem="jea-Bi-wQe" firstAttribute="bottom" secondItem="RPN-dl-wPN" secondAttribute="bottom" id="sUn-re-srp"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fdR-4w-QHF"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="bannerContainer" destination="RPN-dl-wPN" id="TZa-gl-hlr"/>
+                        <outlet property="bannerHeight" destination="N8s-AW-nHH" id="PaI-7X-DFO"/>
+                        <outlet property="bottomWithAds" destination="fdR-4w-QHF" id="d30-iH-hrl"/>
+                        <outlet property="bottomWithoutAds" destination="3mJ-oL-h2R" id="8hG-oW-Xb9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1o6-58-gSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-759" y="716"/>
+        </scene>
         <!--Play Navigation Controller-->
         <scene sceneID="GUs-eX-pGX">
             <objects>
                 <navigationController id="LCd-8J-F2T" customClass="PlayNavigationController" customModule="TenPair" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0hQ-gg-vMf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zMv-sO-R3G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -149,6 +201,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

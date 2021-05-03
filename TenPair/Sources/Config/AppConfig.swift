@@ -21,17 +21,17 @@ public let AdAfterLines = 10
 
 private let ReleaseBuild = true
 
-struct AdUnits {
-    let banner: String
-    let interstitial: String
+public struct AdUnits {
+    public let banner: String
+    public let interstitial: String
     static let live = AdUnits(banner: AdMobBannerUnit, interstitial: AdMobInterstitial)
     static let demo = AdUnits(banner: DemoAdMobBannerUnit, interstitial: DemoInterstitial)
 }
 
 public struct AppConfig {
     public let logs = !ReleaseBuild
-    let ads: Bool
-    let adUnits = ReleaseBuild ? AdUnits.live : AdUnits.demo
+    public let ads: Bool
+    public let adUnits = ReleaseBuild ? AdUnits.live : AdUnits.demo
     let showDebugInfo = !ReleaseBuild
     
     public static let current = AppConfig(ads: true)

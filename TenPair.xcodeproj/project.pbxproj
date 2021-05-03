@@ -93,6 +93,7 @@
 		EA5DF691263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DF68E263D1CD2001A6B0F /* AdPresentingCell.swift */; };
 		EA5DF692263D1CD2001A6B0F /* AdPresentingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5DF68F263D1CD2001A6B0F /* AdPresentingCell.xib */; };
 		EA5DF693263D1CD2001A6B0F /* AdPresentingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5DF68F263D1CD2001A6B0F /* AdPresentingCell.xib */; };
+		EA6E5943263FA72D006920D9 /* AdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6E5942263FA72D006920D9 /* AdsViewController.swift */; };
 		EA922DB825CE5F13007CC237 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB225CE5F13007CC237 /* nanopb.xcframework */; };
 		EA922DB925CE5F13007CC237 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB325CE5F13007CC237 /* PromisesObjC.xcframework */; };
 		EA922DBA25CE5F13007CC237 /* UserMessagingPlatform.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA922DB425CE5F13007CC237 /* UserMessagingPlatform.xcframework */; };
@@ -175,6 +176,7 @@
 		E321120C6B007B1E5BC7AA21 /* Pods_Catalyst.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Catalyst.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5DF68E263D1CD2001A6B0F /* AdPresentingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPresentingCell.swift; sourceTree = "<group>"; };
 		EA5DF68F263D1CD2001A6B0F /* AdPresentingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdPresentingCell.xib; sourceTree = "<group>"; };
+		EA6E5942263FA72D006920D9 /* AdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsViewController.swift; sourceTree = "<group>"; };
 		EA922DB225CE5F13007CC237 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
 		EA922DB325CE5F13007CC237 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
 		EA922DB425CE5F13007CC237 /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = UserMessagingPlatform.xcframework; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 		A71A97431E48CCA4005E134F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				EA6E5941263FA725006920D9 /* Ads */,
 				A7419E022570CA9700D4C064 /* Purchase */,
 				A797BD6F2483803F00A6E27D /* Secrets */,
 				A71A97441E48CCA4005E134F /* AppDelegate.swift */,
@@ -487,6 +490,14 @@
 				A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EA6E5941263FA725006920D9 /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E5942263FA72D006920D9 /* AdsViewController.swift */,
+			);
+			path = Ads;
 			sourceTree = "<group>";
 		};
 		EA922DB125CE5F13007CC237 /* 8.0.0 */ = {
@@ -789,6 +800,7 @@
 				A7D97FA624A4F15D00F95EC9 /* SpinnerView.swift in Sources */,
 				A7419E042570CAB000D4C064 /* RevenueCatPurchase.swift in Sources */,
 				A7D390801E4B049400EDB111 /* FieldSave.swift in Sources */,
+				EA6E5943263FA72D006920D9 /* AdsViewController.swift in Sources */,
 				A7A8372624A1C2A9006DD8B4 /* StoryboardLoaded.swift in Sources */,
 				A7419E4C2570E72600D4C064 /* PurchaseView.swift in Sources */,
 				A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */,
