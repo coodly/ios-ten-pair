@@ -132,6 +132,8 @@ internal enum L10n {
       internal static let classic = L10n.tr("Localizable", "theme.name.classic")
       /// Dark
       internal static let dark = L10n.tr("Localizable", "theme.name.dark")
+      /// Honeycomb
+      internal static let honeycomb = L10n.tr("Localizable", "theme.name.honeycomb")
       /// Pink
       internal static let pink = L10n.tr("Localizable", "theme.name.pink")
     }

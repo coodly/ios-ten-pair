@@ -35,7 +35,10 @@ internal class AppTheme {
                                                   statusBar: .default,
                                                   navigationTint: classicMain,
                                                   text: .white,
-                                                  tileBackground: .white)
+                                                  tileBackground: .white,
+                                                  buttonsForeground: .white,
+                                                  defaultTileBackground: classicMain,
+                                                  barTintColor: .white)
     
     internal static let pink = ThemeDefinition(name: "pink",
                                                main: pinkMain,
@@ -46,7 +49,10 @@ internal class AppTheme {
                                                statusBar: .default,
                                                navigationTint: pinkMain,
                                                text: .white,
-                                               tileBackground: .white)
+                                               tileBackground: .white,
+                                               buttonsForeground: .white,
+                                               defaultTileBackground: pinkMain,
+                                               barTintColor: .white)
     
     internal static let darkMainColor = UIColor.color(hexString: "#243458")
     internal static let dark = ThemeDefinition(name: "dark",
@@ -58,9 +64,29 @@ internal class AppTheme {
                                                statusBar: .lightContent,
                                                navigationTint: .white,
                                                text: .white,
-                                               tileBackground: UIColor.color(hexString: "#D4D4D4"))
-    
-    private static let all: [ThemeDefinition] = [classic, pink, dark]
+                                               tileBackground: UIColor.color(hexString: "#D4D4D4"),
+                                               buttonsForeground: .white,
+                                               defaultTileBackground: darkMainColor,
+                                               barTintColor: UIColor.color(hexString: "#121212"))
+
+    internal static let honeycombMain = UIColor(red: 246.0 / 255.0, green: 205.0 / 255.0, blue: 69.0 / 255.0, alpha: 1)
+    private static let honeycombText = UIColor(red: 76.0 / 255.0, green: 55.0 / 255.0, blue: 36.0 / 255.0, alpha: 1)
+    private static let honeycombGray = UIColor(red: 221.0 / 255.0, green: 220.0 / 255.0, blue: 221.0 / 255.0, alpha: 1)
+    internal static let honeycomb = ThemeDefinition(name: "honeycomb",
+                                               main: honeycombMain,
+                                               selected: UIColor(red: 240.0 / 255.0, green: 156.0 / 255.0, blue: 70.0 / 255.0, alpha: 1),
+                                               success: UIColor(red: 27.0 / 255.0, green: 153.0 / 255.0, blue: 130.0 / 255.0, alpha: 1),
+                                               empty: UIColor(red: 251.0 / 255.0, green: 229.0 / 255.0, blue: 214.0 / 255.0, alpha: 1),
+                                               background: .white,
+                                               statusBar: .default,
+                                               navigationTint: honeycombText,
+                                               text: honeycombText,
+                                               tileBackground: honeycombGray,
+                                               buttonsForeground: honeycombText,
+                                               defaultTileBackground: honeycombMain,
+                                               barTintColor: honeycombMain)
+
+    private static let all: [ThemeDefinition] = [classic, pink, dark, honeycomb]
     
     internal static let shared = AppTheme()
     
@@ -86,8 +112,8 @@ internal class AppTheme {
     private func apply(theme: ThemeDefinition) {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.navigationTint]
         UINavigationBar.appearance().tintColor = theme.navigationTint
-        UINavigationBar.appearance().barTintColor = theme.background
-        TileDefaultBackground.appearance().backgroundColor = theme.main
+        UINavigationBar.appearance().barTintColor = theme.barTintColor
+        TileDefaultBackground.appearance().backgroundColor = theme.defaultTileBackground
         TileNoNumberBackground.appearance().backgroundColor = theme.empty
         TileSelectedBackground.appearance().backgroundColor = theme.selected
         TileSuccessBackground.appearance().backgroundColor = theme.success
@@ -102,6 +128,7 @@ internal class AppTheme {
         TileBackgroundView.appearance().backgroundColor = theme.tileBackground
         StatusLabel.appearance().textColor = theme.navigationTint
         SpinnerView.appearance().tintColor = theme.navigationTint
+        UIButton.appearance(whenContainedInInstancesOf: [ButtonTrayView.self]).tintColor = theme.buttonsForeground
     }
     
     internal func switchToNext() -> ThemeDefinition {
@@ -143,6 +170,9 @@ internal struct ThemeDefinition: Equatable {
     let navigationTint: UIColor
     let text: UIColor
     let tileBackground: UIColor
+    let buttonsForeground: UIColor
+    let defaultTileBackground: UIColor
+    let barTintColor: UIColor
     
     internal var localizedName: String {
         let key = "theme.name.\(name)"
