@@ -72,12 +72,14 @@ internal class AppTheme {
     internal static let honeycombMain = UIColor(red: 246.0 / 255.0, green: 205.0 / 255.0, blue: 69.0 / 255.0, alpha: 1)
     private static let honeycombText = UIColor(red: 76.0 / 255.0, green: 55.0 / 255.0, blue: 36.0 / 255.0, alpha: 1)
     private static let honeycombGray = UIColor(red: 221.0 / 255.0, green: 220.0 / 255.0, blue: 221.0 / 255.0, alpha: 1)
+    private static let honeycombLight = UIColor(red: 251.0 / 255.0, green: 229.0 / 255.0, blue: 214.0 / 255.0, alpha: 1)
+    private static let honeycombEmpty = UIColor(red: 239.0 / 255.0, green: 211.0 / 255.0, blue: 193.0 / 255.0, alpha: 1)
     internal static let honeycomb = ThemeDefinition(name: "honeycomb",
                                                main: honeycombMain,
                                                selected: UIColor(red: 240.0 / 255.0, green: 156.0 / 255.0, blue: 70.0 / 255.0, alpha: 1),
                                                success: UIColor(red: 27.0 / 255.0, green: 153.0 / 255.0, blue: 130.0 / 255.0, alpha: 1),
-                                               empty: UIColor(red: 251.0 / 255.0, green: 229.0 / 255.0, blue: 214.0 / 255.0, alpha: 1),
-                                               background: .white,
+                                               empty: honeycombEmpty,
+                                               background: honeycombLight,
                                                statusBar: .default,
                                                navigationTint: honeycombText,
                                                text: honeycombText,
