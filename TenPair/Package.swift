@@ -20,6 +20,9 @@ let package = Package(
             name: "Rendered",
             targets: ["Rendered"]),
         .library(
+            name: "Save",
+            targets: ["Save"]),
+        .library(
             name: "TenPair",
             targets: ["TenPair"]),
     ],
@@ -38,6 +41,9 @@ let package = Package(
             dependencies: ["Config"]),
         .target(
             name: "Rendered"),
+        .target(
+            name: "Save",
+            dependencies: ["Config"]),
         .target(
             name: "TenPair",
             dependencies: []),

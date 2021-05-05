@@ -16,6 +16,7 @@
 
 import Config
 import Foundation
+import Save
 import UIKit
 
 internal enum MatchAction: String {
@@ -53,6 +54,11 @@ internal class PlayField: MatchFinder {
         }
     }
     
+    private let fieldSave: FieldSave
+    internal init(save: FieldSave) {
+        self.fieldSave = save
+    }
+    
     private func forwardStatus() {
         DispatchQueue.main.async {
             self.statusDelegate?.statusUpdate(lines: self.numberOfLines, tiles: self.numberOfTiles)
@@ -60,12 +66,12 @@ internal class PlayField: MatchFinder {
     }
     
     internal func load() {
-        numbers = FieldSave.load()
+        numbers = fieldSave.load()
         updateStatus()
     }
     
     internal func save() {
-        FieldSave.save(numbers)
+        fieldSave.save(numbers)
     }
     
     internal var count: Int {

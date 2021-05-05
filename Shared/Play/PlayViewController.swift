@@ -16,6 +16,7 @@
 
 import GameplayKit
 import Rendered
+import Save
 import UIKit
 
 internal protocol PlayDelegate: AnyObject {
@@ -27,7 +28,7 @@ internal protocol PlayDelegate: AnyObject {
 }
 
 internal class PlayViewController: UIViewController {    
-    private lazy var field = PlayField()
+    private lazy var field = PlayField(save: FieldSave.active)
     
     @IBOutlet private var collectionView: UICollectionView!
     private var selected = Set<Int>()
