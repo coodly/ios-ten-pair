@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Coodly LLC
+ * Copyright 2021 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,14 +27,15 @@ private enum Look: Int {
     }
 }
 
-protocol MatchFinder {
-    func openMatchIndex(_ field: [Int]) -> Int?
+public struct Match {
+    public let first: Int
+    public let second: Int
 }
 
-extension MatchFinder {
-    func openMatchIndex(_ field: [Int]) -> Int? {
-        let randomIndex = Int(arc4random_uniform(UInt32(field.count)))
-        let searchBackwards = randomBool()
+public class MatchFinder {
+    public static func openMatch(in field: [Int]) -> Match? {
+        let randomIndex = Int.random(in: 0..<field.count)
+        let searchBackwards = Bool.random()
         let search = Finder(field: field, startIndex: randomIndex, searchBackwards: searchBackwards)
         if let found = search.find() {
             return found
@@ -46,10 +47,6 @@ extension MatchFinder {
         }
         
         return nil
-    }
-    
-    fileprivate func randomBool() -> Bool {
-        return arc4random() % 2 == 0
     }
 }
 
@@ -64,15 +61,15 @@ private class Finder {
         modifier = searchBackwards ? -1 : 1
     }
     
-    func find() -> Int? {
+    fileprivate func find() -> Match? {
         var checked = start
         
         let looking = Look.shuffledValues()
         
         repeat {
             let value = field[checked]
-            if value != 0 && canSeeMatch(checked, inField: field, look: looking) {
-                return checked
+            if value != 0, let matched = canSeeMatch(checked, inField: field, look: looking) {
+                return Match(first: checked, second: matched)
             }
             
             checked += modifier
@@ -81,7 +78,7 @@ private class Finder {
         return nil
     }
     
-    fileprivate func canSeeMatch(_ checked: Int, inField field: [Int], look: [Look]) -> Bool {
+    fileprivate func canSeeMatch(_ checked: Int, inField field: [Int], look: [Look]) -> Int? {
         let indexValue = field[checked]
         for looking in look {
             guard let checkAgainst = nextIndexInDirection(checked, field: field, direction: looking) else {
@@ -91,11 +88,11 @@ private class Finder {
             let otherValue = field[checkAgainst]
             
             if indexValue == otherValue || indexValue + otherValue == 10 {
-                return true
+                return checkAgainst
             }
         }
         
-        return false
+        return nil
     }
     
     fileprivate func nextIndexInDirection(_ checked: Int, field: [Int], direction: Look) -> Int? {
@@ -112,30 +109,5 @@ private class Finder {
             }
         }
         return nil
-    }
-}
-
-//http://stackoverflow.com/questions/24026510/how-do-i-shuffle-an-array-in-swift/24029847#24029847
-extension MutableCollection {
-    /// Shuffles the contents of this collection.
-    mutating func shuffle() {
-        let c = count
-        guard c > 1 else { return }
-        
-        for (firstUnshuffled, unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
-            // Change `Int` in the next line to `IndexDistance` in < Swift 4.1
-            let d: Int = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
-            let i = index(firstUnshuffled, offsetBy: d)
-            swapAt(firstUnshuffled, i)
-        }
-    }
-}
-
-extension Sequence {
-    /// Returns an array with the contents of this sequence, shuffled.
-    func shuffled() -> [Element] {
-        var result = Array(self)
-        result.shuffle()
-        return result
     }
 }

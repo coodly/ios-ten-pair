@@ -30,7 +30,6 @@
 		A7419E502570ED4600D4C064 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E4F2570ED4600D4C064 /* ActivityIndicatorView.swift */; };
 		A742610A2486B3F6003B9E9E /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74261092486B3F6003B9E9E /* Insight.swift */; };
 		A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
-		A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE361E55DD9B00852E6A /* MatchFinder.swift */; };
 		A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE51424AB7A5700D0AEB4 /* AppDelegate.swift */; };
 		A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75BE51A24AB7A5700D0AEB4 /* Main.storyboard */; };
 		A75BE52724AB7F4D00D0AEB4 /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74261092486B3F6003B9E9E /* Insight.swift */; };
@@ -61,7 +60,6 @@
 		A75BE55D24AB81A200D0AEB4 /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE55C24AB81A200D0AEB4 /* FeedbackService.swift */; };
 		A75BE56024AB823500D0AEB4 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE55F24AB823500D0AEB4 /* UIColor+Extensions.swift */; };
 		A75BE56124AB824000D0AEB4 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE55F24AB823500D0AEB4 /* UIColor+Extensions.swift */; };
-		A75BE56224AB825F00D0AEB4 /* MatchFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750CE361E55DD9B00852E6A /* MatchFinder.swift */; };
 		A75BE56524AB849800D0AEB4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75BE56424AB849800D0AEB4 /* CloudKit.framework */; };
 		A75BE56624AB84EB00D0AEB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA861E50CC76003E62D7 /* InfoPlist.strings */; };
 		A75BE56724AB84EB00D0AEB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A777FA881E50CC76003E62D7 /* Localizable.strings */; };
@@ -135,7 +133,6 @@
 		A7419E4F2570ED4600D4C064 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		A74261092486B3F6003B9E9E /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
 		A748DC3A1E57375800F16F92 /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
-		A750CE361E55DD9B00852E6A /* MatchFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinder.swift; sourceTree = "<group>"; };
 		A75BE51224AB7A5700D0AEB4 /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75BE51424AB7A5700D0AEB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A75BE51B24AB7A5700D0AEB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -276,7 +273,6 @@
 				A7BD4EB524A5C43600D613FC /* Win */,
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
 				A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */,
-				A750CE361E55DD9B00852E6A /* MatchFinder.swift */,
 				A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */,
 				A787134A1E5CA743002DEF76 /* Secrets.swift */,
 			);
@@ -792,7 +788,6 @@
 				A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */,
 				A70BBA342499F29B003E561F /* PlayField.swift in Sources */,
 				A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */,
-				A750CE371E55DD9B00852E6A /* MatchFinder.swift in Sources */,
 				A7363A371E5589DB00B7C732 /* EmptyLinesSearch.swift in Sources */,
 				A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */,
 				A75BE56024AB823500D0AEB4 /* UIColor+Extensions.swift in Sources */,
@@ -832,7 +827,6 @@
 				A75BE52724AB7F4D00D0AEB4 /* Insight.swift in Sources */,
 				A75BE55B24AB810300D0AEB4 /* UIView+Extensions.swift in Sources */,
 				A75BE53B24AB807900D0AEB4 /* GameStates.swift in Sources */,
-				A75BE56224AB825F00D0AEB4 /* MatchFinder.swift in Sources */,
 				A75BE53F24AB807900D0AEB4 /* PlayField.swift in Sources */,
 				A75BE56124AB824000D0AEB4 /* UIColor+Extensions.swift in Sources */,
 				A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */,

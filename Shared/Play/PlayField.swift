@@ -16,6 +16,7 @@
 
 import Config
 import Foundation
+import Play
 import Save
 import UIKit
 
@@ -34,7 +35,7 @@ internal struct Position {
 }
 
 
-internal class PlayField: MatchFinder {
+internal class PlayField {
     private(set) var numbers = [Int]()
     private var clearedCount = 0
     private var numberOfLines = 0 {
@@ -130,8 +131,8 @@ internal class PlayField: MatchFinder {
         numbers[index] != 0
     }
     
-    internal func openMatch() -> Int? {
-        openMatchIndex(numbers)
+    internal func openMatch() -> Match? {
+        MatchFinder.openMatch(in: numbers)
     }
     
     internal func emptyLines(with pointers: Set<Int>) -> [CountableRange<Int>] {
