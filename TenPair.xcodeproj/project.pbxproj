@@ -18,7 +18,6 @@
 		A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A97481E48CCA4005E134F /* Main.storyboard */; };
 		A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C0D28249A46DF00EFE21D /* GameStates.swift */; };
-		A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */; };
 		A7363A371E5589DB00B7C732 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
 		A7419DF62570C81300D4C064 /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = A7419DF52570C81300D4C064 /* Purchases */; };
 		A7419E042570CAB000D4C064 /* RevenueCatPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E032570CAB000D4C064 /* RevenueCatPurchase.swift */; };
@@ -34,7 +33,6 @@
 		A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75BE51A24AB7A5700D0AEB4 /* Main.storyboard */; };
 		A75BE52724AB7F4D00D0AEB4 /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74261092486B3F6003B9E9E /* Insight.swift */; };
 		A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373724A238ED006DD8B4 /* GameTheme.swift */; };
-		A75BE52C24AB800B00D0AEB4 /* NumbersPathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */; };
 		A75BE52D24AB801800D0AEB4 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
 		A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
 		A75BE53024AB804D00D0AEB4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA124A4EC9100F95EC9 /* LoadingViewController.swift */; };
@@ -122,7 +120,6 @@
 		A71A97491E48CCA4005E134F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A71A974E1E48CCA4005E134F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A72C0D28249A46DF00EFE21D /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
-		A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumbersPathFinder.swift; sourceTree = "<group>"; };
 		A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyLinesSearch.swift; sourceTree = "<group>"; };
 		A7419E032570CAB000D4C064 /* RevenueCatPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueCatPurchase.swift; sourceTree = "<group>"; };
 		A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUIViewController.swift; sourceTree = "<group>"; };
@@ -273,7 +270,6 @@
 				A7BD4EB524A5C43600D613FC /* Win */,
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
 				A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */,
-				A7363A341E55896D00B7C732 /* NumbersPathFinder.swift */,
 				A787134A1E5CA743002DEF76 /* Secrets.swift */,
 			);
 			path = Shared;
@@ -802,7 +798,6 @@
 				A70BBA2A24992E2B003E561F /* PlayViewController.swift in Sources */,
 				A7D97F9E24A4E61600F95EC9 /* StatusLabel.swift in Sources */,
 				EA5DF690263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */,
-				A7363A351E55896D00B7C732 /* NumbersPathFinder.swift in Sources */,
 				A7A8373824A238ED006DD8B4 /* GameTheme.swift in Sources */,
 				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
 				A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */,
@@ -837,7 +832,6 @@
 				A75BE53C24AB807900D0AEB4 /* NumberCell.swift in Sources */,
 				A75BE55324AB809F00D0AEB4 /* Storyboards.swift in Sources */,
 				A75BE54124AB807900D0AEB4 /* PlayViewController.swift in Sources */,
-				A75BE52C24AB800B00D0AEB4 /* NumbersPathFinder.swift in Sources */,
 				A75BE53E24AB807900D0AEB4 /* NumbersFlowLayout.swift in Sources */,
 				A75BE54224AB807900D0AEB4 /* StatusLabel.swift in Sources */,
 				A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */,

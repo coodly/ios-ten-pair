@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Coodly LLC
+ * Copyright 2021 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,8 @@
 
 import Config
 
-private let columns = NumberOfColumns
-
-class NumbersPathFinder {
-    class func hasClearPath(_ indexes: [Int], inField: [Int]) -> Bool {
+public class PathFinder {
+    public class func hasClearPath(_ indexes: [Int], inField: [Int]) -> Bool {
         let one = indexes[0]
         let two = indexes[1]
         
@@ -30,12 +28,12 @@ class NumbersPathFinder {
             return true
         }
         
-        if first + columns == second {
+        if first + NumberOfColumns == second {
             return true
         }
         
         if onSameVerticalLine(first, secondIndex: second) {
-            var index = first + columns
+            var index = first + NumberOfColumns
             while index < second {
                 let checked = inField[index]
                 
@@ -43,7 +41,7 @@ class NumbersPathFinder {
                     return false
                 }
                 
-                index += columns
+                index += NumberOfColumns
             }
             return true
         }
@@ -59,9 +57,9 @@ class NumbersPathFinder {
         return true
     }
     
-    class func onSameVerticalLine(_ firstIndex: Int, secondIndex: Int) -> Bool {
-        let firstMod = firstIndex % columns
-        let secondMod = secondIndex % columns
+    private class func onSameVerticalLine(_ firstIndex: Int, secondIndex: Int) -> Bool {
+        let firstMod = firstIndex % NumberOfColumns
+        let secondMod = secondIndex % NumberOfColumns
         return firstMod == secondMod
     }
 }

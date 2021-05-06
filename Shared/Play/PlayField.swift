@@ -93,7 +93,7 @@ internal class PlayField {
     }
     
     internal func match(first: Int, second: Int) -> MatchAction {
-        guard NumbersPathFinder.hasClearPath([first, second], inField: numbers) else {
+        guard PathFinder.hasClearPath([first, second], inField: numbers) else {
             return .failure
         }
         
