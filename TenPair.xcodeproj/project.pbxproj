@@ -13,7 +13,6 @@
 		A70BBA2E24992FA4003E561F /* NumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70BBA2C24992FA4003E561F /* NumberCell.xib */; };
 		A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */; };
 		A70BBA322499CC20003E561F /* NumbersFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */; };
-		A70BBA342499F29B003E561F /* PlayField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA332499F29B003E561F /* PlayField.swift */; };
 		A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A97441E48CCA4005E134F /* AppDelegate.swift */; };
 		A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A97481E48CCA4005E134F /* Main.storyboard */; };
 		A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
@@ -41,7 +40,6 @@
 		A75BE53C24AB807900D0AEB4 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2B24992FA4003E561F /* NumberCell.swift */; };
 		A75BE53D24AB807900D0AEB4 /* NumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70BBA2C24992FA4003E561F /* NumberCell.xib */; };
 		A75BE53E24AB807900D0AEB4 /* NumbersFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */; };
-		A75BE53F24AB807900D0AEB4 /* PlayField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA332499F29B003E561F /* PlayField.swift */; };
 		A75BE54024AB807900D0AEB4 /* PlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */; };
 		A75BE54124AB807900D0AEB4 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2924992E2B003E561F /* PlayViewController.swift */; };
 		A75BE54224AB807900D0AEB4 /* StatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97F9D24A4E61600F95EC9 /* StatusLabel.swift */; };
@@ -111,7 +109,6 @@
 		A70BBA2C24992FA4003E561F /* NumberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCell.xib; sourceTree = "<group>"; };
 		A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeue.swift"; sourceTree = "<group>"; };
 		A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersFlowLayout.swift; sourceTree = "<group>"; };
-		A70BBA332499F29B003E561F /* PlayField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayField.swift; sourceTree = "<group>"; };
 		A71A973C1E48CCA4005E134F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A71A97411E48CCA4005E134F /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71A97441E48CCA4005E134F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -431,7 +428,6 @@
 				A70BBA2B24992FA4003E561F /* NumberCell.swift */,
 				A70BBA2C24992FA4003E561F /* NumberCell.xib */,
 				A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */,
-				A70BBA332499F29B003E561F /* PlayField.swift */,
 				A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */,
 				A70BBA2924992E2B003E561F /* PlayViewController.swift */,
 				A7D97F9D24A4E61600F95EC9 /* StatusLabel.swift */,
@@ -778,7 +774,6 @@
 				A7CCF94224A9BED6009DD181 /* PlayNavigationController.swift in Sources */,
 				A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */,
 				A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */,
-				A70BBA342499F29B003E561F /* PlayField.swift in Sources */,
 				A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */,
 				A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */,
 				A75BE56024AB823500D0AEB4 /* UIColor+Extensions.swift in Sources */,
@@ -816,7 +811,6 @@
 				A75BE52724AB7F4D00D0AEB4 /* Insight.swift in Sources */,
 				A75BE55B24AB810300D0AEB4 /* UIView+Extensions.swift in Sources */,
 				A75BE53B24AB807900D0AEB4 /* GameStates.swift in Sources */,
-				A75BE53F24AB807900D0AEB4 /* PlayField.swift in Sources */,
 				A75BE56124AB824000D0AEB4 /* UIColor+Extensions.swift in Sources */,
 				A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */,
 				EA5DF691263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */,

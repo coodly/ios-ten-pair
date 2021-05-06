@@ -14,6 +14,7 @@
 * limitations under the License.
 */
 
+import Play
 import UIKit
 
 internal class StatusLabel: UILabel, PlayFieldStatusDelegate {

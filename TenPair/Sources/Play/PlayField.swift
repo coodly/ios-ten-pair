@@ -16,27 +16,31 @@
 
 import Config
 import Foundation
-import Play
 import Save
 import UIKit
 
-internal enum MatchAction: String {
+public enum MatchAction: String {
     case match
     case failure
 }
 
-internal protocol PlayFieldStatusDelegate: AnyObject {
+public protocol PlayFieldStatusDelegate: AnyObject {
     func statusUpdate(lines: Int, tiles: Int)
 }
 
-internal struct Position {
-    let index: Int
-    let value: Int
+public struct Position {
+    public let index: Int
+    public let value: Int
+    
+    public init(index: Int, value: Int) {
+        self.index = index
+        self.value = value
+    }
 }
 
 
-internal class PlayField {
-    private(set) var numbers = [Int]()
+public class PlayField {
+    private(set) public var numbers = [Int]()
     private var clearedCount = 0
     private var numberOfLines = 0 {
         didSet {
@@ -49,14 +53,14 @@ internal class PlayField {
         }
     }
     
-    internal weak var statusDelegate: PlayFieldStatusDelegate? {
+    public weak var statusDelegate: PlayFieldStatusDelegate? {
         didSet {
             forwardStatus()
         }
     }
     
     private let fieldSave: FieldSave
-    internal init(save: FieldSave) {
+    public init(save: FieldSave) {
         self.fieldSave = save
     }
     
@@ -66,12 +70,12 @@ internal class PlayField {
         }
     }
     
-    internal func load() {
+    public func load() {
         numbers = fieldSave.load()
         updateStatus()
     }
     
-    internal func save() {
+    public func save() {
         fieldSave.save(numbers)
     }
     
@@ -79,11 +83,11 @@ internal class PlayField {
         numbers.count
     }
     
-    internal func number(at index: Int) -> Int {
+    public func number(at index: Int) -> Int {
         numbers[index]
     }
     
-    internal func reload() {
+    public func reload() {
         let added = numbers.filter({ $0 != 0 })
         numbers.append(contentsOf: added)
         
@@ -92,7 +96,7 @@ internal class PlayField {
         updateStatus()
     }
     
-    internal func match(first: Int, second: Int) -> MatchAction {
+    public func match(first: Int, second: Int) -> MatchAction {
         guard PathFinder.hasClearPath([first, second], inField: numbers) else {
             return .failure
         }
@@ -107,7 +111,7 @@ internal class PlayField {
         return .match
     }
     
-    internal func clear(numbers: Set<Int>) -> [Position] {
+    public func clear(numbers: Set<Int>) -> [Position] {
         var positions = [Position]()
         for index in numbers {
             let value = self.numbers[index]
@@ -127,20 +131,20 @@ internal class PlayField {
         return positions
     }
     
-    internal func hasValue(at index: Int) -> Bool {
+    public func hasValue(at index: Int) -> Bool {
         numbers[index] != 0
     }
     
-    internal func openMatch() -> Match? {
+    public func openMatch() -> Match? {
         MatchFinder.openMatch(in: numbers)
     }
     
-    internal func emptyLines(with pointers: Set<Int>) -> [CountableRange<Int>] {
+    public func emptyLines(with pointers: Set<Int>) -> [CountableRange<Int>] {
         let points = Array(pointers.sorted().reversed())
         return EmptyLinesSearch.emptyRangesWithCheckPoints(points, field: numbers)
     }
     
-    internal func remove(lines removed: [CountableRange<Int>]) {
+    public func remove(lines removed: [CountableRange<Int>]) {
         let lines = removed.sorted(by: { $0.lowerBound > $1.lowerBound })
         for removed in lines {
             numbers.removeSubrange(removed)
@@ -154,14 +158,14 @@ internal class PlayField {
     }
     
     private func updateLines() {
-        numberOfLines = Int((CGFloat(numbers.count) / ColumnsF).rounded(.up))
+        numberOfLines = Int((CGFloat(numbers.count) / CGFloat(NumberOfColumns)).rounded(.up))
     }
     
     private func countTiles() {
         numberOfTiles = numbers.filter({ $0 != 0 }).count
     }
     
-    internal func restart(with lines: Int) {
+    public func restart(with lines: Int) {
         if lines == 0 {
             numbers = DefaultStartBoard
         } else {
@@ -174,7 +178,7 @@ internal class PlayField {
         updateStatus()
     }
     
-    internal var gameEnded: Bool {
+    public var gameEnded: Bool {
         for num in numbers {
             if num != 0 {
                 return false
@@ -184,14 +188,14 @@ internal class PlayField {
         return true
     }
     
-    internal func restore(positions: [Position]) {
+    public func restore(positions: [Position]) {
         for position in positions {
             numbers[position.index] = position.value
         }
         numberOfTiles += positions.count
     }
     
-    internal func insert(positions: [Position]) {
+    public func insert(positions: [Position]) {
         let sorted = positions.sorted(by: { $0.index < $1.index })
         sorted.forEach({ numbers.insert($0.value, at: $0.index) })
         updateLines()

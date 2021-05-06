@@ -38,7 +38,7 @@ let package = Package(
             dependencies: ["Config", "SWLogger"]),
         .target(
             name: "Play",
-            dependencies: ["Config"]),
+            dependencies: ["Config", "Save"]),
         .target(
             name: "Rendered"),
         .target(
