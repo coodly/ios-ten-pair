@@ -18,7 +18,6 @@
 		A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A97481E48CCA4005E134F /* Main.storyboard */; };
 		A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C0D28249A46DF00EFE21D /* GameStates.swift */; };
-		A7363A371E5589DB00B7C732 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
 		A7419DF62570C81300D4C064 /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = A7419DF52570C81300D4C064 /* Purchases */; };
 		A7419E042570CAB000D4C064 /* RevenueCatPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E032570CAB000D4C064 /* RevenueCatPurchase.swift */; };
 		A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */; };
@@ -33,7 +32,6 @@
 		A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75BE51A24AB7A5700D0AEB4 /* Main.storyboard */; };
 		A75BE52724AB7F4D00D0AEB4 /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74261092486B3F6003B9E9E /* Insight.swift */; };
 		A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373724A238ED006DD8B4 /* GameTheme.swift */; };
-		A75BE52D24AB801800D0AEB4 /* EmptyLinesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */; };
 		A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
 		A75BE53024AB804D00D0AEB4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA124A4EC9100F95EC9 /* LoadingViewController.swift */; };
 		A75BE53124AB804D00D0AEB4 /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D97FA324A4ECAC00F95EC9 /* Loading.storyboard */; };
@@ -120,7 +118,6 @@
 		A71A97491E48CCA4005E134F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A71A974E1E48CCA4005E134F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A72C0D28249A46DF00EFE21D /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
-		A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyLinesSearch.swift; sourceTree = "<group>"; };
 		A7419E032570CAB000D4C064 /* RevenueCatPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueCatPurchase.swift; sourceTree = "<group>"; };
 		A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUIViewController.swift; sourceTree = "<group>"; };
 		A7419E152570CFC300D4C064 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -269,7 +266,6 @@
 				A7A8373624A238BA006DD8B4 /* Themes */,
 				A7BD4EB524A5C43600D613FC /* Win */,
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
-				A7363A361E5589DB00B7C732 /* EmptyLinesSearch.swift */,
 				A787134A1E5CA743002DEF76 /* Secrets.swift */,
 			);
 			path = Shared;
@@ -784,7 +780,6 @@
 				A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */,
 				A70BBA342499F29B003E561F /* PlayField.swift in Sources */,
 				A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */,
-				A7363A371E5589DB00B7C732 /* EmptyLinesSearch.swift in Sources */,
 				A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */,
 				A75BE56024AB823500D0AEB4 /* UIColor+Extensions.swift in Sources */,
 				A7D97FA624A4F15D00F95EC9 /* SpinnerView.swift in Sources */,
@@ -815,7 +810,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A75BE52D24AB801800D0AEB4 /* EmptyLinesSearch.swift in Sources */,
 				A75BE54024AB807900D0AEB4 /* PlayNavigationController.swift in Sources */,
 				A75BE53224AB804D00D0AEB4 /* SpinnerView.swift in Sources */,
 				A75BE55424AB809F00D0AEB4 /* StoryboardLoaded.swift in Sources */,
