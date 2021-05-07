@@ -44,7 +44,7 @@ end
 target 'Catalyst' do
     platform :ios, '13.0'
 
-    insight_pod
+    #insight_pod
 end
 
 post_install do |pi|

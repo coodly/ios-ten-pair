@@ -22,8 +22,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    private lazy var insight = Insight()
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppTheme.shared.load()
         
@@ -31,8 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FeedbackClient.active = .withoutFeedback
         
-        insight.load()
-
         return true
     }
 

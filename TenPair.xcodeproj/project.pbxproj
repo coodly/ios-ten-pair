@@ -27,7 +27,6 @@
 		A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
 		A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE51424AB7A5700D0AEB4 /* AppDelegate.swift */; };
 		A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75BE51A24AB7A5700D0AEB4 /* Main.storyboard */; };
-		A75BE52724AB7F4D00D0AEB4 /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74261092486B3F6003B9E9E /* Insight.swift */; };
 		A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373724A238ED006DD8B4 /* GameTheme.swift */; };
 		A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
 		A75BE53024AB804D00D0AEB4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA124A4EC9100F95EC9 /* LoadingViewController.swift */; };
@@ -551,7 +550,6 @@
 				A75BE50E24AB7A5700D0AEB4 /* Sources */,
 				A75BE50F24AB7A5700D0AEB4 /* Frameworks */,
 				A75BE51024AB7A5700D0AEB4 /* Resources */,
-				81D06A5F949C798C995A2CF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -610,8 +608,6 @@
 				Base,
 			);
 			mainGroup = A71A97331E48CCA4005E134F;
-			packageReferences = (
-			);
 			productRefGroup = A71A97421E48CCA4005E134F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -665,30 +661,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		81D06A5F949C798C995A2CF8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Catalyst/Pods-Catalyst-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CloudInsight/CloudInsight.framework",
-				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${BUILT_PRODUCTS_DIR}/Puff/Puff.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CloudInsight.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Puff.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Catalyst/Pods-Catalyst-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		863D00F969837ECFB965A493 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -831,7 +803,6 @@
 				A75BE54024AB807900D0AEB4 /* PlayNavigationController.swift in Sources */,
 				A75BE53224AB804D00D0AEB4 /* SpinnerView.swift in Sources */,
 				A75BE55424AB809F00D0AEB4 /* StoryboardLoaded.swift in Sources */,
-				A75BE52724AB7F4D00D0AEB4 /* Insight.swift in Sources */,
 				A75BE55B24AB810300D0AEB4 /* UIView+Extensions.swift in Sources */,
 				A75BE53B24AB807900D0AEB4 /* GameStates.swift in Sources */,
 				A75BE56124AB824000D0AEB4 /* UIColor+Extensions.swift in Sources */,
