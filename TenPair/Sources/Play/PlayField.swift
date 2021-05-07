@@ -171,15 +171,8 @@ public class PlayField {
         updateStatus()
     }
     
-    public func restart(with lines: Int) {
-        if lines == 0 {
-            numbers = DefaultStartBoard
-        } else {
-            let tileNumbers = 0..<10
-            let tiles = lines * NumberOfColumns
-            numbers =  (0..<tiles).compactMap({ _ in tileNumbers.randomElement() })
-        }
-        
+    public func restartRegular() {
+        numbers = DefaultStartBoard
         save()
         updateStatus()
     }

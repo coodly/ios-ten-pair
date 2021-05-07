@@ -95,6 +95,7 @@
 		EABB3CDE263439E100FC1391 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDD263439E100FC1391 /* Logging */; };
 		EABB3CE0263439E600FC1391 /* Config in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDF263439E600FC1391 /* Config */; };
 		EABB3CE226343F7900FC1391 /* Rendered in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CE126343F7900FC1391 /* Rendered */; };
+		EAF0D2732644F68A0008410D /* RandomLines in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2722644F68A0008410D /* RandomLines */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -191,6 +192,7 @@
 				EA6E594E263FAC10006920D9 /* GoogleMobileAds.xcframework in Frameworks */,
 				EABB3CE0263439E600FC1391 /* Config in Frameworks */,
 				EA9D680C263E769400E8E909 /* Play in Frameworks */,
+				EAF0D2732644F68A0008410D /* RandomLines in Frameworks */,
 				EA6E594F263FAC10006920D9 /* GoogleAppMeasurement.xcframework in Frameworks */,
 				EA6E594B263FAC10006920D9 /* nanopb.xcframework in Frameworks */,
 			);
@@ -522,6 +524,7 @@
 				EABB3CE126343F7900FC1391 /* Rendered */,
 				EA9D680B263E769400E8E909 /* Play */,
 				EA4E216B26425485000F3963 /* Save */,
+				EAF0D2722644F68A0008410D /* RandomLines */,
 			);
 			productName = iOS;
 			productReference = A71A97411E48CCA4005E134F /* TenPair.app */;
@@ -1191,6 +1194,10 @@
 		EABB3CE126343F7900FC1391 /* Rendered */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Rendered;
+		};
+		EAF0D2722644F68A0008410D /* RandomLines */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RandomLines;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -16,6 +16,7 @@
 
 import GameplayKit
 import Play
+import RandomLines
 import Rendered
 import Save
 import UIKit
@@ -402,8 +403,27 @@ extension PlayViewController: MenuUIDelegate {
         
         selected.removeAll()
         collectionView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 10, height: 10), animated: false)
-        field.restart(with: lines)
-        collectionView.reloadData()
+        
+        if lines == 0 {
+            field.restartRegular()
+            collectionView.reloadData()
+            return
+        }
+        
+        performWithLoading() {
+            completion in
+            
+            let random = RandomLines(lines: lines)
+            DispatchQueue.global(qos: .background).async {
+                let numbers = random.generate()
+                
+                DispatchQueue.main.async {
+                    self.field.restart(tiles: numbers)
+                    self.collectionView.reloadData()
+                    completion()
+                }
+            }
+        }
     }
     
     func dismissMenu() {
