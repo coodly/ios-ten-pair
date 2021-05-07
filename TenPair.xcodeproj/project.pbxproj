@@ -17,8 +17,6 @@
 		A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A97481E48CCA4005E134F /* Main.storyboard */; };
 		A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C0D28249A46DF00EFE21D /* GameStates.swift */; };
-		A7419DF62570C81300D4C064 /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = A7419DF52570C81300D4C064 /* Purchases */; };
-		A7419E042570CAB000D4C064 /* RevenueCatPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E032570CAB000D4C064 /* RevenueCatPurchase.swift */; };
 		A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */; };
 		A7419E162570CFC300D4C064 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E152570CFC300D4C064 /* MenuView.swift */; };
 		A7419E1E2570D18200D4C064 /* MenuUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7419E1D2570D18200D4C064 /* MenuUI.storyboard */; };
@@ -104,6 +102,8 @@
 		EAF0D2892644FFDF0008410D /* MenuUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7419E1D2570D18200D4C064 /* MenuUI.storyboard */; };
 		EAF0D28A2644FFDF0008410D /* MenuUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */; };
 		EAF0D28B2644FFEB0008410D /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E272570D56F00D4C064 /* L10n.swift */; };
+		EAF0D28F26450B220008410D /* RemoveAds in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D28E26450B220008410D /* RemoveAds */; };
+		EAF0D29126450B220008410D /* RemoveAdsImpl in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D29026450B220008410D /* RemoveAdsImpl */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,7 +124,6 @@
 		A71A97491E48CCA4005E134F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A71A974E1E48CCA4005E134F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A72C0D28249A46DF00EFE21D /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
-		A7419E032570CAB000D4C064 /* RevenueCatPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueCatPurchase.swift; sourceTree = "<group>"; };
 		A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUIViewController.swift; sourceTree = "<group>"; };
 		A7419E152570CFC300D4C064 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		A7419E1D2570D18200D4C064 /* MenuUI.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuUI.storyboard; sourceTree = "<group>"; };
@@ -193,16 +192,17 @@
 				EA6E594D263FAC10006920D9 /* UserMessagingPlatform.xcframework in Frameworks */,
 				EA4E216C26425485000F3963 /* Save in Frameworks */,
 				EA6E5950263FAC10006920D9 /* GoogleUtilities.xcframework in Frameworks */,
-				A7419DF62570C81300D4C064 /* Purchases in Frameworks */,
 				FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */,
 				EABB3CDE263439E100FC1391 /* Logging in Frameworks */,
 				EABB3CE226343F7900FC1391 /* Rendered in Frameworks */,
 				EA6E594E263FAC10006920D9 /* GoogleMobileAds.xcframework in Frameworks */,
 				EABB3CE0263439E600FC1391 /* Config in Frameworks */,
 				EA9D680C263E769400E8E909 /* Play in Frameworks */,
+				EAF0D29126450B220008410D /* RemoveAdsImpl in Frameworks */,
 				EAF0D2732644F68A0008410D /* RandomLines in Frameworks */,
 				EA6E594F263FAC10006920D9 /* GoogleAppMeasurement.xcframework in Frameworks */,
 				EA6E594B263FAC10006920D9 /* nanopb.xcframework in Frameworks */,
+				EAF0D28F26450B220008410D /* RemoveAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				EA6E5941263FA725006920D9 /* Ads */,
-				A7419E022570CA9700D4C064 /* Purchase */,
 				A797BD6F2483803F00A6E27D /* Secrets */,
 				A71A97441E48CCA4005E134F /* AppDelegate.swift */,
 				A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */,
@@ -305,14 +304,6 @@
 				A78FA2EC1E5C145C002DB0AF /* TenPair.entitlements */,
 			);
 			path = iOS;
-			sourceTree = "<group>";
-		};
-		A7419E022570CA9700D4C064 /* Purchase */ = {
-			isa = PBXGroup;
-			children = (
-				A7419E032570CAB000D4C064 /* RevenueCatPurchase.swift */,
-			);
-			path = Purchase;
 			sourceTree = "<group>";
 		};
 		A7419E232570D4D600D4C064 /* Localization */ = {
@@ -530,13 +521,14 @@
 			);
 			name = iOS;
 			packageProductDependencies = (
-				A7419DF52570C81300D4C064 /* Purchases */,
 				EABB3CDD263439E100FC1391 /* Logging */,
 				EABB3CDF263439E600FC1391 /* Config */,
 				EABB3CE126343F7900FC1391 /* Rendered */,
 				EA9D680B263E769400E8E909 /* Play */,
 				EA4E216B26425485000F3963 /* Save */,
 				EAF0D2722644F68A0008410D /* RandomLines */,
+				EAF0D28E26450B220008410D /* RemoveAds */,
+				EAF0D29026450B220008410D /* RemoveAdsImpl */,
 			);
 			productName = iOS;
 			productReference = A71A97411E48CCA4005E134F /* TenPair.app */;
@@ -608,7 +600,6 @@
 			);
 			mainGroup = A71A97331E48CCA4005E134F;
 			packageReferences = (
-				A7419DF42570C81300D4C064 /* XCRemoteSwiftPackageReference "purchases-ios" */,
 			);
 			productRefGroup = A71A97421E48CCA4005E134F /* Products */;
 			projectDirPath = "";
@@ -800,7 +791,6 @@
 				A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */,
 				A75BE56024AB823500D0AEB4 /* UIColor+Extensions.swift in Sources */,
 				A7D97FA624A4F15D00F95EC9 /* SpinnerView.swift in Sources */,
-				A7419E042570CAB000D4C064 /* RevenueCatPurchase.swift in Sources */,
 				A7A8372624A1C2A9006DD8B4 /* StoryboardLoaded.swift in Sources */,
 				A7419E4C2570E72600D4C064 /* PurchaseView.swift in Sources */,
 				A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */,
@@ -1180,23 +1170,7 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		A7419DF42570C81300D4C064 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
-			requirement = {
-				kind = exactVersion;
-				version = 3.11.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		A7419DF52570C81300D4C064 /* Purchases */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A7419DF42570C81300D4C064 /* XCRemoteSwiftPackageReference "purchases-ios" */;
-			productName = Purchases;
-		};
 		EA4E216B26425485000F3963 /* Save */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Save;
@@ -1236,6 +1210,14 @@
 		EAF0D2862644FE700008410D /* Rendered */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Rendered;
+		};
+		EAF0D28E26450B220008410D /* RemoveAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RemoveAds;
+		};
+		EAF0D29026450B220008410D /* RemoveAdsImpl */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RemoveAdsImpl;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

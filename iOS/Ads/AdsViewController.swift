@@ -18,6 +18,7 @@ import Config
 import Combine
 import GoogleMobileAds
 import Logging
+import RemoveAds
 import UIKit
 
 private let InterstitialShowThreshold = 10
@@ -61,7 +62,7 @@ internal class AdsViewController: UIViewController {
         bannerContainer.addSubview(banner!)
         banner!.pinToSuperviewEdges()
         
-        adsStatusSubscription = RevenueCatPurchase.shared.adsStatus
+        adsStatusSubscription = RemoveAds.active.adsStatus()
             .receive(on: DispatchQueue.main)
             .sink() {
                 [weak self]

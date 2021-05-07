@@ -17,6 +17,8 @@
 import AVKit
 import Config
 import Logging
+import RemoveAds
+import RemoveAdsImpl
 import UIKit
 
 @UIApplicationMain
@@ -34,7 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FeedbackService.load()
         insight.load()
         
-        RevenueCatPurchase.shared.load()
+        RemoveAds.active = .revenueCat
+        RemoveAds.active.load()
 
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
         

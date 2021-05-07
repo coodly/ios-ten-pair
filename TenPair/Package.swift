@@ -20,6 +20,12 @@ let package = Package(
             name: "RandomLines",
             targets: ["RandomLines"]),
         .library(
+            name: "RemoveAds",
+            targets: ["RemoveAds"]),
+        .library(
+            name: "RemoveAdsImpl",
+            targets: ["RemoveAdsImpl"]),
+        .library(
             name: "Rendered",
             targets: ["Rendered"]),
         .library(
@@ -32,6 +38,7 @@ let package = Package(
     dependencies: [
         //.package(path: "../../swift-give-me-ads"),
         .package(name: "SWLogger", url: "https://github.com/coodly/swlogger.git", from: "0.6.1"),
+        .package(name: "Purchases", url: "https://github.com/RevenueCat/purchases-ios.git", from: "3.11.1"),
     ],
     targets: [
         .target(
@@ -45,6 +52,10 @@ let package = Package(
         .target(
             name: "RandomLines",
             dependencies: ["Config", "Play", "Save"]),
+        .target(name: "RemoveAds"),
+        .target(name: "RemoveAdsImpl",
+                dependencies: ["Config", "Logging", "Purchases", "RemoveAds"]
+        ),
         .target(
             name: "Rendered"),
         .target(

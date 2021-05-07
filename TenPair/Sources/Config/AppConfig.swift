@@ -25,7 +25,7 @@ public let DefaultStartBoard = [
 public let NumberOfColumns = 9
 public let AdAfterLines = 10
 
-private let ReleaseBuild = true
+private let ReleaseBuild = false
 
 public struct AdUnits {
     public let banner: String

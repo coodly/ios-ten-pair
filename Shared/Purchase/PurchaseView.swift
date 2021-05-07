@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-import SwiftUI
 import Combine
+import RemoveAds
+import SwiftUI
 
 private enum ProductStatus: String {
     case loading
@@ -32,11 +33,9 @@ internal class PurchaseViewModel: ObservableObject {
     @Published var restoreInProgress = false
     @Published var adsRemoved = false
     
-    private let purchase: RevenueCatPurchase
     private weak var delegate: MenuViewModelDelegate?
     
-    internal init(purchase: RevenueCatPurchase, delegate: MenuViewModelDelegate?) {
-        self.purchase = purchase
+    internal init(delegate: MenuViewModelDelegate?) {
         self.delegate = delegate
         
         loadProduct()
@@ -64,7 +63,7 @@ internal class PurchaseViewModel: ObservableObject {
             self?.product = product
         }
         
-        purchase.product().receive(on: DispatchQueue.main)
+        RemoveAds.active.product().receive(on: DispatchQueue.main)
             .sink(receiveCompletion: onCompletion, receiveValue: process)
             .store(in: &disposeBag)
 
@@ -86,7 +85,7 @@ internal class PurchaseViewModel: ObservableObject {
         let process: ((Bool) -> Void) = {
             _ in
         }
-        purchase.purchase(product)
+        RemoveAds.active.purchase(product)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: onCompletion, receiveValue: process)
             .store(in: &disposeBag)
@@ -104,14 +103,14 @@ internal class PurchaseViewModel: ObservableObject {
         let process: ((Bool) -> Void) = {
             _ in
         }
-        purchase.restorePurchases()
+        RemoveAds.active.restore()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: onCompletion, receiveValue: process)
             .store(in: &disposeBag)
     }
     
     private func loadPurchaseStatus() {
-        purchase.adsStatus.receive(on: DispatchQueue.main)
+        RemoveAds.active.adsStatus().receive(on: DispatchQueue.main)
             .sink() {
                 [weak self]
                 

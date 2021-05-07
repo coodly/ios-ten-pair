@@ -1,46 +1,46 @@
 /*
- * Copyright 2020 Coodly LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright 2021 Coodly LLC
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 
 import Combine
 import Config
-import Foundation
 import Logging
 import Purchases
+import RemoveAds
 
-internal enum ShowAdsStatus: String {
-    case unknown
-    case removed
-    case show
+extension RemoveAds {
+    public static let revenueCat: RemoveAds = {
+        let purchase = RevenueCatPurchase()
+        return RemoveAds(
+            platformHasAds: true,
+            adsStatus: { purchase.adsStatus.eraseToAnyPublisher() },
+            load: purchase.load,
+            product: { purchase.product() },
+            purchase: { purchase.purchase($0) },
+            restore: { purchase.restorePurchases() }
+        )
+    }()
 }
 
-internal enum PurchaseError: LocalizedError {
-    case noProducts
-}
 
-public protocol TenPairProduct {
-    var localizedPrice: String { get }
-    var identifier: String { get }
-}
-
-internal class RevenueCatPurchase: NSObject, PurchasesDelegate {
+private class RevenueCatPurchase: NSObject, PurchasesDelegate {
     internal static let shared = RevenueCatPurchase()
 
     private(set) internal var adsStatus = CurrentValueSubject<ShowAdsStatus, Never>(ShowAdsStatus.unknown)
 
-    private override init() {}
+    fileprivate override init() {}
     
     internal func load() {
         Log.purchase.debug("Load")

@@ -14,8 +14,8 @@
 * limitations under the License.
 */
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 internal protocol MenuViewModelDelegate: AnyObject {
     func resume()
@@ -32,7 +32,7 @@ fileprivate enum MenuMode: String {
 internal class MenuViewModel: ObservableObject {
     fileprivate let randomLines = [20, 50, 100, 250, 500, 1_000]
     
-    fileprivate lazy var purchaseViewModel = PurchaseViewModel(purchase: RevenueCatPurchase.shared, delegate: delegate)
+    fileprivate lazy var purchaseViewModel = PurchaseViewModel(delegate: delegate)
     
     @Published fileprivate var mode = MenuMode.main
     @Published fileprivate var activeTheme = AppTheme.shared.active
