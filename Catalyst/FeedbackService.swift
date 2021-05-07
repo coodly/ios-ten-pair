@@ -14,14 +14,19 @@
 * limitations under the License.
 */
 
-import Foundation
+import Combine
+import UIKit
 
 internal class FeedbackService {
     static func hasMessage() -> Bool {
         false
     }
     
-    static func present() {
+    internal static var unreadStatus: AnyPublisher<Bool, Never> {
+        CurrentValueSubject(false).eraseToAnyPublisher()
+    }
+
+    static func present(on controller: UIViewController) {
         
     }
 }

@@ -96,6 +96,14 @@
 		EABB3CE0263439E600FC1391 /* Config in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDF263439E600FC1391 /* Config */; };
 		EABB3CE226343F7900FC1391 /* Rendered in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CE126343F7900FC1391 /* Rendered */; };
 		EAF0D2732644F68A0008410D /* RandomLines in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2722644F68A0008410D /* RandomLines */; };
+		EAF0D2812644FE2D0008410D /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2802644FE2D0008410D /* Logging */; };
+		EAF0D2832644FE5D0008410D /* Play in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2822644FE5D0008410D /* Play */; };
+		EAF0D2852644FE650008410D /* RandomLines in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2842644FE650008410D /* RandomLines */; };
+		EAF0D2872644FE700008410D /* Rendered in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2862644FE700008410D /* Rendered */; };
+		EAF0D2882644FFDF0008410D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E152570CFC300D4C064 /* MenuView.swift */; };
+		EAF0D2892644FFDF0008410D /* MenuUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7419E1D2570D18200D4C064 /* MenuUI.storyboard */; };
+		EAF0D28A2644FFDF0008410D /* MenuUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */; };
+		EAF0D28B2644FFEB0008410D /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E272570D56F00D4C064 /* L10n.swift */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -202,8 +210,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF0D2812644FE2D0008410D /* Logging in Frameworks */,
 				CD3866315F8B8C99B4F4282D /* Pods_Catalyst.framework in Frameworks */,
+				EAF0D2852644FE650008410D /* RandomLines in Frameworks */,
+				EAF0D2832644FE5D0008410D /* Play in Frameworks */,
 				A75BE56524AB849800D0AEB4 /* CloudKit.framework in Frameworks */,
+				EAF0D2872644FE700008410D /* Rendered in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +557,12 @@
 			dependencies = (
 			);
 			name = Catalyst;
+			packageProductDependencies = (
+				EAF0D2802644FE2D0008410D /* Logging */,
+				EAF0D2822644FE5D0008410D /* Play */,
+				EAF0D2842644FE650008410D /* RandomLines */,
+				EAF0D2862644FE700008410D /* Rendered */,
+			);
 			productName = Catalyst;
 			productReference = A75BE51224AB7A5700D0AEB4 /* TenPair.app */;
 			productType = "com.apple.product-type.application";
@@ -630,6 +648,7 @@
 				EA5DF693263D1CD2001A6B0F /* AdPresentingCell.xib in Resources */,
 				A75BE53D24AB807900D0AEB4 /* NumberCell.xib in Resources */,
 				A75BE56624AB84EB00D0AEB4 /* InfoPlist.strings in Resources */,
+				EAF0D2892644FFDF0008410D /* MenuUI.storyboard in Resources */,
 				A75BE56A24AB89FB00D0AEB4 /* LaunchView.xib in Resources */,
 				A75BE55624AB80A600D0AEB4 /* Assets.xcassets in Resources */,
 				A75BE55824AB80A600D0AEB4 /* Win.storyboard in Resources */,
@@ -815,6 +834,8 @@
 				A75BE55B24AB810300D0AEB4 /* UIView+Extensions.swift in Sources */,
 				A75BE53B24AB807900D0AEB4 /* GameStates.swift in Sources */,
 				A75BE56124AB824000D0AEB4 /* UIColor+Extensions.swift in Sources */,
+				EAF0D2882644FFDF0008410D /* MenuView.swift in Sources */,
+				EAF0D28B2644FFEB0008410D /* L10n.swift in Sources */,
 				A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */,
 				EA5DF691263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */,
 				A75BE54C24AB808800D0AEB4 /* UICollectionView+Dequeue.swift in Sources */,
@@ -824,6 +845,7 @@
 				A75BE55324AB809F00D0AEB4 /* Storyboards.swift in Sources */,
 				A75BE54124AB807900D0AEB4 /* PlayViewController.swift in Sources */,
 				A75BE53E24AB807900D0AEB4 /* NumbersFlowLayout.swift in Sources */,
+				EAF0D28A2644FFDF0008410D /* MenuUIViewController.swift in Sources */,
 				A75BE54224AB807900D0AEB4 /* StatusLabel.swift in Sources */,
 				A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */,
 				A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */,
@@ -1198,6 +1220,22 @@
 		EAF0D2722644F68A0008410D /* RandomLines */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RandomLines;
+		};
+		EAF0D2802644FE2D0008410D /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logging;
+		};
+		EAF0D2822644FE5D0008410D /* Play */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Play;
+		};
+		EAF0D2842644FE650008410D /* RandomLines */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RandomLines;
+		};
+		EAF0D2862644FE700008410D /* Rendered */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Rendered;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
