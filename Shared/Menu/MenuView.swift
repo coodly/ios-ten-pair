@@ -15,6 +15,7 @@
 */
 
 import Combine
+import RemoveAds
 import SwiftUI
 
 internal protocol MenuViewModelDelegate: AnyObject {
@@ -120,7 +121,9 @@ private struct MainMenuView: View {
             Button(action: viewModel.switchTheme) {
                 Text(L10n.Menu.Option.Theme.base(viewModel.activeTheme.name))
             }
-            PurchaseView(viewModel: viewModel.purchaseViewModel)
+            if RemoveAds.active.platformHasAds {
+                PurchaseView(viewModel: viewModel.purchaseViewModel)
+            }
             if #available(iOS 14, *), viewModel.haveMessageFromDeveloper {
                 Button(action: viewModel.showFeedback) {
                     Text(L10n.Menu.Option.Message.from)

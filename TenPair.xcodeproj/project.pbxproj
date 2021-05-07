@@ -104,6 +104,9 @@
 		EAF0D28B2644FFEB0008410D /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E272570D56F00D4C064 /* L10n.swift */; };
 		EAF0D28F26450B220008410D /* RemoveAds in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D28E26450B220008410D /* RemoveAds */; };
 		EAF0D29126450B220008410D /* RemoveAdsImpl in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D29026450B220008410D /* RemoveAdsImpl */; };
+		EAF0D2932645150C0008410D /* RemoveAds in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2922645150C0008410D /* RemoveAds */; };
+		EAF0D2942645152E0008410D /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E4B2570E72600D4C064 /* PurchaseView.swift */; };
+		EAF0D2952645152E0008410D /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E4F2570ED4600D4C064 /* ActivityIndicatorView.swift */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -213,6 +216,7 @@
 				EAF0D2812644FE2D0008410D /* Logging in Frameworks */,
 				CD3866315F8B8C99B4F4282D /* Pods_Catalyst.framework in Frameworks */,
 				EAF0D2852644FE650008410D /* RandomLines in Frameworks */,
+				EAF0D2932645150C0008410D /* RemoveAds in Frameworks */,
 				EAF0D2832644FE5D0008410D /* Play in Frameworks */,
 				A75BE56524AB849800D0AEB4 /* CloudKit.framework in Frameworks */,
 				EAF0D2872644FE700008410D /* Rendered in Frameworks */,
@@ -554,6 +558,7 @@
 				EAF0D2822644FE5D0008410D /* Play */,
 				EAF0D2842644FE650008410D /* RandomLines */,
 				EAF0D2862644FE700008410D /* Rendered */,
+				EAF0D2922645150C0008410D /* RemoveAds */,
 			);
 			productName = Catalyst;
 			productReference = A75BE51224AB7A5700D0AEB4 /* TenPair.app */;
@@ -828,6 +833,7 @@
 				EAF0D28B2644FFEB0008410D /* L10n.swift in Sources */,
 				A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */,
 				EA5DF691263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */,
+				EAF0D2952645152E0008410D /* ActivityIndicatorView.swift in Sources */,
 				A75BE54C24AB808800D0AEB4 /* UICollectionView+Dequeue.swift in Sources */,
 				A75BE55D24AB81A200D0AEB4 /* FeedbackService.swift in Sources */,
 				A75BE53A24AB807900D0AEB4 /* ConcurrentOperation.swift in Sources */,
@@ -835,6 +841,7 @@
 				A75BE55324AB809F00D0AEB4 /* Storyboards.swift in Sources */,
 				A75BE54124AB807900D0AEB4 /* PlayViewController.swift in Sources */,
 				A75BE53E24AB807900D0AEB4 /* NumbersFlowLayout.swift in Sources */,
+				EAF0D2942645152E0008410D /* PurchaseView.swift in Sources */,
 				EAF0D28A2644FFDF0008410D /* MenuUIViewController.swift in Sources */,
 				A75BE54224AB807900D0AEB4 /* StatusLabel.swift in Sources */,
 				A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */,
@@ -1218,6 +1225,10 @@
 		EAF0D29026450B220008410D /* RemoveAdsImpl */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RemoveAdsImpl;
+		};
+		EAF0D2922645150C0008410D /* RemoveAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RemoveAds;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
