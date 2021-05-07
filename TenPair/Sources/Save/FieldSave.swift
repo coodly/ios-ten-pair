@@ -42,3 +42,10 @@ extension FieldSave {
 extension FieldSave {
     public static let active: FieldSave = .live
 }
+
+extension FieldSave {
+    public static let noSave = FieldSave(
+        save: {_ in },
+        load: { fatalError() }
+    )
+}

@@ -17,6 +17,9 @@ let package = Package(
             name: "Play",
             targets: ["Play"]),
         .library(
+            name: "RandomLines",
+            targets: ["RandomLines"]),
+        .library(
             name: "Rendered",
             targets: ["Rendered"]),
         .library(
@@ -40,6 +43,9 @@ let package = Package(
             name: "Play",
             dependencies: ["Config", "Save"]),
         .target(
+            name: "RandomLines",
+            dependencies: ["Config", "Play", "Save"]),
+        .target(
             name: "Rendered"),
         .target(
             name: "Save",
@@ -51,6 +57,9 @@ let package = Package(
         .testTarget(
             name: "PlayTests",
             dependencies: ["Play"]),
+        .testTarget(
+            name: "RandomLinesTests",
+            dependencies: ["RandomLines"]),
         .testTarget(
             name: "TenPairTests",
             dependencies: ["TenPair"]),

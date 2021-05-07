@@ -42,12 +42,12 @@ public struct Position {
 public class PlayField {
     private(set) public var numbers = [Int]()
     private var clearedCount = 0
-    private var numberOfLines = 0 {
+    private(set) public var numberOfLines = 0 {
         didSet {
             forwardStatus()
         }
     }
-    private var numberOfTiles = 0 {
+    private(set) public var numberOfTiles = 0 {
         didSet {
             forwardStatus()
         }
@@ -163,6 +163,12 @@ public class PlayField {
     
     private func countTiles() {
         numberOfTiles = numbers.filter({ $0 != 0 }).count
+    }
+    
+    public func restart(tiles: [Int]) {
+        numbers = tiles
+        save()
+        updateStatus()
     }
     
     public func restart(with lines: Int) {
