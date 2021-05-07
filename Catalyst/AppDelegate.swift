@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import FeedbackClient
 import Logging
 import UIKit
 
@@ -27,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppTheme.shared.load()
         
         Log.enable()
+        
+        FeedbackClient.active = .withoutFeedback
         
         insight.load()
 

@@ -15,6 +15,7 @@
 */
 
 import Combine
+import FeedbackClient
 import RemoveAds
 import SwiftUI
 
@@ -124,11 +125,11 @@ private struct MainMenuView: View {
             if RemoveAds.active.platformHasAds {
                 PurchaseView(viewModel: viewModel.purchaseViewModel)
             }
-            if #available(iOS 14, *), viewModel.haveMessageFromDeveloper {
+            if #available(iOS 14, *), viewModel.haveMessageFromDeveloper, FeedbackClient.active.platformHasFeedback {
                 Button(action: viewModel.showFeedback) {
                     Text(L10n.Menu.Option.Message.from)
                 }
-            } else if #available(iOS 14, *) {
+            } else if #available(iOS 14, *), FeedbackClient.active.platformHasFeedback {
                 Button(action: viewModel.showFeedback) {
                     Text(L10n.Menu.Option.Send.message)
                 }

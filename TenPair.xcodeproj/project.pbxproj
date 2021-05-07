@@ -93,6 +93,8 @@
 		EABB3CDE263439E100FC1391 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDD263439E100FC1391 /* Logging */; };
 		EABB3CE0263439E600FC1391 /* Config in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDF263439E600FC1391 /* Config */; };
 		EABB3CE226343F7900FC1391 /* Rendered in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CE126343F7900FC1391 /* Rendered */; };
+		EAD9C5452645A02100EDA715 /* FeedbackClient in Frameworks */ = {isa = PBXBuildFile; productRef = EAD9C5442645A02100EDA715 /* FeedbackClient */; };
+		EAD9C5472645A02700EDA715 /* FeedbackClient in Frameworks */ = {isa = PBXBuildFile; productRef = EAD9C5462645A02700EDA715 /* FeedbackClient */; };
 		EAF0D2732644F68A0008410D /* RandomLines in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2722644F68A0008410D /* RandomLines */; };
 		EAF0D2812644FE2D0008410D /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2802644FE2D0008410D /* Logging */; };
 		EAF0D2832644FE5D0008410D /* Play in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2822644FE5D0008410D /* Play */; };
@@ -194,6 +196,7 @@
 				A7D5BA511E5DE63A003333A9 /* CloudKit.framework in Frameworks */,
 				EA6E594D263FAC10006920D9 /* UserMessagingPlatform.xcframework in Frameworks */,
 				EA4E216C26425485000F3963 /* Save in Frameworks */,
+				EAD9C5472645A02700EDA715 /* FeedbackClient in Frameworks */,
 				EA6E5950263FAC10006920D9 /* GoogleUtilities.xcframework in Frameworks */,
 				FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */,
 				EABB3CDE263439E100FC1391 /* Logging in Frameworks */,
@@ -215,6 +218,7 @@
 			files = (
 				EAF0D2812644FE2D0008410D /* Logging in Frameworks */,
 				CD3866315F8B8C99B4F4282D /* Pods_Catalyst.framework in Frameworks */,
+				EAD9C5452645A02100EDA715 /* FeedbackClient in Frameworks */,
 				EAF0D2852644FE650008410D /* RandomLines in Frameworks */,
 				EAF0D2932645150C0008410D /* RemoveAds in Frameworks */,
 				EAF0D2832644FE5D0008410D /* Play in Frameworks */,
@@ -533,6 +537,7 @@
 				EAF0D2722644F68A0008410D /* RandomLines */,
 				EAF0D28E26450B220008410D /* RemoveAds */,
 				EAF0D29026450B220008410D /* RemoveAdsImpl */,
+				EAD9C5462645A02700EDA715 /* FeedbackClient */,
 			);
 			productName = iOS;
 			productReference = A71A97411E48CCA4005E134F /* TenPair.app */;
@@ -559,6 +564,7 @@
 				EAF0D2842644FE650008410D /* RandomLines */,
 				EAF0D2862644FE700008410D /* Rendered */,
 				EAF0D2922645150C0008410D /* RemoveAds */,
+				EAD9C5442645A02100EDA715 /* FeedbackClient */,
 			);
 			productName = Catalyst;
 			productReference = A75BE51224AB7A5700D0AEB4 /* TenPair.app */;
@@ -1197,6 +1203,14 @@
 		EABB3CE126343F7900FC1391 /* Rendered */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Rendered;
+		};
+		EAD9C5442645A02100EDA715 /* FeedbackClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FeedbackClient;
+		};
+		EAD9C5462645A02700EDA715 /* FeedbackClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FeedbackClient;
 		};
 		EAF0D2722644F68A0008410D /* RandomLines */ = {
 			isa = XCSwiftPackageProductDependency;
