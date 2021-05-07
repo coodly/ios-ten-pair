@@ -25,7 +25,7 @@
 
 "restart.screen.back" = "Back";
 "restart.screen.option.regular" = "Regular board";
-"restart.screen.option.x.lines" = "Random %@ lines";
+"restart.screen.option.x.lines" = "Random ~%@ lines";
 
 "theme.name.classic" = "Classic";
 "theme.name.dark" = "Dark";
