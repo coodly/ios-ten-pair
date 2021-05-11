@@ -16,6 +16,7 @@
 
 import Config
 import Foundation
+import GameKit
 import Save
 import UIKit
 
@@ -60,8 +61,10 @@ public class PlayField {
     }
     
     private let fieldSave: FieldSave
-    public init(save: FieldSave) {
+    private let random: GKRandomSource
+    public init(save: FieldSave, random: GKRandomSource) {
         self.fieldSave = save
+        self.random = random
     }
     
     private func forwardStatus() {
@@ -136,7 +139,7 @@ public class PlayField {
     }
     
     public func openMatch() -> Match? {
-        MatchFinder.openMatch(in: numbers)
+        MatchFinder.openMatch(in: numbers, random: random)
     }
     
     public func emptyLines(with pointers: Set<Int>) -> [CountableRange<Int>] {

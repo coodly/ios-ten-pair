@@ -15,16 +15,13 @@
  */
 
 import Foundation
+import GameKit
 
-private enum Look: Int {
+private enum Look: Int, CaseIterable {
     case up = -9
     case down = 9
     case right = 1
     case left = -1
-    
-    static func shuffledValues() -> [Look] {
-        return [.up, .down, .left, .right].shuffled()
-    }
 }
 
 public struct Match {
@@ -33,15 +30,15 @@ public struct Match {
 }
 
 public class MatchFinder {
-    public static func openMatch(in field: [Int]) -> Match? {
-        let randomIndex = Int.random(in: 0..<field.count)
-        let searchBackwards = Bool.random()
-        let search = Finder(field: field, startIndex: randomIndex, searchBackwards: searchBackwards)
+    public static func openMatch(in field: [Int], random: GKRandomSource) -> Match? {
+        let randomIndex = random.nextInt(upperBound: field.count)
+        let searchBackwards = random.nextBool()
+        let search = Finder(field: field, startIndex: randomIndex, searchBackwards: searchBackwards, random: random)
         if let found = search.find() {
             return found
         }
         
-        let searchTwo = Finder(field: field, startIndex: randomIndex, searchBackwards: !searchBackwards)
+        let searchTwo = Finder(field: field, startIndex: randomIndex, searchBackwards: !searchBackwards, random: random)
         if let found = searchTwo.find() {
             return found
         }
@@ -54,17 +51,19 @@ private class Finder {
     fileprivate let field: [Int]
     fileprivate let start: Int
     fileprivate let modifier: Int
+    private let random: GKRandomSource
     
-    init(field: [Int], startIndex: Int, searchBackwards: Bool) {
+    init(field: [Int], startIndex: Int, searchBackwards: Bool, random: GKRandomSource) {
         self.field = field
         self.start = startIndex
         modifier = searchBackwards ? -1 : 1
+        self.random = random
     }
     
     fileprivate func find() -> Match? {
         var checked = start
         
-        let looking = Look.shuffledValues()
+        let looking: [Look] = random.arrayByShufflingObjects(in: Look.allCases) as! [Look]
         
         repeat {
             let value = field[checked]

@@ -30,7 +30,7 @@ internal protocol PlayDelegate: AnyObject {
 }
 
 internal class PlayViewController: UIViewController {    
-    private lazy var field = PlayField(save: FieldSave.active)
+    private lazy var field = PlayField(save: FieldSave.active, random: GKMersenneTwisterRandomSource())
     
     @IBOutlet private var collectionView: UICollectionView!
     private var selected = Set<Int>()

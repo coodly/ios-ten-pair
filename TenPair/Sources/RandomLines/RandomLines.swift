@@ -16,6 +16,7 @@
 
 
 import Config
+import GameKit
 import Play
 import Save
 
@@ -26,7 +27,7 @@ public class RandomLines {
     }
     
     public func generate() -> [Int] {
-        let field = PlayField(save: .noSave)
+        let field = PlayField(save: .noSave, random: GKMersenneTwisterRandomSource())
         field.restart(tiles: DefaultStartBoard)
         
         while field.numberOfLines < lines {
