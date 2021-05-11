@@ -14,57 +14,12 @@
 * limitations under the License.
 */
 
+import Foundation
 
-import Config
-import GameKit
-import Play
-import Save
+public struct RandomLines {
+    public let generate: ((Int) -> [Int])
+}
 
-public class RandomLines {
-    private let lines: Int
-    private let random: GKMersenneTwisterRandomSource
-    public init(lines: Int, random: GKMersenneTwisterRandomSource) {
-        self.lines = lines
-        self.random = random
-    }
-    
-    public func generate() -> [Int] {
-        let field = PlayField(save: .noSave, random: random)
-        field.restart(tiles: DefaultStartBoard)
-        
-        while field.numberOfLines < lines {
-            _ = performMatches(field: field, matched: field.numberOfLines)
-            field.reload()
-        }
-        
-        matchToCount(field: field)
-        
-        return field.numbers
-    }
-    
-    private func matchToCount(field: PlayField) {
-        while field.numberOfLines > lines {
-            let matchesToMake = max(field.numberOfLines - lines, 1)
-            if !performMatches(field: field, matched: matchesToMake) {
-                break
-            }
-        }
-    }
-    
-    private func performMatches(field: PlayField, matched: Int) -> Bool {
-        var found = false
-        for _ in 0..<matched {
-            if let match = field.openMatch() {
-                let indexes = Set([match.first, match.second])
-                _ = field.clear(numbers: indexes)
-                let empty = field.emptyLines(with: indexes)
-                field.remove(lines: empty)
-                found = true
-            } else {
-                break
-            }
-        }
-        
-        return found
-    }
+extension RandomLines {
+    public static let active: RandomLines = .badPlay
 }

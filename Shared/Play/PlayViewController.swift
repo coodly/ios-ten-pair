@@ -413,9 +413,8 @@ extension PlayViewController: MenuUIDelegate {
         performWithLoading() {
             completion in
             
-            let random = RandomLines(lines: lines, random: GKMersenneTwisterRandomSource())
             DispatchQueue.global(qos: .background).async {
-                let numbers = random.generate()
+                let numbers = RandomLines.active.generate(lines)
                 
                 DispatchQueue.main.async {
                     self.field.restart(tiles: numbers)
