@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Purchases",
+        "repositoryURL": "https://github.com/RevenueCat/purchases-ios.git",
+        "state": {
+          "branch": null,
+          "revision": "2811b25d8f275429e5d001e3990426ebba5147f4",
+          "version": "3.11.1"
+        }
+      },
+      {
+        "package": "swift-argument-parser",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser.git",
+        "state": {
+          "branch": null,
+          "revision": "986d191f94cec88f6350056da59c2e59e83d1229",
+          "version": "0.4.3"
+        }
+      },
+      {
+        "package": "SWLogger",
+        "repositoryURL": "https://github.com/coodly/swlogger.git",
+        "state": {
+          "branch": null,
+          "revision": "85ffc88e98070d62f0c5db8240177e3646b07117",
+          "version": "0.6.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

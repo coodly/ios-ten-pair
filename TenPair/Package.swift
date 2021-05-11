@@ -7,6 +7,10 @@ let package = Package(
     name: "TenPair",
     platforms: [.iOS(.v13), .macOS(.v10_15)],
     products: [
+        .executable(
+            name: "RandomSeeds",
+            targets: ["RandomSeeds"]),
+        
         .library(
             name: "Config",
             targets: ["Config"]),
@@ -42,6 +46,7 @@ let package = Package(
         //.package(path: "../../swift-give-me-ads"),
         .package(name: "SWLogger", url: "https://github.com/coodly/swlogger.git", from: "0.6.1"),
         .package(name: "Purchases", url: "https://github.com/RevenueCat/purchases-ios.git", from: "3.11.1"),
+        .package(url: "https://github.com/apple/swift-argument-parser.git", from: "0.4.3"),
     ],
     targets: [
         .target(
@@ -60,6 +65,14 @@ let package = Package(
         .target(name: "RemoveAds"),
         .target(name: "RemoveAdsImpl",
                 dependencies: ["Config", "Logging", "Purchases", "RemoveAds"]
+        ),
+        .target(
+            name: "RandomSeeds",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                "RandomLines",
+                "SWLogger",
+            ]
         ),
         .target(
             name: "Rendered"),

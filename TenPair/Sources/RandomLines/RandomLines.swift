@@ -22,12 +22,14 @@ import Save
 
 public class RandomLines {
     private let lines: Int
-    public init(lines: Int) {
+    private let random: GKMersenneTwisterRandomSource
+    public init(lines: Int, random: GKMersenneTwisterRandomSource) {
         self.lines = lines
+        self.random = random
     }
     
     public func generate() -> [Int] {
-        let field = PlayField(save: .noSave, random: GKMersenneTwisterRandomSource())
+        let field = PlayField(save: .noSave, random: random)
         field.restart(tiles: DefaultStartBoard)
         
         while field.numberOfLines < lines {
