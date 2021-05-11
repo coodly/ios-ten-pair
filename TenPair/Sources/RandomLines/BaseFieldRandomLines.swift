@@ -14,12 +14,25 @@
 * limitations under the License.
 */
 
+import Config
 import Foundation
-
-public struct RandomLines {
-    public let generate: ((Int) -> [Int])
-}
+import GameKit
 
 extension RandomLines {
-    public static let active: RandomLines = .baseField
+    internal static let baseField = RandomLines(
+        generate: {
+            lines in
+            
+            let numberOfTiles = lines * NumberOfColumns
+            let numbers = [0, 0, 0, 1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            let random = GKMersenneTwisterRandomSource()
+                        
+            var result = [Int]()
+            for _ in 0..<numberOfTiles {
+                let index = random.nextInt(upperBound: numbers.count)
+                result.append(numbers[index])
+            }
+            return result
+        }
+    )
 }
