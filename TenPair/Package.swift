@@ -70,6 +70,9 @@ let package = Package(
         .target(
             name: "ApplicationFeature",
             dependencies: [
+                "AppAdsFeature",
+                "PurchaseFeature",
+                
                 composable
             ]
         ),
