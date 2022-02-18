@@ -16,6 +16,7 @@
 
 import Combine
 import FeedbackClient
+import Localization
 import RemoveAds
 import SwiftUI
 

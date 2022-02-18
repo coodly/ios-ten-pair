@@ -3,13 +3,24 @@
 
 import PackageDescription
 
+private let composable = Target.Dependency.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+
 let package = Package(
     name: "TenPair",
+    defaultLocalization: LanguageTag("en"),
     platforms: [.iOS(.v13), .macOS(.v10_15)],
     products: [
         .executable(
             name: "RandomSeeds",
             targets: ["RandomSeeds"]),
+        
+        .library(
+            name: "AppPackages",
+            targets: [
+                "ApplicationFeature",
+                "Localization"
+            ]
+        ),
         
         .library(
             name: "Config",
@@ -51,12 +62,28 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Config"),
+            name: "ApplicationFeature",
+            dependencies: [
+                composable
+            ]
+        ),
         .target(
-            name: "FeedbackClient"),
+            name: "Config"
+        ),
+        .target(
+            name: "FeedbackClient"
+        ),
+        .target(
+            name: "Localization",
+            resources: [.process("Resources")]
+        ),
         .target(
             name: "Logging",
-            dependencies: ["Config", "SWLogger"]),
+            dependencies: [
+                "Config",
+                "SWLogger"
+            ]
+        ),
         .target(
             name: "Play",
             dependencies: ["Config", "Save"]),

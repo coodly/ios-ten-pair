@@ -1,0 +1,9 @@
+strings:
+  inputs: TenPair/Sources/Localization/Resources/en.lproj/
+  filter: Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: TenPair/Sources/Localization/L10n.swift
+      params:
+        publicAccess: true
+

@@ -15,6 +15,7 @@
  */
 
 import Combine
+import Localization
 import RemoveAds
 import SwiftUI
 
