@@ -92,7 +92,17 @@ let package = Package(
         ),
         .target(
             name: "Play",
-            dependencies: ["Config", "Save"]),
+            dependencies: [
+                "Config",
+                "Save"
+            ]
+        ),
+        .target(
+            name: "PurchaseFeature",
+            dependencies: [
+                composable
+            ]
+        ),
         .target(
             name: "RandomLines",
             dependencies: ["Config", "Play", "Save"]),
