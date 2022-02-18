@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -43,10 +43,11 @@ let package = Package(
             targets: ["TenPair"]),
     ],
     dependencies: [
-        //.package(path: "../../swift-give-me-ads"),
         .package(name: "SWLogger", url: "https://github.com/coodly/swlogger.git", from: "0.6.1"),
         .package(name: "Purchases", url: "https://github.com/RevenueCat/purchases-ios.git", from: "3.11.1"),
-        .package(url: "https://github.com/apple/swift-argument-parser.git", from: "0.4.3"),
+        .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.0.3"),
+        
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", from: "0.33.1")
     ],
     targets: [
         .target(
