@@ -62,6 +62,12 @@ let package = Package(
     ],
     targets: [
         .target(
+            name: "AppAdsFeature",
+            dependencies: [
+                composable
+            ]
+        ),
+        .target(
             name: "ApplicationFeature",
             dependencies: [
                 composable
