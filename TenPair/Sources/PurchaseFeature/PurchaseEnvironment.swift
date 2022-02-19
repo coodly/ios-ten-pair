@@ -1,5 +1,10 @@
+import PurchaseClient
+
 public struct PurchaseEnvironment {
-    public init() {
-        
+    internal let purchaseClient: PurchaseClient
+    public init(
+        purchaseClient: PurchaseClient
+    ) {
+        self.purchaseClient = purchaseClient
     }
 }

@@ -21,6 +21,12 @@ let package = Package(
                 "Localization"
             ]
         ),
+        .library(
+            name: "PurchasePackages",
+            targets: [
+                "PurchaseClientLive"
+            ]
+        ),
         
         .library(
             name: "Config",
@@ -69,6 +75,7 @@ let package = Package(
             dependencies: [
                 "AppAdsFeature",
                 "PurchaseFeature",
+                "PurchaseClient",
                 
                 composable
             ]
@@ -101,6 +108,16 @@ let package = Package(
             name: "PlayFeature",
             dependencies: [
                 composable
+            ]
+        ),
+        .target(
+            name: "PurchaseClient"
+        ),
+        .target(
+            name: "PurchaseClientLive",
+            dependencies: [
+                "PurchaseClient",
+                "Purchases"
             ]
         ),
         .target(

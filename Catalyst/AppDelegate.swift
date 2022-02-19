@@ -14,14 +14,25 @@
  * limitations under the License.
  */
 
+import ApplicationFeature
+import ComposableArchitecture
 import FeedbackClient
 import Logging
+import PurchaseClient
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
+    private lazy var store = Store(
+        initialState: ApplicationState(),
+        reducer: applicationReducer,
+        environment: ApplicationEnvironment(
+            purchaseClient: .noPurchase
+        )
+    )
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppTheme.shared.load()
         

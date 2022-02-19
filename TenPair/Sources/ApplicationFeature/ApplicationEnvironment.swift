@@ -1,9 +1,14 @@
 import AppAdsFeature
+import PurchaseClient
 import PurchaseFeature
 
 public struct ApplicationEnvironment {
-    public init() {
-        
+    private let purchaseClient: PurchaseClient
+    
+    public init(
+        purchaseClient: PurchaseClient
+    ) {
+        self.purchaseClient = purchaseClient
     }
     
     internal var appAdsEnv: AppAdsEnvironment {
@@ -11,6 +16,8 @@ public struct ApplicationEnvironment {
     }
     
     internal var purchaseEnv: PurchaseEnvironment {
-        PurchaseEnvironment()
+        PurchaseEnvironment(
+            purchaseClient: purchaseClient
+        )
     }
 }

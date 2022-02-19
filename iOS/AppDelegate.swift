@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
+import ApplicationFeature
 import AVKit
+import ComposableArchitecture
 import Config
 import Logging
+import PurchaseClient
+import PurchaseClientLive
 import RemoveAds
 import RemoveAdsImpl
 import UIKit
@@ -25,6 +29,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    private lazy var store = Store(
+        initialState: ApplicationState(),
+        reducer: applicationReducer,
+        environment: ApplicationEnvironment(
+            purchaseClient: .live
+        )
+    )
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppTheme.shared.load()
