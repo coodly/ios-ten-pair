@@ -142,8 +142,6 @@
 		A75E8CDF25700FC800CCB8DC /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		A75E8CE125700FC800CCB8DC /* 965FUXH96J.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 965FUXH96J.json; sourceTree = "<group>"; };
 		A787134A1E5CA743002DEF76 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
-		A78D56801E5AE54B002957DC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOSFrameworks/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
-		A78D56811E5AE54B002957DC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOSFrameworks/Fabric.framework; sourceTree = SOURCE_ROOT; };
 		A78FA2EC1E5C145C002DB0AF /* TenPair.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenPair.entitlements; sourceTree = "<group>"; };
 		A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
 		A797BD702483808F00A6E27D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -299,7 +297,6 @@
 				A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */,
 				A71A974E1E48CCA4005E134F /* Info.plist */,
 				A71A97481E48CCA4005E134F /* Main.storyboard */,
-				A78D56741E5AE33B002957DC /* Supporting files */,
 				A78FA2EC1E5C145C002DB0AF /* TenPair.entitlements */,
 			);
 			path = iOS;
@@ -366,15 +363,6 @@
 				EA6E5944263FAC10006920D9 /* 8.4.0 */,
 			);
 			path = GoogleMobileAds;
-			sourceTree = "<group>";
-		};
-		A78D56741E5AE33B002957DC /* Supporting files */ = {
-			isa = PBXGroup;
-			children = (
-				A78D56801E5AE54B002957DC /* Crashlytics.framework */,
-				A78D56811E5AE54B002957DC /* Fabric.framework */,
-			);
-			name = "Supporting files";
 			sourceTree = "<group>";
 		};
 		A797BD6F2483803F00A6E27D /* Secrets */ = {

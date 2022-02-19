@@ -101,6 +101,12 @@ let package = Package(
             ]
         ),
         .target(
+            name: "PlayFeature",
+            dependencies: [
+                composable
+            ]
+        ),
+        .target(
             name: "PurchaseFeature",
             dependencies: [
                 composable
