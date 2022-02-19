@@ -24,27 +24,14 @@ def feedback_pod
     end
 end
 
-def insight_pod
-  if UsedSource == PodSource::Local
-    pod 'CloudInsight', :path => '../swift-cloud-insight'
-  elsif UsedSource == PodSource::Remote
-    pod 'CloudInsight', :git => 'git@github.com:coodly/CloudInsight.git'
-  else
-    pod 'CloudInsight', :git => 'git@github.com:coodly/CloudInsight.git', :tag => '0.1.7'
-  end
-end
-
 target 'iOS' do
     platform :ios, '13.0'
 
     feedback_pod
-    insight_pod
 end
 
 target 'Catalyst' do
     platform :ios, '13.0'
-
-    #insight_pod
 end
 
 post_install do |pi|

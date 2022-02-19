@@ -22,7 +22,6 @@
 		A7419E1E2570D18200D4C064 /* MenuUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7419E1D2570D18200D4C064 /* MenuUI.storyboard */; };
 		A7419E4C2570E72600D4C064 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E4B2570E72600D4C064 /* PurchaseView.swift */; };
 		A7419E502570ED4600D4C064 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E4F2570ED4600D4C064 /* ActivityIndicatorView.swift */; };
-		A742610A2486B3F6003B9E9E /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74261092486B3F6003B9E9E /* Insight.swift */; };
 		A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
 		A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE51424AB7A5700D0AEB4 /* AppDelegate.swift */; };
 		A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75BE51A24AB7A5700D0AEB4 /* Main.storyboard */; };
@@ -129,7 +128,6 @@
 		A7419E1D2570D18200D4C064 /* MenuUI.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuUI.storyboard; sourceTree = "<group>"; };
 		A7419E4B2570E72600D4C064 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		A7419E4F2570ED4600D4C064 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
-		A74261092486B3F6003B9E9E /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
 		A748DC3A1E57375800F16F92 /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		A75BE51224AB7A5700D0AEB4 /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75BE51424AB7A5700D0AEB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -266,7 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				A7EE33B8243B741A004CF496 /* Extensions */,
-				A74261082486B3E6003B9E9E /* Insight */,
 				A75BE56924AB89E700D0AEB4 /* Launch */,
 				A7D97FA024A4EC7A00F95EC9 /* Loading */,
 				A7A8371D24A1C226006DD8B4 /* Menu */,
@@ -311,14 +308,6 @@
 				A7419E4F2570ED4600D4C064 /* ActivityIndicatorView.swift */,
 			);
 			path = Purchase;
-			sourceTree = "<group>";
-		};
-		A74261082486B3E6003B9E9E /* Insight */ = {
-			isa = PBXGroup;
-			children = (
-				A74261092486B3F6003B9E9E /* Insight.swift */,
-			);
-			path = Insight;
 			sourceTree = "<group>";
 		};
 		A75BE51324AB7A5700D0AEB4 /* Catalyst */ = {
@@ -703,17 +692,13 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CloudFeedback/CloudFeedback.framework",
-				"${BUILT_PRODUCTS_DIR}/CloudInsight/CloudInsight.framework",
 				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Puff/Puff.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CloudFeedback.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CloudInsight.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Puff.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,7 +737,6 @@
 				A7419E162570CFC300D4C064 /* MenuView.swift in Sources */,
 				A70BBA2D24992FA4003E561F /* NumberCell.swift in Sources */,
 				A70BBA322499CC20003E561F /* NumbersFlowLayout.swift in Sources */,
-				A742610A2486B3F6003B9E9E /* Insight.swift in Sources */,
 				EA6E5952263FB206006920D9 /* AdsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -943,11 +927,7 @@
 					"-framework",
 					"\"CloudFeedback\"",
 					"-framework",
-					"\"CloudInsight\"",
-					"-framework",
 					"\"CoreDataPersistence\"",
-					"-framework",
-					"\"KeychainAccess\"",
 					"-framework",
 					"\"Puff\"",
 					"-ObjC",
@@ -984,11 +964,7 @@
 					"-framework",
 					"\"CloudFeedback\"",
 					"-framework",
-					"\"CloudInsight\"",
-					"-framework",
 					"\"CoreDataPersistence\"",
-					"-framework",
-					"\"KeychainAccess\"",
 					"-framework",
 					"\"Puff\"",
 					"-ObjC",

@@ -1,6 +1,0 @@
-framework module CloudInsight {
-  umbrella header "CloudInsight-umbrella.h"
-
-  export *
-  module * { export * }
-}
