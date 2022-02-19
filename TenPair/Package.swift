@@ -80,13 +80,17 @@ let package = Package(
         .target(
             name: "AppLaunchDesktop",
             dependencies: [
-                "ApplicationFeature"
+                "ApplicationFeature",
+                "Autolayout",
+                "PlayPresentationFeature"
             ]
         ),
         .target(
             name: "AppLaunchMobile",
             dependencies: [
-                "ApplicationFeature"
+                "ApplicationFeature",
+                "Autolayout",
+                "PlayPresentationFeature"
             ]
         ),
         .target(
@@ -98,6 +102,9 @@ let package = Package(
                 
                 composable
             ]
+        ),
+        .target(
+            name: "Autolayout"
         ),
         .target(
             name: "Config"
@@ -128,6 +135,13 @@ let package = Package(
             dependencies: [
                 composable
             ]
+        ),
+        .target(
+            name: "PlayPresentationFeature",
+            dependencies: [
+                "Storyboards"
+            ],
+            resources: [.process("Resources")]
         ),
         .target(
             name: "PurchaseClient"
@@ -168,6 +182,9 @@ let package = Package(
             dependencies: [
                 "Config"
             ]
+        ),
+        .target(
+            name: "Storyboards"
         ),
 
         .testTarget(
