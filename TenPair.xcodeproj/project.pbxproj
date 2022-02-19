@@ -84,6 +84,7 @@
 		EA6E5950263FAC10006920D9 /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6E594A263FAC10006920D9 /* GoogleUtilities.xcframework */; };
 		EA6E5952263FB206006920D9 /* AdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6E5951263FB206006920D9 /* AdsViewController.swift */; };
 		EA6EC3DB27C005BD00A56B9E /* AppPackages in Frameworks */ = {isa = PBXBuildFile; productRef = EA6EC3DA27C005BD00A56B9E /* AppPackages */; };
+		EA6EC3DD27C0AF1300A56B9E /* AppPackages in Frameworks */ = {isa = PBXBuildFile; productRef = EA6EC3DC27C0AF1300A56B9E /* AppPackages */; };
 		EA9D680C263E769400E8E909 /* Play in Frameworks */ = {isa = PBXBuildFile; productRef = EA9D680B263E769400E8E909 /* Play */; };
 		EABB3CDE263439E100FC1391 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDD263439E100FC1391 /* Logging */; };
 		EABB3CE0263439E600FC1391 /* Config in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDF263439E600FC1391 /* Config */; };
@@ -207,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF0D2812644FE2D0008410D /* Logging in Frameworks */,
+				EA6EC3DD27C0AF1300A56B9E /* AppPackages in Frameworks */,
 				CD3866315F8B8C99B4F4282D /* Pods_Catalyst.framework in Frameworks */,
 				EAD9C5452645A02100EDA715 /* FeedbackClient in Frameworks */,
 				EAF0D2852644FE650008410D /* RandomLines in Frameworks */,
@@ -526,6 +528,7 @@
 				EAF0D2862644FE700008410D /* Rendered */,
 				EAF0D2922645150C0008410D /* RemoveAds */,
 				EAD9C5442645A02100EDA715 /* FeedbackClient */,
+				EA6EC3DC27C0AF1300A56B9E /* AppPackages */,
 			);
 			productName = Catalyst;
 			productReference = A75BE51224AB7A5700D0AEB4 /* TenPair.app */;
@@ -1101,6 +1104,10 @@
 			productName = Save;
 		};
 		EA6EC3DA27C005BD00A56B9E /* AppPackages */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppPackages;
+		};
+		EA6EC3DC27C0AF1300A56B9E /* AppPackages */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppPackages;
 		};
