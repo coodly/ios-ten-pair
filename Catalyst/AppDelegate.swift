@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import AppLaunchDesktop
 import ApplicationFeature
 import ComposableArchitecture
 import FeedbackClient
@@ -39,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Log.enable()
         
         FeedbackClient.active = .withoutFeedback
+        
+        let launch = window!.rootViewController as! DesktopLaunchViewController
+        launch.store = store
         
         return true
     }

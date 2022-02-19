@@ -19,6 +19,7 @@ import AVKit
 import ComposableArchitecture
 import Config
 import Logging
+import AppLaunchMobile
 import PurchaseClient
 import PurchaseClientLive
 import RemoveAds
@@ -49,6 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         RemoveAds.active.load()
 
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
+        
+        let launch = window!.rootViewController as! MobileLaunchViewController
+        launch.store = store
         
         return true
     }

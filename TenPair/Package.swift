@@ -22,12 +22,19 @@ let package = Package(
             ]
         ),
         .library(
-            name: "PurchasePackages",
+            name: "MobilePackages",
             targets: [
+                "AppLaunchMobile",
                 "PurchaseClientLive"
             ]
         ),
-        
+        .library(
+            name: "DesktopPackages",
+            targets: [
+                "AppLaunchDesktop"
+            ]
+        ),
+
         .library(
             name: "Config",
             targets: ["Config"]),
@@ -68,6 +75,18 @@ let package = Package(
             name: "AppAdsFeature",
             dependencies: [
                 composable
+            ]
+        ),
+        .target(
+            name: "AppLaunchDesktop",
+            dependencies: [
+                "ApplicationFeature"
+            ]
+        ),
+        .target(
+            name: "AppLaunchMobile",
+            dependencies: [
+                "ApplicationFeature"
             ]
         ),
         .target(

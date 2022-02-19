@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ymh-bM-GFE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20036.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XET-ju-f7P">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20018.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,6 +25,21 @@
             </objects>
             <point key="canvasLocation" x="-1048" y="161"/>
         </scene>
+        <!--Desktop Launch View Controller-->
+        <scene sceneID="fqv-l5-gdQ">
+            <objects>
+                <viewController id="XET-ju-f7P" customClass="DesktopLaunchViewController" customModule="AppLaunchDesktop" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HO1-rl-Oz5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hkH-8g-dTH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8l-Tv-SmX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1018" y="843"/>
+        </scene>
         <!--Play View Controller-->
         <scene sceneID="y1o-8w-hBL">
             <objects>
@@ -34,7 +50,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S3e-Je-oyx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="2gJ-A3-253">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -52,7 +68,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylx-cN-Jyx" customClass="ButtonTrayBackgroundView" customModule="TenPair" customModuleProvider="target">
                                         <rect key="frame" x="1" y="1" width="51" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddx-dG-jiz">
                                         <rect key="frame" x="4" y="4" width="44" height="44"/>
@@ -65,7 +81,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Ylx-cN-Jyx" firstAttribute="leading" secondItem="SHo-QV-bRT" secondAttribute="leading" constant="1" id="4gh-fH-DXy"/>
                                     <constraint firstItem="Ddx-dG-jiz" firstAttribute="leading" secondItem="SHo-QV-bRT" secondAttribute="leading" constant="4" id="DYv-3D-jzq"/>
@@ -82,7 +98,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIh-Ic-7KZ" customClass="ButtonTrayBackgroundView" customModule="TenPair" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="51" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5Z-fD-83m">
                                         <rect key="frame" x="4" y="4" width="44" height="44"/>
@@ -108,7 +124,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Eg9-dR-Bfg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="S3e-Je-oyx" firstAttribute="trailing" secondItem="k9U-u2-wut" secondAttribute="trailing" id="13x-ss-Oed"/>
                             <constraint firstItem="Eg9-dR-Bfg" firstAttribute="bottom" secondItem="SHo-QV-bRT" secondAttribute="bottom" constant="8" id="FSk-px-fwP"/>
@@ -119,7 +136,6 @@
                             <constraint firstItem="S3e-Je-oyx" firstAttribute="bottom" secondItem="k9U-u2-wut" secondAttribute="bottom" id="v1F-mp-Hau"/>
                             <constraint firstItem="Eg9-dR-Bfg" firstAttribute="bottom" secondItem="X4U-Pk-aED" secondAttribute="bottom" constant="8" id="zW6-un-7pU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Eg9-dR-Bfg"/>
                     </view>
                     <navigationItem key="navigationItem" id="VcG-fl-hba">
                         <connections>
@@ -145,4 +161,9 @@
             <point key="canvasLocation" x="-91" y="161"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
