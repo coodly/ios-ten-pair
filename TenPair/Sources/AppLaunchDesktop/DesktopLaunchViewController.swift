@@ -12,6 +12,8 @@ public class DesktopLaunchViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
+        playController.store = store.scope(state: \.playState, action: ApplicationAction.play)
+        
         let navigation = UINavigationController(rootViewController: playController)
         addChild(navigation)
         view.addSubview(navigation.view)

@@ -1,4 +1,5 @@
 import AppAdsFeature
+import PlayFeature
 import PurchaseClient
 import PurchaseFeature
 
@@ -13,6 +14,10 @@ public struct ApplicationEnvironment {
     
     internal var appAdsEnv: AppAdsEnvironment {
         AppAdsEnvironment()
+    }
+    
+    internal var playEnv: PlayEnvironment {
+        PlayEnvironment()
     }
     
     internal var purchaseEnv: PurchaseEnvironment {

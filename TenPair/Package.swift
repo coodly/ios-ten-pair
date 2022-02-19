@@ -107,6 +107,7 @@ let package = Package(
             name: "ApplicationFeature",
             dependencies: [
                 "AppAdsFeature",
+                "PlayFeature",
                 "PurchaseFeature",
                 "PurchaseClient",
                 
@@ -143,15 +144,24 @@ let package = Package(
         .target(
             name: "PlayFeature",
             dependencies: [
+                "PlaySummaryFeature",
+                
                 composable
             ]
         ),
         .target(
             name: "PlayPresentationFeature",
             dependencies: [
+                "PlayFeature",
                 "Storyboards"
             ],
             resources: [.process("Resources")]
+        ),
+        .target(
+            name: "PlaySummaryFeature",
+            dependencies: [
+                composable
+            ]
         ),
         .target(
             name: "PurchaseClient"
