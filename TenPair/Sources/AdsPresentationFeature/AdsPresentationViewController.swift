@@ -42,6 +42,10 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
             self?.showBanne(show: show)
         }
         .store(in: &disposeBag)
+        
+        navigationItem.titleView = contained.navigationItem.titleView
+        navigationItem.leftBarButtonItem = contained.navigationItem.leftBarButtonItem
+        navigationItem.rightBarButtonItem = contained.navigationItem.rightBarButtonItem
     }
     
     private func showBanne(show: Bool) {

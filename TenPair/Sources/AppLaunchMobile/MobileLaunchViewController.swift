@@ -19,7 +19,7 @@ public class MobileLaunchViewController: UIViewController {
         adsController.store = store.scope(state: \.appAdsState, action: ApplicationAction.appAds)
         adsController.contained = playController        
 
-        let navigation = UINavigationController(rootViewController: adsController)
+        let navigation = PlayNavigationController(rootViewController: adsController)
         addChild(navigation)
         view.addSubview(navigation.view)
         navigation.view.pinToSuperviewEdges()

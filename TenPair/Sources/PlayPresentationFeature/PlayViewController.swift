@@ -20,18 +20,18 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     private lazy var summaryView = PlaySummaryView(store: summaryStore)
     private lazy var summaryHosting = UIHostingController(rootView: summaryView)
     
+    private lazy var imageConfig = UIImage.SymbolConfiguration(weight: .heavy)
+    private lazy var menuImage = UIImage(systemName: "line.horizontal.3.decrease.circle", withConfiguration: imageConfig)
+    private lazy var menuButton = UIBarButtonItem(image: menuImage, style: .plain, target: nil, action: nil)
+    private lazy var reloadImage = UIImage(systemName: "arrow.2.circlepath", withConfiguration: imageConfig)
+    private lazy var reloadButton = UIBarButtonItem(image: reloadImage, style: .plain, target: nil, action: nil)
+
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if parent is UINavigationController {
-            navigationItem.titleView = summaryHosting.view
-        } else {
-            parent?.navigationItem.titleView = summaryHosting.view
-        }
+        navigationItem.titleView = summaryHosting.view
+        navigationItem.leftBarButtonItem = menuButton
+        navigationItem.rightBarButtonItem = reloadButton
+        menuButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)], for: .normal)
     }
 }
