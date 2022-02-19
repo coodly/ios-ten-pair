@@ -72,6 +72,14 @@ let package = Package(
     ],
     targets: [
         .target(
+            name: "AdsPresentationFeature",
+            dependencies: [
+                "Autolayout",
+                "Storyboards"
+            ],
+            resources: [.process("Resources")]
+        ),
+        .target(
             name: "AppAdsFeature",
             dependencies: [
                 composable
@@ -88,6 +96,7 @@ let package = Package(
         .target(
             name: "AppLaunchMobile",
             dependencies: [
+                "AdsPresentationFeature",
                 "ApplicationFeature",
                 "Autolayout",
                 "PlayPresentationFeature"
