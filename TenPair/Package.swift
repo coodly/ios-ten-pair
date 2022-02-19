@@ -49,9 +49,6 @@ let package = Package(
         .library(
             name: "Save",
             targets: ["Save"]),
-        .library(
-            name: "TenPair",
-            targets: ["TenPair"]),
     ],
     dependencies: [
         .package(name: "SWLogger", url: "https://github.com/coodly/swlogger.git", from: "0.6.1"),
@@ -128,13 +125,14 @@ let package = Package(
             ]
         ),
         .target(
-            name: "Rendered"),
+            name: "Rendered"
+        ),
         .target(
             name: "Save",
-            dependencies: ["Config"]),
-        .target(
-            name: "TenPair",
-            dependencies: []),
+            dependencies: [
+                "Config"
+            ]
+        ),
 
         .testTarget(
             name: "PlayTests",
@@ -142,8 +140,5 @@ let package = Package(
         .testTarget(
             name: "RandomLinesTests",
             dependencies: ["RandomLines"]),
-        .testTarget(
-            name: "TenPairTests",
-            dependencies: ["TenPair"]),
     ]
 )
