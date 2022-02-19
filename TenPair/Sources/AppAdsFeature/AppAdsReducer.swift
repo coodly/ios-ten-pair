@@ -1,6 +1,6 @@
 import ComposableArchitecture
 
-public let appAdsreducer = Reducer<AppAdsState, AppAdsAction, AppAdsEnvironment>.combine(
+public let appAdsReducer = Reducer<AppAdsState, AppAdsAction, AppAdsEnvironment>.combine(
     reducer
 )
 

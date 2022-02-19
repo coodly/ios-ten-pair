@@ -3,8 +3,7 @@ import ComposableArchitecture
 import PurchaseFeature
 
 public let applicationReducer = Reducer<ApplicationState, ApplicationAction, ApplicationEnvironment>.combine(
-    appAdsreducer
-        .optional()
+    appAdsReducer
         .pullback(state: \.appAdsState, action: /ApplicationAction.appAds, environment: \.appAdsEnv),
     purchaseReducer
         .pullback(state: \.purchaseState, action: /ApplicationAction.purchase, environment: \.purchaseEnv),

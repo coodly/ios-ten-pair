@@ -74,6 +74,7 @@ let package = Package(
         .target(
             name: "AdsPresentationFeature",
             dependencies: [
+                "AppAdsFeature",
                 "Autolayout",
                 "Storyboards"
             ],
