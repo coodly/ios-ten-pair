@@ -1,5 +1,5 @@
 /*
-* Copyright 2020 Coodly LLC
+* Copyright 2021 Coodly LLC
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -14,12 +14,8 @@
 * limitations under the License.
 */
 
-import Play
 import UIKit
 
-internal class StatusLabel: UILabel, PlayFieldStatusDelegate {
-    func statusUpdate(lines: Int, tiles: Int) {
-        text = "☰x\(lines) ■x\(tiles)"
-        sizeToFit()
-    }
+public class AdPresentingCell: UICollectionViewCell {
+
 }

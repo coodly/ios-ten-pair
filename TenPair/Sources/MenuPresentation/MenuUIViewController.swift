@@ -14,27 +14,33 @@
 * limitations under the License.
 */
 
-import UIKit
+import Autolayout
+import Storyboards
 import SwiftUI
+import UIKit
 
-internal protocol MenuUIDelegate: AnyObject {
+public protocol MenuUIDelegate: AnyObject {
     func restart(_ lines: Int)
     func dismissMenu()
 }
 
-internal class MenuUIViewController: UIViewController, StoryboardLoaded, MenuViewModelDelegate {
-    static var storyboardName: String {
+public class MenuUIViewController: UIViewController, StoryboardLoaded, MenuViewModelDelegate {
+    public static var storyboardName: String {
         "MenuUI"
     }
     
-    internal var gameWon = false
-    internal var delegate: MenuUIDelegate?
+    public static var instance: Self {
+        Storyboards.loadFromStoryboard(from: .module)
+    }
+    
+    public var gameWon = false
+    public var delegate: MenuUIDelegate?
     
     private lazy var viewModel = MenuViewModel(delegate: self, gameWon: gameWon)
     private lazy var menuView = MenuView(viewModel: viewModel)
     private lazy var hosting = UIHostingController(rootView: menuView)
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .clear
@@ -66,6 +72,6 @@ internal class MenuUIViewController: UIViewController, StoryboardLoaded, MenuVie
             return
         }
         
-        FeedbackService.present(on: self)
+        //FeedbackService.present(on: self)
     }
 }

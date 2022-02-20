@@ -14,11 +14,21 @@
  * limitations under the License.
  */
 
-import UIKit
+import Autolayout
 import SpriteKit
+import Storyboards
 import Themes
+import UIKit
 
-internal class WinViewController: UIViewController, StoryboardLoaded {
+public class WinViewController: UIViewController, StoryboardLoaded {
+    public static var storyboardName: String {
+        "Win"
+    }
+    
+    public static var instance: Self {
+        Storyboards.loadFromStoryboard(from: .module)
+    }
+    
     private lazy var sceneView = SKView()
     private lazy var scene = WinScene(size: view.bounds.size)
     private var timer: Timer? {
@@ -27,7 +37,7 @@ internal class WinViewController: UIViewController, StoryboardLoaded {
         }
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.color(hexString: "#121212").withAlphaComponent(0.9)
@@ -48,7 +58,7 @@ internal class WinViewController: UIViewController, StoryboardLoaded {
         dismiss(animated: false)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
             
         scene.emit()
@@ -58,7 +68,7 @@ internal class WinViewController: UIViewController, StoryboardLoaded {
         RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    public override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         timer = nil
@@ -72,7 +82,7 @@ private class WinScene: SKScene {
     }
     
     private func explosion(at point: CGPoint) -> SKEmitterNode {
-        let emitter = NSKeyedUnarchiver.unarchiveObject(withFile: Bundle.main.path(forResource: "Fireworks", ofType: "sks")!) as! SKEmitterNode
+        let emitter = NSKeyedUnarchiver.unarchiveObject(withFile: Bundle.module.path(forResource: "Fireworks", ofType: "sks")!) as! SKEmitterNode
         emitter.position = point
         emitter.zPosition = 2
         emitter.particleColor = [

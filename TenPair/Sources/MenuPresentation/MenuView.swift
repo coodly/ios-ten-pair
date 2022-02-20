@@ -17,6 +17,7 @@
 import Combine
 import FeedbackClient
 import Localization
+import Purchase
 import RemoveAds
 import SwiftUI
 import Themes
@@ -37,7 +38,9 @@ fileprivate enum MenuMode: String {
 internal class MenuViewModel: ObservableObject {
     fileprivate let randomLines = [20, 50, 100, 250, 500, 1_000]
     
-    fileprivate lazy var purchaseViewModel = PurchaseViewModel(delegate: delegate)
+    fileprivate lazy var purchaseViewModel = PurchaseViewModel(
+        onRateApp: { [weak self] in self?.delegate?.rateApp() }
+    )
     
     @Published fileprivate var mode = MenuMode.main
     @Published fileprivate var activeTheme = AppTheme.shared.active
@@ -53,14 +56,14 @@ internal class MenuViewModel: ObservableObject {
         self.delegate = delegate
         showResume = !gameWon
         
-        unreadSubscription = FeedbackService.unreadStatus.receive(on: DispatchQueue.main)
-            .sink() {
-                [weak self]
-                
-                haveUnread in
-                
-                self?.haveMessageFromDeveloper = haveUnread
-            }
+        //unreadSubscription = FeedbackService.unreadStatus.receive(on: DispatchQueue.main)
+        //    .sink() {
+        //        [weak self]
+        //
+        //        haveUnread in
+        //
+        //        self?.haveMessageFromDeveloper = haveUnread
+        //    }
     }
     
     fileprivate func showRestart() {

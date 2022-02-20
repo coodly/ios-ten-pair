@@ -143,6 +143,15 @@ let package = Package(
             ]
         ),
         .target(
+            name: "MenuPresentation",
+            dependencies: [
+                "Autolayout",
+                "Purchase",
+                "Storyboards"
+            ],
+            resources: [.process("Resources")]
+        ),
+        .target(
             name: "Play",
             dependencies: [
                 "Config",
@@ -161,9 +170,16 @@ let package = Package(
             name: "PlayPresentationFeature",
             dependencies: [
                 "LoadingPresentation",
+                "MenuPresentation",
+                "Play",
                 "PlayFeature",
+                "Purchase",
+                "RandomLines",
+                "Rendered",
+                "Save",
                 "Storyboards",
-                "Themes"
+                "Themes",
+                "WinPresentation"
             ],
             resources: [.process("Resources")]
         ),
@@ -172,6 +188,9 @@ let package = Package(
             dependencies: [
                 composable
             ]
+        ),
+        .target(
+            name: "Purchase"
         ),
         .target(
             name: "PurchaseClient"
@@ -225,6 +244,14 @@ let package = Package(
             dependencies: [
                 "UIComponents"
             ]
+        ),
+        .target(
+            name: "WinPresentation",
+            dependencies: [
+                "Autolayout",
+                "Storyboards"
+            ],
+            resources: [.process("Resources")]
         ),
 
         .testTarget(

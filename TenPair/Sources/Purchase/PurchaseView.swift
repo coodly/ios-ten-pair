@@ -25,7 +25,7 @@ private enum ProductStatus: String {
     case failure
 }
 
-internal class PurchaseViewModel: ObservableObject {
+public class PurchaseViewModel: ObservableObject {
     
     private lazy var disposeBag = Set<AnyCancellable>()
     @Published fileprivate var productStatus: ProductStatus = .loading
@@ -34,10 +34,10 @@ internal class PurchaseViewModel: ObservableObject {
     @Published var restoreInProgress = false
     @Published var adsRemoved = false
     
-    private weak var delegate: MenuViewModelDelegate?
+    private let onRateApp: (() -> Void)
     
-    internal init(delegate: MenuViewModelDelegate?) {
-        self.delegate = delegate
+    public init(onRateApp: @escaping (() -> Void)) {
+        self.onRateApp = onRateApp
         
         loadProduct()
         loadPurchaseStatus()
@@ -123,14 +123,18 @@ internal class PurchaseViewModel: ObservableObject {
     }
     
     fileprivate func rateApp() {
-        delegate?.rateApp()
+        onRateApp()
     }
 }
 
-internal struct PurchaseView: View {
+public struct PurchaseView: View {
     @ObservedObject var viewModel: PurchaseViewModel
     
-    var body: some View {
+    public init(viewModel: PurchaseViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    public var body: some View {
         VStack(spacing: 4) {
             if viewModel.adsRemoved {
                 Button(action: viewModel.rateApp) {

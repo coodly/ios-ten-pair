@@ -7,37 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A70078CE24A8659B0009E58C /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */; };
-		A70BBA2A24992E2B003E561F /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2924992E2B003E561F /* PlayViewController.swift */; };
-		A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */; };
-		A70BBA322499CC20003E561F /* NumbersFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */; };
 		A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A97441E48CCA4005E134F /* AppDelegate.swift */; };
 		A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A97481E48CCA4005E134F /* Main.storyboard */; };
 		A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
-		A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C0D28249A46DF00EFE21D /* GameStates.swift */; };
-		A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */; };
-		A7419E162570CFC300D4C064 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E152570CFC300D4C064 /* MenuView.swift */; };
-		A7419E1E2570D18200D4C064 /* MenuUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7419E1D2570D18200D4C064 /* MenuUI.storyboard */; };
-		A7419E4C2570E72600D4C064 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E4B2570E72600D4C064 /* PurchaseView.swift */; };
-		A7419E502570ED4600D4C064 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E4F2570ED4600D4C064 /* ActivityIndicatorView.swift */; };
 		A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
 		A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE51424AB7A5700D0AEB4 /* AppDelegate.swift */; };
 		A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75BE51A24AB7A5700D0AEB4 /* Main.storyboard */; };
 		A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
-		A75BE53A24AB807900D0AEB4 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */; };
-		A75BE53B24AB807900D0AEB4 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C0D28249A46DF00EFE21D /* GameStates.swift */; };
-		A75BE53E24AB807900D0AEB4 /* NumbersFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */; };
-		A75BE54024AB807900D0AEB4 /* PlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */; };
-		A75BE54124AB807900D0AEB4 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2924992E2B003E561F /* PlayViewController.swift */; };
-		A75BE54224AB807900D0AEB4 /* StatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97F9D24A4E61600F95EC9 /* StatusLabel.swift */; };
-		A75BE54C24AB808800D0AEB4 /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */; };
-		A75BE55324AB809F00D0AEB4 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372324A1C28E006DD8B4 /* Storyboards.swift */; };
-		A75BE55424AB809F00D0AEB4 /* StoryboardLoaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372524A1C2A9006DD8B4 /* StoryboardLoaded.swift */; };
-		A75BE55524AB80A600D0AEB4 /* Fireworks.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EBA24A5C6ED00D613FC /* Fireworks.sks */; };
-		A75BE55624AB80A600D0AEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EBB24A5C6ED00D613FC /* Assets.xcassets */; };
-		A75BE55724AB80A600D0AEB4 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD4EBE24A5C77F00D613FC /* WinViewController.swift */; };
-		A75BE55824AB80A600D0AEB4 /* Win.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EC024A5C7C400D613FC /* Win.storyboard */; };
-		A75BE55B24AB810300D0AEB4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */; };
 		A75BE55D24AB81A200D0AEB4 /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE55C24AB81A200D0AEB4 /* FeedbackService.swift */; };
 		A75BE56524AB849800D0AEB4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75BE56424AB849800D0AEB4 /* CloudKit.framework */; };
 		A75BE56824AB89D500D0AEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
@@ -45,22 +21,9 @@
 		A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
 		A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */; };
 		A797BD712483808F00A6E27D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A797BD702483808F00A6E27D /* GoogleService-Info.plist */; };
-		A7A8372424A1C28E006DD8B4 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372324A1C28E006DD8B4 /* Storyboards.swift */; };
-		A7A8372624A1C2A9006DD8B4 /* StoryboardLoaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372524A1C2A9006DD8B4 /* StoryboardLoaded.swift */; };
-		A7BD4EBC24A5C6ED00D613FC /* Fireworks.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EBA24A5C6ED00D613FC /* Fireworks.sks */; };
-		A7BD4EBD24A5C6ED00D613FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EBB24A5C6ED00D613FC /* Assets.xcassets */; };
-		A7BD4EBF24A5C77F00D613FC /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD4EBE24A5C77F00D613FC /* WinViewController.swift */; };
-		A7BD4EC124A5C7C400D613FC /* Win.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EC024A5C7C400D613FC /* Win.storyboard */; };
-		A7CCF94224A9BED6009DD181 /* PlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */; };
 		A7D5BA511E5DE63A003333A9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5BA501E5DE63A003333A9 /* CloudKit.framework */; };
-		A7D97F9E24A4E61600F95EC9 /* StatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97F9D24A4E61600F95EC9 /* StatusLabel.swift */; };
-		A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */; };
 		CD3866315F8B8C99B4F4282D /* Pods_Catalyst.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E321120C6B007B1E5BC7AA21 /* Pods_Catalyst.framework */; };
 		EA4E216C26425485000F3963 /* Save in Frameworks */ = {isa = PBXBuildFile; productRef = EA4E216B26425485000F3963 /* Save */; };
-		EA5DF690263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DF68E263D1CD2001A6B0F /* AdPresentingCell.swift */; };
-		EA5DF691263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DF68E263D1CD2001A6B0F /* AdPresentingCell.swift */; };
-		EA5DF692263D1CD2001A6B0F /* AdPresentingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5DF68F263D1CD2001A6B0F /* AdPresentingCell.xib */; };
-		EA5DF693263D1CD2001A6B0F /* AdPresentingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5DF68F263D1CD2001A6B0F /* AdPresentingCell.xib */; };
 		EA6E594B263FAC10006920D9 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6E5945263FAC10006920D9 /* nanopb.xcframework */; };
 		EA6E594C263FAC10006920D9 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6E5946263FAC10006920D9 /* PromisesObjC.xcframework */; };
 		EA6E594D263FAC10006920D9 /* UserMessagingPlatform.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6E5947263FAC10006920D9 /* UserMessagingPlatform.xcframework */; };
@@ -83,14 +46,9 @@
 		EAF0D2832644FE5D0008410D /* Play in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2822644FE5D0008410D /* Play */; };
 		EAF0D2852644FE650008410D /* RandomLines in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2842644FE650008410D /* RandomLines */; };
 		EAF0D2872644FE700008410D /* Rendered in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2862644FE700008410D /* Rendered */; };
-		EAF0D2882644FFDF0008410D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E152570CFC300D4C064 /* MenuView.swift */; };
-		EAF0D2892644FFDF0008410D /* MenuUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7419E1D2570D18200D4C064 /* MenuUI.storyboard */; };
-		EAF0D28A2644FFDF0008410D /* MenuUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */; };
 		EAF0D28F26450B220008410D /* RemoveAds in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D28E26450B220008410D /* RemoveAds */; };
 		EAF0D29126450B220008410D /* RemoveAdsImpl in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D29026450B220008410D /* RemoveAdsImpl */; };
 		EAF0D2932645150C0008410D /* RemoveAds in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2922645150C0008410D /* RemoveAds */; };
-		EAF0D2942645152E0008410D /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E4B2570E72600D4C064 /* PurchaseView.swift */; };
-		EAF0D2952645152E0008410D /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419E4F2570ED4600D4C064 /* ActivityIndicatorView.swift */; };
 		FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,21 +57,11 @@
 		10ED6F508444AC9D80EEC7F5 /* Pods-Catalyst.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catalyst.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Catalyst/Pods-Catalyst.debug.xcconfig"; sourceTree = "<group>"; };
 		8823AD29127CFC3A63FA4805 /* Pods_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
-		A70BBA2924992E2B003E561F /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
-		A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeue.swift"; sourceTree = "<group>"; };
-		A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersFlowLayout.swift; sourceTree = "<group>"; };
 		A71A973C1E48CCA4005E134F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A71A97411E48CCA4005E134F /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71A97441E48CCA4005E134F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A71A97491E48CCA4005E134F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A71A974E1E48CCA4005E134F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A72C0D28249A46DF00EFE21D /* GameStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStates.swift; sourceTree = "<group>"; };
-		A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUIViewController.swift; sourceTree = "<group>"; };
-		A7419E152570CFC300D4C064 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		A7419E1D2570D18200D4C064 /* MenuUI.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuUI.storyboard; sourceTree = "<group>"; };
-		A7419E4B2570E72600D4C064 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
-		A7419E4F2570ED4600D4C064 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		A748DC3A1E57375800F16F92 /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		A75BE51224AB7A5700D0AEB4 /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75BE51424AB7A5700D0AEB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,21 +77,10 @@
 		A78FA2EC1E5C145C002DB0AF /* TenPair.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TenPair.entitlements; sourceTree = "<group>"; };
 		A78FA2F21E5C16FE002DB0AF /* FeedbackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
 		A797BD702483808F00A6E27D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A7A8372324A1C28E006DD8B4 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
-		A7A8372524A1C2A9006DD8B4 /* StoryboardLoaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoaded.swift; sourceTree = "<group>"; };
-		A7BD4EBA24A5C6ED00D613FC /* Fireworks.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fireworks.sks; sourceTree = "<group>"; };
-		A7BD4EBB24A5C6ED00D613FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A7BD4EBE24A5C77F00D613FC /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
-		A7BD4EC024A5C7C400D613FC /* Win.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Win.storyboard; sourceTree = "<group>"; };
-		A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayNavigationController.swift; sourceTree = "<group>"; };
 		A7D5BA501E5DE63A003333A9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
-		A7D97F9D24A4E61600F95EC9 /* StatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusLabel.swift; sourceTree = "<group>"; };
-		A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		CDBD234CA436EF092F3D679F /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D734C99D56200ECE40196FB7 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E321120C6B007B1E5BC7AA21 /* Pods_Catalyst.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Catalyst.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA5DF68E263D1CD2001A6B0F /* AdPresentingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPresentingCell.swift; sourceTree = "<group>"; };
-		EA5DF68F263D1CD2001A6B0F /* AdPresentingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdPresentingCell.xib; sourceTree = "<group>"; };
 		EA6E5945263FAC10006920D9 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
 		EA6E5946263FAC10006920D9 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
 		EA6E5947263FAC10006920D9 /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = UserMessagingPlatform.xcframework; sourceTree = "<group>"; };
@@ -246,13 +183,7 @@
 		A71A97381E48CCA4005E134F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				A7EE33B8243B741A004CF496 /* Extensions */,
 				A75BE56924AB89E700D0AEB4 /* Launch */,
-				A7A8371D24A1C226006DD8B4 /* Menu */,
-				A7A8372724A1C332006DD8B4 /* Play */,
-				A7419E4A2570E71600D4C064 /* Purchase */,
-				A7A8372224A1C257006DD8B4 /* Storyboards */,
-				A7BD4EB524A5C43600D613FC /* Win */,
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
 				A787134A1E5CA743002DEF76 /* Secrets.swift */,
 			);
@@ -280,15 +211,6 @@
 				A78FA2EC1E5C145C002DB0AF /* TenPair.entitlements */,
 			);
 			path = iOS;
-			sourceTree = "<group>";
-		};
-		A7419E4A2570E71600D4C064 /* Purchase */ = {
-			isa = PBXGroup;
-			children = (
-				A7419E4B2570E72600D4C064 /* PurchaseView.swift */,
-				A7419E4F2570ED4600D4C064 /* ActivityIndicatorView.swift */,
-			);
-			path = Purchase;
 			sourceTree = "<group>";
 		};
 		A75BE51324AB7A5700D0AEB4 /* Catalyst */ = {
@@ -343,60 +265,6 @@
 				A797BD702483808F00A6E27D /* GoogleService-Info.plist */,
 			);
 			path = Secrets;
-			sourceTree = "<group>";
-		};
-		A7A8371D24A1C226006DD8B4 /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				A7419E1D2570D18200D4C064 /* MenuUI.storyboard */,
-				A7419E0F2570CF8E00D4C064 /* MenuUIViewController.swift */,
-				A7419E152570CFC300D4C064 /* MenuView.swift */,
-			);
-			path = Menu;
-			sourceTree = "<group>";
-		};
-		A7A8372224A1C257006DD8B4 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				A7A8372324A1C28E006DD8B4 /* Storyboards.swift */,
-				A7A8372524A1C2A9006DD8B4 /* StoryboardLoaded.swift */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		A7A8372724A1C332006DD8B4 /* Play */ = {
-			isa = PBXGroup;
-			children = (
-				EA5DF68E263D1CD2001A6B0F /* AdPresentingCell.swift */,
-				EA5DF68F263D1CD2001A6B0F /* AdPresentingCell.xib */,
-				A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */,
-				A72C0D28249A46DF00EFE21D /* GameStates.swift */,
-				A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */,
-				A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */,
-				A70BBA2924992E2B003E561F /* PlayViewController.swift */,
-				A7D97F9D24A4E61600F95EC9 /* StatusLabel.swift */,
-			);
-			path = Play;
-			sourceTree = "<group>";
-		};
-		A7BD4EB524A5C43600D613FC /* Win */ = {
-			isa = PBXGroup;
-			children = (
-				A7BD4EBA24A5C6ED00D613FC /* Fireworks.sks */,
-				A7BD4EBB24A5C6ED00D613FC /* Assets.xcassets */,
-				A7BD4EBE24A5C77F00D613FC /* WinViewController.swift */,
-				A7BD4EC024A5C7C400D613FC /* Win.storyboard */,
-			);
-			path = Win;
-			sourceTree = "<group>";
-		};
-		A7EE33B8243B741A004CF496 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */,
-				A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		EA6E5941263FA725006920D9 /* Ads */ = {
@@ -540,15 +408,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7BD4EBC24A5C6ED00D613FC /* Fireworks.sks in Resources */,
-				A7BD4EBD24A5C6ED00D613FC /* Assets.xcassets in Resources */,
-				A7419E1E2570D18200D4C064 /* MenuUI.storyboard in Resources */,
 				A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */,
-				A7BD4EC124A5C7C400D613FC /* Win.storyboard in Resources */,
 				A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */,
 				A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */,
 				A797BD712483808F00A6E27D /* GoogleService-Info.plist in Resources */,
-				EA5DF692263D1CD2001A6B0F /* AdPresentingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,13 +419,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA5DF693263D1CD2001A6B0F /* AdPresentingCell.xib in Resources */,
-				EAF0D2892644FFDF0008410D /* MenuUI.storyboard in Resources */,
 				A75BE56A24AB89FB00D0AEB4 /* LaunchView.xib in Resources */,
-				A75BE55624AB80A600D0AEB4 /* Assets.xcassets in Resources */,
-				A75BE55824AB80A600D0AEB4 /* Win.storyboard in Resources */,
 				A75BE56824AB89D500D0AEB4 /* Assets.xcassets in Resources */,
-				A75BE55524AB80A600D0AEB4 /* Fireworks.sks in Resources */,
 				A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,25 +529,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7CCF94224A9BED6009DD181 /* PlayNavigationController.swift in Sources */,
 				A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */,
 				A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */,
-				A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */,
-				A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */,
-				A7A8372624A1C2A9006DD8B4 /* StoryboardLoaded.swift in Sources */,
-				A7419E4C2570E72600D4C064 /* PurchaseView.swift in Sources */,
 				A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */,
-				A7419E502570ED4600D4C064 /* ActivityIndicatorView.swift in Sources */,
-				A7A8372424A1C28E006DD8B4 /* Storyboards.swift in Sources */,
-				A70BBA2A24992E2B003E561F /* PlayViewController.swift in Sources */,
-				A7D97F9E24A4E61600F95EC9 /* StatusLabel.swift in Sources */,
-				EA5DF690263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */,
-				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
-				A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */,
-				A70078CE24A8659B0009E58C /* ConcurrentOperation.swift in Sources */,
-				A7BD4EBF24A5C77F00D613FC /* WinViewController.swift in Sources */,
-				A7419E162570CFC300D4C064 /* MenuView.swift in Sources */,
-				A70BBA322499CC20003E561F /* NumbersFlowLayout.swift in Sources */,
 				EA6E5952263FB206006920D9 /* AdsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,25 +540,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A75BE54024AB807900D0AEB4 /* PlayNavigationController.swift in Sources */,
-				A75BE55424AB809F00D0AEB4 /* StoryboardLoaded.swift in Sources */,
-				A75BE55B24AB810300D0AEB4 /* UIView+Extensions.swift in Sources */,
-				A75BE53B24AB807900D0AEB4 /* GameStates.swift in Sources */,
-				EAF0D2882644FFDF0008410D /* MenuView.swift in Sources */,
-				EA5DF691263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */,
-				EAF0D2952645152E0008410D /* ActivityIndicatorView.swift in Sources */,
-				A75BE54C24AB808800D0AEB4 /* UICollectionView+Dequeue.swift in Sources */,
 				A75BE55D24AB81A200D0AEB4 /* FeedbackService.swift in Sources */,
-				A75BE53A24AB807900D0AEB4 /* ConcurrentOperation.swift in Sources */,
-				A75BE55324AB809F00D0AEB4 /* Storyboards.swift in Sources */,
-				A75BE54124AB807900D0AEB4 /* PlayViewController.swift in Sources */,
-				A75BE53E24AB807900D0AEB4 /* NumbersFlowLayout.swift in Sources */,
-				EAF0D2942645152E0008410D /* PurchaseView.swift in Sources */,
-				EAF0D28A2644FFDF0008410D /* MenuUIViewController.swift in Sources */,
-				A75BE54224AB807900D0AEB4 /* StatusLabel.swift in Sources */,
 				A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */,
 				A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */,
-				A75BE55724AB80A600D0AEB4 /* WinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
