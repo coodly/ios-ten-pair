@@ -19,3 +19,9 @@ import UIKit
 public class AdPresentingCell: UICollectionViewCell {
 
 }
+
+extension AdPresentingCell {
+    public static func register(in view: UICollectionView) {
+        view.registerCell(forType: AdPresentingCell.self, from: .module)
+    }
+}

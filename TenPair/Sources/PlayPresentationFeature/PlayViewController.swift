@@ -88,17 +88,17 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
         
         navigationItem.leftBarButtonItem = menuButton
         navigationItem.rightBarButtonItem = reloadButton
-        collectionView.registerCell(forType: NumberCell.self)
-        collectionView.registerCell(forType: AdPresentingCell.self)
+        NumberCell.register(in: collectionView)
+        AdPresentingCell.register(in: collectionView)
         
         machine.enter(SelectingNumber.self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(saveField), name: UIApplication.willResignActiveNotification, object: nil)
         
-        hintButton.setImage(Rendered.hintIcon, for: .normal)
-        undoButton.setImage(Rendered.undoIcon, for: .normal)
+        hintButton.setImage(UIImage(systemName: "lightbulb.fill", withConfiguration: imageConfig), for: .normal)
+        undoButton.setImage(UIImage(systemName: "arrow.counterclockwise", withConfiguration: imageConfig), for: .normal)
         
-        undoTray.isHidden = true
+        undoTray.isHidden = false
         undoManager?.levelsOfUndo = 10
     }
 

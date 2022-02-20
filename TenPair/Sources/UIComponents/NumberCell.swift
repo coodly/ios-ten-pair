@@ -61,3 +61,9 @@ public  class NumberCell: UICollectionViewCell {
         showing = number
     }
 }
+
+extension NumberCell {
+    public static func register(in view: UICollectionView) {
+        view.registerCell(forType: NumberCell.self, from: .module)
+    }
+}

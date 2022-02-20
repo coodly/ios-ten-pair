@@ -17,8 +17,8 @@
 import UIKit
 
 extension UICollectionView {
-    public func registerCell<T: UICollectionViewCell>(forType type: T.Type) {
-        register(T.viewNib(Bundle(for: T.self)), forCellWithReuseIdentifier: T.className)
+    public func registerCell<T: UICollectionViewCell>(forType type: T.Type, from bundle: Bundle) {
+        register(T.viewNib(bundle), forCellWithReuseIdentifier: T.className)
     }
     
     public func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {

@@ -16,9 +16,78 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zTJ-l9-7Ds">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qJV-SD-Ba2">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="HP5-Pw-mMe"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="iP6-Ak-9q6"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjw-pM-3Dd">
+                                <rect key="frame" x="0.0" y="810" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0cB-ZH-4BI"/>
+                                    <constraint firstAttribute="width" constant="44" id="PMC-8T-wiI"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvX-1g-jSx" customClass="ButtonTrayView" customModule="UIComponents">
+                                <rect key="frame" x="369" y="808" width="45" height="46"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOK-SS-Mua" customClass="ButtonTrayBackgroundView" customModule="UIComponents">
+                                        <rect key="frame" x="1" y="1" width="44" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAQ-Lg-Jhh">
+                                        <rect key="frame" x="1" y="1" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="24R-5X-mmV"/>
+                                            <constraint firstAttribute="height" constant="44" id="gxz-J1-kK3"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qAQ-Lg-Jhh" secondAttribute="trailing" id="4iA-zk-8VJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="zOK-SS-Mua" secondAttribute="trailing" id="9SR-zB-r10"/>
+                                    <constraint firstAttribute="bottom" secondItem="zOK-SS-Mua" secondAttribute="bottom" constant="1" id="JB7-ek-MRp"/>
+                                    <constraint firstItem="qAQ-Lg-Jhh" firstAttribute="leading" secondItem="pvX-1g-jSx" secondAttribute="leading" constant="1" id="OzE-fg-14w"/>
+                                    <constraint firstItem="qAQ-Lg-Jhh" firstAttribute="top" secondItem="pvX-1g-jSx" secondAttribute="top" constant="1" id="YUb-S0-e2l"/>
+                                    <constraint firstItem="zOK-SS-Mua" firstAttribute="leading" secondItem="pvX-1g-jSx" secondAttribute="leading" constant="1" id="dYd-qV-kiN"/>
+                                    <constraint firstItem="zOK-SS-Mua" firstAttribute="top" secondItem="pvX-1g-jSx" secondAttribute="top" constant="1" id="jhE-af-H1m"/>
+                                    <constraint firstAttribute="bottom" secondItem="qAQ-Lg-Jhh" secondAttribute="bottom" constant="1" id="klG-Xi-NjW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="wjw-pM-3Dd" secondAttribute="bottom" constant="8" id="77O-bx-HY6"/>
+                            <constraint firstAttribute="trailing" secondItem="pvX-1g-jSx" secondAttribute="trailing" id="9LO-hk-Guw"/>
+                            <constraint firstAttribute="trailing" secondItem="zTJ-l9-7Ds" secondAttribute="trailing" id="LCU-5K-Mi5"/>
+                            <constraint firstAttribute="bottom" secondItem="zTJ-l9-7Ds" secondAttribute="bottom" id="Ug9-NR-IZf"/>
+                            <constraint firstItem="zTJ-l9-7Ds" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="d4u-JK-qOq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pvX-1g-jSx" secondAttribute="bottom" constant="8" id="pS2-GN-uyf"/>
+                            <constraint firstItem="zTJ-l9-7Ds" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="xzU-ZQ-vE8"/>
+                            <constraint firstItem="wjw-pM-3Dd" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="z2u-in-6oh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="zTJ-l9-7Ds" id="mIQ-PV-xjw"/>
+                        <outlet property="hintButton" destination="wjw-pM-3Dd" id="BF9-Mp-KjU"/>
+                        <outlet property="undoButton" destination="qAQ-Lg-Jhh" id="O1Z-dZ-udS"/>
+                        <outlet property="undoTray" destination="pvX-1g-jSx" id="YKL-iX-8gt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -26,6 +95,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
