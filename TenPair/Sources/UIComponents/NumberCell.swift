@@ -1,44 +1,13 @@
-/*
-* Copyright 2020 Coodly LLC
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-
-import GameplayKit
-import UIComponents
 import UIKit
 
-internal enum NumberMarker: String {
+public enum NumberMarker: String {
     case standard
     case selection
     case success
     case failure
-    
-    internal static func from(state: PlayState?) -> NumberMarker {
-        switch state {
-        case is SelectingNumber:
-            return .selection
-        case is AnimatingSuccess:
-            return .success
-        case is AnimatingFailure:
-            return .failure
-        default:
-            fatalError()
-        }
-    }
 }
 
-internal class NumberCell: UICollectionViewCell {
+public  class NumberCell: UICollectionViewCell {
     private static var numbers = [Int: String]()
     
     @IBOutlet private var number: UILabel!
@@ -50,7 +19,7 @@ internal class NumberCell: UICollectionViewCell {
     private lazy var failureBG = TileFailureBackground()
     private var showing = 0
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         
         [defaultBG, noNumberBG, selectedBG, successBG, failureBG].forEach() {
@@ -67,7 +36,7 @@ internal class NumberCell: UICollectionViewCell {
         }
     }
         
-    internal func show(number: Int, marker: NumberMarker) {
+    public func show(number: Int, marker: NumberMarker) {
         noNumberBG.isHidden = number != 0
         defaultBG.isHidden = marker != .standard
         selectedBG.isHidden = marker != .selection

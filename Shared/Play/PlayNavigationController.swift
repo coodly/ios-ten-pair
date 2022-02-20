@@ -14,6 +14,7 @@
 * limitations under the License.
 */
 
+import Themes
 import UIKit
 
 internal class PlayNavigationController: UINavigationController {

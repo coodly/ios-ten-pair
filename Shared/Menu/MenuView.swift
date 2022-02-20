@@ -19,6 +19,7 @@ import FeedbackClient
 import Localization
 import RemoveAds
 import SwiftUI
+import Themes
 import UIComponents
 
 internal protocol MenuViewModelDelegate: AnyObject {

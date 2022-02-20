@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		A70078CE24A8659B0009E58C /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */; };
 		A70BBA2A24992E2B003E561F /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2924992E2B003E561F /* PlayViewController.swift */; };
-		A70BBA2D24992FA4003E561F /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2B24992FA4003E561F /* NumberCell.swift */; };
-		A70BBA2E24992FA4003E561F /* NumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70BBA2C24992FA4003E561F /* NumberCell.xib */; };
 		A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */; };
 		A70BBA322499CC20003E561F /* NumbersFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */; };
 		A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A97441E48CCA4005E134F /* AppDelegate.swift */; };
@@ -25,12 +23,9 @@
 		A748DC3B1E57375800F16F92 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
 		A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE51424AB7A5700D0AEB4 /* AppDelegate.swift */; };
 		A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75BE51A24AB7A5700D0AEB4 /* Main.storyboard */; };
-		A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373724A238ED006DD8B4 /* GameTheme.swift */; };
 		A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
 		A75BE53A24AB807900D0AEB4 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */; };
 		A75BE53B24AB807900D0AEB4 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C0D28249A46DF00EFE21D /* GameStates.swift */; };
-		A75BE53C24AB807900D0AEB4 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2B24992FA4003E561F /* NumberCell.swift */; };
-		A75BE53D24AB807900D0AEB4 /* NumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70BBA2C24992FA4003E561F /* NumberCell.xib */; };
 		A75BE53E24AB807900D0AEB4 /* NumbersFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */; };
 		A75BE54024AB807900D0AEB4 /* PlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */; };
 		A75BE54124AB807900D0AEB4 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2924992E2B003E561F /* PlayViewController.swift */; };
@@ -44,8 +39,6 @@
 		A75BE55824AB80A600D0AEB4 /* Win.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EC024A5C7C400D613FC /* Win.storyboard */; };
 		A75BE55B24AB810300D0AEB4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */; };
 		A75BE55D24AB81A200D0AEB4 /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE55C24AB81A200D0AEB4 /* FeedbackService.swift */; };
-		A75BE56024AB823500D0AEB4 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE55F24AB823500D0AEB4 /* UIColor+Extensions.swift */; };
-		A75BE56124AB824000D0AEB4 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE55F24AB823500D0AEB4 /* UIColor+Extensions.swift */; };
 		A75BE56524AB849800D0AEB4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75BE56424AB849800D0AEB4 /* CloudKit.framework */; };
 		A75BE56824AB89D500D0AEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A75BE56A24AB89FB00D0AEB4 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
@@ -54,7 +47,6 @@
 		A797BD712483808F00A6E27D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A797BD702483808F00A6E27D /* GoogleService-Info.plist */; };
 		A7A8372424A1C28E006DD8B4 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372324A1C28E006DD8B4 /* Storyboards.swift */; };
 		A7A8372624A1C2A9006DD8B4 /* StoryboardLoaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8372524A1C2A9006DD8B4 /* StoryboardLoaded.swift */; };
-		A7A8373824A238ED006DD8B4 /* GameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373724A238ED006DD8B4 /* GameTheme.swift */; };
 		A7BD4EBC24A5C6ED00D613FC /* Fireworks.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EBA24A5C6ED00D613FC /* Fireworks.sks */; };
 		A7BD4EBD24A5C6ED00D613FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BD4EBB24A5C6ED00D613FC /* Assets.xcassets */; };
 		A7BD4EBF24A5C77F00D613FC /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD4EBE24A5C77F00D613FC /* WinViewController.swift */; };
@@ -109,8 +101,6 @@
 		91D9165C6E1B65FDE334C138 /* Pods_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
 		A70BBA2924992E2B003E561F /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
-		A70BBA2B24992FA4003E561F /* NumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCell.swift; sourceTree = "<group>"; };
-		A70BBA2C24992FA4003E561F /* NumberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCell.xib; sourceTree = "<group>"; };
 		A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeue.swift"; sourceTree = "<group>"; };
 		A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersFlowLayout.swift; sourceTree = "<group>"; };
 		A71A973C1E48CCA4005E134F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,7 +121,6 @@
 		A75BE52224AB7A5B00D0AEB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A75BE52624AB7A6000D0AEB4 /* Catalyst.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Catalyst.entitlements; sourceTree = "<group>"; };
 		A75BE55C24AB81A200D0AEB4 /* FeedbackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
-		A75BE55F24AB823500D0AEB4 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		A75BE56424AB849800D0AEB4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		A75E8CDE25700FC800CCB8DC /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
 		A75E8CDF25700FC800CCB8DC /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
@@ -142,7 +131,6 @@
 		A797BD702483808F00A6E27D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A7A8372324A1C28E006DD8B4 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		A7A8372524A1C2A9006DD8B4 /* StoryboardLoaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoaded.swift; sourceTree = "<group>"; };
-		A7A8373724A238ED006DD8B4 /* GameTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTheme.swift; sourceTree = "<group>"; };
 		A7BD4EBA24A5C6ED00D613FC /* Fireworks.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fireworks.sks; sourceTree = "<group>"; };
 		A7BD4EBB24A5C6ED00D613FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7BD4EBE24A5C77F00D613FC /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
@@ -264,7 +252,6 @@
 				A7A8372724A1C332006DD8B4 /* Play */,
 				A7419E4A2570E71600D4C064 /* Purchase */,
 				A7A8372224A1C257006DD8B4 /* Storyboards */,
-				A7A8373624A238BA006DD8B4 /* Themes */,
 				A7BD4EB524A5C43600D613FC /* Win */,
 				A71A973C1E48CCA4005E134F /* Assets.xcassets */,
 				A787134A1E5CA743002DEF76 /* Secrets.swift */,
@@ -384,22 +371,12 @@
 				EA5DF68F263D1CD2001A6B0F /* AdPresentingCell.xib */,
 				A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */,
 				A72C0D28249A46DF00EFE21D /* GameStates.swift */,
-				A70BBA2B24992FA4003E561F /* NumberCell.swift */,
-				A70BBA2C24992FA4003E561F /* NumberCell.xib */,
 				A70BBA312499CC20003E561F /* NumbersFlowLayout.swift */,
 				A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */,
 				A70BBA2924992E2B003E561F /* PlayViewController.swift */,
 				A7D97F9D24A4E61600F95EC9 /* StatusLabel.swift */,
 			);
 			path = Play;
-			sourceTree = "<group>";
-		};
-		A7A8373624A238BA006DD8B4 /* Themes */ = {
-			isa = PBXGroup;
-			children = (
-				A7A8373724A238ED006DD8B4 /* GameTheme.swift */,
-			);
-			path = Themes;
 			sourceTree = "<group>";
 		};
 		A7BD4EB524A5C43600D613FC /* Win */ = {
@@ -417,7 +394,6 @@
 			isa = PBXGroup;
 			children = (
 				A70BBA2F24992FE6003E561F /* UICollectionView+Dequeue.swift */,
-				A75BE55F24AB823500D0AEB4 /* UIColor+Extensions.swift */,
 				A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
@@ -564,7 +540,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A70BBA2E24992FA4003E561F /* NumberCell.xib in Resources */,
 				A7BD4EBC24A5C6ED00D613FC /* Fireworks.sks in Resources */,
 				A7BD4EBD24A5C6ED00D613FC /* Assets.xcassets in Resources */,
 				A7419E1E2570D18200D4C064 /* MenuUI.storyboard in Resources */,
@@ -582,7 +557,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5DF693263D1CD2001A6B0F /* AdPresentingCell.xib in Resources */,
-				A75BE53D24AB807900D0AEB4 /* NumberCell.xib in Resources */,
 				EAF0D2892644FFDF0008410D /* MenuUI.storyboard in Resources */,
 				A75BE56A24AB89FB00D0AEB4 /* LaunchView.xib in Resources */,
 				A75BE55624AB80A600D0AEB4 /* Assets.xcassets in Resources */,
@@ -702,7 +676,6 @@
 				A78FA2F31E5C16FE002DB0AF /* FeedbackService.swift in Sources */,
 				A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */,
 				A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */,
-				A75BE56024AB823500D0AEB4 /* UIColor+Extensions.swift in Sources */,
 				A7A8372624A1C2A9006DD8B4 /* StoryboardLoaded.swift in Sources */,
 				A7419E4C2570E72600D4C064 /* PurchaseView.swift in Sources */,
 				A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */,
@@ -711,13 +684,11 @@
 				A70BBA2A24992E2B003E561F /* PlayViewController.swift in Sources */,
 				A7D97F9E24A4E61600F95EC9 /* StatusLabel.swift in Sources */,
 				EA5DF690263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */,
-				A7A8373824A238ED006DD8B4 /* GameTheme.swift in Sources */,
 				A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */,
 				A70BBA3024992FE6003E561F /* UICollectionView+Dequeue.swift in Sources */,
 				A70078CE24A8659B0009E58C /* ConcurrentOperation.swift in Sources */,
 				A7BD4EBF24A5C77F00D613FC /* WinViewController.swift in Sources */,
 				A7419E162570CFC300D4C064 /* MenuView.swift in Sources */,
-				A70BBA2D24992FA4003E561F /* NumberCell.swift in Sources */,
 				A70BBA322499CC20003E561F /* NumbersFlowLayout.swift in Sources */,
 				EA6E5952263FB206006920D9 /* AdsViewController.swift in Sources */,
 			);
@@ -731,15 +702,12 @@
 				A75BE55424AB809F00D0AEB4 /* StoryboardLoaded.swift in Sources */,
 				A75BE55B24AB810300D0AEB4 /* UIView+Extensions.swift in Sources */,
 				A75BE53B24AB807900D0AEB4 /* GameStates.swift in Sources */,
-				A75BE56124AB824000D0AEB4 /* UIColor+Extensions.swift in Sources */,
 				EAF0D2882644FFDF0008410D /* MenuView.swift in Sources */,
-				A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */,
 				EA5DF691263D1CD2001A6B0F /* AdPresentingCell.swift in Sources */,
 				EAF0D2952645152E0008410D /* ActivityIndicatorView.swift in Sources */,
 				A75BE54C24AB808800D0AEB4 /* UICollectionView+Dequeue.swift in Sources */,
 				A75BE55D24AB81A200D0AEB4 /* FeedbackService.swift in Sources */,
 				A75BE53A24AB807900D0AEB4 /* ConcurrentOperation.swift in Sources */,
-				A75BE53C24AB807900D0AEB4 /* NumberCell.swift in Sources */,
 				A75BE55324AB809F00D0AEB4 /* Storyboards.swift in Sources */,
 				A75BE54124AB807900D0AEB4 /* PlayViewController.swift in Sources */,
 				A75BE53E24AB807900D0AEB4 /* NumbersFlowLayout.swift in Sources */,

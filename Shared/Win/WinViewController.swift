@@ -16,6 +16,7 @@
 
 import UIKit
 import SpriteKit
+import Themes
 
 internal class WinViewController: UIViewController, StoryboardLoaded {
     private lazy var sceneView = SKView()

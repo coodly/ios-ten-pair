@@ -19,6 +19,7 @@ import CloudKit
 import Combine
 import Foundation
 import Logging
+import Themes
 
 internal class FeedbackService {
     private static let shared = FeedbackService()

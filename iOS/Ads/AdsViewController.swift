@@ -19,6 +19,7 @@ import Combine
 import GoogleMobileAds
 import Logging
 import RemoveAds
+import Themes
 import UIKit
 
 private let InterstitialShowThreshold = 10

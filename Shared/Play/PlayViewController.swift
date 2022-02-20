@@ -513,3 +513,18 @@ private class RestoreNumbers: UIOperation {
         }
     }
 }
+
+extension NumberMarker {
+    fileprivate static func from(state: PlayState?) -> NumberMarker {
+        switch state {
+        case is SelectingNumber:
+            return .selection
+        case is AnimatingSuccess:
+            return .success
+        case is AnimatingFailure:
+            return .failure
+        default:
+            fatalError()
+        }
+    }
+}

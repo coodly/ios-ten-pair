@@ -18,7 +18,7 @@ import UIKit
 
 extension UIColor {
     //https://gist.github.com/arshad/de147c42d7b3063ef7bc#gistcomment-1607094
-    class func color(hexString: String) -> UIColor {
+    public class func color(hexString: String) -> UIColor {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt32()
         Scanner(string: hex).scanHexInt32(&int)

@@ -24,6 +24,7 @@ import PurchaseClient
 import PurchaseClientLive
 import RemoveAds
 import RemoveAdsImpl
+import Themes
 import UIKit
 
 @UIApplicationMain

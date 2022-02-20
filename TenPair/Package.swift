@@ -162,7 +162,8 @@ let package = Package(
             dependencies: [
                 "LoadingPresentation",
                 "PlayFeature",
-                "Storyboards"
+                "Storyboards",
+                "Themes"
             ],
             resources: [.process("Resources")]
         ),
@@ -216,7 +217,14 @@ let package = Package(
             name: "Storyboards"
         ),
         .target(
-            name: "UIComponents"
+            name: "UIComponents",
+            resources: [.process("Resources")]
+        ),
+        .target(
+            name: "Themes",
+            dependencies: [
+                "UIComponents"
+            ]
         ),
 
         .testTarget(
