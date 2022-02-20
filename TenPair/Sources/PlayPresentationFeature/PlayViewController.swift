@@ -98,7 +98,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
         hintButton.setImage(UIImage(systemName: "lightbulb.fill", withConfiguration: imageConfig), for: .normal)
         undoButton.setImage(UIImage(systemName: "arrow.counterclockwise", withConfiguration: imageConfig), for: .normal)
         
-        undoTray.isHidden = false
+        undoTray.isHidden = true
         undoManager?.levelsOfUndo = 10
     }
 
