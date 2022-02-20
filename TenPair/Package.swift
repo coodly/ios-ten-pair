@@ -186,7 +186,10 @@ let package = Package(
             ]
         ),
         .target(
-            name: "Purchase"
+            name: "Purchase",
+            dependencies: [
+                "Localization"
+            ]
         ),
         .target(
             name: "PurchaseClient"
