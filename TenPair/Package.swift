@@ -57,9 +57,6 @@ let package = Package(
             name: "RemoveAdsImpl",
             targets: ["RemoveAdsImpl"]),
         .library(
-            name: "Rendered",
-            targets: ["Rendered"]),
-        .library(
             name: "Save",
             targets: ["Save"]),
     ],
@@ -175,7 +172,6 @@ let package = Package(
                 "PlayFeature",
                 "Purchase",
                 "RandomLines",
-                "Rendered",
                 "Save",
                 "Storyboards",
                 "Themes",
@@ -222,9 +218,6 @@ let package = Package(
                 "RandomLines",
                 "SWLogger",
             ]
-        ),
-        .target(
-            name: "Rendered"
         ),
         .target(
             name: "Save",

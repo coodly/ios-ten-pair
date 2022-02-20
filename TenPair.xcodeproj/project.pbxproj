@@ -38,14 +38,12 @@
 		EA9D680C263E769400E8E909 /* Play in Frameworks */ = {isa = PBXBuildFile; productRef = EA9D680B263E769400E8E909 /* Play */; };
 		EABB3CDE263439E100FC1391 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDD263439E100FC1391 /* Logging */; };
 		EABB3CE0263439E600FC1391 /* Config in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CDF263439E600FC1391 /* Config */; };
-		EABB3CE226343F7900FC1391 /* Rendered in Frameworks */ = {isa = PBXBuildFile; productRef = EABB3CE126343F7900FC1391 /* Rendered */; };
 		EAD9C5452645A02100EDA715 /* FeedbackClient in Frameworks */ = {isa = PBXBuildFile; productRef = EAD9C5442645A02100EDA715 /* FeedbackClient */; };
 		EAD9C5472645A02700EDA715 /* FeedbackClient in Frameworks */ = {isa = PBXBuildFile; productRef = EAD9C5462645A02700EDA715 /* FeedbackClient */; };
 		EAF0D2732644F68A0008410D /* RandomLines in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2722644F68A0008410D /* RandomLines */; };
 		EAF0D2812644FE2D0008410D /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2802644FE2D0008410D /* Logging */; };
 		EAF0D2832644FE5D0008410D /* Play in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2822644FE5D0008410D /* Play */; };
 		EAF0D2852644FE650008410D /* RandomLines in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2842644FE650008410D /* RandomLines */; };
-		EAF0D2872644FE700008410D /* Rendered in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2862644FE700008410D /* Rendered */; };
 		EAF0D28F26450B220008410D /* RemoveAds in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D28E26450B220008410D /* RemoveAds */; };
 		EAF0D29126450B220008410D /* RemoveAdsImpl in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D29026450B220008410D /* RemoveAdsImpl */; };
 		EAF0D2932645150C0008410D /* RemoveAds in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0D2922645150C0008410D /* RemoveAds */; };
@@ -107,7 +105,6 @@
 				EA6E5950263FAC10006920D9 /* GoogleUtilities.xcframework in Frameworks */,
 				FD9D8E2E75E65EDEDCA851EF /* Pods_iOS.framework in Frameworks */,
 				EABB3CDE263439E100FC1391 /* Logging in Frameworks */,
-				EABB3CE226343F7900FC1391 /* Rendered in Frameworks */,
 				EA6E594E263FAC10006920D9 /* GoogleMobileAds.xcframework in Frameworks */,
 				EABB3CE0263439E600FC1391 /* Config in Frameworks */,
 				EA6EC3E127C0B8AB00A56B9E /* MobilePackages in Frameworks */,
@@ -133,7 +130,6 @@
 				EAF0D2932645150C0008410D /* RemoveAds in Frameworks */,
 				EAF0D2832644FE5D0008410D /* Play in Frameworks */,
 				A75BE56524AB849800D0AEB4 /* CloudKit.framework in Frameworks */,
-				EAF0D2872644FE700008410D /* Rendered in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +307,6 @@
 			packageProductDependencies = (
 				EABB3CDD263439E100FC1391 /* Logging */,
 				EABB3CDF263439E600FC1391 /* Config */,
-				EABB3CE126343F7900FC1391 /* Rendered */,
 				EA9D680B263E769400E8E909 /* Play */,
 				EA4E216B26425485000F3963 /* Save */,
 				EAF0D2722644F68A0008410D /* RandomLines */,
@@ -343,7 +338,6 @@
 				EAF0D2802644FE2D0008410D /* Logging */,
 				EAF0D2822644FE5D0008410D /* Play */,
 				EAF0D2842644FE650008410D /* RandomLines */,
-				EAF0D2862644FE700008410D /* Rendered */,
 				EAF0D2922645150C0008410D /* RemoveAds */,
 				EAD9C5442645A02100EDA715 /* FeedbackClient */,
 				EA6EC3DC27C0AF1300A56B9E /* AppPackages */,
@@ -881,10 +875,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Config;
 		};
-		EABB3CE126343F7900FC1391 /* Rendered */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Rendered;
-		};
 		EAD9C5442645A02100EDA715 /* FeedbackClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FeedbackClient;
@@ -908,10 +898,6 @@
 		EAF0D2842644FE650008410D /* RandomLines */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RandomLines;
-		};
-		EAF0D2862644FE700008410D /* Rendered */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Rendered;
 		};
 		EAF0D28E26450B220008410D /* RemoveAds */ = {
 			isa = XCSwiftPackageProductDependency;
