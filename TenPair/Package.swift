@@ -124,6 +124,14 @@ let package = Package(
             name: "FeedbackClient"
         ),
         .target(
+            name: "LoadingPresentation",
+            dependencies: [
+                "Storyboards",
+                "UIComponents",
+            ],
+            resources: [.process("Resources")]
+        ),
+        .target(
             name: "Localization",
             resources: [.process("Resources")]
         ),
@@ -152,6 +160,7 @@ let package = Package(
         .target(
             name: "PlayPresentationFeature",
             dependencies: [
+                "LoadingPresentation",
                 "PlayFeature",
                 "Storyboards"
             ],
@@ -205,6 +214,9 @@ let package = Package(
         ),
         .target(
             name: "Storyboards"
+        ),
+        .target(
+            name: "UIComponents"
         ),
 
         .testTarget(

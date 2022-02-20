@@ -15,6 +15,7 @@
 */
 
 import GameplayKit
+import LoadingPresentation
 import Play
 import RandomLines
 import Rendered
@@ -197,7 +198,7 @@ internal class PlayViewController: UIViewController {
     
     private typealias Callback = (() -> Void)
     private func performWithLoading(closure: @escaping ((@escaping Callback) -> Void)) {
-        let loading: LoadingViewController = Storyboards.loadFromStoryboard()
+        let loading = LoadingViewController.instance
         loading.modalPresentationStyle = .custom
         let dismiss: Callback = {
             [weak self] in

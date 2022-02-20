@@ -15,6 +15,7 @@
 */
 
 import Foundation
+import UIComponents
 import UIKit
 
 extension Notification.Name {

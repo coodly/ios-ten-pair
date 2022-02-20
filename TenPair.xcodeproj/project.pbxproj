@@ -27,9 +27,6 @@
 		A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75BE51A24AB7A5700D0AEB4 /* Main.storyboard */; };
 		A75BE52924AB7FB400D0AEB4 /* GameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8373724A238ED006DD8B4 /* GameTheme.swift */; };
 		A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
-		A75BE53024AB804D00D0AEB4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA124A4EC9100F95EC9 /* LoadingViewController.swift */; };
-		A75BE53124AB804D00D0AEB4 /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D97FA324A4ECAC00F95EC9 /* Loading.storyboard */; };
-		A75BE53224AB804D00D0AEB4 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA524A4F15D00F95EC9 /* SpinnerView.swift */; };
 		A75BE53A24AB807900D0AEB4 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70078CD24A8659B0009E58C /* ConcurrentOperation.swift */; };
 		A75BE53B24AB807900D0AEB4 /* GameStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C0D28249A46DF00EFE21D /* GameStates.swift */; };
 		A75BE53C24AB807900D0AEB4 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BBA2B24992FA4003E561F /* NumberCell.swift */; };
@@ -65,9 +62,6 @@
 		A7CCF94224A9BED6009DD181 /* PlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */; };
 		A7D5BA511E5DE63A003333A9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5BA501E5DE63A003333A9 /* CloudKit.framework */; };
 		A7D97F9E24A4E61600F95EC9 /* StatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97F9D24A4E61600F95EC9 /* StatusLabel.swift */; };
-		A7D97FA224A4EC9100F95EC9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA124A4EC9100F95EC9 /* LoadingViewController.swift */; };
-		A7D97FA424A4ECAC00F95EC9 /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D97FA324A4ECAC00F95EC9 /* Loading.storyboard */; };
-		A7D97FA624A4F15D00F95EC9 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D97FA524A4F15D00F95EC9 /* SpinnerView.swift */; };
 		A7EE33BA243B7424004CF496 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */; };
 		CD3866315F8B8C99B4F4282D /* Pods_Catalyst.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E321120C6B007B1E5BC7AA21 /* Pods_Catalyst.framework */; };
 		EA4E216C26425485000F3963 /* Save in Frameworks */ = {isa = PBXBuildFile; productRef = EA4E216B26425485000F3963 /* Save */; };
@@ -156,9 +150,6 @@
 		A7CCF94124A9BED6009DD181 /* PlayNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayNavigationController.swift; sourceTree = "<group>"; };
 		A7D5BA501E5DE63A003333A9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		A7D97F9D24A4E61600F95EC9 /* StatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusLabel.swift; sourceTree = "<group>"; };
-		A7D97FA124A4EC9100F95EC9 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		A7D97FA324A4ECAC00F95EC9 /* Loading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loading.storyboard; sourceTree = "<group>"; };
-		A7D97FA524A4F15D00F95EC9 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		A7EE33B9243B7424004CF496 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		CDBD234CA436EF092F3D679F /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D734C99D56200ECE40196FB7 /* Pods-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-macOS/Pods-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -269,7 +260,6 @@
 			children = (
 				A7EE33B8243B741A004CF496 /* Extensions */,
 				A75BE56924AB89E700D0AEB4 /* Launch */,
-				A7D97FA024A4EC7A00F95EC9 /* Loading */,
 				A7A8371D24A1C226006DD8B4 /* Menu */,
 				A7A8372724A1C332006DD8B4 /* Play */,
 				A7419E4A2570E71600D4C064 /* Purchase */,
@@ -421,16 +411,6 @@
 				A7BD4EC024A5C7C400D613FC /* Win.storyboard */,
 			);
 			path = Win;
-			sourceTree = "<group>";
-		};
-		A7D97FA024A4EC7A00F95EC9 /* Loading */ = {
-			isa = PBXGroup;
-			children = (
-				A7D97FA124A4EC9100F95EC9 /* LoadingViewController.swift */,
-				A7D97FA324A4ECAC00F95EC9 /* Loading.storyboard */,
-				A7D97FA524A4F15D00F95EC9 /* SpinnerView.swift */,
-			);
-			path = Loading;
 			sourceTree = "<group>";
 		};
 		A7EE33B8243B741A004CF496 /* Extensions */ = {
@@ -587,7 +567,6 @@
 				A70BBA2E24992FA4003E561F /* NumberCell.xib in Resources */,
 				A7BD4EBC24A5C6ED00D613FC /* Fireworks.sks in Resources */,
 				A7BD4EBD24A5C6ED00D613FC /* Assets.xcassets in Resources */,
-				A7D97FA424A4ECAC00F95EC9 /* Loading.storyboard in Resources */,
 				A7419E1E2570D18200D4C064 /* MenuUI.storyboard in Resources */,
 				A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */,
 				A7BD4EC124A5C7C400D613FC /* Win.storyboard in Resources */,
@@ -611,7 +590,6 @@
 				A75BE56824AB89D500D0AEB4 /* Assets.xcassets in Resources */,
 				A75BE55524AB80A600D0AEB4 /* Fireworks.sks in Resources */,
 				A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */,
-				A75BE53124AB804D00D0AEB4 /* Loading.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,12 +703,10 @@
 				A7419E102570CF8E00D4C064 /* MenuUIViewController.swift in Sources */,
 				A72C0D29249A46DF00EFE21D /* GameStates.swift in Sources */,
 				A75BE56024AB823500D0AEB4 /* UIColor+Extensions.swift in Sources */,
-				A7D97FA624A4F15D00F95EC9 /* SpinnerView.swift in Sources */,
 				A7A8372624A1C2A9006DD8B4 /* StoryboardLoaded.swift in Sources */,
 				A7419E4C2570E72600D4C064 /* PurchaseView.swift in Sources */,
 				A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */,
 				A7419E502570ED4600D4C064 /* ActivityIndicatorView.swift in Sources */,
-				A7D97FA224A4EC9100F95EC9 /* LoadingViewController.swift in Sources */,
 				A7A8372424A1C28E006DD8B4 /* Storyboards.swift in Sources */,
 				A70BBA2A24992E2B003E561F /* PlayViewController.swift in Sources */,
 				A7D97F9E24A4E61600F95EC9 /* StatusLabel.swift in Sources */,
@@ -752,7 +728,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A75BE54024AB807900D0AEB4 /* PlayNavigationController.swift in Sources */,
-				A75BE53224AB804D00D0AEB4 /* SpinnerView.swift in Sources */,
 				A75BE55424AB809F00D0AEB4 /* StoryboardLoaded.swift in Sources */,
 				A75BE55B24AB810300D0AEB4 /* UIView+Extensions.swift in Sources */,
 				A75BE53B24AB807900D0AEB4 /* GameStates.swift in Sources */,
@@ -774,7 +749,6 @@
 				A75BE51524AB7A5700D0AEB4 /* AppDelegate.swift in Sources */,
 				A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */,
 				A75BE55724AB80A600D0AEB4 /* WinViewController.swift in Sources */,
-				A75BE53024AB804D00D0AEB4 /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
