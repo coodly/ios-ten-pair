@@ -14,8 +14,9 @@
 * limitations under the License.
 */
 
-import UIKit
 import GameplayKit
+import UIComponents
+import UIKit
 
 internal enum NumberMarker: String {
     case standard

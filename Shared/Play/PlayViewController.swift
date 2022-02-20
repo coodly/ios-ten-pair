@@ -20,6 +20,7 @@ import Play
 import RandomLines
 import Rendered
 import Save
+import UIComponents
 import UIKit
 
 internal protocol PlayDelegate: AnyObject {
