@@ -140,6 +140,12 @@ let package = Package(
             ]
         ),
         .target(
+            name: "MenuFeature",
+            dependencies: [
+                composable
+            ]
+        ),
+        .target(
             name: "MenuPresentation",
             dependencies: [
                 "Autolayout",
@@ -158,6 +164,7 @@ let package = Package(
         .target(
             name: "PlayFeature",
             dependencies: [
+                "MenuFeature",
                 "PlaySummaryFeature",
                 
                 composable
