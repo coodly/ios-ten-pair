@@ -32,7 +32,10 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
         
         addChild(contained)
         contentContainer.addSubview(contained.view)
+        contained.view.frame = view.bounds
         contained.view.pinToSuperviewEdges()
+        
+        UIView.performWithoutAnimation(contained.view.layoutIfNeeded)
         
         viewStore.publisher.showBannerAd.sink() {
             [weak self]

@@ -242,7 +242,8 @@ let package = Package(
             name: "WinPresentation",
             dependencies: [
                 "Autolayout",
-                "Storyboards"
+                "Storyboards",
+                "Themes"
             ],
             resources: [.process("Resources")]
         ),

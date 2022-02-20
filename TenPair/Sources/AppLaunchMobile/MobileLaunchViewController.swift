@@ -16,12 +16,16 @@ public class MobileLaunchViewController: UIViewController {
 
         playController.store = store.scope(state: \.playState, action: ApplicationAction.play)
 
+        let navigation = PlayNavigationController(rootViewController: playController)
+        
         adsController.store = store.scope(state: \.appAdsState, action: ApplicationAction.appAds)
-        adsController.contained = playController        
+        adsController.contained = navigation
 
-        let navigation = PlayNavigationController(rootViewController: adsController)
-        addChild(navigation)
-        view.addSubview(navigation.view)
-        navigation.view.pinToSuperviewEdges()
+        addChild(adsController)
+        view.addSubview(adsController.view)
+        adsController.view.frame = view.bounds
+        adsController.view.pinToSuperviewEdges()
+        
+        UIView.performWithoutAnimation(adsController.view.layoutIfNeeded)
     }
 }
