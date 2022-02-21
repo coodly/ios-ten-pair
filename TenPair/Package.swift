@@ -94,6 +94,7 @@ let package = Package(
             name: "ApplicationFeature",
             dependencies: [
                 "AppAdsFeature",
+                "Logging",
                 "PlayFeature",
                 "PurchaseFeature",
                 "PurchaseClient",

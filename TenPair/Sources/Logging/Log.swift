@@ -29,9 +29,10 @@ public class Log {
         SWLogger.Log.level = .debug
     }
     
-    public static let insight = Logging(name: "Insight")
+    public static let app = Logging(name: "App")
     public static let ads = Logging(name: "Ads")
     public static let feedback = Logging(name: "Feedback")
+    public static let insight = Logging(name: "Insight")
     public static let purchase = Logging(name: "Purchase")
 
     class func debug<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {

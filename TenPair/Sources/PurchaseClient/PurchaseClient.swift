@@ -1,7 +1,7 @@
 import Combine
 import StoreKit
 
-public enum PurchaseStatus {
+public enum PurchaseStatus: Equatable {
     case notLoaded
     case notMade
     case made

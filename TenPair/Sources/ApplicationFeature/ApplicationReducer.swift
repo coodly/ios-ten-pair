@@ -1,5 +1,6 @@
 import AppAdsFeature
 import ComposableArchitecture
+import Logging
 import PlayFeature
 import PurchaseFeature
 
@@ -17,6 +18,26 @@ private let reducer = Reducer<ApplicationState, ApplicationAction, ApplicationEn
     state, action, env in
     
     switch action {
+    case .onDidLoad:
+        guard env.purchaseClient.havePurchase else {
+            return .none
+        }
+        return Effect(env.purchaseClient.purchaseStatus())
+            .catchToEffect(ApplicationAction.purchaseStateChanged)
+            .receive(on: env.mainQueue)
+            .eraseToEffect()
+        
+    case .purchaseStateChanged(let result):
+        switch result {
+        case .success(let status) where status == .notMade:
+            Log.app.debug("Purchase not made. Load ads")
+            return Effect(value: .appAds(.load))
+        case .success:
+            return .none
+        case .failure:
+            return .none
+        }
+        
     case .appAds:
         return .none
         

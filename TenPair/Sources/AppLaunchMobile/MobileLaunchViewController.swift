@@ -7,6 +7,7 @@ import UIKit
 
 public class MobileLaunchViewController: UIViewController {
     public var store: Store<ApplicationState, ApplicationAction>!
+    private lazy var viewStore = ViewStore(store)
     
     private lazy var adsController: AdsPresentationViewController = AdsPresentationViewController.instance
     private lazy var playController: PlayViewController = PlayViewController.instance
@@ -27,5 +28,7 @@ public class MobileLaunchViewController: UIViewController {
         adsController.view.pinToSuperviewEdges()
         
         UIView.performWithoutAnimation(adsController.view.layoutIfNeeded)
+        
+        viewStore.send(.onDidLoad)
     }
 }

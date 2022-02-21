@@ -5,8 +5,8 @@ import PurchaseClient
 import PurchaseFeature
 
 public struct ApplicationEnvironment {
-    private let mainQueue: AnySchedulerOf<DispatchQueue>
-    private let purchaseClient: PurchaseClient
+    internal let mainQueue: AnySchedulerOf<DispatchQueue>
+    internal let purchaseClient: PurchaseClient
     
     public init(
         mainQueue: AnySchedulerOf<DispatchQueue>,
