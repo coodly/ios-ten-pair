@@ -18,6 +18,7 @@ import Combine
 import Localization
 import RemoveAds
 import SwiftUI
+import UIComponents
 
 private enum ProductStatus: String {
     case loading

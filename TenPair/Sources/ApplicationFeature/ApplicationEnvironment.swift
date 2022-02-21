@@ -29,6 +29,7 @@ public struct ApplicationEnvironment {
     
     internal var purchaseEnv: PurchaseEnvironment {
         PurchaseEnvironment(
+            mainQueue: mainQueue,
             purchaseClient: purchaseClient
         )
     }

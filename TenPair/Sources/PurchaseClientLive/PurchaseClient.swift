@@ -22,7 +22,7 @@ extension PurchaseClient {
                 
                 proxy.checkReceipt()
             },
-            onPurchase: proxy.purchase(_:),
+            onPurchase: proxy.purchase,
             onPurchaseStatus: {
                 proxy.purchaseStatus.eraseToAnyPublisher()
             },
@@ -113,8 +113,8 @@ private class PurchasesProxy: NSObject, PurchasesDelegate {
         .eraseToAnyPublisher()
     }
     
-    fileprivate func purchase(_ product: AppProduct) -> AnyPublisher<Bool, Error> {
-        precondition(package!.identifier == product.identifier)
+    fileprivate func purchase() -> AnyPublisher<Bool, Error> {
+        precondition(package != nil)
         
         return Future() {
             promise in

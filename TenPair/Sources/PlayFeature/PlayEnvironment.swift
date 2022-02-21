@@ -16,6 +16,7 @@ public struct PlayEnvironment {
     
     internal var menuEnv: MenuEnvironment {
         MenuEnvironment(
+            mainQueue: mainQueue,
             purchaseClient: purchaseClient
         )
     }

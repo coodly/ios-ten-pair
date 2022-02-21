@@ -26,7 +26,7 @@ extension AppProduct {
 public struct PurchaseClient {
     private let onAvailableProduct: (() -> AnyPublisher<AppProduct, Error>)
     private let onLoad: (() -> Void)
-    private let onPurchase: ((AppProduct) -> AnyPublisher<Bool, Error>)
+    private let onPurchase: (() -> AnyPublisher<Bool, Error>)
     private let onPurchaseStatus: (() -> AnyPublisher<PurchaseStatus, Error>)
     private let onRestore: (() -> AnyPublisher<Bool, Error>)
     
@@ -35,7 +35,7 @@ public struct PurchaseClient {
         havePurchase: Bool,
         onAvailableProduct: @escaping (() -> AnyPublisher<AppProduct, Error>),
         onLoad: @escaping (() -> Void),
-        onPurchase: @escaping ((AppProduct) -> AnyPublisher<Bool, Error>),
+        onPurchase: @escaping (() -> AnyPublisher<Bool, Error>),
         onPurchaseStatus: @escaping (() -> AnyPublisher<PurchaseStatus, Error>),
         onRestore: @escaping (() -> AnyPublisher<Bool, Error>)
     ) {
@@ -55,8 +55,8 @@ public struct PurchaseClient {
         onAvailableProduct()
     }
     
-    public func purchase(product: AppProduct) -> AnyPublisher<Bool, Error> {
-        onPurchase(product)
+    public func purchase() -> AnyPublisher<Bool, Error> {
+        onPurchase()
     }
     
     public func purchaseStatus() -> AnyPublisher<PurchaseStatus, Error> {
@@ -73,7 +73,7 @@ extension PurchaseClient {
         havePurchase: false,
         onAvailableProduct: { fatalError() },
         onLoad: {},
-        onPurchase: { _ in fatalError() },
+        onPurchase: { fatalError() },
         onPurchaseStatus: { fatalError() },
         onRestore: { fatalError() }
     )
