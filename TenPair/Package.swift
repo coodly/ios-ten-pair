@@ -209,6 +209,8 @@ let package = Package(
         .target(
             name: "PurchaseClientLive",
             dependencies: [
+                "Config",
+                "Logging",
                 "PurchaseClient",
                 "Purchases"
             ]
