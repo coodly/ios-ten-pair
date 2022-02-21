@@ -6,6 +6,6 @@ public let appAdsReducer = Reducer<AppAdsState, AppAdsAction, AppAdsEnvironment>
 
 private let reducer = Reducer<AppAdsState, AppAdsAction, AppAdsEnvironment>() {
     state, action, env in
-    
+
     return .none
 }

@@ -7,5 +7,10 @@ public let playSummaryReducer = Reducer<PlaySummaryState, PlaySummaryAction, Pla
 private let reducer = Reducer<PlaySummaryState, PlaySummaryAction, PlaySummaryEnvironment>() {
     state, action, env in
     
-    return .none
+    switch action {
+    case .update(let lines, let tiles):
+        state.numbeOfLines = lines
+        state.numberOfTiles = tiles
+        return .none
+    }
 }

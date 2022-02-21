@@ -37,6 +37,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     private lazy var viewStore = ViewStore(store)
     
     private lazy var summaryStore = store.scope(state: \.playSummaryState, action: PlayAction.playSummary)
+    private lazy var summaryViewStore = ViewStore(summaryStore)
     private lazy var summaryView = PlaySummaryView(store: summaryStore)
     private lazy var summaryHosting = UIHostingController(rootView: summaryView)
     
@@ -76,18 +77,15 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
+        summaryHosting.view.backgroundColor = .clear
         navigationItem.titleView = summaryHosting.view
         navigationItem.leftBarButtonItem = menuButton
         navigationItem.rightBarButtonItem = reloadButton
-        [menuButton, reloadButton]
-            .forEach({
-                $0.setTitleTextAttributes(
-                    [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)], for: .normal)
-            })
         
         collectionView.collectionViewLayout = layout
         collectionView.backgroundView = BackgroundView()
         
+        field.statusDelegate = self
         field.load()
         
         navigationItem.leftBarButtonItem = menuButton
@@ -291,6 +289,12 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
             controller.view.removeFromSuperview()
             controller.removeFromParent()
         }
+    }
+}
+
+extension PlayViewController: PlayFieldStatusDelegate {
+    public func statusUpdate(lines: Int, tiles: Int) {
+        summaryViewStore.send(.update(lines: lines, tiles: tiles))
     }
 }
 
