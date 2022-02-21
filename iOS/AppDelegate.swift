@@ -22,8 +22,6 @@ import Logging
 import AppLaunchMobile
 import PurchaseClient
 import PurchaseClientLive
-import RemoveAds
-import RemoveAdsImpl
 import Themes
 import UIKit
 
@@ -32,12 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    private lazy var purchaseClient = PurchaseClient.live
+    
     private lazy var store = Store(
         initialState: ApplicationState(),
         reducer: applicationReducer,
         environment: ApplicationEnvironment(
             mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
-            purchaseClient: .live
+            purchaseClient: purchaseClient
         )
     )
 
@@ -47,9 +47,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Log.enable()
         
         FeedbackService.load()
-        
-        RemoveAds.active = .revenueCat
-        RemoveAds.active.load()
+                
+        if purchaseClient.havePurchase {
+            purchaseClient.load()
+        }
 
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
         

@@ -15,30 +15,25 @@ extension PurchaseClient {
             onLoad: {
                 Log.purchase.debug("Load")
                 if AppConfig.current.logs {
-                    Purchases.debugLogsEnabled = true
+                    Purchases.logLevel = .debug
                 }
                 Purchases.configure(withAPIKey: RevenueCatAPIKey)
                 Purchases.shared.delegate = proxy
                 
                 proxy.checkReceipt()
             },
-            onPurchase: {
-                product in
-                
-                fatalError()
-            },
+            onPurchase: proxy.purchase(_:),
             onPurchaseStatus: {
-                fatalError()
+                proxy.purchaseStatus.eraseToAnyPublisher()
             },
-            onRestore: {
-                fatalError()
-            }
+            onRestore: proxy.restorePurchases
         )
     }
 }
 
 private class PurchasesProxy: NSObject, PurchasesDelegate {
     fileprivate let purchaseStatus = CurrentValueSubject<PurchaseStatus, Error>(.notLoaded)
+    private var package: Purchases.Package?
     
     fileprivate func checkReceipt() {
         Purchases.shared.purchaserInfo() {
@@ -62,6 +57,7 @@ private class PurchasesProxy: NSObject, PurchasesDelegate {
             Log.purchase.debug("Ads removed on \(date)")
             purchaseStatus.send(.made)
         } else {
+            Log.purchase.debug("Purchase not made")
             purchaseStatus.send(.notMade)
         }
     }
@@ -88,9 +84,52 @@ private class PurchasesProxy: NSObject, PurchasesDelegate {
                     return
                 }
                 
+                self.package = loaded
                 
                 let product = AppProduct(identifier: loaded.identifier, formattedPrice: loaded.localizedPriceString, product: loaded.product)
                 promise(.success(product))
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    fileprivate func restorePurchases() -> AnyPublisher<Bool, Error> {
+        Future() {
+            promise in
+            
+            Purchases.shared.restoreTransactions() {
+                info, error in
+
+                
+                self.handle(info: info)
+                
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(true))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    fileprivate func purchase(_ product: AppProduct) -> AnyPublisher<Bool, Error> {
+        precondition(package!.identifier == product.identifier)
+        
+        return Future() {
+            promise in
+            
+            Purchases.shared.purchasePackage(self.package!) {
+                transaction, info, error, cancelled in
+                
+                self.handle(info: info)
+                
+                if let error = error {
+                    Log.purchase.error("Purchase error \(error)")
+                    promise(.failure(error))
+                } else {
+                    promise(.success(true))
+                }
             }
         }
         .eraseToAnyPublisher()

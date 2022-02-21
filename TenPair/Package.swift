@@ -47,18 +47,12 @@ let package = Package(
             name: "RandomLines",
             targets: ["RandomLines"]),
         .library(
-            name: "RemoveAds",
-            targets: ["RemoveAds"]),
-        .library(
-            name: "RemoveAdsImpl",
-            targets: ["RemoveAdsImpl"]),
-        .library(
             name: "Save",
             targets: ["Save"]),
     ],
     dependencies: [
         .package(name: "SWLogger", url: "https://github.com/coodly/swlogger.git", from: "0.6.1"),
-        .package(name: "Purchases", url: "https://github.com/RevenueCat/purchases-ios.git", from: "3.11.1"),
+        .package(name: "Purchases", url: "https://github.com/RevenueCat/purchases-ios.git", from: "3.14.1"),
         
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", from: "0.33.1")
     ],
@@ -200,7 +194,8 @@ let package = Package(
         .target(
             name: "Purchase",
             dependencies: [
-                "Localization"
+                "Localization",
+                "RemoveAds"
             ]
         ),
         .target(
