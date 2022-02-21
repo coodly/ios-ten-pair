@@ -7,5 +7,8 @@ public let purchaseReducer = Reducer<PurchaseState, PurchaseAction, PurchaseEnvi
 private let reducer = Reducer<PurchaseState, PurchaseAction, PurchaseEnvironment>() {
     state, action, env in
     
-    return .none
+    switch action {
+    case .rateApp:
+        return .none
+    }
 }

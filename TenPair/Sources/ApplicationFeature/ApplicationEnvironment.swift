@@ -22,7 +22,8 @@ public struct ApplicationEnvironment {
     
     internal var playEnv: PlayEnvironment {
         PlayEnvironment(
-            mainQueue: mainQueue
+            mainQueue: mainQueue,
+            purchaseClient: purchaseClient
         )
     }
     

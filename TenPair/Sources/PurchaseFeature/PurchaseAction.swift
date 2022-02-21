@@ -1,3 +1,3 @@
-public struct PurchaseAction {
-
+public enum PurchaseAction {
+    case rateApp
 }

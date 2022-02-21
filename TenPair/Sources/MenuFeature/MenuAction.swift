@@ -1,3 +1,4 @@
+import PurchaseFeature
 import RestartFeature
 
 public enum MenuAction {
@@ -5,5 +6,6 @@ public enum MenuAction {
     case restartTapped
     case theme
     
+    case purchase(PurchaseAction)
     case restart(RestartAction)
 }

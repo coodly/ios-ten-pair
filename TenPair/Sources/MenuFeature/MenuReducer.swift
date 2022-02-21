@@ -1,8 +1,12 @@
 import ComposableArchitecture
+import PurchaseFeature
 import RestartFeature
 import Themes
 
 public let menuReducer = Reducer<MenuState, MenuAction, MenuEnvironment>.combine(
+    purchaseReducer
+        .optional()
+        .pullback(state: \.purchaseState, action: /MenuAction.purchase, environment: \.purchaseEnv),
     restartReducer
         .optional()
         .pullback(state: \.restartState, action: /MenuAction.restart, environment: \.restartEnv),
@@ -27,6 +31,9 @@ private let reducer = Reducer<MenuState, MenuAction, MenuEnvironment>() {
         
     case .restart(.back):
         state.restartState = nil
+        return .none
+        
+    case .purchase:
         return .none
     
     case .restart:

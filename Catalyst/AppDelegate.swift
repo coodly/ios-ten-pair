@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initialState: ApplicationState(),
         reducer: applicationReducer,
         environment: ApplicationEnvironment(
+            mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
             purchaseClient: .noPurchase
         )
     )

@@ -24,6 +24,10 @@ internal struct RegularOptionsView: View {
             Button(action: { viewStore.send(.theme) }) {
                 Text(L10n.Menu.Option.Theme.base(viewStore.activeThemeName))
             }
+            IfLetStore(
+                store.scope(state: \.purchaseState, action: MenuAction.purchase),
+                then: PurchaseOptionsView.init(store:)
+            )
         }
     }
 }
