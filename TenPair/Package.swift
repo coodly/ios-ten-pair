@@ -10,10 +10,6 @@ let package = Package(
     defaultLocalization: LanguageTag("en"),
     platforms: [.iOS(.v13), .macOS(.v10_15)],
     products: [
-        .executable(
-            name: "RandomSeeds",
-            targets: ["RandomSeeds"]),
-        
         .library(
             name: "AppPackages",
             targets: [
@@ -63,7 +59,6 @@ let package = Package(
     dependencies: [
         .package(name: "SWLogger", url: "https://github.com/coodly/swlogger.git", from: "0.6.1"),
         .package(name: "Purchases", url: "https://github.com/RevenueCat/purchases-ios.git", from: "3.11.1"),
-        .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.0.3"),
         
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", from: "0.33.1")
     ],
@@ -230,14 +225,6 @@ let package = Package(
                 "Config",
                 "Play",
                 "Save"
-            ]
-        ),
-        .target(
-            name: "RandomSeeds",
-            dependencies: [
-                .product(name: "ArgumentParser", package: "swift-argument-parser"),
-                "RandomLines",
-                "SWLogger",
             ]
         ),
         .target(
