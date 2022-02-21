@@ -165,36 +165,3 @@ private struct RestartSection: View {
         }
     }
 }
-
-internal struct MenuButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(Font(UIFont(name: "Copperplate Bold", size: 20) ?? UIFont.boldSystemFont(ofSize: 20)))
-            .foregroundColor(.white)
-            .frame(minWidth: 44, maxWidth: .infinity, minHeight: 50, alignment: .center)
-            .multilineTextAlignment(.center)
-            .lineLimit(nil)
-            .background(RowBackground())
-            .opacity(configuration.isPressed ? 0.7 : 1.0)
-    }
-}
-
-private struct MenuBackground: UIViewRepresentable {
-    func makeUIView(context: Context) -> some UIView {
-        OverlayBackgroundView()
-    }
-    
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        
-    }
-}
-
-private struct RowBackground: UIViewRepresentable {
-    func makeUIView(context: Context) -> some UIView {
-        MenuCellBackground()
-    }
-    
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        
-    }
-}

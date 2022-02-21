@@ -123,9 +123,9 @@ public enum L10n {
         /// Regular board
         public static let regular = L10n.tr("Localizable", "restart.screen.option.regular")
         public enum X {
-          /// Random ~%@ lines
-          public static func lines(_ p1: Any) -> String {
-            return L10n.tr("Localizable", "restart.screen.option.x.lines", String(describing: p1))
+          /// Random %d lines
+          public static func lines(_ p1: Int) -> String {
+            return L10n.tr("Localizable", "restart.screen.option.x.lines", p1)
           }
         }
       }

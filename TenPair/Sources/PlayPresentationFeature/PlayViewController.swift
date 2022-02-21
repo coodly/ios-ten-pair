@@ -1,7 +1,9 @@
 import Autolayout
+import Combine
 import ComposableArchitecture
 import GameplayKit
 import LoadingPresentation
+import MenuFeature
 import MenuPresentation
 import Play
 import PlayFeature
@@ -32,6 +34,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     }
     
     public var store: Store<PlayFeature.PlayState, PlayAction>!
+    private lazy var viewStore = ViewStore(store)
     
     private lazy var summaryStore = store.scope(state: \.playSummaryState, action: PlayAction.playSummary)
     private lazy var summaryView = PlaySummaryView(store: summaryStore)
@@ -39,7 +42,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     
     private lazy var imageConfig = UIImage.SymbolConfiguration(weight: .heavy)
     private lazy var menuImage = UIImage(systemName: "line.horizontal.3.decrease.circle", withConfiguration: imageConfig)
-    private lazy var menuButton = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(presentMenu))
+    private lazy var menuButton = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(tappedMenu))
     private lazy var reloadImage = UIImage(systemName: "arrow.2.circlepath", withConfiguration: imageConfig)
     private lazy var reloadButton = UIBarButtonItem(image: reloadImage, style: .plain, target: self, action: #selector(reloadField))
     
@@ -67,6 +70,8 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     
     private lazy var layout = NumbersFlowLayout()
     private lazy var layoutPosition = layout.layoutPosition
+    
+    private lazy var disposeBag = Set<AnyCancellable>()
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +104,48 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
         
         undoTray.isHidden = true
         undoManager?.levelsOfUndo = 10
+        
+        store.scope(state: \.menuState, action: PlayAction.menu).ifLet(
+            then: {
+                [weak self]
+                
+                store in
+                
+                self?.present(menu: store)
+            },
+            else: {
+                [weak self] in
+                
+                self?.dismissModal()
+            }
+        )
+        .store(in: &disposeBag)
+        
+        //TODO jaanus: fix this delay. Tap clears menuState that peforms dismiss. That clears loading shown in restart?
+        viewStore.publisher.restartAction.compactMap({ $0 }).delay(for: .milliseconds(1), scheduler: DispatchQueue.main).sink() {
+            [weak self]
+            
+            action in
+            
+            switch action {
+            case .regular:
+                self?.restart(0)
+            case .random(let lines):
+                self?.restart(lines)
+            }
+        }
+        .store(in: &disposeBag)
+    }
+    
+    @objc fileprivate func tappedMenu() {
+        viewStore.send(.tappedMenu)
+    }
+    
+    private func present(menu store: Store<MenuState, MenuAction>) {
+        let presentation = MenuPresentationViewController.instance
+        presentation.store = store
+        presentation.modalPresentationStyle = .custom
+        presentModal(presentation)
     }
 
     @objc fileprivate func reloadField() {

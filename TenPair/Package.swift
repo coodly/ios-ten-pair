@@ -73,7 +73,8 @@ let package = Package(
             dependencies: [
                 "AppAdsFeature",
                 "Autolayout",
-                "Storyboards"
+                "Storyboards",
+                "Themes"
             ],
             resources: [.process("Resources")]
         ),
@@ -142,6 +143,9 @@ let package = Package(
         .target(
             name: "MenuFeature",
             dependencies: [
+                "RestartFeature",
+                "Themes",
+                
                 composable
             ]
         ),
@@ -149,8 +153,11 @@ let package = Package(
             name: "MenuPresentation",
             dependencies: [
                 "Autolayout",
+                "Localization",
+                "MenuFeature",
                 "Purchase",
-                "Storyboards"
+                "Storyboards",
+                "UIComponents"
             ],
             resources: [.process("Resources")]
         ),
@@ -216,10 +223,11 @@ let package = Package(
         ),
         .target(
             name: "RandomLines",
-            dependencies: ["Config", "Play", "Save"]),
-        .target(name: "RemoveAds"),
-        .target(name: "RemoveAdsImpl",
-                dependencies: ["Config", "Logging", "Purchases", "RemoveAds"]
+            dependencies: [
+                "Config",
+                "Play",
+                "Save"
+            ]
         ),
         .target(
             name: "RandomSeeds",
@@ -227,6 +235,24 @@ let package = Package(
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
                 "RandomLines",
                 "SWLogger",
+            ]
+        ),
+        .target(
+            name: "RemoveAds"
+        ),
+        .target(
+            name: "RemoveAdsImpl",
+            dependencies: [
+                "Config",
+                "Logging",
+                "Purchases",
+                "RemoveAds"
+            ]
+        ),
+        .target(
+            name: "RestartFeature",
+            dependencies: [
+                composable
             ]
         ),
         .target(

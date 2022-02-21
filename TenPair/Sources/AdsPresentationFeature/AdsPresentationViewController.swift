@@ -3,6 +3,7 @@ import Autolayout
 import Combine
 import ComposableArchitecture
 import Storyboards
+import Themes
 import UIKit
 
 public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
@@ -22,7 +23,7 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
     @IBOutlet private var withBannerConstraints: [NSLayoutConstraint]!
     @IBOutlet private var bannerContainer: UIView!
     @IBOutlet private var bannerHeight: NSLayoutConstraint!
-
+    
     public var contained: UIViewController!
     
     private lazy var disposeBag = Set<AnyCancellable>()
@@ -49,6 +50,8 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
         navigationItem.titleView = contained.navigationItem.titleView
         navigationItem.leftBarButtonItem = contained.navigationItem.leftBarButtonItem
         navigationItem.rightBarButtonItem = contained.navigationItem.rightBarButtonItem
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setNeedsStatusBarAppearanceUpdate), name: .themeChanged, object: nil)
     }
     
     private func showBanne(show: Bool) {
@@ -61,5 +64,21 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
         }
         
         UIView.animate(withDuration: 0.3, animations: view.layoutIfNeeded)
+    }
+    
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
+        AppTheme.shared.active.statusBar
+    }
+    
+    public override var shouldAutorotate: Bool {
+        UIDevice.current.userInterfaceIdiom == .pad
+    }
+    
+    public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return .allButUpsideDown
+        } else {
+            return .portrait
+        }
     }
 }
