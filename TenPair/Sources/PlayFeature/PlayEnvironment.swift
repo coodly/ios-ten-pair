@@ -1,9 +1,11 @@
+import ComposableArchitecture
 import MenuFeature
 import PlaySummaryFeature
 
 public struct PlayEnvironment {
-    public init() {
-        
+    private let mainQueue: AnySchedulerOf<DispatchQueue>
+    public init(mainQueue: AnySchedulerOf<DispatchQueue>) {
+        self.mainQueue = mainQueue
     }
     
     internal var menuEnv: MenuEnvironment {
@@ -11,6 +13,6 @@ public struct PlayEnvironment {
     }
     
     internal var playSummaryEnv: PlaySummaryEnvironment {
-        PlaySummaryEnvironment()
+        PlaySummaryEnvironment(mainQueue: mainQueue)
     }
 }

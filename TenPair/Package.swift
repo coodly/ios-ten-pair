@@ -196,6 +196,8 @@ let package = Package(
         .target(
             name: "PlaySummaryFeature",
             dependencies: [
+                "Themes",
+                
                 composable
             ]
         ),

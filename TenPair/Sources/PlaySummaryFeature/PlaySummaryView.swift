@@ -30,6 +30,8 @@ public struct PlaySummaryView: View {
                     .fixedSize()
             }
             .font(Font.body.bold())
+            .foregroundColor(viewStore.foregroundColor)
+            .onAppear(perform: { viewStore.send(.onAppear) })
         }
     }
 }
