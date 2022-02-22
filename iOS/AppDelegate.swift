@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
+import AppLaunchMobile
 import ApplicationFeature
 import AVKit
 import ComposableArchitecture
 import Config
 import Logging
-import AppLaunchMobile
+import MobileAdsClientLive
 import PurchaseClient
 import PurchaseClientLive
 import Themes
@@ -36,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initialState: ApplicationState(),
         reducer: applicationReducer,
         environment: ApplicationEnvironment(
+            adsClient: .live,
             mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
             purchaseClient: purchaseClient
         )

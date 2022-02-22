@@ -19,6 +19,7 @@ import ApplicationFeature
 import ComposableArchitecture
 import FeedbackClient
 import Logging
+import MobileAdsClient
 import PurchaseClient
 import Themes
 import UIKit
@@ -31,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initialState: ApplicationState(),
         reducer: applicationReducer,
         environment: ApplicationEnvironment(
+            adsClient: .noAds,
             mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
             purchaseClient: .noPurchase
         )

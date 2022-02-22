@@ -21,6 +21,7 @@ let package = Package(
             name: "MobilePackages",
             targets: [
                 "AppLaunchMobile",
+                "MobileAdsClientLive",
                 "PurchaseClientLive"
             ]
         ),
@@ -57,6 +58,35 @@ let package = Package(
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", from: "0.33.1")
     ],
     targets: [
+        .binaryTarget(
+            name: "GoogleAppMeasurement",
+            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/GoogleAppMeasurement.xcframework"
+        ),
+        .binaryTarget(
+            name: "GoogleAppMeasurementIdentitySupport",
+            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/GoogleAppMeasurementIdentitySupport.xcframework"
+        ),
+        .binaryTarget(
+            name: "GoogleMobileAds",
+            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/GoogleMobileAds.xcframework"
+        ),
+        .binaryTarget(
+            name: "GoogleUtilities",
+            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/GoogleUtilities.xcframework"
+        ),
+        .binaryTarget(
+            name: "nanopb",
+            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/nanopb.xcframework"
+        ),
+        .binaryTarget(
+            name: "PromisesObjC",
+            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/PromisesObjC.xcframework"
+        ),
+        .binaryTarget(
+            name: "UserMessagingPlatform",
+            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/UserMessagingPlatform.xcframework"
+        ),
+        
         .target(
             name: "AdsPresentationFeature",
             dependencies: [
@@ -95,6 +125,7 @@ let package = Package(
             dependencies: [
                 "AppAdsFeature",
                 "Logging",
+                "MobileAdsClient",
                 "PlayFeature",
                 "PurchaseFeature",
                 "PurchaseClient",
@@ -151,6 +182,23 @@ let package = Package(
                 "UIComponents"
             ],
             resources: [.process("Resources")]
+        ),
+        .target(
+            name: "MobileAdsClient"
+        ),
+        .target(
+            name: "MobileAdsClientLive",
+            dependencies: [
+                "MobileAdsClient",
+                
+                "GoogleAppMeasurement",
+                "GoogleAppMeasurementIdentitySupport",
+                "GoogleMobileAds",
+                "GoogleUtilities",
+                "nanopb",
+                "PromisesObjC",
+                "UserMessagingPlatform"
+            ]
         ),
         .target(
             name: "Play",
