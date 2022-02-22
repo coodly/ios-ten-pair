@@ -124,11 +124,11 @@ private class PurchasesProxy: NSObject, PurchasesDelegate {
                 
                 self.handle(info: info)
                 
-                if let error = error {
+                if let error = error, !cancelled {
                     Log.purchase.error("Purchase error \(error)")
                     promise(.failure(error))
                 } else {
-                    promise(.success(true))
+                    promise(.success(!cancelled))
                 }
             }
         }
