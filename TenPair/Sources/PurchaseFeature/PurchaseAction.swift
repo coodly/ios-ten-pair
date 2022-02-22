@@ -9,6 +9,8 @@ public enum PurchaseAction {
     
     case loadedProduct(Result<AppProduct, Error>)
     case statusChanged(Result<PurchaseStatus, Error>)
+    case purchaseMade(Result<Bool, Error>)
     
+    case purchase
     case rateApp
 }

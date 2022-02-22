@@ -51,7 +51,32 @@ private let reducer = Reducer<PurchaseState, PurchaseAction, PurchaseEnvironment
         }
         return .none
 
+    case .purchase:
+        guard state.productStatus == .loaded else {
+            return .none
+        }
+
+        state.purchaseFailureMessage = nil
+        state.purchaseInProgress = true
+        
+        return Effect(env.purchaseClient.purchase())
+            .catchToEffect(PurchaseAction.purchaseMade)
+            .receive(on: env.mainQueue)
+            .eraseToEffect()
+        
+    case .purchaseMade(let result):
+        state.purchaseInProgress = false
+        switch result {
+        case .success(_):
+            // success should come through state change
+            break
+        case .failure(let error):
+            state.purchaseFailureMessage = error.localizedDescription
+        }
+        return .none
+        
     case .rateApp:
         return .none
     }
 }
+.debug()

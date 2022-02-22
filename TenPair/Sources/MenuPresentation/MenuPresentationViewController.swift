@@ -14,6 +14,7 @@ public class MenuPresentationViewController: UIViewController, StoryboardLoaded 
     }
     
     public var store: Store<MenuState, MenuAction>!
+    private lazy var viewStore = ViewStore(store)
     private lazy var menuView = MenuPresentationView(store: store)
     
     public override func viewDidLoad() {
@@ -26,5 +27,17 @@ public class MenuPresentationViewController: UIViewController, StoryboardLoaded 
         hosting.view.pinToSuperviewEdges()
         hosting.view.backgroundColor = .clear
         view.backgroundColor = .clear
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewStore.send(.willAppear)
+    }
+    
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        viewStore.send(.willDisappear)
     }
 }

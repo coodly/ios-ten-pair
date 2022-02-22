@@ -17,7 +17,7 @@ internal struct PurchaseOptionsView: View {
             
             Group {
                 if !viewStore.purchaseMade {
-                    Button(action: {}) {
+                    Button(action: { viewStore.send(.purchase) }) {
                         HStack {
                             Text(L10n.Menu.Option.Remove.Ads.base)
                             if viewStore.productStatus == .loading {
@@ -27,6 +27,15 @@ internal struct PurchaseOptionsView: View {
                             }
                         }
                     }
+                    .disabled(viewStore.purchaseInProgress)
+                    .overlay(
+                        ZStack {
+                            if viewStore.purchaseInProgress {
+                                MenuBackground()
+                                ActivityIndicatorView()
+                            }
+                        }
+                    )
                     Button(action: {}) {
                         Text(L10n.Menu.Option.Restore.purchase)
                     }
@@ -36,9 +45,13 @@ internal struct PurchaseOptionsView: View {
                         Text(L10n.Menu.Option.Rate.app)
                     }
                 }
+                if let message = viewStore.purchaseFailureMessage {
+                    Text(message)
+                        .font(Font.body.bold())
+                        .foregroundColor(.red)
+                        .multilineTextAlignment(.center)
+                }
             }
-            .onAppear(perform: { viewStore.send(.onAppear) })
-            .onDisappear(perform: { viewStore.send(.onDisappear) })
         }
     }
 }
