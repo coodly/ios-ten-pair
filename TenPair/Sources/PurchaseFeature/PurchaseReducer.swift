@@ -52,12 +52,12 @@ private let reducer = Reducer<PurchaseState, PurchaseAction, PurchaseEnvironment
         return .none
 
     case .purchase:
-        guard state.productStatus == .loaded else {
+        guard state.productStatus == .loaded, state.purchaseMode == .showing else {
             return .none
         }
 
         state.purchaseFailureMessage = nil
-        state.purchaseInProgress = true
+        state.purchaseMode = .purchaseInProgress
         
         return Effect(env.purchaseClient.purchase())
             .catchToEffect(PurchaseAction.purchaseMade)
@@ -65,10 +65,30 @@ private let reducer = Reducer<PurchaseState, PurchaseAction, PurchaseEnvironment
             .eraseToEffect()
         
     case .purchaseMade(let result):
-        state.purchaseInProgress = false
+        state.purchaseMode = .showing
         switch result {
         case .success(_):
             // success should come through state change
+            break
+        case .failure(let error):
+            state.purchaseFailureMessage = error.localizedDescription
+        }
+        return .none
+        
+    case .restore:
+        guard state.purchaseMode == .showing else {
+            return .none
+        }
+        
+        return Effect(env.purchaseClient.restore())
+            .catchToEffect(PurchaseAction.restoreMade)
+            .receive(on: env.mainQueue)
+            .eraseToEffect()
+        
+    case .restoreMade(let result):
+        state.purchaseMode = .showing
+        switch result {
+        case .success(_):
             break
         case .failure(let error):
             state.purchaseFailureMessage = error.localizedDescription

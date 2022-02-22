@@ -103,11 +103,7 @@ private class PurchasesProxy: NSObject, PurchasesDelegate {
                 
                 self.handle(info: info)
                 
-                if let error = error {
-                    promise(.failure(error))
-                } else {
-                    promise(.success(true))
-                }
+                promise(.success(true))
             }
         }
         .eraseToAnyPublisher()

@@ -31,14 +31,23 @@ internal struct PurchaseOptionsView: View {
                     .overlay(
                         ZStack {
                             if viewStore.purchaseInProgress {
-                                MenuBackground()
+                                RowBackground()
                                 ActivityIndicatorView()
                             }
                         }
                     )
-                    Button(action: {}) {
+                    Button(action: { viewStore.send(.restore) }) {
                         Text(L10n.Menu.Option.Restore.purchase)
                     }
+                    .disabled(viewStore.purchaseInProgress)
+                    .overlay(
+                        ZStack {
+                            if viewStore.restoreInProgress {
+                                RowBackground()
+                                ActivityIndicatorView()
+                            }
+                        }
+                    )
                 }
                 if viewStore.purchaseMade {
                     Button(action: {}) {
