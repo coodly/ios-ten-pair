@@ -17,6 +17,12 @@ private let reducer = Reducer<MenuState, MenuAction, MenuEnvironment>() {
     state, action, env in
     
     switch action {
+    case .willAppear:
+        return Effect(value: .purchase(.onAppear))
+        
+    case .willDisappear:
+        return Effect(value: .purchase(.onDisappear))
+        
     case .resume:
         return .none
         
@@ -26,7 +32,7 @@ private let reducer = Reducer<MenuState, MenuAction, MenuEnvironment>() {
         
     case .theme:
         let next = AppTheme.shared.switchToNext()
-        state.activeThemeName = next.name
+        state.activeThemeName = next.localizedName
         return .none
         
     case .restart(.back):
