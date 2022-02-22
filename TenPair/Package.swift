@@ -259,6 +259,7 @@ let package = Package(
         .target(
             name: "Themes",
             dependencies: [
+                "Localization",
                 "UIComponents"
             ]
         ),

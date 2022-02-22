@@ -15,6 +15,7 @@
 */
 
 import Foundation
+import Localization
 import UIComponents
 import UIKit
 
@@ -186,7 +187,17 @@ public struct ThemeDefinition: Equatable {
     public let barTintColor: UIColor
     
     public var localizedName: String {
-        let key = "theme.name.\(name)"
-        return NSLocalizedString(key, comment: "")
+        switch name {
+        case "classic":
+            return L10n.Theme.Name.classic
+        case "dark":
+            return L10n.Theme.Name.dark
+        case "honeycomb":
+            return L10n.Theme.Name.honeycomb
+        case "pink":
+            return L10n.Theme.Name.pink
+        default:
+            return "unnamed-\(name)"
+        }
     }
 }
