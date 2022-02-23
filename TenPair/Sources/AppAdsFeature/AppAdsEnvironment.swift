@@ -1,5 +1,8 @@
+import MobileAdsClient
+
 public struct AppAdsEnvironment {
-    public init() {
-        
+    internal let adsClient: MobileAdsClient
+    public init(adsClient: MobileAdsClient) {
+        self.adsClient = adsClient
     }
 }

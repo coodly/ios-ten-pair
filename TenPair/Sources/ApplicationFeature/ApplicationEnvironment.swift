@@ -21,7 +21,9 @@ public struct ApplicationEnvironment {
     }
     
     internal var appAdsEnv: AppAdsEnvironment {
-        AppAdsEnvironment()
+        AppAdsEnvironment(
+            adsClient: adsClient
+        )
     }
     
     internal var playEnv: PlayEnvironment {

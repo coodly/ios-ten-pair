@@ -2,6 +2,8 @@ import AppAdsFeature
 import Autolayout
 import Combine
 import ComposableArchitecture
+import Logging
+import MobileAdsClient
 import Storyboards
 import Themes
 import UIKit
@@ -22,9 +24,10 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
     @IBOutlet private var withoutBannerConstraints: [NSLayoutConstraint]!
     @IBOutlet private var withBannerConstraints: [NSLayoutConstraint]!
     @IBOutlet private var bannerContainer: UIView!
-    @IBOutlet private var bannerHeight: NSLayoutConstraint!
     
     public var contained: UIViewController!
+    
+    private lazy var adsClient = MobileAdsClient.client
     
     private lazy var disposeBag = Set<AnyCancellable>()
     
@@ -43,7 +46,7 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
             
             show in
             
-            self?.showBanne(show: show)
+            self?.showBanner(show: show)
         }
         .store(in: &disposeBag)
         
@@ -52,9 +55,28 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
         navigationItem.rightBarButtonItem = contained.navigationItem.rightBarButtonItem
         
         NotificationCenter.default.addObserver(self, selector: #selector(setNeedsStatusBarAppearanceUpdate), name: .themeChanged, object: nil)
+        
+        let banner = adsClient.bannerView(on: self)
+        bannerContainer.addSubview(banner)
+        banner.pinToSuperviewEdges()
+        
+        viewStore.send(.onDidLoad)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(checkBannerShow), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
-    private func showBanne(show: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        adsClient.reloadBanner(in: view)
+    }
+    
+    @objc fileprivate func checkBannerShow() {
+        showBanner(show: viewStore.showBannerAd)
+    }
+    
+    private func showBanner(show: Bool) {
+        Log.ads.debug("Show banner: \(show)")
         if show {
             NSLayoutConstraint.deactivate(withoutBannerConstraints)
             NSLayoutConstraint.activate(withBannerConstraints)
@@ -80,5 +102,13 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
         } else {
             return .portrait
         }
+    }
+    
+    public override func viewWillTransition(to size: CGSize,
+                            with coordinator: UIViewControllerTransitionCoordinator) {
+      super.viewWillTransition(to:size, with:coordinator)
+      coordinator.animate(alongsideTransition: { _ in
+          self.adsClient.reloadBanner(in: self.view)
+      })
     }
 }

@@ -20,6 +20,7 @@ import AVKit
 import ComposableArchitecture
 import Config
 import Logging
+import MobileAdsClient
 import MobileAdsClientLive
 import PurchaseClient
 import PurchaseClientLive
@@ -37,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initialState: ApplicationState(),
         reducer: applicationReducer,
         environment: ApplicationEnvironment(
-            adsClient: .live,
+            adsClient: .client,
             mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
             purchaseClient: purchaseClient
         )
@@ -49,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Log.enable()
         
         FeedbackService.load()
+        MobileAdsClient.client = .live
                 
         if purchaseClient.havePurchase {
             purchaseClient.load()

@@ -100,6 +100,8 @@ let package = Package(
         .target(
             name: "AppAdsFeature",
             dependencies: [
+                "Logging",
+                
                 composable
             ]
         ),
@@ -189,6 +191,8 @@ let package = Package(
         .target(
             name: "MobileAdsClientLive",
             dependencies: [
+                "Config",
+                "Logging",
                 "MobileAdsClient",
                 
                 "GoogleAppMeasurement",

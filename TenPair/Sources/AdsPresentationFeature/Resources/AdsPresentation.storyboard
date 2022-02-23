@@ -19,9 +19,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9n-Ps-mjO">
                                 <rect key="frame" x="0.0" y="762" width="414" height="100"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="uCf-EM-rRN"/>
+                                    <constraint firstAttribute="height" constant="100" placeholder="YES" id="uCf-EM-rRN"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGP-J6-e0L">
@@ -30,7 +30,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TGP-J6-e0L" firstAttribute="bottom" secondItem="F9n-Ps-mjO" secondAttribute="top" constant="-16" id="A8J-Pf-2yE"/>
                             <constraint firstItem="TGP-J6-e0L" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="Cc9-L7-WjZ"/>
@@ -49,7 +49,6 @@
                     </view>
                     <connections>
                         <outlet property="bannerContainer" destination="F9n-Ps-mjO" id="8fe-UZ-fQo"/>
-                        <outlet property="bannerHeight" destination="uCf-EM-rRN" id="7WX-Sq-5pl"/>
                         <outlet property="contentContainer" destination="TGP-J6-e0L" id="ZvU-DZ-AUw"/>
                         <outletCollection property="withoutBannerConstraints" destination="YWB-Tm-Yye" collectionClass="NSMutableArray" id="5JE-xK-yzI"/>
                         <outletCollection property="withBannerConstraints" destination="A8J-Pf-2yE" collectionClass="NSMutableArray" id="9GY-HX-Zx1"/>
@@ -63,12 +62,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
