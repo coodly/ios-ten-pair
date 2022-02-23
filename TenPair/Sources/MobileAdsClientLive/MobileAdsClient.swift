@@ -47,10 +47,16 @@ private class AdsProxy: NSObject, GADBannerViewDelegate, GADFullScreenContentDel
         banner?.delegate = nil
         banner?.removeFromSuperview()
         banner = nil
+        interstitial?.fullScreenContentDelegate = nil
+        interstitial = nil
         loaded = false
     }
     
     fileprivate func presentInterstitial(on root: UIViewController) -> Bool {
+        guard loaded else {
+            return false
+        }
+        
         guard let interstitial = interstitial else {
             loadInterstitial()
             return false

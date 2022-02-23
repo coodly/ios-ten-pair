@@ -78,3 +78,22 @@ extension PurchaseClient {
         onRestore: { fatalError() }
     )
 }
+
+#if DEBUG
+extension PurchaseClient {
+    public static let delayedUnlock = PurchaseClient(
+        havePurchase: true,
+        onAvailableProduct: { fatalError() },
+        onLoad: { },
+        onPurchase: { fatalError() },
+        onPurchaseStatus: {
+            let currentValue = CurrentValueSubject<PurchaseStatus, Error>(.notMade)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+                currentValue.send(.made)
+            }
+            return currentValue.eraseToAnyPublisher()
+        },
+        onRestore: { fatalError() }
+    )
+}
+#endif
