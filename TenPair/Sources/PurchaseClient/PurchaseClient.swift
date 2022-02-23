@@ -7,6 +7,10 @@ public enum PurchaseStatus: Equatable {
     case made
 }
 
+public enum PurchaseError: LocalizedError {
+    case noProducts
+}
+
 public struct AppProduct: Equatable {
     public let identifier: String
     public let formattedPrice: String

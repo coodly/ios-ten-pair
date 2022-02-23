@@ -3,7 +3,6 @@ import Logging
 import PurchaseClient
 import Purchases
 import Combine
-import RemoveAds
 
 extension PurchaseClient {
     public static var live: PurchaseClient {

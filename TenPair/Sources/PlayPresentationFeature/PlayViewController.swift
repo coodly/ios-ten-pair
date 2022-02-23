@@ -250,17 +250,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
             machine.enter(AnimatingSuccess.self)
         }
     }
-    
-    @objc fileprivate func presentMenu() {
-        let menu = MenuUIViewController.instance
-        menu.delegate = self
-        menu.gameWon = field.gameEnded
         
-        menu.modalPresentationStyle = .custom
-        
-        presentModal(menu)
-    }
-    
     private typealias Callback = (() -> Void)
     private func performWithLoading(closure: @escaping ((@escaping Callback) -> Void)) {
         let loading = LoadingViewController.instance
@@ -469,7 +459,7 @@ extension PlayViewController: UICollectionViewDelegate {
     }
 }
 
-extension PlayViewController: MenuUIDelegate {
+extension PlayViewController {
     public func restart(_ lines: Int) {
         dismissModal()
         

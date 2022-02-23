@@ -179,7 +179,6 @@ let package = Package(
                 "Autolayout",
                 "Localization",
                 "MenuFeature",
-                "Purchase",
                 "Storyboards",
                 "UIComponents"
             ],
@@ -227,7 +226,6 @@ let package = Package(
                 "MenuPresentation",
                 "Play",
                 "PlayFeature",
-                "Purchase",
                 "RandomLines",
                 "Save",
                 "Storyboards",
@@ -242,13 +240,6 @@ let package = Package(
                 "Themes",
                 
                 composable
-            ]
-        ),
-        .target(
-            name: "Purchase",
-            dependencies: [
-                "Localization",
-                "RemoveAds"
             ]
         ),
         .target(

@@ -28,10 +28,6 @@ public protocol TenPairProduct {
     var identifier: String { get }
 }
 
-public enum PurchaseError: LocalizedError {
-    case noProducts
-}
-
 public struct RemoveAds {
     public let platformHasAds: Bool
     public let adsStatus: (() -> AnyPublisher<ShowAdsStatus, Never>)
