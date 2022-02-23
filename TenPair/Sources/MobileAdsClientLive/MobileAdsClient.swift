@@ -42,6 +42,7 @@ private class AdsProxy: NSObject, GADBannerViewDelegate {
         showBanner.send(false)
         showBanner.send(completion: .finished)
         banner?.delegate = nil
+        banner?.removeFromSuperview()
         banner = nil
         loaded = false
     }
@@ -51,6 +52,7 @@ private class AdsProxy: NSObject, GADBannerViewDelegate {
         banner.adUnitID = AppConfig.current.adUnits.banner
         banner.rootViewController = root
         banner.delegate = self
+        banner.isAutoloadEnabled = false
         self.banner = banner
 
         return banner
