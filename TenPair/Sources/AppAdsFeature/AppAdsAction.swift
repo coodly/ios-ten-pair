@@ -5,4 +5,6 @@ public enum AppAdsAction {
 
     case load
     case unload
+    
+    case incrementInterstitial
 }

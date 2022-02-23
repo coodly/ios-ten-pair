@@ -6,4 +6,7 @@ public enum PlayAction {
     
     case menu(MenuAction)
     case playSummary(PlaySummaryAction)
+    
+    case tappedReload
+    case tappedHint
 }

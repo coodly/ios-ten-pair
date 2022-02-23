@@ -31,5 +31,9 @@ private let reducer = Reducer<AppAdsState, AppAdsAction, AppAdsEnvironment>() {
         state.adsAvailable = false
         env.adsClient.unload()
         return .none
+        
+    case .incrementInterstitial:
+        state.interstitialMarker += 1
+        return .none
     }
 }

@@ -151,6 +151,8 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
             return
         }
         
+        viewStore.send(.tappedReload)
+        
         undoManager?.removeAllActions()
         updateUndoVisibility()
         performWithLoading() {
@@ -178,6 +180,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
             return
         }
 
+        viewStore.send(.tappedHint)
         NotificationCenter.default.post(name: .hintTaken, object: nil)
 
         performWithLoading() {
