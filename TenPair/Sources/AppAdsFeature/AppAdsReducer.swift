@@ -18,11 +18,18 @@ private let reducer = Reducer<AppAdsState, AppAdsAction, AppAdsEnvironment>() {
             .map({ AppAdsAction.markShowBanner($0) })
             .eraseToEffect()
 
-    case .load:
-        return .none
-        
     case .markShowBanner(let show):
         state.showBannerAd = show
+        return .none
+
+    case .load:
+        state.adsAvailable = true
+        env.adsClient.load()
+        return .none
+
+    case .unload:
+        state.adsAvailable = false
+        env.adsClient.unload()
         return .none
     }
 }

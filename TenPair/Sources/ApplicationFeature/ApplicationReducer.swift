@@ -32,6 +32,9 @@ private let reducer = Reducer<ApplicationState, ApplicationAction, ApplicationEn
         case .success(let status) where status == .notMade:
             Log.app.debug("Purchase not made. Load ads")
             return Effect(value: .appAds(.load))
+        case .success(let status) where status == .made:
+            Log.app.debug("Purchase not made. Unload ads")
+            return Effect(value: .appAds(.unload))
         case .success:
             return .none
         case .failure:

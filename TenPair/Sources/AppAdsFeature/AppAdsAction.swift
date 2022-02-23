@@ -4,4 +4,5 @@ public enum AppAdsAction {
     case markShowBanner(Bool)
 
     case load
+    case unload
 }
