@@ -62,8 +62,6 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
         navigationItem.leftBarButtonItem = contained.navigationItem.leftBarButtonItem
         navigationItem.rightBarButtonItem = contained.navigationItem.rightBarButtonItem
         
-        NotificationCenter.default.addObserver(self, selector: #selector(setNeedsStatusBarAppearanceUpdate), name: .themeChanged, object: nil)
-        
         let banner = adsClient.bannerView(on: self)
         bannerContainer.addSubview(banner)
         banner.pinToSuperviewEdges()
@@ -95,23 +93,7 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
         
         UIView.animate(withDuration: 0.3, animations: view.layoutIfNeeded)
     }
-    
-    public override var preferredStatusBarStyle: UIStatusBarStyle {
-        AppTheme.shared.active.statusBar
-    }
-    
-    public override var shouldAutorotate: Bool {
-        UIDevice.current.userInterfaceIdiom == .pad
-    }
-    
-    public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            return .allButUpsideDown
-        } else {
-            return .portrait
-        }
-    }
-    
+        
     public override func viewWillTransition(to size: CGSize,
                                             with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to:size, with:coordinator)
