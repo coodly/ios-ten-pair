@@ -95,5 +95,14 @@ extension PurchaseClient {
         },
         onRestore: { fatalError() }
     )
+    
+    public static let purchaseMade = PurchaseClient(
+        havePurchase: true,
+        onAvailableProduct: { PassthroughSubject<AppProduct, Error>().eraseToAnyPublisher() },
+        onLoad: {},
+        onPurchase: { fatalError() },
+        onPurchaseStatus: { Just(PurchaseStatus.made).setFailureType(to: Error.self).eraseToAnyPublisher() },
+        onRestore: { fatalError() }
+    )
 }
 #endif
