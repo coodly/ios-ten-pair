@@ -65,6 +65,7 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
         let banner = adsClient.bannerView(on: self)
         bannerContainer.addSubview(banner)
         banner.pinToSuperviewEdges()
+        bannerContainer.heightAnchor.constraint(lessThanOrEqualToConstant: 100).isActive = true
         
         viewStore.send(.onDidLoad)
         
