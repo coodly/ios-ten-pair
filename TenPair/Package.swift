@@ -128,7 +128,6 @@ let package = Package(
                 "Logging",
                 "MobileAdsClient",
                 "PlayFeature",
-                "PurchaseFeature",
                 "PurchaseClient",
                 
                 composable

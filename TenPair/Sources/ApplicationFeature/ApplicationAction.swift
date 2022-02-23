@@ -1,7 +1,6 @@
 import AppAdsFeature
 import PlayFeature
 import PurchaseClient
-import PurchaseFeature
 
 public enum ApplicationAction {
     case onDidLoad
@@ -11,5 +10,4 @@ public enum ApplicationAction {
     
     case appAds(AppAdsAction)
     case play(PlayAction)
-    case purchase(PurchaseAction)
 }

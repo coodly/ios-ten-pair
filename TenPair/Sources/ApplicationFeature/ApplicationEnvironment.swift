@@ -4,7 +4,6 @@ import ComposableArchitecture
 import MobileAdsClient
 import PlayFeature
 import PurchaseClient
-import PurchaseFeature
 
 public struct ApplicationEnvironment {
     internal let adsClient: MobileAdsClient
@@ -34,13 +33,6 @@ public struct ApplicationEnvironment {
     internal var playEnv: PlayEnvironment {
         PlayEnvironment(
             cloudMessages: cloudMessages,
-            mainQueue: mainQueue,
-            purchaseClient: purchaseClient
-        )
-    }
-    
-    internal var purchaseEnv: PurchaseEnvironment {
-        PurchaseEnvironment(
             mainQueue: mainQueue,
             purchaseClient: purchaseClient
         )
