@@ -16,6 +16,7 @@
 
 import AppLaunchDesktop
 import ApplicationFeature
+import CloudMessagesClient
 import ComposableArchitecture
 import Logging
 import MobileAdsClient
@@ -32,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         reducer: applicationReducer,
         environment: ApplicationEnvironment(
             adsClient: .noAds,
+            cloudMessages: .noFeedback,
             mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
             purchaseClient: .noPurchase
         )

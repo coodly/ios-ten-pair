@@ -31,6 +31,7 @@ public class Log {
     
     public static let app = Logging(name: "App")
     public static let ads = Logging(name: "Ads")
+    public static let cloud = Logging(name: "Cloud")
     public static let feedback = Logging(name: "Feedback")
     public static let insight = Logging(name: "Insight")
     public static let purchase = Logging(name: "Purchase")

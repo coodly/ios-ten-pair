@@ -17,6 +17,8 @@
 import AppLaunchMobile
 import ApplicationFeature
 import AVKit
+import CloudMessagesClient
+import CloudMessagesClientLive
 import ComposableArchitecture
 import Config
 import Logging
@@ -33,12 +35,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     private lazy var purchaseClient = PurchaseClient.live
+    private lazy var cloudMessages: CloudMessagesClient = {
+        if #available(iOS 15.0, *) {
+            return CloudMessagesClient.live
+        } else {
+            return CloudMessagesClient.noFeedback
+        }
+    }()
     
     private lazy var store = Store(
         initialState: ApplicationState(),
         reducer: applicationReducer,
         environment: ApplicationEnvironment(
             adsClient: .client,
+            cloudMessages: cloudMessages,
             mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
             purchaseClient: purchaseClient
         )

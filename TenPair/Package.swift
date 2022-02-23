@@ -21,6 +21,7 @@ let package = Package(
             name: "MobilePackages",
             targets: [
                 "AppLaunchMobile",
+                "CloudMessagesClientLive",
                 "MobileAdsClientLive",
                 "PurchaseClientLive"
             ]
@@ -123,6 +124,7 @@ let package = Package(
             name: "ApplicationFeature",
             dependencies: [
                 "AppAdsFeature",
+                "CloudMessagesClient",
                 "Logging",
                 "MobileAdsClient",
                 "PlayFeature",
@@ -134,6 +136,16 @@ let package = Package(
         ),
         .target(
             name: "Autolayout"
+        ),
+        .target(
+            name: "CloudMessagesClient"
+        ),
+        .target(
+            name: "CloudMessagesClientLive",
+            dependencies: [
+                "CloudMessagesClient",
+                "Logging"
+            ]
         ),
         .target(
             name: "Config"
@@ -285,6 +297,18 @@ let package = Package(
             dependencies: [
                 "Config"
             ]
+        ),
+        .target(
+            name: "SendFeedbackFeature",
+            dependencies: [
+                "Autolayout",
+                "CloudMessagesClient",
+                "Localization",
+                "Storyboards",
+                
+                composable
+            ],
+            resources: [.process("Resources")]
         ),
         .target(
             name: "Storyboards"
