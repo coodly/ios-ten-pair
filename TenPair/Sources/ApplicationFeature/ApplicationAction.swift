@@ -5,6 +5,7 @@ import PurchaseFeature
 
 public enum ApplicationAction {
     case onDidLoad
+    case onDidBecomeActive
     
     case purchaseStateChanged(Result<PurchaseStatus, Error>)
     

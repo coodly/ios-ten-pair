@@ -4,7 +4,7 @@ import SwiftUI
 internal struct FeedbackHeaderView: View {
     var body: some View {
         ZStack {
-            Color.black
+            Color(red: 0.353, green: 0.784, blue: 0.980)
                 .edgesIgnoringSafeArea([Edge.Set.horizontal, Edge.Set.top])
             VStack {
                 Text(L10n.Feedback.Greeting.title)
@@ -15,7 +15,7 @@ internal struct FeedbackHeaderView: View {
                     .font(.headline)
             }
             .padding()
-            .foregroundColor(Color.primary)
+            .foregroundColor(Color.white)
         }
     }
 }

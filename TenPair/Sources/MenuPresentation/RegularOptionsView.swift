@@ -28,6 +28,9 @@ internal struct RegularOptionsView: View {
                 store.scope(state: \.purchaseState, action: MenuAction.purchase),
                 then: PurchaseOptionsView.init(store:)
             )
+            if viewStore.feedbackEnabled {
+                FeedbackOptionsView(store: store)
+            }
         }
     }
 }

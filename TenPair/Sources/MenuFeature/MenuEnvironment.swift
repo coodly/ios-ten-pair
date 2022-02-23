@@ -3,10 +3,11 @@ import ComposableArchitecture
 import PurchaseClient
 import PurchaseFeature
 import RestartFeature
+import SendFeedbackFeature
 
 public struct MenuEnvironment {
-    private let cloudMessages: CloudMessagesClient
-    private let mainQueue: AnySchedulerOf<DispatchQueue>
+    internal let cloudMessages: CloudMessagesClient
+    internal let mainQueue: AnySchedulerOf<DispatchQueue>
     private let purchaseClient: PurchaseClient
     public init(
         cloudMessages: CloudMessagesClient,
@@ -27,5 +28,12 @@ public struct MenuEnvironment {
     
     internal var restartEnv: RestartEnvironment {
         RestartEnvironment()
+    }
+    
+    internal var sendFeedbackEnv: SendFeedbackEnvironment {
+        SendFeedbackEnvironment(
+            cloudMessagesClient: cloudMessages,
+            mainQueue: mainQueue
+        )
     }
 }

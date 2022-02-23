@@ -16,7 +16,10 @@ private let reducer = Reducer<PlayState, PlayAction, PlayEnvironment>() {
     switch action {
     case .tappedMenu:
         state.restartAction = nil
-        state.menuState = MenuState(havePurchase: env.purchaseClient.havePurchase)
+        state.menuState = MenuState(
+            feedbackEnabled: env.cloudMessages.feedbackEnabled,
+            havePurchase: env.purchaseClient.havePurchase
+        )
         return .none
     
     case .tappedReload:

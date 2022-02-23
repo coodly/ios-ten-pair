@@ -174,6 +174,7 @@ let package = Package(
             dependencies: [
                 "PurchaseFeature",
                 "RestartFeature",
+                "SendFeedbackFeature",
                 "Themes",
                 
                 composable

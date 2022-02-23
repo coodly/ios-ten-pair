@@ -5,7 +5,7 @@ import PlaySummaryFeature
 import PurchaseClient
 
 public struct PlayEnvironment {
-    private let cloudMessages: CloudMessagesClient
+    internal let cloudMessages: CloudMessagesClient
     private let mainQueue: AnySchedulerOf<DispatchQueue>
     internal let purchaseClient: PurchaseClient
     public init(

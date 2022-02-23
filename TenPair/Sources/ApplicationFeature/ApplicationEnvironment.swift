@@ -8,7 +8,7 @@ import PurchaseFeature
 
 public struct ApplicationEnvironment {
     internal let adsClient: MobileAdsClient
-    private let cloudMessages: CloudMessagesClient
+    internal let cloudMessages: CloudMessagesClient
     internal let mainQueue: AnySchedulerOf<DispatchQueue>
     internal let purchaseClient: PurchaseClient
     

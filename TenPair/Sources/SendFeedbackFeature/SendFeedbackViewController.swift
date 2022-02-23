@@ -4,6 +4,7 @@ import Storyboards
 import SwiftUI
 import UIKit
 
+@available(iOS 14.0, *)
 public class SendFeedbackViewController: UIViewController, StoryboardLoaded {
     public static var storyboardName: String {
         "SendFeedback"

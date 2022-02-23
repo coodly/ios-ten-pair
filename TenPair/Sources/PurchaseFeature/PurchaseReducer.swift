@@ -99,4 +99,3 @@ private let reducer = Reducer<PurchaseState, PurchaseAction, PurchaseEnvironment
         return .none
     }
 }
-.debug()

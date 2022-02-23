@@ -53,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             purchaseClient: purchaseClient
         )
     )
+    private lazy var viewStore = ViewStore(store)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppTheme.shared.load()
@@ -73,6 +74,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        viewStore.send(.onDidBecomeActive)
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         NotificationCenter.default.post(name: .saveField, object: nil)
     }

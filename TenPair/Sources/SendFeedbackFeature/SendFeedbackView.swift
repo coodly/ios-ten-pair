@@ -1,6 +1,7 @@
 import ComposableArchitecture
 import SwiftUI
 
+@available(iOS 14.0, *)
 internal struct SendFeedbackView: View {
     private let store: Store<SendFeedbackState, SendFeedbackAction>
     
@@ -47,6 +48,6 @@ internal struct SendFeedbackView: View {
             }
         }
         .lineLimit(nil)
-        .background(Color.black)
+        .background(Color(UIColor.secondarySystemBackground))
     }
 }

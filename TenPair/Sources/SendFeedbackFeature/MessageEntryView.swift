@@ -1,6 +1,7 @@
 import ComposableArchitecture
 import SwiftUI
 
+@available(iOS 14.0, *)
 internal struct MessageEntryView: View {
     internal let store: Store<SendFeedbackState, SendFeedbackAction>
     

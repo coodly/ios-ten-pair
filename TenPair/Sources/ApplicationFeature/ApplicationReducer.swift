@@ -41,6 +41,10 @@ private let reducer = Reducer<ApplicationState, ApplicationAction, ApplicationEn
             return .none
         }
         
+    case .onDidBecomeActive:
+        env.cloudMessages.checkForMessages()
+        return .none
+        
     case .play(.tappedHint), .play(.tappedReload):
         return Effect(value: .appAds(.incrementInterstitial))
         
