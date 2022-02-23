@@ -13,6 +13,7 @@ extension MobileAdsClient {
             onLoad: proxy.load,
             onUnload: proxy.unload,
             onBannerView: proxy.bannerView(in:),
+            onPresentInterstitial: proxy.presentInterstitial(on:),
             onReloadBannerInView: proxy.reloadBanner(in:),
             onShowBannerPublisher: {
                 proxy.showBanner.eraseToAnyPublisher()
@@ -21,10 +22,11 @@ extension MobileAdsClient {
     }
 }
 
-private class AdsProxy: NSObject, GADBannerViewDelegate {
+private class AdsProxy: NSObject, GADBannerViewDelegate, GADFullScreenContentDelegate {
     fileprivate let showBanner = CurrentValueSubject<Bool, Never>(false)
     private var banner: GADBannerView?
     private var loaded = false
+    private var interstitial: GADInterstitialAd?
     
     fileprivate func load() {
         Log.ads.debug("Load")
@@ -35,6 +37,7 @@ private class AdsProxy: NSObject, GADBannerViewDelegate {
             return
         }
         reloadBanner(in: banner)
+        loadInterstitial()
     }
     
     fileprivate func unload() {
@@ -45,6 +48,16 @@ private class AdsProxy: NSObject, GADBannerViewDelegate {
         banner?.removeFromSuperview()
         banner = nil
         loaded = false
+    }
+    
+    fileprivate func presentInterstitial(on root: UIViewController) -> Bool {
+        guard let interstitial = interstitial else {
+            loadInterstitial()
+            return false
+        }
+
+        interstitial.present(fromRootViewController: root)
+        return true
     }
     
     fileprivate func bannerView(in root: UIViewController) -> UIView {
@@ -92,5 +105,36 @@ private class AdsProxy: NSObject, GADBannerViewDelegate {
         request.register(extras)
 
         return request
+    }
+    
+    private func loadInterstitial() {
+        guard loaded else {
+            return
+        }
+        
+        guard interstitial == nil else {
+            return
+        }
+        
+        GADInterstitialAd.load(withAdUnitID: AppConfig.current.adUnits.interstitial, request: adRequest()) {
+            loaded, error in
+            
+            if let error = error {
+                Log.ads.error("Load interstitial error: \(error)")
+            } else if let ad = loaded {
+                Log.ads.debug("Loaded interstitial")
+                ad.fullScreenContentDelegate = self
+                self.interstitial = ad
+            } else {
+                Log.ads.debug("No interstitial")
+            }
+        }
+    }
+    
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        Log.ads.debug("Interstitial dismissed")
+        interstitial = nil
+        
+        loadInterstitial()
     }
 }

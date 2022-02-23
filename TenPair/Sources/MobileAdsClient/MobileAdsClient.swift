@@ -5,6 +5,7 @@ public struct MobileAdsClient {
     private let onLoad: (() -> Void)
     private let onUnload: (() -> Void)
     private let onBannerView: ((UIViewController) -> UIView)
+    private let onPresentInterstitial: ((UIViewController) -> Bool)
     private let onReloadBannerInView: ((UIView) -> Void)
     private let onShowBannerPublisher: (() -> AnyPublisher<Bool, Never>)
     
@@ -12,12 +13,14 @@ public struct MobileAdsClient {
         onLoad: @escaping (() -> Void),
         onUnload: @escaping (() -> Void),
         onBannerView: @escaping ((UIViewController) -> UIView),
+        onPresentInterstitial: @escaping ((UIViewController) -> Bool),
         onReloadBannerInView: @escaping ((UIView) -> Void),
         onShowBannerPublisher: @escaping (() -> AnyPublisher<Bool, Never>)
     ) {
         self.onLoad = onLoad
         self.onUnload = onUnload
         self.onBannerView = onBannerView
+        self.onPresentInterstitial = onPresentInterstitial
         self.onReloadBannerInView = onReloadBannerInView
         self.onShowBannerPublisher = onShowBannerPublisher
     }
@@ -32,6 +35,10 @@ public struct MobileAdsClient {
     
     public func bannerView(on root: UIViewController) -> UIView {
         onBannerView(root)
+    }
+    
+    public func presentInterstitial(on root: UIViewController) -> Bool {
+        onPresentInterstitial(root)
     }
     
     public func reloadBanner(in view: UIView) {
@@ -52,6 +59,7 @@ extension MobileAdsClient {
         onLoad: {},
         onUnload: {},
         onBannerView: { _ in fatalError() },
+        onPresentInterstitial: {_ in false },
         onReloadBannerInView: { _ in },
         onShowBannerPublisher: { Just(false).eraseToAnyPublisher() }
     )

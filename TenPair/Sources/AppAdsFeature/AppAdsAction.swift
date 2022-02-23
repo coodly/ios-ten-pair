@@ -7,4 +7,6 @@ public enum AppAdsAction {
     case unload
     
     case incrementInterstitial
+    case interstitialShown
+    case clearPresentInterstitial
 }

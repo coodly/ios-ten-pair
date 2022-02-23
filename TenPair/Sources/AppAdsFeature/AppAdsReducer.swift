@@ -1,5 +1,7 @@
 import ComposableArchitecture
 
+private let InterstitialShowThreshold = 10
+
 public let appAdsReducer = Reducer<AppAdsState, AppAdsAction, AppAdsEnvironment>.combine(
     reducer
 )
@@ -23,17 +25,26 @@ private let reducer = Reducer<AppAdsState, AppAdsAction, AppAdsEnvironment>() {
         return .none
 
     case .load:
-        state.adsAvailable = true
         env.adsClient.load()
         return .none
 
     case .unload:
-        state.adsAvailable = false
         env.adsClient.unload()
         return .none
         
     case .incrementInterstitial:
         state.interstitialMarker += 1
+        state.presentInterstitial = state.interstitialMarker >= InterstitialShowThreshold
+        return Effect(value: .clearPresentInterstitial)
+            .deferred(for: .milliseconds(100), scheduler: env.mainQueue)
+            .eraseToEffect()
+        
+    case .interstitialShown:
+        state.interstitialMarker = 0
+        return .none
+        
+    case .clearPresentInterstitial:
+        state.presentInterstitial = false
         return .none
     }
 }

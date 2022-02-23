@@ -49,6 +49,14 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
             self?.showBanner(show: show)
         }
         .store(in: &disposeBag)
+        viewStore.publisher.presentInterstitial.filter({ $0 }).sink() {
+            [weak self]
+            
+            _ in
+            
+            self?.presentInterstitial()
+        }
+        .store(in: &disposeBag)
         
         navigationItem.titleView = contained.navigationItem.titleView
         navigationItem.leftBarButtonItem = contained.navigationItem.leftBarButtonItem
@@ -117,5 +125,15 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
                 self.checkBannerShow()
             }
         )
+    }
+    
+    private func presentInterstitial() {
+        Log.ads.debug("Try to present interstitial")
+        guard adsClient.presentInterstitial(on: self) else {
+            return
+        }
+        
+        Log.ads.debug("Interstitial shown")
+        viewStore.send(.interstitialShown)
     }
 }
