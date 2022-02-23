@@ -1,6 +1,0 @@
-framework module CoreDataPersistence {
-  umbrella header "CoreDataPersistence-umbrella.h"
-
-  export *
-  module * { export * }
-}

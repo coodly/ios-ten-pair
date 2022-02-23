@@ -49,7 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         
         Log.enable()
         
-        FeedbackService.load()
         MobileAdsClient.client = .live
                 
         if purchaseClient.havePurchase {

@@ -17,7 +17,6 @@
 import AppLaunchDesktop
 import ApplicationFeature
 import ComposableArchitecture
-import FeedbackClient
 import Logging
 import MobileAdsClient
 import PurchaseClient
@@ -42,8 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppTheme.shared.load()
         
         Log.enable()
-        
-        FeedbackClient.active = .withoutFeedback
         
         let launch = window!.rootViewController as! DesktopLaunchViewController
         launch.store = store

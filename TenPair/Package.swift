@@ -36,9 +36,6 @@ let package = Package(
             name: "Config",
             targets: ["Config"]),
         .library(
-            name: "FeedbackClient",
-            targets: ["FeedbackClient"]),
-        .library(
             name: "Logging",
             targets: ["Logging"]),
         .library(
@@ -140,9 +137,6 @@ let package = Package(
         ),
         .target(
             name: "Config"
-        ),
-        .target(
-            name: "FeedbackClient"
         ),
         .target(
             name: "LoadingPresentation",
