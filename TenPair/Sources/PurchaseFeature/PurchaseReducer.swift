@@ -80,6 +80,7 @@ private let reducer = Reducer<PurchaseState, PurchaseAction, PurchaseEnvironment
             return .none
         }
         
+        state.purchaseMode = .restoreInProgress
         return Effect(env.purchaseClient.restore())
             .catchToEffect(PurchaseAction.restoreMade)
             .receive(on: env.mainQueue)
