@@ -28,6 +28,10 @@ private let reducer = Reducer<PlayState, PlayAction, PlayEnvironment>() {
     case .tappedHint:
         return .none
         
+    case .sendRateEvent:
+        env.rateAppClient.maybeRateEvent()
+        return .none
+        
     case .menu(.resume):
         state.menuState = nil
         return .none
@@ -35,13 +39,13 @@ private let reducer = Reducer<PlayState, PlayAction, PlayEnvironment>() {
     case .menu(.restart(.regular)):
         state.restartAction = .regular
         state.menuState = nil
-        return .none
+        return Effect(value: .sendRateEvent)
         
     case .menu(.restart(.random(let lines))):
         state.restartAction = .random(lines)
         state.menuState = nil
-        return .none
-        
+        return Effect(value: .sendRateEvent)
+
     case .menu:
         return .none
         

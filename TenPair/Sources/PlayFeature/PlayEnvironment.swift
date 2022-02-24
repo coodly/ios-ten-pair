@@ -9,7 +9,7 @@ public struct PlayEnvironment {
     internal let cloudMessages: CloudMessagesClient
     private let mainQueue: AnySchedulerOf<DispatchQueue>
     internal let purchaseClient: PurchaseClient
-    private let rateAppClient: RateAppClient
+    internal let rateAppClient: RateAppClient
     public init(
         cloudMessages: CloudMessagesClient,
         mainQueue: AnySchedulerOf<DispatchQueue>,

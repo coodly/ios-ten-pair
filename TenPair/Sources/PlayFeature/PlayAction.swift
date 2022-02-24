@@ -9,4 +9,6 @@ public enum PlayAction {
     
     case tappedReload
     case tappedHint
+    
+    case sendRateEvent
 }
