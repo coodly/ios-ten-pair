@@ -129,6 +129,7 @@ let package = Package(
                 "MobileAdsClient",
                 "PlayFeature",
                 "PurchaseClient",
+                "RateAppClient",
                 
                 composable
             ]
@@ -272,6 +273,12 @@ let package = Package(
                 "Config",
                 "Play",
                 "Save"
+            ]
+        ),
+        .target(
+            name: "RateAppClient",
+            dependencies: [
+                "Logging"
             ]
         ),
         .target(

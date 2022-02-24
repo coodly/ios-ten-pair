@@ -26,6 +26,7 @@ import MobileAdsClient
 import MobileAdsClientLive
 import PurchaseClient
 import PurchaseClientLive
+import RateAppClient
 import Themes
 import UIKit
 
@@ -50,7 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             adsClient: .client,
             cloudMessages: cloudMessages,
             mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
-            purchaseClient: purchaseClient
+            purchaseClient: purchaseClient,
+            rateAppClient: .client
         )
     )
     private lazy var viewStore = ViewStore(store)

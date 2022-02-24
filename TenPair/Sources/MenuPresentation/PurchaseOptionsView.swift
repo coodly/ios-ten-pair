@@ -50,7 +50,7 @@ internal struct PurchaseOptionsView: View {
                     )
                 }
                 if viewStore.purchaseMade {
-                    Button(action: {}) {
+                    Button(action: { viewStore.send(.rateApp) }) {
                         Text(L10n.Menu.Option.Rate.app)
                     }
                 }

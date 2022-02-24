@@ -16,6 +16,7 @@ private let reducer = Reducer<ApplicationState, ApplicationAction, ApplicationEn
     
     switch action {
     case .onDidLoad:
+        env.rateAppClient.appLaunch()
         guard env.purchaseClient.havePurchase else {
             return .none
         }

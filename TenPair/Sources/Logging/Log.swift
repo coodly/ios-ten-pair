@@ -35,6 +35,7 @@ public class Log {
     public static let feedback = Logging(name: "Feedback")
     public static let insight = Logging(name: "Insight")
     public static let purchase = Logging(name: "Purchase")
+    public static let rate = Logging(name: "Rate")
 
     class func debug<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
         SWLogger.Log.debug(object, file: file, function: function, line: line)

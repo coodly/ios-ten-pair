@@ -97,6 +97,7 @@ private let reducer = Reducer<PurchaseState, PurchaseAction, PurchaseEnvironment
         return .none
         
     case .rateApp:
+        env.rateAppClient.rateAppManual()
         return .none
     }
 }

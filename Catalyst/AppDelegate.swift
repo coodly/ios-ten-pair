@@ -21,6 +21,7 @@ import ComposableArchitecture
 import Logging
 import MobileAdsClient
 import PurchaseClient
+import RateAppClient
 import Themes
 import UIKit
 
@@ -35,7 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             adsClient: .noAds,
             cloudMessages: .noFeedback,
             mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
-            purchaseClient: .noPurchase
+            purchaseClient: .noPurchase,
+            rateAppClient: .client
         )
     )
     
