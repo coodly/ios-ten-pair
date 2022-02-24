@@ -61,6 +61,7 @@ internal struct PurchaseOptionsView: View {
                         .multilineTextAlignment(.center)
                 }
             }
+            .animation(.none)
         }
     }
 }
