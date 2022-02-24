@@ -83,12 +83,15 @@ private class WinScene: SKScene {
     
     private func explosion(at point: CGPoint) -> SKEmitterNode {
         let emitter = NSKeyedUnarchiver.unarchiveObject(withFile: Bundle.module.path(forResource: "Fireworks", ofType: "sks")!) as! SKEmitterNode
+        emitter.particleTexture = SKTexture(image: Asset.spark.image)
         emitter.position = point
         emitter.zPosition = 2
         emitter.particleColor = [
             SKColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1),
             SKColor.white,
-            SKColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1)].randomElement()!
+            SKColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1),
+            SKColor(red: 246.0 / 255.0, green: 205.0 / 255.0, blue: 69.0 / 255.0, alpha: 1)
+        ].randomElement()!
         return emitter
     }
 }

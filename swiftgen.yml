@@ -6,4 +6,9 @@ strings:
       output: TenPair/Sources/Localization/L10n.swift
       params:
         publicAccess: true
+xcassets:
+  - inputs: TenPair/Sources/WinPresentation/Resources/Assets.xcassets
+    outputs:
+      - templateName: swift5
+        output: TenPair/Sources/WinPresentation/Assets.swift
 
