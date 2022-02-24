@@ -404,6 +404,7 @@ extension PlayViewController: PlayDelegate {
     private func presentWin() {
         let win = WinViewController.instance
         win.modalPresentationStyle = .custom
+        win.onDismiss = dismissModal
         presentModal(win)
     }
 }

@@ -37,6 +37,8 @@ public class WinViewController: UIViewController, StoryboardLoaded {
         }
     }
     
+    public var onDismiss: (() -> Void)?
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,7 +57,7 @@ public class WinViewController: UIViewController, StoryboardLoaded {
     }
     
     @objc fileprivate func tapped() {
-        dismiss(animated: false)
+        onDismiss?()
     }
     
     public override func viewWillAppear(_ animated: Bool) {
