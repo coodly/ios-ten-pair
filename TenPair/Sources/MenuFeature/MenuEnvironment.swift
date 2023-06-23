@@ -1,5 +1,6 @@
 import CloudMessagesClient
 import ComposableArchitecture
+import Foundation
 import PurchaseClient
 import PurchaseFeature
 import RateAppClient

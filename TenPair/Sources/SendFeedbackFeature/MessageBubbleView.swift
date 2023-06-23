@@ -13,7 +13,8 @@ internal struct MessageBubbleView: View {
                 Spacer(minLength: 20)
             }
             VStack(alignment: message.sentFromApp ? .trailing: .leading) {
-                if let from = message.sentBy, from.count > 0 {
+                let from = message.sentBy
+                if from.count > 0 {
                     Text(from)
                         .font(Font.subheadline.bold())
                         .foregroundColor(Color(UIColor.secondaryLabel))

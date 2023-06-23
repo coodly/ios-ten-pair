@@ -1,6 +1,7 @@
 import AppAdsFeature
 import CloudMessagesClient
 import ComposableArchitecture
+import Foundation
 import MobileAdsClient
 import PlayFeature
 import PurchaseClient

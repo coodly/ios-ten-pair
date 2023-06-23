@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import Foundation
 
 public struct PlaySummaryEnvironment {
     internal let mainQueue: AnySchedulerOf<DispatchQueue>

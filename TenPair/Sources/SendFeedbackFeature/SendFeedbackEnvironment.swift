@@ -1,5 +1,6 @@
 import CloudMessagesClient
 import ComposableArchitecture
+import Foundation
 
 public struct SendFeedbackEnvironment {
     internal let cloudMessagesClient: CloudMessagesClient

@@ -1,5 +1,6 @@
 import CloudMessagesClient
 import ComposableArchitecture
+import Foundation
 import MenuFeature
 import PlaySummaryFeature
 import PurchaseClient

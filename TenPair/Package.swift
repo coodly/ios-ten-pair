@@ -53,7 +53,7 @@ let package = Package(
         .package(name: "SWLogger", url: "https://github.com/coodly/swlogger.git", from: "0.6.1"),
         .package(name: "Purchases", url: "https://github.com/RevenueCat/purchases-ios.git", from: "3.14.1"),
         
-        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", from: "0.33.1")
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", from: "0.54.1")
     ],
     targets: [
         .binaryTarget(
