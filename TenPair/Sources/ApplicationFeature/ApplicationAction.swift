@@ -9,5 +9,5 @@ public enum ApplicationAction {
     case purchaseStateChanged(Result<PurchaseStatus, Error>)
     
     case appAds(AppAds.Action)
-    case play(PlayAction)
+    case play(PlayReducer.Action)
 }

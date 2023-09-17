@@ -27,13 +27,4 @@ public struct ApplicationEnvironment {
         self.purchaseClient = purchaseClient
         self.rateAppClient = rateAppClient
     }
-    
-    internal var playEnv: PlayEnvironment {
-        PlayEnvironment(
-            cloudMessages: cloudMessages,
-            mainQueue: mainQueue,
-            purchaseClient: purchaseClient,
-            rateAppClient: rateAppClient
-        )
-    }
 }

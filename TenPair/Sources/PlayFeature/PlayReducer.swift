@@ -1,64 +1,96 @@
+import CloudMessagesClient
 import ComposableArchitecture
 import MenuFeature
 import PlaySummaryFeature
+import PurchaseClient
+import RateAppClient
 
-public let playReducer = Reducer<PlayState, PlayAction, PlayEnvironment>.combine(
-    AnyReducer {
-        env in
+public enum RestartAction: Equatable {
+    case regular
+    case random(Int)
+}
+
+public struct PlayReducer: ReducerProtocol {
+    public struct State: Equatable {
+        public var menuState: Menu.State?
+        public var playSummaryState = PlaySummary.State()
         
-        Menu()
+        public var restartAction: RestartAction?
+        
+        public init() {
+            
+        }
     }
-    .optional()
-    .pullback(state: \.menuState, action: /PlayAction.menu, environment: { $0 }),
-    AnyReducer {
-        env in
+    
+    public enum Action {
+        case tappedMenu
         
-        PlaySummary()
+        case menu(Menu.Action)
+        case playSummary(PlaySummary.Action)
+        
+        case tappedReload
+        case tappedHint
+        
+        case sendRateEvent
     }
-    .pullback(state: \.playSummaryState, action: /PlayAction.playSummary, environment: { $0 }),
-    reducer
-)
+    
+    public init() {
+        
+    }
+    
+    @Dependency(\.cloudMessagesClient) var cloudMessages
+    @Dependency(\.purchaseClient) var purchaseClient
+    @Dependency(\.rateAppClient) var rateAppClient
+    
+    public var body: some ReducerProtocolOf<Self> {
+        Reduce {
+            state, action in
+            
+            switch action {
+            case .tappedMenu:
+                state.restartAction = nil
+                state.menuState = Menu.State(
+                    feedbackEnabled: cloudMessages.feedbackEnabled,
+                    havePurchase: purchaseClient.havePurchase
+                )
+                return .none
+            
+            case .tappedReload:
+                return .none
+                
+            case .tappedHint:
+                return .none
+                
+            case .sendRateEvent:
+                rateAppClient.maybeRateEvent()
+                return .none
+                
+            case .menu(.resume):
+                state.menuState = nil
+                return .none
+            
+            case .menu(.restart(.regular)):
+                state.restartAction = .regular
+                state.menuState = nil
+                return EffectTask(value: .sendRateEvent)
+                
+            case .menu(.restart(.random(let lines))):
+                state.restartAction = .random(lines)
+                state.menuState = nil
+                return EffectTask(value: .sendRateEvent)
 
-private let reducer = Reducer<PlayState, PlayAction, PlayEnvironment>() {
-    state, action, env in
-    
-    switch action {
-    case .tappedMenu:
-        state.restartAction = nil
-        state.menuState = Menu.State(
-            feedbackEnabled: env.cloudMessages.feedbackEnabled,
-            havePurchase: env.purchaseClient.havePurchase
-        )
-        return .none
-    
-    case .tappedReload:
-        return .none
-        
-    case .tappedHint:
-        return .none
-        
-    case .sendRateEvent:
-        env.rateAppClient.maybeRateEvent()
-        return .none
-        
-    case .menu(.resume):
-        state.menuState = nil
-        return .none
-    
-    case .menu(.restart(.regular)):
-        state.restartAction = .regular
-        state.menuState = nil
-        return EffectTask(value: .sendRateEvent)
-        
-    case .menu(.restart(.random(let lines))):
-        state.restartAction = .random(lines)
-        state.menuState = nil
-        return EffectTask(value: .sendRateEvent)
-
-    case .menu:
-        return .none
-        
-    case .playSummary:
-        return .none
+            case .menu:
+                return .none
+                
+            case .playSummary:
+                return .none
+            }
+        }
+        .ifLet(\.menuState, action: /Action.menu) {
+            Menu()
+        }
+        Scope(state: \.playSummaryState, action: /Action.playSummary) {
+            PlaySummary()
+        }
     }
 }

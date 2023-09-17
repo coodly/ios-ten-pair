@@ -10,8 +10,12 @@ public let applicationReducer = Reducer<ApplicationState, ApplicationAction, App
         AppAds()
     }
     .pullback(state: \.appAdsState, action: /ApplicationAction.appAds, environment: { $0 }),
-    playReducer
-        .pullback(state: \.playState, action: /ApplicationAction.play, environment: \.playEnv),
+    AnyReducer {
+        env in
+        
+        PlayReducer()
+    }
+    .pullback(state: \.playState, action: /ApplicationAction.play, environment: { $0 }),
     reducer
 )
 
