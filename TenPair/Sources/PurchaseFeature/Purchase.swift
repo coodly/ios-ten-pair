@@ -66,9 +66,9 @@ public struct Purchase: ReducerProtocol {
             
             switch action {
             case .onAppear:
-                return Effect.concatenate(
-                    Effect(value: .loadProduct),
-                    Effect(value: .loadStatusMonitor)
+                return EffectTask.concatenate(
+                    EffectTask(value: .loadProduct),
+                    EffectTask(value: .loadStatusMonitor)
                 )
                 
             case .loadProduct:

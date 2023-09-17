@@ -61,3 +61,9 @@ extension MobileAdsClient: DependencyKey {
         .noAds
     }
 }
+
+extension PurchaseClient: DependencyKey {
+    public static var liveValue: PurchaseClient {
+        .noPurchase
+    }
+}

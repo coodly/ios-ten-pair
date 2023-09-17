@@ -52,10 +52,10 @@ public struct Application: ReducerProtocol {
                 switch result {
                 case .success(let status) where status == .notMade:
                     Log.app.debug("Purchase not made. Load ads")
-                    return Effect(value: .appAds(.load))
+                    return EffectTask(value: .appAds(.load))
                 case .success(let status) where status == .made:
                     Log.app.debug("Purchase not made. Unload ads")
-                    return Effect(value: .appAds(.unload))
+                    return EffectTask(value: .appAds(.unload))
                 case .success:
                     return .none
                 case .failure:
@@ -67,7 +67,7 @@ public struct Application: ReducerProtocol {
                 return .none
                 
             case .play(.tappedHint), .play(.tappedReload):
-                return Effect(value: .appAds(.incrementInterstitial))
+                return EffectTask(value: .appAds(.incrementInterstitial))
                 
             case .appAds:
                 return .none

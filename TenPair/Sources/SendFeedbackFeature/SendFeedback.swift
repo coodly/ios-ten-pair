@@ -81,7 +81,7 @@ public struct SendFeedback: ReducerProtocol {
                 return .none
                 
             case .postMessage:
-                var sent = state.message
+                let sent = state.message
                 state.message = ""
                 state.sumbitEnabled = false
                 guard sent.hasValue else {
