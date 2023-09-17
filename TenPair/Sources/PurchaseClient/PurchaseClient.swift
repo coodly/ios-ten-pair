@@ -33,7 +33,7 @@ public struct PurchaseClient {
     private let onAvailableProduct: () async throws -> AppProduct
     private let onLoad: (() -> Void)
     private let onPurchase: (() -> AnyPublisher<Bool, Error>)
-    private let onPurchaseStatus: (() -> AnyPublisher<PurchaseStatus, Error>)
+    private let onPurchaseStatus: (() -> AnyPublisher<PurchaseStatus, Never>)
     private let onRestore: (() -> AnyPublisher<Bool, Error>)
     
     public let havePurchase: Bool
@@ -42,7 +42,7 @@ public struct PurchaseClient {
         onAvailableProduct: @escaping () async throws -> AppProduct,
         onLoad: @escaping (() -> Void),
         onPurchase: @escaping (() -> AnyPublisher<Bool, Error>),
-        onPurchaseStatus: @escaping (() -> AnyPublisher<PurchaseStatus, Error>),
+        onPurchaseStatus: @escaping (() -> AnyPublisher<PurchaseStatus, Never>),
         onRestore: @escaping (() -> AnyPublisher<Bool, Error>)
     ) {
         self.havePurchase = havePurchase
@@ -65,7 +65,7 @@ public struct PurchaseClient {
         onPurchase()
     }
     
-    public func purchaseStatus() -> AnyPublisher<PurchaseStatus, Error> {
+    public func purchaseStatus() -> AnyPublisher<PurchaseStatus, Never> {
         onPurchaseStatus()
     }
     
@@ -113,7 +113,7 @@ extension PurchaseClient {
         onLoad: { },
         onPurchase: { fatalError() },
         onPurchaseStatus: {
-            let currentValue = CurrentValueSubject<PurchaseStatus, Error>(.notMade)
+            let currentValue = CurrentValueSubject<PurchaseStatus, Never>(.notMade)
             DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
                 currentValue.send(.made)
             }
@@ -127,7 +127,7 @@ extension PurchaseClient {
         onAvailableProduct: { .noProduct },
         onLoad: {},
         onPurchase: { fatalError() },
-        onPurchaseStatus: { Just(PurchaseStatus.made).setFailureType(to: Error.self).eraseToAnyPublisher() },
+        onPurchaseStatus: { Just(PurchaseStatus.made).eraseToAnyPublisher() },
         onRestore: { fatalError() }
     )
 }

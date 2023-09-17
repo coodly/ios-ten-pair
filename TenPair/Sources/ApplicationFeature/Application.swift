@@ -18,7 +18,7 @@ public struct Application: ReducerProtocol {
         case onDidLoad
         case onDidBecomeActive
         
-        case purchaseStateChanged(Result<PurchaseStatus, Error>)
+        case purchaseStateChanged(PurchaseStatus)
         
         case appAds(AppAds.Action)
         case play(PlayReducer.Action)
@@ -43,22 +43,20 @@ public struct Application: ReducerProtocol {
                 guard purchaseClient.havePurchase else {
                     return .none
                 }
-                return Effect(purchaseClient.purchaseStatus())
-                    .catchToEffect(Action.purchaseStateChanged)
+                return EffectTask.publisher({ purchaseClient.purchaseStatus() })
+                    .map(Action.purchaseStateChanged)
                     .receive(on: mainQueue)
                     .eraseToEffect()
                 
-            case .purchaseStateChanged(let result):
-                switch result {
-                case .success(let status) where status == .notMade:
+            case .purchaseStateChanged(let status):
+                switch status {
+                case .notMade:
                     Log.app.debug("Purchase not made. Load ads")
                     return EffectTask(value: .appAds(.load))
-                case .success(let status) where status == .made:
+                case .made:
                     Log.app.debug("Purchase not made. Unload ads")
                     return EffectTask(value: .appAds(.unload))
-                case .success:
-                    return .none
-                case .failure:
+                case .notLoaded:
                     return .none
                 }
                 

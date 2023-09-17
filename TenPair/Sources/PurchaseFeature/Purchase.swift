@@ -41,7 +41,7 @@ public struct Purchase: ReducerProtocol {
         case loadProduct
         
         case loadedProduct(TaskResult<AppProduct>)
-        case statusChanged(Result<PurchaseStatus, Error>)
+        case statusChanged(PurchaseStatus)
         
         case purchase
         case purchaseMade(Result<Bool, Error>)
@@ -85,8 +85,8 @@ public struct Purchase: ReducerProtocol {
                 }
                 
             case .loadStatusMonitor:
-                return Effect(purchaseClient.purchaseStatus())
-                    .catchToEffect(Action.statusChanged)
+                return EffectTask.publisher({ purchaseClient.purchaseStatus() })
+                    .map(Action.statusChanged)
                     .receive(on: mainQueue)
                     .eraseToEffect()
                     .cancellable(id: CancelID.status)
@@ -104,13 +104,8 @@ public struct Purchase: ReducerProtocol {
                 }
                 return .none
                 
-            case .statusChanged(let result):
-                switch result {
-                case .success(let status):
-                    state.purchaseMade = status == .made
-                case .failure(let error):
-                    break
-                }
+            case .statusChanged(let status):
+                state.purchaseMade = status == .made
                 return .none
 
             case .purchase:

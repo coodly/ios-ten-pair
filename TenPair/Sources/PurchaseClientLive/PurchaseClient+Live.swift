@@ -38,7 +38,7 @@ extension PurchaseClient {
 }
 
 private class PurchasesProxy: NSObject, PurchasesDelegate {
-    fileprivate let purchaseStatus = CurrentValueSubject<PurchaseStatus, Error>(.notLoaded)
+    fileprivate let purchaseStatus = CurrentValueSubject<PurchaseStatus, Never>(.notLoaded)
     private var package: Purchases.Package?
     
     fileprivate func checkReceipt() {
