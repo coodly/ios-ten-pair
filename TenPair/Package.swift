@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -50,10 +50,10 @@ let package = Package(
             targets: ["Save"]),
     ],
     dependencies: [
-        .package(name: "SWLogger", url: "https://github.com/coodly/swlogger.git", from: "0.6.1"),
-        .package(name: "Purchases", url: "https://github.com/RevenueCat/purchases-ios.git", from: "3.14.1"),
+        .package(url: "https://github.com/coodly/swlogger.git", exact: "0.6.1"),
+        .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "3.14.1"),
         
-        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", from: "0.54.1")
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "0.55.0")
     ],
     targets: [
         .binaryTarget(
@@ -166,7 +166,8 @@ let package = Package(
             name: "Logging",
             dependencies: [
                 "Config",
-                "SWLogger"
+                
+                .product(name: "SWLogger", package: "swlogger")
             ]
         ),
         .target(
@@ -258,7 +259,8 @@ let package = Package(
                 "Config",
                 "Logging",
                 "PurchaseClient",
-                "Purchases"
+                
+                .product(name: "Purchases", package: "purchases-ios")
             ]
         ),
         .target(
@@ -289,8 +291,9 @@ let package = Package(
             dependencies: [
                 "Config",
                 "Logging",
-                "Purchases",
-                "RemoveAds"
+                "RemoveAds",
+                
+                .product(name: "Purchases", package: "purchases-ios")
             ]
         ),
         .target(
