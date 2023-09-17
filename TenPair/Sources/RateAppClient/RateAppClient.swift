@@ -1,6 +1,8 @@
+import Dependencies
 import Logging
 import StoreKit
 import UIKit
+import XCTestDynamicOverlay
 
 extension UserDefaults {
     fileprivate var eventCount: Int {
@@ -69,4 +71,17 @@ public struct RateAppClient {
 
 extension RateAppClient {
     public static let client = RateAppClient()
+}
+
+extension RateAppClient: DependencyKey {
+    public static var liveValue: RateAppClient {
+        RateAppClient()
+    }
+}
+
+extension DependencyValues {
+    public var rateAppClient: RateAppClient {
+        get { self[RateAppClient.self] }
+        set { self[RateAppClient.self] = newValue }
+    }
 }

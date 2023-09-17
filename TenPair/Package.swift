@@ -292,7 +292,10 @@ let package = Package(
         .target(
             name: "RateAppClient",
             dependencies: [
-                "Logging"
+                "Logging",
+                
+                dependencies,
+                testOverlay
             ]
         ),
         .target(
