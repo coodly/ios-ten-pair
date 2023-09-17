@@ -4,6 +4,8 @@
 import PackageDescription
 
 private let composable = Target.Dependency.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+private let dependencies = Target.Dependency.product(name: "Dependencies", package: "swift-dependencies")
+private let testOverlay = Target.Dependency.product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
 
 let package = Package(
     name: "TenPair",
@@ -53,7 +55,9 @@ let package = Package(
         .package(url: "https://github.com/coodly/swlogger.git", exact: "0.6.1"),
         .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "3.14.1"),
         
-        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "0.55.0")
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "0.55.0"),
+        .package(url: "https://github.com/pointfreeco/swift-dependencies.git", from: "0.6.0"),
+        .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "0.5.0"),
     ],
     targets: [
         .binaryTarget(
@@ -193,7 +197,11 @@ let package = Package(
             resources: [.process("Resources")]
         ),
         .target(
-            name: "MobileAdsClient"
+            name: "MobileAdsClient",
+            dependencies: [
+                dependencies,
+                testOverlay
+            ]
         ),
         .target(
             name: "MobileAdsClientLive",

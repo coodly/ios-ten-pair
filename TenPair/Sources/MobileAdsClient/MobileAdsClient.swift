@@ -1,5 +1,7 @@
 import Combine
+import Dependencies
 import UIKit
+import XCTestDynamicOverlay
 
 public struct MobileAdsClient {
     private let onLoad: (() -> Void)
@@ -47,6 +49,26 @@ public struct MobileAdsClient {
     
     public func showBannerPublisher() -> AnyPublisher<Bool, Never> {
         onShowBannerPublisher()
+    }
+}
+
+extension MobileAdsClient: TestDependencyKey {
+    public static var testValue: MobileAdsClient {
+        MobileAdsClient(
+            onLoad: unimplemented("\(Self.self).onLoad"),
+            onUnload: unimplemented("\(Self.self).onUnload"),
+            onBannerView: unimplemented("\(Self.self).onBannerView"),
+            onPresentInterstitial: unimplemented("\(Self.self).onPresentInterstitial"),
+            onReloadBannerInView: unimplemented("\(Self.self).onReloadBannerInView"),
+            onShowBannerPublisher: unimplemented("\(Self.self).onShowBannerPublisher")
+        )
+    }
+}
+
+extension DependencyValues {
+    public var mobileAdsClient: MobileAdsClient {
+        get { self[MobileAdsClient.self] }
+        set { self[MobileAdsClient.self] = newValue }
     }
 }
 

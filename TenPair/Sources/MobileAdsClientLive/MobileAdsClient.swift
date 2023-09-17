@@ -1,9 +1,16 @@
 import Combine
 import Config
+import Dependencies
 import GoogleMobileAds
 import Logging
 import MobileAdsClient
 import UIKit
+
+extension MobileAdsClient: DependencyKey {
+    public static var liveValue: MobileAdsClient {
+        .live
+    }
+}
 
 extension MobileAdsClient {
     public static var live: MobileAdsClient {
