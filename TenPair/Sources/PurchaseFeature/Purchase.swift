@@ -92,14 +92,14 @@ public struct Purchase: ReducerProtocol {
                     .cancellable(id: CancelID.status)
 
             case .onDisappear:
-                return Effect.cancel(id: CancelID.status)
+                return EffectTask.cancel(id: CancelID.status)
                 
             case .loadedProduct(let result):
                 switch result {
                 case .success(let product):
                     state.productStatus = .loaded
                     state.purchasePrice = product.formattedPrice
-                case .failure(let error):
+                case .failure:
                     state.productStatus = .failure
                 }
                 return .none
