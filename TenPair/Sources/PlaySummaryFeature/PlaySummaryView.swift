@@ -11,9 +11,9 @@ extension NumberFormatter {
 }
 
 public struct PlaySummaryView: View {
-    private let store: Store<PlaySummaryState, PlaySummaryAction>
+    private let store: StoreOf<PlaySummary>
     
-    public init(store: Store<PlaySummaryState, PlaySummaryAction>) {
+    public init(store: StoreOf<PlaySummary>) {
         self.store = store
     }
     

@@ -5,7 +5,7 @@ public enum PlayAction {
     case tappedMenu
     
     case menu(Menu.Action)
-    case playSummary(PlaySummaryAction)
+    case playSummary(PlaySummary.Action)
     
     case tappedReload
     case tappedHint

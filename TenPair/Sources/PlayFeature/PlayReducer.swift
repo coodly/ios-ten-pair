@@ -10,7 +10,12 @@ public let playReducer = Reducer<PlayState, PlayAction, PlayEnvironment>.combine
     }
     .optional()
     .pullback(state: \.menuState, action: /PlayAction.menu, environment: { $0 }),
-    playSummaryReducer.pullback(state: \.playSummaryState, action: /PlayAction.playSummary, environment: \.playSummaryEnv),
+    AnyReducer {
+        env in
+        
+        PlaySummary()
+    }
+    .pullback(state: \.playSummaryState, action: /PlayAction.playSummary, environment: { $0 }),
     reducer
 )
 
@@ -43,12 +48,12 @@ private let reducer = Reducer<PlayState, PlayAction, PlayEnvironment>() {
     case .menu(.restart(.regular)):
         state.restartAction = .regular
         state.menuState = nil
-        return Effect(value: .sendRateEvent)
+        return EffectTask(value: .sendRateEvent)
         
     case .menu(.restart(.random(let lines))):
         state.restartAction = .random(lines)
         state.menuState = nil
-        return Effect(value: .sendRateEvent)
+        return EffectTask(value: .sendRateEvent)
 
     case .menu:
         return .none

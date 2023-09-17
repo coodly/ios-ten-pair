@@ -22,8 +22,4 @@ public struct PlayEnvironment {
         self.purchaseClient = purchaseClient
         self.rateAppClient = rateAppClient
     }
-    
-    internal var playSummaryEnv: PlaySummaryEnvironment {
-        PlaySummaryEnvironment(mainQueue: mainQueue)
-    }
 }
