@@ -1,8 +1,15 @@
 import Config
+import Dependencies
 import Logging
 import PurchaseClient
 import Purchases
 import Combine
+
+extension PurchaseClient: DependencyKey {
+    public static var liveValue: PurchaseClient {
+        .live
+    }
+}
 
 extension PurchaseClient {
     public static var live: PurchaseClient {

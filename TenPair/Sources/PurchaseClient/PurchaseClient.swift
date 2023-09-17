@@ -1,5 +1,7 @@
 import Combine
+import Dependencies
 import StoreKit
+import XCTestDynamicOverlay
 
 public enum PurchaseStatus: Equatable {
     case notLoaded
@@ -81,6 +83,26 @@ extension PurchaseClient {
         onPurchaseStatus: { fatalError() },
         onRestore: { fatalError() }
     )
+}
+
+extension PurchaseClient: TestDependencyKey {
+    public static var testValue: PurchaseClient {
+        PurchaseClient(
+            havePurchase: unimplemented("\(Self.self).havePurchase"),
+            onAvailableProduct: unimplemented("\(Self.self).onAvailableProduct"),
+            onLoad: unimplemented("\(Self.self).onLoad"),
+            onPurchase: unimplemented("\(Self.self).onPurchase"),
+            onPurchaseStatus: unimplemented("\(Self.self).onPurchaseStatus"),
+            onRestore: unimplemented("\(Self.self).onRestore")
+        )
+    }
+}
+
+extension DependencyValues {
+    public var purchaseClient: PurchaseClient {
+        get { self[PurchaseClient.self] }
+        set { self[PurchaseClient.self] = newValue }
+    }
 }
 
 #if DEBUG

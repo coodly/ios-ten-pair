@@ -259,7 +259,11 @@ let package = Package(
             ]
         ),
         .target(
-            name: "PurchaseClient"
+            name: "PurchaseClient",
+            dependencies: [
+                dependencies,
+                testOverlay
+            ]
         ),
         .target(
             name: "PurchaseClientLive",
