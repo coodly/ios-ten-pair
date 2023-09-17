@@ -1,4 +1,6 @@
 import Combine
+import Dependencies
+import XCTestDynamicOverlay
 
 public struct CloudMessagesClient {
     public let feedbackEnabled: Bool
@@ -54,4 +56,24 @@ extension CloudMessagesClient {
         onSendMessage: { _ in PassthroughSubject<Void, Never>().eraseToAnyPublisher() },
         onUnreadNoticePublisher: { Just(false).eraseToAnyPublisher() }
     )
+}
+
+extension CloudMessagesClient: TestDependencyKey {
+    public static var testValue: CloudMessagesClient {
+        CloudMessagesClient(
+            feedbackEnabled: false,
+            onAllMessages: unimplemented("\(Self.self).onAllMessages"),
+            onCheckForMessages: unimplemented("\(Self.self).onCheckForMessages"),
+            onCheckLoggedIn: unimplemented("\(Self.self).onCheckLoggedIn"),
+            onSendMessage: unimplemented("\(Self.self).onSendMessage"),
+            onUnreadNoticePublisher: unimplemented("\(Self.self).onUnreadNoticePublisher")
+        )
+    }
+}
+
+extension DependencyValues {
+    public var cloudMessagesClient: CloudMessagesClient {
+        get { self[CloudMessagesClient.self] }
+        set { self[CloudMessagesClient.self] = newValue }
+    }
 }

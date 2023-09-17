@@ -142,7 +142,11 @@ let package = Package(
             name: "Autolayout"
         ),
         .target(
-            name: "CloudMessagesClient"
+            name: "CloudMessagesClient",
+            dependencies: [
+                dependencies,
+                testOverlay
+            ]
         ),
         .target(
             name: "CloudMessagesClientLive",

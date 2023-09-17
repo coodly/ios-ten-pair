@@ -1,8 +1,16 @@
 import CloudKit
 import CloudMessagesClient
 import Combine
+import Dependencies
 import Logging
 import UIKit
+
+@available(iOS 15.0, *)
+extension CloudMessagesClient: DependencyKey {
+    public static var liveValue: CloudMessagesClient {
+        .live
+    }
+}
 
 @available(iOS 15.0, *)
 extension CloudMessagesClient {
