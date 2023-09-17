@@ -68,16 +68,16 @@ private class PurchasesProxy: NSObject, PurchasesDelegate {
         }
     }
     
-    fileprivate func product() -> AnyPublisher<AppProduct, Error> {
-        Future() {
-            promise in
+    fileprivate func product() async throws -> AppProduct {
+        return try await withCheckedThrowingContinuation {
+            continuation in
             
             Purchases.shared.offerings() {
                 offerings, error in
                 
                 if let error = error {
                     Log.purchase.error("Get offerings error: \(error)")
-                    promise(.failure(error))
+                    continuation.resume(with: .failure(error))
                     return
                 }
                 
@@ -86,17 +86,16 @@ private class PurchasesProxy: NSObject, PurchasesDelegate {
                 Log.purchase.debug(offerings?.offering(identifier: "com.coodly.ten.pair.full.version")?.lifetime?.localizedPriceString)
                 
                 guard let loaded = offerings?.current?.lifetime ?? offerings?.offering(identifier: "com.coodly.ten.pair.full.version")?.lifetime else {
-                    promise(.failure(PurchaseError.noProducts))
+                    continuation.resume(with: .failure(PurchaseError.noProducts))
                     return
                 }
                 
                 self.package = loaded
                 
                 let product = AppProduct(identifier: loaded.identifier, formattedPrice: loaded.localizedPriceString, product: loaded.product)
-                promise(.success(product))
+                continuation.resume(with: .success(product))
             }
         }
-        .eraseToAnyPublisher()
     }
     
     fileprivate func restorePurchases() -> AnyPublisher<Bool, Error> {

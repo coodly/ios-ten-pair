@@ -30,7 +30,7 @@ extension AppProduct {
 }
 
 public struct PurchaseClient {
-    private let onAvailableProduct: (() -> AnyPublisher<AppProduct, Error>)
+    private let onAvailableProduct: () async throws -> AppProduct
     private let onLoad: (() -> Void)
     private let onPurchase: (() -> AnyPublisher<Bool, Error>)
     private let onPurchaseStatus: (() -> AnyPublisher<PurchaseStatus, Error>)
@@ -39,7 +39,7 @@ public struct PurchaseClient {
     public let havePurchase: Bool
     public init(
         havePurchase: Bool,
-        onAvailableProduct: @escaping (() -> AnyPublisher<AppProduct, Error>),
+        onAvailableProduct: @escaping () async throws -> AppProduct,
         onLoad: @escaping (() -> Void),
         onPurchase: @escaping (() -> AnyPublisher<Bool, Error>),
         onPurchaseStatus: @escaping (() -> AnyPublisher<PurchaseStatus, Error>),
@@ -57,8 +57,8 @@ public struct PurchaseClient {
         onLoad()
     }
     
-    public func availableProduct() -> AnyPublisher<AppProduct, Error> {
-        onAvailableProduct()
+    public func availableProduct() async throws -> AppProduct {
+        try await onAvailableProduct()
     }
     
     public func purchase() -> AnyPublisher<Bool, Error> {
@@ -124,7 +124,7 @@ extension PurchaseClient {
     
     public static let purchaseMade = PurchaseClient(
         havePurchase: true,
-        onAvailableProduct: { PassthroughSubject<AppProduct, Error>().eraseToAnyPublisher() },
+        onAvailableProduct: { .noProduct },
         onLoad: {},
         onPurchase: { fatalError() },
         onPurchaseStatus: { Just(PurchaseStatus.made).setFailureType(to: Error.self).eraseToAnyPublisher() },

@@ -40,7 +40,7 @@ public struct Purchase: ReducerProtocol {
         case loadStatusMonitor
         case loadProduct
         
-        case loadedProduct(Result<AppProduct, Error>)
+        case loadedProduct(TaskResult<AppProduct>)
         case statusChanged(Result<PurchaseStatus, Error>)
         
         case purchase
@@ -72,10 +72,17 @@ public struct Purchase: ReducerProtocol {
                 )
                 
             case .loadProduct:
-                return Effect(purchaseClient.availableProduct())
-                    .catchToEffect(Action.loadedProduct)
-                    .receive(on: mainQueue)
-                    .eraseToEffect()
+                return EffectTask.run {
+                    send in
+                    
+                    await send(
+                        .loadedProduct(
+                            TaskResult {
+                                try await purchaseClient.availableProduct()
+                            }
+                        )
+                    )
+                }
                 
             case .loadStatusMonitor:
                 return Effect(purchaseClient.purchaseStatus())
