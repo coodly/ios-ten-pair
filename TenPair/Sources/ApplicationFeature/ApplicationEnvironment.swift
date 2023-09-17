@@ -28,13 +28,6 @@ public struct ApplicationEnvironment {
         self.rateAppClient = rateAppClient
     }
     
-    internal var appAdsEnv: AppAdsEnvironment {
-        AppAdsEnvironment(
-            adsClient: adsClient,
-            mainQueue: mainQueue
-        )
-    }
-    
     internal var playEnv: PlayEnvironment {
         PlayEnvironment(
             cloudMessages: cloudMessages,

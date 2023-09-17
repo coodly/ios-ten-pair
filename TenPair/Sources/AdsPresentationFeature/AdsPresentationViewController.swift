@@ -17,7 +17,7 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
         Storyboards.loadFromStoryboard(from: .module)
     }
     
-    public var store: Store<AppAdsState, AppAdsAction>!
+    public var store: StoreOf<AppAds>!
     private lazy var viewStore = ViewStore(store)
     
     @IBOutlet private var contentContainer: UIView!

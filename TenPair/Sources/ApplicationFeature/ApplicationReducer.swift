@@ -4,8 +4,12 @@ import Logging
 import PlayFeature
 
 public let applicationReducer = Reducer<ApplicationState, ApplicationAction, ApplicationEnvironment>.combine(
-    appAdsReducer
-        .pullback(state: \.appAdsState, action: /ApplicationAction.appAds, environment: \.appAdsEnv),
+    AnyReducer {
+        env in
+        
+        AppAds()
+    }
+    .pullback(state: \.appAdsState, action: /ApplicationAction.appAds, environment: { $0 }),
     playReducer
         .pullback(state: \.playState, action: /ApplicationAction.play, environment: \.playEnv),
     reducer

@@ -3,7 +3,7 @@ import PlayFeature
 import PurchaseFeature
 
 public struct ApplicationState: Equatable {
-    public var appAdsState = AppAdsState()
+    public var appAdsState = AppAds.State()
     public var playState = PlayState()
     
     public init() {
