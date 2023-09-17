@@ -3,9 +3,13 @@ import MenuFeature
 import PlaySummaryFeature
 
 public let playReducer = Reducer<PlayState, PlayAction, PlayEnvironment>.combine(
-    menuReducer
-        .optional()
-        .pullback(state: \.menuState, action: /PlayAction.menu, environment: \.menuEnv),
+    AnyReducer {
+        env in
+        
+        Menu()
+    }
+    .optional()
+    .pullback(state: \.menuState, action: /PlayAction.menu, environment: { $0 }),
     playSummaryReducer.pullback(state: \.playSummaryState, action: /PlayAction.playSummary, environment: \.playSummaryEnv),
     reducer
 )
@@ -16,7 +20,7 @@ private let reducer = Reducer<PlayState, PlayAction, PlayEnvironment>() {
     switch action {
     case .tappedMenu:
         state.restartAction = nil
-        state.menuState = MenuState(
+        state.menuState = Menu.State(
             feedbackEnabled: env.cloudMessages.feedbackEnabled,
             havePurchase: env.purchaseClient.havePurchase
         )

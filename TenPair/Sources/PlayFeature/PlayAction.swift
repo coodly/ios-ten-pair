@@ -4,7 +4,7 @@ import PlaySummaryFeature
 public enum PlayAction {
     case tappedMenu
     
-    case menu(MenuAction)
+    case menu(Menu.Action)
     case playSummary(PlaySummaryAction)
     
     case tappedReload

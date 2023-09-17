@@ -23,15 +23,6 @@ public struct PlayEnvironment {
         self.rateAppClient = rateAppClient
     }
     
-    internal var menuEnv: MenuEnvironment {
-        MenuEnvironment(
-            cloudMessages: cloudMessages,
-            mainQueue: mainQueue,
-            purchaseClient: purchaseClient,
-            rateAppClient: rateAppClient
-        )
-    }
-    
     internal var playSummaryEnv: PlaySummaryEnvironment {
         PlaySummaryEnvironment(mainQueue: mainQueue)
     }

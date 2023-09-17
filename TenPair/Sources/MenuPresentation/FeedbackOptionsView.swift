@@ -4,9 +4,9 @@ import MenuFeature
 import SwiftUI
 
 internal struct FeedbackOptionsView: View {
-    private let store: Store<MenuState, MenuAction>
+    private let store: StoreOf<MenuFeature.Menu>
     
-    internal init(store: Store<MenuState, MenuAction>) {
+    internal init(store: StoreOf<MenuFeature.Menu>) {
         self.store = store
     }
     

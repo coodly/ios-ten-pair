@@ -7,7 +7,7 @@ public enum RestartAction: Equatable {
 }
 
 public struct PlayState: Equatable {
-    public var menuState: MenuState?
+    public var menuState: Menu.State?
     public var playSummaryState = PlaySummaryState()
     
     public var restartAction: RestartAction?

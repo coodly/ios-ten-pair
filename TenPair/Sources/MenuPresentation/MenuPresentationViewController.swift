@@ -15,7 +15,7 @@ public class MenuPresentationViewController: UIViewController, StoryboardLoaded 
         Storyboards.loadFromStoryboard(from: .module)
     }
     
-    public var store: Store<MenuState, MenuAction>!
+    public var store: StoreOf<MenuFeature.Menu>!
     private lazy var viewStore = ViewStore(store)
     private lazy var menuView = MenuPresentationView(store: store)
     private lazy var disposeBag = Set<AnyCancellable>()
@@ -31,7 +31,7 @@ public class MenuPresentationViewController: UIViewController, StoryboardLoaded 
         hosting.view.backgroundColor = .clear
         view.backgroundColor = .clear
         
-        store.scope(state: \.sendFeedbackState, action: MenuAction.sendFeedback).ifLet(
+        store.scope(state: \.sendFeedbackState, action: MenuFeature.Menu.Action.sendFeedback).ifLet(
             then: {
                 [weak self]
                 

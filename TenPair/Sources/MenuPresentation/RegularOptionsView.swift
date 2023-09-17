@@ -5,9 +5,9 @@ import SwiftUI
 import Themes
 
 internal struct RegularOptionsView: View {
-    private let store: Store<MenuState, MenuAction>
+    private let store: StoreOf<MenuFeature.Menu>
     
-    internal init(store: Store<MenuState, MenuAction>) {
+    internal init(store: StoreOf<MenuFeature.Menu>) {
         self.store = store
     }
     
@@ -25,7 +25,7 @@ internal struct RegularOptionsView: View {
                 Text(L10n.Menu.Option.Theme.base(viewStore.activeThemeName))
             }
             IfLetStore(
-                store.scope(state: \.purchaseState, action: MenuAction.purchase),
+                store.scope(state: \.purchaseState, action: MenuFeature.Menu.Action.purchase),
                 then: PurchaseOptionsView.init(store:)
             )
             if viewStore.feedbackEnabled {

@@ -139,7 +139,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
         viewStore.send(.tappedMenu)
     }
     
-    private func present(menu store: Store<MenuState, MenuAction>) {
+    private func present(menu store: StoreOf<MenuFeature.Menu>) {
         let presentation = MenuPresentationViewController.instance
         presentation.store = store
         presentation.modalPresentationStyle = .custom
