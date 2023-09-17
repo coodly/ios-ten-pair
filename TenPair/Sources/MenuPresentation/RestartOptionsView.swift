@@ -4,9 +4,9 @@ import RestartFeature
 import SwiftUI
 
 internal struct RestartOptionsView: View {
-    private let store: Store<RestartState, RestartAction>
+    private let store: StoreOf<Restart>
     
-    internal init(store: Store<RestartState, RestartAction>) {
+    internal init(store: StoreOf<Restart>) {
         self.store = store
     }
     

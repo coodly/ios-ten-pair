@@ -24,11 +24,7 @@ public struct MenuEnvironment {
         self.purchaseClient = purchaseClient
         self.rateAppClient = rateAppClient
     }
-    
-    internal var restartEnv: RestartEnvironment {
-        RestartEnvironment()
-    }
-    
+        
     internal var sendFeedbackEnv: SendFeedbackEnvironment {
         SendFeedbackEnvironment(
             cloudMessagesClient: cloudMessages,

@@ -5,7 +5,7 @@ import Themes
 
 public struct MenuState: Equatable {
     public var purchaseState: PurchaseReducer.State?
-    public var restartState: RestartState?
+    public var restartState: Restart.State?
     public var sendFeedbackState: SendFeedbackState?
     
     public var activeThemeName: String

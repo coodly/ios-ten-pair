@@ -12,9 +12,13 @@ public let menuReducer = Reducer<MenuState, MenuAction, MenuEnvironment>.combine
     }
     .optional()
     .pullback(state: \.purchaseState, action: /MenuAction.purchase, environment: { $0 }),
-    restartReducer
-        .optional()
-        .pullback(state: \.restartState, action: /MenuAction.restart, environment: \.restartEnv),
+    AnyReducer {
+        env in
+        
+        Restart()
+    }
+    .optional()
+    .pullback(state: \.restartState, action: /MenuAction.restart, environment: { $0 }),
     sendFeedbackReducer
         .optional()
         .pullback(state: \.sendFeedbackState, action: /MenuAction.sendFeedback, environment: \.sendFeedbackEnv),
@@ -43,7 +47,7 @@ private let reducer = Reducer<MenuState, MenuAction, MenuEnvironment>() {
         return .none
         
     case .restartTapped:
-        state.restartState = RestartState()
+        state.restartState = Restart.State()
         return .none
         
     case .theme:
