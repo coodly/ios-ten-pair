@@ -55,7 +55,7 @@ public class MenuPresentationViewController: UIViewController, StoryboardLoaded 
         viewStore.send(.willDisappear)
     }
     
-    private func presentFeedback(store: Store<SendFeedbackState, SendFeedbackAction>) {
+    private func presentFeedback(store: StoreOf<SendFeedback>) {
         guard #available(iOS 14.0, *) else {
             return
         }

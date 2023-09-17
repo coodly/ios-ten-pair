@@ -3,9 +3,9 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 internal struct SendFeedbackView: View {
-    private let store: Store<SendFeedbackState, SendFeedbackAction>
+    private let store: StoreOf<SendFeedback>
     
-    internal init(store: Store<SendFeedbackState, SendFeedbackAction>) {
+    internal init(store: StoreOf<SendFeedback>) {
         self.store = store
     }
     

@@ -17,5 +17,5 @@ public enum MenuAction {
     
     case purchase(Purchase.Action)
     case restart(Restart.Action)
-    case sendFeedback(SendFeedbackAction)
+    case sendFeedback(SendFeedback.Action)
 }

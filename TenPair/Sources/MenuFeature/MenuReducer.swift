@@ -19,9 +19,13 @@ public let menuReducer = Reducer<MenuState, MenuAction, MenuEnvironment>.combine
     }
     .optional()
     .pullback(state: \.restartState, action: /MenuAction.restart, environment: { $0 }),
-    sendFeedbackReducer
-        .optional()
-        .pullback(state: \.sendFeedbackState, action: /MenuAction.sendFeedback, environment: \.sendFeedbackEnv),
+    AnyReducer {
+        env in
+        
+        SendFeedback()
+    }
+    .optional()
+    .pullback(state: \.sendFeedbackState, action: /MenuAction.sendFeedback, environment: { $0 }),
     reducer
 )
 
@@ -74,7 +78,7 @@ private let reducer = Reducer<MenuState, MenuAction, MenuEnvironment>() {
         return .none
         
     case .feedback:
-        state.sendFeedbackState = SendFeedbackState()
+        state.sendFeedbackState = SendFeedback.State()
         return .none
         
     case .sendFeedback(.onDisappear):
