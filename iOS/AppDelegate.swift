@@ -35,26 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    private lazy var purchaseClient = PurchaseClient.live
-    private lazy var cloudMessages: CloudMessagesClient = {
-        if #available(iOS 15.0, *) {
-            return CloudMessagesClient.live
-        } else {
-            return CloudMessagesClient.noFeedback
-        }
-    }()
+    @Dependency(\.purchaseClient) var purchaseClient
     
     private lazy var store = Store(
-        initialState: ApplicationState(),
-        reducer: applicationReducer,
-        environment: ApplicationEnvironment(
-            adsClient: .client,
-            cloudMessages: cloudMessages,
-            mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
-            purchaseClient: purchaseClient,
-            rateAppClient: .client
-        )
+        initialState: Application.State(),
+        reducer: Application()
     )
+
     private lazy var viewStore = ViewStore(store)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

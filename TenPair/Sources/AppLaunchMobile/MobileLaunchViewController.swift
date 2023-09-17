@@ -7,7 +7,7 @@ import Themes
 import UIKit
 
 public class MobileLaunchViewController: UIViewController {
-    public var store: Store<ApplicationState, ApplicationAction>!
+    public var store: StoreOf<Application>!
     private lazy var viewStore = ViewStore(store)
     
     private lazy var adsController: AdsPresentationViewController = AdsPresentationViewController.instance
@@ -16,11 +16,11 @@ public class MobileLaunchViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        playController.store = store.scope(state: \.playState, action: ApplicationAction.play)
+        playController.store = store.scope(state: \.playState, action: Application.Action.play)
 
         let navigation = PlayNavigationController(rootViewController: playController)
         
-        adsController.store = store.scope(state: \.appAdsState, action: ApplicationAction.appAds)
+        adsController.store = store.scope(state: \.appAdsState, action: Application.Action.appAds)
         adsController.contained = navigation
 
         addChild(adsController)

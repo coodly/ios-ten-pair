@@ -5,10 +5,13 @@ import Dependencies
 import Logging
 import UIKit
 
-@available(iOS 15.0, *)
 extension CloudMessagesClient: DependencyKey {
     public static var liveValue: CloudMessagesClient {
-        .live
+        if #available(iOS 15.0, *) {
+            .live
+        } else {
+            .noFeedback
+        }
     }
 }
 

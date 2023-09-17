@@ -30,15 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     private lazy var store = Store(
-        initialState: ApplicationState(),
-        reducer: applicationReducer,
-        environment: ApplicationEnvironment(
-            adsClient: .noAds,
-            cloudMessages: .noFeedback,
-            mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
-            purchaseClient: .noPurchase,
-            rateAppClient: .client
-        )
+        initialState: Application.State(),
+        reducer: Application()
     )
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -57,3 +50,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension CloudMessagesClient: DependencyKey {
+    public static var liveValue: CloudMessagesClient {
+        .noFeedback
+    }
+}
+
+extension MobileAdsClient: DependencyKey {
+    public static var liveValue: MobileAdsClient {
+        .noAds
+    }
+}
