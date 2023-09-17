@@ -5,9 +5,13 @@ import SendFeedbackFeature
 import Themes
 
 public let menuReducer = Reducer<MenuState, MenuAction, MenuEnvironment>.combine(
-    purchaseReducer
-        .optional()
-        .pullback(state: \.purchaseState, action: /MenuAction.purchase, environment: \.purchaseEnv),
+    AnyReducer {
+        env in
+        
+        PurchaseReducer()
+    }
+    .optional()
+    .pullback(state: \.purchaseState, action: /MenuAction.purchase, environment: { $0 }),
     restartReducer
         .optional()
         .pullback(state: \.restartState, action: /MenuAction.restart, environment: \.restartEnv),

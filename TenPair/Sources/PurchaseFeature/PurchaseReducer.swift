@@ -1,103 +1,164 @@
 import ComposableArchitecture
+import PurchaseClient
+import RateAppClient
 
-public let purchaseReducer = Reducer<PurchaseState, PurchaseAction, PurchaseEnvironment>.combine(
-    reducer
-)
+public enum ProductStatus: String {
+    case loading
+    case loaded
+    case failure
+}
 
-private let reducer = Reducer<PurchaseState, PurchaseAction, PurchaseEnvironment>() {
-    state, action, env in
+public enum PurchaseMode {
+    case showing
+    case purchaseInProgress
+    case restoreInProgress
+}
+
+public struct PurchaseReducer: ReducerProtocol {
+    public struct State: Equatable {
+        public var purchaseMade = false
+        public var purchasePrice = "-"
+        public var productStatus = ProductStatus.loading
+        public var purchaseFailureMessage: String?
+        public var purchaseInProgress: Bool {
+            purchaseMode == .purchaseInProgress
+        }
+        public var restoreInProgress: Bool {
+            purchaseMode == .restoreInProgress
+        }
+        public var purchaseMode = PurchaseMode.showing
+        
+        public init() {
+            
+        }
+    }
     
-    struct StatusCancellable: Hashable {}
+    public enum Action {
+        case onAppear
+        case onDisappear
+        
+        case loadStatusMonitor
+        case loadProduct
+        
+        case loadedProduct(Result<AppProduct, Error>)
+        case statusChanged(Result<PurchaseStatus, Error>)
+        
+        case purchase
+        case purchaseMade(Result<Bool, Error>)
+        
+        case restore
+        case restoreMade(Result<Bool, Error>)
+        
+        case rateApp
+    }
     
-    switch action {
-    case .onAppear:
-        return Effect.concatenate(
-            Effect(value: .loadProduct),
-            Effect(value: .loadStatusMonitor)
-        )
+    public init() {
         
-    case .loadProduct:
-        return Effect(env.purchaseClient.availableProduct())
-            .catchToEffect(PurchaseAction.loadedProduct)
-            .receive(on: env.mainQueue)
-            .eraseToEffect()
-        
-    case .loadStatusMonitor:
-        return Effect(env.purchaseClient.purchaseStatus())
-            .catchToEffect(PurchaseAction.statusChanged)
-            .receive(on: env.mainQueue)
-            .eraseToEffect()
-            .cancellable(id: StatusCancellable())
+    }
+    
+    @Dependency(\.mainQueue) var mainQueue
+    @Dependency(\.purchaseClient) var purchaseClient
+    @Dependency(\.rateAppClient) var rateAppClient
+    
+    public var body: some ReducerProtocolOf<Self> {
+        Reduce {
+            state, action in
+            
+            switch action {
+            case .onAppear:
+                return Effect.concatenate(
+                    Effect(value: .loadProduct),
+                    Effect(value: .loadStatusMonitor)
+                )
+                
+            case .loadProduct:
+                return Effect(purchaseClient.availableProduct())
+                    .catchToEffect(Action.loadedProduct)
+                    .receive(on: mainQueue)
+                    .eraseToEffect()
+                
+            case .loadStatusMonitor:
+                return Effect(purchaseClient.purchaseStatus())
+                    .catchToEffect(Action.statusChanged)
+                    .receive(on: mainQueue)
+                    .eraseToEffect()
+                    .cancellable(id: CancelID.status)
 
-    case .onDisappear:
-        return Effect.cancel(id: StatusCancellable())
-        
-    case .loadedProduct(let result):
-        switch result {
-        case .success(let product):
-            state.productStatus = .loaded
-            state.purchasePrice = product.formattedPrice
-        case .failure(let error):
-            state.productStatus = .failure
-        }
-        return .none
-        
-    case .statusChanged(let result):
-        switch result {
-        case .success(let status):
-            state.purchaseMade = status == .made
-        case .failure(let error):
-            break
-        }
-        return .none
+            case .onDisappear:
+                return Effect.cancel(id: CancelID.status)
+                
+            case .loadedProduct(let result):
+                switch result {
+                case .success(let product):
+                    state.productStatus = .loaded
+                    state.purchasePrice = product.formattedPrice
+                case .failure(let error):
+                    state.productStatus = .failure
+                }
+                return .none
+                
+            case .statusChanged(let result):
+                switch result {
+                case .success(let status):
+                    state.purchaseMade = status == .made
+                case .failure(let error):
+                    break
+                }
+                return .none
 
-    case .purchase:
-        guard state.productStatus == .loaded, state.purchaseMode == .showing else {
-            return .none
-        }
+            case .purchase:
+                guard state.productStatus == .loaded, state.purchaseMode == .showing else {
+                    return .none
+                }
 
-        state.purchaseFailureMessage = nil
-        state.purchaseMode = .purchaseInProgress
-        
-        return Effect(env.purchaseClient.purchase())
-            .catchToEffect(PurchaseAction.purchaseMade)
-            .receive(on: env.mainQueue)
-            .eraseToEffect()
-        
-    case .purchaseMade(let result):
-        state.purchaseMode = .showing
-        switch result {
-        case .success(_):
-            // success should come through state change
-            break
-        case .failure(let error):
-            state.purchaseFailureMessage = error.localizedDescription
+                state.purchaseFailureMessage = nil
+                state.purchaseMode = .purchaseInProgress
+                
+                return Effect(purchaseClient.purchase())
+                    .catchToEffect(Action.purchaseMade)
+                    .receive(on: mainQueue)
+                    .eraseToEffect()
+                
+            case .purchaseMade(let result):
+                state.purchaseMode = .showing
+                switch result {
+                case .success(_):
+                    // success should come through state change
+                    break
+                case .failure(let error):
+                    state.purchaseFailureMessage = error.localizedDescription
+                }
+                return .none
+                
+            case .restore:
+                guard state.purchaseMode == .showing else {
+                    return .none
+                }
+                
+                state.purchaseMode = .restoreInProgress
+                return Effect(purchaseClient.restore())
+                    .catchToEffect(Action.restoreMade)
+                    .receive(on: mainQueue)
+                    .eraseToEffect()
+                
+            case .restoreMade(let result):
+                state.purchaseMode = .showing
+                switch result {
+                case .success(_):
+                    break
+                case .failure(let error):
+                    state.purchaseFailureMessage = error.localizedDescription
+                }
+                return .none
+                
+            case .rateApp:
+                rateAppClient.rateAppManual()
+                return .none
+            }
         }
-        return .none
-        
-    case .restore:
-        guard state.purchaseMode == .showing else {
-            return .none
-        }
-        
-        state.purchaseMode = .restoreInProgress
-        return Effect(env.purchaseClient.restore())
-            .catchToEffect(PurchaseAction.restoreMade)
-            .receive(on: env.mainQueue)
-            .eraseToEffect()
-        
-    case .restoreMade(let result):
-        state.purchaseMode = .showing
-        switch result {
-        case .success(_):
-            break
-        case .failure(let error):
-            state.purchaseFailureMessage = error.localizedDescription
-        }
-        return .none
-        
-    case .rateApp:
-        env.rateAppClient.rateAppManual()
-        return .none
+    }
+    
+    private enum CancelID {
+        case status
     }
 }

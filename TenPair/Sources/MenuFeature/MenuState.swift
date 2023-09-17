@@ -4,7 +4,7 @@ import SendFeedbackFeature
 import Themes
 
 public struct MenuState: Equatable {
-    public var purchaseState: PurchaseState?
+    public var purchaseState: PurchaseReducer.State?
     public var restartState: RestartState?
     public var sendFeedbackState: SendFeedbackState?
     
@@ -14,7 +14,7 @@ public struct MenuState: Equatable {
     
     public init(feedbackEnabled: Bool, havePurchase: Bool) {
         activeThemeName = AppTheme.shared.active.localizedName
-        purchaseState = havePurchase ? PurchaseState() : nil
+        purchaseState = havePurchase ? PurchaseReducer.State() : nil
         self.feedbackEnabled = feedbackEnabled
     }
 }

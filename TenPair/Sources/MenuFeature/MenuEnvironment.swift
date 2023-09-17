@@ -25,14 +25,6 @@ public struct MenuEnvironment {
         self.rateAppClient = rateAppClient
     }
     
-    internal var purchaseEnv: PurchaseEnvironment {
-        PurchaseEnvironment(
-            mainQueue: mainQueue,
-            purchaseClient: purchaseClient,
-            rateAppClient: rateAppClient
-        )
-    }
-    
     internal var restartEnv: RestartEnvironment {
         RestartEnvironment()
     }
