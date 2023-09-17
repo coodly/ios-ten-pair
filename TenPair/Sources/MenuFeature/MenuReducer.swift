@@ -8,7 +8,7 @@ public let menuReducer = Reducer<MenuState, MenuAction, MenuEnvironment>.combine
     AnyReducer {
         env in
         
-        PurchaseReducer()
+        Purchase()
     }
     .optional()
     .pullback(state: \.purchaseState, action: /MenuAction.purchase, environment: { $0 }),

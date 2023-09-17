@@ -14,7 +14,7 @@ public enum PurchaseMode {
     case restoreInProgress
 }
 
-public struct PurchaseReducer: ReducerProtocol {
+public struct Purchase: ReducerProtocol {
     public struct State: Equatable {
         public var purchaseMade = false
         public var purchasePrice = "-"

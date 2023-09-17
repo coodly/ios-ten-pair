@@ -15,7 +15,7 @@ public enum MenuAction {
     case theme
     case feedback
     
-    case purchase(PurchaseReducer.Action)
+    case purchase(Purchase.Action)
     case restart(Restart.Action)
     case sendFeedback(SendFeedbackAction)
 }

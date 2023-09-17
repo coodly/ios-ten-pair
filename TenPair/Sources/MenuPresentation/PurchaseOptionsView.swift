@@ -5,9 +5,9 @@ import SwiftUI
 import UIComponents
 
 internal struct PurchaseOptionsView: View {
-    private let store: StoreOf<PurchaseReducer>
+    private let store: StoreOf<Purchase>
     
-    internal init(store: StoreOf<PurchaseReducer>) {
+    internal init(store: StoreOf<Purchase>) {
         self.store = store
     }
     
