@@ -50,9 +50,14 @@ public struct SendFeedback: Reducer {
                 return Effect.send(.checkLoggedIn)
                 
             case .checkLoggedIn:
-                return Effect.publisher({ cloudMessagesClient.checkLoggedIn() })
-                    .map({ .markLoggedIn($0) })
-                    .cancellable(id: CancelID.sendFeedback)
+                return Effect.run {
+                    send in
+                    
+                    await send(
+                        .markLoggedIn(cloudMessagesClient.checkLoggedIn())
+                    )
+                }
+                .cancellable(id: CancelID.sendFeedback)
                 
             case .loadMessages:
                 return Effect.publisher({ cloudMessagesClient.allMessages() })

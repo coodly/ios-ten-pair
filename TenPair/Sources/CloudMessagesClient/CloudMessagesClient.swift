@@ -6,7 +6,7 @@ public struct CloudMessagesClient {
     public let feedbackEnabled: Bool
     private let onAllMessages: (() -> AnyPublisher<[Message], Never>)
     private let onCheckForMessages: (() -> Void)
-    private let onCheckLoggedIn: (() -> AnyPublisher<Bool, Never>)
+    private let onCheckLoggedIn: () async -> Bool
     private let onSendMessage: ((String) -> AnyPublisher<Void, Never>)
     private let onUnreadNoticePublisher: (() -> AnyPublisher<Bool, Never>)
     
@@ -14,7 +14,7 @@ public struct CloudMessagesClient {
         feedbackEnabled: Bool,
         onAllMessages: @escaping (() -> AnyPublisher<[Message], Never>),
         onCheckForMessages: @escaping (() -> Void),
-        onCheckLoggedIn: @escaping (() -> AnyPublisher<Bool, Never>),
+        onCheckLoggedIn: @escaping () async -> Bool,
         onSendMessage: @escaping ((String) -> AnyPublisher<Void, Never>),
         onUnreadNoticePublisher: @escaping (() -> AnyPublisher<Bool, Never>)
     ) {
@@ -34,8 +34,8 @@ public struct CloudMessagesClient {
         onCheckForMessages()
     }
 
-    public func checkLoggedIn() -> AnyPublisher<Bool, Never> {
-        onCheckLoggedIn()
+    public func checkLoggedIn() async -> Bool {
+        await onCheckLoggedIn()
     }
 
     public func send(message: String) -> AnyPublisher<Void, Never> {
@@ -52,7 +52,7 @@ extension CloudMessagesClient {
         feedbackEnabled: false,
         onAllMessages: { PassthroughSubject<[Message], Never>().eraseToAnyPublisher() },
         onCheckForMessages: {},
-        onCheckLoggedIn: { Just(false).eraseToAnyPublisher() },
+        onCheckLoggedIn: { false },
         onSendMessage: { _ in PassthroughSubject<Void, Never>().eraseToAnyPublisher() },
         onUnreadNoticePublisher: { Just(false).eraseToAnyPublisher() }
     )

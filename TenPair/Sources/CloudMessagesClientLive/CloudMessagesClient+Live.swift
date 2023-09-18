@@ -170,20 +170,13 @@ extension CloudMessagesClient {
                 }
             },
             onCheckLoggedIn: {
-                Future() {
-                    fulfill in
-                    
-                    Task {
-                        do {
-                            let status = try await container.accountStatus()
-                            fulfill(.success(status == .available))
-                        } catch {
-                            Log.feedback.error(error)
-                            fulfill(.success(false))
-                        }
-                    }
+                do {
+                    let status = try await container.accountStatus()
+                    return status == .available
+                } catch {
+                    Log.feedback.error(error)
+                    return false
                 }
-                .eraseToAnyPublisher()
             },
             onSendMessage: write(message:),
             onUnreadNoticePublisher: {
