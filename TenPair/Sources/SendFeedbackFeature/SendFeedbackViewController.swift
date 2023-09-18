@@ -15,7 +15,7 @@ public class SendFeedbackViewController: UIViewController, StoryboardLoaded {
     }
     
     public var store: StoreOf<SendFeedback>!
-    private lazy var viewStore = ViewStore(store)
+    private lazy var viewStore = ViewStore(store, observe: { $0 })
     
     public override func viewDidLoad() {
         super.viewDidLoad()

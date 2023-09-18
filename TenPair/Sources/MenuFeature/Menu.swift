@@ -53,14 +53,14 @@ public struct Menu: ReducerProtocol {
             switch action {
             case .willAppear:
                 return EffectTask.concatenate(
-                    EffectTask(value: .purchase(.onAppear)),
-                    EffectTask(value: .loadMessagesMonitor)
+                    Effect.send(.purchase(.onAppear)),
+                    Effect.send(.loadMessagesMonitor)
                 )
                 
             case .willDisappear:
                 return EffectTask.concatenate(
-                    EffectTask(value: .purchase(.onDisappear)),
-                    EffectTask(value: .unloadMessagesMonitor)
+                    Effect.send(.purchase(.onDisappear)),
+                    Effect.send(.unloadMessagesMonitor)
                 )
                 
             case .resume:
@@ -80,10 +80,8 @@ public struct Menu: ReducerProtocol {
                 return .none
                         
             case .loadMessagesMonitor:
-                return EffectTask(cloudMessages.unreadNoticePublisher)
+                return Effect.publisher({ cloudMessages.unreadNoticePublisher })
                     .map(Action.markHasUnread)
-                    .receive(on: mainQueue)
-                    .eraseToEffect()
                     .cancellable(id: CancelID.messages)
                 
             case .unloadMessagesMonitor:

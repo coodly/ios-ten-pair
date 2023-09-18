@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         reducer: Application()
     )
 
-    private lazy var viewStore = ViewStore(store)
+    private lazy var viewStore = ViewStore(store, observe: { $0 })
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppTheme.shared.load()

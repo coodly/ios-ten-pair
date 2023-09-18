@@ -35,12 +35,10 @@ public struct PlaySummary: ReducerProtocol {
             switch action {
             case .onAppear:
                 state.foregroundColor = Color(AppTheme.shared.active.navigationTint)
-                return EffectTask(NotificationCenter.default.publisher(for: .themeChanged))
+                return Effect.publisher({ NotificationCenter.default.publisher(for: .themeChanged) })
                     .map({ _ in AppTheme.shared.active.navigationTint })
                     .map(Color.init)
                     .map(Action.updateForeground)
-                    .receive(on: mainQueue)
-                    .eraseToEffect()
                 
             case .updateForeground(let color):
                 state.foregroundColor = color

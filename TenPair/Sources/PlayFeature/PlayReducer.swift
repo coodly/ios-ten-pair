@@ -72,12 +72,12 @@ public struct PlayReducer: ReducerProtocol {
             case .menu(.restart(.regular)):
                 state.restartAction = .regular
                 state.menuState = nil
-                return EffectTask(value: .sendRateEvent)
+                return Effect.send(.sendRateEvent)
                 
             case .menu(.restart(.random(let lines))):
                 state.restartAction = .random(lines)
                 state.menuState = nil
-                return EffectTask(value: .sendRateEvent)
+                return Effect.send(.sendRateEvent)
 
             case .menu:
                 return .none

@@ -8,7 +8,7 @@ import UIKit
 
 public class MobileLaunchViewController: UIViewController {
     public var store: StoreOf<Application>!
-    private lazy var viewStore = ViewStore(store)
+    private lazy var viewStore = ViewStore(store, observe: { $0 })
     
     private lazy var adsController: AdsPresentationViewController = AdsPresentationViewController.instance
     private lazy var playController: PlayViewController = PlayViewController.instance

@@ -12,7 +12,7 @@ internal struct RegularOptionsView: View {
     }
     
     var body: some View {
-        WithViewStore(store) {
+        WithViewStore(store, observe: { $0 }) {
             viewStore in
 
             Button(action: { viewStore.send(.resume) }) {

@@ -6,7 +6,7 @@ internal struct MessageEntryView: View {
     internal let store: StoreOf<SendFeedback>
     
     var body: some View {
-        WithViewStore(store) {
+        WithViewStore(store, observe: { $0 }) {
             viewStore in
             
             HStack(alignment: .top, spacing: 0) {

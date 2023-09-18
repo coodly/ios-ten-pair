@@ -43,19 +43,17 @@ public struct Application: ReducerProtocol {
                 guard purchaseClient.havePurchase else {
                     return .none
                 }
-                return EffectTask.publisher({ purchaseClient.purchaseStatus() })
+                return Effect.publisher({ purchaseClient.purchaseStatus() })
                     .map(Action.purchaseStateChanged)
-                    .receive(on: mainQueue)
-                    .eraseToEffect()
                 
             case .purchaseStateChanged(let status):
                 switch status {
                 case .notMade:
                     Log.app.debug("Purchase not made. Load ads")
-                    return EffectTask(value: .appAds(.load))
+                    return Effect.send(.appAds(.load))
                 case .made:
                     Log.app.debug("Purchase not made. Unload ads")
-                    return EffectTask(value: .appAds(.unload))
+                    return Effect.send(.appAds(.unload))
                 case .notLoaded:
                     return .none
                 }
@@ -65,7 +63,7 @@ public struct Application: ReducerProtocol {
                 return .none
                 
             case .play(.tappedHint), .play(.tappedReload):
-                return EffectTask(value: .appAds(.incrementInterstitial))
+                return Effect.send(.appAds(.incrementInterstitial))
                 
             case .appAds:
                 return .none

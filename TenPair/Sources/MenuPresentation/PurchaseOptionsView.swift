@@ -12,7 +12,7 @@ internal struct PurchaseOptionsView: View {
     }
     
     var body: some View {
-        WithViewStore(store) {
+        WithViewStore(store, observe: { $0 }) {
             viewStore in
             
             Group {

@@ -18,7 +18,7 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
     }
     
     public var store: StoreOf<AppAds>!
-    private lazy var viewStore = ViewStore(store)
+    private lazy var viewStore = ViewStore(store, observe: { $0 })
     
     @IBOutlet private var contentContainer: UIView!
     @IBOutlet private var withoutBannerConstraints: [NSLayoutConstraint]!

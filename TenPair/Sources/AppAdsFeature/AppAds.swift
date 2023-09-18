@@ -46,9 +46,8 @@ public struct AppAds: ReducerProtocol {
                 )
                 
             case .loadShowBannerMonitor:
-                return EffectTask(mobileAds.showBannerPublisher())
+                return Effect.publisher({ mobileAds.showBannerPublisher() })
                     .map({ Action.markShowBanner($0) })
-                    .eraseToEffect()
 
             case .markShowBanner(let show):
                 state.showBannerAd = show
@@ -65,9 +64,12 @@ public struct AppAds: ReducerProtocol {
             case .incrementInterstitial:
                 state.interstitialMarker += 1
                 state.presentInterstitial = state.interstitialMarker >= InterstitialShowThreshold
-                return EffectTask(value: .clearPresentInterstitial)
-                    .deferred(for: .milliseconds(100), scheduler: mainQueue)
-                    .eraseToEffect()
+                return Effect.run {
+                    send in
+                    
+                    try await mainQueue.sleep(for: .milliseconds(100))
+                    await send(.clearPresentInterstitial)
+                }
                 
             case .interstitialShown:
                 state.interstitialMarker = 0

@@ -18,7 +18,7 @@ public struct PlaySummaryView: View {
     }
     
     public var body: some View {
-        WithViewStore(store) {
+        WithViewStore(store, observe: { $0 }) {
             viewStore in
             
             HStack(spacing: 0) {

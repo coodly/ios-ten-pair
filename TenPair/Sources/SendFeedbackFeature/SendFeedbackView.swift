@@ -18,7 +18,7 @@ internal struct SendFeedbackView: View {
                     VStack {
                         FeedbackHeaderView()
                         
-                        WithViewStore(store) {
+                        WithViewStore(store, observe: { $0 }) {
                             viewStore in
                             
                             if viewStore.isLoggedIn {
@@ -39,7 +39,7 @@ internal struct SendFeedbackView: View {
                     }
                 }
             }
-            WithViewStore(store) {
+            WithViewStore(store, observe: { $0 }) {
                 viewStore in
                 
                 if viewStore.state.isLoggedIn {

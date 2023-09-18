@@ -16,7 +16,7 @@ public class MenuPresentationViewController: UIViewController, StoryboardLoaded 
     }
     
     public var store: StoreOf<MenuFeature.Menu>!
-    private lazy var viewStore = ViewStore(store)
+    private lazy var viewStore = ViewStore(store, observe: { $0 })
     private lazy var menuView = MenuPresentationView(store: store)
     private lazy var disposeBag = Set<AnyCancellable>()
     

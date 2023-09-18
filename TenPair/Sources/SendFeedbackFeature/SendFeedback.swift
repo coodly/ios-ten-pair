@@ -47,20 +47,16 @@ public struct SendFeedback: ReducerProtocol {
             
             switch action {
             case .onAppear:
-                return EffectTask(value: .checkLoggedIn)
+                return Effect.send(.checkLoggedIn)
                 
             case .checkLoggedIn:
-                return EffectTask(cloudMessagesClient.checkLoggedIn())
+                return Effect.publisher({ cloudMessagesClient.checkLoggedIn() })
                     .map({ .markLoggedIn($0) })
-                    .receive(on: mainQueue)
-                    .eraseToEffect()
                     .cancellable(id: CancelID.sendFeedback)
                 
             case .loadMessages:
-                return EffectTask(cloudMessagesClient.allMessages())
+                return Effect.publisher({ cloudMessagesClient.allMessages() })
                     .map({ .markMessages($0.sorted()) })
-                    .receive(on: mainQueue)
-                    .eraseToEffect()
                     .cancellable(id: CancelID.sendFeedback)
                 
 
@@ -70,7 +66,7 @@ public struct SendFeedback: ReducerProtocol {
             case .markLoggedIn(let loggedIn):
                 state.isLoggedIn = loggedIn
                 if loggedIn {
-                    return EffectTask(value: .loadMessages)
+                    return Effect.send(.loadMessages)
                 } else {
                     return .none
                 }
@@ -88,10 +84,8 @@ public struct SendFeedback: ReducerProtocol {
                     return .none
                 }
                 state.sendingMessage = true
-                return EffectTask(cloudMessagesClient.send(message: sent))
+                return Effect.publisher({ cloudMessagesClient.send(message: sent) })
                     .map({ .markSent })
-                    .receive(on: mainQueue)
-                    .eraseToEffect()
                 
             case .markSent:
                 state.sendingMessage = false

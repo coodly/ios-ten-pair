@@ -67,8 +67,8 @@ public struct Purchase: ReducerProtocol {
             switch action {
             case .onAppear:
                 return EffectTask.concatenate(
-                    EffectTask(value: .loadProduct),
-                    EffectTask(value: .loadStatusMonitor)
+                    Effect.send(.loadProduct),
+                    Effect.send(.loadStatusMonitor)
                 )
                 
             case .loadProduct:
@@ -85,10 +85,8 @@ public struct Purchase: ReducerProtocol {
                 }
                 
             case .loadStatusMonitor:
-                return EffectTask.publisher({ purchaseClient.purchaseStatus() })
+                return Effect.publisher({ purchaseClient.purchaseStatus() })
                     .map(Action.statusChanged)
-                    .receive(on: mainQueue)
-                    .eraseToEffect()
                     .cancellable(id: CancelID.status)
 
             case .onDisappear:

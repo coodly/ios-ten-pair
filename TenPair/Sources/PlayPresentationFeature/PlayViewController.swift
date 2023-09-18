@@ -34,10 +34,10 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     }
     
     public var store: StoreOf<PlayReducer>!
-    private lazy var viewStore = ViewStore(store)
+    private lazy var viewStore = ViewStore(store, observe: { $0 })
     
     private lazy var summaryStore = store.scope(state: \.playSummaryState, action: PlayReducer.Action.playSummary)
-    private lazy var summaryViewStore = ViewStore(summaryStore)
+    private lazy var summaryViewStore = ViewStore(summaryStore, observe: { $0 })
     private lazy var summaryView = PlaySummaryView(store: summaryStore)
     private lazy var summaryHosting = UIHostingController(rootView: summaryView)
     
