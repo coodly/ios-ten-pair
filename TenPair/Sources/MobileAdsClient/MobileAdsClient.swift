@@ -73,10 +73,6 @@ extension DependencyValues {
 }
 
 extension MobileAdsClient {
-    public static var client: Self = .noAds
-}
-
-extension MobileAdsClient {
     public static let noAds = MobileAdsClient(
         onLoad: {},
         onUnload: {},

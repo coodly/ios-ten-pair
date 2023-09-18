@@ -13,7 +13,7 @@ extension MobileAdsClient: DependencyKey {
 }
 
 extension MobileAdsClient {
-    public static var live: MobileAdsClient {
+    private static var live: MobileAdsClient {
         let proxy = AdsProxy()
         
         return MobileAdsClient(

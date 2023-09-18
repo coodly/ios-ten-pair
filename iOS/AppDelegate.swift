@@ -48,9 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppTheme.shared.load()
                         
         Log.enable()
-        
-        MobileAdsClient.client = .live
-                
+                        
         if purchaseClient.havePurchase {
             purchaseClient.load()
         }

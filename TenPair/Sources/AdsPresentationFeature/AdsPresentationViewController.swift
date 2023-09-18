@@ -27,7 +27,7 @@ public class AdsPresentationViewController: UIViewController, StoryboardLoaded {
     
     public var contained: UIViewController!
     
-    private lazy var adsClient = MobileAdsClient.client
+    @Dependency(\.mobileAdsClient) var adsClient
     
     private lazy var disposeBag = Set<AnyCancellable>()
     
