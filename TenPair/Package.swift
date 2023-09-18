@@ -74,7 +74,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/coodly/swlogger.git", exact: "0.6.1"),
-        .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "3.14.1"),
+        .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "4.26.0"),
         
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "1.2.0"),
         .package(url: "https://github.com/pointfreeco/swift-dependencies.git", exact: "1.0.0"),
@@ -267,7 +267,7 @@ let package = Package(
                 "Logging",
                 "PurchaseClient",
                 
-                .product(name: "Purchases", package: "purchases-ios")
+                .product(name: "RevenueCat", package: "purchases-ios")
             ]
         ),
         .target(
@@ -293,19 +293,6 @@ let package = Package(
                 testOverlay
             ],
             swiftSettings: []
-        ),
-        .target(
-            name: "RemoveAds"
-        ),
-        .target(
-            name: "RemoveAdsImpl",
-            dependencies: [
-                "Config",
-                "Logging",
-                "RemoveAds",
-                
-                .product(name: "Purchases", package: "purchases-ios")
-            ]
         ),
         .target(
             name: "RestartFeature",

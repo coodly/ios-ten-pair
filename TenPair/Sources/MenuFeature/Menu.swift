@@ -80,7 +80,7 @@ public struct Menu: Reducer {
                 return .none
                         
             case .loadMessagesMonitor:
-                return Effect.publisher({ cloudMessages.unreadNoticePublisher })
+                return Effect.publisher({ cloudMessages.unreadNoticePublisher.receive(on: mainQueue) })
                     .map(Action.markHasUnread)
                     .cancellable(id: CancelID.messages)
                 

@@ -13,20 +13,18 @@ public enum PurchaseError: LocalizedError {
     case noProducts
 }
 
-public struct AppProduct: Equatable {
+public struct AppProduct: Equatable, Sendable {
     public let identifier: String
     public let formattedPrice: String
-    public let product: SKProduct?
     
-    public init(identifier: String, formattedPrice: String, product: SKProduct?) {
+    public init(identifier: String, formattedPrice: String) {
         self.identifier = identifier
         self.formattedPrice = formattedPrice
-        self.product = product
     }
 }
 
 extension AppProduct {
-    public static var noProduct = AppProduct(identifier: "-", formattedPrice: "-", product: nil)
+    public static var noProduct = AppProduct(identifier: "-", formattedPrice: "-")
 }
 
 public struct PurchaseClient {
