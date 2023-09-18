@@ -32,7 +32,7 @@ extension AppProduct {
 public struct PurchaseClient {
     private let onAvailableProduct: () async throws -> AppProduct
     private let onLoad: (() -> Void)
-    private let onPurchase: (() -> AnyPublisher<Bool, Error>)
+    private let onPurchase: () async throws -> Bool
     private let onPurchaseStatus: (() -> AnyPublisher<PurchaseStatus, Never>)
     private let onRestore: (() -> AnyPublisher<Bool, Error>)
     
@@ -41,7 +41,7 @@ public struct PurchaseClient {
         havePurchase: Bool,
         onAvailableProduct: @escaping () async throws -> AppProduct,
         onLoad: @escaping (() -> Void),
-        onPurchase: @escaping (() -> AnyPublisher<Bool, Error>),
+        onPurchase: @escaping () async throws -> Bool,
         onPurchaseStatus: @escaping (() -> AnyPublisher<PurchaseStatus, Never>),
         onRestore: @escaping (() -> AnyPublisher<Bool, Error>)
     ) {
@@ -61,8 +61,8 @@ public struct PurchaseClient {
         try await onAvailableProduct()
     }
     
-    public func purchase() -> AnyPublisher<Bool, Error> {
-        onPurchase()
+    public func purchase() async throws -> Bool {
+        try await onPurchase()
     }
     
     public func purchaseStatus() -> AnyPublisher<PurchaseStatus, Never> {

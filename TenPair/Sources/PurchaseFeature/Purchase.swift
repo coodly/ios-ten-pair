@@ -44,7 +44,7 @@ public struct Purchase: ReducerProtocol {
         case statusChanged(PurchaseStatus)
         
         case purchase
-        case purchaseMade(Result<Bool, Error>)
+        case purchaseMade(TaskResult<Bool>)
         
         case restore
         case restoreMade(Result<Bool, Error>)
@@ -116,15 +116,22 @@ public struct Purchase: ReducerProtocol {
                 state.purchaseFailureMessage = nil
                 state.purchaseMode = .purchaseInProgress
                 
-                return Effect(purchaseClient.purchase())
-                    .catchToEffect(Action.purchaseMade)
-                    .receive(on: mainQueue)
-                    .eraseToEffect()
+                return EffectTask.run {
+                    send in
+                    
+                    await send(
+                        .purchaseMade(
+                            TaskResult {
+                                try await purchaseClient.purchase()
+                            }
+                        )
+                    )
+                }
                 
             case .purchaseMade(let result):
                 state.purchaseMode = .showing
                 switch result {
-                case .success(_):
+                case .success:
                     // success should come through state change
                     break
                 case .failure(let error):

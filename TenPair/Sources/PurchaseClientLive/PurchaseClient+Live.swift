@@ -114,11 +114,11 @@ private class PurchasesProxy: NSObject, PurchasesDelegate {
         .eraseToAnyPublisher()
     }
     
-    fileprivate func purchase() -> AnyPublisher<Bool, Error> {
+    fileprivate func purchase() async throws -> Bool {
         precondition(package != nil)
         
-        return Future() {
-            promise in
+        return try await withCheckedThrowingContinuation {
+            continuation in
             
             Purchases.shared.purchasePackage(self.package!) {
                 transaction, info, error, cancelled in
@@ -127,13 +127,12 @@ private class PurchasesProxy: NSObject, PurchasesDelegate {
                 
                 if let error = error, !cancelled {
                     Log.purchase.error("Purchase error \(error)")
-                    promise(.failure(error))
+                    continuation.resume(throwing: error)
                 } else {
-                    promise(.success(!cancelled))
+                    continuation.resume(with: .success(!cancelled))
                 }
             }
         }
-        .eraseToAnyPublisher()
     }
 
     func purchases(_ purchases: Purchases, didReceiveUpdated purchaserInfo: Purchases.PurchaserInfo) {
