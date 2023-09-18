@@ -3,6 +3,7 @@
 
 import PackageDescription
 
+private let concurrency = Target.Dependency.product(name: "ConcurrencyExtras", package: "swift-concurrency-extras")
 private let composable = Target.Dependency.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
 private let dependencies = Target.Dependency.product(name: "Dependencies", package: "swift-dependencies")
 private let testOverlay = Target.Dependency.product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
@@ -76,6 +77,7 @@ let package = Package(
         .package(url: "https://github.com/coodly/swlogger.git", exact: "0.6.1"),
         .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "4.26.0"),
         
+        .package(url: "https://github.com/pointfreeco/swift-concurrency-extras", from: "1.0.0"),
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "1.2.0"),
         .package(url: "https://github.com/pointfreeco/swift-dependencies.git", exact: "1.0.0"),
         .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", exact: "1.0.2"),
@@ -267,6 +269,7 @@ let package = Package(
                 "Logging",
                 "PurchaseClient",
                 
+                concurrency,
                 .product(name: "RevenueCat", package: "purchases-ios")
             ]
         ),

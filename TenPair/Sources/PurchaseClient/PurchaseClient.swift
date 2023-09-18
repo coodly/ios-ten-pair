@@ -3,7 +3,7 @@ import Dependencies
 import StoreKit
 import XCTestDynamicOverlay
 
-public enum PurchaseStatus: Equatable {
+public enum PurchaseStatus: Equatable, Sendable {
     case notLoaded
     case notMade
     case made
@@ -24,24 +24,24 @@ public struct AppProduct: Equatable, Sendable {
 }
 
 extension AppProduct {
-    public static var noProduct = AppProduct(identifier: "-", formattedPrice: "-")
+    public static let noProduct = AppProduct(identifier: "-", formattedPrice: "-")
 }
 
-public struct PurchaseClient {
-    private let onAvailableProduct: () async throws -> AppProduct
-    private let onLoad: (() -> Void)
-    private let onPurchase: () async throws -> Bool
-    private let onPurchaseStatus: (() -> AnyPublisher<PurchaseStatus, Never>)
-    private let onRestore: () async throws -> Bool
+public struct PurchaseClient: Sendable {
+    private let onAvailableProduct: @Sendable () async throws -> AppProduct
+    private let onLoad: @Sendable () -> Void
+    private let onPurchase: @Sendable () async throws -> Bool
+    private let onPurchaseStatus: @Sendable () -> AnyPublisher<PurchaseStatus, Never>
+    private let onRestore: @Sendable () async throws -> Bool
     
     public let havePurchase: Bool
     public init(
         havePurchase: Bool,
-        onAvailableProduct: @escaping () async throws -> AppProduct,
-        onLoad: @escaping (() -> Void),
-        onPurchase: @escaping () async throws -> Bool,
-        onPurchaseStatus: @escaping (() -> AnyPublisher<PurchaseStatus, Never>),
-        onRestore: @escaping () async throws -> Bool
+        onAvailableProduct: @Sendable @escaping () async throws -> AppProduct,
+        onLoad: @Sendable @escaping () -> Void,
+        onPurchase: @Sendable @escaping () async throws -> Bool,
+        onPurchaseStatus: @Sendable @escaping () -> AnyPublisher<PurchaseStatus, Never>,
+        onRestore: @Sendable @escaping () async throws -> Bool
     ) {
         self.havePurchase = havePurchase
         self.onAvailableProduct = onAvailableProduct
