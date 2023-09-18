@@ -144,7 +144,7 @@ private class AdsProxy: NSObject, GADBannerViewDelegate, GADFullScreenContentDel
         }
     }
     
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    func adDidDismissFullScreenContent(_ ad: any GADFullScreenPresentingAd) {
         Log.ads.debug("Interstitial dismissed")
         interstitial = nil
         

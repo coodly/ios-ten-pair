@@ -17,8 +17,8 @@
 import GameplayKit
 
 internal class PlayState: GKState {
-    fileprivate weak var delegate: PlayDelegate?
-    internal init(delegate: PlayDelegate) {
+    fileprivate weak var delegate: (any PlayDelegate)?
+    internal init(delegate: any PlayDelegate) {
         self.delegate = delegate
     }
 }

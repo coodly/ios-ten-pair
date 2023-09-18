@@ -54,7 +54,7 @@ public class PlayField {
         }
     }
     
-    public weak var statusDelegate: PlayFieldStatusDelegate? {
+    public weak var statusDelegate: (any PlayFieldStatusDelegate)? {
         didSet {
             forwardStatus()
         }

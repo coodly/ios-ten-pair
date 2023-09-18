@@ -7,6 +7,27 @@ private let composable = Target.Dependency.product(name: "ComposableArchitecture
 private let dependencies = Target.Dependency.product(name: "Dependencies", package: "swift-dependencies")
 private let testOverlay = Target.Dependency.product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
 
+private let withConcurrencyFlags = [
+    .enableUpcomingFeature("BareSlashRegexLiterals"),
+    .enableUpcomingFeature("ConciseMagicFile"),
+    .enableUpcomingFeature("ExistentialAny"),
+    .enableUpcomingFeature("ForwardTrailingClosures"),
+    .enableUpcomingFeature("ImplicitOpenExistentials"),
+    .enableUpcomingFeature("StrictConcurrency"),
+    SwiftSetting.unsafeFlags(
+        [
+            "-Xfrontend",
+            "-warn-long-function-bodies=100",
+            "-Xfrontend",
+            "-warn-long-expression-type-checking=100",
+            "-Xfrontend",
+            "-warn-concurrency",
+            "-Xfrontend",
+            "-enable-actor-data-race-checks"
+        ]
+    )
+]
+
 let package = Package(
     name: "TenPair",
     defaultLocalization: LanguageTag("en"),
@@ -168,7 +189,8 @@ let package = Package(
         ),
         .target(
             name: "Localization",
-            resources: [.process("Resources")]
+            resources: [.process("Resources")],
+            swiftSettings: []
         ),
         .target(
             name: "Logging",
@@ -221,7 +243,8 @@ let package = Package(
                 "nanopb",
                 "PromisesObjC",
                 "UserMessagingPlatform"
-            ]
+            ],
+            swiftSettings: []
         ),
         .target(
             name: "Play",
@@ -252,7 +275,8 @@ let package = Package(
                 "Themes",
                 "WinPresentation"
             ],
-            resources: [.process("Resources")]
+            resources: [.process("Resources")],
+            swiftSettings: []
         ),
         .target(
             name: "PlaySummaryFeature",
@@ -300,7 +324,8 @@ let package = Package(
                 
                 dependencies,
                 testOverlay
-            ]
+            ],
+            swiftSettings: []
         ),
         .target(
             name: "RemoveAds"
@@ -340,7 +365,8 @@ let package = Package(
             resources: [.process("Resources")]
         ),
         .target(
-            name: "Storyboards"
+            name: "Storyboards",
+            swiftSettings: []
         ),
         .target(
             name: "UIComponents",
@@ -351,7 +377,8 @@ let package = Package(
             dependencies: [
                 "Localization",
                 "UIComponents"
-            ]
+            ],
+            swiftSettings: []
         ),
         .target(
             name: "WinPresentation",
@@ -370,4 +397,16 @@ let package = Package(
             name: "RandomLinesTests",
             dependencies: ["RandomLines"]),
     ]
+    .map { (target: Target) in
+        if target.type == .binary {
+            return target
+        }
+        
+        guard target.swiftSettings == nil else {
+            return target
+        }
+        
+        target.swiftSettings = withConcurrencyFlags
+        return target
+    }
 )

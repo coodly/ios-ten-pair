@@ -49,7 +49,7 @@ extension CloudMessagesClient {
             Log.cloud.debug("Pull messages in \(conversation.recordID)")
             var loaded = [CKRecord]()
             
-            func append(results: [(CKRecord.ID, Result<CKRecord, Error>)]) {
+            func append(results: [(CKRecord.ID, Result<CKRecord, any Error>)]) {
                 for (_, result) in results {
                     switch result {
                     case .success(let record):

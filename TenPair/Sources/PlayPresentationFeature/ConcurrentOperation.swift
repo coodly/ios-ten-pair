@@ -19,24 +19,24 @@ import Foundation
 internal class ConcurrentOperation: Operation {
     private struct Forward {
         fileprivate let callSuccess: (() -> Void)
-        fileprivate let callError: ((Error) -> Void)
+        fileprivate let callError: ((any Error) -> Void)
         
         internal func forwardSuccess() {
             callSuccess()
         }
         
-        internal func forward(error: Error) {
+        internal func forward(error: any Error) {
             callError(error)
         }
     }
     
-    public func onCompletion<T: ConcurrentOperation>(callback: @escaping ((Result<T, Error>) -> Void)) {
+    public func onCompletion<T: ConcurrentOperation>(callback: @escaping ((Result<T, any Error>) -> Void)) {
         let onSuccess: (() -> Void) = {
             [unowned self] in
             
             callback(.success(self as! T))
         }
-        let onError: ((Error) -> Void) = {
+        let onError: ((any Error) -> Void) = {
             error in
             
             callback(.failure(error))
@@ -50,7 +50,7 @@ internal class ConcurrentOperation: Operation {
         return true
     }
 
-    private var failureRrror: Error?
+    private var failureRrror: (any Error)?
     
     private var myExecuting: Bool = false
     override public final var isExecuting: Bool {
@@ -109,7 +109,7 @@ internal class ConcurrentOperation: Operation {
         main()
     }
     
-    public func finish(_ failure: Error? = nil) {
+    public func finish(_ failure: (any Error)? = nil) {
         willChangeValue(forKey: "isExecuting")
         willChangeValue(forKey: "isFinished")
         myExecuting = false
