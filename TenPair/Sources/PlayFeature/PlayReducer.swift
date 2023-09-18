@@ -22,7 +22,7 @@ public struct PlayReducer: Reducer {
         }
     }
     
-    public enum Action {
+    public enum Action: Sendable {
         case tappedMenu
         
         case menu(Menu.Action)

@@ -33,7 +33,7 @@ public struct Purchase: Reducer {
         }
     }
     
-    public enum Action {
+    public enum Action: Sendable {
         case onAppear
         case onDisappear
         
@@ -85,9 +85,14 @@ public struct Purchase: Reducer {
                 }
                 
             case .loadStatusMonitor:
-                return Effect.publisher({ purchaseClient.purchaseStatus() })
-                    .map(Action.statusChanged)
-                    .cancellable(id: CancelID.status)
+                return Effect.run {
+                    send in
+                    
+                    for await status in purchaseClient.purchaseStatusStream() {
+                        await send(.statusChanged(status))
+                    }
+                }
+                .cancellable(id: CancelID.status)
 
             case .onDisappear:
                 return Effect.cancel(id: CancelID.status)

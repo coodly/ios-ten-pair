@@ -17,7 +17,7 @@ public struct SendFeedback: Reducer {
         }
     }
     
-    public enum Action: BindableAction {
+    public enum Action: BindableAction, Sendable {
         case onAppear
         case onDisappear
         

@@ -21,7 +21,7 @@ public struct Menu: Reducer {
         }
     }
     
-    public enum Action {
+    public enum Action: Sendable {
         case willAppear
         case willDisappear
         

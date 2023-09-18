@@ -1,4 +1,3 @@
-@preconcurrency import Combine
 import ConcurrencyExtras
 import Config
 import Dependencies
@@ -10,8 +9,6 @@ import RevenueCat
 
 extension PurchaseClient: DependencyKey {
     public static var liveValue: PurchaseClient {
-        let proxy = PurchasesProxy()
-        let isolatedProxy = ActorIsolated(proxy)
         let isolatedPackage = ActorIsolated(Package.notLoaded)
         
         return PurchaseClient(
@@ -36,46 +33,20 @@ extension PurchaseClient: DependencyKey {
                     Purchases.logLevel = .debug
                 }
                 Purchases.configure(withAPIKey: RevenueCatAPIKey)
-                Purchases.shared.delegate = proxy
             },
             onPurchase: {
                 let package = await isolatedPackage.value
                 precondition(package != Package.notLoaded)
                 
-                let (_, info, cancelled) = try await Purchases.shared.purchase(package: package)
-                await isolatedProxy.value.handle(info: info)
+                let (_, _, cancelled) = try await Purchases.shared.purchase(package: package)
                 return !cancelled
             },
-            onPurchaseStatus: { proxy.purchaseStatus.receive(on: DispatchQueue.main).eraseToAnyPublisher() },
+            onPurchaseStatusStream: { Purchases.shared.customerInfoStream.map({ PurchaseStatus(info: $0) }).eraseToStream() },
             onRestore: {
-                let info = try await Purchases.shared.restorePurchases()
-                await isolatedProxy.value.handle(info: info)
+                let _ = try await Purchases.shared.restorePurchases()
                 return true
             }
         )
-    }
-}
-
-private final class PurchasesProxy: NSObject, PurchasesDelegate, Sendable {
-    fileprivate let purchaseStatus = CurrentValueSubject<PurchaseStatus, Never>(.notLoaded)
-    
-    fileprivate func handle(info: CustomerInfo?) {
-        guard let info = info else {
-            return
-        }
-        
-        Log.purchase.debug("Info \(info)")
-        if let date = info.purchaseDate(forEntitlement: "com.coodly.ten.pair.remove.ads") {
-            Log.purchase.debug("Ads removed on \(date)")
-            purchaseStatus.send(.made)
-        } else {
-            Log.purchase.debug("Purchase not made")
-            purchaseStatus.send(.notMade)
-        }
-    }
-
-    func purchases(_ purchases: Purchases, receivedUpdated customerInfo: CustomerInfo) {
-        handle(info: customerInfo)
     }
 }
 

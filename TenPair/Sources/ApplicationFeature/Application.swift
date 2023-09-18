@@ -14,7 +14,7 @@ public struct Application: Reducer {
         }
     }
     
-    public enum Action {
+    public enum Action: Sendable {
         case onDidLoad
         case onDidBecomeActive
         
@@ -43,8 +43,14 @@ public struct Application: Reducer {
                 guard purchaseClient.havePurchase else {
                     return .none
                 }
-                return Effect.publisher({ purchaseClient.purchaseStatus() })
-                    .map(Action.purchaseStateChanged)
+                
+                return Effect.run {
+                    send in
+                    
+                    for await status in purchaseClient.purchaseStatusStream() {
+                        await send(.purchaseStateChanged(status))
+                    }
+                }
                 
             case .purchaseStateChanged(let status):
                 switch status {

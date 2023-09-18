@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Message: Equatable, Codable, Identifiable, Comparable {
+public struct Message: Equatable, Codable, Identifiable, Comparable, Sendable {
     public var id: String {
         recordName
     }

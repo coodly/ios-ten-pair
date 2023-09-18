@@ -14,7 +14,7 @@ public struct PlaySummary: Reducer {
         }
     }
     
-    public enum Action {
+    public enum Action: Sendable {
         case onAppear
         
         case update(lines: Int, tiles: Int)

@@ -1,9 +1,8 @@
-import Combine
 import Dependencies
 import StoreKit
 import XCTestDynamicOverlay
 
-public enum PurchaseStatus: Equatable, Sendable {
+public enum PurchaseStatus: String, Equatable, Sendable {
     case notLoaded
     case notMade
     case made
@@ -31,7 +30,7 @@ public struct PurchaseClient: Sendable {
     private let onAvailableProduct: @Sendable () async throws -> AppProduct
     private let onLoad: @Sendable () -> Void
     private let onPurchase: @Sendable () async throws -> Bool
-    private let onPurchaseStatus: @Sendable () -> AnyPublisher<PurchaseStatus, Never>
+    private let onPurchaseStatusStream: @Sendable () -> AsyncStream<PurchaseStatus>
     private let onRestore: @Sendable () async throws -> Bool
     
     public let havePurchase: Bool
@@ -40,14 +39,14 @@ public struct PurchaseClient: Sendable {
         onAvailableProduct: @Sendable @escaping () async throws -> AppProduct,
         onLoad: @Sendable @escaping () -> Void,
         onPurchase: @Sendable @escaping () async throws -> Bool,
-        onPurchaseStatus: @Sendable @escaping () -> AnyPublisher<PurchaseStatus, Never>,
+        onPurchaseStatusStream: @Sendable @escaping () -> AsyncStream<PurchaseStatus>,
         onRestore: @Sendable @escaping () async throws -> Bool
     ) {
         self.havePurchase = havePurchase
         self.onAvailableProduct = onAvailableProduct
         self.onLoad = onLoad
         self.onPurchase = onPurchase
-        self.onPurchaseStatus = onPurchaseStatus
+        self.onPurchaseStatusStream = onPurchaseStatusStream
         self.onRestore = onRestore
     }
     
@@ -63,12 +62,12 @@ public struct PurchaseClient: Sendable {
         try await onPurchase()
     }
     
-    public func purchaseStatus() -> AnyPublisher<PurchaseStatus, Never> {
-        onPurchaseStatus()
-    }
-    
     public func restore() async throws -> Bool {
         try await onRestore()
+    }
+    
+    public func purchaseStatusStream() -> AsyncStream<PurchaseStatus> {
+        onPurchaseStatusStream()
     }
 }
 
@@ -78,7 +77,7 @@ extension PurchaseClient {
         onAvailableProduct: { fatalError() },
         onLoad: {},
         onPurchase: { fatalError() },
-        onPurchaseStatus: { fatalError() },
+        onPurchaseStatusStream: { fatalError() },
         onRestore: { fatalError() }
     )
 }
@@ -90,7 +89,7 @@ extension PurchaseClient: TestDependencyKey {
             onAvailableProduct: unimplemented("\(Self.self).onAvailableProduct"),
             onLoad: unimplemented("\(Self.self).onLoad"),
             onPurchase: unimplemented("\(Self.self).onPurchase"),
-            onPurchaseStatus: unimplemented("\(Self.self).onPurchaseStatus"),
+            onPurchaseStatusStream: unimplemented("\(Self.self).onPurchaseStatusStream"),
             onRestore: unimplemented("\(Self.self).onRestore")
         )
     }
@@ -110,12 +109,8 @@ extension PurchaseClient {
         onAvailableProduct: { fatalError() },
         onLoad: { },
         onPurchase: { fatalError() },
-        onPurchaseStatus: {
-            let currentValue = CurrentValueSubject<PurchaseStatus, Never>(.notMade)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
-                currentValue.send(.made)
-            }
-            return currentValue.eraseToAnyPublisher()
+        onPurchaseStatusStream: {
+            AsyncStream(unfolding: { PurchaseStatus.notMade })
         },
         onRestore: { fatalError() }
     )
@@ -125,7 +120,7 @@ extension PurchaseClient {
         onAvailableProduct: { .noProduct },
         onLoad: {},
         onPurchase: { fatalError() },
-        onPurchaseStatus: { Just(PurchaseStatus.made).eraseToAnyPublisher() },
+        onPurchaseStatusStream: { AsyncStream(unfolding: { PurchaseStatus.made }) },
         onRestore: { fatalError() }
     )
 }

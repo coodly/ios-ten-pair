@@ -9,7 +9,7 @@ public struct Restart: Reducer {
         }
     }
     
-    public enum Action {
+    public enum Action: Sendable {
         case regular
         case random(Int)
         case back

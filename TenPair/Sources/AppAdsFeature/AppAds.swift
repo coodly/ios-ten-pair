@@ -15,7 +15,7 @@ public struct AppAds: Reducer {
         }
     }
     
-    public enum Action {
+    public enum Action: Sendable {
         case onDidLoad
         case loadShowBannerMonitor
         case markShowBanner(Bool)
