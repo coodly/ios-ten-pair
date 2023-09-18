@@ -77,39 +77,12 @@ let package = Package(
         .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "3.14.1"),
         
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "1.2.0"),
-        .package(url: "https://github.com/pointfreeco/swift-dependencies.git", from: "1.0.0"),
-        .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "1.0.2"),
+        .package(url: "https://github.com/pointfreeco/swift-dependencies.git", exact: "1.0.0"),
+        .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", exact: "1.0.2"),
+        
+        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "10.10.0")
     ],
     targets: [
-        .binaryTarget(
-            name: "GoogleAppMeasurement",
-            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/GoogleAppMeasurement.xcframework"
-        ),
-        .binaryTarget(
-            name: "GoogleAppMeasurementIdentitySupport",
-            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/GoogleAppMeasurementIdentitySupport.xcframework"
-        ),
-        .binaryTarget(
-            name: "GoogleMobileAds",
-            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/GoogleMobileAds.xcframework"
-        ),
-        .binaryTarget(
-            name: "GoogleUtilities",
-            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/GoogleUtilities.xcframework"
-        ),
-        .binaryTarget(
-            name: "nanopb",
-            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/nanopb.xcframework"
-        ),
-        .binaryTarget(
-            name: "PromisesObjC",
-            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/PromisesObjC.xcframework"
-        ),
-        .binaryTarget(
-            name: "UserMessagingPlatform",
-            path: "Thirdparty/Google-Mobile-Ads-SDK/9.0.0/UserMessagingPlatform.xcframework"
-        ),
-        
         .target(
             name: "AdsPresentationFeature",
             dependencies: [
@@ -236,13 +209,7 @@ let package = Package(
                 "Logging",
                 "MobileAdsClient",
                 
-                "GoogleAppMeasurement",
-                "GoogleAppMeasurementIdentitySupport",
-                "GoogleMobileAds",
-                "GoogleUtilities",
-                "nanopb",
-                "PromisesObjC",
-                "UserMessagingPlatform"
+                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
             ],
             swiftSettings: []
         ),
