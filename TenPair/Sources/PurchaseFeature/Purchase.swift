@@ -47,7 +47,7 @@ public struct Purchase: ReducerProtocol {
         case purchaseMade(TaskResult<Bool>)
         
         case restore
-        case restoreMade(Result<Bool, Error>)
+        case restoreMade(TaskResult<Bool>)
         
         case rateApp
     }
@@ -145,15 +145,22 @@ public struct Purchase: ReducerProtocol {
                 }
                 
                 state.purchaseMode = .restoreInProgress
-                return Effect(purchaseClient.restore())
-                    .catchToEffect(Action.restoreMade)
-                    .receive(on: mainQueue)
-                    .eraseToEffect()
+                return EffectTask.run {
+                    send in
+                    
+                    await send(
+                        .restoreMade(
+                            TaskResult {
+                                try await purchaseClient.restore()
+                            }
+                        )
+                    )
+                }
                 
             case .restoreMade(let result):
                 state.purchaseMode = .showing
                 switch result {
-                case .success(_):
+                case .success:
                     break
                 case .failure(let error):
                     state.purchaseFailureMessage = error.localizedDescription

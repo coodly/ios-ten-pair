@@ -98,9 +98,9 @@ private class PurchasesProxy: NSObject, PurchasesDelegate {
         }
     }
     
-    fileprivate func restorePurchases() -> AnyPublisher<Bool, Error> {
-        Future() {
-            promise in
+    fileprivate func restorePurchases() async throws -> Bool {
+        return try await withCheckedThrowingContinuation {
+            continuation in
             
             Purchases.shared.restoreTransactions() {
                 info, error in
@@ -108,10 +108,9 @@ private class PurchasesProxy: NSObject, PurchasesDelegate {
                 
                 self.handle(info: info)
                 
-                promise(.success(true))
+                continuation.resume(with: .success(true))
             }
         }
-        .eraseToAnyPublisher()
     }
     
     fileprivate func purchase() async throws -> Bool {

@@ -34,7 +34,7 @@ public struct PurchaseClient {
     private let onLoad: (() -> Void)
     private let onPurchase: () async throws -> Bool
     private let onPurchaseStatus: (() -> AnyPublisher<PurchaseStatus, Never>)
-    private let onRestore: (() -> AnyPublisher<Bool, Error>)
+    private let onRestore: () async throws -> Bool
     
     public let havePurchase: Bool
     public init(
@@ -43,7 +43,7 @@ public struct PurchaseClient {
         onLoad: @escaping (() -> Void),
         onPurchase: @escaping () async throws -> Bool,
         onPurchaseStatus: @escaping (() -> AnyPublisher<PurchaseStatus, Never>),
-        onRestore: @escaping (() -> AnyPublisher<Bool, Error>)
+        onRestore: @escaping () async throws -> Bool
     ) {
         self.havePurchase = havePurchase
         self.onAvailableProduct = onAvailableProduct
@@ -69,8 +69,8 @@ public struct PurchaseClient {
         onPurchaseStatus()
     }
     
-    public func restore() -> AnyPublisher<Bool, Error> {
-        onRestore()
+    public func restore() async throws -> Bool {
+        try await onRestore()
     }
 }
 
