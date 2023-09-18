@@ -4,7 +4,7 @@ import RestartFeature
 import SendFeedbackFeature
 import Themes
 
-public struct Menu: ReducerProtocol {
+public struct Menu: Reducer {
     public struct State: Equatable {
         public var purchaseState: Purchase.State?
         public var restartState: Restart.State?
@@ -46,19 +46,19 @@ public struct Menu: ReducerProtocol {
     @Dependency(\.cloudMessagesClient) var cloudMessages
     @Dependency(\.mainQueue) var mainQueue
     
-    public var body: some ReducerProtocolOf<Self> {
+    public var body: some ReducerOf<Self> {
         Reduce {
             state, action in
             
             switch action {
             case .willAppear:
-                return EffectTask.concatenate(
+                return Effect.concatenate(
                     Effect.send(.purchase(.onAppear)),
                     Effect.send(.loadMessagesMonitor)
                 )
                 
             case .willDisappear:
-                return EffectTask.concatenate(
+                return Effect.concatenate(
                     Effect.send(.purchase(.onDisappear)),
                     Effect.send(.unloadMessagesMonitor)
                 )
@@ -85,7 +85,7 @@ public struct Menu: ReducerProtocol {
                     .cancellable(id: CancelID.messages)
                 
             case .unloadMessagesMonitor:
-                return EffectTask.cancel(id: CancelID.messages)
+                return Effect.cancel(id: CancelID.messages)
             
             case .markHasUnread(let hasUnread):
                 state.haveUnreadMessage = hasUnread

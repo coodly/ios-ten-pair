@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private lazy var store = Store(
         initialState: Application.State(),
-        reducer: Application()
+        reducer: Application.init
     )
 
     private lazy var viewStore = ViewStore(store, observe: { $0 })

@@ -1,7 +1,7 @@
 import ComposableArchitecture
 import CloudMessagesClient
 
-public struct SendFeedback: ReducerProtocol {
+public struct SendFeedback: Reducer {
     public struct State: Equatable {
         internal var isLoggedIn = false
 
@@ -40,7 +40,7 @@ public struct SendFeedback: ReducerProtocol {
     @Dependency(\.cloudMessagesClient) var cloudMessagesClient
     @Dependency(\.mainQueue) var mainQueue
     
-    public var body: some ReducerProtocolOf<Self> {
+    public var body: some ReducerOf<Self> {
         BindingReducer()
         Reduce {
             state, action in
@@ -61,7 +61,7 @@ public struct SendFeedback: ReducerProtocol {
                 
 
             case .onDisappear:
-                return EffectTask.cancel(id: CancelID.sendFeedback)
+                return Effect.cancel(id: CancelID.sendFeedback)
                 
             case .markLoggedIn(let loggedIn):
                 state.isLoggedIn = loggedIn

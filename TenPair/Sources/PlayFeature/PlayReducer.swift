@@ -10,7 +10,7 @@ public enum RestartAction: Equatable {
     case random(Int)
 }
 
-public struct PlayReducer: ReducerProtocol {
+public struct PlayReducer: Reducer {
     public struct State: Equatable {
         public var menuState: Menu.State?
         public var playSummaryState = PlaySummary.State()
@@ -42,7 +42,7 @@ public struct PlayReducer: ReducerProtocol {
     @Dependency(\.purchaseClient) var purchaseClient
     @Dependency(\.rateAppClient) var rateAppClient
     
-    public var body: some ReducerProtocolOf<Self> {
+    public var body: some ReducerOf<Self> {
         Reduce {
             state, action in
             

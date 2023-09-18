@@ -14,7 +14,7 @@ public enum PurchaseMode {
     case restoreInProgress
 }
 
-public struct Purchase: ReducerProtocol {
+public struct Purchase: Reducer {
     public struct State: Equatable {
         public var purchaseMade = false
         public var purchasePrice = "-"
@@ -60,19 +60,19 @@ public struct Purchase: ReducerProtocol {
     @Dependency(\.purchaseClient) var purchaseClient
     @Dependency(\.rateAppClient) var rateAppClient
     
-    public var body: some ReducerProtocolOf<Self> {
+    public var body: some ReducerOf<Self> {
         Reduce {
             state, action in
             
             switch action {
             case .onAppear:
-                return EffectTask.concatenate(
+                return Effect.concatenate(
                     Effect.send(.loadProduct),
                     Effect.send(.loadStatusMonitor)
                 )
                 
             case .loadProduct:
-                return EffectTask.run {
+                return Effect.run {
                     send in
                     
                     await send(
@@ -90,7 +90,7 @@ public struct Purchase: ReducerProtocol {
                     .cancellable(id: CancelID.status)
 
             case .onDisappear:
-                return EffectTask.cancel(id: CancelID.status)
+                return Effect.cancel(id: CancelID.status)
                 
             case .loadedProduct(let result):
                 switch result {
@@ -114,7 +114,7 @@ public struct Purchase: ReducerProtocol {
                 state.purchaseFailureMessage = nil
                 state.purchaseMode = .purchaseInProgress
                 
-                return EffectTask.run {
+                return Effect.run {
                     send in
                     
                     await send(
@@ -143,7 +143,7 @@ public struct Purchase: ReducerProtocol {
                 }
                 
                 state.purchaseMode = .restoreInProgress
-                return EffectTask.run {
+                return Effect.run {
                     send in
                     
                     await send(

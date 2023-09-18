@@ -4,7 +4,7 @@ import Logging
 import PlayFeature
 import PurchaseClient
 
-public struct Application: ReducerProtocol {
+public struct Application: Reducer {
     public struct State: Equatable {
         public var appAdsState = AppAds.State()
         public var playState = PlayReducer.State()
@@ -33,7 +33,7 @@ public struct Application: ReducerProtocol {
     @Dependency(\.rateAppClient) var rateAppClient
     @Dependency(\.purchaseClient) var purchaseClient
     
-    public var body: some ReducerProtocolOf<Self> {
+    public var body: some ReducerOf<Self> {
         Reduce {
             state, action in
             

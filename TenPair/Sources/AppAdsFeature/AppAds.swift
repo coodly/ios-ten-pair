@@ -3,7 +3,7 @@ import MobileAdsClient
 
 private let InterstitialShowThreshold = 10
 
-public struct AppAds: ReducerProtocol {
+public struct AppAds: Reducer {
     public struct State: Equatable {
         public var showBannerAd = false
         public var presentInterstitial = false
@@ -35,14 +35,14 @@ public struct AppAds: ReducerProtocol {
     @Dependency(\.mainQueue) var mainQueue
     @Dependency(\.mobileAdsClient) var mobileAds
     
-    public var body: some ReducerProtocolOf<Self> {
+    public var body: some ReducerOf<Self> {
         Reduce {
             state, action in
             
             switch action {
             case .onDidLoad:
-                return EffectTask.concatenate(
-                    EffectTask.send(.loadShowBannerMonitor)
+                return Effect.concatenate(
+                    Effect.send(.loadShowBannerMonitor)
                 )
                 
             case .loadShowBannerMonitor:

@@ -1,6 +1,6 @@
 import ComposableArchitecture
 
-public struct Restart: ReducerProtocol {
+public struct Restart: Reducer {
     public struct State: Equatable {
         public let randomLines = [20, 50, 100, 250, 500, 1_000]
         
@@ -19,7 +19,7 @@ public struct Restart: ReducerProtocol {
         
     }
     
-    public var body: some ReducerProtocolOf<Self> {
+    public var body: some ReducerOf<Self> {
         Reduce {
             state, action in
             

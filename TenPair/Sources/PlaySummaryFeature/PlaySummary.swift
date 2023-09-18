@@ -2,7 +2,7 @@ import ComposableArchitecture
 import Themes
 import SwiftUI
 
-public struct PlaySummary: ReducerProtocol {
+public struct PlaySummary: Reducer {
     public struct State: Equatable {
         internal var numbeOfLines = 123
         internal var numberOfTiles = 43
@@ -28,7 +28,7 @@ public struct PlaySummary: ReducerProtocol {
     
     @Dependency(\.mainQueue) var mainQueue
     
-    public var body: some ReducerProtocolOf<Self> {
+    public var body: some ReducerOf<Self> {
         Reduce {
             state, action in
             

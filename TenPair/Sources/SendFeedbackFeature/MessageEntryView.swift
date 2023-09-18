@@ -17,7 +17,7 @@ internal struct MessageEntryView: View {
                         .padding(.all, 8)
                         .padding([.vertical, .leading])
                         .layoutPriority(1)
-                    TextEditor(text: viewStore.binding(\.$message))
+                    TextEditor(text: viewStore.$message)
                         .padding([.vertical, .leading])
                 }
                 .font(.body)
