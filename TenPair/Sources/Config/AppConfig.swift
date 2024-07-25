@@ -17,9 +17,9 @@
 import Foundation
 
 public let DefaultStartBoard = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9,
-    1, 1, 1, 2, 1, 3, 1, 4, 1,
-    5, 1, 6, 1, 7, 1, 8, 1, 9
+  1, 2, 3, 4, 5, 6, 7, 8, 9,
+  1, 1, 1, 2, 1, 3, 1, 4, 1,
+  5, 1, 6, 1, 7, 1, 8, 1, 9
 ]
 
 public let NumberOfColumns = 9
@@ -28,23 +28,23 @@ public let AdAfterLines = 10
 private let ReleaseBuild = true
 
 public struct AdUnits {
-    public let banner: String
-    public let interstitial: String
-    static let live = AdUnits(banner: AdMobBannerUnit, interstitial: AdMobInterstitial)
-    static let demo = AdUnits(banner: DemoAdMobBannerUnit, interstitial: DemoInterstitial)
+  public let banner: String
+  public let interstitial: String
+  static let live = AdUnits(banner: AdMobBannerUnit, interstitial: AdMobInterstitial)
+  static let demo = AdUnits(banner: DemoAdMobBannerUnit, interstitial: DemoInterstitial)
 }
 
 public struct AppConfig {
-    public let logs = !ReleaseBuild
-    public let ads: Bool
-    public let adUnits = ReleaseBuild ? AdUnits.live : AdUnits.demo
-    let showDebugInfo = !ReleaseBuild
-    
-    public static let current = AppConfig(ads: true)
+  public let logs = !ReleaseBuild
+  public let ads: Bool
+  public let adUnits = ReleaseBuild ? AdUnits.live : AdUnits.demo
+  let showDebugInfo = !ReleaseBuild
+
+  public static let current = AppConfig(ads: true)
 }
 
 extension Notification.Name {
-    public static let saveField = Notification.Name(rawValue: "TenPairSaveField")
-    public static let hintTaken = Notification.Name(rawValue: "TenPairHintTaken")
-    public static let fieldReload = Notification.Name(rawValue: "TenPairFieldReload")
+  public static let saveField = Notification.Name(rawValue: "TenPairSaveField")
+  public static let hintTaken = Notification.Name(rawValue: "TenPairHintTaken")
+  public static let fieldReload = Notification.Name(rawValue: "TenPairFieldReload")
 }

@@ -21,89 +21,89 @@ import Themes
 import UIKit
 
 public class WinViewController: UIViewController, StoryboardLoaded {
-    public static var storyboardName: String {
-        "Win"
+  public static var storyboardName: String {
+    "Win"
+  }
+    
+  public static var instance: Self {
+    Storyboards.loadFromStoryboard(from: .module)
+  }
+    
+  private lazy var sceneView = SKView()
+  private lazy var scene = WinScene(size: view.bounds.size)
+  private var timer: Timer? {
+    didSet {
+      oldValue?.invalidate()
     }
+  }
     
-    public static var instance: Self {
-        Storyboards.loadFromStoryboard(from: .module)
-    }
+  public var onDismiss: (() -> Void)?
     
-    private lazy var sceneView = SKView()
-    private lazy var scene = WinScene(size: view.bounds.size)
-    private var timer: Timer? {
-        didSet {
-            oldValue?.invalidate()
-        }
-    }
-    
-    public var onDismiss: (() -> Void)?
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
+  public override func viewDidLoad() {
+    super.viewDidLoad()
         
-        view.backgroundColor = UIColor.color(hexString: "#121212").withAlphaComponent(0.9)
+    view.backgroundColor = UIColor.color(hexString: "#121212").withAlphaComponent(0.9)
         
-        view.addSubview(sceneView)
-        sceneView.pinToSuperviewEdges()
-        sceneView.backgroundColor = .clear
+    view.addSubview(sceneView)
+    sceneView.pinToSuperviewEdges()
+    sceneView.backgroundColor = .clear
         
-        scene.scaleMode = .aspectFill
-        scene.backgroundColor = .clear
-        sceneView.presentScene(scene)
+    scene.scaleMode = .aspectFill
+    scene.backgroundColor = .clear
+    sceneView.presentScene(scene)
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
-        sceneView.addGestureRecognizer(tap)
-    }
+    let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+    sceneView.addGestureRecognizer(tap)
+  }
     
-    @objc fileprivate func tapped() {
-        onDismiss?()
-    }
+  @objc fileprivate func tapped() {
+    onDismiss?()
+  }
     
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+  public override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
             
-        scene.emit()
+    scene.emit()
         
-        let timer = Timer(timeInterval: 0.5, target: scene, selector: #selector(WinScene.emit), userInfo: nil, repeats: true)
-        self.timer = timer
-        RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
-    }
+    let timer = Timer(timeInterval: 0.5, target: scene, selector: #selector(WinScene.emit), userInfo: nil, repeats: true)
+    self.timer = timer
+    RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
+  }
     
-    public override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+  public override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
         
-        timer = nil
-    }
+    timer = nil
+  }
 }
 
 private class WinScene: SKScene {
-    @objc func emit() {
-        let point = size.randomPoint()
-        addChild(explosion(at: point))
-    }
+  @objc func emit() {
+    let point = size.randomPoint()
+    addChild(explosion(at: point))
+  }
     
-    private func explosion(at point: CGPoint) -> SKEmitterNode {
-        let emitter = NSKeyedUnarchiver.unarchiveObject(withFile: Bundle.module.path(forResource: "Fireworks", ofType: "sks")!) as! SKEmitterNode
-        emitter.particleTexture = SKTexture(image: Asset.spark.image)
-        emitter.position = point
-        emitter.zPosition = 2
-        emitter.particleColor = [
-            SKColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1),
-            SKColor.white,
-            SKColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1),
-            SKColor(red: 246.0 / 255.0, green: 205.0 / 255.0, blue: 69.0 / 255.0, alpha: 1)
-        ].randomElement()!
-        return emitter
-    }
+  private func explosion(at point: CGPoint) -> SKEmitterNode {
+    let emitter = NSKeyedUnarchiver.unarchiveObject(withFile: Bundle.module.path(forResource: "Fireworks", ofType: "sks")!) as! SKEmitterNode
+    emitter.particleTexture = SKTexture(image: Asset.spark.image)
+    emitter.position = point
+    emitter.zPosition = 2
+    emitter.particleColor = [
+      SKColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1),
+      SKColor.white,
+      SKColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1),
+      SKColor(red: 246.0 / 255.0, green: 205.0 / 255.0, blue: 69.0 / 255.0, alpha: 1)
+    ].randomElement()!
+    return emitter
+  }
 }
 
 extension CGSize {
-    fileprivate func randomPoint() -> CGPoint {
-        let minX = width / 4
-        let minY = height / 4
-        let randomX = CGFloat.random(in: minX..<(minX * 3))
-        let randomY = CGFloat.random(in: minY..<(minY * 3))
-        return CGPoint(x: randomX, y: randomY)
-    }
+  fileprivate func randomPoint() -> CGPoint {
+    let minX = width / 4
+    let minY = height / 4
+    let randomX = CGFloat.random(in: minX..<(minX * 3))
+    let randomY = CGFloat.random(in: minY..<(minY * 3))
+    return CGPoint(x: randomX, y: randomY)
+  }
 }

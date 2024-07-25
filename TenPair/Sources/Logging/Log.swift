@@ -18,26 +18,26 @@ import Config
 import SWLogger
 
 public class Log {
-    public class func enable() {
-        guard AppConfig.current.logs else {
-            return
-        }
-        
-        SWLogger.Log.add(output: ConsoleOutput())
-        SWLogger.Log.add(output: FileOutput())
-        
-        SWLogger.Log.level = .debug
+  public class func enable() {
+    guard AppConfig.current.logs else {
+      return
     }
-    
-    public static let app = Logging(name: "App")
-    public static let ads = Logging(name: "Ads")
-    public static let cloud = Logging(name: "Cloud")
-    public static let feedback = Logging(name: "Feedback")
-    public static let insight = Logging(name: "Insight")
-    public static let purchase = Logging(name: "Purchase")
-    public static let rate = Logging(name: "Rate")
 
-    class func debug<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
-        SWLogger.Log.debug(object, file: file, function: function, line: line)
-    }
+    SWLogger.Log.add(output: ConsoleOutput())
+    SWLogger.Log.add(output: FileOutput())
+
+    SWLogger.Log.level = .debug
+  }
+
+  public static let app = Logging(name: "App")
+  public static let ads = Logging(name: "Ads")
+  public static let cloud = Logging(name: "Cloud")
+  public static let feedback = Logging(name: "Feedback")
+  public static let insight = Logging(name: "Insight")
+  public static let purchase = Logging(name: "Purchase")
+  public static let rate = Logging(name: "Rate")
+
+  class func debug<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
+    SWLogger.Log.debug(object, file: file, function: function, line: line)
+  }
 }

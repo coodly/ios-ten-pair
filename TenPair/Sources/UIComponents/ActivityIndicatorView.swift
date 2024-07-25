@@ -17,20 +17,20 @@
 import SwiftUI
 
 public struct ActivityIndicatorView: UIViewRepresentable {
-    public let style: UIActivityIndicatorView.Style
+  public let style: UIActivityIndicatorView.Style
 
-    public init(style: UIActivityIndicatorView.Style = .medium) {
-        self.style = style
-    }
-    
-    public func makeUIView(context: UIViewRepresentableContext<ActivityIndicatorView>) -> UIActivityIndicatorView {
-        let indicator =  UIActivityIndicatorView(style: style)
-        indicator.startAnimating()
-        indicator.color = .white
-        return indicator
-    }
+  public init(style: UIActivityIndicatorView.Style = .medium) {
+    self.style = style
+  }
 
-    public func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicatorView>) {
+  public func makeUIView(context: UIViewRepresentableContext<ActivityIndicatorView>) -> UIActivityIndicatorView {
+    let indicator =  UIActivityIndicatorView(style: style)
+    indicator.startAnimating()
+    indicator.color = .white
+    return indicator
+  }
 
-    }
+  public func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicatorView>) {
+
+  }
 }

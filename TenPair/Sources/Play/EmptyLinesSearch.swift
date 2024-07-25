@@ -18,93 +18,93 @@ import Config
 import Foundation
 
 private func contains<S: Sequence>(_ array: S, value: Int) -> Bool where S.Iterator.Element == CountableRange<Int> {
-    for range in array {
-        if range.contains(value) {
-            return true
-        }
+  for range in array {
+    if range.contains(value) {
+      return true
     }
-    return false
+  }
+  return false
 }
 
 public class EmptyLinesSearch {
-    public class func emptyRangesWithCheckPoints(_ checks: [Int], field: [Int]) -> [CountableRange<Int>] {
-        var results = [CountableRange<Int>]()
+  public class func emptyRangesWithCheckPoints(_ checks: [Int], field: [Int]) -> [CountableRange<Int>] {
+    var results = [CountableRange<Int>]()
         
-        let first = min(checks[0], checks[1])
-        let second = max(checks[0], checks[1])
+    let first = min(checks[0], checks[1])
+    let second = max(checks[0], checks[1])
         
-        let startForFirstRange = firstZeroRangeIndexStartingWith(first, inField: field)
-        let firstRanges = possibleEmptyRanges(startForFirstRange, inField: field)
-        results.append(contentsOf: firstRanges)
+    let startForFirstRange = firstZeroRangeIndexStartingWith(first, inField: field)
+    let firstRanges = possibleEmptyRanges(startForFirstRange, inField: field)
+    results.append(contentsOf: firstRanges)
         
-        if contains(results, value: second) {
-            return results
-        }
-        
-        if let last = results.sorted(by: { $0.lowerBound < $1.lowerBound }).last, last.upperBound + NumberOfColumns > second {
-            return results
-        }
-        
-        let startForSecondRange = firstZeroRangeIndexStartingWith(second, inField: field)
-        let secondRanges = possibleEmptyRanges(startForSecondRange, inField: field)
-        results.append(contentsOf: secondRanges)
-        
-        return results
+    if contains(results, value: second) {
+      return results
     }
-    
-    private class func possibleEmptyRanges(_ startIndex: Int, inField field: [Int], rangeLength: Int = NumberOfColumns) -> [CountableRange<Int>] {
-        var result = [CountableRange<Int>]()
         
-        var count = 0
-        var start = startIndex
-        for index in startIndex..<field.count {
-            count = count + 1
+    if let last = results.sorted(by: { $0.lowerBound < $1.lowerBound }).last, last.upperBound + NumberOfColumns > second {
+      return results
+    }
+        
+    let startForSecondRange = firstZeroRangeIndexStartingWith(second, inField: field)
+    let secondRanges = possibleEmptyRanges(startForSecondRange, inField: field)
+    results.append(contentsOf: secondRanges)
+        
+    return results
+  }
+    
+  private class func possibleEmptyRanges(_ startIndex: Int, inField field: [Int], rangeLength: Int = NumberOfColumns) -> [CountableRange<Int>] {
+    var result = [CountableRange<Int>]()
+        
+    var count = 0
+    var start = startIndex
+    for index in startIndex..<field.count {
+      count = count + 1
             
-            guard field[index] == 0 else {
-                break
-            }
+      guard field[index] == 0 else {
+        break
+      }
             
-            if count == rangeLength {
-                result.append(start..<index+1)
-                start = index + 1
-                count = 0
-            }
-        }
-        
-        return result
+      if count == rangeLength {
+        result.append(start..<index+1)
+        start = index + 1
+        count = 0
+      }
     }
+        
+    return result
+  }
     
-    private class func firstZeroRangeIndexStartingWith(_ index: Int, inField field: [Int]) -> Int {
-        var checked = index
-        while checked > 0 {
-            let value = field[checked]
-            if value != 0 {
-                return checked + 1
-            }
+  private class func firstZeroRangeIndexStartingWith(_ index: Int, inField field: [Int]) -> Int {
+    var checked = index
+    while checked > 0 {
+      let value = field[checked]
+      if value != 0 {
+        return checked + 1
+      }
             
-            checked = checked - 1
-        }
-        
-        return 0
+      checked = checked - 1
     }
+        
+    return 0
+  }
     
-    private class func firstInRowForIndex(_ index: Int) -> Int {
-        return index - index % NumberOfColumns
-    }
+  private class func firstInRowForIndex(_ index: Int) -> Int {
+    return index - index % NumberOfColumns
+  }
     
-    private class func hasEmptyRowStartingAtIndex(_ index: Int, field: [Int]) -> Bool {
-        let rowEndIndex = index + NumberOfColumns
-        if rowEndIndex > field.count {
-            return false
-        }
-        
-        for check in 0..<NumberOfColumns {
-            let checked = field[check + index]
-            if checked != 0 {
-                return false
-            }
-        }
-        
-        return true
+  private class func hasEmptyRowStartingAtIndex(_ index: Int, field: [Int]) -> Bool {
+    let rowEndIndex = index + NumberOfColumns
+    if rowEndIndex > field.count {
+      return false
     }
+        
+    for check in 0..<NumberOfColumns {
+      let checked = field[check + index]
+      if checked != 0 {
+        return false
+      }
+    }
+        
+    return true
+  }
 }
