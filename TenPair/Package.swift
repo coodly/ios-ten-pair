@@ -6,7 +6,7 @@ import PackageDescription
 private let concurrency = Target.Dependency.product(name: "ConcurrencyExtras", package: "swift-concurrency-extras")
 private let composable = Target.Dependency.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
 private let dependencies = Target.Dependency.product(name: "Dependencies", package: "swift-dependencies")
-private let testOverlay = Target.Dependency.product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
+private let dependenciesMacros = Target.Dependency.product(name: "DependenciesMacros", package: "swift-dependencies")
 
 private let withConcurrencyFlags = [
   .enableUpcomingFeature("BareSlashRegexLiterals"),
@@ -75,14 +75,13 @@ let package = Package(
   ],
   dependencies: [
     .package(url: "https://github.com/coodly/swlogger.git", exact: "0.6.1"),
-    .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "4.26.0"),
+    .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "4.43.3"),
         
-    .package(url: "https://github.com/pointfreeco/swift-concurrency-extras", from: "1.0.0"),
-    .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "1.2.0"),
-    .package(url: "https://github.com/pointfreeco/swift-dependencies.git", exact: "1.0.0"),
-    .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", exact: "1.0.2"),
+    .package(url: "https://github.com/pointfreeco/swift-concurrency-extras", from: "1.2.0"),
+    .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "1.15.2"),
+    .package(url: "https://github.com/pointfreeco/swift-dependencies.git", exact: "1.4.1"),
         
-    .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "10.10.0")
+    .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "11.11.0")
   ],
   targets: [
     .target(
@@ -140,8 +139,7 @@ let package = Package(
     .target(
       name: "CloudMessagesClient",
       dependencies: [
-        dependencies,
-        testOverlay
+        dependencies
       ]
     ),
     .target(
@@ -200,8 +198,7 @@ let package = Package(
     .target(
       name: "MobileAdsClient",
       dependencies: [
-        dependencies,
-        testOverlay
+        dependencies
       ]
     ),
     .target(
@@ -259,7 +256,7 @@ let package = Package(
       name: "PurchaseClient",
       dependencies: [
         dependencies,
-        testOverlay
+        dependenciesMacros
       ]
     ),
     .target(
@@ -292,8 +289,7 @@ let package = Package(
       dependencies: [
         "Logging",
                 
-        dependencies,
-        testOverlay
+        dependencies
       ],
       swiftSettings: []
     ),

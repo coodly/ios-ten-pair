@@ -85,11 +85,11 @@ extension PurchaseClient {
 extension PurchaseClient: TestDependencyKey {
   public static var testValue: PurchaseClient {
     PurchaseClient(
-      havePurchase: unimplemented("\(Self.self).havePurchase"),
+      havePurchase: unimplemented("\(Self.self).havePurchase", placeholder: false),
       onAvailableProduct: unimplemented("\(Self.self).onAvailableProduct"),
       onLoad: unimplemented("\(Self.self).onLoad"),
       onPurchase: unimplemented("\(Self.self).onPurchase"),
-      onPurchaseStatusStream: unimplemented("\(Self.self).onPurchaseStatusStream"),
+      onPurchaseStatusStream: unimplemented("\(Self.self).onPurchaseStatusStream", placeholder: .finished),
       onRestore: unimplemented("\(Self.self).onRestore")
     )
   }
