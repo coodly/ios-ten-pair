@@ -4,7 +4,8 @@ import Logging
 import PlayFeature
 import PurchaseClient
 
-public struct Application: Reducer {
+@Reducer
+public struct Application {
   public struct State: Equatable {
     public var appAdsState = AppAds.State()
     public var playState = PlayReducer.State()

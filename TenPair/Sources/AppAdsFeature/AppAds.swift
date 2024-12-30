@@ -3,7 +3,8 @@ import MobileAdsClient
 
 private let InterstitialShowThreshold = 10
 
-public struct AppAds: Reducer {
+@Reducer
+public struct AppAds {
   public struct State: Equatable {
     public var showBannerAd = false
     public var presentInterstitial = false

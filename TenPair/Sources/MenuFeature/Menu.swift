@@ -4,7 +4,8 @@ import RestartFeature
 import SendFeedbackFeature
 import Themes
 
-public struct Menu: Reducer {
+@Reducer
+public struct Menu {
   public struct State: Equatable {
     public var purchaseState: Purchase.State?
     public var restartState: Restart.State?

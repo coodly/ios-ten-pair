@@ -10,7 +10,8 @@ public enum RestartAction: Equatable {
   case random(Int)
 }
 
-public struct PlayReducer: Reducer {
+@Reducer
+public struct PlayReducer {
   public struct State: Equatable {
     public var menuState: Menu.State?
     public var playSummaryState = PlaySummary.State()

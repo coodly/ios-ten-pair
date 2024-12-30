@@ -2,7 +2,8 @@ import ComposableArchitecture
 import Themes
 import SwiftUI
 
-public struct PlaySummary: Reducer {
+@Reducer
+public struct PlaySummary {
   public struct State: Equatable {
     internal var numbeOfLines = 123
     internal var numberOfTiles = 43
