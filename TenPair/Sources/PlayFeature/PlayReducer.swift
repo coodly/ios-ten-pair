@@ -12,6 +12,7 @@ public enum RestartAction: Equatable {
 
 @Reducer
 public struct PlayReducer {
+  @ObservableState
   public struct State: Equatable {
     public var menuState: Menu.State?
     public var playSummaryState = PlaySummary.State()

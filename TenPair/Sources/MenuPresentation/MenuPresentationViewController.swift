@@ -31,7 +31,7 @@ public class MenuPresentationViewController: UIViewController, StoryboardLoaded 
     hosting.view.backgroundColor = .clear
     view.backgroundColor = .clear
         
-    store.scope(state: \.sendFeedbackState, action: MenuFeature.Menu.Action.sendFeedback).ifLet(
+    store.scope(state: \.sendFeedbackState, action: \.sendFeedback).ifLet(
       then: {
         [weak self]
                 

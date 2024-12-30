@@ -6,6 +6,7 @@ import Themes
 
 @Reducer
 public struct Menu {
+  @ObservableState
   public struct State: Equatable {
     public var purchaseState: Purchase.State?
     public var restartState: Restart.State?

@@ -6,6 +6,7 @@ import PurchaseClient
 
 @Reducer
 public struct Application {
+  @ObservableState
   public struct State: Equatable {
     public var appAdsState = AppAds.State()
     public var playState = PlayReducer.State()

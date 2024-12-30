@@ -27,14 +27,14 @@ public let AdAfterLines = 10
 
 private let ReleaseBuild = true
 
-public struct AdUnits {
+public struct AdUnits: Sendable {
   public let banner: String
   public let interstitial: String
   static let live = AdUnits(banner: AdMobBannerUnit, interstitial: AdMobInterstitial)
   static let demo = AdUnits(banner: DemoAdMobBannerUnit, interstitial: DemoInterstitial)
 }
 
-public struct AppConfig {
+public struct AppConfig: Sendable {
   public let logs = !ReleaseBuild
   public let ads: Bool
   public let adUnits = ReleaseBuild ? AdUnits.live : AdUnits.demo

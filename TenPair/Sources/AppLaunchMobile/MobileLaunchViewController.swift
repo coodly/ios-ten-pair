@@ -16,11 +16,11 @@ public class MobileLaunchViewController: UIViewController {
   public override func viewDidLoad() {
     super.viewDidLoad()
 
-    playController.store = store.scope(state: \.playState, action: Application.Action.play)
+    playController.store = store.scope(state: \.playState, action: \.play)
 
     let navigation = PlayNavigationController(rootViewController: playController)
         
-    adsController.store = store.scope(state: \.appAdsState, action: Application.Action.appAds)
+    adsController.store = store.scope(state: \.appAdsState, action: \.appAds)
     adsController.contained = navigation
 
     addChild(adsController)

@@ -12,25 +12,20 @@ internal struct RegularOptionsView: View {
   }
 
   var body: some View {
-    WithViewStore(store, observe: { $0 }) {
-      viewStore in
-
-      Button(action: { viewStore.send(.resume) }) {
-        Text(L10n.Menu.Option.resume)
-      }
-      Button(action: { viewStore.send(.restartTapped) }) {
-        Text(L10n.Menu.Option.restart)
-      }
-      Button(action: { viewStore.send(.theme) }) {
-        Text(L10n.Menu.Option.Theme.base(viewStore.activeThemeName))
-      }
-      IfLetStore(
-        store.scope(state: \.purchaseState, action: MenuFeature.Menu.Action.purchase),
-        then: PurchaseOptionsView.init(store:)
-      )
-      if viewStore.feedbackEnabled {
-        FeedbackOptionsView(store: store)
-      }
+    Button(action: { store.send(.resume) }) {
+      Text(L10n.Menu.Option.resume)
+    }
+    Button(action: { store.send(.restartTapped) }) {
+      Text(L10n.Menu.Option.restart)
+    }
+    Button(action: { store.send(.theme) }) {
+      Text(L10n.Menu.Option.Theme.base(store.activeThemeName))
+    }
+    if let store = store.scope(state: \.purchaseState, action: \.purchase) {
+      PurchaseOptionsView(store: store)
+    }
+    if store.feedbackEnabled {
+      FeedbackOptionsView(store: store)
     }
   }
 }

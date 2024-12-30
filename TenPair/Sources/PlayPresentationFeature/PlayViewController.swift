@@ -36,7 +36,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
   public var store: StoreOf<PlayReducer>!
   private lazy var viewStore = ViewStore(store, observe: { $0 })
     
-  private lazy var summaryStore = store.scope(state: \.playSummaryState, action: PlayReducer.Action.playSummary)
+  private lazy var summaryStore = store.scope(state: \.playSummaryState, action: \.playSummary)
   private lazy var summaryViewStore = ViewStore(summaryStore, observe: { $0 })
   private lazy var summaryView = PlaySummaryView(store: summaryStore)
   private lazy var summaryHosting = UIHostingController(rootView: summaryView)
@@ -103,7 +103,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     undoTray.isHidden = true
     undoManager?.levelsOfUndo = 10
         
-    store.scope(state: \.menuState, action: PlayReducer.Action.menu).ifLet(
+    store.scope(state: \.menuState, action: \.menu).ifLet(
       then: {
         [weak self]
                 

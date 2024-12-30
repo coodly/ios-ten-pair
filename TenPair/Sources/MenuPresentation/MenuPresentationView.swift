@@ -10,25 +10,19 @@ internal struct MenuPresentationView: View {
   }
     
   var body: some View {
-    WithViewStore(store, observe: { $0 }) {
-      viewStore in
-            
-      ZStack {
-        MenuBackground()
-          .edgesIgnoringSafeArea(.all)
-          .onTapGesture(perform: { viewStore.send(.resume) })
-        VStack(spacing: 4) {
-          IfLetStore(
-            store.scope(state: \.restartState, action: MenuFeature.Menu.Action.restart),
-            then: RestartOptionsView.init(store:),
-            else: {
-              RegularOptionsView(store: store)
-            }
-          )
+    ZStack {
+      MenuBackground()
+        .edgesIgnoringSafeArea(.all)
+        .onTapGesture(perform: { store.send(.resume) })
+      VStack(spacing: 4) {
+        if let store = store.scope(state: \.restartState, action: \.restart) {
+          RestartOptionsView(store: store)
+        } else {
+          RegularOptionsView(store: store)
         }
-        .frame(width: 280)
-        .buttonStyle(MenuButtonStyle())
       }
+      .frame(width: 280)
+      .buttonStyle(MenuButtonStyle())
     }
   }
 }

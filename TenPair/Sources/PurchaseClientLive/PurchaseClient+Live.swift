@@ -9,7 +9,7 @@ import RevenueCat
 
 extension PurchaseClient: DependencyKey {
   public static var liveValue: PurchaseClient {
-    let isolatedPackage = ActorIsolated(Package.notLoaded)
+    let isolatedPackage = LockIsolated(Package.notLoaded)
         
     return PurchaseClient(
       havePurchase: true,
@@ -23,7 +23,7 @@ extension PurchaseClient: DependencyKey {
           throw PurchaseError.noProducts
         }
                 
-        await isolatedPackage.setValue(loaded)
+        isolatedPackage.setValue(loaded)
                 
         return AppProduct(identifier: loaded.identifier, formattedPrice: loaded.localizedPriceString)
       },
@@ -35,7 +35,7 @@ extension PurchaseClient: DependencyKey {
         Purchases.configure(withAPIKey: RevenueCatAPIKey)
       },
       onPurchase: {
-        let package = await isolatedPackage.value
+        let package = isolatedPackage.value
         precondition(package != Package.notLoaded)
                 
         let (_, _, cancelled) = try await Purchases.shared.purchase(package: package)
