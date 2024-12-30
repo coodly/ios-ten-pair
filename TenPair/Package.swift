@@ -75,7 +75,7 @@ let package = Package(
   ],
   dependencies: [
     .package(url: "https://github.com/coodly/swlogger.git", exact: "0.6.1"),
-    .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "4.43.3"),
+    .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "5.14.4"),
         
     .package(url: "https://github.com/pointfreeco/swift-concurrency-extras", from: "1.3.1"),
     .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "1.17.0"),
