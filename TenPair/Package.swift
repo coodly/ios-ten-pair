@@ -32,7 +32,7 @@ private let withConcurrencyFlags = [
 let package = Package(
   name: "TenPair",
   defaultLocalization: LanguageTag("en"),
-  platforms: [.iOS(.v13), .macOS(.v10_15)],
+  platforms: [.iOS(.v17), .macOS(.v10_15)],
   products: [
     .library(
       name: "AppPackages",
