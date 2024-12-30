@@ -34,7 +34,7 @@ public struct LayoutPosition {
     tilesSectionHeight = CGFloat(adAfterLines) * itemSize.height
   }
     
-  public func numberOfSections(with field: [Int]) -> Int {
+  public func numberOfSections(with field: [Number]) -> Int {
     guard showingAds else {
       return 1
     }
@@ -44,7 +44,7 @@ public struct LayoutPosition {
     return fullTilesSections + fullTilesSections + (partial ? 1 : 0)
   }
     
-  public func numberOfRows(in section: Int, using field: [Int]) -> Int {
+  public func numberOfRows(in section: Int, using field: [Number]) -> Int {
     guard showingAds else {
       return field.count
     }

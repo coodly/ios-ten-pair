@@ -17,7 +17,7 @@
 import Config
 
 public class PathFinder {
-  public class func hasClearPath(_ indexes: [Int], inField: [Int]) -> Bool {
+  public class func hasClearPath(_ indexes: [Int], inField: [Number]) -> Bool {
     let one = indexes[0]
     let two = indexes[1]
         
@@ -37,7 +37,7 @@ public class PathFinder {
       while index < second {
         let checked = inField[index]
                 
-        if checked != 0 {
+        if checked.value != 0 {
           return false
         }
                 
@@ -49,7 +49,7 @@ public class PathFinder {
     for index in (first + 1)..<second {
       let check = inField[index]
             
-      if check != 0 {
+      if check.value != 0 {
         return false
       }
     }

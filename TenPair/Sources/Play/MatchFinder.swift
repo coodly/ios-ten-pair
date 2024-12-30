@@ -30,7 +30,7 @@ public struct Match {
 }
 
 public class MatchFinder {
-  public static func openMatch(in field: [Int], random: GKRandomSource) -> Match? {
+  public static func openMatch(in field: [Number], random: GKRandomSource) -> Match? {
     let randomIndex = random.nextInt(upperBound: field.count)
     let searchBackwards = random.nextBool()
     let search = Finder(field: field, startIndex: randomIndex, searchBackwards: searchBackwards, random: random)
@@ -48,12 +48,12 @@ public class MatchFinder {
 }
 
 private class Finder {
-  fileprivate let field: [Int]
+  fileprivate let field: [Number]
   fileprivate let start: Int
   fileprivate let modifier: Int
   private let random: GKRandomSource
     
-  init(field: [Int], startIndex: Int, searchBackwards: Bool, random: GKRandomSource) {
+  init(field: [Number], startIndex: Int, searchBackwards: Bool, random: GKRandomSource) {
     self.field = field
     self.start = startIndex
     modifier = searchBackwards ? -1 : 1
@@ -67,7 +67,7 @@ private class Finder {
         
     repeat {
       let value = field[checked]
-      if value != 0, let matched = canSeeMatch(checked, inField: field, look: looking) {
+      if value.value != 0, let matched = canSeeMatch(checked, inField: field, look: looking) {
         return Match(first: checked, second: matched)
       }
             
@@ -77,14 +77,14 @@ private class Finder {
     return nil
   }
     
-  fileprivate func canSeeMatch(_ checked: Int, inField field: [Int], look: [Look]) -> Int? {
-    let indexValue = field[checked]
+  fileprivate func canSeeMatch(_ checked: Int, inField field: [Number], look: [Look]) -> Int? {
+    let indexValue = field[checked].value
     for looking in look {
       guard let checkAgainst = nextIndexInDirection(checked, field: field, direction: looking) else {
         continue
       }
             
-      let otherValue = field[checkAgainst]
+      let otherValue = field[checkAgainst].value
             
       if indexValue == otherValue || indexValue + otherValue == 10 {
         return checkAgainst
@@ -94,7 +94,7 @@ private class Finder {
     return nil
   }
     
-  fileprivate func nextIndexInDirection(_ checked: Int, field: [Int], direction: Look) -> Int? {
+  fileprivate func nextIndexInDirection(_ checked: Int, field: [Number], direction: Look) -> Int? {
     var otherIndex = checked
     while true {
       otherIndex += direction.rawValue
@@ -103,7 +103,7 @@ private class Finder {
         break
       }
             
-      if field[otherIndex] != 0 {
+      if field[otherIndex].value != 0 {
         return otherIndex
       }
     }

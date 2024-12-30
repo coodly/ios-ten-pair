@@ -27,7 +27,7 @@ private func contains<S: Sequence>(_ array: S, value: Int) -> Bool where S.Itera
 }
 
 public class EmptyLinesSearch {
-  public class func emptyRangesWithCheckPoints(_ checks: [Int], field: [Int]) -> [CountableRange<Int>] {
+  public class func emptyRangesWithCheckPoints(_ checks: [Int], field: [Number]) -> [CountableRange<Int>] {
     var results = [CountableRange<Int>]()
         
     let first = min(checks[0], checks[1])
@@ -52,7 +52,7 @@ public class EmptyLinesSearch {
     return results
   }
     
-  private class func possibleEmptyRanges(_ startIndex: Int, inField field: [Int], rangeLength: Int = NumberOfColumns) -> [CountableRange<Int>] {
+  private class func possibleEmptyRanges(_ startIndex: Int, inField field: [Number], rangeLength: Int = NumberOfColumns) -> [CountableRange<Int>] {
     var result = [CountableRange<Int>]()
         
     var count = 0
@@ -60,7 +60,7 @@ public class EmptyLinesSearch {
     for index in startIndex..<field.count {
       count = count + 1
             
-      guard field[index] == 0 else {
+      guard field[index].value == 0 else {
         break
       }
             
@@ -74,11 +74,11 @@ public class EmptyLinesSearch {
     return result
   }
     
-  private class func firstZeroRangeIndexStartingWith(_ index: Int, inField field: [Int]) -> Int {
+  private class func firstZeroRangeIndexStartingWith(_ index: Int, inField field: [Number]) -> Int {
     var checked = index
     while checked > 0 {
       let value = field[checked]
-      if value != 0 {
+      if value.value != 0 {
         return checked + 1
       }
             

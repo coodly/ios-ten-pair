@@ -29,7 +29,7 @@ public protocol PlayFieldStatusDelegate: AnyObject {
   func statusUpdate(lines: Int, tiles: Int)
 }
 
-public struct Position {
+public struct Position: Sendable {
   public let index: Int
   public let value: Int
     
@@ -39,9 +39,22 @@ public struct Position {
   }
 }
 
+public struct Number: Sendable {
+  let id: UUID
+  fileprivate(set) var value: Int
+  
+  init(value: Int) {
+    self.id = UUID()
+    self.value = value
+  }
+  
+  mutating func clear() {
+    value = 0
+  }
+}
 
 public class PlayField {
-  private(set) public var numbers = [Int]()
+  private(set) public var numbers = [Number]()
   private var clearedCount = 0
   private(set) public var numberOfLines = 0 {
     didSet {
@@ -74,12 +87,12 @@ public class PlayField {
   }
     
   public func load() {
-    numbers = fieldSave.load()
+    numbers = fieldSave.load().map(Number.init(value:))
     updateStatus()
   }
     
   public func save() {
-    fieldSave.save(numbers)
+    fieldSave.save(numbers.map(\.value))
   }
     
   internal var count: Int {
@@ -87,11 +100,11 @@ public class PlayField {
   }
     
   public func number(at index: Int) -> Int {
-    numbers[index]
+    numbers[index].value
   }
     
   public func reload() {
-    let added = numbers.filter({ $0 != 0 })
+    let added = numbers.filter({ $0.value != 0 })
     numbers.append(contentsOf: added)
         
     save()
@@ -104,8 +117,8 @@ public class PlayField {
       return .failure
     }
         
-    let valueOne = numbers[first]
-    let valueTwo = numbers[second]
+    let valueOne = numbers[first].value
+    let valueTwo = numbers[second].value
         
     guard valueOne == valueTwo || valueOne + valueTwo == 10 else {
       return .failure
@@ -118,11 +131,11 @@ public class PlayField {
     var positions = [Position]()
     for index in numbers {
       let value = self.numbers[index]
-      positions.append(Position(index: index, value: value))
-      self.numbers[index] = 0
+      positions.append(Position(index: index, value: value.value))
+      self.numbers[index].clear()
     }
         
-    numbers.forEach({ self.numbers[$0] = 0 })
+    numbers.forEach({ self.numbers[$0].clear() })
     numberOfTiles -= numbers.count
         
     clearedCount += 1
@@ -135,7 +148,7 @@ public class PlayField {
   }
     
   public func hasValue(at index: Int) -> Bool {
-    numbers[index] != 0
+    numbers[index].value != 0
   }
     
   public func openMatch() -> Match? {
@@ -165,24 +178,24 @@ public class PlayField {
   }
     
   private func countTiles() {
-    numberOfTiles = numbers.filter({ $0 != 0 }).count
+    numberOfTiles = numbers.filter({ $0.value != 0 }).count
   }
     
   public func restart(tiles: [Int]) {
-    numbers = tiles
+    numbers = tiles.map(Number.init(value:))
     save()
     updateStatus()
   }
     
   public func restartRegular() {
-    numbers = DefaultStartBoard
+    numbers = DefaultStartBoard.map(Number.init(value:))
     save()
     updateStatus()
   }
     
   public var gameEnded: Bool {
     for num in numbers {
-      if num != 0 {
+      if num.value != 0 {
         return false
       }
     }
@@ -192,14 +205,14 @@ public class PlayField {
     
   public func restore(positions: [Position]) {
     for position in positions {
-      numbers[position.index] = position.value
+      numbers[position.index] = Number(value: position.value)
     }
     numberOfTiles += positions.count
   }
     
   public func insert(positions: [Position]) {
     let sorted = positions.sorted(by: { $0.index < $1.index })
-    sorted.forEach({ numbers.insert($0.value, at: $0.index) })
+    sorted.forEach({ numbers.insert(Number(value: $0.value), at: $0.index) })
     updateLines()
   }
 }

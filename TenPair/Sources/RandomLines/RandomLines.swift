@@ -16,8 +16,8 @@
 
 import Foundation
 
-public struct RandomLines {
-  public let generate: ((Int) -> [Int])
+public struct RandomLines: Sendable {
+  public let generate: @Sendable (Int) -> [Int]
 }
 
 extension RandomLines {
