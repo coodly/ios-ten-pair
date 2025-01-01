@@ -144,7 +144,11 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     presentation.modalPresentationStyle = .custom
     presentModal(presentation)
   }
-
+  
+  public override func viewWillLayoutSubviews() {
+    collectionView.collectionViewLayout.invalidateLayout()
+  }
+  
   @objc fileprivate func reloadField() {
     guard machine.currentState is SelectingNumber else {
       return
@@ -199,14 +203,6 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     
   @IBAction private func performUndo() {
     undoManager?.undo()
-  }
-    
-  public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-    super.traitCollectionDidChange(previousTraitCollection)
-
-    DispatchQueue.main.async {
-      self.collectionView.collectionViewLayout.invalidateLayout()
-    }
   }
     
   private func reload(indexes: Set<Int>, completion: ((Bool) -> Void)? = nil) {
