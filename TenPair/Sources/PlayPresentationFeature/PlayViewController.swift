@@ -69,9 +69,8 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     return queue
   }()
     
-  private lazy var layout = NumbersFlowLayout()
-  private lazy var layoutPosition = layout.layoutPosition
-    
+  private lazy var layout = NoInlineAdsNumberFlowLayout()
+  
   private lazy var disposeBag = Set<AnyCancellable>()
 
   public override func viewDidLoad() {
@@ -411,11 +410,11 @@ extension PlayViewController: PlayDelegate {
 
 extension PlayViewController: UICollectionViewDataSource {
   public func numberOfSections(in collectionView: UICollectionView) -> Int {
-    layoutPosition.numberOfSections(with: field.numbers)
+    1
   }
     
   public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    layoutPosition.numberOfRows(in: section, using: field.numbers)
+    field.numbers.count
   }
     
   public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
