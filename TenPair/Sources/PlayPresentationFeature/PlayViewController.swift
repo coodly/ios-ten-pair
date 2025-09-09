@@ -16,7 +16,8 @@ import UIComponents
 import UIKit
 import WinPresentation
 
-internal protocol PlayDelegate: AnyObject {
+@MainActor
+internal protocol PlayDelegate: AnyObject, Sendable {
   func animateFailure()
   func animateSuccess()
   func clearSelection()

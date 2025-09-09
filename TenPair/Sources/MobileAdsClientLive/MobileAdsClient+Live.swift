@@ -1,4 +1,5 @@
-import Combine
+@preconcurrency import Combine
+import ConcurrencyExtras
 import Config
 import Dependencies
 import GoogleMobileAds
@@ -29,9 +30,9 @@ extension MobileAdsClient {
   }
 }
 
-private class AdsProxy: NSObject, BannerViewDelegate, FullScreenContentDelegate {
+private final class AdsProxy: NSObject, BannerViewDelegate, FullScreenContentDelegate, Sendable {
   fileprivate let showBanner = CurrentValueSubject<Bool, Never>(false)
-  private var banner: BannerView?
+  private let banner: LockIsolated<BannerView?> = LockIsolated(nil)
   private var loaded = false
   private var interstitial: InterstitialAd?
     
@@ -40,7 +41,7 @@ private class AdsProxy: NSObject, BannerViewDelegate, FullScreenContentDelegate 
     MobileAds.shared.start(completionHandler: nil)
     loaded = true
         
-    guard let banner = banner else {
+    guard let banner = banner.value else {
       return
     }
     reloadBanner(in: banner)
@@ -51,9 +52,9 @@ private class AdsProxy: NSObject, BannerViewDelegate, FullScreenContentDelegate 
     Log.ads.debug("Unload")
     showBanner.send(false)
     showBanner.send(completion: .finished)
-    banner?.delegate = nil
-    banner?.removeFromSuperview()
-    banner = nil
+    banner.value?.delegate = nil
+    banner.value?.removeFromSuperview()
+    banner.setValue(nil)
     interstitial?.fullScreenContentDelegate = nil
     interstitial = nil
     loaded = false
@@ -79,7 +80,7 @@ private class AdsProxy: NSObject, BannerViewDelegate, FullScreenContentDelegate 
     banner.rootViewController = root
     banner.delegate = self
     banner.isAutoloadEnabled = false
-    self.banner = banner
+    self.banner.setValue(banner)
 
     return banner
   }
@@ -106,8 +107,8 @@ private class AdsProxy: NSObject, BannerViewDelegate, FullScreenContentDelegate 
     let frame = view.frame.inset(by: view.safeAreaInsets)
     let width = frame.size.width
     Log.ads.debug("Load banner at width: \(width)")
-    banner?.adSize = currentOrientationAnchoredAdaptiveBanner(width: width)
-    banner?.load(adRequest())
+    banner.value?.adSize = currentOrientationAnchoredAdaptiveBanner(width: width)
+    banner.value?.load(adRequest())
   }
     
   private func adRequest() -> Request {

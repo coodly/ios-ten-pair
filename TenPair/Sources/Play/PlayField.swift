@@ -25,6 +25,7 @@ public enum MatchAction: String {
   case failure
 }
 
+@MainActor
 public protocol PlayFieldStatusDelegate: AnyObject {
   func statusUpdate(lines: Int, tiles: Int)
 }

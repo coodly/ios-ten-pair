@@ -25,7 +25,7 @@ extension UserDefaults {
 
 private let TriggerRateCount = 5
 
-public struct RateAppClient {
+public struct RateAppClient: Sendable {
   public func appLaunch() {
     Log.rate.debug("App laucnh")
     if currentAppVersion == UserDefaults.standard.askedVersion {

@@ -1,4 +1,4 @@
-// swift-tools-version:5.9
+// swift-tools-version:6.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -15,6 +15,23 @@ private let withConcurrencyFlags = [
   .enableUpcomingFeature("ForwardTrailingClosures"),
   .enableUpcomingFeature("ImplicitOpenExistentials"),
   .enableUpcomingFeature("StrictConcurrency"),
+  SwiftSetting.swiftLanguageMode(.v5),
+  SwiftSetting.unsafeFlags(
+    [
+      "-Xfrontend",
+      "-warn-long-function-bodies=100",
+      "-Xfrontend",
+      "-warn-long-expression-type-checking=100",
+      "-Xfrontend",
+      "-warn-concurrency",
+      "-Xfrontend",
+      "-enable-actor-data-race-checks"
+    ]
+  )
+]
+
+private let swift6 = [
+  SwiftSetting.swiftLanguageMode(.v6),
   SwiftSetting.unsafeFlags(
     [
       "-Xfrontend",
@@ -100,7 +117,8 @@ let package = Package(
         "Logging",
                 
         composable
-      ]
+      ],
+      swiftSettings: swift6
     ),
     .target(
       name: "AppLaunchDesktop",
@@ -209,9 +227,10 @@ let package = Package(
         "Logging",
         "MobileAdsClient",
                 
-        .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
+        .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads"),
+        concurrency
       ],
-      swiftSettings: []
+      swiftSettings: [SwiftSetting.swiftLanguageMode(.v5)]
     ),
     .target(
       name: "Play",
@@ -304,7 +323,8 @@ let package = Package(
       name: "Save",
       dependencies: [
         "Config"
-      ]
+      ],
+      swiftSettings: swift6
     ),
     .target(
       name: "SendFeedbackFeature",
@@ -332,7 +352,7 @@ let package = Package(
         "Localization",
         "UIComponents"
       ],
-      swiftSettings: []
+      swiftSettings: [SwiftSetting.swiftLanguageMode(.v5)]
     ),
     .target(
       name: "WinPresentation",

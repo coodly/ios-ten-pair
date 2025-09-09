@@ -19,9 +19,9 @@ import Foundation
 
 private let TenPairSaveDataKey = "NumbersGameSaveDataKey"
 
-public struct FieldSave {
-  public let save: ([Int]) -> Void
-  public let load: (() -> [Int])
+public struct FieldSave: Sendable {
+  public let save: @Sendable ([Int]) -> Void
+  public let load: @Sendable () -> [Int]
 }
 
 extension FieldSave {
