@@ -55,6 +55,7 @@ public struct RateAppClient: Sendable {
     SKStoreReviewController.requestReview()
   }
 
+  @MainActor
   public func rateAppManual() {
     UIApplication.shared.open(URL(string: "https://apps.apple.com/app/id837173458?action=write-review")!, options: [:])
   }

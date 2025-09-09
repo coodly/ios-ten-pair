@@ -172,8 +172,7 @@ public struct Purchase {
         return .none
                 
       case .rateApp:
-        rateAppClient.rateAppManual()
-        return .none
+        return Effect.run { _ in await rateAppClient.rateAppManual() }
       }
     }
   }

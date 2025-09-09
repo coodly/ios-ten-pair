@@ -23,35 +23,30 @@ internal class PlayState: GKState {
   }
 }
 
-@MainActor
 internal class EmptyLinesCheck: PlayState {
   override func didEnter(from previousState: GKState?) {
     delegate?.checkEmptyLines()
   }
 }
 
-@MainActor
 internal class SelectingNumber: PlayState {
   override func didEnter(from previousState: GKState?) {
     delegate?.clearSelection()
   }
 }
 
-@MainActor
 internal class AnimatingSuccess: PlayState {
   override func didEnter(from previousState: GKState?) {
     delegate?.animateSuccess()
   }
 }
 
-@MainActor
 internal class AnimatingFailure: PlayState {
   override func didEnter(from previousState: GKState?) {
     delegate?.animateFailure()
   }
 }
 
-@MainActor
 internal class CheckGameEnd: PlayState {
   override func didEnter(from previousState: GKState?) {
     delegate?.checkGameEnd()
