@@ -33,7 +33,7 @@ public struct AppAds: Sendable {
         
   }
     
-  @Dependency(\.mainQueue) var mainQueue
+  @Dependency(\.continuousClock) var clock
   @Dependency(\.mobileAdsClient) var mobileAds
     
   public var body: some ReducerOf<Self> {
@@ -68,7 +68,7 @@ public struct AppAds: Sendable {
         return Effect.run {
           send in
                     
-          try await mainQueue.sleep(for: .milliseconds(100))
+          try await clock.sleep(for: .milliseconds(100))
           await send(.clearPresentInterstitial)
         }
                 
