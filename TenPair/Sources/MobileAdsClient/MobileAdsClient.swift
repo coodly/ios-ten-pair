@@ -5,13 +5,14 @@ import UIKit
 
 @DependencyClient
 public struct MobileAdsClient: Sendable {
-  public internal(set) var onLoad: @Sendable () -> Void
+  public internal(set) var onLoad: @Sendable @MainActor () -> Void
   public internal(set) var onUnload: @Sendable () -> Void
   public internal(set) var onBannerView: @Sendable (UIViewController) -> UIView = { _ in UIView() }
   public internal(set) var onPresentInterstitial: @Sendable (UIViewController) -> Bool = { _ in false }
   public internal(set) var onReloadBannerInView: @Sendable (UIView) -> Void
   public internal(set) var onShowBannerPublisher: @Sendable () -> AnyPublisher<Bool, Never> = { Just(false).eraseToAnyPublisher() }
     
+  @MainActor
   public func load() {
     onLoad()
   }

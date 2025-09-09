@@ -115,6 +115,7 @@ let package = Package(
     .target(
       name: "AppAdsFeature",
       dependencies: [
+        "AppTrackingClient",
         "Logging",
                 
         composable
@@ -157,13 +158,15 @@ let package = Package(
       dependencies: [
         dependencies,
         dependenciesMacros
-      ]
+      ],
+      swiftSettings: swift6
     ),
     .target(
       name: "AppTrackingClientLive",
       dependencies: [
         "AppTrackingClient"
-      ]
+      ],
+      swiftSettings: swift6
     ),
     .target(
       name: "Autolayout"

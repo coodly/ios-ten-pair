@@ -35,7 +35,8 @@ private final class AdsProxy: NSObject, BannerViewDelegate, FullScreenContentDel
   private let banner: LockIsolated<BannerView?> = LockIsolated(nil)
   private var loaded = false
   private var interstitial: InterstitialAd?
-    
+
+  @MainActor
   fileprivate func load() {
     Log.ads.debug("Load")
     MobileAds.shared.start(completionHandler: nil)
@@ -108,19 +109,9 @@ private final class AdsProxy: NSObject, BannerViewDelegate, FullScreenContentDel
     let width = frame.size.width
     Log.ads.debug("Load banner at width: \(width)")
     banner.value?.adSize = currentOrientationAnchoredAdaptiveBanner(width: width)
-    banner.value?.load(adRequest())
+    banner.value?.load(Request())
   }
-    
-  private func adRequest() -> Request {
-    let request = Request()
         
-    let extras = Extras()
-    extras.additionalParameters = ["npa": "1"]
-    request.register(extras)
-
-    return request
-  }
-    
   private func loadInterstitial() {
     guard loaded else {
       return
@@ -130,7 +121,7 @@ private final class AdsProxy: NSObject, BannerViewDelegate, FullScreenContentDel
       return
     }
         
-    InterstitialAd.load(with: AppConfig.current.adUnits.interstitial, request: adRequest()) {
+    InterstitialAd.load(with: AppConfig.current.adUnits.interstitial, request: Request()) {
       loaded, error in
             
       if let error = error {

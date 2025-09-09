@@ -1,3 +1,4 @@
+import AppTrackingClient
 import ComposableArchitecture
 import MobileAdsClient
 
@@ -32,7 +33,8 @@ public struct AppAds: Sendable {
   public init() {
         
   }
-    
+   
+  @Dependency(\.appTrackingClient) var appTracking
   @Dependency(\.continuousClock) var clock
   @Dependency(\.mobileAdsClient) var mobileAds
     
@@ -55,8 +57,10 @@ public struct AppAds: Sendable {
         return .none
 
       case .load:
-        mobileAds.load()
-        return .none
+        return Effect.run { _ in
+          await appTracking.check()
+          await mobileAds.load()
+        }
 
       case .unload:
         mobileAds.unload()
