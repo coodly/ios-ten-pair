@@ -198,7 +198,8 @@ let package = Package(
     .target(
       name: "MobileAdsClient",
       dependencies: [
-        dependencies
+        dependencies,
+        dependenciesMacros
       ]
     ),
     .target(

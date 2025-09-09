@@ -1,31 +1,16 @@
 import Combine
 import Dependencies
+import DependenciesMacros
 import UIKit
-import XCTestDynamicOverlay
 
-public struct MobileAdsClient {
-  private let onLoad: (() -> Void)
-  private let onUnload: (() -> Void)
-  private let onBannerView: ((UIViewController) -> UIView)
-  private let onPresentInterstitial: ((UIViewController) -> Bool)
-  private let onReloadBannerInView: ((UIView) -> Void)
-  private let onShowBannerPublisher: (() -> AnyPublisher<Bool, Never>)
-    
-  public init(
-    onLoad: @escaping (() -> Void),
-    onUnload: @escaping (() -> Void),
-    onBannerView: @escaping ((UIViewController) -> UIView),
-    onPresentInterstitial: @escaping ((UIViewController) -> Bool),
-    onReloadBannerInView: @escaping ((UIView) -> Void),
-    onShowBannerPublisher: @escaping (() -> AnyPublisher<Bool, Never>)
-  ) {
-    self.onLoad = onLoad
-    self.onUnload = onUnload
-    self.onBannerView = onBannerView
-    self.onPresentInterstitial = onPresentInterstitial
-    self.onReloadBannerInView = onReloadBannerInView
-    self.onShowBannerPublisher = onShowBannerPublisher
-  }
+@DependencyClient
+public struct MobileAdsClient: Sendable {
+  public internal(set) var onLoad: @Sendable () -> Void
+  public internal(set) var onUnload: @Sendable () -> Void
+  public internal(set) var onBannerView: @Sendable (UIViewController) -> UIView = { _ in UIView() }
+  public internal(set) var onPresentInterstitial: @Sendable (UIViewController) -> Bool = { _ in false }
+  public internal(set) var onReloadBannerInView: @Sendable (UIView) -> Void
+  public internal(set) var onShowBannerPublisher: @Sendable () -> AnyPublisher<Bool, Never> = { Just(false).eraseToAnyPublisher() }
     
   public func load() {
     onLoad()
@@ -54,14 +39,7 @@ public struct MobileAdsClient {
 
 extension MobileAdsClient: TestDependencyKey {
   public static var testValue: MobileAdsClient {
-    MobileAdsClient(
-      onLoad: unimplemented("\(Self.self).onLoad"),
-      onUnload: unimplemented("\(Self.self).onUnload"),
-      onBannerView: unimplemented("\(Self.self).onBannerView"),
-      onPresentInterstitial: unimplemented("\(Self.self).onPresentInterstitial"),
-      onReloadBannerInView: unimplemented("\(Self.self).onReloadBannerInView"),
-      onShowBannerPublisher: unimplemented("\(Self.self).onShowBannerPublisher")
-    )
+    Self()
   }
 }
 
