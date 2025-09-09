@@ -60,7 +60,7 @@ public struct Application {
           Log.app.debug("Purchase not made. Load ads")
           return Effect.send(.appAds(.load))
         case .made:
-          Log.app.debug("Purchase not made. Unload ads")
+          Log.app.debug("Purchase made. Unload ads")
           return Effect.send(.appAds(.unload))
         case .notLoaded:
           return .none
