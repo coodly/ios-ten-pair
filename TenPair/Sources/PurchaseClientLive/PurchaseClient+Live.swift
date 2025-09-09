@@ -55,7 +55,8 @@ extension Package {
     identifier: "xx-not-loaded-xx",
     packageType: .custom,
     storeProduct: StoreProduct(sk1Product: SK1Product()),
-    offeringIdentifier: "xx-not-loaded-xx"
+    offeringIdentifier: "xx-not-loaded-xx",
+    webCheckoutUrl: nil
   )
 }
 

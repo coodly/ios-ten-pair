@@ -75,13 +75,13 @@ let package = Package(
   ],
   dependencies: [
     .package(url: "https://github.com/coodly/swlogger.git", exact: "0.6.1"),
-    .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "5.14.4"),
+    .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "5.38.0"),
         
     .package(url: "https://github.com/pointfreeco/swift-concurrency-extras", from: "1.3.1"),
-    .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "1.17.0"),
-    .package(url: "https://github.com/pointfreeco/swift-dependencies.git", exact: "1.6.3"),
+    .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "1.22.2"),
+    .package(url: "https://github.com/pointfreeco/swift-dependencies.git", exact: "1.9.4"),
         
-    .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "11.13.0")
+    .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "12.11.0")
   ],
   targets: [
     .target(

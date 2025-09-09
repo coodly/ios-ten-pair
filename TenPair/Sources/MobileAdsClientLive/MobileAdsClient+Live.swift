@@ -29,15 +29,15 @@ extension MobileAdsClient {
   }
 }
 
-private class AdsProxy: NSObject, GADBannerViewDelegate, GADFullScreenContentDelegate {
+private class AdsProxy: NSObject, BannerViewDelegate, FullScreenContentDelegate {
   fileprivate let showBanner = CurrentValueSubject<Bool, Never>(false)
-  private var banner: GADBannerView?
+  private var banner: BannerView?
   private var loaded = false
-  private var interstitial: GADInterstitialAd?
+  private var interstitial: InterstitialAd?
     
   fileprivate func load() {
     Log.ads.debug("Load")
-    GADMobileAds.sharedInstance().start(completionHandler: nil)
+    MobileAds.shared.start(completionHandler: nil)
     loaded = true
         
     guard let banner = banner else {
@@ -69,12 +69,12 @@ private class AdsProxy: NSObject, GADBannerViewDelegate, GADFullScreenContentDel
       return false
     }
 
-    interstitial.present(fromRootViewController: root)
+    interstitial.present(from: root)
     return true
   }
     
   fileprivate func bannerView(in root: UIViewController) -> UIView {
-    let banner = GADBannerView(adSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(root.view.frame.width))
+    let banner = BannerView(adSize: portraitAnchoredAdaptiveBanner(width: root.view.frame.width))
     banner.adUnitID = AppConfig.current.adUnits.banner
     banner.rootViewController = root
     banner.delegate = self
@@ -84,7 +84,7 @@ private class AdsProxy: NSObject, GADBannerViewDelegate, GADFullScreenContentDel
     return banner
   }
     
-  func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+  func bannerViewDidReceiveAd(_ bannerView: BannerView) {
     guard loaded else {
       return
     }
@@ -93,7 +93,7 @@ private class AdsProxy: NSObject, GADBannerViewDelegate, GADFullScreenContentDel
     showBanner.send(true)
   }
     
-  func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+  func bannerView(_ bannerView: BannerView, didFailToReceiveAdWithError error: Error) {
     Log.ads.error("didFailToReceiveAdWithError: \(error)")
     showBanner.send(false)
   }
@@ -106,14 +106,14 @@ private class AdsProxy: NSObject, GADBannerViewDelegate, GADFullScreenContentDel
     let frame = view.frame.inset(by: view.safeAreaInsets)
     let width = frame.size.width
     Log.ads.debug("Load banner at width: \(width)")
-    banner?.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(width)
+    banner?.adSize = currentOrientationAnchoredAdaptiveBanner(width: width)
     banner?.load(adRequest())
   }
     
-  private func adRequest() -> GADRequest {
-    let request = GADRequest()
+  private func adRequest() -> Request {
+    let request = Request()
         
-    let extras = GADExtras()
+    let extras = Extras()
     extras.additionalParameters = ["npa": "1"]
     request.register(extras)
 
@@ -129,7 +129,7 @@ private class AdsProxy: NSObject, GADBannerViewDelegate, GADFullScreenContentDel
       return
     }
         
-    GADInterstitialAd.load(withAdUnitID: AppConfig.current.adUnits.interstitial, request: adRequest()) {
+    InterstitialAd.load(with: AppConfig.current.adUnits.interstitial, request: adRequest()) {
       loaded, error in
             
       if let error = error {
@@ -144,7 +144,7 @@ private class AdsProxy: NSObject, GADBannerViewDelegate, GADFullScreenContentDel
     }
   }
     
-  func adDidDismissFullScreenContent(_ ad: any GADFullScreenPresentingAd) {
+  func adDidDismissFullScreenContent(_ ad: any FullScreenPresentingAd) {
     Log.ads.debug("Interstitial dismissed")
     interstitial = nil
         
