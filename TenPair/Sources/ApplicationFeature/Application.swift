@@ -80,11 +80,7 @@ public struct Application {
         return .none
       }
     }
-    Scope(state: \.appAdsState, action: /Action.appAds) {
-      AppAds()
-    }
-    Scope(state: \.playState, action: /Action.play) {
-      PlayReducer()
-    }
+    Scope(state: \.appAdsState, action: \.appAds, child: AppAds.init)
+    Scope(state: \.playState, action: \.play, child: PlayReducer.init)
   }
 }
