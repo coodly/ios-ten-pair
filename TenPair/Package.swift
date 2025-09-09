@@ -62,6 +62,7 @@ let package = Package(
       name: "MobilePackages",
       targets: [
         "AppLaunchMobile",
+        "AppTrackingClientLive",
         "CloudMessagesClientLive",
         "MobileAdsClientLive",
         "PurchaseClientLive"
@@ -149,6 +150,19 @@ let package = Package(
         "RateAppClient",
                 
         composable
+      ]
+    ),
+    .target(
+      name: "AppTrackingClient",
+      dependencies: [
+        dependencies,
+        dependenciesMacros
+      ]
+    ),
+    .target(
+      name: "AppTrackingClientLive",
+      dependencies: [
+        "AppTrackingClient"
       ]
     ),
     .target(
