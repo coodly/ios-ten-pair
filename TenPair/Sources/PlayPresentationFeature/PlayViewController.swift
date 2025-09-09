@@ -16,7 +16,7 @@ import UIComponents
 import UIKit
 import WinPresentation
 
-internal protocol PlayDelegate: AnyObject, Sendable {
+internal protocol PlayDelegate: AnyObject {
   func animateFailure()
   func animateSuccess()
   func clearSelection()
@@ -161,13 +161,9 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     performWithLoading() {
       callback in
 
-      DispatchQueue.global(qos: .background).async {
-        self.field.reload()
-        DispatchQueue.main.async {
-          self.collectionView.reloadData()
-          callback()
-        }
-      }
+      self.field.reload()
+      self.collectionView.reloadData()
+      callback()
     }
         
     NotificationCenter.default.post(name: .fieldReload, object: nil)

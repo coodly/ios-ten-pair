@@ -54,7 +54,7 @@ public struct Number: Sendable {
   }
 }
 
-public final class PlayField: Sendable {
+public final class PlayField {
   private(set) public var numbers = [Number]()
   private var clearedCount = 0
   private(set) public var numberOfLines = 0 {
