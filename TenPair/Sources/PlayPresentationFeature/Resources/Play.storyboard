@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20036.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20018.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +32,7 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqR-Zh-sfR" customClass="ButtonTrayView" customModule="UIComponents">
-                                <rect key="frame" x="0.0" y="808" width="46" height="46"/>
+                                <rect key="frame" x="0.0" y="774" width="46" height="46"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SqP-E2-T7b" customClass="ButtonTrayBackgroundView" customModule="UIComponents">
                                         <rect key="frame" x="0.0" y="1" width="45" height="44"/>
@@ -64,7 +63,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvX-1g-jSx" customClass="ButtonTrayView" customModule="UIComponents">
-                                <rect key="frame" x="369" y="808" width="45" height="46"/>
+                                <rect key="frame" x="369" y="774" width="45" height="46"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOK-SS-Mua" customClass="ButtonTrayBackgroundView" customModule="UIComponents">
                                         <rect key="frame" x="1" y="1" width="44" height="44"/>
@@ -111,6 +110,7 @@
                     <connections>
                         <outlet property="collectionView" destination="zTJ-l9-7Ds" id="mIQ-PV-xjw"/>
                         <outlet property="hintButton" destination="wjw-pM-3Dd" id="BF9-Mp-KjU"/>
+                        <outlet property="hintTray" destination="sqR-Zh-sfR" id="boP-uN-XLz"/>
                         <outlet property="undoButton" destination="qAQ-Lg-Jhh" id="O1Z-dZ-udS"/>
                         <outlet property="undoTray" destination="pvX-1g-jSx" id="YKL-iX-8gt"/>
                     </connections>
@@ -125,7 +125,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

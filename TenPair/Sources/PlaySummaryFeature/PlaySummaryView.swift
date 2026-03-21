@@ -20,5 +20,19 @@ public struct PlaySummaryView: View {
     .font(Font.body.bold())
     .foregroundColor(store.foregroundColor)
     .onAppear(perform: { store.send(.onAppear) })
+    .modifier(TheGlass())
+  }
+}
+
+struct TheGlass: ViewModifier {
+  func body(content: Content) -> some View {
+    if #available(iOS 26.0, macCatalyst 26.0, *) {
+      content
+        .frame(minHeight: 44)
+        .padding(.horizontal)
+        .glassEffect()
+    } else {
+      content
+    }
   }
 }

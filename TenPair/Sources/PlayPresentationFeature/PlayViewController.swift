@@ -59,6 +59,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     CheckGameEnd(delegate: self)
   ])
   @IBOutlet private var hintButton: UIButton!
+  @IBOutlet private var hintTray: UIView!
   @IBOutlet private var undoButton: UIButton!
   @IBOutlet private var undoTray: UIView!
   private lazy var queue: OperationQueue = {
