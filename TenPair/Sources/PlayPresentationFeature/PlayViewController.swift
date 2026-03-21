@@ -101,22 +101,15 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
         
     undoTray.isHidden = true
     undoManager?.levelsOfUndo = 10
-        
-    store.scope(state: \.menuState, action: \.menu).ifLet(
-      then: {
-        [weak self]
-                
-        store in
-                
-        self?.present(menu: store)
-      },
-      else: {
-        [weak self] in
-                
-        self?.dismissModal()
+    
+    observe { [weak self] in
+      guard let self else { return }
+      if let menu = store.scope(state: \.menuState, action: \.menu) {
+        present(menu: menu)
+      } else {
+        dismissModal()
       }
-    )
-    .store(in: &disposeBag)
+    }
         
     //TODO jaanus: fix this delay. Tap clears menuState that peforms dismiss. That clears loading shown in restart?
     viewStore.publisher.restartAction.compactMap({ $0 }).delay(for: .milliseconds(1), scheduler: DispatchQueue.main).sink() {
@@ -135,7 +128,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
   }
     
   @objc fileprivate func tappedMenu() {
-    viewStore.send(.tappedMenu)
+    store.send(.tappedMenu)
   }
     
   private func present(menu store: StoreOf<MenuFeature.Menu>) {
@@ -154,7 +147,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
       return
     }
         
-    viewStore.send(.tappedReload)
+    store.send(.tappedReload)
         
     undoManager?.removeAllActions()
     updateUndoVisibility()
@@ -179,7 +172,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
       return
     }
 
-    viewStore.send(.tappedHint)
+    store.send(.tappedHint)
     NotificationCenter.default.post(name: .hintTaken, object: nil)
 
     performWithLoading() {
