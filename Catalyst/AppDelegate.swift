@@ -27,43 +27,43 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+  var window: UIWindow?
 
-    private lazy var store = Store(
-        initialState: Application.State(),
-        reducer: Application.init
-    )
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        AppTheme.shared.load()
-        
-        Log.enable()
-        
-        let launch = window!.rootViewController as! DesktopLaunchViewController
-        launch.store = store
-        
-        return true
-    }
+  private lazy var store = Store(
+    initialState: Application.State(),
+    reducer: Application.init
+  )
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        NotificationCenter.default.post(name: .saveField, object: nil)
-    }
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    AppTheme.shared.load()
+
+    Log.enable()
+
+    let launch = window!.rootViewController as! DesktopLaunchViewController
+    launch.store = store
+
+    return true
+  }
+
+  func applicationWillResignActive(_ application: UIApplication) {
+    NotificationCenter.default.post(name: .saveField, object: nil)
+  }
 }
 
 extension CloudMessagesClient: DependencyKey {
-    public static var liveValue: CloudMessagesClient {
-        .noFeedback
-    }
+  public static var liveValue: CloudMessagesClient {
+    .noFeedback
+  }
 }
 
 extension MobileAdsClient: DependencyKey {
-    public static var liveValue: MobileAdsClient {
-        .noAds
-    }
+  public static var liveValue: MobileAdsClient {
+    .noAds
+  }
 }
 
 extension PurchaseClient: DependencyKey {
-    public static var liveValue: PurchaseClient {
-        .noPurchase
-    }
+  public static var liveValue: PurchaseClient {
+    .noPurchase
+  }
 }

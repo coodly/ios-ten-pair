@@ -11,7 +11,7 @@ extension AppTrackingClient: DependencyKey {
             completion.resume()
             return
           }
-          
+
           ATTrackingManager.requestTrackingAuthorization { _ in
             completion.resume()
           }

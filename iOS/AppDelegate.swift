@@ -33,38 +33,38 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-    
-    @Dependency(\.purchaseClient) var purchaseClient
-    
-    private lazy var store = Store(
-        initialState: Application.State(),
-        reducer: Application.init
-    )
+  var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        AppTheme.shared.load()
-                        
-        Log.enable()
-                        
-        if purchaseClient.havePurchase {
-            purchaseClient.load()
-        }
+  @Dependency(\.purchaseClient) var purchaseClient
 
-        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
-        
-        let launch = window!.rootViewController as! MobileLaunchViewController
-        launch.store = store
-        
-        return true
+  private lazy var store = Store(
+    initialState: Application.State(),
+    reducer: Application.init
+  )
+
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    AppTheme.shared.load()
+
+    Log.enable()
+
+    if purchaseClient.havePurchase {
+      purchaseClient.load()
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        store.send(.onDidBecomeActive)
-    }
-    
-    func applicationWillResignActive(_ application: UIApplication) {
-        NotificationCenter.default.post(name: .saveField, object: nil)
-    }
+    try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
+
+    let launch = window!.rootViewController as! MobileLaunchViewController
+    launch.store = store
+
+    return true
+  }
+
+  func applicationDidBecomeActive(_ application: UIApplication) {
+    store.send(.onDidBecomeActive)
+  }
+
+  func applicationWillResignActive(_ application: UIApplication) {
+    NotificationCenter.default.post(name: .saveField, object: nil)
+  }
 }
 

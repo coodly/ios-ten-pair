@@ -26,17 +26,17 @@ internal class NoInlineAdsNumberFlowLayout: UICollectionViewFlowLayout {
   override func prepare() {
     let minDimension = min(collectionView!.frame.width, collectionView!.frame.height)
     let availableWidth = minDimension - Padding * 2
-        
+
     let width = min((availableWidth / ColumnsF).rounded(.down), 50)
     itemSize = CGSize(width: width, height: width)
-    
+
     let inset = ((collectionView!.frame.width - width * ColumnsF) / 2).rounded(.down)
     sectionInset = UIEdgeInsets(top: Padding, left: inset, bottom: Padding * 2 + HintButtonTrayHeight, right: inset)
-    
+
     minimumLineSpacing = 0
     minimumInteritemSpacing = 0
   }
-  
+
   override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
     guard let collectionView = collectionView else { return false }
     return !newBounds.size.equalTo(collectionView.bounds.size)

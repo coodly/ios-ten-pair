@@ -5,11 +5,11 @@ import SwiftUI
 
 internal struct FeedbackOptionsView: View {
   private let store: StoreOf<MenuFeature.Menu>
-    
+
   internal init(store: StoreOf<MenuFeature.Menu>) {
     self.store = store
   }
-    
+
   var body: some View {
     Button(action: { store.send(.feedback) }) {
       VStack {

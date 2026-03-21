@@ -6,11 +6,11 @@ import UIComponents
 
 internal struct PurchaseOptionsView: View {
   private let store: StoreOf<Purchase>
-    
+
   internal init(store: StoreOf<Purchase>) {
     self.store = store
   }
-    
+
   var body: some View {
     Group {
       if !store.purchaseMade {

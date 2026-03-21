@@ -4,11 +4,11 @@ import SwiftUI
 
 internal struct MenuPresentationView: View {
   private let store: StoreOf<MenuFeature.Menu>
-    
+
   internal init(store: StoreOf<MenuFeature.Menu>) {
     self.store = store
   }
-    
+
   var body: some View {
     ZStack {
       MenuBackground()
