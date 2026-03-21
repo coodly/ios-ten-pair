@@ -6,7 +6,7 @@ private let InterstitialShowThreshold = 10
 
 @Reducer
 public struct AppAds: Sendable {
-  public struct State: Equatable {
+  public struct State: Equatable, Sendable {
     public var showBannerAd = false
     public var presentInterstitial = false
         

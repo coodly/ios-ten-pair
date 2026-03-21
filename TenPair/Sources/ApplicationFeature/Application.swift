@@ -5,9 +5,9 @@ import PlayFeature
 import PurchaseClient
 
 @Reducer
-public struct Application {
+public struct Application: Sendable {
   @ObservableState
-  public struct State: Equatable {
+  public struct State: Equatable, Sendable {
     public var appAdsState = AppAds.State()
     public var playState = PlayReducer.State()
         
@@ -31,7 +31,6 @@ public struct Application {
   }
     
   @Dependency(\.cloudMessagesClient) var cloudMessages
-  @Dependency(\.mainQueue) var mainQueue
   @Dependency(\.rateAppClient) var rateAppClient
   @Dependency(\.purchaseClient) var purchaseClient
     

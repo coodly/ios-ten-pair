@@ -149,7 +149,8 @@ let package = Package(
         "RateAppClient",
                 
         composable
-      ]
+      ],
+      swiftSettings: swift6Flags
     ),
     .target(
       name: "AppTrackingClient",
