@@ -52,7 +52,7 @@ public struct PlayReducer {
       case .tappedMenu:
         state.restartAction = nil
         state.menuState = Menu.State(
-          feedbackEnabled: cloudMessages.feedbackEnabled,
+          feedbackEnabled: cloudMessages.feedbackEnabled(),
           havePurchase: purchaseClient.havePurchase
         )
         return .none

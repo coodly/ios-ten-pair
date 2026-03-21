@@ -173,14 +173,16 @@ let package = Package(
         dependencies,
         dependenciesMacros,
         sharing
-      ]
+      ],
+      swiftSettings: swift6Flags
     ),
     .target(
       name: "CloudMessagesClientLive",
       dependencies: [
         "CloudMessagesClient",
         "Logging"
-      ]
+      ],
+      swiftSettings: swift6Flags
     ),
     .target(
       name: "Config"
@@ -347,7 +349,8 @@ let package = Package(
                 
         composable
       ],
-      resources: [.process("Resources")]
+      resources: [.process("Resources")],
+      swiftSettings: swift6Flags      
     ),
     .target(
       name: "Storyboards"

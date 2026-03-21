@@ -2,9 +2,9 @@ import ComposableArchitecture
 import CloudMessagesClient
 
 @Reducer
-public struct SendFeedback {
+public struct SendFeedback: Sendable {
   @ObservableState
-  public struct State: Equatable {
+  public struct State: Equatable, Sendable {
     internal var isLoggedIn = false
 
     internal var message = ""

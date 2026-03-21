@@ -87,6 +87,7 @@ extension CloudMessagesClient {
       return messages
     }
         
+    @Sendable
     func write(message: String) async -> String? {
       var store = MessagesStore.load()
       let savedMessage = CKRecord(recordType: "Message")
@@ -136,9 +137,9 @@ extension CloudMessagesClient {
       
       return store.messages.last?.recordName
     }
-                
+                    
     return CloudMessagesClient(
-      feedbackEnabled: true,
+      feedbackEnabled: { true },
       onCheckForMessages: {
         do {
           guard try await container.accountStatus() == .available else {
