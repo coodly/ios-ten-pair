@@ -22,6 +22,8 @@
 	<string>public.app-category.puzzle-games</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIDesignRequiresCompatibility</key>
+	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchView</string>
 	<key>UIMainStoryboardFile</key>

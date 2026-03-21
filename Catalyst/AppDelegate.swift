@@ -25,7 +25,7 @@ import RateAppClient
 import Themes
 import UIKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
@@ -50,19 +50,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 }
 
-extension CloudMessagesClient: DependencyKey {
+extension CloudMessagesClient: @retroactive DependencyKey {
   public static var liveValue: CloudMessagesClient {
     .noFeedback
   }
 }
 
-extension MobileAdsClient: DependencyKey {
+extension MobileAdsClient: @retroactive DependencyKey {
   public static var liveValue: MobileAdsClient {
     .noAds
   }
 }
 
-extension PurchaseClient: DependencyKey {
+extension PurchaseClient: @retroactive DependencyKey {
   public static var liveValue: PurchaseClient {
     .noPurchase
   }
