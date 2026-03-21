@@ -37,7 +37,6 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
   private lazy var viewStore = ViewStore(store, observe: { $0 })
     
   private lazy var summaryStore = store.scope(state: \.playSummaryState, action: \.playSummary)
-  private lazy var summaryViewStore = ViewStore(summaryStore, observe: { $0 })
   private lazy var summaryView = PlaySummaryView(store: summaryStore)
   private lazy var summaryHosting = UIHostingController(rootView: summaryView)
     
@@ -278,7 +277,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
 
 extension PlayViewController: PlayFieldStatusDelegate {
   public func statusUpdate(lines: Int, tiles: Int) {
-    summaryViewStore.send(.update(lines: lines, tiles: tiles))
+    summaryStore.send(.update(lines: lines, tiles: tiles))
   }
 }
 

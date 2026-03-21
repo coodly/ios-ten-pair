@@ -88,11 +88,7 @@ public struct PlayReducer {
         return .none
       }
     }
-    .ifLet(\.menuState, action: /Action.menu) {
-      Menu()
-    }
-    Scope(state: \.playSummaryState, action: /Action.playSummary) {
-      PlaySummary()
-    }
+    .ifLet(\.menuState, action: \.menu, then: Menu.init)
+    Scope(state: \.playSummaryState, action: \.playSummary, child: PlaySummary.init)
   }
 }

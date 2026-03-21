@@ -4,6 +4,7 @@ import SwiftUI
 
 @Reducer
 public struct PlaySummary {
+  @ObservableState
   public struct State: Equatable {
     internal var numbeOfLines = 123
     internal var numberOfTiles = 43
