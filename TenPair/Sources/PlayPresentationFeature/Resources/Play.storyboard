@@ -31,12 +31,12 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="iP6-Ak-9q6"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqR-Zh-sfR" customClass="ButtonTrayView" customModule="UIComponents">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqR-Zh-sfR" customClass="LeftTrayBackground" customModule="PlayPresentationFeature">
                                 <rect key="frame" x="0.0" y="774" width="46" height="46"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SqP-E2-T7b" customClass="ButtonTrayBackgroundView" customModule="UIComponents">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SqP-E2-T7b" customClass="ButtonTrayBackgroundView" customModule="UIComponents">
                                         <rect key="frame" x="0.0" y="1" width="45" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjw-pM-3Dd">
                                         <rect key="frame" x="1" y="1" width="44" height="44"/>
@@ -45,12 +45,15 @@
                                             <constraint firstAttribute="width" constant="44" id="PMC-8T-wiI"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="giveAHint" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XSN-Pf-YZr"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="SqP-E2-T7b" secondAttribute="trailing" constant="1" id="0dO-L3-BXf"/>
                                     <constraint firstAttribute="bottom" secondItem="wjw-pM-3Dd" secondAttribute="bottom" constant="1" id="AUc-JF-5fv"/>
@@ -62,10 +65,10 @@
                                     <constraint firstAttribute="bottom" secondItem="SqP-E2-T7b" secondAttribute="bottom" constant="1" id="nfQ-oR-Spm"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvX-1g-jSx" customClass="ButtonTrayView" customModule="UIComponents">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvX-1g-jSx" customClass="RightTrayBackground" customModule="PlayPresentationFeature">
                                 <rect key="frame" x="369" y="774" width="45" height="46"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOK-SS-Mua" customClass="ButtonTrayBackgroundView" customModule="UIComponents">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOK-SS-Mua" customClass="ButtonTrayBackgroundView" customModule="UIComponents">
                                         <rect key="frame" x="1" y="1" width="44" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
@@ -81,7 +84,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="qAQ-Lg-Jhh" secondAttribute="trailing" id="4iA-zk-8VJ"/>
                                     <constraint firstAttribute="trailing" secondItem="zOK-SS-Mua" secondAttribute="trailing" id="9SR-zB-r10"/>
