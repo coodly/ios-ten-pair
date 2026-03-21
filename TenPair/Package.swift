@@ -292,7 +292,8 @@ let package = Package(
       dependencies: [
         dependencies,
         dependenciesMacros
-      ]
+      ],
+      swiftSettings: swift6Flags
     ),
     .target(
       name: "PurchaseClientLive",
@@ -303,7 +304,8 @@ let package = Package(
                 
         concurrency,
         .product(name: "RevenueCat", package: "purchases-ios")
-      ]
+      ],
+      swiftSettings: swift6Flags
     ),
     .target(
       name: "PurchaseFeature",

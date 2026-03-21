@@ -1,6 +1,6 @@
 import Dependencies
+import DependenciesMacros
 import StoreKit
-import XCTestDynamicOverlay
 
 public enum PurchaseStatus: String, Equatable, Sendable {
   case notLoaded
@@ -26,29 +26,14 @@ extension AppProduct {
   public static let noProduct = AppProduct(identifier: "-", formattedPrice: "-")
 }
 
+@DependencyClient
 public struct PurchaseClient: Sendable {
-  private let onAvailableProduct: @Sendable () async throws -> AppProduct
-  private let onLoad: @Sendable () -> Void
-  private let onPurchase: @Sendable () async throws -> Bool
-  private let onPurchaseStatusStream: @Sendable () -> AsyncStream<PurchaseStatus>
-  private let onRestore: @Sendable () async throws -> Bool
-
-  public let havePurchase: Bool
-  public init(
-    havePurchase: Bool,
-    onAvailableProduct: @Sendable @escaping () async throws -> AppProduct,
-    onLoad: @Sendable @escaping () -> Void,
-    onPurchase: @Sendable @escaping () async throws -> Bool,
-    onPurchaseStatusStream: @Sendable @escaping () -> AsyncStream<PurchaseStatus>,
-    onRestore: @Sendable @escaping () async throws -> Bool
-  ) {
-    self.havePurchase = havePurchase
-    self.onAvailableProduct = onAvailableProduct
-    self.onLoad = onLoad
-    self.onPurchase = onPurchase
-    self.onPurchaseStatusStream = onPurchaseStatusStream
-    self.onRestore = onRestore
-  }
+  public internal(set) var havePurchase: @Sendable () -> Bool = { false }
+  public internal(set) var onAvailableProduct: @Sendable () async throws -> AppProduct
+  public internal(set) var onLoad: @Sendable () -> Void
+  public internal(set) var onPurchase: @Sendable () async throws -> Bool
+  public internal(set) var onPurchaseStatusStream: @Sendable () -> AsyncStream<PurchaseStatus> = { .finished }
+  public internal(set) var onRestore: @Sendable () async throws -> Bool
 
   public func load() {
     onLoad()
@@ -73,7 +58,7 @@ public struct PurchaseClient: Sendable {
 
 extension PurchaseClient {
   public static let noPurchase = PurchaseClient(
-    havePurchase: false,
+    havePurchase: { false },
     onAvailableProduct: { fatalError() },
     onLoad: {},
     onPurchase: { fatalError() },
@@ -84,14 +69,7 @@ extension PurchaseClient {
 
 extension PurchaseClient: TestDependencyKey {
   public static var testValue: PurchaseClient {
-    PurchaseClient(
-      havePurchase: unimplemented("\(Self.self).havePurchase", placeholder: false),
-      onAvailableProduct: unimplemented("\(Self.self).onAvailableProduct"),
-      onLoad: unimplemented("\(Self.self).onLoad"),
-      onPurchase: unimplemented("\(Self.self).onPurchase"),
-      onPurchaseStatusStream: unimplemented("\(Self.self).onPurchaseStatusStream", placeholder: .finished),
-      onRestore: unimplemented("\(Self.self).onRestore")
-    )
+    Self()
   }
 }
 
@@ -105,7 +83,7 @@ extension DependencyValues {
 #if DEBUG
   extension PurchaseClient {
     public static let delayedUnlock = PurchaseClient(
-      havePurchase: true,
+      havePurchase: { true },
       onAvailableProduct: { fatalError() },
       onLoad: { },
       onPurchase: { fatalError() },
@@ -116,7 +94,7 @@ extension DependencyValues {
     )
 
     public static let purchaseMade = PurchaseClient(
-      havePurchase: true,
+      havePurchase: { true },
       onAvailableProduct: { .noProduct },
       onLoad: {},
       onPurchase: { fatalError() },

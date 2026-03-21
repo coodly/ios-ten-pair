@@ -30,7 +30,7 @@ import RateAppClient
 import Themes
 import UIKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     Log.enable()
 
-    if purchaseClient.havePurchase {
+    if purchaseClient.havePurchase() {
       purchaseClient.load()
     }
 

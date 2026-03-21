@@ -12,7 +12,7 @@ extension PurchaseClient: DependencyKey {
     let isolatedPackage = LockIsolated(Package.notLoaded)
         
     return PurchaseClient(
-      havePurchase: true,
+      havePurchase: { true },
       onAvailableProduct: {
         let offerings = try await Purchases.shared.offerings()
         Log.purchase.debug("Loded offerings")

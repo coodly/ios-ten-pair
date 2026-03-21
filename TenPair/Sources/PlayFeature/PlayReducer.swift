@@ -53,7 +53,7 @@ public struct PlayReducer {
         state.restartAction = nil
         state.menuState = Menu.State(
           feedbackEnabled: cloudMessages.feedbackEnabled(),
-          havePurchase: purchaseClient.havePurchase
+          havePurchase: purchaseClient.havePurchase()
         )
         return .none
             

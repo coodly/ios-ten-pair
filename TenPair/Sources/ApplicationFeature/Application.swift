@@ -42,7 +42,7 @@ public struct Application {
       switch action {
       case .onDidLoad:
         rateAppClient.appLaunch()
-        guard purchaseClient.havePurchase else {
+        guard purchaseClient.havePurchase() else {
           return .none
         }
                 
