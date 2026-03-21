@@ -1,9 +1,11 @@
+import CloudMessagesClient
 import ComposableArchitecture
 import Localization
 import MenuFeature
 import SwiftUI
 
 internal struct FeedbackOptionsView: View {
+  @Shared(.hasUnreadMessages) var hasUnreadMessages
   private let store: StoreOf<MenuFeature.Menu>
 
   internal init(store: StoreOf<MenuFeature.Menu>) {
@@ -13,7 +15,7 @@ internal struct FeedbackOptionsView: View {
   var body: some View {
     Button(action: { store.send(.feedback) }) {
       VStack {
-        if store.haveUnreadMessage {
+        if hasUnreadMessages {
           Text(L10n.Menu.Option.Message.from)
         } else {
           Text(L10n.Menu.Option.Send.message)

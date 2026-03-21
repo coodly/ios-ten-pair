@@ -7,6 +7,7 @@ private let concurrency = Target.Dependency.product(name: "ConcurrencyExtras", p
 private let composable = Target.Dependency.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
 private let dependencies = Target.Dependency.product(name: "Dependencies", package: "swift-dependencies")
 private let dependenciesMacros = Target.Dependency.product(name: "DependenciesMacros", package: "swift-dependencies")
+private let sharing = Target.Dependency.product(name: "Sharing", package: "swift-sharing")
 
 private let withConcurrencyFlags = [
   .enableUpcomingFeature("BareSlashRegexLiterals"),
@@ -95,6 +96,7 @@ let package = Package(
     .package(url: "https://github.com/pointfreeco/swift-concurrency-extras", from: "1.3.1"),
     .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "1.25.2"),
     .package(url: "https://github.com/pointfreeco/swift-dependencies.git", exact: "1.11.0"),
+    .package(url: "https://github.com/pointfreeco/swift-sharing.git", exact: "2.7.4"),
         
     .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "13.1.0")
   ],
@@ -168,7 +170,8 @@ let package = Package(
     .target(
       name: "CloudMessagesClient",
       dependencies: [
-        dependencies
+        dependencies,
+        sharing
       ]
     ),
     .target(

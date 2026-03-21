@@ -2,6 +2,7 @@ import ComposableArchitecture
 import PurchaseFeature
 import RestartFeature
 import SendFeedbackFeature
+import Sharing
 import Themes
 
 @Reducer
@@ -14,7 +15,6 @@ public struct Menu {
         
     public var activeThemeName: String
     public let feedbackEnabled: Bool
-    public var haveUnreadMessage = false
         
     public init(feedbackEnabled: Bool, havePurchase: Bool) {
       activeThemeName = AppTheme.shared.active.localizedName
@@ -26,10 +26,6 @@ public struct Menu {
   public enum Action: Sendable {
     case willAppear
     case willDisappear
-        
-    case loadMessagesMonitor
-    case unloadMessagesMonitor
-    case markHasUnread(Bool)
         
     case resume
     case restartTapped
@@ -54,15 +50,11 @@ public struct Menu {
             
       switch action {
       case .willAppear:
-        return Effect.concatenate(
-          Effect.send(.purchase(.onAppear)),
-          Effect.send(.loadMessagesMonitor)
-        )
+        return Effect.send(.purchase(.onAppear))
                 
       case .willDisappear:
         return Effect.concatenate(
-          Effect.send(.purchase(.onDisappear)),
-          Effect.send(.unloadMessagesMonitor)
+          Effect.send(.purchase(.onDisappear))
         )
                 
       case .resume:
@@ -80,19 +72,7 @@ public struct Menu {
       case .restart(.back):
         state.restartState = nil
         return .none
-                        
-      case .loadMessagesMonitor:
-        return Effect.publisher({ cloudMessages.unreadNoticePublisher.receive(on: mainQueue) })
-          .map(Action.markHasUnread)
-          .cancellable(id: CancelID.messages)
-                
-      case .unloadMessagesMonitor:
-        return Effect.cancel(id: CancelID.messages)
-            
-      case .markHasUnread(let hasUnread):
-        state.haveUnreadMessage = hasUnread
-        return .none
-                
+                                        
       case .feedback:
         state.sendFeedbackState = SendFeedback.State()
         return .none

@@ -3,6 +3,7 @@ import CloudMessagesClient
 import Combine
 import Dependencies
 import Logging
+import Sharing
 import UIKit
 
 extension CloudMessagesClient: DependencyKey {
@@ -19,7 +20,6 @@ extension CloudMessagesClient: DependencyKey {
 extension CloudMessagesClient {
   public static var live: CloudMessagesClient {
     let container = CKContainer(identifier: "iCloud.com.coodly.feedback")
-    let unreadPublisher = CurrentValueSubject<Bool, Never>(false)
     let messagesPublisher = CurrentValueSubject<[Message], Never>([])
         
     messagesPublisher.send(MessagesStore.load().messages)
@@ -162,7 +162,9 @@ extension CloudMessagesClient {
             store.cornversationRecordName = conversations.last?.recordID.recordName
             let hasUnread = store.update(messages: feedbackMessages)
             store.save()
-            unreadPublisher.send(hasUnread)
+            
+            @Shared(.hasUnreadMessages) var hasUnreadMessages
+            $hasUnreadMessages.withLock { $0 = $0 || hasUnread }
             messagesPublisher.send(store.messages)
           } catch {
             Log.feedback.error(error)
@@ -178,10 +180,7 @@ extension CloudMessagesClient {
           return false
         }
       },
-      onSendMessage: write(message:),
-      onUnreadNoticePublisher: {
-        unreadPublisher.eraseToAnyPublisher()
-      }
+      onSendMessage: write(message:)
     )
   }
 }

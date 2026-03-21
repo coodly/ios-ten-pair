@@ -3,13 +3,14 @@ import CloudMessagesClient
 
 @Reducer
 public struct SendFeedback {
+  @ObservableState
   public struct State: Equatable {
     internal var isLoggedIn = false
 
     internal var messages = IdentifiedArrayOf<Message>()
     internal var lastMessageId = ""
 
-    @BindingState internal var message = ""
+    internal var message = ""
     internal var sumbitEnabled = false
     internal var sendingMessage = false
         
@@ -48,6 +49,8 @@ public struct SendFeedback {
             
       switch action {
       case .onAppear:
+        @Shared(.hasUnreadMessages) var hasUnreadMessages
+        $hasUnreadMessages.withLock { $0 = false }
         return Effect.send(.checkLoggedIn)
                 
       case .checkLoggedIn:

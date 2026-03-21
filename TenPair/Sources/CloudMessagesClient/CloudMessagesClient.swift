@@ -8,22 +8,19 @@ public struct CloudMessagesClient {
   private let onCheckForMessages: (() -> Void)
   private let onCheckLoggedIn: () async -> Bool
   private let onSendMessage: ((String) -> AnyPublisher<Void, Never>)
-  private let onUnreadNoticePublisher: (() -> AnyPublisher<Bool, Never>)
 
   public init(
     feedbackEnabled: Bool,
     onAllMessages: @escaping (() -> AnyPublisher<[Message], Never>),
     onCheckForMessages: @escaping (() -> Void),
     onCheckLoggedIn: @escaping () async -> Bool,
-    onSendMessage: @escaping ((String) -> AnyPublisher<Void, Never>),
-    onUnreadNoticePublisher: @escaping (() -> AnyPublisher<Bool, Never>)
+    onSendMessage: @escaping ((String) -> AnyPublisher<Void, Never>)
   ) {
     self.feedbackEnabled = feedbackEnabled
     self.onAllMessages = onAllMessages
     self.onCheckForMessages = onCheckForMessages
     self.onCheckLoggedIn = onCheckLoggedIn
     self.onSendMessage = onSendMessage
-    self.onUnreadNoticePublisher = onUnreadNoticePublisher
   }
 
   public func allMessages() -> AnyPublisher<[Message], Never> {
@@ -41,10 +38,6 @@ public struct CloudMessagesClient {
   public func send(message: String) -> AnyPublisher<Void, Never> {
     onSendMessage(message)
   }
-
-  public var unreadNoticePublisher: AnyPublisher<Bool, Never> {
-    onUnreadNoticePublisher()
-  }
 }
 
 extension CloudMessagesClient {
@@ -53,8 +46,7 @@ extension CloudMessagesClient {
     onAllMessages: { PassthroughSubject<[Message], Never>().eraseToAnyPublisher() },
     onCheckForMessages: {},
     onCheckLoggedIn: { false },
-    onSendMessage: { _ in PassthroughSubject<Void, Never>().eraseToAnyPublisher() },
-    onUnreadNoticePublisher: { Just(false).eraseToAnyPublisher() }
+    onSendMessage: { _ in PassthroughSubject<Void, Never>().eraseToAnyPublisher() }
   )
 }
 
@@ -65,8 +57,7 @@ extension CloudMessagesClient: TestDependencyKey {
       onAllMessages: unimplemented("\(Self.self).onAllMessages"),
       onCheckForMessages: unimplemented("\(Self.self).onCheckForMessages"),
       onCheckLoggedIn: unimplemented("\(Self.self).onCheckLoggedIn"),
-      onSendMessage: unimplemented("\(Self.self).onSendMessage"),
-      onUnreadNoticePublisher: unimplemented("\(Self.self).onUnreadNoticePublisher")
+      onSendMessage: unimplemented("\(Self.self).onSendMessage")
     )
   }
 }
