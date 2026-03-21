@@ -24,6 +24,7 @@ public struct Menu {
   }
     
   public enum Action: Sendable {
+    case delegate(Delegate)
     case local(Local)
     case willAppear
     case willDisappear
@@ -36,6 +37,10 @@ public struct Menu {
     case purchase(Purchase.Action)
     case restart(Restart.Action)
     case sendFeedback(SendFeedback.Action)
+    
+    public enum Delegate: Sendable {
+      case switchedTheme
+    }
     
     public enum Local: Sendable {
       case markActive(String)
@@ -78,6 +83,7 @@ public struct Menu {
         return .run { @MainActor send in
           let next = AppTheme.shared.switchToNext()
           send(.local(.markActive(next.localizedName)))
+          send(.delegate(.switchedTheme))
         }
                 
       case .restart(.back):
@@ -88,6 +94,9 @@ public struct Menu {
         state.sendFeedbackState = SendFeedback.State()
         return .none
                                 
+      case .delegate:
+        return .none
+        
       case .purchase:
         return .none
             

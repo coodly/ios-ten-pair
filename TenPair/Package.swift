@@ -286,7 +286,8 @@ let package = Package(
         "Themes",
                 
         composable
-      ]
+      ],
+      swiftSettings: swift6Flags
     ),
     .target(
       name: "PurchaseClient",

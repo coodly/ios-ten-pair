@@ -45,10 +45,15 @@ public struct PlayReducer {
   @Dependency(\.rateAppClient) var rateAppClient
     
   public var body: some ReducerOf<Self> {
-    Reduce {
-      state, action in
-            
+    Reduce { state, action in
       switch action {
+      case .menu(.delegate(let action)):
+        switch action {
+        case .switchedTheme:
+          state.playSummaryState.updateTheme()
+          return .none
+        }
+        
       case .tappedMenu:
         state.restartAction = nil
         state.menuState = Menu.State(

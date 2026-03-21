@@ -19,7 +19,6 @@ public struct PlaySummaryView: View {
     }
     .font(Font.body.bold())
     .foregroundColor(store.foregroundColor)
-    .onAppear(perform: { store.send(.onAppear) })
     .modifier(TheGlass())
   }
 }
