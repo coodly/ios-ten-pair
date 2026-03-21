@@ -32,6 +32,7 @@ internal struct MessageBubbleView: View {
       }
     }
     .padding(.horizontal)
+    .id(message.id)
   }
 }
 

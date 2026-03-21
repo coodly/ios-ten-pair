@@ -27,7 +27,7 @@ internal struct SendFeedbackView: View {
                 
                 MessageBubbleView(message: message)
               }
-              .onChange(of: messages.last?.id) {
+              .onChange(of: store.lastMessageId) {
                 oldValue, newValue in
                 
                 proxy.scrollTo(newValue, anchor: .bottom)

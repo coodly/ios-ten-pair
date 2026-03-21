@@ -10,6 +10,7 @@ public struct SendFeedback {
     internal var message = ""
     internal var sumbitEnabled = false
     internal var sendingMessage = false
+    var lastMessageId: String?
         
     public init() {
             
@@ -22,7 +23,7 @@ public struct SendFeedback {
     case checkLoggedIn
     case markLoggedIn(Bool)
     case postMessage
-    case markSent
+    case markSent(String?)
         
     case binding(BindingAction<State>)
   }
@@ -32,7 +33,7 @@ public struct SendFeedback {
   }
     
   @Dependency(\.cloudMessagesClient) var cloudMessagesClient
-  @Dependency(\.mainQueue) var mainQueue
+  @Dependency(\.continuousClock) var clock
     
   public var body: some ReducerOf<Self> {
     BindingReducer()
@@ -43,7 +44,14 @@ public struct SendFeedback {
       case .onAppear:
         @Shared(.hasUnreadMessages) var hasUnreadMessages
         $hasUnreadMessages.withLock { $0 = false }
-        return Effect.send(.checkLoggedIn)
+        
+        @Shared(.messages) var messages
+        let lastMessage = messages.last?.recordName
+        return .run { send in
+          await send(.checkLoggedIn)
+          try? await clock.sleep(for: .milliseconds(300))
+          await send(.markSent(lastMessage), animation: .default)
+        }
                 
       case .checkLoggedIn:
         return Effect.run {
@@ -67,11 +75,14 @@ public struct SendFeedback {
           return .none
         }
         state.sendingMessage = true
-        return Effect.publisher({ cloudMessagesClient.send(message: sent) })
-          .map({ .markSent })
+        return .run { send in
+          let recordId = await cloudMessagesClient.send(message: sent)
+          await send(.markSent(recordId))
+        }
                 
-      case .markSent:
+      case .markSent(let messageId):
         state.sendingMessage = false
+        state.lastMessageId = messageId
         return .none
                 
       case .binding:

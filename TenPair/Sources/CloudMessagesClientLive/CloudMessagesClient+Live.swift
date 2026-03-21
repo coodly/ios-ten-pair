@@ -87,58 +87,54 @@ extension CloudMessagesClient {
       return messages
     }
         
-    func write(message: String) -> AnyPublisher<Void, Never> {
-      Future<Void, Never>() {
-        fulfill in
-             
-        Task {
-          var store = MessagesStore.load()
-          let savedMessage = CKRecord(recordType: "Message")
-          savedMessage["body"] = message
-          savedMessage["platform"] = await UIDevice.current.platform()
-          savedMessage["postedAt"] = Date.now
-                    
-          var savedRecords = [CKRecord]()
-                    
-          if let name = store.cornversationRecordName {
-            Log.feedback.debug("Use conversation reference")
-            savedMessage["conversation"] = CKRecord.Reference(
-              recordID: CKRecord.ID(recordName: name),
-              action: .none
-            )
-          } else {
-            Log.feedback.debug("Create conversation")
-            let savedConversation = CKRecord(recordType: "Conversation", recordID: CKRecord.ID(recordName: UUID().uuidString))
-            savedConversation["appIdentifier"] = Bundle.main.bundleIdentifier!
-            savedConversation["lastMessageTime"] = Date.now
-            savedConversation["snippet"] = ""
-            savedMessage["conversation"] = CKRecord.Reference(record: savedConversation, action: .none)
-                        
-            savedRecords.append(savedConversation)
-          }
-          savedRecords.append(savedMessage)
-                    
-          let (saveResult, _) = try await container.publicCloudDatabase.modifyRecords(saving: savedRecords, deleting: [])
-          for (_, result) in saveResult {
-            switch result {
-            case .success(let record) where record.recordType == "Message":
-              let message = Message(record: record)
-              _ = store.update(messages: [message])
-              store.cornversationRecordName = (record["conversation"] as? CKRecord.Reference)?.recordID.recordName
-            case .success(let record):
-              Log.feedback.debug("\(record.recordType) created")
-            case .failure(let error):
-              Log.feedback.error(error)
-            }
-          }
-          @Shared(.messages) var appMessages
-          $appMessages.withLock { $0 = IdentifiedArray(uniqueElements: store.messages) }
-          store.save()
-                    
-          fulfill(.success(()))
+    func write(message: String) async -> String? {
+      var store = MessagesStore.load()
+      let savedMessage = CKRecord(recordType: "Message")
+      savedMessage["body"] = message
+      savedMessage["platform"] = await UIDevice.current.platform()
+      savedMessage["postedAt"] = Date.now
+      
+      var savedRecords = [CKRecord]()
+      
+      if let name = store.cornversationRecordName {
+        Log.feedback.debug("Use conversation reference")
+        savedMessage["conversation"] = CKRecord.Reference(
+          recordID: CKRecord.ID(recordName: name),
+          action: .none
+        )
+      } else {
+        Log.feedback.debug("Create conversation")
+        let savedConversation = CKRecord(recordType: "Conversation", recordID: CKRecord.ID(recordName: UUID().uuidString))
+        savedConversation["appIdentifier"] = Bundle.main.bundleIdentifier!
+        savedConversation["lastMessageTime"] = Date.now
+        savedConversation["snippet"] = ""
+        savedMessage["conversation"] = CKRecord.Reference(record: savedConversation, action: .none)
+        
+        savedRecords.append(savedConversation)
+      }
+      savedRecords.append(savedMessage)
+      
+      guard let (saveResult, _) = try? await container.publicCloudDatabase.modifyRecords(saving: savedRecords, deleting: []) else {
+        return nil
+      }
+      
+      for (_, result) in saveResult {
+        switch result {
+        case .success(let record) where record.recordType == "Message":
+          let message = Message(record: record)
+          _ = store.update(messages: [message])
+          store.cornversationRecordName = (record["conversation"] as? CKRecord.Reference)?.recordID.recordName
+        case .success(let record):
+          Log.feedback.debug("\(record.recordType) created")
+        case .failure(let error):
+          Log.feedback.error(error)
         }
       }
-      .eraseToAnyPublisher()
+      @Shared(.messages) var appMessages
+      $appMessages.withLock { $0 = IdentifiedArray(uniqueElements: store.messages) }
+      store.save()
+      
+      return store.messages.last?.recordName
     }
                 
     return CloudMessagesClient(

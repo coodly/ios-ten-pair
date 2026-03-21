@@ -6,13 +6,13 @@ public struct CloudMessagesClient {
   public let feedbackEnabled: Bool
   private let onCheckForMessages: () async -> Void
   private let onCheckLoggedIn: () async -> Bool
-  private let onSendMessage: ((String) -> AnyPublisher<Void, Never>)
+  private let onSendMessage: (String) async -> String?
 
   public init(
     feedbackEnabled: Bool,
     onCheckForMessages: @escaping () async -> Void,
     onCheckLoggedIn: @escaping () async -> Bool,
-    onSendMessage: @escaping ((String) -> AnyPublisher<Void, Never>)
+    onSendMessage: @escaping (String) async -> String?
   ) {
     self.feedbackEnabled = feedbackEnabled
     self.onCheckForMessages = onCheckForMessages
@@ -28,8 +28,8 @@ public struct CloudMessagesClient {
     await onCheckLoggedIn()
   }
 
-  public func send(message: String) -> AnyPublisher<Void, Never> {
-    onSendMessage(message)
+  public func send(message: String) async -> String? {
+    await onSendMessage(message)
   }
 }
 
@@ -38,7 +38,7 @@ extension CloudMessagesClient {
     feedbackEnabled: false,
     onCheckForMessages: {},
     onCheckLoggedIn: { false },
-    onSendMessage: { _ in PassthroughSubject<Void, Never>().eraseToAnyPublisher() }
+    onSendMessage: { _ in nil }
   )
 }
 
