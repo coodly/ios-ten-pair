@@ -212,7 +212,6 @@ let package = Package(
       name: "MenuFeature",
       dependencies: [
         "PurchaseFeature",
-        "RestartFeature",
         "SendFeedbackFeature",
         "Themes",
                 
@@ -329,12 +328,6 @@ let package = Package(
         "Logging",
                 
         dependencies
-      ]
-    ),
-    .target(
-      name: "RestartFeature",
-      dependencies: [
-        composable
       ]
     ),
     .target(

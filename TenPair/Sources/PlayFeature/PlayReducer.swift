@@ -49,6 +49,16 @@ public struct PlayReducer {
       switch action {
       case .menu(.delegate(let action)):
         switch action {
+        case .startRegular:
+          state.restartAction = .regular
+          state.menuState = nil
+          return Effect.send(.sendRateEvent)
+
+        case .startRandom(let number):
+          state.restartAction = .random(number)
+          state.menuState = nil
+          return Effect.send(.sendRateEvent)
+
         case .switchedTheme:
           state.playSummaryState.updateTheme()
           return .none
@@ -76,16 +86,6 @@ public struct PlayReducer {
         state.menuState = nil
         return .none
             
-      case .menu(.restart(.regular)):
-        state.restartAction = .regular
-        state.menuState = nil
-        return Effect.send(.sendRateEvent)
-                
-      case .menu(.restart(.random(let lines))):
-        state.restartAction = .random(lines)
-        state.menuState = nil
-        return Effect.send(.sendRateEvent)
-
       case .menu:
         return .none
                 

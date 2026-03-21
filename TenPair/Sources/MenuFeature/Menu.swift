@@ -1,6 +1,5 @@
 import ComposableArchitecture
 import PurchaseFeature
-import RestartFeature
 import SendFeedbackFeature
 import Sharing
 import Themes
@@ -39,6 +38,8 @@ public struct Menu {
     case sendFeedback(SendFeedback.Action)
     
     public enum Delegate: Sendable {
+      case startRegular
+      case startRandom(Int)
       case switchedTheme
     }
     
@@ -71,6 +72,19 @@ public struct Menu {
           state.activeThemeName = name
           return .none
         }
+        
+      case .restart(.delegate(let action)):
+        switch action {
+        case .startRegular:
+          return .send(.delegate(.startRegular))
+          
+        case .startRandom(let number):
+          return .send(.delegate(.startRandom(number)))
+          
+        case .close:
+          state.restartState = nil
+          return .none
+        }
                 
       case .resume:
         return .none
@@ -86,10 +100,6 @@ public struct Menu {
           send(.delegate(.switchedTheme))
         }
                 
-      case .restart(.back):
-        state.restartState = nil
-        return .none
-                                        
       case .feedback:
         state.sendFeedbackState = SendFeedback.State()
         return .none
