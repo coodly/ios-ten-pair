@@ -171,6 +171,7 @@ let package = Package(
       name: "CloudMessagesClient",
       dependencies: [
         dependencies,
+        dependenciesMacros,
         sharing
       ]
     ),

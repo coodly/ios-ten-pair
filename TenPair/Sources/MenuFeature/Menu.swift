@@ -76,11 +76,7 @@ public struct Menu {
       case .feedback:
         state.sendFeedbackState = SendFeedback.State()
         return .none
-                
-      case .sendFeedback(.onDisappear):
-        state.sendFeedbackState = nil
-        return .none
-                
+                                
       case .purchase:
         return .none
             

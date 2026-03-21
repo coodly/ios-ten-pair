@@ -15,7 +15,6 @@ public class SendFeedbackViewController: UIViewController, StoryboardLoaded {
   }
     
   public var store: StoreOf<SendFeedback>!
-  private lazy var viewStore = ViewStore(store, observe: { $0 })
     
   public override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,12 +29,6 @@ public class SendFeedbackViewController: UIViewController, StoryboardLoaded {
   public override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
         
-    viewStore.send(.onAppear)
-  }
-    
-  public override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-        
-    viewStore.send(.onDisappear)
+    store.send(.onAppear)
   }
 }

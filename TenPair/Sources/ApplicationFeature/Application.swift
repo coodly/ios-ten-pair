@@ -67,8 +67,7 @@ public struct Application {
         }
                 
       case .onDidBecomeActive:
-        cloudMessages.checkForMessages()
-        return .none
+        return .run { _ in await cloudMessages.checkForMessages() }
                 
       case .play(.tappedHint), .play(.tappedReload):
         return Effect.send(.appAds(.incrementInterstitial))

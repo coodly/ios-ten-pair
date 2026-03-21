@@ -2,6 +2,7 @@ import CloudKit
 import CloudMessagesClient
 import Combine
 import Dependencies
+import IdentifiedCollections
 import Logging
 import Sharing
 import UIKit
@@ -20,9 +21,6 @@ extension CloudMessagesClient: DependencyKey {
 extension CloudMessagesClient {
   public static var live: CloudMessagesClient {
     let container = CKContainer(identifier: "iCloud.com.coodly.feedback")
-    let messagesPublisher = CurrentValueSubject<[Message], Never>([])
-        
-    messagesPublisher.send(MessagesStore.load().messages)
         
     @Sendable
     func pullConversations(user: CKRecord.ID) async throws -> [CKRecord] {
@@ -133,7 +131,8 @@ extension CloudMessagesClient {
               Log.feedback.error(error)
             }
           }
-          messagesPublisher.send(store.messages)
+          @Shared(.messages) var appMessages
+          $appMessages.withLock { $0 = IdentifiedArray(uniqueElements: store.messages) }
           store.save()
                     
           fulfill(.success(()))
@@ -144,31 +143,28 @@ extension CloudMessagesClient {
                 
     return CloudMessagesClient(
       feedbackEnabled: true,
-      onAllMessages: {
-        messagesPublisher.eraseToAnyPublisher()
-      },
       onCheckForMessages: {
-        Task {
-          do {
-            guard try await container.accountStatus() == .available else {
-              Log.feedback.debug("Account not available")
-              return
-            }
-            let user = try await container.userRecordID()
-            let conversations = try await pullConversations(user: user)
-            let messages = try await pullMessages(in: conversations)
-            let feedbackMessages = messages.map(Message.init(record:))
-            var store = MessagesStore.load()
-            store.cornversationRecordName = conversations.last?.recordID.recordName
-            let hasUnread = store.update(messages: feedbackMessages)
-            store.save()
-            
-            @Shared(.hasUnreadMessages) var hasUnreadMessages
-            $hasUnreadMessages.withLock { $0 = $0 || hasUnread }
-            messagesPublisher.send(store.messages)
-          } catch {
-            Log.feedback.error(error)
+        do {
+          guard try await container.accountStatus() == .available else {
+            Log.feedback.debug("Account not available")
+            return
           }
+          let user = try await container.userRecordID()
+          let conversations = try await pullConversations(user: user)
+          let messages = try await pullMessages(in: conversations)
+          let feedbackMessages = messages.map(Message.init(record:))
+          var store = MessagesStore.load()
+          store.cornversationRecordName = conversations.last?.recordID.recordName
+          let hasUnread = store.update(messages: feedbackMessages)
+          store.save()
+          
+          @Shared(.hasUnreadMessages) var hasUnreadMessages
+          $hasUnreadMessages.withLock { $0 = $0 || hasUnread }
+
+          @Shared(.messages) var appMessages
+          $appMessages.withLock { $0 = IdentifiedArray(uniqueElements: store.messages) }
+        } catch {
+          Log.feedback.error(error)
         }
       },
       onCheckLoggedIn: {

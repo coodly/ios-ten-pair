@@ -7,9 +7,6 @@ public struct SendFeedback {
   public struct State: Equatable {
     internal var isLoggedIn = false
 
-    internal var messages = IdentifiedArrayOf<Message>()
-    internal var lastMessageId = ""
-
     internal var message = ""
     internal var sumbitEnabled = false
     internal var sendingMessage = false
@@ -21,14 +18,9 @@ public struct SendFeedback {
     
   public enum Action: BindableAction, Sendable {
     case onAppear
-    case onDisappear
         
     case checkLoggedIn
-    case loadMessages
-        
     case markLoggedIn(Bool)
-    case markMessages([Message])
-        
     case postMessage
     case markSent
         
@@ -62,27 +54,9 @@ public struct SendFeedback {
           )
         }
         .cancellable(id: CancelID.sendFeedback)
-                
-      case .loadMessages:
-        return Effect.publisher({ cloudMessagesClient.allMessages() })
-          .map({ .markMessages($0.sorted()) })
-          .cancellable(id: CancelID.sendFeedback)
-                
-
-      case .onDisappear:
-        return Effect.cancel(id: CancelID.sendFeedback)
-                
+                                
       case .markLoggedIn(let loggedIn):
         state.isLoggedIn = loggedIn
-        if loggedIn {
-          return Effect.send(.loadMessages)
-        } else {
-          return .none
-        }
-                
-      case .markMessages(let messages):
-        state.messages = IdentifiedArrayOf(uniqueElements: messages)
-        state.lastMessageId = messages.last?.recordName ?? ""
         return .none
                 
       case .postMessage:

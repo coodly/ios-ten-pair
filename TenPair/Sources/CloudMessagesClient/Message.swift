@@ -1,4 +1,5 @@
 import Foundation
+import IdentifiedCollections
 import Sharing
 
 public struct Message: Equatable, Codable, Identifiable, Comparable, Sendable {
@@ -31,7 +32,7 @@ public extension SharedReaderKey where Self == AppStorageKey<Bool>.Default {
   }
 }
 
-public extension SharedReaderKey where Self == InMemoryKey<[Message]>.Default {
+public extension SharedReaderKey where Self == InMemoryKey<IdentifiedArrayOf<Message>>.Default {
   static var messages: Self {
     Self[.inMemory("com.coodly.ten.pair.messages"), default: []]
   }
