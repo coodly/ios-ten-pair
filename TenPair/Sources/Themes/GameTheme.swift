@@ -25,7 +25,7 @@ extension Notification.Name {
 
 private let ThemeSettingKey = "ThemeSettingKey"
 
-public class AppTheme {
+public struct AppTheme: Sendable {
   private static let classicMain = UIColor(red: 0.353, green: 0.784, blue: 0.980, alpha: 1)
   private static let pinkMain = UIColor(red: 1, green: 105.0 / 255.0, blue: 180.0 / 255.0, alpha: 1)
   internal static let classic = ThemeDefinition(
@@ -108,6 +108,7 @@ public class AppTheme {
     
   private init() {}
     
+  @MainActor
   public func load() {
     apply(theme: activeTheme)
   }
@@ -121,6 +122,7 @@ public class AppTheme {
     return AppTheme.classic
   }
     
+  @MainActor
   private func apply(theme: ThemeDefinition) {
     UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.navigationTint]
     UINavigationBar.appearance().tintColor = theme.navigationTint
@@ -143,6 +145,7 @@ public class AppTheme {
     UIButton.appearance(whenContainedInInstancesOf: [ButtonTrayView.self]).tintColor = theme.buttonsForeground
   }
     
+  @MainActor
   public func switchToNext() -> ThemeDefinition {
     let current = activeTheme
     guard let index = AppTheme.all.firstIndex(of: current) else {
@@ -170,7 +173,7 @@ public class AppTheme {
   }
 }
 
-public struct ThemeDefinition: Equatable {
+public struct ThemeDefinition: Equatable, Sendable {
   public let name: String
   public let main: UIColor
   public let selected: UIColor

@@ -350,7 +350,7 @@ let package = Package(
         composable
       ],
       resources: [.process("Resources")],
-      swiftSettings: swift6Flags      
+      swiftSettings: swift6Flags
     ),
     .target(
       name: "Storyboards"
@@ -364,7 +364,8 @@ let package = Package(
       dependencies: [
         "Localization",
         "UIComponents"
-      ]
+      ],
+      swiftSettings: swift6Flags
     ),
     .target(
       name: "WinPresentation",

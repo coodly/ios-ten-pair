@@ -24,6 +24,7 @@ public struct Menu {
   }
     
   public enum Action: Sendable {
+    case local(Local)
     case willAppear
     case willDisappear
         
@@ -35,6 +36,10 @@ public struct Menu {
     case purchase(Purchase.Action)
     case restart(Restart.Action)
     case sendFeedback(SendFeedback.Action)
+    
+    public enum Local: Sendable {
+      case markActive(String)
+    }
   }
     
   public init() {
@@ -45,9 +50,7 @@ public struct Menu {
   @Dependency(\.mainQueue) var mainQueue
     
   public var body: some ReducerOf<Self> {
-    Reduce {
-      state, action in
-            
+    Reduce { state, action in
       switch action {
       case .willAppear:
         return Effect.send(.purchase(.onAppear))
@@ -56,6 +59,13 @@ public struct Menu {
         return Effect.concatenate(
           Effect.send(.purchase(.onDisappear))
         )
+        
+      case .local(let action):
+        switch action {
+        case .markActive(let name):
+          state.activeThemeName = name
+          return .none
+        }
                 
       case .resume:
         return .none
@@ -65,9 +75,10 @@ public struct Menu {
         return .none
                 
       case .theme:
-        let next = AppTheme.shared.switchToNext()
-        state.activeThemeName = next.localizedName
-        return .none
+        return .run { @MainActor send in
+          let next = AppTheme.shared.switchToNext()
+          send(.local(.markActive(next.localizedName)))
+        }
                 
       case .restart(.back):
         state.restartState = nil
