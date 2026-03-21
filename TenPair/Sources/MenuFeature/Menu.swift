@@ -111,15 +111,9 @@ public struct Menu {
         return .none
       }
     }
-    .ifLet(\.purchaseState, action: /Action.purchase) {
-      Purchase()
-    }
-    .ifLet(\.restartState, action: /Action.restart) {
-      Restart()
-    }
-    .ifLet(\.sendFeedbackState, action: /Action.sendFeedback) {
-      SendFeedback()
-    }
+    .ifLet(\.purchaseState, action: \.purchase, then: Purchase.init)
+    .ifLet(\.restartState, action: \.restart, then: Restart.init)
+    .ifLet(\.sendFeedbackState, action: \.sendFeedback, then: SendFeedback.init)
   }
     
   private enum CancelID {

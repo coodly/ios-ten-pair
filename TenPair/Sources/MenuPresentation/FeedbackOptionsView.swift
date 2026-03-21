@@ -11,16 +11,12 @@ internal struct FeedbackOptionsView: View {
   }
     
   var body: some View {
-    WithViewStore(store, observe: { $0 }) {
-      viewStore in
-            
-      Button(action: { viewStore.send(.feedback) }) {
-        VStack {
-          if viewStore.haveUnreadMessage {
-            Text(L10n.Menu.Option.Message.from)
-          } else {
-            Text(L10n.Menu.Option.Send.message)
-          }
+    Button(action: { store.send(.feedback) }) {
+      VStack {
+        if store.haveUnreadMessage {
+          Text(L10n.Menu.Option.Message.from)
+        } else {
+          Text(L10n.Menu.Option.Send.message)
         }
       }
     }

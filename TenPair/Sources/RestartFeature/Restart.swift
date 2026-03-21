@@ -2,6 +2,7 @@ import ComposableArchitecture
 
 @Reducer
 public struct Restart {
+  @ObservableState
   public struct State: Equatable {
     public let randomLines = [20, 50, 100, 250, 500, 1_000]
         

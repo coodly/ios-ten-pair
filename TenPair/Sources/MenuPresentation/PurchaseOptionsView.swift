@@ -12,56 +12,52 @@ internal struct PurchaseOptionsView: View {
   }
     
   var body: some View {
-    WithViewStore(store, observe: { $0 }) {
-      viewStore in
-            
-      Group {
-        if !viewStore.purchaseMade {
-          Button(action: { viewStore.send(.purchase) }) {
-            HStack {
-              Text(L10n.Menu.Option.Remove.Ads.base)
-              if viewStore.productStatus == .loading {
-                ActivityIndicatorView()
-              } else {
-                Text(viewStore.purchasePrice)
-              }
+    Group {
+      if !store.purchaseMade {
+        Button(action: { store.send(.purchase) }) {
+          HStack {
+            Text(L10n.Menu.Option.Remove.Ads.base)
+            if store.productStatus == .loading {
+              ActivityIndicatorView()
+            } else {
+              Text(store.purchasePrice)
             }
-          }
-          .disabled(viewStore.purchaseInProgress)
-          .overlay(
-            ZStack {
-              if viewStore.purchaseInProgress {
-                RowBackground()
-                ActivityIndicatorView()
-              }
-            }
-          )
-          Button(action: { viewStore.send(.restore) }) {
-            Text(L10n.Menu.Option.Restore.purchase)
-          }
-          .disabled(viewStore.purchaseInProgress)
-          .overlay(
-            ZStack {
-              if viewStore.restoreInProgress {
-                RowBackground()
-                ActivityIndicatorView()
-              }
-            }
-          )
-        }
-        if viewStore.purchaseMade {
-          Button(action: { viewStore.send(.rateApp) }) {
-            Text(L10n.Menu.Option.Rate.app)
           }
         }
-        if let message = viewStore.purchaseFailureMessage {
-          Text(message)
-            .font(Font.body.bold())
-            .foregroundColor(.red)
-            .multilineTextAlignment(.center)
+        .disabled(store.purchaseInProgress)
+        .overlay(
+          ZStack {
+            if store.purchaseInProgress {
+              RowBackground()
+              ActivityIndicatorView()
+            }
+          }
+        )
+        Button(action: { store.send(.restore) }) {
+          Text(L10n.Menu.Option.Restore.purchase)
+        }
+        .disabled(store.purchaseInProgress)
+        .overlay(
+          ZStack {
+            if store.restoreInProgress {
+              RowBackground()
+              ActivityIndicatorView()
+            }
+          }
+        )
+      }
+      if store.purchaseMade {
+        Button(action: { store.send(.rateApp) }) {
+          Text(L10n.Menu.Option.Rate.app)
         }
       }
-      .animation(.none)
+      if let message = store.purchaseFailureMessage {
+        Text(message)
+          .font(Font.body.bold())
+          .foregroundColor(.red)
+          .multilineTextAlignment(.center)
+      }
     }
+    .animation(.none)
   }
 }

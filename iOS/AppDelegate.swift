@@ -42,8 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         reducer: Application.init
     )
 
-    private lazy var viewStore = ViewStore(store, observe: { $0 })
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppTheme.shared.load()
                         
@@ -62,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        viewStore.send(.onDidBecomeActive)
+        store.send(.onDidBecomeActive)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

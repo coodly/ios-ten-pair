@@ -16,6 +16,7 @@ public enum PurchaseMode {
 
 @Reducer
 public struct Purchase {
+  @ObservableState
   public struct State: Equatable {
     public var purchaseMade = false
     public var purchasePrice = "-"
@@ -41,14 +42,14 @@ public struct Purchase {
     case loadStatusMonitor
     case loadProduct
         
-    case loadedProduct(TaskResult<AppProduct>)
+    case loadedProduct(Result<AppProduct, any Error>)
     case statusChanged(PurchaseStatus)
         
     case purchase
-    case purchaseMade(TaskResult<Bool>)
+    case purchaseMade(Result<Bool, any Error>)
         
     case restore
-    case restoreMade(TaskResult<Bool>)
+    case restoreMade(Result<Bool, any Error>)
         
     case rateApp
   }
@@ -78,7 +79,7 @@ public struct Purchase {
                     
           await send(
             .loadedProduct(
-              TaskResult {
+              Result {
                 try await purchaseClient.availableProduct()
               }
             )
@@ -125,7 +126,7 @@ public struct Purchase {
                     
           await send(
             .purchaseMade(
-              TaskResult {
+              Result {
                 try await purchaseClient.purchase()
               }
             )
@@ -154,7 +155,7 @@ public struct Purchase {
                     
           await send(
             .restoreMade(
-              TaskResult {
+              Result {
                 try await purchaseClient.restore()
               }
             )
