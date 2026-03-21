@@ -23,10 +23,10 @@ public class Log {
       return
     }
 
-    SWLogger.Log.add(output: ConsoleOutput())
-    SWLogger.Log.add(output: FileOutput())
+    SWLogger.Log.add(output: .console)
+    SWLogger.Log.add(output: FileOutput().output)
 
-    SWLogger.Log.level = .debug
+    SWLogger.Log.set(level: .debug)
   }
 
   public static let app = Logging(name: "App")

@@ -1,4 +1,4 @@
-// swift-tools-version:5.9
+// swift-tools-version:6.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -26,7 +26,21 @@ private let withConcurrencyFlags = [
       "-Xfrontend",
       "-enable-actor-data-race-checks"
     ]
-  )
+  ),
+  SwiftSetting.swiftLanguageMode(.v5)
+]
+
+private let swift6Flags = [
+  .enableUpcomingFeature("StrictConcurrency=complete"),
+  SwiftSetting.unsafeFlags(
+    [
+      "-Xfrontend",
+      "-warn-long-function-bodies=100",
+      "-Xfrontend",
+      "-warn-long-expression-type-checking=100"
+    ]
+  ),
+  SwiftSetting.swiftLanguageMode(.v6)
 ]
 
 let package = Package(
@@ -75,7 +89,7 @@ let package = Package(
       targets: ["Save"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/coodly/swlogger.git", exact: "0.6.2"),
+    .package(url: "https://github.com/coodly/swlogger.git", branch: "feature/concurrency-experiment"),
     .package(url: "https://github.com/RevenueCat/purchases-ios.git", exact: "5.66.0"),
         
     .package(url: "https://github.com/pointfreeco/swift-concurrency-extras", from: "1.3.1"),
@@ -102,8 +116,7 @@ let package = Package(
         "Logging",
                 
         composable
-      ],
-      swiftSettings: []
+      ]
     ),
     .target(
       name: "AppLaunchDesktop",
@@ -141,15 +154,13 @@ let package = Package(
       dependencies: [
         dependencies,
         dependenciesMacros
-      ],
-      swiftSettings: []
+      ]
     ),
     .target(
       name: "AppTrackingClientLive",
       dependencies: [
         "AppTrackingClient"
-      ],
-      swiftSettings: []
+      ]
     ),
     .target(
       name: "Autolayout"
@@ -180,8 +191,7 @@ let package = Package(
     ),
     .target(
       name: "Localization",
-      resources: [.process("Resources")],
-      swiftSettings: []
+      resources: [.process("Resources")]
     ),
     .target(
       name: "Logging",
@@ -229,8 +239,7 @@ let package = Package(
                 
         .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads"),
         concurrency
-      ],
-      swiftSettings: []
+      ]
     ),
     .target(
       name: "Play",
@@ -310,8 +319,7 @@ let package = Package(
         "Logging",
                 
         dependencies
-      ],
-      swiftSettings: []
+      ]
     ),
     .target(
       name: "RestartFeature",
@@ -323,8 +331,7 @@ let package = Package(
       name: "Save",
       dependencies: [
         "Config"
-      ],
-      swiftSettings: []
+      ]
     ),
     .target(
       name: "SendFeedbackFeature",
@@ -339,8 +346,7 @@ let package = Package(
       resources: [.process("Resources")]
     ),
     .target(
-      name: "Storyboards",
-      swiftSettings: []
+      name: "Storyboards"
     ),
     .target(
       name: "UIComponents",
@@ -351,8 +357,7 @@ let package = Package(
       dependencies: [
         "Localization",
         "UIComponents"
-      ],
-      swiftSettings: []
+      ]
     ),
     .target(
       name: "WinPresentation",
