@@ -17,22 +17,6 @@ public struct ButtonTray: Sendable {
       backgroundColor = Color(AppTheme.shared.active.main)
       foregroundColor = Color(AppTheme.shared.active.text)
     }
-  }
-  
-  public enum Action: Sendable {
-    
-  }
-  
-  public init() {
-    
-  }
-  
-  public var body: some ReducerOf<Self> {
-    Reduce {
-      state, action in
-      
-      return .none
-    }
-  }
+  }  
 }
 

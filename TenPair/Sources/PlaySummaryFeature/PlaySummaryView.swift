@@ -18,20 +18,23 @@ public struct PlaySummaryView: View {
         .fixedSize()
     }
     .font(Font.body.bold())
-    .foregroundColor(store.foregroundColor)
-    .modifier(TheGlass())
+    .modifier(TheGlass(store: store))
   }
 }
 
 struct TheGlass: ViewModifier {
+  let store: StoreOf<PlaySummary>
+  
   func body(content: Content) -> some View {
     if #available(iOS 26.0, macCatalyst 26.0, *) {
       content
         .frame(minHeight: 44)
         .padding(.horizontal)
-        .glassEffect()
+        .foregroundStyle(store.foregroundColor)
+        .glassEffect(.clear.tint(store.backgroundColor))
     } else {
       content
+        .foregroundStyle(store.navigationTint)
     }
   }
 }

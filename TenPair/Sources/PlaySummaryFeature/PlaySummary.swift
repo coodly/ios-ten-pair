@@ -10,13 +10,17 @@ public struct PlaySummary {
     internal var numberOfTiles = 43
         
     internal var foregroundColor = Color.primary
+    internal var backgroundColor = Color.primary
+    internal var navigationTint = Color.primary
         
     public init() {
       updateTheme()
     }
     
     public mutating func updateTheme() {
-      foregroundColor = Color(AppTheme.shared.active.navigationTint)
+      foregroundColor = Color(AppTheme.shared.active.text)
+      backgroundColor = Color(AppTheme.shared.active.main)
+      navigationTint = Color(AppTheme.shared.active.navigationTint)
     }
   }
     

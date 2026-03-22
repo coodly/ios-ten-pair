@@ -32,7 +32,7 @@ struct UndoTrayModifier: ViewModifier {
   func body(content: Content) -> some View {
     if #available(iOS 26.0, *) {
       content
-        .glassEffect(in: rectangle)
+        .glassEffect(.clear.tint(store.backgroundColor), in: rectangle)
     } else {
       content
         .foregroundStyle(store.foregroundColor)
