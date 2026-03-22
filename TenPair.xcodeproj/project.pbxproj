@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84641B5C2F6FAEFE0085379D /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 84641B5B2F6FAEFE0085379D /* AppIcon.icon */; };
+		84641B5F2F6FAF720085379D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84641B5E2F6FAF720085379D /* Media.xcassets */; };
 		A71A97451E48CCA4005E134F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A97441E48CCA4005E134F /* AppDelegate.swift */; };
 		A71A974A1E48CCA4005E134F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A97481E48CCA4005E134F /* Main.storyboard */; };
 		A71A97631E48CCA4005E134F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
@@ -16,7 +18,6 @@
 		A75BE52F24AB803B00D0AEB4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
 		A75BE55D24AB81A200D0AEB4 /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BE55C24AB81A200D0AEB4 /* FeedbackService.swift */; };
 		A75BE56524AB849800D0AEB4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75BE56424AB849800D0AEB4 /* CloudKit.framework */; };
-		A75BE56824AB89D500D0AEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A973C1E48CCA4005E134F /* Assets.xcassets */; };
 		A75BE56A24AB89FB00D0AEB4 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A748DC3A1E57375800F16F92 /* LaunchView.xib */; };
 		A787134C1E5CA743002DEF76 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787134A1E5CA743002DEF76 /* Secrets.swift */; };
 		A797BD712483808F00A6E27D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A797BD702483808F00A6E27D /* GoogleService-Info.plist */; };
@@ -36,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84641B5B2F6FAEFE0085379D /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		84641B5E2F6FAF720085379D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		A71A973C1E48CCA4005E134F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A71A97411E48CCA4005E134F /* TenPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71A97441E48CCA4005E134F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,11 +150,13 @@
 		A75BE51324AB7A5700D0AEB4 /* Catalyst */ = {
 			isa = PBXGroup;
 			children = (
+				84641B5B2F6FAEFE0085379D /* AppIcon.icon */,
 				A75BE52624AB7A6000D0AEB4 /* Catalyst.entitlements */,
 				A75BE51424AB7A5700D0AEB4 /* AppDelegate.swift */,
 				A75BE51A24AB7A5700D0AEB4 /* Main.storyboard */,
 				A75BE52224AB7A5B00D0AEB4 /* Info.plist */,
 				A75BE55C24AB81A200D0AEB4 /* FeedbackService.swift */,
+				84641B5E2F6FAF720085379D /* Media.xcassets */,
 			);
 			path = Catalyst;
 			sourceTree = "<group>";
@@ -304,8 +309,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84641B5F2F6FAF720085379D /* Media.xcassets in Resources */,
 				A75BE56A24AB89FB00D0AEB4 /* LaunchView.xib in Resources */,
-				A75BE56824AB89D500D0AEB4 /* Assets.xcassets in Resources */,
+				84641B5C2F6FAEFE0085379D /* AppIcon.icon in Resources */,
 				A75BE51C24AB7A5700D0AEB4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +584,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
@@ -610,6 +617,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
