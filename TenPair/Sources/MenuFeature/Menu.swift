@@ -22,22 +22,18 @@ public struct Menu {
     }
   }
     
-  public enum Action: Sendable {
+  public enum Action: Sendable, ViewAction {
     case delegate(Delegate)
     case local(Local)
     case willAppear
-    case willDisappear
-        
-    case resume
-    case restartTapped
-    case theme
-    case feedback
-        
+                
     case purchase(Purchase.Action)
     case restart(Restart.Action)
     case sendFeedback(SendFeedback.Action)
+    case view(View)
     
     public enum Delegate: Sendable {
+      case dismiss
       case startRegular
       case startRandom(Int)
       case switchedTheme
@@ -46,26 +42,29 @@ public struct Menu {
     public enum Local: Sendable {
       case markActive(String)
     }
+    
+    public enum View: Sendable {
+      case tappedResume
+      case tappedRestart
+      case tappedTheme
+      case tappedFeedback
+    }
   }
     
   public init() {
         
   }
     
-  @Dependency(\.cloudMessagesClient) var cloudMessages
-  @Dependency(\.mainQueue) var mainQueue
-    
   public var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case .willAppear:
-        return Effect.send(.purchase(.onAppear))
-                
-      case .willDisappear:
-        return Effect.concatenate(
-          Effect.send(.purchase(.onDisappear))
-        )
-        
+        if state.purchaseState != nil {
+          return .send(.purchase(.load))
+        } else {
+          return .none
+        }
+                                
       case .local(let action):
         switch action {
         case .markActive(let name):
@@ -85,25 +84,41 @@ public struct Menu {
           state.restartState = nil
           return .none
         }
-                
-      case .resume:
-        return .none
-                
-      case .restartTapped:
-        state.restartState = Restart.State()
-        return .none
-                
-      case .theme:
-        return .run { @MainActor send in
-          let next = AppTheme.shared.switchToNext()
-          send(.local(.markActive(next.localizedName)))
-          send(.delegate(.switchedTheme))
+        
+      case .sendFeedback(.delegate(let action)):
+        switch action {
+        case .dismiss:
+          state.sendFeedbackState = nil
+          return .none
         }
-                
-      case .feedback:
-        state.sendFeedbackState = SendFeedback.State()
-        return .none
-                                
+        
+      case .view(let action):
+        switch action {
+        case .tappedResume:
+          let havePurchases = state.purchaseState != nil
+          return .run { send in
+            if havePurchases {
+              await send(.purchase(.unload))
+            }
+            await send(.delegate(.dismiss))
+          }
+          
+        case .tappedFeedback:
+          state.sendFeedbackState = SendFeedback.State()
+          return .none
+          
+        case .tappedRestart:
+          state.restartState = Restart.State()
+          return .none
+          
+        case .tappedTheme:
+          return .run { @MainActor send in
+            let next = AppTheme.shared.switchToNext()
+            send(.local(.markActive(next.localizedName)))
+            send(.delegate(.switchedTheme))
+          }
+        }
+                                                
       case .delegate:
         return .none
         

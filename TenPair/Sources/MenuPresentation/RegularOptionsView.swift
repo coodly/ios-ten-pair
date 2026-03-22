@@ -4,21 +4,22 @@ import MenuFeature
 import SwiftUI
 import Themes
 
+@ViewAction(for: MenuFeature.Menu.self)
 internal struct RegularOptionsView: View {
-  private let store: StoreOf<MenuFeature.Menu>
+  public let store: StoreOf<MenuFeature.Menu>
 
   internal init(store: StoreOf<MenuFeature.Menu>) {
     self.store = store
   }
 
   var body: some View {
-    Button(action: { store.send(.resume) }) {
+    Button(action: { send(.tappedResume) }) {
       Text(L10n.Menu.Option.resume)
     }
-    Button(action: { store.send(.restartTapped) }) {
+    Button(action: { send(.tappedRestart) }) {
       Text(L10n.Menu.Option.restart)
     }
-    Button(action: { store.send(.theme) }) {
+    Button(action: { send(.tappedTheme) }) {
       Text(L10n.Menu.Option.Theme.base(store.activeThemeName))
     }
     if let store = store.scope(state: \.purchaseState, action: \.purchase) {

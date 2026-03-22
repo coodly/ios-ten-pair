@@ -171,7 +171,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
   }
     
   @objc fileprivate func tappedMenu() {
-    store.send(.tappedMenu)
+    store.send(.view(.tappedMenu))
   }
     
   private func present(menu store: StoreOf<MenuFeature.Menu>) {

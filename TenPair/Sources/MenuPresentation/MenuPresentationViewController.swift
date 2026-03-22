@@ -16,7 +16,6 @@ public class MenuPresentationViewController: UIViewController, StoryboardLoaded 
   }
     
   public var store: StoreOf<MenuFeature.Menu>!
-  private lazy var viewStore = ViewStore(store, observe: { $0 })
   private lazy var menuView = MenuPresentationView(store: store)
   private lazy var disposeBag = Set<AnyCancellable>()
     
@@ -31,28 +30,16 @@ public class MenuPresentationViewController: UIViewController, StoryboardLoaded 
     hosting.view.backgroundColor = .clear
     view.backgroundColor = .clear
         
-    store.scope(state: \.sendFeedbackState, action: \.sendFeedback).ifLet(
-      then: {
-        [weak self]
-                
-        store in
-                
-        self?.presentFeedback(store: store)
+    observe { [weak self] in
+      guard let self else { return }
+      if let feedback = store.scope(state: \.sendFeedbackState, action: \.sendFeedback) {
+        presentFeedback(store: feedback)
+      } else {
+        presentedViewController?.dismiss(animated: true)
       }
-    )
-    .store(in: &disposeBag)
-  }
-    
-  public override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
+    }
         
-    viewStore.send(.willAppear)
-  }
-    
-  public override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-        
-    viewStore.send(.willDisappear)
+    store.send(.willAppear)
   }
     
   private func presentFeedback(store: StoreOf<SendFeedback>) {
@@ -79,6 +66,6 @@ public class MenuPresentationViewController: UIViewController, StoryboardLoaded 
   }
     
   @objc fileprivate func dismissFeedback() {
-    dismiss(animated: true)
+    store.send(.sendFeedback(.delegate(.dismiss)))
   }
 }

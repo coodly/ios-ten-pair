@@ -18,6 +18,8 @@ public struct SendFeedback: Sendable {
   }
     
   public enum Action: BindableAction, Sendable {
+    case delegate(Delegate)
+    
     case onAppear
         
     case checkLoggedIn
@@ -26,6 +28,10 @@ public struct SendFeedback: Sendable {
     case markSent(String?)
         
     case binding(BindingAction<State>)
+    
+    public enum Delegate: Sendable {
+      case dismiss
+    }
   }
     
   public init() {
@@ -87,6 +93,9 @@ public struct SendFeedback: Sendable {
                 
       case .binding:
         state.sumbitEnabled = state.message.hasValue
+        return .none
+        
+      case .delegate:
         return .none
       }
     }

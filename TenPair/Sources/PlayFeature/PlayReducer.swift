@@ -26,12 +26,11 @@ public struct PlayReducer {
     }
   }
     
-  public enum Action: Sendable {
+  public enum Action: Sendable, ViewAction {
     case hintTray(ButtonTray.Action)
     case undoTray(ButtonTray.Action)
-    
-    case tappedMenu
-        
+    case view(View)
+            
     case menu(Menu.Action)
     case playSummary(PlaySummary.Action)
         
@@ -39,6 +38,10 @@ public struct PlayReducer {
     case tappedHint
         
     case sendRateEvent
+    
+    public enum View: Sendable {
+      case tappedMenu
+    }
   }
     
   public init() {
@@ -54,6 +57,10 @@ public struct PlayReducer {
       switch action {
       case .menu(.delegate(let action)):
         switch action {
+        case .dismiss:
+          state.menuState = nil
+          return .none
+          
         case .startRegular:
           state.restartAction = .regular
           state.menuState = nil
@@ -71,13 +78,16 @@ public struct PlayReducer {
           return .none
         }
         
-      case .tappedMenu:
-        state.restartAction = nil
-        state.menuState = Menu.State(
-          feedbackEnabled: cloudMessages.feedbackEnabled(),
-          havePurchase: purchaseClient.havePurchase()
-        )
-        return .none
+      case .view(let action):
+        switch action {
+        case .tappedMenu:
+          state.restartAction = nil
+          state.menuState = Menu.State(
+            feedbackEnabled: cloudMessages.feedbackEnabled(),
+            havePurchase: purchaseClient.havePurchase()
+          )
+          return .none
+        }
             
       case .hintTray:
         return .none
@@ -95,10 +105,6 @@ public struct PlayReducer {
         rateAppClient.maybeRateEvent()
         return .none
                 
-      case .menu(.resume):
-        state.menuState = nil
-        return .none
-            
       case .menu:
         return .none
                 

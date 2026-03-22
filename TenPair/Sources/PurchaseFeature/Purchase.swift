@@ -36,8 +36,8 @@ public struct Purchase {
   }
     
   public enum Action: Sendable {
-    case onAppear
-    case onDisappear
+    case load
+    case unload
         
     case loadStatusMonitor
     case loadProduct
@@ -67,12 +67,15 @@ public struct Purchase {
       state, action in
             
       switch action {
-      case .onAppear:
+      case .load:
         return Effect.concatenate(
           Effect.send(.loadProduct),
           Effect.send(.loadStatusMonitor)
         )
                 
+      case .unload:
+        return Effect.cancel(id: CancelID.status)
+
       case .loadProduct:
         return Effect.run {
           send in
@@ -95,9 +98,6 @@ public struct Purchase {
           }
         }
         .cancellable(id: CancelID.status)
-
-      case .onDisappear:
-        return Effect.cancel(id: CancelID.status)
                 
       case .loadedProduct(let result):
         switch result {
