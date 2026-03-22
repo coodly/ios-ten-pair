@@ -58,8 +58,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     EmptyLinesCheck(delegate: self),
     CheckGameEnd(delegate: self)
   ])
-  @IBOutlet private var undoButton: UIButton!
-  @IBOutlet private var undoTray: UIView!
+  private var undoTrayHosting: UIHostingController<UndoTrayView>?
   private lazy var queue: OperationQueue = {
     let queue = OperationQueue()
     queue.qualityOfService = .userInteractive
@@ -94,9 +93,6 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
         
     NotificationCenter.default.addObserver(self, selector: #selector(saveField), name: UIApplication.willResignActiveNotification, object: nil)
         
-    undoButton.setImage(UIImage(systemName: "arrow.counterclockwise", withConfiguration: imageConfig), for: .normal)
-        
-    undoTray.isHidden = true
     undoManager?.levelsOfUndo = 10
     
     observe { [weak self] in
@@ -138,6 +134,24 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     hintTray.view.setContentHuggingPriority(.required, for: .horizontal)
     hintTray.view.setContentHuggingPriority(.required, for: .vertical)
     hintTray.view.backgroundColor = .clear
+
+    let undoTray = UIHostingController(
+      rootView: UndoTrayView(
+        store: store.scope(state: \.undoButtonTray, action: \.undoTray),
+        action: { [weak self] in self?.performUndo() }
+      )
+    )
+    undoTrayHosting = undoTray
+    addChild(undoTray)
+    view.addSubview(undoTray.view)
+    undoTray.didMove(toParent: self)
+    undoTray.view.translatesAutoresizingMaskIntoConstraints = false
+    undoTray.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    undoTray.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    undoTray.view.setContentHuggingPriority(.required, for: .horizontal)
+    undoTray.view.setContentHuggingPriority(.required, for: .vertical)
+    undoTray.view.backgroundColor = .clear
+    undoTray.view.transform = CGAffineTransform(translationX: 200, y: 0)
   }
     
   @objc fileprivate func tappedMenu() {
@@ -203,7 +217,7 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     }
   }
     
-  @IBAction private func performUndo() {
+  private func performUndo() {
     undoManager?.undo()
   }
     
@@ -326,7 +340,13 @@ extension PlayViewController {
   }
     
   private func updateUndoVisibility() {
-    undoTray.isHidden = !(undoManager?.canUndo ?? false)
+    guard let undoView = undoTrayHosting?.view else { return }
+    let canUndo = undoManager?.canUndo ?? false
+    let targetTransform: CGAffineTransform = canUndo ? .identity : CGAffineTransform(translationX: 200, y: 0)
+    guard undoView.transform != targetTransform else { return }
+    UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0) {
+      undoView.transform = targetTransform
+    }
   }
 }
 

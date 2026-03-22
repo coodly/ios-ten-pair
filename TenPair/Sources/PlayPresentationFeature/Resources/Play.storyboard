@@ -31,53 +31,18 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="iP6-Ak-9q6"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvX-1g-jSx" customClass="ButtonTrayView" customModule="UIComponents">
-                                <rect key="frame" x="369" y="774" width="45" height="46"/>
-                                <subviews>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOK-SS-Mua" customClass="ButtonTrayBackgroundView" customModule="UIComponents">
-                                        <rect key="frame" x="1" y="1" width="44" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAQ-Lg-Jhh">
-                                        <rect key="frame" x="1" y="1" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="24R-5X-mmV"/>
-                                            <constraint firstAttribute="height" constant="44" id="gxz-J1-kK3"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <connections>
-                                            <action selector="performUndo" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nWo-Rt-OAb"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="qAQ-Lg-Jhh" secondAttribute="trailing" id="4iA-zk-8VJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="zOK-SS-Mua" secondAttribute="trailing" id="9SR-zB-r10"/>
-                                    <constraint firstAttribute="bottom" secondItem="zOK-SS-Mua" secondAttribute="bottom" constant="1" id="JB7-ek-MRp"/>
-                                    <constraint firstItem="qAQ-Lg-Jhh" firstAttribute="leading" secondItem="pvX-1g-jSx" secondAttribute="leading" constant="1" id="OzE-fg-14w"/>
-                                    <constraint firstItem="qAQ-Lg-Jhh" firstAttribute="top" secondItem="pvX-1g-jSx" secondAttribute="top" constant="1" id="YUb-S0-e2l"/>
-                                    <constraint firstItem="zOK-SS-Mua" firstAttribute="leading" secondItem="pvX-1g-jSx" secondAttribute="leading" constant="1" id="dYd-qV-kiN"/>
-                                    <constraint firstItem="zOK-SS-Mua" firstAttribute="top" secondItem="pvX-1g-jSx" secondAttribute="top" constant="1" id="jhE-af-H1m"/>
-                                    <constraint firstAttribute="bottom" secondItem="qAQ-Lg-Jhh" secondAttribute="bottom" constant="1" id="klG-Xi-NjW"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="pvX-1g-jSx" secondAttribute="trailing" id="9LO-hk-Guw"/>
                             <constraint firstAttribute="trailing" secondItem="zTJ-l9-7Ds" secondAttribute="trailing" id="LCU-5K-Mi5"/>
                             <constraint firstAttribute="bottom" secondItem="zTJ-l9-7Ds" secondAttribute="bottom" id="Ug9-NR-IZf"/>
                             <constraint firstItem="zTJ-l9-7Ds" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="d4u-JK-qOq"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pvX-1g-jSx" secondAttribute="bottom" constant="8" id="pS2-GN-uyf"/>
                             <constraint firstItem="zTJ-l9-7Ds" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="xzU-ZQ-vE8"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="zTJ-l9-7Ds" id="mIQ-PV-xjw"/>
-                        <outlet property="undoButton" destination="qAQ-Lg-Jhh" id="O1Z-dZ-udS"/>
-                        <outlet property="undoTray" destination="pvX-1g-jSx" id="YKL-iX-8gt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
