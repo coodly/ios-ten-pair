@@ -58,8 +58,6 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     EmptyLinesCheck(delegate: self),
     CheckGameEnd(delegate: self)
   ])
-  @IBOutlet private var hintButton: UIButton!
-  @IBOutlet private var hintTray: UIView!
   @IBOutlet private var undoButton: UIButton!
   @IBOutlet private var undoTray: UIView!
   private lazy var queue: OperationQueue = {
@@ -91,12 +89,11 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
     navigationItem.rightBarButtonItem = reloadButton
     NumberCell.register(in: collectionView)
     AdPresentingCell.register(in: collectionView)
-        
+            
     machine.enter(SelectingNumber.self)
         
     NotificationCenter.default.addObserver(self, selector: #selector(saveField), name: UIApplication.willResignActiveNotification, object: nil)
         
-    hintButton.setImage(UIImage(systemName: "lightbulb.fill", withConfiguration: imageConfig), for: .normal)
     undoButton.setImage(UIImage(systemName: "arrow.counterclockwise", withConfiguration: imageConfig), for: .normal)
         
     undoTray.isHidden = true
@@ -125,6 +122,22 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
       }
     }
     .store(in: &disposeBag)
+    
+    let hintTray = UIHostingController(
+      rootView: HintTrayView(
+        store: store.scope(state: \.hintButtonTray, action: \.hintTray),
+        action: { [weak self] in self?.giveAHint() }
+      )
+    )
+    addChild(hintTray)
+    view.addSubview(hintTray.view)
+    hintTray.didMove(toParent: self)
+    hintTray.view.translatesAutoresizingMaskIntoConstraints = false
+    hintTray.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    hintTray.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    hintTray.view.setContentHuggingPriority(.required, for: .horizontal)
+    hintTray.view.setContentHuggingPriority(.required, for: .vertical)
+    hintTray.view.backgroundColor = .clear
   }
     
   @objc fileprivate func tappedMenu() {
@@ -254,8 +267,8 @@ public class PlayViewController: UIViewController, StoryboardLoaded {
   private func presentModal(_ controller: UIViewController, completion: (() -> Void)? = nil) {
     navigationController?.addChild(controller)
     navigationController?.view.addSubview(controller.view)
+    controller.didMove(toParent: navigationController)
     controller.view.pinToSuperviewEdges()
-    controller.viewWillAppear(false)
     completion?()
   }
     

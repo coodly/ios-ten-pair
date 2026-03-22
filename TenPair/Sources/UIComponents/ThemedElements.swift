@@ -43,3 +43,7 @@ public class ButtonTrayBackgroundView: UIView {
 public class TileBackgroundView: UIView {
 
 }
+
+public class TrayButton: UIButton {
+
+}

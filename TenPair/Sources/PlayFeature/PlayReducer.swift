@@ -16,6 +16,8 @@ public struct PlayReducer {
   public struct State: Equatable, Sendable {
     public var menuState: Menu.State?
     public var playSummaryState = PlaySummary.State()
+    public var hintButtonTray = ButtonTray.State()
+    public var undoButtonTray = ButtonTray.State()
         
     public var restartAction: RestartAction?
         
@@ -25,6 +27,9 @@ public struct PlayReducer {
   }
     
   public enum Action: Sendable {
+    case hintTray(ButtonTray.Action)
+    case undoTray(ButtonTray.Action)
+    
     case tappedMenu
         
     case menu(Menu.Action)
@@ -45,7 +50,7 @@ public struct PlayReducer {
   @Dependency(\.rateAppClient) var rateAppClient
     
   public var body: some ReducerOf<Self> {
-    Reduce { state, action in
+    Reduce<State, Action> { state, action in
       switch action {
       case .menu(.delegate(let action)):
         switch action {
@@ -61,6 +66,8 @@ public struct PlayReducer {
 
         case .switchedTheme:
           state.playSummaryState.updateTheme()
+          state.hintButtonTray.updateTheme()
+          state.undoButtonTray.updateTheme()
           return .none
         }
         
@@ -72,6 +79,12 @@ public struct PlayReducer {
         )
         return .none
             
+      case .hintTray:
+        return .none
+        
+      case .undoTray:
+        return .none
+        
       case .tappedReload:
         return .none
                 
@@ -94,6 +107,8 @@ public struct PlayReducer {
       }
     }
     .ifLet(\.menuState, action: \.menu, then: Menu.init)
+    Scope(state: \.hintButtonTray, action: \.hintTray, child: ButtonTray.init)
     Scope(state: \.playSummaryState, action: \.playSummary, child: PlaySummary.init)
+    Scope(state: \.undoButtonTray, action: \.undoTray, child: ButtonTray.init)
   }
 }

@@ -1,7 +1,7 @@
 import UIKit
 
-class RightTrayBackground: TrayBackground {
-  override func makePath(in rect: CGRect) -> CGPath {
+public class RightTrayBackground: TrayBackground {
+  public override func makePath(in rect: CGRect) -> CGPath {
     let radius = rect.height / 2
     let path = CGMutablePath()
     path.move(to: CGPoint(x: rect.minX + radius, y: rect.minY))

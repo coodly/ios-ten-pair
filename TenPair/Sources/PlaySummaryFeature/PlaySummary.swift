@@ -12,7 +12,7 @@ public struct PlaySummary {
     internal var foregroundColor = Color.primary
         
     public init() {
-      foregroundColor = Color(AppTheme.shared.active.navigationTint)
+      updateTheme()
     }
     
     public mutating func updateTheme() {
